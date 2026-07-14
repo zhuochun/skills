@@ -1,0 +1,4 @@
+interface:
+  display_name: "Coach Technical Growth"
+  short_description: "Turn engineering work into deliberate growth"
+  default_prompt: "Use $coach-technical-growth to design an evidence-based growth loop for this engineer or technical team without turning it into a performance rating."

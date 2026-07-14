@@ -1,0 +1,4 @@
+interface:
+  display_name: "Review Service Boundaries"
+  short_description: "Evaluate service splits, merges, and ownership"
+  default_prompt: "Use $review-service-boundaries to evaluate these service boundaries against domain, change, data, and runtime evidence."

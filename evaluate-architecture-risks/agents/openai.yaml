@@ -1,0 +1,4 @@
+interface:
+  display_name: "Evaluate Architecture Risks"
+  short_description: "Expose architecture risks through scenarios"
+  default_prompt: "Use $evaluate-architecture-risks to trace prioritized quality scenarios through this architecture."

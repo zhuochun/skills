@@ -1,0 +1,4 @@
+interface:
+  display_name: "Build Verification Strategy"
+  short_description: "Match verification evidence to engineering risk"
+  default_prompt: "Use $build-verification-strategy to build a proportionate risk-to-evidence verification plan."

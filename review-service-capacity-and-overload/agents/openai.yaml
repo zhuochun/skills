@@ -1,0 +1,4 @@
+interface:
+  display_name: "Review Service Capacity and Overload"
+  short_description: "Test capacity models and overload defenses"
+  default_prompt: "Use $review-service-capacity-and-overload to review this service capacity model, bottlenecks, headroom, and overload behavior."

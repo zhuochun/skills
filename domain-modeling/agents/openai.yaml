@@ -1,0 +1,4 @@
+interface:
+  display_name: "Domain Modeling"
+  short_description: "Discover and sharpen executable domain models"
+  default_prompt: "Use $domain-modeling to clarify this domain language, model alternatives, and context boundaries."

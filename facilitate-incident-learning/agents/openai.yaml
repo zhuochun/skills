@@ -1,0 +1,4 @@
+interface:
+  display_name: "Facilitate Incident Learning"
+  short_description: "Turn incidents into durable system learning"
+  default_prompt: "Use $facilitate-incident-learning to reconstruct this incident and derive durable improvements."

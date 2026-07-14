@@ -1,0 +1,4 @@
+interface:
+  display_name: "Review Service Ownership Readiness"
+  short_description: "Assess full-cycle service ownership readiness"
+  default_prompt: "Use $review-service-ownership-readiness to assess whether this team and service are ready for sustainable full-cycle ownership."
