@@ -1,0 +1,4 @@
+interface:
+  display_name: "Controlled Release Design"
+  short_description: "Design safe feature exposure and control"
+  default_prompt: "Use $controlled-release-design to design feature flags, staged exposure, evidence, abort controls, and cleanup."

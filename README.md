@@ -1,6 +1,6 @@
 # Software Engineering Skills for Codex
 
-This repository contains 15 reusable Codex skills for consequential software-engineering work. Each skill owns one kind of reasoning artifact: a model, design, assessment, decision, transition plan, verification strategy, operational audit, learning record, or coaching loop.
+This repository contains 18 reusable Codex skills for consequential software-engineering work. Each skill owns one kind of reasoning artifact: an orientation map, model, design, assessment, decision, transition or release plan, verification strategy, operational audit, learning record, or coaching loop.
 
 The collection is designed for production systems and multi-team organizations. The skills require evidence, expose uncertainty, preserve accountable decision rights, and distinguish designing an artifact from independently evaluating whether it works.
 
@@ -12,10 +12,12 @@ Do not start from a fashionable method or invoke every skill as a stage gate. As
 
 | Skill | It owns | Primary output |
 | --- | --- | --- |
+| [`service-surface-mapping`](service-surface-mapping/) | Rapid evidence-ranked orientation to an unfamiliar service | Critical-surface map, path traces, contradictions, confidence, and next probes |
 | [`domain-modeling`](domain-modeling/) | Business meaning, behavior, invariants, vocabulary, and context boundaries | Scenario-tested model, context boundaries, translations, and unresolved questions |
 | [`service-boundary-design`](service-boundary-design/) | Logical, deployment, data, failure, and ownership boundaries | Boundary force matrix, scenario traces, options, recommendation, and prerequisites |
 | [`deep-module-design`](deep-module-design/) | Modules, interfaces, seams, state ownership, and testable contracts | Compared interfaces, selected seam, explicit contract, tests, and adoption direction |
 | [`platform-capability-design`](platform-capability-design/) | Self-service internal capabilities, paved roads, controls, and escape hatches | User-work evidence, capability boundary, interface, operating contract, and adoption slice |
+| [`observability-design`](observability-design/) | Prospective business, service, dependency, infrastructure, and control evidence | Execution-path map, measurement contracts, navigation, alerts, correlation, and lifecycle |
 
 ### Assess, engineer, and decide
 
@@ -31,6 +33,7 @@ Do not start from a fashionable method or invoke every skill as a stage gate. As
 
 | Skill | It owns | Primary output |
 | --- | --- | --- |
+| [`controlled-release-design`](controlled-release-design/) | Feature flags, exposure assignment, cohorts, release phases, and kill controls | Release contract, control topology, evidence, phase criteria, retreat, and cleanup |
 | [`high-risk-change-planning`](high-risk-change-planning/) | Transition states for risky API, schema, data, service, and infrastructure changes | Phased coexistence plan with invariants, evidence, abort, retreat, and cleanup |
 | [`verification-strategy-design`](verification-strategy-design/) | Matching engineering claims and risks to falsifying evidence | Risk-to-evidence portfolio with methods, oracles, limits, and renewal triggers |
 
@@ -54,7 +57,12 @@ The skills form a directed graph. A downstream skill consumes an upstream artifa
 
 ```mermaid
 flowchart LR
-    DM["Domain modeling"] --> SB["Service boundary design"]
+    SM["Service surface mapping"] --> DM["Domain modeling"]
+    SM --> SB["Service boundary design"]
+    SM --> MD["Deep module design"]
+    SM --> OD["Observability design"]
+
+    DM --> SB
     SB --> MD["Deep module design"]
     CA["Codebase architecture assessment"] --> DM
     CA --> SB
@@ -68,8 +76,14 @@ flowchart LR
 
     AR --> TD["Technical decision making"]
     TD --> HR["High-risk change planning"]
-    HR --> VS["Verification strategy design"]
+    MD --> OD
+    SB --> OD
+    OD --> CR["Controlled release design"]
+    HR --> CR
+    CR --> VS["Verification strategy design"]
     VS --> OF["Operational feedback audit"]
+    OD --> OF
+    OF -.-> OD
 
     OF --> IL["Incident learning"]
     IL --> RR["Retrospective redesign"]
@@ -78,7 +92,7 @@ flowchart LR
     RR --> MD
 ```
 
-This is not a mandatory lifecycle. For example, a local reversible module change may need only `deep-module-design` and ordinary repository verification. A multi-region ledger migration may require architecture evaluation, a decision record, high-risk change planning, layered verification, and an operational feedback audit.
+This is not a mandatory lifecycle. For example, a local reversible module change may need only `deep-module-design` and ordinary repository verification. A multi-service feature may need observability and controlled release without a heavyweight architecture review. A multi-region ledger migration may require architecture evaluation, a decision record, high-risk change planning, controlled exposure, layered verification, and an operational feedback audit.
 
 ## Design and evaluation are different jobs
 
@@ -86,9 +100,12 @@ A skill that creates an artifact should not silently certify that artifact. For 
 
 | Produced artifact | Appropriate evaluator or challenge |
 | --- | --- |
+| Service surface map | Source-owner review and focused follow-up; orientation does not certify readiness or safety |
 | Domain, service-boundary, module, or platform design | `architecture-risk-evaluation` for consequential quality and operating scenarios |
 | Codebase improvement proposal | Local evidence review, followed by the relevant focused design skill |
 | Architecture option comparison | `technical-decision-making` for accountable weighting and closure |
+| Observability design | Instrumentation and signal verification, then `operational-feedback-audit` against representative runtime use |
+| Controlled release design | `verification-strategy-design` for claims and phase evidence; accountable owners retain promotion authority |
 | High-risk transition plan | `verification-strategy-design` for falsifiable phase and invariant evidence |
 | Running telemetry and response system | `operational-feedback-audit` against observed decisions and incidents |
 | Completed implementation | `retrospective-redesign` using implementation and operation as evidence |
@@ -96,6 +113,12 @@ A skill that creates an artifact should not silently certify that artifact. For 
 Separation does not require bureaucracy or different people for every local change. It requires a distinct contract: the evaluator receives the artifact and evidence, can identify missing claims, and is not required to defend the producer's original choices. Increase independence with consequence, irreversibility, and uncertainty.
 
 ## Important distinctions
+
+### Orientation versus assessment
+
+Use `service-surface-mapping` to become safely useful in an unfamiliar service: trace critical workflows, reconcile declared and observed dependencies, locate controls and owners, and rank the next probes. It does not score readiness or prescribe a portfolio.
+
+Use `codebase-architecture-assessment` to diagnose and rank structural improvement opportunities across a codebase. Use `architecture-risk-evaluation` to challenge a consequential proposal against stakeholder and quality scenarios.
 
 ### Domain, service, and module boundaries
 
@@ -128,9 +151,30 @@ architecture-risk-evaluation
   -> verification-strategy-design
 ```
 
-### Verification versus operational feedback
+### Controlled release versus high-risk change
 
-Use `verification-strategy-design` to decide what evidence can falsify engineering claims before and during change. Use `operational-feedback-audit` to evaluate whether the running telemetry, ownership routing, diagnosis, and control paths produce correct operational action.
+Use `controlled-release-design` to define exposure assignment, feature-flag semantics, cohorts, business and technical evidence, promotion, abort, and cleanup. Use `high-risk-change-planning` when the larger problem is a staged migration with data authority, coexistence, irreversible effects, consumer coordination, and recovery. A high-risk plan may consume a controlled-release design; many ordinary feature releases do not need the full migration workflow.
+
+### Observability design versus operational feedback audit
+
+Use `observability-design` before implementation or release to define measurement contracts, correlation, health entry points, diagnostic navigation, alerts, and control evidence. Use `operational-feedback-audit` after representative operation to test whether those signals actually supported correct orientation, ownership, diagnosis, recovery, and learning.
+
+```text
+observability-design
+  -> implementation and controlled release
+  -> operational-feedback-audit
+  -> revise observability design
+```
+
+The designer and auditor may be the same person for low-risk work, but the audit must use distinct runtime evidence and retain permission to reject the original assumptions.
+
+### Observability, verification, and operational feedback
+
+- `observability-design` owns the runtime evidence substrate: signal semantics, correlation, navigation, alerts, and control visibility.
+- `verification-strategy-design` owns the broader claim-to-evidence portfolio. It may select tests, static checks, formal methods, simulation, load tests, failure injection, rollout evidence, and production telemetry according to risk.
+- `operational-feedback-audit` evaluates whether the running telemetry, ownership routing, diagnosis, and control paths actually produced correct operational action.
+
+Observability can supply evidence to verification, but telemetry is not a substitute for earlier checks. An operational audit can reject both a weak observability design and the assumption that a green signal proved the system healthy.
 
 ### Capacity, ownership, and platform capability
 
@@ -148,17 +192,46 @@ These are complementary lenses, not one universal platform workflow.
 domain-modeling
   -> service-boundary-design, when deployment/data/ownership is in question
   -> deep-module-design
+  -> observability-design
   -> architecture-risk-evaluation, when consequences justify it
   -> technical-decision-making
   -> high-risk-change-planning, when transition risk justifies it
+  -> controlled-release-design, when exposure must be governed
   -> verification-strategy-design
   -> operational-feedback-audit after release
 ```
+
+### Feature spanning multiple services
+
+```text
+domain-modeling
+  -> service-boundary-design
+  -> deep-module-design in each affected codebase
+  -> observability-design for the end-to-end outcome and component evidence
+  -> controlled-release-design for authoritative assignment and mixed states
+  -> verification-strategy-design
+  -> operational-feedback-audit after representative use
+```
+
+Do not let each service independently decide feature exposure when the workflow requires a consistent cohort. Assign once, propagate context, observe end-to-end outcomes, and retain local kill controls only where they govern distinct hazardous effects.
+
+### Inheriting a brownfield service
+
+```text
+service-surface-mapping
+  -> domain-modeling, service-boundary-design, or deep-module-design for the discovered problem
+  -> observability-design when prospective evidence is missing
+  -> operational-feedback-audit when the live response loop needs evaluation
+  -> controlled-release-design before the first consequential feature rollout
+```
+
+Orientation should stop once the immediate decision can move into focused work. It need not document the entire service.
 
 ### Existing codebase with recurring friction
 
 ```text
 codebase-architecture-assessment
+  -> service-surface-mapping, when one unfamiliar service needs runtime and ownership orientation
   -> domain-modeling, for semantic confusion
   -> service-boundary-design, for deployment/data/ownership coupling
   -> deep-module-design, for local structure and interfaces
@@ -189,6 +262,7 @@ platform-capability-design
 ```text
 incident-learning
   -> operational-feedback-audit
+  -> observability-design, when the evidence contract needs redesign
   -> domain-modeling, codebase-architecture-assessment, or service-boundary-design
   -> retrospective-redesign, when accumulated learning justifies first-principles reconsideration
 ```
@@ -196,6 +270,27 @@ incident-learning
 These are routing examples, not mandatory stage gates.
 
 ## Example prompts
+
+```text
+Use $service-surface-mapping to orient me to this inherited payments service
+before I change refund behavior. Time-box the investigation, trace the refund
+and recovery paths, distinguish observed from declared evidence, and identify
+the next focused review. Do not change anything.
+```
+
+```text
+Use $observability-design to design business, service, dependency,
+infrastructure, and control signals for this feature across the API, queue,
+worker, and ledger service. Include correlation, mixed-release states, alert
+routing, privacy, rollout evidence, and telemetry retirement.
+```
+
+```text
+Use $controlled-release-design to define one authoritative feature assignment
+for this multi-service workflow. Include flag states, cohort selection,
+compatibility, irreversible effects, business and technical guardrails, phase
+promotion, abort, compensation, and cleanup.
+```
 
 ```text
 Use $service-boundary-design to assess whether Billing and Collections should
