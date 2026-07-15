@@ -18,13 +18,13 @@ Design the evidence and navigation that people and automation need to operate a 
 
 1. **Define the promise and decisions.** State the user or caller outcome, important populations, service-level expectations, and the decisions telemetry must support: release, diagnosis, capacity, recovery, or product intervention.
 2. **Map the execution paths.** Trace representative success, degraded, and failure paths across entry points, services, queues, jobs, stores, third parties, and control planes. Include partial completion and asynchronous delay.
-3. **Write measurement contracts.** For every required signal, define identity, owner, unit, population, event boundary, success and failure semantics, time window, aggregation, dimensions, expected-volume behavior, and what missing data means.
+3. **Write measurement contracts.** Give every required signal a stable, namespaced key and plain-language label, such as `OBS-settlement-age — Settlement completion age`. Define identity, owner, unit, population, event boundary, success and failure semantics, time window, aggregation, dimensions, expected-volume behavior, and what missing data means. Repeat both key and label whenever the contract is cited; never pass naked IDs.
 4. **Layer the signals.** Separate feature or business outcome, service health, dependency behavior, resource or saturation evidence, and control-path health. Do not use infrastructure health as a proxy for customer success.
 5. **Choose views by question.** Select metrics, distributions, traces, structured events, logs, profiles, topology, or audits according to the uncertainty each can resolve. State what each view cannot prove.
 6. **Design correlation.** Propagate stable request, trace, job, message, tenant, release, version, and feature-exposure context where needed to reconstruct behavior. Preserve context across retries, fanout, queues, and scheduled work.
 7. **Design operational navigation.** Create a small customer-proximate health entry surface, then define drill-down paths through affected slices, dependencies, recent changes, traces, logs, and ownership metadata.
 8. **Design interruption and control.** Page only on user or service risk with an authorized recipient and plausible action. Route lower-urgency evidence elsewhere. Ensure observation, communication, credentials, disablement, and recovery controls survive the failure they govern.
-9. **Bind telemetry to release.** Define baseline, canary or cohort comparison, correctness invariants, business guardrails, service limits, hold and abort conditions, and the signals needed to retire a feature flag safely.
+9. **Supply release evidence.** Identify which named signals and missing-data rules inform baseline, cohort comparison, correctness, business, service, operational-load, and flag-retirement decisions. Leave exposure states and promotion, hold, or abort authority to `controlled-release-design`, and leave verification-method selection to `verification-strategy-design`.
 10. **Plan verification and lifecycle.** Specify how instrumentation, semantics, privacy, cardinality, alert routing, and dashboards will be tested; name renewal triggers and retirement criteria for temporary signals.
 
 Use [references/observability-design.md](references/observability-design.md) for system patterns and the design template.
@@ -32,6 +32,7 @@ Use [references/observability-design.md](references/observability-design.md) for
 ## Quality gates
 
 - Every signal supports a named decision, claim, or diagnostic question.
+- Every signal reference repeats its plain-language label and traces to one owning contract.
 - Feature outcomes, service health, dependencies, infrastructure, and control paths are distinguished.
 - Signal semantics include population, denominator, time window, missing-volume behavior, and ownership.
 - Cross-service and asynchronous paths carry enough context to reconstruct partial failure.

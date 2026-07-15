@@ -1,4 +1,4 @@
 interface:
   display_name: "Retrospective Redesign"
   short_description: "Redesign completed systems from first principles"
-  default_prompt: "Use $retrospective-redesign to rethink this completed implementation from first principles and choose whether to prune, reshape, or rebuild it."
+  default_prompt: "Use $retrospective-redesign to resolve the redesign scale, rethink this completed implementation from first principles, and choose whether to prune, reshape, or rebuild it."

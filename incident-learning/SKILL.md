@@ -24,7 +24,7 @@ Reconstruct how the system and organization behaved from the perspectives availa
 6. **Study what went right.** Identify expertise, redundancy, improvisation, escalation, tooling, or slack that kept the outcome from becoming worse. Preserve that capacity deliberately.
 7. **Examine systemic conditions.** Look for drift, competing goals, normal workarounds, latent conditions, protective controls that became failure paths, and organizational handoffs.
 8. **Separate learning from remediation.** Generate multiple intervention options only after the account is sufficiently rich. Consider effectiveness, new complexity, ownership, and verification.
-9. **Create durable follow-through.** Route findings into tests, architecture, defaults, tools, staffing, training, runbooks, metrics, alerting, or governance. Assign owners and review dates.
+9. **Create branching follow-through.** Classify each learned gap before selecting an intervention. Route detection, diagnosis, or paging failures to operational feedback; signal-contract failures to observability design; escaped behavior to verification; domain or structural gaps to focused design; overload to capacity engineering; rollout failures to release or change planning; ownership and authority gaps to ownership or decision work; and accumulated foundational mismatch to retrospective redesign. Run independent branches in parallel when they own different gaps. Update a runbook, automation, or local process directly when that is the smallest sufficient intervention. Assign owners and review dates.
 
 Use [references/incident-learning-record.md](references/incident-learning-record.md) for prompts and the output structure.
 
@@ -36,6 +36,7 @@ Use [references/incident-learning-record.md](references/incident-learning-record
 - Record surprises and what prevented a worse outcome.
 - Identify conditions and interactions, not only a trigger or person.
 - Make actions proportional and connect each to an expected risk reduction and verification signal.
+- Route each action by the learned gap and explain why a narrower intervention is or is not sufficient.
 - Assign owners and follow-up dates without implying that action count equals learning quality.
 
 ## Reject common failure modes

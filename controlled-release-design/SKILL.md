@@ -20,14 +20,20 @@ Turn release from a binary event into governed exposure with observable outcomes
 2. **Classify effects and reversibility.** Identify reads, writes, schema or contract changes, messages, money movement, notifications, security decisions, and other effects that disablement cannot undo. Define compensation or fail-forward where rollback is false.
 3. **Choose the control topology.** Decide where exposure is assigned and enforced. Prefer one authoritative assignment propagated across services when independent evaluation could create inconsistent behavior; add local gates only for genuinely local controls.
 4. **Specify flag semantics.** Define states, defaults, targeting rules, precedence, propagation delay, cache behavior, unavailable-control behavior, authorization, audit, owner, expiry, and whether clients can observe or influence assignment.
-5. **Design coexistence.** State valid old, mixed, and new producer/consumer combinations, data authority, retries, duplicate execution, delayed work, and compatibility. Use additive contracts or shadow paths where needed.
+5. **Design exposure during coexistence.** State how valid old, mixed, and new producer/consumer combinations behave under each exposure state, including retries, duplicate execution, delayed work, and compatibility. Consume the declared data and effect authority from the enclosing change contract; if it is absent or disputed, route to `high-risk-change-planning` rather than redefining it here. Use additive contracts or shadow paths where needed.
 6. **Select exposure steps.** Choose internal users, shadow traffic, opt-in tenants, representative cohorts, regional or cell slices, percentage ramps, or other units based on what isolates consequence and produces useful evidence.
-7. **Define evidence.** Pair customer or business outcomes with correctness invariants, service health, dependency behavior, capacity, operational load, and control health. Specify denominators, baselines, comparison windows, important slices, and uncertainty.
-8. **Write phase contracts.** Give each phase entry criteria, action, observation window, success, hold, abort, recovery, communication, and owner. Promotion must be a decision based on evidence, not elapsed time alone.
+7. **Define promotion evidence requirements.** State which named business outcomes, correctness claims, service signals, capacity limits, operational-load measures, and control-health checks a promotion, hold, or abort decision consumes. Cite each with its namespaced key and plain-language label. Do not redefine signal semantics owned by `observability-design` or verification methods owned by `verification-strategy-design`.
+8. **Write phase contracts.** Give each exposure phase entry criteria, action, observation window, success, hold, abort, recovery, communication, and owner. Reference the named evidence requirements rather than copying their contracts. Promotion must be an accountable decision based on evidence, not elapsed time alone.
 9. **Design retreat.** Define stop-exposure, kill-switch, rollback, traffic reduction, fail-forward, repair, or compensation paths. Verify that control, observation, credentials, and communications remain available during the targeted failure.
 10. **Plan completion.** Define full-adoption evidence, flag and branch removal, stale-client handling, metric and dashboard retirement, documentation updates, deadline, and cleanup verification.
 
 Use [references/controlled-release-design.md](references/controlled-release-design.md) for control patterns and the release contract template.
+
+## Compose with a transition plan
+
+- Use this skill alone for an ordinary feature whose deployment and exposure need separation.
+- When a risky migration already has a `high-risk-change-planning` artifact, make this an optional nested release-control subplan. Inherit transition scope, invariants, compatibility, irreversible effects, data authority, and recovery; do not create a competing master phase plan.
+- Keep this subplan authoritative only for assignment topology, exposure states, cohorts, promotion, hold, abort, kill controls, and flag retirement.
 
 ## Quality gates
 
@@ -37,6 +43,7 @@ Use [references/controlled-release-design.md](references/controlled-release-desi
 - Irreversible effects and compensations are explicit.
 - Every phase has entry, success, hold, abort, observation, and ownership criteria.
 - Business outcomes, correctness, service health, infrastructure, and control health are all considered.
+- Every cited signal or verification claim repeats its plain-language label and traces to one canonical owner.
 - Abort controls are reachable, authorized, audited, and independent enough for the failure class.
 - The flag and temporary code have expiry, removal criteria, owner, and verification.
 

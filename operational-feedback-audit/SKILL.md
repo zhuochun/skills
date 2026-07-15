@@ -16,7 +16,7 @@ Evaluate whether telemetry helps people and automation make correct, timely deci
 ## Audit workflow
 
 1. **Define the service promise.** State what useful behavior callers or customers expect, who owns it, and which populations or workflows matter.
-2. **Write measurement contracts.** For every key signal, name identity, unit, population, time window, success/failure semantics, missing-volume behavior, aggregation, and dimensions. Identify proxy metrics that can remain green while users are harmed.
+2. **Recover and test measurement contracts.** Locate the intended contract and reconstruct the deployed semantics for every key signal: identity, unit, population, time window, success/failure meaning, missing-volume behavior, aggregation, dimensions, and owner. Treat an absent contract, semantic mismatch, or untraceable signal as a finding. Do not silently author a replacement and then evaluate it.
 3. **Evaluate the health entry surface.** Check whether a responder unfamiliar with the implementation can orient from a small, comparable set of customer-proximate signals before opening specialized diagnostics.
 4. **Match diagnostic views to questions.** Verify that metrics, distributions, traces, logs, profiles, events, and resource views each answer a stated question. Check tails, recency, cardinality, and asynchronous delay where averages conceal behavior.
 5. **Reconstruct runtime structure.** Compare declared dependencies with observed service graphs, request or job context, queues, retries, fanout, deployments, and ownership metadata.
@@ -31,6 +31,7 @@ Use [references/operational-feedback-audit.md](references/operational-feedback-a
 
 - Tie the first health surface to a service promise rather than only host resources.
 - Make signal semantics and missing-data behavior explicit.
+- Distinguish intended, deployed, observed, and inferred signal semantics; preserve counterexamples and required deltas.
 - Trace at least one user-impact path from symptom to owner and control.
 - Review the pager as a finite human-attention surface.
 - Identify stale topology or metadata and its operational consequence.
@@ -46,3 +47,4 @@ Use [references/operational-feedback-audit.md](references/operational-feedback-a
 - Paging proxy teams because ownership metadata is absent.
 - Dashboards and failover controls hosted only inside the impaired domain.
 - Postmortem action items that add signals but never retire misleading ones.
+- Recreating observability design inside the audit instead of reporting contract defects and routing required deltas to `observability-design`.

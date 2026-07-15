@@ -19,7 +19,7 @@ Use this template proportionately. A low-risk UI change needs less machinery tha
 
 Possible states include `off`, `shadow`, `internal`, `opt-in`, `limited`, `ramping`, `on`, and `retired`. Use only states with distinct behavior and decisions.
 
-| State | Assignment | Executed behavior | Visible or durable effects | Evidence required to enter | Allowed next states |
+| State | Assignment | Executed behavior | Visible or durable effects | Named promotion conditions | Allowed next states |
 | --- | --- | --- | --- | --- | --- |
 
 Record:
@@ -54,14 +54,14 @@ Choose the unit that bounds consequence and preserves interpretable comparison, 
 
 ## Phase contract
 
-| Phase | Population | Entry criteria | Action | Observation window | Success | Hold | Abort | Recovery or compensation | Owner |
+| Exposure phase | Population | Entry criteria | Action | Observation window | Named success conditions | Hold | Abort | Recovery or compensation | Owner |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 
 Treat absent traffic, missing telemetry, sample imbalance, delayed effects, and unresolved divergence as hold conditions rather than success.
 
-## Evidence portfolio
+## Promotion evidence requirements
 
-Include only evidence tied to a claim:
+Name only the evidence that a promotion, hold, or abort decision consumes:
 
 - **Outcome:** completion, adoption, conversion, quality, or other customer-recognizable result, plus an opposing metric.
 - **Correctness:** invariants, old/new comparison, duplication, loss, ordering, reconciliation, or audit evidence.
@@ -70,7 +70,9 @@ Include only evidence tied to a claim:
 - **Operations:** paging, manual intervention, support load, repair demand, and ownership routing.
 - **Control:** assignment, propagation, configuration age, kill-switch reachability, permissions, and audit.
 
-State baseline, denominator, expected delay, important dimensions, uncertainty, and who makes the promotion decision.
+Reference each item with its namespaced key and plain-language label, such as `OBS-settlement-age — Settlement completion age` or `VER-ledger-conservation — Ledger value is conserved`. The prefix identifies the contract family. Do not duplicate the measurement contract or verification method here. State the comparison or decision rule, uncertainty, missing-evidence behavior, and accountable promotion owner.
+
+When this release is nested inside a high-risk change, inherit the master transition's scope, invariants, compatibility matrix, irreversible effects, data authority, recovery, and cutover. This subplan remains authoritative only for exposure assignment and decisions.
 
 ## Completion checklist
 

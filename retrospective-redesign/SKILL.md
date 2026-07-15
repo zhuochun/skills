@@ -1,6 +1,6 @@
 ---
 name: retrospective-redesign
-description: Reconsider a completed feature, subsystem, or codebase from first principles using everything learned during implementation and operation. Use when the user asks for retrospective redesign, post-implementation simplification, dead-code or complexity reduction, a "build it again knowing what we know now" review, or a decision between pruning, reshaping, and rebuilding. Treat the current implementation as evidence rather than the assumed solution; derive a simpler target, compare it with the current design, and implement only changes authorized by the request.
+description: Reconsider a completed feature, module, service, subsystem, multi-service system, or wider codebase from first principles using everything learned during implementation and operation. Use for retrospective redesign, post-implementation simplification, dead-code or complexity reduction, a "build it again knowing what we know now" review, or a decision between pruning, reshaping, and rebuilding. Resolve the redesign scale, select the appropriate module, service-boundary, or architecture lens, treat the current implementation as evidence rather than the assumed solution, and implement only changes authorized by the request.
 ---
 
 # Retrospective Redesign
@@ -9,7 +9,15 @@ Retain the lessons; re-justify the structure.
 
 Do not begin with local refactors. First extract what the completed work taught, then derive the design that would have been chosen if those lessons were known from the beginning. Only then compare that target with the current implementation and decide whether to prune, reshape, or rebuild.
 
-Load and use `$deep-module-design` when designing modules, interfaces, seams, state ownership, and tests.
+## Select redesign scale, lens, and decision ownership
+
+Resolve the redesign scale before deriving the target. Use the smallest sufficient lens rather than stacking every related skill.
+
+- **Module or capability:** Focus on interface depth, state ownership, seams, local behavior, tests, and incremental adoption. Load and use `$deep-module-design`. Ordinary repository verification and review may be sufficient for a reversible reshape.
+- **Service or subsystem:** Include public contracts, data authority, runtime dependencies, operational controls, ownership, and compatibility. Load and use `$service-boundary-design` for deployable, data, failure, or ownership boundaries. Route consequential quality claims to a fresh `$architecture-risk-evaluation` pass when independence from the redesign context matters.
+- **Multi-service system or wider estate:** Include cross-team authority, value streams, systemic qualities, migration economics, platform and operating dependencies, and portfolio sequencing. Use `$architecture-risk-evaluation` for preliminary scenario testing, route consequential claims to a fresh evaluation pass, and use `$technical-decision-making` for accountable closure when alternatives or risk acceptance are contested.
+
+The agent proposes the scale and consequence classification; the accountable human decision owner confirms, narrows, overrides, or accepts residual risk. Record that judgment and its basis. Do not turn these heuristics into automatic governance.
 
 ## Respect the requested mode
 
@@ -19,7 +27,7 @@ Load and use `$deep-module-design` when designing modules, interfaces, seams, st
 
 ## 1. Frame the retrospective
 
-Resolve the feature or subsystem, its completion point or fixed point when available, and the repository instructions that govern it. Bound the evidence surface to the selected behavior, its direct producers and consumers, its public interfaces, and its acceptance tests; widen only when ownership actually crosses that scope. Record the initial worktree state and preserve unrelated changes.
+Resolve the feature, module, service, subsystem, system, or estate slice; its completion point or fixed point when available; its decision owner; and the repository instructions that govern it. Bound the evidence surface to the selected behavior, its direct producers and consumers, public interfaces, runtime and ownership boundaries, and acceptance evidence; widen only when the redesign question or authority actually crosses that scope. Record the initial worktree state and preserve unrelated changes.
 
 Read the evidence that captures what is now known:
 
@@ -90,9 +98,11 @@ Use when the goals agree but ownership, interfaces, state, or flow differ, and b
 
 ### Rebuild
 
-Use when the foundational model or flow differs and adapting the current structure would preserve more accidental complexity than replacement. Prefer a parallel implementation, explicit equivalence checks, cutover plan, and rollback path. Do not delete the working implementation before the replacement is verified and the cutover is authorized.
+Use when the foundational model or flow differs and adapting the current structure would preserve more accidental complexity than replacement. Prefer a parallel implementation, explicit equivalence checks, cutover plan, and rollback path. Do not delete the working implementation before the replacement has proportionate independent evidence and the accountable human authorizes cutover or explicitly accepts the remaining evidence gap and residual risk.
 
 Base the route on migration economics, behavioral risk, proof of equivalence, temporary dual-system cost, and the amount of accidental complexity each path retains. Do not recommend a rebuild merely because a clean design looks attractive.
+
+For consequential reshape or rebuild, separate builder self-checks from independent judgment. Public-contract changes, durable-data migration, cross-service coordination, security or financial effects, large blast radius, irreversible behavior, and operating-model changes normally warrant an independent architecture challenge, a high-risk transition plan, and executed verification before cutover. Present the evidence and recommendation to the accountable human; do not claim equivalence or make the risk-acceptance decision on their behalf.
 
 ## 5. Apply the authorized path
 
@@ -103,6 +113,7 @@ For destructive or irreversible changes, refresh identity, configuration, and ot
 - For **prune**, delete proven dead paths and simplify duplicated or unnecessary machinery in coherent slices.
 - For **reshape**, establish the target seam, migrate one vertical behavior slice at a time, verify it, then remove the replaced path.
 - For **rebuild**, keep the existing path working while constructing and verifying the replacement; stop before cutover unless the user authorized it.
+- When the redesign crosses module, service, or system boundaries, use or recommend the appropriate focused skill during the redesign. Stop and hand control to an independent evaluation pass where self-review would contaminate the consequential judgment.
 
 After each slice, run the narrowest useful behavioral checks. Finish with the repository's full relevant verification and diff/format checks. Preserve unrelated worktree changes.
 
@@ -119,6 +130,8 @@ Lead with the verdict and route: **prune**, **reshape**, or **rebuild**. Then re
 5. verification evidence and behavior-preservation status;
 6. complexity removed or expected to disappear, plus the justification for any changed or disputed hardening;
 7. deferred behavior changes, uncertain contracts, and remaining risks.
+
+Also report the resolved redesign scale, design lenses used, accountable decision owner, builder self-checks, independent evidence or its absence, accepted residual risk, and any selected next skill or parallel routes when further design, challenge, transition planning, or verification is required.
 
 Measure structural reduction with concepts, owners, interfaces, states, branches, representations, modules, and test seams. Use line-count reduction only as secondary evidence.
 

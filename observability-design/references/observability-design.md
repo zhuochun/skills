@@ -24,8 +24,10 @@ Include the customer entry point, authoritative write, queue or scheduler, impor
 
 ### 3. Measurement contracts
 
-| Signal | Layer | Decision or claim | Unit and population | Success/failure semantics | Window and aggregation | Dimensions | Missing data means | Owner |
+| Signal key and plain-language label | Layer | Decision or claim | Unit and population | Success/failure semantics | Window and aggregation | Dimensions | Missing data means | Owner |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+
+Use readable keys such as `OBS-settlement-age — Settlement completion age`. Whenever another plan cites a key, repeat the label and link or point back to this contract. The key is an address, not a substitute for meaning.
 
 Useful layers:
 
@@ -49,10 +51,12 @@ For every page, record the user or service risk, distinct diagnostic region, aut
 
 ### 5. Verification and release use
 
-| Claim | Pre-release check | Runtime evidence | Baseline or comparator | Hold/abort threshold | Evidence owner |
+| Consuming claim or release decision | Signal key and label | Runtime interpretation | Baseline or comparator | Missing or invalid evidence behavior | Consumer and signal owner |
 | --- | --- | --- | --- | --- | --- |
 
 Verify emission, semantics, expected-volume behavior, trace continuity, label cardinality, redaction, retention, dashboard queries, alert routing, links, and control-path reachability. A synthetic event can verify plumbing; it does not prove production representativeness.
+
+This table supplies evidence contracts. `controlled-release-design` owns promotion, hold, and abort rules; `verification-strategy-design` owns the methods and oracles that decide whether a claim is supported.
 
 ## Multi-service feature rules
 

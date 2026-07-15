@@ -20,12 +20,20 @@ Turn a proposed end state into a sequence of survivable intermediate states. Opt
 3. **Separate plan from effect.** For dangerous work, make target selection and policy decisions reviewable before execution. Require version checks, idempotency, authorization, and stale-plan protection at apply time.
 4. **Design coexistence.** Add the new form before removing the old where possible. Choose adapters, additive contracts, replication, shadow reads, dual comparison, cohort routing, facades, or temporary translation according to the change class.
 5. **Define phases.** Use explicit introduction, validation, limited adoption, expansion, authoritative cutover, and cleanup phases. Give every phase entry criteria, actions, evidence, abort conditions, and owner.
-6. **Build the evidence loop.** Define customer-proximate health, correctness invariants, compatibility checks, performance limits, operational load, and uncertainty. State what each signal cannot prove.
+6. **State evidence obligations.** Name the transition claims, invariants, and decisions that require evidence. Reference observability and verification contracts with their namespaced keys and plain-language labels; do not duplicate measurement contracts or choose detailed verification methods inside the transition plan.
 7. **Design retreat.** Specify rollback, disablement, traffic reduction, fail-forward, or compensation. Verify that observation, credentials, cleanup, and control paths survive the failure being managed.
 8. **Bound coordination.** Inventory consumer order, old/new version combinations, data authority, freezes, communications, and support requirements. Prefer local migrations over synchronized flag days.
 9. **Plan cleanup.** Name removal criteria, deprecation telemetry, deadline, and owner for flags, adapters, duplicate paths, temporary stores, and documentation.
 
 Use [references/change-plan.md](references/change-plan.md) for change-specific patterns and the plan template.
+
+## Compose specialized controls
+
+- Keep this plan authoritative for old, transitional, and new states; data and effect authority; compatibility; cutover; recovery; compensation; and overall cleanup.
+- Add `controlled-release-design` as an optional nested subplan only when cohorts, flags, traffic, regions, dark launch, or other exposure control matters. That subplan owns exposure assignment and promotion, hold, and abort decisions—not data authority or cutover correctness.
+- Use `observability-design` for named signal semantics, correlation, navigation, and missing-data behavior.
+- Use `verification-strategy-design` for named claims, methods, oracles, evidence limits, execution points, and renewal.
+- Keep the work in one flow when possible. Reference each item as a readable key plus label, such as `INV-ledger-conservation — Ledger value is conserved`, rather than copying another skill's table.
 
 ## Quality gates
 
@@ -34,6 +42,7 @@ Require all of the following before calling the plan ready:
 - old, mixed, and new states have defined behavior;
 - irreversible effects and compensations are explicit;
 - every phase has measurable entry, success, and abort criteria;
+- specialized evidence, release, and observability details have one canonical owner and remain traceable from the master transition;
 - correctness and customer health are both observed;
 - rollback or fail-forward has been tested at an appropriate level;
 - the control path is independent enough for the targeted failure class;

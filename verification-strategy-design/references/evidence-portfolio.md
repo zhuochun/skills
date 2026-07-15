@@ -21,8 +21,10 @@
 
 ## Strategy matrix
 
-| Claim | Consequence/reversibility | Assumptions | Evidence and oracle | What it cannot prove | Owner/run point | Renewal trigger |
+| Claim key and plain-language label | Consequence/reversibility | Assumptions | Evidence and oracle | What it cannot prove | Owner/run point | Renewal trigger |
 | --- | --- | --- | --- | --- | --- | --- |
+
+Use keys such as `VER-ledger-conservation — Ledger value is conserved`. Every external reference must repeat the label and point back to this entry. A key makes composition traceable; it must not force a human to reconstruct meaning from an ID alone.
 
 ## Cross-boundary contract prompts
 
@@ -46,3 +48,5 @@ Record:
 5. Feedback-time budget
 6. Evidence maintenance and stale-signal review
 7. How escaped failures update earlier layers
+
+The portfolio is a plan. Record execution and adjudication separately; an unrun method or unobserved signal is an evidence gap, not a passing result.

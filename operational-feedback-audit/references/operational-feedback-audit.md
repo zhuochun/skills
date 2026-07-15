@@ -22,12 +22,14 @@ Include successful operations, latency by operation class, correctness or durabi
 
 Include desired-versus-observed convergence, queue age, reconciliation failures, stale authority, propagation lag, and the health of the independent control path.
 
-## Measurement contract
+## Contract recovery and conformance
 
-| Signal | Decision | Identity/population | Unit/window | Success/failure | Missing-data rule | Dimensions/owner |
+| Signal key and label | Intended contract and source | Deployed or inferred semantics | Runtime counterexample or deviation | Decision consequence | Required design delta and owner |
 | --- | --- | --- | --- | --- | --- | --- |
 
-Ask whether each aggregate can hide a customer cohort, route, region, dependency, tail, or collapsed denominator.
+Recover the contract from the observability design, code, telemetry configuration, dashboards, alert queries, and owner accounts. Keep intended, deployed, observed, and inferred meanings distinct. If no intended contract exists, record that absence; do not create a normative replacement inside the audit.
+
+Ask whether each aggregate can hide a customer cohort, route, region, dependency, tail, or collapsed denominator. Preserve the concrete incident, query, page, or decision that falsified the contract, then route the required delta to `observability-design`.
 
 ## Human-alarm gate
 
@@ -56,7 +58,7 @@ Trace one affected request, event, or job through:
 
 1. Service promise, populations, and ownership
 2. Current health entry surface
-3. Measurement-contract defects
+3. Measurement-contract conformance, counterexamples, and required design deltas
 4. Diagnostic-view and runtime-context gaps
 5. Alarm portfolio and routing findings
 6. Control-path dependencies and failure-domain risks

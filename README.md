@@ -41,8 +41,8 @@ Do not start from a fashionable method or invoke every skill as a stage gate. As
 
 | Skill | It owns | Primary output |
 | --- | --- | --- |
-| [`operational-feedback-audit`](operational-feedback-audit/) | The live telemetry-to-decision-to-action loop | Measurement contracts, alert and diagnostic findings, routing and control-path risks |
-| [`incident-learning`](incident-learning/) | Learning from incidents, near misses, and operational surprises | Evidence timeline, local perspectives, model gaps, protective capacity, and follow-through |
+| [`operational-feedback-audit`](operational-feedback-audit/) | The live telemetry-to-decision-to-action loop | Contract counterexamples and deltas, alert and diagnostic findings, routing and control-path risks |
+| [`incident-learning`](incident-learning/) | Learning from incidents, near misses, and operational surprises | Evidence timeline, local perspectives, model gaps, protective capacity, and branching follow-through |
 | [`retrospective-redesign`](retrospective-redesign/) | First-principles redesign after implementation or operational learning | Learned requirements, simpler target, current comparison, and prune/reshape/rebuild route |
 
 ### Develop technical capability
@@ -78,15 +78,27 @@ flowchart LR
     TD --> HR["High-risk change planning"]
     MD --> OD
     SB --> OD
-    OD --> CR["Controlled release design"]
-    HR --> CR
-    CR --> VS["Verification strategy design"]
-    VS --> OF["Operational feedback audit"]
-    OD --> OF
+    MD --> CR["Controlled release design"]
+    MD --> VS["Verification strategy design"]
+    HR -.-> CR
+    HR --> OD
+    HR --> VS
+    CR --> EX["Implementation and evidence execution"]
+    OD --> EX
+    VS --> EX
+    HR --> EX
+    EX --> DEC["Accountable promotion or cutover"]
+    DEC --> OF["Operational feedback audit"]
     OF -.-> OD
 
     OF --> IL["Incident learning"]
-    IL --> RR["Retrospective redesign"]
+    IL --> OD
+    IL --> VS
+    IL --> CAP
+    IL --> OWN
+    IL --> CR
+    IL --> HR
+    IL -.-> RR["Retrospective redesign"]
     RR --> DM
     RR --> SB
     RR --> MD
@@ -108,9 +120,13 @@ A skill that creates an artifact should not silently certify that artifact. For 
 | Controlled release design | `verification-strategy-design` for claims and phase evidence; accountable owners retain promotion authority |
 | High-risk transition plan | `verification-strategy-design` for falsifiable phase and invariant evidence |
 | Running telemetry and response system | `operational-feedback-audit` against observed decisions and incidents |
-| Completed implementation | `retrospective-redesign` using implementation and operation as evidence |
+| Completed implementation | Executed repository and independent evidence when warranted; `retrospective-redesign` only when accumulated learning justifies reconsidering the design |
 
 Separation does not require bureaucracy or different people for every local change. It requires a distinct contract: the evaluator receives the artifact and evidence, can identify missing claims, and is not required to defend the producer's original choices. Increase independence with consequence, irreversibility, and uncertainty.
+
+### Keep cross-skill references readable
+
+When skills compose in one task, keep the decision context in flow instead of creating a handoff file. Use a stable namespaced key together with its plain-language label, for example `OBS-settlement-age — Settlement completion age`. Repeat both whenever the contract is cited. The prefix identifies the contract family; the label preserves human meaning.
 
 ## Important distinctions
 
@@ -148,20 +164,21 @@ Use `architecture-risk-evaluation` to ask whether the proposed target architectu
 architecture-risk-evaluation
   -> technical-decision-making
   -> high-risk-change-planning
-  -> verification-strategy-design
+  -> co-design verification, observability, and optional controlled release
+  -> implementation, executed evidence, and accountable cutover
 ```
 
 ### Controlled release versus high-risk change
 
-Use `controlled-release-design` to define exposure assignment, feature-flag semantics, cohorts, business and technical evidence, promotion, abort, and cleanup. Use `high-risk-change-planning` when the larger problem is a staged migration with data authority, coexistence, irreversible effects, consumer coordination, and recovery. A high-risk plan may consume a controlled-release design; many ordinary feature releases do not need the full migration workflow.
+Use `controlled-release-design` to define exposure assignment, feature-flag semantics, cohorts, promotion, hold, abort, kill controls, and flag cleanup. Use `high-risk-change-planning` when the larger problem is a staged migration with data authority, coexistence, irreversible effects, consumer coordination, cutover, and recovery. When both apply, controlled release is an optional nested subplan of the authoritative transition plan; many ordinary feature releases need controlled exposure without the full migration workflow, and some migrations need no exposure subplan.
 
 ### Observability design versus operational feedback audit
 
-Use `observability-design` before implementation or release to define measurement contracts, correlation, health entry points, diagnostic navigation, alerts, and control evidence. Use `operational-feedback-audit` after representative operation to test whether those signals actually supported correct orientation, ownership, diagnosis, recovery, and learning.
+Use `observability-design` before implementation or release to define normative measurement contracts, correlation, health entry points, diagnostic navigation, alerts, and control evidence. Use `operational-feedback-audit` after representative operation to recover those contracts, compare intended and deployed semantics, and report runtime counterexamples and required design deltas. A missing contract is an audit finding, not permission for the auditor to create and certify its own replacement.
 
 ```text
 observability-design
-  -> implementation and controlled release
+  -> implementation, with controlled release when applicable
   -> operational-feedback-audit
   -> revise observability design
 ```
@@ -192,12 +209,12 @@ These are complementary lenses, not one universal platform workflow.
 domain-modeling
   -> service-boundary-design, when deployment/data/ownership is in question
   -> deep-module-design
-  -> observability-design
   -> architecture-risk-evaluation, when consequences justify it
   -> technical-decision-making
   -> high-risk-change-planning, when transition risk justifies it
-  -> controlled-release-design, when exposure must be governed
-  -> verification-strategy-design
+  -> co-design observability, verification, and controlled release when they apply
+  -> implementation and evidence execution
+  -> accountable promotion, abort, or risk decision
   -> operational-feedback-audit after release
 ```
 
@@ -207,9 +224,12 @@ domain-modeling
 domain-modeling
   -> service-boundary-design
   -> deep-module-design in each affected codebase
-  -> observability-design for the end-to-end outcome and component evidence
-  -> controlled-release-design for authoritative assignment and mixed states
-  -> verification-strategy-design
+  -> co-design:
+       observability-design for end-to-end and component evidence
+       controlled-release-design for authoritative assignment and mixed states
+       verification-strategy-design for claims, methods, and oracles
+  -> implementation and evidence execution
+  -> accountable promotion or abort
   -> operational-feedback-audit after representative use
 ```
 
@@ -220,6 +240,7 @@ Do not let each service independently decide feature exposure when the workflow 
 ```text
 service-surface-mapping
   -> domain-modeling, service-boundary-design, or deep-module-design for the discovered problem
+  -> verification-strategy-design for characterization and change claims
   -> observability-design when prospective evidence is missing
   -> operational-feedback-audit when the live response loop needs evaluation
   -> controlled-release-design before the first consequential feature rollout
@@ -244,7 +265,8 @@ codebase-architecture-assessment
 architecture-risk-evaluation, when assumptions need technical analysis
   -> technical-decision-making
   -> high-risk-change-planning
-  -> verification-strategy-design
+  -> co-design verification, observability, and optional controlled release
+  -> implementation and evidence execution
 ```
 
 ### Platform and service operating model
@@ -261,11 +283,37 @@ platform-capability-design
 
 ```text
 incident-learning
-  -> operational-feedback-audit
-  -> observability-design, when the evidence contract needs redesign
-  -> domain-modeling, codebase-architecture-assessment, or service-boundary-design
-  -> retrospective-redesign, when accumulated learning justifies first-principles reconsideration
+  -> operational-feedback-audit for detection, diagnosis, paging, or routing gaps
+  -> observability-design for signal-contract gaps
+  -> verification-strategy-design for escaped behavior or evidence gaps
+  -> domain-modeling, codebase-architecture-assessment, deep-module-design,
+     or service-boundary-design for focused model or structure gaps
+  -> service-capacity-engineering for overload and recovery gaps
+  -> controlled-release-design or high-risk-change-planning for rollout gaps
+  -> service-ownership-design or technical-decision-making for authority gaps
+  -> update a runbook, automation, or local process directly when sufficient
+  -> retrospective-redesign only when accumulated learning invalidates the foundational design
 ```
+
+One incident may produce several independent branches. Do not force every finding through retrospective redesign or through one serial workflow.
+
+### Retrospective redesign by scale
+
+```text
+module or capability
+  -> deep-module-design as the primary lens
+
+service or subsystem
+  -> service-boundary-design when deployment, data, failure, or ownership is involved
+  -> architecture-risk-evaluation for consequential quality claims
+
+multi-service system or wider estate
+  -> architecture-risk-evaluation
+  -> technical-decision-making for accountable closure when needed
+  -> high-risk-change-planning and independent verification before consequential cutover
+```
+
+The redesign agent proposes the scale, evidence, and route. The accountable human confirms or changes that classification and owns cutover or residual-risk acceptance. Builder-run checks may support the decision but do not become an independent equivalence verdict merely because the same agent reports them.
 
 These are routing examples, not mandatory stage gates.
 

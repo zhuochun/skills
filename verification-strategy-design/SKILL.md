@@ -15,21 +15,24 @@ Create an evidence portfolio in which every method owns a specific uncertainty. 
 
 ## Strategy workflow
 
-1. **Inventory claims.** Rewrite vague confidence goals as falsifiable claims about design state, code behavior, consumer contracts, data, performance, failure handling, recovery, rollout, or diagnosis.
+1. **Inventory claims.** Rewrite vague confidence goals as falsifiable claims about design state, code behavior, consumer contracts, data, performance, failure handling, recovery, rollout, or diagnosis. Give each claim a stable key and plain-language label, such as `VER-ledger-conservation — Ledger value is conserved`; repeat both whenever another artifact cites it.
 2. **Classify risk.** For each claim, record consequence, likelihood or uncertainty, exposure, reversibility, affected population, and detection/recovery difficulty.
 3. **Expose assumptions.** Name environment, traffic, timing, ordering, dependency, identity, clock, failure, operator, and data assumptions that make the claim true.
 4. **Choose falsifying evidence.** Select the cheapest credible method that can disprove the claim. Add layers only when they cover distinct uncertainty or consequence justifies defense in depth.
 5. **State method boundaries.** Record what the method exercises, what it omits, how representative inputs and environments are, and how results can become stale.
 6. **Design oracles.** Define observable pass/fail properties, invariants, tolerances, and comparison rules. Avoid tests that merely reproduce implementation steps.
 7. **Sequence feedback.** Put fast, deterministic evidence early; reserve expensive, risky, or production-like evidence for claims that need it. Keep diagnostic artifacts when a layer fails.
-8. **Plan operational evidence.** Define canary, shadow, health, rollback, and incident signals without treating production observation as a substitute for earlier verification.
+8. **Consume operational evidence contracts.** Reference named signals from `observability-design` when canary, shadow, health, rollback, or incident evidence is needed. Define how that evidence falsifies a claim and its limits, but do not recreate signal semantics, dashboard navigation, or alert routing. Never treat production observation as a substitute for earlier verification.
 9. **Close the loop.** Convert counterexamples, escaped defects, incidents, and rollout findings into revised assumptions, regression evidence, runbooks, guardrails, or design changes.
+
+The strategy is a plan, not proof. Do not report a claim as verified until the named evidence has been executed or observed in the specified environment and adjudicated against its oracle. Preserve the executor handoff and remaining evidence gaps.
 
 Use [references/evidence-portfolio.md](references/evidence-portfolio.md) for method selection and the strategy matrix.
 
 ## Quality gates
 
 - Every required method maps to a named claim and risk.
+- Every claim reference includes a plain-language label and traces to its owning strategy entry.
 - Every claim has an explicit oracle or a documented evidence gap.
 - Consumer-visible semantics receive cross-boundary evidence.
 - Failure and recovery claims include operator and control-path behavior where relevant.

@@ -39,7 +39,7 @@
 
 ## Phase template
 
-| Phase | Entry criteria | Actions | Evidence | Abort/retreat | Owner |
+| Phase | Entry criteria | Actions | Named evidence obligations | Abort/retreat | Owner |
 | --- | --- | --- | --- | --- | --- |
 | 0. Baseline | | | | | |
 | 1. Introduce | | | | | |
@@ -54,9 +54,18 @@
 - Scope, invariants, affected populations, and exclusions
 - Dependencies and consumer/version matrix
 - Irreversible effects and compensation
-- Correctness, customer-health, performance, and operator-load signals
+- Named transition claims and required evidence, referencing observability and verification keys with their labels
 - Rollback, fail-forward, traffic reduction, and emergency stop
 - Control-path and credential availability
 - On-call, communications, approvals, and escalation
 - Cleanup inventory, retirement owner, and deadline
 - Unknowns, experiments, and decision points
+
+## Optional specialized subplans
+
+- Add a controlled-release subplan only when flags, cohorts, traffic, regions, dark launch, or other exposure control matters. It owns assignment, exposure states, promotion, hold, abort, kill controls, and flag retirement.
+- Reference observability contracts for signal meaning, correlation, missing-data behavior, and navigation.
+- Reference verification strategy entries for methods, oracles, limitations, run points, and renewal.
+- Keep this change plan authoritative for transition states, invariants, data and effect authority, compatibility, cutover, recovery, compensation, and overall cleanup.
+
+Use a namespaced key together with its plain-language label, for example `VER-ledger-conservation — Ledger value is conserved`. The prefix identifies the contract family. Never require a reader to decode a naked ID or search several copied tables for the authoritative version.

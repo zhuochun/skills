@@ -58,6 +58,25 @@ Keep uncertain ordering visible. Link primary artifacts where policy permits.
 
 Balance quick containment, deeper prevention, detection, recovery, and preservation of successful capacity. Record rejected interventions and their tradeoffs.
 
+## Route by learned gap
+
+| Learned gap | Smallest likely route |
+| --- | --- |
+| Detection, diagnosis, paging, or ownership routing | `operational-feedback-audit` |
+| Missing or misleading signal contract | `observability-design` |
+| Escaped invariant, behavior, or evidence layer | `verification-strategy-design`, followed by executed verification |
+| Ambiguous business meaning or policy | `domain-modeling` |
+| Local interface, state, seam, or change-locality problem | `deep-module-design` or `codebase-architecture-assessment` |
+| Deployable, data, failure, or ownership boundary | `service-boundary-design` or `architecture-risk-evaluation` |
+| Queueing, overload, retry, headroom, or recovery capacity | `service-capacity-engineering` |
+| Exposure, rollout, rollback, coexistence, or migration | `controlled-release-design` or `high-risk-change-planning` |
+| Responsibility, authority, access, escalation, or specialist support | `service-ownership-design` or `technical-decision-making` |
+| Stale runbook or fragile manual procedure | Update and exercise the runbook or local automation directly |
+| Repeated manual work that deserves shared capability | `platform-capability-design` |
+| Accumulated learning invalidates the foundational design | `retrospective-redesign` at the appropriate module, service, system, or estate scale |
+
+One incident can create several independent branches. Do not route every finding through retrospective redesign, create an approval gate, or convert a systemic condition into individual coaching by default.
+
 ## Follow-through
 
 - Changes promoted into tests, platform defaults, or readiness checks:
