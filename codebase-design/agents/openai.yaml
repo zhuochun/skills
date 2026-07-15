@@ -1,4 +1,0 @@
-interface:
-  display_name: "Codebase Design"
-  short_description: "Design deep modules around real change pressure"
-  default_prompt: "Use $codebase-design to design a deep, testable module at the right seam."

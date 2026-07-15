@@ -1,0 +1,4 @@
+interface:
+  display_name: "Verification Strategy Design"
+  short_description: "Match verification evidence to engineering risk"
+  default_prompt: "Use $verification-strategy-design to design a proportionate risk-to-evidence verification strategy."

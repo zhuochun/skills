@@ -1,4 +1,0 @@
-interface:
-  display_name: "Drive Technical Decisions"
-  short_description: "Turn contested technical choices into execution"
-  default_prompt: "Use $drive-technical-decisions to frame this technical decision, surface tradeoffs, clarify authority, and produce an executable decision record."

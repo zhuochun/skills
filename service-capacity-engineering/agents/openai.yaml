@@ -1,0 +1,4 @@
+interface:
+  display_name: "Service Capacity Engineering"
+  short_description: "Model capacity and design overload defenses"
+  default_prompt: "Use $service-capacity-engineering to model this service capacity, test bottlenecks and headroom, and design overload behavior."

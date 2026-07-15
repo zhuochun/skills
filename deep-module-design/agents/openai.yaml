@@ -1,0 +1,4 @@
+interface:
+  display_name: "Deep Module Design"
+  short_description: "Design deep modules around real change pressure"
+  default_prompt: "Use $deep-module-design to design a deep, testable module at the right seam."

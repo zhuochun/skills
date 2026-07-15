@@ -9,7 +9,7 @@ Retain the lessons; re-justify the structure.
 
 Do not begin with local refactors. First extract what the completed work taught, then derive the design that would have been chosen if those lessons were known from the beginning. Only then compare that target with the current implementation and decide whether to prune, reshape, or rebuild.
 
-Load and use `$codebase-design` when designing modules, interfaces, seams, state ownership, and tests.
+Load and use `$deep-module-design` when designing modules, interfaces, seams, state ownership, and tests.
 
 ## Respect the requested mode
 

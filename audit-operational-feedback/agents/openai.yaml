@@ -1,4 +1,0 @@
-interface:
-  display_name: "Audit Operational Feedback"
-  short_description: "Audit telemetry, alerts, and response loops"
-  default_prompt: "Use $audit-operational-feedback to assess whether this service telemetry supports reliable decisions and action."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Service Ownership Design"
+  short_description: "Design sustainable full-cycle service ownership"
+  default_prompt: "Use $service-ownership-design to assess and design sustainable ownership for this service and team."

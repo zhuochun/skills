@@ -1,0 +1,4 @@
+interface:
+  display_name: "Technical Growth Coaching"
+  short_description: "Turn engineering work into deliberate growth"
+  default_prompt: "Use $technical-growth-coaching to design an evidence-based growth loop without turning it into a performance rating."

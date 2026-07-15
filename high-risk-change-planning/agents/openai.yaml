@@ -1,0 +1,4 @@
+interface:
+  display_name: "High-Risk Change Planning"
+  short_description: "Plan reversible transitions for risky changes"
+  default_prompt: "Use $high-risk-change-planning to design a staged, observable, and reversible transition for this high-risk change."

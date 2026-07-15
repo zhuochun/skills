@@ -1,4 +1,0 @@
-interface:
-  display_name: "Plan Safe System Change"
-  short_description: "Plan reversible migrations and risky changes"
-  default_prompt: "Use $plan-safe-system-change to design a staged, observable, and reversible change plan."
