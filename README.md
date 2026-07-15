@@ -313,7 +313,7 @@ multi-service system or wider estate
   -> high-risk-change-planning and independent verification before consequential cutover
 ```
 
-The redesign agent proposes the scale, evidence, and route. The accountable human confirms or changes that classification and owns cutover or residual-risk acceptance. Builder-run checks may support the decision but do not become an independent equivalence verdict merely because the same agent reports them.
+The redesign agent works read-only and proposes the scale, evidence, and route. It stops at the recommendation and names the focused follow-up skills needed for design refinement, implementation planning, controlled release, or verification. The accountable human confirms or changes the classification and owns cutover or residual-risk acceptance. Builder-run checks may support the decision but do not become an independent equivalence verdict merely because the same agent reports them.
 
 These are routing examples, not mandatory stage gates.
 
