@@ -402,3 +402,13 @@ skill-name/
 ```
 
 Every skill should have a focused trigger, explicit inputs and outputs, authority boundaries, quality gates, failure modes, valid UI metadata, and a passing `skill-creator` structural validation. Forward-test consequential workflows against at least two realistic artifacts: one ordinary case and one boundary condition where the correct result may be to stop, retain a control, or use a smaller skill.
+
+## Forward evaluations
+
+The [`evals`](evals/) suite compares fresh baseline and skill-assisted runs on
+the same pinned repository task. It grades decision fit, repository evidence,
+mechanism, tradeoffs, actionability, and economy while keeping case-specific
+anchors hidden from the producing agent. The first pilot uses the legacy
+[`md-writer`](evals/md-writer/cases.md) Atom package for ordinary and boundary
+cases across orientation, architecture assessment, module design, retrospective
+redesign, and verification strategy.
