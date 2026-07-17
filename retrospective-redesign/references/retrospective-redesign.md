@@ -1,49 +1,70 @@
 # Retrospective redesign review
 
-Use this reference to structure an ambiguous or consequential retrospective. It supports the analysis; it is not a handoff artifact that users must maintain.
+Use this reference to make the redesign reasoning explicit without turning it into a user-maintained handoff artifact.
 
-## Evidence record
+## Knowledge-derived reasoning model
 
-Keep evidence compact and distinguish what is known from what is inferred.
+This workflow is grounded in the following mechanisms from the knowledge base:
 
-| Learned requirement or constraint | Evidence | Observed, inferred, or unknown | Current design choice | Still justified? |
+| Mechanism | Consequence for this skill |
+| --- | --- |
+| **Architectural Learning Requires Consolidation** | Trigger on demonstrated learning from exploration, repeated change, and operation; convert it into boundaries, tests, rationale, defaults, merging, splitting, retirement, or quarantine rather than generic cleanup. |
+| **Essential Work Sets Improvement Ceilings** | Diagnose whether redesign addresses conceptual problem work, accidental friction, or both before predicting leverage. |
+| **Model Friction Signals Domain Misalignment** | Treat repeated exceptions, awkward business language, and non-local changes as evidence for model investigation, not automatically as module-cleanliness problems. |
+| **Triple Debt Model for Software Health** | Recover evidence across code and structure, shared understanding, and preserved intent so a cleaner target does not deepen cognitive or intent debt. |
+| **Regenerable Code Requires Externalized Commitments** | Require behavior, invariants, rationale, failure cases, and validation methods outside the old code before treating a rebuild as safely judgeable. |
+| **Reversibility Preserves Adaptive Capacity** | Compare routes by retreat, compatibility, temporary dual paths, irreversible effects, and cleanup—not target elegance alone. |
+| **Architecture Tradeoffs Require Contextual Weighting** | Weight changeability, safety, operability, cost, and migration against current business drivers and hard constraints. |
+| **Correctness Should Come From Structure, Not Vigilance** | Prefer encoding repeated lessons in durable structure, tests, defaults, and boundaries instead of relying on future memory. |
+| **Adversarial Evaluators Separate Generation From Judgment** | Use a fresh evaluator only when it owns distinct evidence, criteria, or decision rights; a second context alone does not create independence. |
+| **Blameless Incident Learning and Drift Into Failure** | Treat incidents, ordinary workarounds, and weak signals as model-revision evidence without turning local adaptations into blame or deleting them as mere mess. |
+
+These mechanisms are practice-grounded heuristics, not universal thresholds. Apply them proportionately to system lifetime, consequence, and available evidence.
+
+## Pressure diagnosis
+
+| Observed pressure | Essential, accidental, or mixed | Evidence | What would improve if removed? | What would remain? |
 | --- | --- | --- | --- | --- |
 
-Useful evidence includes:
+Examples of useful signals include repeated cross-cutting changes, recurring exceptions, concepts that change at different rates but share one boundary, tacit operational workarounds, overloaded names, duplicate representations, obsolete compatibility, slow feedback, and ownership that exists only in people's memory.
 
-- original and final requirements, accepted decisions, and supported environments;
-- current behavior, implementation, tests, public interfaces, and runtime discovery paths;
-- operational failures, performance evidence, user feedback, support cases, and real edge conditions;
-- change history, domain language, ownership, and operating constraints.
+## Learning and commitment ledger
 
-Rewrite implementation-shaped observations as requirements. For example, replace "`ReaderService` retains the active snapshot" with "readers observe one complete committed snapshot, including during refresh failures."
+Do not copy every historical detail. Record only facts that can change the target, route, or proof burden.
 
-Treat code as removable only when no required contract, production consumer, runtime discovery path, or supported operational use depends on it. Tests alone prove neither that code is live nor that it is dead.
+| Learned outcome, invariant, or behavior | Declared, tested, observed, inferred, or disputed | Evidence and confidence | Current carrier | Target disposition: preserve, retire by decision, or unresolved | Decision owner |
+| --- | --- | --- | --- | --- | --- |
+
+Use the ledger to separate durable commitments from inherited implementation choices. Current modules, names, representations, and control flow may change; contractual behavior, user expectations, failure semantics, and support policy require evidence and authority. If sources disagree, preserve the contradiction and identify the smallest probe or decision that resolves it.
+
+Treat code as removable only when no required contract, real consumer, runtime discovery path, supported operational use, or unresolved support-policy question depends on it. Tests alone prove neither that code is live nor that it is dead.
+
+## Candidate comparison
+
+Compare the current or minimally consolidated design with materially different candidates when the decision warrants it.
+
+| Candidate | Learning encoded | Commitments preserved or changed | Meaning and change locality | Failure and operating consequences | Reversibility and migration | Debt left behind |
+| --- | --- | --- | --- | --- | --- | --- |
+
+Reject an option eliminated by a hard constraint before weighting preferences. Name the evidence that would change the comparison.
 
 ## Route comparison
 
 | Route | Use when | Required reasoning | Typical follow-up |
 | --- | --- | --- | --- |
-| **Prune** | Essential ownership, interfaces, state, and flow converge with the target | Demonstrate that dead paths, duplicate representations, pass-through structure, speculative hooks, or obsolete compatibility protect no required behavior | Scoped implementation plus proportionate repository verification; use `$verification-strategy-design` when the behavior claim needs an explicit evidence portfolio |
-| **Reshape** | Goals converge but bounded ownership, interfaces, state, or flow differ | Identify stable seams, incremental slices, compatibility needs, and temporary complexity | `$deep-module-design` or `$service-boundary-design`; add `$high-risk-change-planning` when migration states or irreversible effects matter |
-| **Rebuild** | The foundational model or flow differs and adaptation would preserve excessive accidental complexity | Compare replacement economics, dual-system cost, equivalence proof, cutover, rollback or fail-forward, and retained complexity | Fresh `$architecture-risk-evaluation`, `$technical-decision-making` where closure is contested, `$high-risk-change-planning`, and `$verification-strategy-design`; add `$controlled-release-design` when exposure must be governed |
+| **Retain** | The current structure remains justified, evidence is too weak, remaining lifetime is short, or redesign would not repay its migration and proof cost | State what learning is already encoded, what friction remains, and what signal would trigger reconsideration | No design project; optionally add a focused test, rationale, or operational probe |
+| **Quarantine** | Disorder contains valuable or poorly understood behavior and full consolidation is currently too risky or expensive | Define the stable boundary, ownership, allowed leakage, evidence to collect, and exit trigger | `$deep-module-design` for the boundary; `$verification-strategy-design` for characterization when needed |
+| **Prune** | Ownership, model, interfaces, state, and flow substantially converge with the learned target | Demonstrate which concepts, paths, layers, or compatibility obligations are obsolete and which protections remain | Scoped implementation with proportionate repository verification |
+| **Reshape** | The learned model agrees on outcomes but bounded ownership, interfaces, state, or flow differ | Identify stable seams, incremental slices, compatibility, temporary complexity, and retirement | `$domain-modeling`, `$deep-module-design`, or `$service-boundary-design`; add `$high-risk-change-planning` when transition states or irreversible effects matter |
+| **Rebuild** | The foundational model differs, adaptation would preserve excessive accidental complexity, and durable commitments can judge a replacement | Compare replacement economics, externalized commitments, equivalence limits, dual-system cost, cutover, and rollback or fail-forward | Fresh `$architecture-risk-evaluation`, `$technical-decision-making` where closure is contested, `$high-risk-change-planning`, and `$verification-strategy-design`; add `$controlled-release-design` when exposure must be governed |
 
-Local exceptions may be reported without changing the primary route. Do not recommend rebuild merely because it offers a cleaner diagram.
+Local exceptions may be reported without changing the primary route. A clean diagram is not evidence for rebuild.
 
 ## Consequence routing
 
-Treat these as indicators for stronger independent challenge and verification, not automatic gates:
+Stronger independent challenge and verification are normally warranted for public-contract or support-policy change, durable-data migration, cross-service coordination, security or financial effect, large blast radius, irreversible behavior, or material operating-model change.
 
-- public-contract or support-policy change;
-- durable-data migration or changed data authority;
-- cross-service or cross-team coordination;
-- security, privacy, compliance, or financial effect;
-- large blast radius or irreversible behavior;
-- material operating-model, ownership, or on-call change.
-
-The redesign pass may use `$architecture-risk-evaluation` as a thinking lens. A consequential claim still benefits from a fresh evaluation context that is not required to defend the proposed target. The accountable human decides whether the evidence is sufficient and owns accepted residual risk.
-
-Route additional gaps by their actual type:
+Route gaps by their actual type:
 
 - domain meaning or invariant gap → `$domain-modeling`;
 - module ownership, interface, or state gap → `$deep-module-design`;
@@ -57,12 +78,13 @@ Route additional gaps by their actual type:
 
 ## Report format
 
-1. **Scale, verdict, and confidence** — module, service, system, or estate; prune, reshape, or rebuild; confidence and decisive uncertainty.
-2. **Learned requirements** — outcomes, invariants, supported behavior, real failure modes, constraints, and disproven assumptions.
-3. **First-principles target** — responsibility and state ownership, interfaces, flow, failures, unsupported behavior, and test seams.
-4. **Current comparison** — convergence, removable fat, structural divergence, useful discoveries, and disputed hardening.
-5. **Route rationale** — migration economics, behavioral risk, evidence burden, reversibility, temporary complexity, and expected structural reduction.
-6. **Decision and evidence needs** — accountable owner, independent challenge, verification execution, unknowns, and residual risk.
-7. **Selected follow-up skills** — only the branches required by the actual gaps and consequence.
+1. **Scale, route, confidence, and decisive uncertainty**
+2. **Pressure diagnosis and why a retrospective is justified**
+3. **Learned commitments and contradictions**
+4. **Candidate designs and current-design baseline**
+5. **Convergence, divergence, and structural learning to encode**
+6. **Route economics, reversibility, and proof burden**
+7. **Support-policy and accountable human decisions**
+8. **Selected follow-up skills and stop conditions**
 
 Measure structural reduction using concepts, owners, interfaces, states, branches, representations, modules, and test seams. Treat line-count reduction as secondary evidence.

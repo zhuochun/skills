@@ -1,47 +1,50 @@
 ---
 name: domain-modeling
-description: Discover, compare, sharpen, and document software domain models and bounded contexts. Use when requirements arrive as proposed solutions, business terms conflict with code, simple changes require repeated exceptions, teams need a ubiquitous language, context boundaries or translations are unclear, or a consequential domain decision needs scenarios and rationale. Work from concrete workflows and invariants rather than producing an abstract glossary alone.
+description: Discover, compare, and evolve selective software domain models and bounded contexts around an important problem. Use when requirements arrive as proposed solutions, business language conflicts with code or data, simple changes require repeated exceptions, teams disagree about concepts or invariants, context boundaries or translations are unclear, or a consequential domain decision needs scenario-based alternatives and rationale. Model behavior and meaning before choosing services, schemas, or object patterns.
 ---
 
 # Domain Modeling
 
-Build a selective model that makes important decisions, rules, and behavior easier to express. Treat modeling as a learning loop between domain experts, examples, code, data, operations, and later change—not as a one-time naming exercise.
+Build a problem-specific model that makes important decisions, rules, and behavior easier to express. Treat modeling as a continuing learning loop between domain work, examples, code, data, operations, and later change—not as a universal taxonomy or one-time naming exercise.
 
 ## Preserve context and authority
 
-- Discover existing glossaries, schemas, ADRs, context maps, APIs, tests, event definitions, and ownership records before introducing new artifacts.
-- Use the repository's established artifact names and locations. Do not impose `CONTEXT.md`, DDD terminology, or object-oriented patterns on every project.
-- Propose model changes first when they would alter public contracts, data meaning, ownership, or several teams. Implement documentation or code changes only within the user's authority and request.
-- Record disagreements and context-specific meanings. Do not force one enterprise-wide definition when multiple precise local models are healthier.
+- Discover existing language, schemas, ADRs, context maps, APIs, tests, events, reports, and ownership before introducing a new model.
+- Default to analysis and proposal. Update documentation or code only when the user requests it, and preserve established artifact names and locations.
+- Treat stakeholder prescriptions, current code, database schemas, and service boundaries as evidence rather than sole authority. Preserve genuine mandated constraints and their rationale.
+- Record disagreement, context-specific meanings, and missing perspectives. Do not force one enterprise-wide definition where several precise local models are healthier.
+- Keep semantic context, code module, data authority, deployable service, failure domain, and team ownership distinct unless evidence justifies aligning them.
 
 ## Modeling workflow
 
-1. **Recover the problem.** Translate requested screens, fields, services, rules, or technologies into business outcomes, constraints, examples, invariants, and success criteria. Preserve mandated implementation constraints with their rationale.
-2. **Scope the modeling effort.** Identify the strategically difficult workflow or decision. Avoid intensive modeling for simple supporting domains that standard solutions already handle well.
-3. **Build a language inventory.** Collect terms from experts, code, schemas, interfaces, tickets, reports, and operations. Mark synonyms, homonyms, missing concepts, overloaded words, and ownership ambiguity.
-4. **Use concrete scenarios.** Walk happy paths, exceptions, temporal changes, authorization, cancellation, partial completion, failure, repair, and reporting. Ask what facts change and which rules must remain true.
-5. **Generate alternatives.** Produce at least two lightweight models for consequential choices. Judge them by the difficult scenarios, operations, and invariants they simplify—not realism or completeness.
-6. **Diagnose model friction.** Look for flag clusters, generic records, exception chains, missing domain terms, awkward state transitions, cross-cutting edits, and rules that require hidden historical state.
-7. **Define context boundaries.** State where language, rules, authority, and consistency are stable. Name translations, customer-supplier relationships, shared contracts, and power or governance constraints at each edge.
-8. **Connect model to implementation.** Reflect durable terms and behavior in names, types, events, tests, modules, APIs, and data ownership where useful. Keep frameworks and transport representations from becoming the domain model by default.
-9. **Capture decisions.** Update the canonical glossary, context map, examples, or ADR only when the model has earned stability. Record alternatives, consequences, unresolved questions, and revisit signals.
+1. **Recover the problem from the proposed solution.** Translate requested screens, fields, services, schemas, rules, or technologies into outcomes, difficult decisions, constraints, examples, invariants, and success or failure conditions. Keep the proposed implementation as one candidate unless it is a real constraint.
+2. **Bound the modeling investment.** Name the important workflow or decision and the modeling horizon. Use intensive modeling where meaning and behavior are the hard part; use simpler standard models where local differentiation is low. State what this model deliberately will not answer.
+3. **Gather language and evidence.** Compare terms and behavior across domain experts, actual work, user and support language, code, data, tests, interfaces, incidents, and operations. Mark synonyms, homonyms, missing concepts, overloaded umbrella terms, hidden state, and contradictions between declared and executable behavior.
+4. **Write operational principles.** For each important behavioral concept, trace a compact scenario from purpose through actors, starting state, actions, transitions, and observable outcome. Add separate edge scenarios for reversal, authorization, time, partial progress, failure, repair, and reporting where they affect the model.
+5. **Generate and compare candidates.** For consequential choices, create materially different lightweight models. Judge each by the difficult decisions, workflows, operations, and invariants it simplifies; its omissions and new complexity; and which adjacent scenarios become awkward. Do not choose by realism or completeness alone.
+6. **Diagnose model friction.** Use repeated exceptions, flag clusters, generic records, missing domain terms, awkward transitions, cross-cutting edits, user-visible inconsistency, and rules dependent on hidden historical state as prompts for model investigation—not proof that one fashionable pattern is required.
+7. **Draw semantic boundaries and translations.** State where vocabulary, rules, invariants, and authority remain coherent. At each edge, identify the foreign and local meanings, translation or deliberate conformance, contract, ownership, and power constraints. Describe the relationship actually evidenced; do not force a context-map label.
+8. **Choose enforcement proportionately.** Decide whether conversation and documentation, code modules, ownership rules, private persistence, explicit interfaces, or physical isolation are needed to preserve the model under delivery pressure. Account for the coordination, translation, latency, failure, observability, and operating complexity each stronger boundary introduces. Route deployable, data, failure, or team-boundary decisions to `$service-boundary-design`.
+9. **Express and renew the model.** Reflect stable concepts and behavior in names, types, values, events, tests, modules, APIs, and data authority where they reduce ambiguity. Record consequential alternatives and revisit signals. Use later changes, failures, and operational work as evidence that the model or boundary needs refinement.
 
-Use [references/modeling-artifacts.md](references/modeling-artifacts.md) for session prompts and adaptable artifact templates.
+Use [references/modeling-artifacts.md](references/modeling-artifacts.md) for the knowledge-derived reasoning model and adaptable session, comparison, boundary, and decision formats.
 
 ## Quality gates
 
-- Tie every important concept to scenarios, decisions, or invariants.
-- Test alternatives against at least one difficult or edge scenario.
-- State what the model deliberately omits.
-- Make context-specific meanings and translations explicit.
-- Reconcile the proposed language with code and data, or record the migration gap.
-- Distinguish domain rules from workflow, presentation, persistence, and integration concerns.
-- Preserve unresolved disagreement and uncertainty.
+- The model is selective and names the important problem, decision, or workflow it serves.
+- Important concepts connect purpose, state, actions, and observable outcomes rather than forming a noun catalog.
+- Consequential choices compare alternatives against difficult scenarios and explicit omissions.
+- Language and rules are reconciled with actual work, code, data, and operations, or contradictions remain visible.
+- Context boundaries state where meaning is precise and how foreign models are translated or deliberately accepted.
+- Logical, code, data, deployment, failure, and team boundaries are not conflated.
+- Enforcement strength is justified by model-integrity benefit and the complexity it relocates.
+- Uncertainty, disagreements, migration gaps, and revisit signals are preserved.
 
 ## Reject modeling theater
 
-- Do not create noun catalogs without behavior.
-- Do not convert every database table into an entity or every context into a service.
-- Do not declare business language authoritative without checking actual work and exceptions.
-- Do not “clean up” terminology that encodes a meaningful local distinction.
-- Do not rewrite mature systems solely because a new model is more elegant; account for migration economics and compatibility.
+- Do not convert every noun into an entity, every table into the model, or every bounded context into a service.
+- Do not produce a glossary without behavior, a universal enterprise model, or a context map made only of pattern labels.
+- Do not declare expert language, code, schemas, or current service ownership authoritative without reconciling the others.
+- Do not “clean up” terminology that carries a meaningful local distinction or translate foreign models by copying their shape.
+- Do not use physical separation to repair an incoherent model or ignore the distributed complexity it introduces.
+- Do not rewrite a mature system merely because a candidate model is more elegant; account for compatibility, migration economics, and operational learning.

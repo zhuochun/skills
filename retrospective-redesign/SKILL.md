@@ -1,58 +1,62 @@
 ---
 name: retrospective-redesign
-description: Reconsider a completed software capability or system from first principles using implementation and operational learning. Use for retrospective redesign, post-implementation simplification, dead-code or complexity-reduction analysis, a "build it again knowing what we know now" review, or a decision between pruning, reshaping, and rebuilding. Resolve the applicable scale and design lenses, treat the current implementation as evidence rather than the assumed solution, compare a learned target with the current design, and recommend an evidence-backed route without changing the implementation.
+description: Reassess a completed software capability or system after implementation, repeated change, and operational learning so discovered architecture can be consolidated deliberately. Use for retrospective redesign, post-implementation simplification, dead-code or complexity analysis, a "build it again knowing what we know now" review, or a decision to retain, quarantine, prune, reshape, or rebuild. Distinguish essential problem complexity from accidental structural friction, recover durable commitments and support policy, compare learned design alternatives, and recommend an evidence-backed route without modifying the target system.
 ---
 
 # Retrospective Redesign
 
-Retain the lessons; re-justify the structure. Derive the design that would have been chosen if current learning had been available at the start, then compare it with the implementation that exists.
+Consolidate what the system has taught. Reconsider inherited structure without discarding learned commitments or rewarding novelty for its own sake.
 
 ## Preserve authority
 
-- Work read-only against the target system. Do not change implementation, configuration, infrastructure, data, interfaces, or operating procedures as part of this skill.
-- Produce a redesign recommendation, not approval or equivalence certification. Identify the accountable human decision owner for the route, cutover, and residual risk.
-- Separate observed evidence, interpretation, and unknowns. Do not invent requirements or preserve behavior merely because code exists for it.
-- Treat implementation, migration, and verification execution as follow-up work with their own authority and evidence.
+- Work read-only against the target system. Do not change implementation, configuration, infrastructure, data, interfaces, or operating procedures.
+- Produce a recommendation, not approval, implementation, or equivalence certification. Identify the accountable human owner for support policy, route selection, cutover, and residual risk.
+- Treat current structure as a design candidate rather than the assumed solution. Treat current behavior, history, constraints, and operational adaptations as evidence that must be reconciled.
+- Under a compatibility-preserving request, treat reachable observed behavior as a provisional commitment until evidence or the accountable owner explicitly classifies it otherwise. Omission is not a support-policy decision.
+- Separate observed evidence, interpretation, and unknowns. Do not turn missing documentation, tests, telemetry, or consumer inventory into permission to simplify.
 
-## Select redesign scale and lenses
+## Select scale and design lenses
 
-Resolve the scale before deriving the target. Use the smallest sufficient set of lenses rather than stacking every related skill.
+Resolve the scale before deriving a target. Use the smallest sufficient set of lenses.
 
-- **Module or capability:** Load and use `$deep-module-design` for interface depth, state ownership, seams, local behavior, and testability.
-- **Service or subsystem:** Use `$deep-module-design` for internals and load `$service-boundary-design` when deployable, data, failure, or ownership boundaries are in question. Use `$architecture-risk-evaluation` for consequential quality claims.
-- **Multi-service system or wider estate:** Load and use `$architecture-risk-evaluation` for systemic scenarios and tradeoffs. Use `$service-boundary-design` for disputed boundaries and `$technical-decision-making` when alternatives or risk acceptance require accountable closure.
+- **Module or capability:** Load and use `$deep-module-design` for interface depth, state ownership, seams, behavior, and testability.
+- **Service or subsystem:** Use `$deep-module-design` for internals and `$service-boundary-design` when deployable, data, failure, or ownership boundaries are in question. Use `$architecture-risk-evaluation` for consequential quality claims.
+- **Multi-service system or wider estate:** Use `$architecture-risk-evaluation` for systemic scenarios and tradeoffs, `$service-boundary-design` for disputed boundaries, and `$technical-decision-making` when alternatives or risk acceptance require accountable closure.
 
-Propose the scale and consequence classification. Let the accountable human confirm, narrow, override, or accept the resulting residual risk; do not turn the heuristics into automatic governance.
+Propose the scale and consequence classification. Let the accountable human confirm, narrow, or override them.
 
 ## Redesign workflow
 
-1. **Frame the inquiry.** Name the completed capability or system slice, completion point or fixed point when available, decision owner, intended outcomes, and the specific reason to reconsider the design. Bound the evidence surface to direct behavior, producers, consumers, interfaces, runtime and ownership boundaries, and acceptance evidence; widen only when the question crosses that scope.
-2. **Recover the learning.** Read the relevant requirements, decisions, implementation, tests, operational evidence, incidents, performance results, user feedback, support constraints, and history. Stop when additional archaeology is unlikely to change the target or route; record remaining uncertainty.
-3. **Separate requirements from inherited design.** Express goals, invariants, supported behavior, real failure modes, performance constraints, and proven assumptions without embedding current modules, names, representations, state machines, compatibility paths, or abstractions.
-4. **Derive the first-principles target.** Describe the smallest coherent design that satisfies the learned requirements: responsibility and state ownership, interfaces and invariants, request and data flow, failure behavior, intentionally unsupported behavior, and meaningful test seams. Prefer fewer concepts, owners, representations, states, branches, and coordination seams—not fewer lines alone.
-5. **Compare target and current designs.** Identify convergence, removable fat, structural divergence, implementation discoveries missing from the requirements, and behavior changes that must not be disguised as simplification. Judge hardening by the current invariant and credible fault model it protects, not by its age or provenance.
-6. **Recommend one primary route.** Choose **prune** when the core structure converges, **reshape** when bounded ownership or interface changes can reach the target safely, or **rebuild** when the foundational model differs and adaptation would retain more accidental complexity than replacement. Base the choice on migration economics, behavioral risk, proof burden, temporary dual-system cost, and retained complexity.
-7. **Route follow-up work.** Name the focused design, decision, transition, release, observability, and verification skills needed next. For consequential reshape or rebuild, require fresh independent challenge and executed evidence before cutover; present that need to the accountable human rather than certifying the target yourself.
-8. **Report the recommendation.** Lead with scale, verdict, and confidence. Report learned requirements, target design, current comparison, route rationale, expected structural reduction, disputed protections, uncertainties, required decisions, and selected follow-up skills.
+1. **Frame the consolidation question.** Name the completed slice, why reconsideration is useful now, its expected remaining lifetime, the decision owner, the change horizon, and the behavior and ownership paths in scope. Do not expand from a capability question into a repository or estate review without evidence that the learning crosses those boundaries.
+2. **Diagnose the pressure.** Identify the work actually consuming change time, rework, incidents, support effort, or understanding. Classify it as essential conceptual work, accidental structural or workflow friction, or a mixture. If no durable pressure or learning is demonstrated, recommend retaining the current design rather than manufacturing a redesign.
+3. **Recover learning across three surfaces.** Inspect code and structure, shared team understanding, and preserved intent. Use requirements, decisions, tests, change history, repeated workarounds, domain language, operational evidence, incidents, user feedback, support constraints, and current ownership. Stop when more archaeology is unlikely to change the commitment set, alternatives, or route.
+4. **Externalize durable commitments.** Record outcomes, invariants, public and operational contracts, support policy, failure semantics, real consumer behavior, and validation methods that must survive structural change. Reconcile declared, tested, observed, and inferred behavior. Mark each relevant behavior **preserve**, **propose for explicit retirement**, or **unresolved**; never let a target silently drop it.
+5. **Interpret what the learning means.** Distinguish stable variation from premature abstraction, domain-model friction from local code mess, different change rates from arbitrary package boundaries, legitimate distinctions from duplication, and adaptive operational workarounds from accidental complexity. Identify which learning belongs in names, boundaries, tests, defaults, rationale, or a deliberately bounded quarantine.
+6. **Generate and compare design candidates.** Always include the current design or a minimally consolidated version as a competent baseline. When the model or boundary is disputed, compare materially different candidates against difficult workflows, commitments, change locality, meaning search, failure behavior, operating cost, reversibility, migration economics, and the code/understanding/intent debt each would leave behind.
+7. **Recommend the smallest justified route.** Choose **retain** when the current design remains sound or change would not repay its cost; **quarantine** when valuable disorder should be bounded before deeper repair; **prune** when the learned architecture already converges and obsolete surface can retire; **reshape** when ownership, model, state, interfaces, or flow need bounded change; or **rebuild** only when the foundational model differs, adapting would retain more accidental complexity, and enough durable commitments exist to judge a replacement.
+8. **Route follow-up work.** Name only the focused design, decision, transition, release, observability, and verification skills required by the selected route. For consequential reshape or rebuild, require a fresh evaluation context with distinct evidence and executed verification before cutover; do not let the redesign certify itself.
+9. **Report the recommendation.** Lead with scale, route, confidence, and decisive uncertainty. Report the pressure diagnosis, learned commitments, candidate comparison, current convergence and divergence, route economics, structural learning to encode, explicit support-policy decisions, evidence gaps, accountable owner, and selected follow-up skills.
 
-Read [references/retrospective-redesign.md](references/retrospective-redesign.md) when the route is ambiguous or consequential, or when a structured evidence record and report format would improve the review.
+Read [references/retrospective-redesign.md](references/retrospective-redesign.md) for the knowledge-derived reasoning model, commitment ledger, route comparison, and report form.
 
 ## Quality gates
 
-- The evidence surface is bounded and the important implementation and operational learning is represented.
-- Learned requirements are design-neutral and distinguish required behavior from inherited structure.
-- The target is justified from outcomes and invariants; surviving current choices are freshly justified.
-- The comparison covers ownership, interfaces, state, flow, failure behavior, and migration consequences.
-- The route has explicit evidence, economics, uncertainty, confidence, and an accountable decision owner.
-- Consequential claims name independent evaluation and verification needs instead of self-certifying equivalence.
-- The result names appropriate follow-up skills and leaves the target system unchanged.
+- A demonstrated learning or change-pressure signal justifies the review.
+- Essential conceptual work and accidental friction are distinguished without false precision.
+- Code, shared understanding, preserved intent, and operational learning are all considered in proportion to scope.
+- Declared, tested, observed, and inferred commitments are reconciled; every material difference has an explicit disposition.
+- The current or minimally consolidated design is compared as a real alternative, not used as a straw man.
+- The recommendation explains economics, reversibility, proof burden, uncertainty, and what learned structure it would encode.
+- Rebuild is not recommended while the old implementation remains the only source of truth for important commitments.
+- The result names accountable decisions and follow-up skills while leaving the target system unchanged.
 
 ## Reject weak redesigns
 
-- Do not turn a bounded retrospective into an unbounded repository or estate review.
-- Do not call a behavior change, interface break, or support-policy change a simplification.
-- Do not mistake distinct failure coverage or defense in depth for duplication.
-- Do not preserve hypothetical compatibility without evidence of public, plugin, reflection, configuration-driven, or otherwise non-enumerable consumers.
-- Do not add extensibility, indirection, or configuration without a demonstrated variant.
-- Do not rebuild merely because a clean design looks attractive or replace straightforward code with a fashionable abstraction.
-- When the learned target substantially converges with the current design, recommend pruning the fat and retaining the sound structure.
+- Do not recommend change from age, language, framework, aesthetics, line count, or generic doctrine.
+- Do not mistake a cleaner representation for a better answer to unresolved domain meaning.
+- Do not merge or delete distinctions merely because they look duplicated; compare purpose, invariants, consumers, and change pressure.
+- Do not hide behavior, compatibility, or support-policy changes inside a structural recommendation.
+- Do not preserve every historical behavior as permanent policy; surface disputed behavior for an accountable decision.
+- Do not call documentation alone consolidation when repeated knowledge could become structure, tests, defaults, or enforceable boundaries.
+- Do not rebuild from an unconstrained clean slate when commitments, oracles, or migration evidence are missing.
+- Do not let evidence gathering become exhaustive archaeology or the report become a substitute for the next decision.

@@ -13,9 +13,9 @@ Do not start from a fashionable method or invoke every skill as a stage gate. As
 | Skill | It owns | Primary output |
 | --- | --- | --- |
 | [`service-surface-mapping`](service-surface-mapping/) | Rapid evidence-ranked orientation to an unfamiliar service | Critical-surface map, path traces, contradictions, confidence, and next probes |
-| [`domain-modeling`](domain-modeling/) | Business meaning, behavior, invariants, vocabulary, and context boundaries | Scenario-tested model, context boundaries, translations, and unresolved questions |
+| [`domain-modeling`](domain-modeling/) | Problem-specific behavior, invariants, vocabulary, and semantic contexts | Operational principles, compared models, semantic boundaries, translations, and unresolved questions |
 | [`service-boundary-design`](service-boundary-design/) | Logical, deployment, data, failure, and ownership boundaries | Boundary force matrix, scenario traces, options, recommendation, and prerequisites |
-| [`deep-module-design`](deep-module-design/) | Modules, interfaces, seams, state ownership, and testable contracts | Compared interfaces, selected seam, explicit contract, tests, and adoption direction |
+| [`deep-module-design`](deep-module-design/) | Knowledge boundaries, interfaces, seams, state ownership, and testable contracts | Compared boundaries, deep or composable interface strategy, honest contract, tests, and adoption direction |
 | [`platform-capability-design`](platform-capability-design/) | Self-service internal capabilities, paved roads, controls, and escape hatches | User-work evidence, capability boundary, interface, operating contract, and adoption slice |
 | [`observability-design`](observability-design/) | Prospective business, service, dependency, infrastructure, and control evidence | Execution-path map, measurement contracts, navigation, alerts, correlation, and lifecycle |
 
@@ -43,7 +43,7 @@ Do not start from a fashionable method or invoke every skill as a stage gate. As
 | --- | --- | --- |
 | [`operational-feedback-audit`](operational-feedback-audit/) | The live telemetry-to-decision-to-action loop | Contract counterexamples and deltas, alert and diagnostic findings, routing and control-path risks |
 | [`incident-learning`](incident-learning/) | Learning from incidents, near misses, and operational surprises | Evidence timeline, local perspectives, model gaps, protective capacity, and branching follow-through |
-| [`retrospective-redesign`](retrospective-redesign/) | First-principles redesign after implementation or operational learning | Learned requirements, simpler target, current comparison, and prune/reshape/rebuild route |
+| [`retrospective-redesign`](retrospective-redesign/) | Consolidating architecture learned through implementation, repeated change, and operation | Pressure diagnosis, durable commitments, candidate comparison, and retain/quarantine/prune/reshape/rebuild route |
 
 ### Develop technical capability
 
@@ -313,7 +313,7 @@ multi-service system or wider estate
   -> high-risk-change-planning and independent verification before consequential cutover
 ```
 
-The redesign agent works read-only and proposes the scale, evidence, and route. It stops at the recommendation and names the focused follow-up skills needed for design refinement, implementation planning, controlled release, or verification. The accountable human confirms or changes the classification and owns cutover or residual-risk acceptance. Builder-run checks may support the decision but do not become an independent equivalence verdict merely because the same agent reports them.
+The redesign agent works read-only and consolidates demonstrated learning rather than starting from an ahistorical clean slate. It compares the current or minimally consolidated design as a competent baseline, may recommend retain or quarantine when change would outrun evidence, and names the focused follow-up skills needed for deeper design, implementation planning, controlled release, or verification. The accountable human confirms support-policy changes, route selection, cutover, and residual-risk acceptance. Builder-run checks may support the decision but do not become an independent equivalence verdict merely because the same agent reports them.
 
 These are routing examples, not mandatory stage gates.
 

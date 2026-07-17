@@ -1,52 +1,54 @@
 ---
 name: deep-module-design
-description: Design or improve software modules, interfaces, seams, and internal structure so real change stays local, domain intent remains visible, and behavior is testable through stable contracts. Use when shaping a new module, deepening a shallow abstraction, deciding where a seam belongs, reducing meaning search or hidden coupling, separating decisions from effects, organizing vertical slices, or comparing alternative interfaces before implementation.
+description: Design or improve software module boundaries and interfaces so demonstrated change stays local, hidden knowledge has one owner, domain intent remains visible, and behavior is testable through honest contracts. Use when shaping a module, deepening a shallow abstraction, choosing between a deep or composable interface, locating a seam, reducing meaning search or leaked representation, separating decisions from effects, organizing vertical slices, or comparing module alternatives before implementation.
 ---
 
 # Deep Module Design
 
-Design deep modules: substantial, coherent behavior behind a smaller interface placed at a seam that follows real change pressure. Optimize for leverage for callers, locality for maintainers, and testability through the same contract production uses.
+Design boundaries that hide consequential knowledge and bound reasoning. A deep module is one strong answer; a composable interface may be better when future behavior should grow through combinations rather than feature accretion.
 
 ## Use precise terms
 
-- **Module:** Any unit with an interface and implementation, from a function to a package or tier-spanning slice.
-- **Interface:** Everything callers must know: operations, values, invariants, failure modes, ordering, configuration, performance, and lifecycle.
-- **Seam:** A place where behavior can vary without editing callers at that place.
-- **Adapter:** A concrete implementation connected at a seam.
+- **Module:** A design responsibility with an interface and implementation; it need not equal a class, package, runtime process, or control-flow phase.
+- **Interface:** Everything callers must know: operations, values, invariants, failures, ordering, configuration, performance, and lifecycle.
+- **Seam:** A place where behavior or implementation can vary without editing callers there.
+- **Hidden decision:** A representation, format, ordering, algorithm, resource, policy, or lifecycle fact owned behind the interface.
 - **Depth:** Useful behavior and complexity hidden per unit of interface burden.
-- **Locality:** The degree to which one business or technical change can be understood, implemented, and verified in one place.
+- **Locality:** The degree to which one meaningful change can be understood, implemented, and verified in one place.
 
-Keep bounded contexts, deployable services, and team boundaries distinct from module seams unless evidence says they align.
+Keep module, bounded context, vertical slice, deployable service, data owner, failure domain, and team boundary distinct unless evidence says they align.
 
 ## Design workflow
 
-1. **Name the change pressure.** Use planned behavior, recent changes, defects, incidents, performance constraints, or test pain. Do not invent abstractions for hypothetical reuse alone.
-2. **Recover domain intent.** State the business activity, decisions, invariants, and terminology the design must reveal. Identify accidental state or framework vocabulary obscuring the model.
-3. **Map knowledge and coupling.** Find callers that know the same representation, ordering, format, algorithm, lifecycle, policy, or remote failure behavior. Identify code that changes together but lives apart.
-4. **Choose the seam.** Place it around a coherent responsibility or volatile design decision, not merely a phase in control flow. Require a real variation, ownership, test, or change-locality benefit.
-5. **Design it at least twice.** Produce meaningfully different interfaces and compare caller burden, hidden complexity, locality, failure semantics, compatibility, and migration cost.
-6. **Deepen the interface.** Prefer fewer capability-oriented operations, domain values, useful defaults, and complete lifecycle ownership. Hide representation and orchestration that callers do not need.
-7. **Make effects explicit.** Keep dependencies visible. Separate deterministic decisions from I/O where it makes dangerous or complex behavior reviewable, while keeping the module—not extracted helper fragments—as the meaningful test surface.
-8. **Choose organization by change.** Use vertical slices when one business activity changes across technical layers. Share code only when multiple slices demonstrably change for the same reason.
-9. **Define contracts honestly.** Include remote latency, retries, idempotency, ordering, cancellation, streaming ownership, resource cleanup, errors, and observability when they are part of correct use.
-10. **Plan adoption.** Preserve compatibility where necessary, migrate callers incrementally, and specify tests at the interface. Avoid adding a new layer that leaves the old abstraction in control.
+1. **Name the pressure and desired locality.** Use planned behavior, repeated changes, defects, incidents, performance constraints, meaning-search cost, or test pain. Classify the pressure as essential problem complexity, accidental structural friction, or both; do not invent an abstraction for hypothetical reuse.
+2. **Recover intent and commitments.** State the business activity, decisions, invariants, observable behavior, compatibility, and terminology the boundary must preserve. Identify framework vocabulary, accidental state, or current control flow that should not define the model.
+3. **Map leaked knowledge and interaction.** Find callers that know the same representation, ordering, format, algorithm, lifecycle, policy, or failure behavior. Trace which code, state, and decisions interact or change strongly together and which cross-boundary relationships are genuinely weaker.
+4. **Propose candidate knowledge boundaries.** Place seams around volatile decisions, exclusive state or resource ownership, coherent domain behavior, or reasoning cases that can become local. Do not choose a processing phase, folder convention, or test mock as a boundary by itself.
+5. **Preserve variation evidence.** Distinguish repeated knowledge from repeated orchestration. Keep small duplication temporarily when cases may diverge; centralize security, financial, compliance, protocol, or domain invariants when divergence is unsafe. Revisit duplication once change patterns are visible.
+6. **Compare materially different interfaces.** Include the current shape as a competent baseline. Compare at least two candidates when the decision is consequential by caller burden, hidden knowledge, exclusive ownership, interaction strength, meaning search, failure and lifecycle semantics, compatibility, testability, and migration cost.
+7. **Choose the growth strategy.** Prefer a **deep interface** when one owner can absorb substantial coherent complexity behind a smaller stable capability contract. Prefer a **composable interface** when a shared exchange contract can preserve needed semantics and future workflows should grow by connecting bounded components. Promote repeated glue into a deeper higher-level capability only after the composition proves stable.
+8. **Make the contract honest.** Expose assumptions callers need for correctness while hiding representation they do not. Specify ownership, errors, latency, retries, idempotency, ordering, cancellation, resource cleanup, observability, and producer or subscription lifecycle where they are real. Default ordinary request-shaped work to direct synchronous or suspending results unless the lifecycle is genuinely asynchronous or streaming.
+9. **Place decisions and effects deliberately.** Keep dependencies visible. Separate deterministic decisions from I/O where this makes dangerous or complex behavior reviewable, while retaining the module—not extracted helper fragments—as the meaningful behavior surface.
+10. **Organize and adopt by change.** Use a vertical slice when one business activity changes across technical layers. Provide safe defaults and explicit escape hatches where needed. Migrate callers incrementally, verify through the production interface, and retire the replaced abstraction rather than leaving a new wrapper around the old owner.
 
-Use [references/module-design-review.md](references/module-design-review.md) for comparison and review prompts.
+Use [references/module-design-review.md](references/module-design-review.md) for the knowledge-derived reasoning model, alternative comparison, boundary checks, and design record.
 
 ## Quality gates
 
-- The interface is smaller and more stable than the behavior it enables.
-- The seam follows a demonstrated change, knowledge, ownership, or verification boundary.
-- Callers do not coordinate internal steps that the module can own.
-- The interface exposes required semantics without leaking representation.
-- Tests can verify meaningful behavior through the production interface.
-- Side effects and remote failure semantics are visible where correctness needs them.
-- The migration replaces or retires obsolete structure instead of layering indefinitely.
+- A demonstrated pressure justifies the boundary and states which changes should become local.
+- One module owns each hidden decision, mutable representation, or resource that the design claims to contain.
+- Internal interaction is meaningfully stronger than cross-boundary interaction, or the remaining cross-boundary coupling is explicit.
+- The selected deep or composable strategy explains how future behavior grows without leaking hidden knowledge or accumulating options.
+- The interface burden is smaller than the useful behavior and reasoning complexity it contains.
+- Callers receive all semantics needed for correctness without coordinating internal phases.
+- Tests exercise meaningful behavior through the production contract, and adoption retires obsolete ownership.
 
 ## Reject weak abstractions
 
-- A pass-through wrapper is not deep merely because it has an interface.
-- One adapter does not justify a speculative plugin architecture without another real source of variation.
-- Tiny functions are not automatically good modules when understanding requires bouncing among many of them.
-- Dependency injection is not a design goal; use it where a real seam benefits callers, tests, or ownership.
-- Generic repositories, managers, helpers, and engines often hide domain intent; require a precise responsibility.
+- A pass-through wrapper, generic manager, repository, helper, engine, or dependency-injection interface is not a module without a precise hidden decision or owned behavior.
+- Matching text is not enough reason to share code; ask whether the callers share knowledge and change for the same reason.
+- Tiny functions and many interfaces can increase meaning search and reasoning combinations instead of improving modularity.
+- A simple-looking interface is not deep if it hides latency, failure, lifecycle, policy, or performance facts callers require.
+- A byte stream, message, callback, or event surface is not composable when it erases schema, ordering, backpressure, security, or error semantics.
+- Do not force purity, vertical slices, synchronization, or streaming as doctrine; use each where it makes the relevant boundary more honest and self-reinforcing.
+- Do not add a new layer that leaves the old abstraction authoritative or retain temporary migration machinery without an exit condition.

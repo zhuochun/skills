@@ -1,4 +1,4 @@
 interface:
   display_name: "Domain Modeling"
-  short_description: "Discover and sharpen executable domain models"
-  default_prompt: "Use $domain-modeling to clarify this domain language, model alternatives, and context boundaries."
+  short_description: "Model behavior and semantic boundaries"
+  default_prompt: "Use $domain-modeling to recover the domain problem, compare problem-specific behavioral models, and define semantic boundaries without assuming they are services."
