@@ -1,0 +1,13 @@
+# Small-project and monolith software change, design, and verification
+architecture-consolidation-review
+behavior-preserving-refactoring
+code-review
+codebase-architecture-assessment
+deep-module-design
+scoped-change-implementation
+service-surface-mapping
+software-change-orchestration
+software-change-specification
+software-failure-diagnosis
+verification-execution
+verification-strategy-design

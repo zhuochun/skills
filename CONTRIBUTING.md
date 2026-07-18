@@ -2,10 +2,13 @@
 
 This repository maintains production-grade product and software-engineering
 skills for consequential work in real organizations, repositories, and
-operating environments. Treat
-[`README.md`](README.md) as the canonical catalog, relationship model, and
+operating environments. Treat [`docs/catalog.md`](docs/catalog.md) as the
+canonical catalog, [`docs/skill-boundaries.md`](docs/skill-boundaries.md) as the
+canonical relationship and ownership-boundary model, and
+[`docs/composition-guide.md`](docs/composition-guide.md) as the canonical
 composition guide. Treat [`evals/README.md`](evals/README.md) as the canonical
-forward-evaluation protocol.
+forward-evaluation protocol. Keep [`README.md`](README.md) focused on
+installation and first use.
 
 ## Preserve the collection's purpose
 
@@ -25,9 +28,10 @@ Before adding a skill or materially changing one:
 3. Extract the supported mechanisms, inputs, outputs, authority boundaries,
    quality gates, stop conditions, and failure modes. Use the sources as
    evidence and vocabulary, not prose to copy.
-4. Compare the proposal with neighboring triggers, artifacts, and ownership
-   boundaries in `README.md`. Prefer refining an existing skill when it already
-   owns the decision or artifact.
+4. Compare the proposal with neighboring triggers and artifacts in
+   `docs/catalog.md` and with ownership boundaries in
+   `docs/skill-boundaries.md`. Prefer refining an existing skill when it
+   already owns the decision or artifact.
 5. Reject or defer the proposal when the sources support only generic advice,
    do not support a distinct practical workflow, or cannot justify its gates
    and failure modes.
@@ -93,9 +97,10 @@ instructions before editing.
 
 ## Preserve composition boundaries
 
-Consult the distinctions in `README.md` before changing a skill's ownership,
-trigger, or relationships. Keep composition optional rather than turning the
-catalog into a mandatory lifecycle or universal stage-gate process.
+Consult the distinctions in `docs/skill-boundaries.md` before changing a
+skill's ownership, trigger, or relationships. Keep composition optional rather
+than turning the catalog into a mandatory lifecycle or universal stage-gate
+process.
 
 Do not require runtime handoff documents between composing skills. Keep users
 in flow by referencing a stable namespaced key together with its plain-language
@@ -108,9 +113,11 @@ Integrate a new owner in both directions:
   the new skill mandatory for trivial work;
 - update upstream routes only where ambiguity or consequence warrants the new
   artifact;
-- update the catalog row, relationship graph, important distinctions, common
-  compositions, evaluator table, example prompt, and skill count in
-  `README.md`; and
+- update the catalog row in `docs/catalog.md`; the relationship graph,
+  important distinctions, and evaluator table in `docs/skill-boundaries.md`;
+  common compositions in `docs/composition-guide.md`; the relevant prompt in
+  `docs/example-prompts.md`; at least one applicable package manifest under
+  `install/packages/`; and the skill count in `README.md`; and
 - keep orchestration, specification, design, implementation, evaluation, and
   multi-team program flow distinct.
 
@@ -141,6 +148,9 @@ fresh agent.
   validator decoding failure is not a skill-contract failure.
 - Check generated metadata for shell-expanded `$skill-name` values, scaffold
   residue, broken reference links, and stale catalog counts.
+- Run both installers in list mode so package validation confirms that every
+  manifest is internally unique and alphabetically sorted, and the combined
+  manifests cover every skill.
 - Forward-test consequential workflow changes against realistic ordinary and
   boundary cases. The correct boundary result may be to stop, retain a
   protection, or use a smaller or independent skill.

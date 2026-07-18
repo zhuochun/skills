@@ -1,0 +1,20 @@
+# Larger-scale software understanding, design, change, coordination, and verification
+architecture-consolidation-review
+architecture-risk-evaluation
+behavior-preserving-refactoring
+code-review
+codebase-architecture-assessment
+controlled-release-design
+deep-module-design
+high-risk-change-planning
+platform-capability-design
+scoped-change-implementation
+service-boundary-design
+service-surface-mapping
+software-change-orchestration
+software-change-specification
+software-contract-evolution
+software-failure-diagnosis
+technical-program-execution
+verification-execution
+verification-strategy-design
