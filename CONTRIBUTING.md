@@ -35,6 +35,43 @@ Before adding a skill or materially changing one:
 Preserve source provenance in review notes or commit context. Do not embed a
 research diary in `SKILL.md`.
 
+If the maps explain the surrounding domain but do not directly support the
+proposed workflow, run a focused extraction pass before authoring. Require a
+curated raw evidence set, an overlap search, a stable proposition and boundary,
+and the normal concept verification gate. A newly useful raw source is not by
+itself permission to invent a generic skill. Keep concept extraction and map
+editing as separate scopes; report affected-map freshness unless map work was
+also requested.
+
+A source pass is not enough by itself. A proposal passes only when the evidence
+and collection together support:
+
+- one canonical decision, artifact, or action owner;
+- realistic triggers and non-triggers;
+- a repeatable workflow with consequential stop or route conditions;
+- failure modes more specific than generic advice; and
+- a useful boundary from neighboring skills.
+
+## Name and bound the owner
+
+Choose a name only after the proposition, output, and boundary are stable.
+Prefer a concise action or artifact name that a user can distinguish from its
+neighbors without reading every `SKILL.md`. Keep names stylistically coherent
+with the collection, but do not sacrifice precision merely to make suffixes
+match.
+
+Red-team the proposal with paired questions such as:
+
+- What does this skill own that the nearest skill does not?
+- Is it producing, evaluating, executing, coordinating, or preserving state?
+- Does it own one bounded artifact or an entire lifecycle?
+- Can a clear local change bypass it without losing safety?
+- Which decision must remain with a specialist or accountable human?
+
+When two skills can answer the same request, establish a canonical owner and
+make the other consume, route, or preserve the result. Do not rely on prose
+similarity alone to distinguish them.
+
 ## Satisfy the skill contract
 
 Use `skill-creator` for every new skill and material skill update. Read its full
@@ -43,6 +80,10 @@ instructions before editing.
 - Turn the source-gate findings into an explicit operating contract: inputs,
   outputs, authority, workflow, quality gates, stop conditions, and weak-result
   rejection where applicable.
+- Separate confirmed, inferred, assumed, proposed, and unresolved material.
+  Never fill a blocking specialist decision with a plausible default merely to
+  produce a complete-looking artifact. A conditional partial result or a
+  `not ready` verdict is often the correct output.
 - Preserve consequential interpretation, risk acceptance, and cutover for the
   accountable human.
 - Keep `agents/openai.yaml` synchronized. Its default prompt must mention the
@@ -61,11 +102,45 @@ in flow by referencing a stable namespaced key together with its plain-language
 label. Route specialized work to its owning skill instead of duplicating its
 contract.
 
+Integrate a new owner in both directions:
+
+- update the nearest downstream skill to consume or route to it without making
+  the new skill mandatory for trivial work;
+- update upstream routes only where ambiguity or consequence warrants the new
+  artifact;
+- update the catalog row, relationship graph, important distinctions, common
+  compositions, evaluator table, example prompt, and skill count in
+  `README.md`; and
+- keep orchestration, specification, design, implementation, evaluation, and
+  multi-team program flow distinct.
+
+## Forward-test boundaries before polishing
+
+Use fresh agents with only the skill path and a natural user request. Do not
+leak the intended answer, suspected flaw, previous output, or grading anchor.
+Test at least:
+
+1. an ordinary case where the skill should add concrete decision value;
+2. a small reversible case where proportional behavior should avoid ceremony;
+3. a consequential boundary case where the correct response may be conditional,
+   `not ready`, or routed to another owner.
+
+Inspect whether the result invents evidence, takes over a neighboring skill,
+turns examples into false completeness, creates unnecessary artifacts, or
+becomes exhaustive without improving the decision. Revise the contract from
+the observed failure mechanism, then repeat the affected boundary case with a
+fresh agent.
+
 ## Verify proportionately
 
 - Run the installed `skill-creator` validator for every affected skill.
 - Validate the whole catalog after changes to naming, triggering, contracts, or
   composition.
+- On Windows, run Python-based catalog validation in explicit UTF-8 mode when
+  existing skill prose contains characters outside the active code page; a
+  validator decoding failure is not a skill-contract failure.
+- Check generated metadata for shell-expanded `$skill-name` values, scaffold
+  residue, broken reference links, and stale catalog counts.
 - Forward-test consequential workflow changes against realistic ordinary and
   boundary cases. The correct boundary result may be to stop, retain a
   protection, or use a smaller or independent skill.
@@ -77,3 +152,9 @@ contract.
 Preview and commit a scoped path set unless the user explicitly requests every
 repository change. Preserve unrelated work and verify the branch tracks its
 intended remote after pushing.
+
+Inspect `git status` before writing, before staging, and after committing.
+Treat changes that appear concurrently as user-owned: reread files after a
+patch-context mismatch, integrate only when the requested scope requires it,
+and never broaden a commit merely because related experiments or evaluation
+work are present in the worktree.
