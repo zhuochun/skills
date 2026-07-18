@@ -4,6 +4,8 @@ This repository contains 26 reusable Codex skills for consequential software-eng
 
 The collection is designed for production systems and multi-team organizations. The skills require evidence, expose uncertainty, preserve accountable decision rights, and distinguish designing an artifact from independently evaluating whether it works.
 
+See [`CONTRIBUTING.md`](CONTRIBUTING.md) for the source-grounding, skill-contract, and verification requirements for adding or materially changing a skill.
+
 ## Choose by the artifact you need
 
 Do not start from a fashionable method or invoke every skill as a stage gate. Ask what decision or artifact is currently missing.
