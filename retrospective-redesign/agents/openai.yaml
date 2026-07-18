@@ -1,4 +1,0 @@
-interface:
-  display_name: "Retrospective Redesign"
-  short_description: "Consolidate architecture learned after delivery"
-  default_prompt: "Use $retrospective-redesign to consolidate what this completed capability has taught us and recommend whether to retain, quarantine, prune, reshape, or rebuild it without modifying the system."

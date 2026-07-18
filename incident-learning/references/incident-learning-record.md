@@ -73,9 +73,9 @@ Balance quick containment, deeper prevention, detection, recovery, and preservat
 | Responsibility, authority, access, escalation, or specialist support | `service-ownership-design` or `technical-decision-making` |
 | Stale runbook or fragile manual procedure | Update and exercise the runbook or local automation directly |
 | Repeated manual work that deserves shared capability | `platform-capability-design` |
-| Accumulated learning invalidates the foundational design | `retrospective-redesign` at the appropriate module, service, system, or estate scale |
+| Accumulated learning invalidates the foundational design | `architecture-consolidation-review` at the appropriate module, service, system, or estate scale |
 
-One incident can create several independent branches. Do not route every finding through retrospective redesign, create an approval gate, or convert a systemic condition into individual coaching by default.
+One incident can create several independent branches. Do not route every finding through architecture consolidation, create an approval gate, or convert a systemic condition into individual coaching by default.
 
 ## Follow-through
 

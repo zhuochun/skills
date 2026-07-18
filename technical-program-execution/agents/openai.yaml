@@ -1,0 +1,4 @@
+interface:
+  display_name: "Technical Program Execution"
+  short_description: "Coordinate multi-team technical delivery flow"
+  default_prompt: "Use $technical-program-execution to turn this multi-team engineering initiative into a dependency-aware, evidence-driven execution system."

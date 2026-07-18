@@ -1,0 +1,4 @@
+interface:
+  display_name: "Software Contract Evolution"
+  short_description: "Evolve shared contracts without synchronized breaks"
+  default_prompt: "Use $software-contract-evolution to recover this shared contract, design compatible evolution and consumer migration, and define risk-specific retirement evidence."

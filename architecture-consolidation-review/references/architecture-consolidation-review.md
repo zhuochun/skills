@@ -1,4 +1,4 @@
-# Retrospective redesign review
+# Architecture consolidation review
 
 Use this reference to make the redesign reasoning explicit without turning it into a user-maintained handoff artifact.
 
@@ -79,7 +79,7 @@ Route gaps by their actual type:
 ## Report format
 
 1. **Scale, route, confidence, and decisive uncertainty**
-2. **Pressure diagnosis and why a retrospective is justified**
+2. **Knowledge delta, pressure diagnosis, and why consolidation is justified**
 3. **Learned commitments and contradictions**
 4. **Candidate designs and current-design baseline**
 5. **Convergence, divergence, and structural learning to encode**
