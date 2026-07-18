@@ -2,15 +2,6 @@
 
 Use these forms selectively. The canonical record is a working memory and routing surface, not a mandatory handoff package.
 
-## Contents
-
-- [Knowledge-derived reasoning model](#knowledge-derived-reasoning-model)
-- [Select the effort boundary](#select-the-effort-boundary)
-- [Select the persistence mode](#select-the-persistence-mode)
-- [Canonical change record](#canonical-change-record)
-- [Route the current frontier](#route-the-current-frontier)
-- [Readiness and closure](#readiness-and-closure)
-
 ## Knowledge-derived reasoning model
 
 | Mechanism | Orchestration consequence |
@@ -48,21 +39,27 @@ A change effort has one outcome and one closure condition. Group slices only whe
 Do not assume `projects/<name>`. Discover the established surface first. If none exists and a durable file is justified, use these defaults unless the user chooses another convention:
 
 ```text
-# One owning repository, normal effort
-docs/changes/YYYYMMDD-<effort-slug>.md
+# One owning repository, one maintained record
+docs/changes/YYYYMMDD-<effort-key>.md
 
-# One owning repository, several independently maintained artifacts
-docs/changes/<effort-key>/change.md
+# Established control repository, one maintained record
+changes/YYYYMMDD-<effort-key>.md
 
-# Established control repository
-changes/<effort-key>/change.md
+# Expanded effort in either repository type
+<changes-root>/YYYYMMDD-<effort-key>/
+|-- change.md          # Thin status, frontier, and canonical-link index
+|-- specification.md   # Optional when this location owns the specification
+|-- verification.md    # Optional strategy, results, and evidence limits
+`-- decisions/         # Optional when several decisions need separate lifecycles
 ```
 
-Prefer one file for a normal effort; create a directory only when several independently maintained artifacts need stable locations. Select the control repository because it owns the cross-repository outcome, decisions, or portfolio context, not merely because the effort reads or modifies more than one repository.
+Use the flat form when one file is enough; never create a directory solely to contain `change.md`. Use the expanded form only when at least two independently maintained artifacts need stable locations or different review and revision lifecycles. In that form, keep `change.md` thin: current status, frontier, closure state, and links to the canonical specification, decisions, implementation slices, and evidence.
+
+Split an artifact when its size, owner, audience, review cadence, or evidence lifecycle makes independent maintenance useful. A long product or software specification and a verification record are common candidates, but do not relocate or duplicate them merely to make the directory self-contained. For example, if an application already keeps a long specification under `docs/specs`, leave it there and link to it from the change record. Select a control repository because it owns the cross-repository outcome, decisions, or portfolio context, not merely because the effort reads or modifies more than one repository.
 
 ## Canonical change record
 
-Use an existing specification, issue, or decision surface as this record when it can preserve the current state and frontier without becoming confused. The form below is a semantic contract, not a demand for a new `change.md` file.
+Use an existing specification, issue, or decision surface as this record when it can preserve the current state and frontier without becoming confused. The form below is a semantic contract, not a demand for a new `change.md` file. In an expanded effort, use it as the thin index and omit detailed content owned by linked artifacts.
 
 Adapt this structure to the existing work surface and omit empty sections.
 

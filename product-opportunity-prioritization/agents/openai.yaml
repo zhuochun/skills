@@ -2,3 +2,6 @@ interface:
   display_name: "Product Opportunity Prioritization"
   short_description: "Prioritize product bets with inspectable judgment"
   default_prompt: "Use $product-opportunity-prioritization to compare these product opportunities against outcomes, evidence, constraints, and learning horizons."
+
+policy:
+  allow_implicit_invocation: false

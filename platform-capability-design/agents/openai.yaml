@@ -2,3 +2,6 @@ interface:
   display_name: "Platform Capability Design"
   short_description: "Design self-service internal platform capabilities"
   default_prompt: "Use $platform-capability-design to design or review this internal platform capability around user work, self-service, guardrails, and escape hatches."
+
+policy:
+  allow_implicit_invocation: false

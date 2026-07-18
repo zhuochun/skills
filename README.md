@@ -6,6 +6,22 @@ The collection is designed for production products, systems, and multi-team orga
 
 See [`CONTRIBUTING.md`](CONTRIBUTING.md) for the source-grounding, skill-contract, and verification requirements for adding or materially changing a skill.
 
+## Invocation policy
+
+Keep implicit invocation for a small set of front doors that represent distinct top-level user intents:
+
+- `software-change-orchestration`
+- `service-surface-mapping`
+- `scoped-change-implementation`
+- `behavior-preserving-refactoring`
+- `software-failure-diagnosis`
+- `code-review`
+- `technical-growth-coaching`
+
+Set `policy.allow_implicit_invocation: false` in `agents/openai.yaml` for every other catalog skill. These specialist, evaluator, planning, and control workflows remain available through explicit `$skill-name` invocation and through an active front-door workflow's routing guidance, but their metadata does not compete in Codex's default skill context.
+
+Treat this as an invocation policy, not an importance ranking or a mandatory lifecycle. Add another implicit front door only when it owns a common top-level intent that the existing front doors cannot route reliably without already knowing the specialist name.
+
 ## Choose by the artifact you need
 
 Do not start from a fashionable method or invoke every skill as a stage gate. Ask what decision or artifact is currently missing.

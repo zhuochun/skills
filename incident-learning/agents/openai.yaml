@@ -2,3 +2,6 @@ interface:
   display_name: "Incident Learning"
   short_description: "Turn incidents into durable system learning"
   default_prompt: "Use $incident-learning to reconstruct this incident and route each learned gap to the smallest durable improvement."
+
+policy:
+  allow_implicit_invocation: false

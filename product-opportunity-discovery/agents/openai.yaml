@@ -2,3 +2,6 @@ interface:
   display_name: "Product Opportunity Discovery"
   short_description: "Discover valuable opportunities before heavy buildout"
   default_prompt: "Use $product-opportunity-discovery to reframe this product request, map the opportunity and assumptions, and choose the cheapest credible learning test."
+
+policy:
+  allow_implicit_invocation: false

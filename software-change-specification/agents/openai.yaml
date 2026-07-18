@@ -2,3 +2,6 @@ interface:
   display_name: "Software Change Specification"
   short_description: "Turn software changes into implementable contracts"
   default_prompt: "Use $software-change-specification to turn this proposed change into an implementation-ready behavioral contract."
+
+policy:
+  allow_implicit_invocation: false

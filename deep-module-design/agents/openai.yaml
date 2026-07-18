@@ -2,3 +2,6 @@ interface:
   display_name: "Deep Module Design"
   short_description: "Design module boundaries around real change"
   default_prompt: "Use $deep-module-design to compare knowledge boundaries and choose a deep or composable interface that localizes this demonstrated change pressure."
+
+policy:
+  allow_implicit_invocation: false

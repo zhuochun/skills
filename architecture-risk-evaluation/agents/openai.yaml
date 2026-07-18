@@ -2,3 +2,6 @@ interface:
   display_name: "Architecture Risk Evaluation"
   short_description: "Expose architecture risks through scenarios"
   default_prompt: "Use $architecture-risk-evaluation to trace prioritized quality scenarios through this architecture."
+
+policy:
+  allow_implicit_invocation: false

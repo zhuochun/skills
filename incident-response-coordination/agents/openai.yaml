@@ -2,3 +2,6 @@ interface:
   display_name: "Incident Response Coordination"
   short_description: "Coordinate live incidents with bounded authority"
   default_prompt: "Use $incident-response-coordination to organize this live software incident around stabilization, delegated workstreams, communications, and accountable authority."
+
+policy:
+  allow_implicit_invocation: false

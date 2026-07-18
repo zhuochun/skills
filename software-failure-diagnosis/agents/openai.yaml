@@ -2,3 +2,6 @@ interface:
   display_name: "Software Failure Diagnosis"
   short_description: "Diagnose failures with causal evidence"
   default_prompt: "Use $software-failure-diagnosis to diagnose this failure and establish the most supported cause before proposing a fix."
+
+policy:
+  allow_implicit_invocation: true

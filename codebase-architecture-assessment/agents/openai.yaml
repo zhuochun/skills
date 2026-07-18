@@ -2,3 +2,6 @@ interface:
   display_name: "Codebase Architecture Assessment"
   short_description: "Find evidence-backed architecture improvements"
   default_prompt: "Use $codebase-architecture-assessment to inspect this codebase and rank practical architecture improvements."
+
+policy:
+  allow_implicit_invocation: false
