@@ -99,7 +99,7 @@ flowchart LR
     ACR --> BPR
 ```
 
-`software-change-orchestration` can maintain a bounded change's current frontier across this graph when work spans sessions or artifacts. It does not add a required path through the graph or take ownership from any node.
+`software-change-orchestration` can maintain a bounded change's evolving canonical specification across this graph and preserve a resume point when work spans sessions or artifacts. The immediate frontier normally remains in the active session. Orchestration does not add a required path through the graph or take ownership from any node.
 
 This is not a mandatory lifecycle. For example, an uncertain product request may loop only between opportunity discovery and prioritization until evidence supports stopping or investment. A local reversible feature may need only `scoped-change-implementation` and repository checks. A structure-only cleanup may use `behavior-preserving-refactoring` without architecture review. A multi-team feature may use `technical-program-execution` to coordinate slices and integration while composing observability, controlled release, change review, and verification without a heavyweight architecture evaluation. A multi-region ledger migration may require architecture evaluation, a decision record, technical program execution, high-risk change planning, controlled exposure, layered verification, and an operational feedback audit. An active outage may need incident-response coordination and diagnosis before it can move into recovery and incident learning.
 
@@ -146,10 +146,10 @@ Discovery and prioritization form a feedback loop. Prioritization may fund anoth
 
 ### Change orchestration, specification, and program execution
 
-- `software-change-orchestration` owns continuity for one bounded change effort: its persistence mode, canonical work surface, current frontier, artifact and evidence links, and next specialist route across sessions. It may use an existing specification or issue as that work surface instead of creating another document.
+- `software-change-orchestration` owns continuity and composition economy for one bounded change effort: authorization and escalation boundaries, derived assurance posture and workflow budget, evolving canonical specification or work surface, one primary owner per move, reusable evidence, and durable handoff state when needed. It keeps the immediate frontier in the active session during uninterrupted work and may use an existing specification or issue instead of creating another document.
 - `software-change-specification` owns the implementation-ready behavior contract for one accepted but ambiguous change. It can classify the change as not ready; orchestration preserves and routes those unresolved decisions.
 - `technical-program-execution` owns multi-team delivery topology, dependencies, integration, constraints, and replanning. Orchestration must route there rather than becoming a smaller duplicate program office.
-- `scoped-change-implementation` owns authorized code change. Review, verification, promotion, and residual-risk acceptance remain separate judgments.
+- `behavior-preserving-refactoring` is the primary executor for a pure structural slice whose supported behavior must remain unchanged. `scoped-change-implementation` is the primary executor for an intended observable behavior change. Do not stack both complete workflows around one pure refactor; split a mixed change or nominate one primary executor and borrow only the needed checks. Review, verification, promotion, and residual-risk acceptance remain separate judgments.
 
 The orchestration unit is a **change effort**, not necessarily a whole product or repository. Related slices may share one effort when they serve one outcome and depend on the same behavior or risk decisions. Small reversible changes stay inline with no orchestration directory. When durable state is justified, use the owning repository if one repo owns the behavior; use an established control repository when no code repository owns the cross-repository outcome. Touching or reading several repositories is not by itself a reason to create control-repository state.
 

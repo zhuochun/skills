@@ -18,6 +18,12 @@ Design boundaries that hide consequential knowledge and bound reasoning. A deep 
 
 Keep module, bounded context, vertical slice, deployable service, data owner, failure domain, and team boundary distinct unless evidence says they align.
 
+## Compose proportionately
+
+When orchestration supplies an accepted pressure, commitment set, canonical specification, assurance posture, and bounded design question, consume them rather than repeating product framing or closure planning. Reopen an upstream claim only when repository evidence contradicts it or the missing detail prevents an honest boundary.
+
+For compact and standard local decisions, default the durable result to a concise design delta: pressure, selected ownership and interface, materially different alternative when one affects the choice, preserved commitments, rejection gates, and implementation implication. Expand the analysis only when alternatives have materially different safety, compatibility, data, lifecycle, operational, or migration consequences. Return the design delta and invalidated assumptions; do not produce another complete change plan.
+
 ## Design workflow
 
 1. **Name the pressure and desired locality.** Use planned behavior, repeated changes, defects, incidents, performance constraints, meaning-search cost, or test pain. Classify the pressure as essential problem complexity, accidental structural friction, or both; do not invent an abstraction for hypothetical reuse.

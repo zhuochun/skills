@@ -85,9 +85,11 @@ keyed acceptance claims, and state whether the change is ready. Do not edit code
 ```text
 Use $software-change-orchestration to guide this atlas feature from the rough
 idea through the smallest necessary specification, design, implementation,
-review, and verification work. Keep durable state in the repository that owns
-the user behavior, preserve one current frontier across sessions, avoid a new
-directory for inline work, and do not invoke specialist skills as fixed stages.
+review, and verification work in authorized mode. You may maintain the canonical
+specification, implement the accepted scope, delegate fresh read-only review,
+and run verification through closure without pausing for workflow approval.
+Escalate only for a material scope change, new external or production action,
+destructive action, or a decision that changes supported behavior.
 ```
 
 ```text

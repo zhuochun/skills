@@ -1,6 +1,6 @@
 # Software change orchestration reference
 
-Use these forms selectively. The canonical record is a working memory and routing surface, not a mandatory handoff package.
+Use these forms selectively. The canonical work surface is a living specification and repository memory, not a mandatory handoff package or session transcript.
 
 ## Knowledge-derived reasoning model
 
@@ -47,19 +47,67 @@ changes/YYYYMMDD-<effort-key>.md
 
 # Expanded effort in either repository type
 <changes-root>/YYYYMMDD-<effort-key>/
-|-- change.md          # Thin status, frontier, and canonical-link index
+|-- change.md          # Thin status, optional resume state, and canonical-link index
 |-- specification.md   # Optional when this location owns the specification
 |-- verification.md    # Optional strategy, results, and evidence limits
 `-- decisions/         # Optional when several decisions need separate lifecycles
 ```
 
-Use the flat form when one file is enough; never create a directory solely to contain `change.md`. Use the expanded form only when at least two independently maintained artifacts need stable locations or different review and revision lifecycles. In that form, keep `change.md` thin: current status, frontier, closure state, and links to the canonical specification, decisions, implementation slices, and evidence.
+Use the flat form when one file is enough; never create a directory solely to contain `change.md`. Use the expanded form only when at least two independently maintained artifacts need stable locations or different review and revision lifecycles. In that form, keep `change.md` thin: current status, resume state when needed, closure state, and links to the canonical specification, decisions, implementation slices, and evidence.
 
 Split an artifact when its size, owner, audience, review cadence, or evidence lifecycle makes independent maintenance useful. A long product or software specification and a verification record are common candidates, but do not relocate or duplicate them merely to make the directory self-contained. For example, if an application already keeps a long specification under `docs/specs`, leave it there and link to it from the change record. Select a control repository because it owns the cross-repository outcome, decisions, or portfolio context, not merely because the effort reads or modifies more than one repository.
 
+## Select the assurance posture and workflow budget
+
+Derive the posture rather than asking the user to classify the change unless consequence or authority remains ambiguous.
+
+| Posture | Typical evidence | Composition and artifact default |
+| --- | --- | --- |
+| **Compact** | Local, reversible, clear supported behavior, narrow consequence | One primary skill or executor; inline discussion or one minimal record for authorized execution; focused check; no directory |
+| **Standard** | Several surfaces or meaningful state, lifecycle, compatibility, or ownership | One living specification; at most one substantial design route at a time; one primary executor; independent review; one final closure set |
+| **High-assurance** | Security, destructive or hard-to-reverse data, broad compatibility, production control, regulation, or difficult recovery | Add only risk-owned design, transition, release, operational, and verification artifacts and independent evidence |
+
+The workflow budget limits full skill workflows, executors, durable artifacts, independent passes, and verification breadth. It is not a token, time, or command quota. File count and diff size may inform the posture but never outweigh consequence, reversibility, ambiguity, coordination, and proof difficulty.
+
+Do not infer a directory directly from the posture. Use a directory only when multiple artifacts need separate owners, audiences, or review and evidence lifecycles.
+
+## Use authorized execution mode
+
+When the user says `authorized mode`, `auto mode`, or establishes a goal to execute an accepted bounded change through closure, record:
+
+```markdown
+- Authorized modes: record writes, implementation, delegated review, verification
+- Accepted scope and explicit non-goals: <canonical specification sections or links>
+- Escalation conditions: material scope change; new external or production action; destructive action; decision that changes supported behavior
+```
+
+Proceed without pausing for workflow selection, specialist use, fresh read-only reviewers, ordinary tests, or in-scope remediation. A failed check or review finding blocks closure but does not require user interruption while remediation remains inside the accepted contract. Follow repository, platform, and safety constraints throughout.
+
+Write this boundary into the smallest repository-backed canonical specification or change record before implementation begins. Reuse an appropriate existing specification, issue mirror, or README section when available. Compact means the record stays short and no orchestration directory is created; it does not mean authorized execution remains only in chat or goal state.
+
+Keep the originating request, issue, or accepted specification linked or faithfully represented beside the derived scope. Do not turn outcome language such as durability, compatibility, visibility, or recovery into a narrower code-level proxy merely because that proxy is easy to test. When competing interpretations would change supported behavior, escalate that decision under the recorded behavior-change condition.
+
+## Reuse evidence and snapshots
+
+Keep a compact active evidence index in the goal, canonical work surface, CI, or a linked verification artifact according to the persistence need. Each reusable entry identifies the claim, command or method, result, candidate snapshot, material environment, and raw evidence location when available.
+
+A coherent milestone commit is a strong snapshot identity when local-history writes are separately authorized and the repository permits intermediate commits. Commit at meaningful green implementation boundaries, not at every skill transition, documentation update, or test command. Without commit authority, use the base revision plus a diff or working-tree fingerprint.
+
+Reuse evidence only while its claim, candidate snapshot, method, and material environment remain valid. Invalidate the smallest affected set after changes. Documentation-only edits normally preserve runtime evidence; relevant code, tests, fixtures, configuration, data, or environment changes may not. Require a broader rerun when risk or invalidation warrants it, not merely because work moved to another skill.
+
+## Maintain the living specification
+
+For owning-repository, control-repository, and hybrid efforts, create or update the smallest viable canonical work surface once repository-document writes are authorized and before substantial specialist analysis. Start with accepted facts only; incomplete sections are expected while the effort is active.
+
+Update the owning section when an accepted result changes scope, behavior, invariants, design, transition, implementation slices, or verification claims. Preserve rationale and rejected alternatives beside the selected contract only when losing them would make drift or regression likely. Do not create a generic decision ledger or copy the discussion into the repository.
+
+Keep the immediate next move in the active session or goal during uninterrupted work. Add a short status or resume note only when work pauses, becomes blocked, changes hands or sessions, or otherwise cannot be safely re-entered from the accepted specification. Remove transient routing state at closure while retaining durable follow-up or reopening conditions.
+
+Before every update, re-read the canonical artifact and relevant worktree state. If another session changed it, integrate the current accepted state rather than overwriting it.
+
 ## Canonical change record
 
-Use an existing specification, issue, or decision surface as this record when it can preserve the current state and frontier without becoming confused. The form below is a semantic contract, not a demand for a new `change.md` file. In an expanded effort, use it as the thin index and omit detailed content owned by linked artifacts.
+Use an existing specification, issue, or design surface as this record when it can preserve the evolving accepted contract without becoming confused. The form below is a semantic contract, not a demand for a new `change.md` file or a rigid section layout. In an expanded effort, keep any `change.md` thin and leave detailed content in its owning linked artifacts.
 
 Adapt this structure to the existing work surface and omit empty sections.
 
@@ -71,9 +119,12 @@ Adapt this structure to the existing work surface and omit empty sections.
 - Persistence: owning repository / control repository / hybrid
 - Canonical location: <repository and path or issue URL>
 - Accountable change owner: <owner or unresolved>
-- Authorized modes: discuss / write records / implement / external action / production action
+- Assurance posture and workflow budget: compact / standard / high-assurance; <bounded composition>
+- Authorized modes: discuss / record writes / implementation / delegated review / verification / external action / production action
+- Escalation conditions: <when authorized mode applies>
+- Baseline revision or evidence date: <when material>
 
-## Destination
+## Outcome and boundaries
 
 - Outcome and why now:
 - Behavior or risk boundary:
@@ -81,44 +132,44 @@ Adapt this structure to the existing work surface and omit empty sections.
 - Closure evidence:
 - Consequence of wrong behavior:
 
-## Current contract
+## Accepted contract
 
-- Accepted specification claims and labels:
+- Desired behavior, examples, or specification claims:
 - Preserved invariants:
-- Accepted design or transition decisions:
+- Accepted design, ownership, or transition contract:
+- Important rationale or rejected alternatives that prevent likely drift:
 - Material assumptions and evidence status:
 
-## Current frontier
-
-- Limiting question, decision, action, or evidence:
-- Why it limits progress:
-- Owning person or skill:
-- Smallest next move:
-- Work that can proceed independently:
-
-## Decisions and artifacts
-
-| Key and plain-language label | Owner | Canonical location | Status or evidence limit | Implication |
-| --- | --- | --- | --- | --- |
-
-## Fog, blockers, and routes
-
-| Unknown or suspected later question | When it becomes actionable | Owner or candidate skill | Blocks what? |
-| --- | --- | --- | --- |
-
-## Implementation and evidence
+## Implementation slices
 
 - Authorized slice and implementation location:
-- Review findings and disposition:
+- Dependencies and feedback loop:
+- Deviations or counterexamples that changed the contract:
+
+## Related artifacts
+
+| Artifact or claim | Owner | Canonical location | Status or evidence limit | Implication |
+| --- | --- | --- | --- | --- |
+
+## Active evidence
+
+| Claim | Snapshot and environment | Method | Result or evidence link | Validity limit |
+| --- | --- | --- | --- | --- |
+
+## Verification and closure
+
+- Review findings and dispositions:
 - Verification claims, results, and limits:
-- Operational, release, cleanup, or support state:
+- Operational, release, cleanup, support, and residual-risk state:
+- Delivered outcome or accountable closure:
 
-## Next move or closure
+## Resume state
 
-- Next frontier and reason, or delivered outcome:
-- Authority or accountable confirmation required:
-- Residual risk and owner:
-- Re-entry condition if blocked, deferred, or stopped:
+Omit during uninterrupted work and after closure. Include only for a pause, handoff, blocked state, or non-obvious re-entry:
+
+- Resume from and why:
+- Authority or confirmation still required:
+- Re-entry condition:
 ```
 
 ## Route the current frontier
@@ -139,7 +190,8 @@ Adapt this structure to the existing work surface and omit empty sections.
 | Runtime signal semantics and operational navigation are missing | `observability-design` |
 | Claims need falsifying methods, oracles, and evidence limits | `verification-strategy-design` |
 | Multi-team dependencies, integration, and replanning need active steering | `technical-program-execution` |
-| A fixed bounded change is understood and implementation is authorized | `scoped-change-implementation` |
+| A fixed bounded behavior change is understood and implementation is authorized | `scoped-change-implementation` |
+| An authorized structural change must preserve supported behavior | `behavior-preserving-refactoring` |
 | Failure cause remains uncertain | `software-failure-diagnosis` |
 | A bounded diff needs independent challenge | `code-review` |
 | Fixed consequential claims are ready to execute | `verification-execution` |
@@ -162,8 +214,9 @@ Use these as routing questions, not universal stage gates.
 ### Evidence-based closure
 
 - Was the intended behavior delivered in its owning repositories?
-- Were material review findings resolved, accepted, or assigned?
+- Were material review findings resolved, accepted, or assigned, with focused independent confirmation when remediation changed the reviewed code or behavior?
 - Were claimed checks actually executed in identified environments?
+- Does one successful closure set apply to the final candidate snapshot, with still-valid earlier evidence reused rather than repeated?
 - Are release, operations, support, cleanup, and residual risk owned?
 - Does the canonical record point to current evidence rather than copied snapshots?
 - Can a future session understand why the effort is complete, stopped, or ready to resume?
