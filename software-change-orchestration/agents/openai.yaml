@@ -1,0 +1,4 @@
+interface:
+  display_name: "Software Change Orchestration"
+  short_description: "Guide a software change from idea to evidence"
+  default_prompt: "Use $software-change-orchestration to guide this software change from rough intent through the right decisions, implementation, review, and verification."

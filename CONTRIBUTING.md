@@ -1,7 +1,8 @@
 # Contributing skills
 
-This repository maintains production-grade software-engineering skills for
-consequential work in real repositories and operating environments. Treat
+This repository maintains production-grade product and software-engineering
+skills for consequential work in real organizations, repositories, and
+operating environments. Treat
 [`README.md`](README.md) as the canonical catalog, relationship model, and
 composition guide. Treat [`evals/README.md`](evals/README.md) as the canonical
 forward-evaluation protocol.

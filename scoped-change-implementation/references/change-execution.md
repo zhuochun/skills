@@ -14,13 +14,19 @@ Adapt these forms in the current task or repository artifact. Do not create a ha
 | **Duplication Reveals Stable Abstraction Boundaries** | Share proven knowledge, not merely matching text; preserve local variation evidence unless divergence would be unsafe. |
 | **Code Should Minimize Meaning Search** | Optimize the finished change for the next maintainer's ability to recover intent, behavior, ownership, and constraints. |
 
-## Change contract
+## Compact fallback change contract
+
+Use this when no richer `software-change-specification` result is needed. When
+one exists, cite its `CHG-*` keys and plain-language labels rather than copying
+the specification into this execution record.
 
 - Outcome and observable behavior:
+- Current-to-desired behavior delta:
 - Supported behavior and invariants preserved:
 - Consumers, data, dependencies, and operating paths affected:
 - Explicit non-goals:
 - Consequential assumptions:
+- Change-specification keys and labels consumed:
 - Verification keys and labels consumed:
 - Observability or release keys and labels consumed:
 - Authority and environmental constraints:
