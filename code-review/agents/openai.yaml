@@ -1,0 +1,4 @@
+interface:
+  display_name: "Code Review"
+  short_description: "Review changes against intent and risk"
+  default_prompt: "Use $code-review to review this change against its intent, repository constraints, and risk."

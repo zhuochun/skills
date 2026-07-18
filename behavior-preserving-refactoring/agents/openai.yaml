@@ -1,0 +1,4 @@
+interface:
+  display_name: "Behavior-Preserving Refactoring"
+  short_description: "Refactor structure while preserving behavior"
+  default_prompt: "Use $behavior-preserving-refactoring to improve this structure without changing supported behavior."

@@ -1,6 +1,6 @@
 # Software Engineering Skills for Codex
 
-This repository contains 18 reusable Codex skills for consequential software-engineering work. Each skill owns one kind of reasoning artifact: an orientation map, model, design, assessment, decision, transition or release plan, verification strategy, operational audit, learning record, or coaching loop.
+This repository contains 23 reusable Codex skills for consequential software-engineering work. Each skill owns one kind of reasoning artifact or action: an orientation map, model, design, assessment, decision, transition or release plan, scoped implementation, diagnosis, refactoring, change review, verification strategy or execution, operational audit, learning record, or coaching loop.
 
 The collection is designed for production systems and multi-team organizations. The skills require evidence, expose uncertainty, preserve accountable decision rights, and distinguish designing an artifact from independently evaluating whether it works.
 
@@ -29,13 +29,23 @@ Do not start from a fashionable method or invoke every skill as a stage gate. As
 | [`service-ownership-design`](service-ownership-design/) | Sustainable lifecycle ownership and its enabling conditions | Ownership trace, cognitive-load assessment, model options, prerequisites, and transition |
 | [`technical-decision-making`](technical-decision-making/) | Authority, participation, option comparison, closure, and commitment | Decision frame, authority map, decision or escalation, execution, and revisit conditions |
 
-### Change and verify
+### Plan and control change
 
 | Skill | It owns | Primary output |
 | --- | --- | --- |
 | [`controlled-release-design`](controlled-release-design/) | Feature flags, exposure assignment, cohorts, release phases, and kill controls | Release contract, control topology, evidence, phase criteria, retreat, and cleanup |
 | [`high-risk-change-planning`](high-risk-change-planning/) | Transition states for risky API, schema, data, service, and infrastructure changes | Phased coexistence plan with invariants, evidence, abort, retreat, and cleanup |
 | [`verification-strategy-design`](verification-strategy-design/) | Matching engineering claims and risks to falsifying evidence | Risk-to-evidence portfolio with methods, oracles, limits, and renewal triggers |
+
+### Implement, diagnose, and verify
+
+| Skill | It owns | Primary output |
+| --- | --- | --- |
+| [`scoped-change-implementation`](scoped-change-implementation/) | Authorized bounded behavior change through coherent vertical slices | Maintained code, behavior evidence, completed ownership, deviations, and remaining gaps |
+| [`behavior-preserving-refactoring`](behavior-preserving-refactoring/) | Structural improvement without intentional supported-behavior change | Consolidated ownership, refactoring-safe evidence, retired old paths, and equivalence limits |
+| [`software-failure-diagnosis`](software-failure-diagnosis/) | Causal investigation of bugs, regressions, intermittent failures, and performance degradation | Symptom contract, evidence loop, competing hypotheses, supported cause, and repair boundary |
+| [`code-review`](code-review/) | Independent read-only review of a bounded software change | Prioritized evidence-backed findings, questions, scope limits, and residual risks |
+| [`verification-execution`](verification-execution/) | Execution of fixed verification claims, methods, and oracles | Per-claim results, raw evidence, counterexamples, cleanup, and unresolved gaps |
 
 ### Operate, learn, and renew
 
@@ -80,14 +90,22 @@ flowchart LR
     SB --> OD
     MD --> CR["Controlled release design"]
     MD --> VS["Verification strategy design"]
+    MD --> SCI["Scoped change implementation"]
+    MD --> BPR["Behavior-preserving refactoring"]
     HR -.-> CR
     HR --> OD
     HR --> VS
-    CR --> EX["Implementation and evidence execution"]
-    OD --> EX
-    VS --> EX
-    HR --> EX
-    EX --> DEC["Accountable promotion or cutover"]
+    CR --> SCI
+    OD --> SCI
+    HR --> SCI
+    SFD["Software failure diagnosis"] --> SCI
+    SCI --> SCR["Code review"]
+    BPR --> SCR
+    VS --> VE["Verification execution"]
+    SCI --> VE
+    BPR --> VE
+    SCR --> DEC["Accountable promotion or cutover"]
+    VE --> DEC
     DEC --> OF["Operational feedback audit"]
     OF -.-> OD
 
@@ -102,9 +120,10 @@ flowchart LR
     RR --> DM
     RR --> SB
     RR --> MD
+    RR --> BPR
 ```
 
-This is not a mandatory lifecycle. For example, a local reversible module change may need only `deep-module-design` and ordinary repository verification. A multi-service feature may need observability and controlled release without a heavyweight architecture review. A multi-region ledger migration may require architecture evaluation, a decision record, high-risk change planning, controlled exposure, layered verification, and an operational feedback audit.
+This is not a mandatory lifecycle. For example, a local reversible feature may need only `scoped-change-implementation` and repository checks. A structure-only cleanup may use `behavior-preserving-refactoring` without architecture review. A multi-service feature may need observability, controlled release, change review, and verification execution without a heavyweight architecture evaluation. A multi-region ledger migration may require architecture evaluation, a decision record, high-risk change planning, controlled exposure, layered verification, and an operational feedback audit.
 
 ## Design and evaluation are different jobs
 
@@ -120,7 +139,10 @@ A skill that creates an artifact should not silently certify that artifact. For 
 | Controlled release design | `verification-strategy-design` for claims and phase evidence; accountable owners retain promotion authority |
 | High-risk transition plan | `verification-strategy-design` for falsifiable phase and invariant evidence |
 | Running telemetry and response system | `operational-feedback-audit` against observed decisions and incidents |
-| Completed implementation | Executed repository and independent evidence when warranted; `retrospective-redesign` only when accumulated learning justifies reconsidering the design |
+| Scoped implementation | `code-review` for an independent diff challenge and `verification-execution` for fixed consequential claims |
+| Behavior-preserving refactoring | `code-review`, plus `verification-execution` when equivalence crosses consumer, data, concurrency, performance, failure, or operating boundaries |
+| Failure diagnosis | Reproducible or durable causal evidence reviewed by the relevant owner; any repair becomes a separately authorized implementation |
+| Completed implementation | Executed repository evidence, `code-review`, and independent `verification-execution` when warranted; `retrospective-redesign` only when accumulated learning justifies reconsidering the design |
 
 Separation does not require bureaucracy or different people for every local change. It requires a distinct contract: the evaluator receives the artifact and evidence, can identify missing claims, and is not required to defend the producer's original choices. Increase independence with consequence, irreversibility, and uncertainty.
 
@@ -156,6 +178,26 @@ For existing service sprawl, boundary evidence may expose semantic confusion and
 
 Use `codebase-architecture-assessment` to discover and rank structural problems across an existing codebase. Use `deep-module-design` after one module, interface, seam, or vertical slice has been selected for design.
 
+### Design, implementation, and refactoring
+
+- `deep-module-design` decides where knowledge, state, resources, and interface semantics should live. It does not modify the target.
+- `scoped-change-implementation` changes supported behavior or adds an authorized capability through coherent vertical slices. TDD is one optional inner feedback loop, not the skill's whole contract.
+- `behavior-preserving-refactoring` changes structure while keeping supported behavior stable. Any intentional behavior or support-policy change becomes a separate scoped implementation decision.
+
+A short diff is not automatically surgical. Surgical implementation minimizes unnecessary coupling, dual authority, and unrelated change while completing the ownership and cleanup required by the requested behavior.
+
+### Failure diagnosis versus repair
+
+Use `software-failure-diagnosis` while the cause of a bug, regression, intermittent failure, or performance degradation remains uncertain. It owns symptom preservation, evidence loops, competing hypotheses, causal explanation, and the smallest faithful reproduction or observation recipe. It defaults to read-only diagnosis.
+
+After the cause is supported, use `scoped-change-implementation` only when repair is authorized. Preserve the diagnosis as the reason and regression signal; do not let a plausible patch retroactively become proof of cause.
+
+### Change review versus verification execution
+
+Use `code-review` to inspect a bounded diff against intent, repository constraints, behavior, contracts, maintainability, and claimed evidence. It produces prioritized findings and does not change the target.
+
+Use `verification-execution` to run already-defined `VER-*` claims against fixed methods and oracles. It preserves raw evidence, environment context, counterexamples, inconclusive results, and cleanup. Review can identify an evidence gap; execution can show a claim failed; neither silently approves release.
+
 ### Architecture risk versus high-risk change
 
 Use `architecture-risk-evaluation` to ask whether the proposed target architecture can satisfy important scenarios and quality drivers. Use `high-risk-change-planning` after a target direction exists to design survivable old, transitional, and new states.
@@ -165,7 +207,9 @@ architecture-risk-evaluation
   -> technical-decision-making
   -> high-risk-change-planning
   -> co-design verification, observability, and optional controlled release
-  -> implementation, executed evidence, and accountable cutover
+  -> scoped-change-implementation
+  -> code-review and verification-execution
+  -> accountable cutover
 ```
 
 ### Controlled release versus high-risk change
@@ -178,7 +222,8 @@ Use `observability-design` before implementation or release to define normative 
 
 ```text
 observability-design
-  -> implementation, with controlled release when applicable
+  -> scoped-change-implementation, with controlled release when applicable
+  -> verification-execution for claims that consume runtime evidence
   -> operational-feedback-audit
   -> revise observability design
 ```
@@ -189,6 +234,7 @@ The designer and auditor may be the same person for low-risk work, but the audit
 
 - `observability-design` owns the runtime evidence substrate: signal semantics, correlation, navigation, alerts, and control visibility.
 - `verification-strategy-design` owns the broader claim-to-evidence portfolio. It may select tests, static checks, formal methods, simulation, load tests, failure injection, rollout evidence, and production telemetry according to risk.
+- `verification-execution` runs that portfolio against fixed oracles and preserves per-claim results, counterexamples, environment context, safety stops, and inconclusive evidence.
 - `operational-feedback-audit` evaluates whether the running telemetry, ownership routing, diagnosis, and control paths actually produced correct operational action.
 
 Observability can supply evidence to verification, but telemetry is not a substitute for earlier checks. An operational audit can reject both a weak observability design and the assumption that a green signal proved the system healthy.
@@ -213,7 +259,9 @@ domain-modeling
   -> technical-decision-making
   -> high-risk-change-planning, when transition risk justifies it
   -> co-design observability, verification, and controlled release when they apply
-  -> implementation and evidence execution
+  -> scoped-change-implementation in coherent vertical slices
+  -> code-review
+  -> verification-execution for the required claim set
   -> accountable promotion, abort, or risk decision
   -> operational-feedback-audit after release
 ```
@@ -228,7 +276,9 @@ domain-modeling
        observability-design for end-to-end and component evidence
        controlled-release-design for authoritative assignment and mixed states
        verification-strategy-design for claims, methods, and oracles
-  -> implementation and evidence execution
+  -> scoped-change-implementation in each affected codebase
+  -> code-review for each bounded change and the composed workflow
+  -> verification-execution for local and end-to-end claims
   -> accountable promotion or abort
   -> operational-feedback-audit after representative use
 ```
@@ -241,6 +291,8 @@ Do not let each service independently decide feature exposure when the workflow 
 service-surface-mapping
   -> domain-modeling, service-boundary-design, or deep-module-design for the discovered problem
   -> verification-strategy-design for characterization and change claims
+  -> software-failure-diagnosis when an observed failure is still unexplained
+  -> behavior-preserving-refactoring for an authorized structure-only repair
   -> observability-design when prospective evidence is missing
   -> operational-feedback-audit when the live response loop needs evaluation
   -> controlled-release-design before the first consequential feature rollout
@@ -256,6 +308,7 @@ codebase-architecture-assessment
   -> domain-modeling, for semantic confusion
   -> service-boundary-design, for deployment/data/ownership coupling
   -> deep-module-design, for local structure and interfaces
+  -> behavior-preserving-refactoring for authorized structural execution
   -> high-risk-change-planning, only for consequential transition work
 ```
 
@@ -266,7 +319,28 @@ architecture-risk-evaluation, when assumptions need technical analysis
   -> technical-decision-making
   -> high-risk-change-planning
   -> co-design verification, observability, and optional controlled release
-  -> implementation and evidence execution
+  -> scoped-change-implementation
+  -> code-review and verification-execution
+```
+
+### Bug, regression, or performance failure
+
+```text
+software-failure-diagnosis
+  -> scoped-change-implementation, only when repair is authorized
+  -> code-review
+  -> verification-execution when the repair has broader claims
+  -> incident-learning when the failure carries operational or organizational learning
+```
+
+### Behavior-preserving structural change
+
+```text
+deep-module-design or retrospective-redesign, when target structure is undecided
+  -> behavior-preserving-refactoring
+  -> code-review
+  -> verification-execution when equivalence is consequential
+  -> accountable decision on any intentional behavior retirement
 ```
 
 ### Platform and service operating model
@@ -286,6 +360,8 @@ incident-learning
   -> operational-feedback-audit for detection, diagnosis, paging, or routing gaps
   -> observability-design for signal-contract gaps
   -> verification-strategy-design for escaped behavior or evidence gaps
+  -> software-failure-diagnosis for an unresolved technical cause
+  -> verification-execution for a defined regression or resilience claim
   -> domain-modeling, codebase-architecture-assessment, deep-module-design,
      or service-boundary-design for focused model or structure gaps
   -> service-capacity-engineering for overload and recovery gaps
@@ -302,18 +378,21 @@ One incident may produce several independent branches. Do not force every findin
 ```text
 module or capability
   -> deep-module-design as the primary lens
+  -> behavior-preserving-refactoring for an authorized structure-only route
 
 service or subsystem
   -> service-boundary-design when deployment, data, failure, or ownership is involved
   -> architecture-risk-evaluation for consequential quality claims
+  -> scoped-change-implementation or behavior-preserving-refactoring after the target is accepted
 
 multi-service system or wider estate
   -> architecture-risk-evaluation
   -> technical-decision-making for accountable closure when needed
-  -> high-risk-change-planning and independent verification before consequential cutover
+  -> high-risk-change-planning, scoped implementation, change review,
+     and independent verification execution before consequential cutover
 ```
 
-The redesign agent works read-only and consolidates demonstrated learning rather than starting from an ahistorical clean slate. It compares the current or minimally consolidated design as a competent baseline, may recommend retain or quarantine when change would outrun evidence, and names the focused follow-up skills needed for deeper design, implementation planning, controlled release, or verification. The accountable human confirms support-policy changes, route selection, cutover, and residual-risk acceptance. Builder-run checks may support the decision but do not become an independent equivalence verdict merely because the same agent reports them.
+The redesign agent works read-only and consolidates demonstrated learning rather than starting from an ahistorical clean slate. It compares the current or minimally consolidated design as a competent baseline, may recommend retain or quarantine when change would outrun evidence, and names the focused follow-up skills needed for deeper design, scoped implementation, behavior-preserving refactoring, controlled release, or verification. The accountable human confirms support-policy changes, route selection, cutover, and residual-risk acceptance. Builder-run checks may support the decision but do not become an independent equivalence verdict merely because the same agent reports them.
 
 These are routing examples, not mandatory stage gates.
 
@@ -356,6 +435,41 @@ operability, and cost scenarios. Identify evidence needed before a decision.
 Use $high-risk-change-planning to plan this PostgreSQL-to-Spanner migration.
 Include coexistence, write authority, delayed consumers, correctness oracles,
 abort criteria, recovery, communications, and cleanup.
+```
+
+```text
+Use $scoped-change-implementation to add refund approval through one coherent
+vertical slice. Preserve unrelated work and current compatibility, use TDD at
+the stable behavior seam when useful, implement the smallest coherent change,
+run focused then affected checks, and report any design assumption that fails.
+```
+
+```text
+Use $software-failure-diagnosis to investigate this intermittent duplicate
+charge without changing behavior. Preserve the symptom and environment,
+construct the tightest faithful evidence loop, compare causal hypotheses, and
+report the supported mechanism, counterevidence, confidence, and repair seam.
+```
+
+```text
+Use $behavior-preserving-refactoring to move settlement rules behind one
+module owner without changing supported behavior. Establish characterization
+evidence, refactor green to green, migrate confidence toward stable seams,
+remove the old authority, and state the limits of equivalence demonstrated.
+```
+
+```text
+Use $code-review to review this branch against the feature intent,
+repository constraints, consumer contracts, failure semantics, maintainability,
+and claimed evidence. Work read-only and report only prioritized actionable
+findings with tight locations and residual risks.
+```
+
+```text
+Use $verification-execution to run the named VER claims for this migration.
+Freeze methods and oracles before execution, preserve exact invocations and raw
+evidence, classify pass/fail/inconclusive/not-run per claim, stop on safety
+thresholds, and leave cutover authority with the accountable owner.
 ```
 
 Good prompts name the decision, scope, constraints, evidence, desired artifact, and whether implementation is authorized. The skills should identify missing evidence rather than filling gaps with invented facts.
