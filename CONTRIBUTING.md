@@ -159,6 +159,17 @@ fresh agent.
   agents.
 - Run `git diff --check` before committing.
 
+## Keep the distribution surfaces current
+
+The repository root is also the `zhuochun-skills` Codex plugin. Keep
+[`skills/`](skills/) as the only source of skill content: do not create copied
+Marketplace skill directories. When a published skill, its supporting files, or
+the plugin metadata changes, update the strict-semver `version` in
+[`plugin.json`](.codex-plugin/plugin.json) so installed Marketplace copies can
+be refreshed. Validate the root plugin with the installed `plugin-creator`
+validator, and run `npx skills add . --list --agent codex` to confirm the
+skills.sh CLI still discovers the full catalog.
+
 Preview and commit a scoped path set unless the user explicitly requests every
 repository change. Preserve unrelated work and verify the branch tracks its
 intended remote after pushing.

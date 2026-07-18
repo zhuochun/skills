@@ -1,0 +1,20 @@
+{
+  "name": "zhuochun-skills",
+  "interface": {
+    "displayName": "Zhuochun Skills"
+  },
+  "plugins": [
+    {
+      "name": "zhuochun-skills",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

@@ -10,6 +10,63 @@ Use [`install.sh`](../install/install.sh) on macOS and Unix, and
 same selections, targets, package manifests, dry-run behavior, and safety
 rules.
 
+## Other installation methods
+
+### skills.sh
+
+[`skills.sh`](https://www.skills.sh/) can install individual skills from this
+public repository for Codex and other supported agents. List the available
+skills before selecting one:
+
+```sh
+npx skills add zhuochun/skills --list
+```
+
+Install one skill into the current project's Codex skills directory:
+
+```sh
+npx skills add zhuochun/skills --agent codex --skill service-surface-mapping
+```
+
+Add `--global` for a user-scoped installation. The CLI selects individual
+skills; use this repository's installers when you want one of the curated
+packages below, such as `software-light`.
+
+### Codex Marketplace
+
+The complete catalog is published by this repository as the single
+**Zhuochun Skills** plugin. It loads the canonical [`skills/`](../skills/)
+directory, so the Marketplace does not maintain a copied second catalog.
+
+Add the public Git marketplace:
+
+```sh
+codex plugin marketplace add zhuochun/skills
+```
+
+For local plugin development from this checkout, add the current repository
+instead:
+
+```powershell
+codex plugin marketplace add .
+```
+
+Restart the Codex app or start a new CLI session, open the Plugins Directory
+or run `/plugins`, select **Zhuochun Skills**, and install it.
+
+When a published plugin release changes, update the plugin version in
+[`plugin.json`](../.codex-plugin/plugin.json), then refresh the marketplace and
+reinstall the plugin:
+
+```sh
+codex plugin marketplace upgrade zhuochun-skills
+codex plugin add zhuochun-skills@zhuochun-skills
+```
+
+The Marketplace plugin is intentionally an all-skills installation. Use the
+repository installers or `skills.sh` if a project should receive only a
+smaller profile or individual skills.
+
 ## Interactive installation
 
 Run either installer without selection or target arguments:

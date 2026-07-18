@@ -1,0 +1,35 @@
+{
+  "name": "zhuochun-skills",
+  "version": "1.0.0",
+  "description": "Evidence-oriented product and software engineering workflows for Codex.",
+  "author": {
+    "name": "Zhuochun",
+    "url": "https://github.com/zhuochun"
+  },
+  "homepage": "https://github.com/zhuochun/skills#readme",
+  "repository": "https://github.com/zhuochun/skills",
+  "keywords": [
+    "codex",
+    "product-management",
+    "software-engineering",
+    "workflows"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Zhuochun Skills",
+    "shortDescription": "Evidence-oriented product and software engineering skills",
+    "longDescription": "Thirty reusable workflows for product, software, service, and operational work.",
+    "developerName": "Zhuochun",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/zhuochun/skills",
+    "defaultPrompt": [
+      "Use $zhuochun-skills:service-surface-mapping to orient me to this service.",
+      "Use $zhuochun-skills:software-change-orchestration for this bounded change.",
+      "Use $zhuochun-skills:code-review to review this completed software change."
+    ]
+  }
+}
