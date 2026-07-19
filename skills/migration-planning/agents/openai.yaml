@@ -1,7 +1,7 @@
 interface:
   display_name: "Migration Planning"
   short_description: "Plan state and authority transitions"
-  default_prompt: "Use $migration-planning to design the current, transitional, and target states, movement, authority transfer, retreat, and retirement for this migration."
+  default_prompt: "Use $migration-planning to design the current, transitional, and target states, movement, authority transfer, retreat, retireability, and retirement for this migration."
 
 policy:
   allow_implicit_invocation: false

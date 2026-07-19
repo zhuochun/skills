@@ -64,8 +64,8 @@ top-level intents. You can also invoke any specialist explicitly as
 
 | When you need to... | Start with |
 | --- | --- |
-| Guide a bounded software change across sessions and artifacts | [`software-change-orchestration`](skills/software-change-orchestration/) |
 | Orient to unfamiliar software before changing or operating it | [`architecture-surface-mapping`](skills/architecture-surface-mapping/) |
+| Specify an accepted but behaviorally ambiguous software change | [`software-change-specification`](skills/software-change-specification/) |
 | Implement an authorized bounded behavior change | [`scoped-change-implementation`](skills/scoped-change-implementation/) |
 | Improve structure without intentionally changing supported behavior | [`behavior-preserving-refactoring`](skills/behavior-preserving-refactoring/) |
 | Diagnose a bug, regression, intermittent failure, or performance problem | [`software-failure-diagnosis`](skills/software-failure-diagnosis/) |

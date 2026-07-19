@@ -1,6 +1,6 @@
 ---
 name: migration-planning
-description: Design a survivable technical migration when consumers, authoritative traffic, stored state, execution, infrastructure, or technical authority must move from an established state carrying supported obligations to an accepted replacement and the old state must retire. Use for database or storage replacement, online or offline schema or representation migration, service or authoritative traffic moves, runtime or platform replacement, and contract adoption after compatibility policy is decided. Own current-to-transition-to-target states, authority transfer, cutover, retreat or compensation, and evidence-gated retirement. Do not use when staged exposure, a bounded software change, or a destructive operation has no replacement-state movement and retirement. Also do not use to choose the target, define contract semantics, change organizational or service ownership, or coordinate multiple workstreams.
+description: Design a survivable technical migration when consumers, authoritative traffic, stored state, execution, infrastructure, or technical authority must move from an established state carrying supported obligations to an accepted replacement, with the old state intended to lose authority and become retireable. Use for database or storage replacement, online or offline schema or representation migration, service or authoritative traffic moves, runtime or platform replacement, and contract adoption after compatibility policy is decided. Own current-to-transition-to-target states, authority transfer, cutover, retreat or compensation, evidence-gated retireability, and retirement. Do not use when staged exposure, a bounded software change, or a destructive operation has no replacement-state movement and retireability goal. Also do not use to choose the target, define contract semantics, change organizational or service ownership, or coordinate multiple workstreams.
 ---
 
 # Migration Planning
@@ -25,8 +25,14 @@ state deliberately.
   not merely deploying or exposing new code.
 - **Retreat:** A safe move to an earlier or reduced state. When escaped effects
   make reversal false, use fail-forward, repair, or compensation explicitly.
-- **Retirement:** Evidence-gated removal of the old authority, representation,
-  path, compatibility machinery, and its ability to return.
+- **Retireable:** The old state's supported obligations and authority have been
+  transferred, drained, or fenced so their removal would preserve accepted
+  behavior and support commitments. Retained data, inactive fallback copies,
+  or compatibility may remain only when non-authoritative, bounded, explicitly
+  owned, and subject to a review trigger.
+- **Retirement:** Accountable removal of the now-non-authoritative old
+  representations, paths, compatibility machinery, or ability to return after
+  retireability has been established.
 
 ## Own transition state, not neighboring decisions
 
@@ -105,11 +111,14 @@ state deliberately.
    repair, or compensation after irreversible effects. Verify that observation,
    credentials, communications, and emergency controls survive the failure
    being managed.
-10. **Gate cutover and retirement separately.** Transfer authority only when
-    its gate passes. Remove old writes, data, consumers, compatibility paths,
-    permissions, tooling, and telemetry in dependency order using evidence
-    matched to the harm of premature removal. Fence stale executors and name
-    any intentionally retained compatibility with an owner and review trigger.
+10. **Gate cutover, retireability, and retirement separately.** Transfer
+    authority only when its gate passes. After retireability evidence passes,
+    remove or fence old writes, active representations, consumers,
+    compatibility paths, permissions, tooling, and telemetry in dependency
+    order using evidence matched to the harm of premature removal. Fence stale
+    executors. Keep retained data, inactive fallbacks, or compatibility
+    non-authoritative and give each an owner, bounded purpose, and review
+    trigger.
 
 Use [references/migration-plan.md](references/migration-plan.md) when testing
 migration eligibility, selecting state patterns, or writing the state and
@@ -154,7 +163,7 @@ Require all of the following before calling the plan ready:
   or fail-forward, and ownership criteria;
 - specialized evidence, release, and observability details have one canonical
   owner and remain traceable from the master transition;
-- cutover and retirement are separate evidence-based decisions;
+- cutover, retireability, and retirement are separate evidence-based decisions;
 - retreat, repair, fail-forward, or compensation has been tested at an
   appropriate level;
 - the control path is independent enough for the targeted failure class;
@@ -190,8 +199,8 @@ Require all of the following before calling the plan ready:
 Return one migration contract and state model containing the accepted target
 inputs, current and target authority, explicit transition states,
 state-transition gates, irreversible effects, evidence obligations, cutover and
-retreat logic, retirement order, owners, unresolved decisions, and routed
-specialist work.
+retreat logic, retireability conditions, retirement order, owners, unresolved
+decisions, and routed specialist work.
 State whether the request is a genuine migration, not ready because an upstream
 decision is missing, or better owned as change specification, scoped
 implementation, controlled release, contract evolution, or program

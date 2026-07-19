@@ -52,10 +52,13 @@ Use the terms consistently:
 - A **bounded software change** is one accepted behavior or structure delta
   carried through evidence. A **migration** moves obligations from an
   established technical state through controlled transition states to an
-  accepted replacement, then retires the old state. A **workstream** is one
-  coherent contribution with a driver and frontier. A **technical program**
-  keeps one outcome coherent across several concurrent or interdependent
-  workstreams.
+  accepted replacement with the intent to remove old authority and make the
+  old state retireable. Retireable means its supported obligations and
+  authority have been transferred, drained, or fenced so removal would preserve
+  accepted behavior and support commitments; physical retirement may follow
+  later. A **workstream** is one coherent contribution with a driver and
+  frontier. A **technical program** keeps one outcome coherent across several
+  concurrent or interdependent workstreams.
 - A **slice** is a bounded increment of learning or delivery, not a scope level.
   A vertical slice crosses enough input, decision, state, effect, and output to
   demonstrate useful behavior. Product, service, architecture, and incident are
@@ -288,7 +291,7 @@ Use `migration-planning` after those contract decisions are accepted when consum
 
 ### Architecture risk versus migration planning
 
-Use `architecture-risk-evaluation` to ask whether the proposed target architecture can satisfy important scenarios and quality drivers. Use `migration-planning` only after a target direction exists and its adoption requires material consumer, state, traffic, execution, infrastructure, or authority movement through controlled transition states, cutover, and retirement.
+Use `architecture-risk-evaluation` to ask whether the proposed target architecture can satisfy important scenarios and quality drivers. Use `migration-planning` only after a target direction exists and its adoption requires material movement of consumers, state, an authoritative traffic path, execution, infrastructure, or authority through controlled transition states, cutover, retireability, and retirement.
 
 ```text
 architecture-risk-evaluation
@@ -309,14 +312,14 @@ A technical program may contain several ordinary delivery slices and several spe
 ```text
 technical-decision-making, when closure is needed
   -> technical-program-orchestration, when delivery has several concurrent or interdependent workstreams
-       -> migration-planning for each workstream that owns genuine technical movement, transition states, authority transfer, and retirement
+       -> migration-planning for each workstream that owns genuine technical movement, transition states, authority transfer, retireability, and retirement
        -> coordinated observability, release, verification, implementation, and integration
   -> accountable outcome and residual-risk decision
 ```
 
 ### Controlled release versus migration planning
 
-Use `controlled-release-design` to define exposure assignment, feature-flag semantics, cohorts, promotion, hold, abort, kill controls, and flag cleanup. Use it alone when one compatible behavior is merely being exposed gradually. Use `migration-planning` when an accepted replacement must take over obligations from an established technical state through material consumer, state, execution, infrastructure, or authoritative-path movement and the old state is retired. When both apply, controlled release is an optional nested subplan of the authoritative migration plan; many ordinary feature releases need controlled exposure without a migration, and some migrations need no exposure subplan.
+Use `controlled-release-design` to define exposure assignment, feature-flag semantics, cohorts, promotion, hold, abort, kill controls, and flag cleanup. Use it alone when one compatible behavior is merely being exposed gradually. Use `migration-planning` when an accepted replacement must take over obligations from an established technical state through material consumer, state, execution, infrastructure, or authoritative-path movement and the old state is intended to lose authority and become retireable. When both apply, controlled release is an optional nested subplan of the authoritative migration plan; many ordinary feature releases need controlled exposure without a migration, and some migrations need no exposure subplan.
 
 ### Observability design versus operational feedback audit
 

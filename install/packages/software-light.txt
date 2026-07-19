@@ -4,10 +4,12 @@ architecture-surface-mapping
 behavior-preserving-refactoring
 code-review
 deep-module-design
+domain-modeling
 retrospective-architecture-review
 scoped-change-implementation
 software-change-orchestration
 software-change-specification
 software-failure-diagnosis
+technical-decision-making
 verification-execution
 verification-strategy-design

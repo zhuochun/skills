@@ -64,7 +64,7 @@ domain-modeling
   -> technical-program-orchestration, when delivery has several concurrent or interdependent workstreams
   -> migration-planning, when the accepted target requires material state,
      consumer, authoritative-path, execution, infrastructure, or authority
-     movement through controlled transition states and retirement
+     movement through controlled transition states, retireability, and retirement
   -> co-design observability, verification, and controlled release when they apply
   -> scoped-change-implementation in coherent vertical slices
   -> code-review
@@ -107,7 +107,7 @@ domain-modeling, when meaning or context differs across participants
      translation, deprecation, consumer adoption, and retirement evidence
   -> technical-program-orchestration, when migration has several concurrent or interdependent adoption workstreams
   -> migration-planning, when consumers or state must move through controlled
-     contract transition states, authority transfer, and retirement
+     contract transition states, authority transfer, retireability, and retirement
   -> observability-design and verification-strategy-design for named evidence
   -> scoped-change-implementation, code-review, and verification-execution
   -> accountable support, promotion, and retirement decisions
@@ -140,7 +140,8 @@ architecture-assessment
   -> deep-module-design, for local structure and interfaces
   -> behavior-preserving-refactoring for authorized structural execution
   -> migration-planning, only when the selected target needs material movement,
-     controlled transition states, authority transfer, cutover, and retirement
+     controlled transition states, authority transfer, cutover, retireability,
+     and retirement
 ```
 
 Use this route when the decision is which structural opportunity deserves attention first. If one completed design is already selected and material implementation or operational learning has changed its premises, start with `retrospective-architecture-review` instead of running a second broad assessment.
@@ -152,7 +153,7 @@ architecture-risk-evaluation, when assumptions need technical analysis
   -> technical-decision-making
   -> technical-program-orchestration, when coordination spans several concurrent or interdependent workstreams
   -> migration-planning, only when adopting the decision requires genuine
-     technical movement, controlled transition states, and retirement
+     technical movement, controlled transition states, retireability, and retirement
   -> co-design verification, observability, and optional controlled release
   -> scoped-change-implementation
   -> code-review and verification-execution

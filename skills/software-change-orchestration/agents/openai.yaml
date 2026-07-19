@@ -4,4 +4,4 @@ interface:
   default_prompt: "Use $software-change-orchestration to guide this software change from rough intent through evidence-based closure; you may create and maintain the smallest canonical specification or change record, but do not modify code, external systems, or production without separate authorization."
 
 policy:
-  allow_implicit_invocation: true
+  allow_implicit_invocation: false

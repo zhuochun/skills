@@ -6,6 +6,7 @@ behavior-preserving-refactoring
 code-review
 controlled-release-design
 deep-module-design
+domain-modeling
 migration-planning
 platform-capability-design
 retrospective-architecture-review
@@ -15,6 +16,7 @@ software-change-orchestration
 software-change-specification
 software-contract-evolution
 software-failure-diagnosis
+technical-decision-making
 technical-program-orchestration
 verification-execution
 verification-strategy-design

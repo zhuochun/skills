@@ -107,7 +107,7 @@ Route to:
 - `controlled-release-design` for flags, cohorts, and exposure control;
 - `observability-design` for missing prospective telemetry;
 - `operational-feedback-audit` for whether the live operating loop works;
-- `migration-planning` when an accepted target requires material technical movement, controlled transition states, authority transfer, cutover, and retirement.
+- `migration-planning` when an accepted target requires material technical movement, controlled transition states, authority transfer, cutover, retireability, and retirement.
 
 ## Stop rules
 

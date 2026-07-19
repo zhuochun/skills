@@ -136,6 +136,13 @@ evidence that the old obligation is safe to remove. Preserve transition signals
 and evidence artifacts through the final stability window and any audit or
 retention obligation before cleaning them up.
 
+An old state is **retireable** when its supported obligations and authority have
+been transferred, drained, or fenced strongly enough that removal would
+preserve accepted behavior and support commitments. Physical removal may lag
+because of retention, audit, or bounded fallback obligations. Any retained
+copy, data, or compatibility path must be non-authoritative, explicitly owned,
+bounded in purpose, and governed by a review trigger.
+
 ## Composition
 
 - Keep this plan authoritative for transition states, operations, authority,
