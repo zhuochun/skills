@@ -4,6 +4,13 @@ Use these examples when a request spans several decisions or artifacts. They
 are optional routes through the catalog, not a mandatory lifecycle or
 universal stage-gate process.
 
+Before composing, name the subject of interest, the missing decision lens, and
+the work or coordination unit separately. Terms such as service, platform,
+product, architecture, change, and program can cross those axes; see the
+[scope vocabulary](skill-boundaries.md#scope-vocabulary). Compose because the
+request needs several owned decisions, not because one term sounds larger than
+another.
+
 ## Common compositions
 
 ### Resumable bounded software change
@@ -121,7 +128,7 @@ architecture-surface-mapping
 
 Orientation should stop once the immediate decision can move into focused work. It need not document the entire service.
 
-### Existing codebase with recurring friction
+### Existing software scope with recurring structural friction
 
 ```text
 architecture-assessment
@@ -212,26 +219,40 @@ incident-response-coordination, during an active incident
 
 One incident may produce several independent branches. Do not force every finding through retrospective architecture review or through one serial workflow.
 
-### Retrospective architecture review by scale
+### Retrospective architecture review by dominant design question
 
 ```text
-module or capability
+in-process knowledge, state, or interface question
   -> deep-module-design as the primary lens
   -> behavior-preserving-refactoring for an authorized structure-only route
 
-service or subsystem
+deployment, data authority, failure, or operating-ownership question
   -> service-boundary-design when deployment, data, failure, or ownership is involved
   -> architecture-risk-evaluation for consequential quality claims
   -> scoped-change-implementation or behavior-preserving-refactoring after the target is accepted
 
-multi-service system or wider estate
+cross-boundary quality scenario, multi-service system, or wider estate question
   -> architecture-risk-evaluation
   -> technical-decision-making for accountable closure when needed
   -> migration-planning, scoped implementation, change review,
      and independent verification execution before consequential cutover
 ```
 
-The retrospective architecture reviewer works read-only on one selected completed design and activates only when implementation, repeated change, operation, support, or ownership has produced a material knowledge delta. It does not discover or rank a general codebase improvement portfolio and does not provide a generic second attempt for a weak first design pass. It compares the current or minimally consolidated design as a competent baseline, may recommend retain or quarantine when change would outrun evidence, and names the focused follow-up skills needed for deeper design, scoped implementation, behavior-preserving refactoring, controlled release, or verification. The accountable human confirms support-policy changes, route selection, cutover, and residual-risk acceptance. Builder-run checks may support the decision but do not become an independent equivalence verdict merely because the same agent reports them.
+A capability is an outcome-centered subject that may fit any of these routes;
+follow its actual module, service, data, runtime, and ownership topology rather
+than assigning it a scale. The retrospective architecture reviewer works
+read-only on one selected completed design and activates only when
+implementation, repeated change, operation, support, or ownership has produced
+a material knowledge delta. It does not discover or rank a general architecture
+improvement portfolio and does not provide a generic second attempt for a weak
+first design pass. It compares the current or minimally consolidated design as
+a competent baseline, may recommend retain or quarantine when change would
+outrun evidence, and names the focused follow-up skills needed for deeper
+design, scoped implementation, behavior-preserving refactoring, controlled
+release, or verification. The accountable human confirms support-policy
+changes, route selection, cutover, and residual-risk acceptance. Builder-run
+checks may support the decision but do not become an independent equivalence
+verdict merely because the same agent reports them.
 
 These are routing examples, not mandatory stage gates.
 

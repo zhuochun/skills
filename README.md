@@ -58,7 +58,7 @@ probes. Do not modify the repository.
 
 ## Choose a starting point
 
-These seven skills are the collection's implicit front doors for common
+These six skills are the collection's implicit front doors for common
 top-level intents. You can also invoke any specialist explicitly as
 `$skill-name`.
 
@@ -70,7 +70,6 @@ top-level intents. You can also invoke any specialist explicitly as
 | Improve structure without intentionally changing supported behavior | [`behavior-preserving-refactoring`](skills/behavior-preserving-refactoring/) |
 | Diagnose a bug, regression, intermittent failure, or performance problem | [`software-failure-diagnosis`](skills/software-failure-diagnosis/) |
 | Independently review a bounded software change | [`code-review`](skills/code-review/) |
-| Develop technical capability through practice, delegation, and feedback | [`technical-growth-coaching`](skills/technical-growth-coaching/) |
 
 If none of these describes the missing decision or artifact, use the
 [full skill catalog](docs/catalog.md).

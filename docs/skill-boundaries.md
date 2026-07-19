@@ -5,6 +5,63 @@ boundaries differ, and why producing and evaluating an artifact remain
 separate jobs. For common multi-skill routes, see the
 [composition guide](composition-guide.md).
 
+## Scope vocabulary
+
+Do not force module, codebase, service, platform, product, change, and program
+into one size hierarchy. Before routing work, name three independent things:
+
+| Axis | Question | Typical terms |
+| --- | --- | --- |
+| **Subject of interest** | What named thing and boundary are being examined? | module, codebase, service, subsystem, platform, product, capability, system, estate |
+| **Decision lens** | What judgment or action is missing? | domain modeling, architecture orientation or assessment, boundary or ownership design, capacity, observability, incident response or learning |
+| **Work or coordination unit** | What state must remain coherent while work moves? | bounded change, migration, workstream, technical program |
+
+These are roles in the current request, not mutually exclusive types. A
+platform may be made of services and offered as an internal product; a
+capability may cross codebases and services; a service may be the subject of
+domain, architecture, ownership, capacity, or incident work.
+
+Use the terms consistently:
+
+- **Software** is the broad medium of this catalog, not an architecture level.
+  A **system of interest** is the declared subject boundary for the current
+  question.
+- A **module** is an in-process knowledge, state, and interface boundary. A
+  **codebase** is a source and build boundary. A **service** is an operated
+  runtime boundary with deployment, failure, data-authority, and lifecycle
+  obligations. None implies one of the others.
+- A **platform** is a shared enabling capability with a usable and supportable
+  interface. A **product** is a customer or user value-and-outcome boundary. A
+  **capability** is an ability or outcome path that may cross modules, services,
+  repositories, teams, and products.
+- **Architecture** is the consequential structure, relationships, constraints,
+  and tradeoffs of a declared subject. A **surface** is one evidence-bearing
+  view of that subject, such as semantics, code, data, runtime, dependencies,
+  recovery, or ownership. A **boundary** is where meaning, authority, state,
+  change, failure, deployment, or ownership is enforced.
+- A **domain** is the problem meaning, behavior, rules, and invariants being
+  modeled. A semantic context is not automatically a module or service.
+- **Ownership** combines accountable authority with the capability and feedback
+  to act. **Lifecycle** is the time span that ownership covers, not another
+  boundary type. Team split, staffing, interaction mode, and reporting structure
+  remain organizational-design questions.
+- An **incident** is a bounded operational episode and response or learning
+  frame, not an architecture level. Lifecycle state matters: active response,
+  restored learning, and later architecture reconsideration are different
+  decisions even when they share evidence.
+- A **bounded software change** is one accepted behavior or structure delta
+  carried through evidence. A **migration** is a transition with meaningful
+  old, mixed, and new states. A **workstream** is one coherent contribution
+  with a driver and frontier. A **technical program** keeps one outcome
+  coherent across several concurrent or interdependent workstreams.
+- A **slice** is a bounded increment of learning or delivery, not a scope level.
+  A vertical slice crosses enough input, decision, state, effect, and output to
+  demonstrate useful behavior. Product, service, architecture, and incident are
+  better treated as practice or decision families than as delivery slices.
+
+Route by the missing decision and coordination topology, not apparent size,
+repository count, or team count.
+
 ## The relationship model
 
 The skills form a directed graph. A downstream skill consumes an upstream artifact only when the decision warrants it.
@@ -113,14 +170,14 @@ A skill that creates an artifact should not silently certify that artifact. For 
 | Product opportunity priority recommendation | Accountable product owner or declared forum closes the decision after customer, commercial, technical, operational, and mandatory-risk owners challenge the rationale and feasibility |
 | Architecture surface map | Source-owner review and focused follow-up; orientation does not certify architecture fitness, readiness, or safety |
 | Domain, service-boundary, module, or platform design | `architecture-risk-evaluation` for consequential quality and operating scenarios |
-| Codebase improvement proposal | Local evidence review, followed by the relevant focused design skill |
+| Architecture improvement portfolio or selected candidate | Local evidence review, followed by the relevant focused design skill |
 | Architecture option comparison | `technical-decision-making` for accountable weighting and closure |
 | Technical program orchestration state | Accountable outcome owner and integrated delivery evidence; activity and coordinator confidence do not certify the outcome |
 | Software contract evolution design | Producer, consumer, data, and support-policy owners review the recovered contract and compatibility claims; use `verification-strategy-design` and independent architecture challenge as consequence warrants |
 | Software change specification | Accountable change, product, domain, consumer, security, data, and operational owners challenge the interpretations they own; consequential architecture and evidence claims route to independent evaluation rather than being self-certified by the specifier |
 | Observability design | Instrumentation and signal verification, then `operational-feedback-audit` against representative runtime use |
 | Controlled release design | `verification-strategy-design` for claims and phase evidence; accountable owners retain promotion authority |
-| High-risk transition plan | `verification-strategy-design` for falsifiable phase and invariant evidence |
+| Migration plan | `verification-strategy-design` for falsifiable phase and invariant evidence |
 | Running telemetry and response system | `operational-feedback-audit` against observed decisions and incidents |
 | Scoped implementation | `code-review` for an independent diff challenge and `verification-execution` for fixed consequential claims |
 | Behavior-preserving refactoring | `code-review`, plus `verification-execution` when equivalence crosses consumer, data, concurrency, performance, failure, or operating boundaries |
@@ -153,7 +210,7 @@ Discovery and prioritization form a feedback loop. Prioritization may fund anoth
 
 The orchestration unit is a **change effort**, not necessarily a whole product or repository. Related slices may share one effort when they serve one outcome and depend on the same behavior or risk decisions. Small reversible changes stay inline with no orchestration directory. When durable state is justified, use the owning repository if one repo owns the behavior; use an established control repository when no code repository owns the cross-repository outcome. Touching or reading several repositories is not by itself a reason to create control-repository state.
 
-A program is not merely a larger change effort. Program orchestration steers a graph of workstream contributions, dependencies, integration contracts, and simultaneous frontiers. A program may link several bounded change efforts, while one change effort may also require program orchestration when its delivery spans interdependent teams. Use `software-change-orchestration` only for workstreams that need their own resumable software-change loop; keep non-code or already well-governed workstreams in their existing canonical surfaces.
+A program is not merely a larger change effort. Program orchestration steers a graph of workstream contributions, dependencies, integration contracts, and simultaneous frontiers. A program may link several bounded change efforts, while one change effort may also require program orchestration when its delivery contains several concurrent or interdependent workstreams. One team can own such a topology, and several teams can still be executing only one bounded change loop; team count is neither necessary nor sufficient. Use `software-change-orchestration` only for workstreams that need their own resumable software-change loop; keep non-code or already well-governed workstreams in their existing canonical surfaces.
 
 ### Orientation versus assessment
 

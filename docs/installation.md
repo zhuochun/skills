@@ -105,13 +105,14 @@ directory; the installer does not append another path segment.
 
 Packages are curated installation bundles, not a replacement for the
 [catalog](catalog.md) or its relationship model. Profiles may overlap when one
-is intentionally a smaller version of another.
+is intentionally a smaller version of another. Package names are distribution
+profiles, not architectural scope levels.
 
 | Package | Contents |
 | --- | --- |
 | `product` | 3 product-opportunity and domain-framing skills |
 | `software` | 19 larger-scale software understanding, service and platform design, multi-workstream change, release, and verification skills |
-| `software-light` | 12 small-project, monolith, and single-service skills for orientation, architecture assessment and consolidation, orchestration, implementation, diagnosis, review, and verification |
+| `software-light` | 12 small-project, monolith, and single-service skills for orientation, architecture assessment and retrospective review, orchestration, implementation, refactoring, diagnosis, review, and verification |
 | `operational` | 6 service operation, ownership, feedback, and incident skills |
 | `misc` | 2 cross-cutting decision and capability-development skills |
 | `all` | Every skill currently present under `skills/` |

@@ -3,6 +3,9 @@
 Use this catalog to choose the skill that owns the decision, artifact, or
 action currently missing. For neighboring skills whose boundaries are easy to
 confuse, continue to the [skill boundaries and relationships](skill-boundaries.md).
+Name the subject of interest, decision lens, and work or coordination unit
+separately; they are cross-cutting axes, not one size hierarchy. See the
+[scope vocabulary](skill-boundaries.md#scope-vocabulary).
 
 ## Invocation policy
 
@@ -14,7 +17,6 @@ Keep implicit invocation for a small set of front doors that represent distinct 
 - `behavior-preserving-refactoring`
 - `software-failure-diagnosis`
 - `code-review`
-- `technical-growth-coaching`
 
 Set `policy.allow_implicit_invocation: false` in `agents/openai.yaml` for every other catalog skill. These specialist, evaluator, planning, and control workflows remain available through explicit `$skill-name` invocation and through an active front-door workflow's routing guidance, but their metadata does not compete in Codex's default skill context.
 

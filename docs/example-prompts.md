@@ -1,7 +1,9 @@
 # Example prompts
 
-These examples show how to name the decision, scope, constraints, evidence,
-desired artifact, and mutation authority when invoking a skill explicitly.
+These examples show how to name the decision, subject of interest, work unit,
+constraints, evidence, desired artifact, and mutation authority when invoking a
+skill explicitly. Keep subject, decision lens, and coordination unit separate;
+see the [scope vocabulary](skill-boundaries.md#scope-vocabulary).
 
 
 ```text
@@ -48,10 +50,11 @@ runtime dependencies, incidents, and on-call ownership. Recommend only.
 ```
 
 ```text
-Use $architecture-assessment to decide which structural improvement
-deserves investment first across this codebase. Compare recurring change,
-defect, runtime, testing, and ownership pressure, rank a small portfolio, and
-stop before focused redesign or implementation.
+Use $architecture-assessment to decide which structural improvement deserves
+investment first across this checkout capability. Declare the included
+services, codebases, data paths, and ownership boundary; compare recurring
+change, defect, runtime, testing, and ownership pressure; rank a small
+portfolio; and stop before focused redesign or implementation.
 ```
 
 ```text
