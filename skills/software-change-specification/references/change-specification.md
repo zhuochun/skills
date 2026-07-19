@@ -94,7 +94,7 @@ The specification owns the claim. `verification-strategy-design` owns the method
 - **Terms, rules, or invariants remain disputed:** `domain-modeling`.
 - **Module or service responsibility is the actual open decision:** `deep-module-design` or `service-boundary-design`.
 - **Shared API, event, schema, or protocol compatibility changes:** `software-contract-evolution`.
-- **Old, mixed, and target states need sequencing or recovery:** `migration-planning`.
+- **Supported obligations must move to an accepted replacement through controlled transition states and old-state retirement:** `migration-planning`.
 - **Failure cause is not supported:** `software-failure-diagnosis`.
 - **Only internal structure should change:** `behavior-preserving-refactoring`.
 - **A fixed bounded contract is ready and implementation is authorized:** `scoped-change-implementation`.

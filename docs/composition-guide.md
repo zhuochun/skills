@@ -62,7 +62,9 @@ domain-modeling
   -> technical-decision-making
   -> software-change-specification, when the accepted change needs a bounded implementation-ready behavior contract
   -> technical-program-orchestration, when delivery has several concurrent or interdependent workstreams
-  -> migration-planning, when transition risk justifies it
+  -> migration-planning, when the accepted target requires material state,
+     consumer, authoritative-path, execution, infrastructure, or authority
+     movement through controlled transition states and retirement
   -> co-design observability, verification, and controlled release when they apply
   -> scoped-change-implementation in coherent vertical slices
   -> code-review
@@ -104,8 +106,8 @@ domain-modeling, when meaning or context differs across participants
   -> software-contract-evolution for the actual contract, compatibility matrix,
      translation, deprecation, consumer adoption, and retirement evidence
   -> technical-program-orchestration, when migration has several concurrent or interdependent adoption workstreams
-  -> migration-planning, when coexistence, state, irreversible effects,
-     cutover, or recovery make the transition consequential
+  -> migration-planning, when consumers or state must move through controlled
+     contract transition states, authority transfer, and retirement
   -> observability-design and verification-strategy-design for named evidence
   -> scoped-change-implementation, code-review, and verification-execution
   -> accountable support, promotion, and retirement decisions
@@ -137,7 +139,8 @@ architecture-assessment
   -> service-boundary-design, for deployment/data/ownership coupling
   -> deep-module-design, for local structure and interfaces
   -> behavior-preserving-refactoring for authorized structural execution
-  -> migration-planning, only for consequential transition work
+  -> migration-planning, only when the selected target needs material movement,
+     controlled transition states, authority transfer, cutover, and retirement
 ```
 
 Use this route when the decision is which structural opportunity deserves attention first. If one completed design is already selected and material implementation or operational learning has changed its premises, start with `retrospective-architecture-review` instead of running a second broad assessment.
@@ -148,7 +151,8 @@ Use this route when the decision is which structural opportunity deserves attent
 architecture-risk-evaluation, when assumptions need technical analysis
   -> technical-decision-making
   -> technical-program-orchestration, when coordination spans several concurrent or interdependent workstreams
-  -> migration-planning
+  -> migration-planning, only when adopting the decision requires genuine
+     technical movement, controlled transition states, and retirement
   -> co-design verification, observability, and optional controlled release
   -> scoped-change-implementation
   -> code-review and verification-execution
@@ -211,7 +215,8 @@ incident-response-coordination, during an active incident
   -> domain-modeling, architecture-assessment, deep-module-design,
      or service-boundary-design for focused model or structure gaps
   -> service-capacity-engineering for overload and recovery gaps
-  -> controlled-release-design or migration-planning for rollout gaps
+  -> controlled-release-design for exposure gaps, or migration-planning for
+     technical movement, transition-state, authority, or retirement gaps
   -> service-ownership-design or technical-decision-making for authority gaps
   -> update a runbook, automation, or local process directly when sufficient
   -> retrospective-architecture-review only when accumulated learning creates a material foundational design question

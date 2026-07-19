@@ -111,7 +111,7 @@ Keep the immediate frontier in the active session during uninterrupted work. A c
 | Shared API, schema, event, or protocol compatibility must evolve | `software-contract-evolution` |
 | Architecture quality assumptions need scenario challenge | `architecture-risk-evaluation` |
 | A consequential or contested choice needs accountable closure | `technical-decision-making` |
-| Old, mixed, and target states need survivable sequencing | `migration-planning` |
+| Supported obligations must move to an accepted replacement through controlled transition states and old-state retirement | `migration-planning` |
 | Feature exposure, cohorts, promotion, or kill controls need design | `controlled-release-design` |
 | Runtime signal semantics and operational navigation are missing | `observability-design` |
 | Claims need falsifying methods, oracles, and evidence limits | `verification-strategy-design` |

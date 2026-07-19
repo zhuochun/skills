@@ -50,10 +50,12 @@ Use the terms consistently:
   restored learning, and later architecture reconsideration are different
   decisions even when they share evidence.
 - A **bounded software change** is one accepted behavior or structure delta
-  carried through evidence. A **migration** is a transition with meaningful
-  old, mixed, and new states. A **workstream** is one coherent contribution
-  with a driver and frontier. A **technical program** keeps one outcome
-  coherent across several concurrent or interdependent workstreams.
+  carried through evidence. A **migration** moves obligations from an
+  established technical state through controlled transition states to an
+  accepted replacement, then retires the old state. A **workstream** is one
+  coherent contribution with a driver and frontier. A **technical program**
+  keeps one outcome coherent across several concurrent or interdependent
+  workstreams.
 - A **slice** is a bounded increment of learning or delivery, not a scope level.
   A vertical slice crosses enough input, decision, state, effect, and output to
   demonstrate useful behavior. Product, service, architecture, and incident are
@@ -280,13 +282,13 @@ Use `verification-strategy-design` to preserve upstream behavior and invariant c
 
 Use `software-contract-evolution` to recover what producers and consumers actually rely on and decide how shared semantics, compatibility, translation, deprecation, adoption, and retirement should work. It owns the producer-consumer-state-executor compatibility matrix and the support-policy obligations, not merely an API version number.
 
-Use `migration-planning` when that decision must become a survivable production transition with explicit phases, authority, cutover, recovery, and cleanup. Use `technical-program-orchestration` when adoption forms several concurrent or interdependent workstreams and needs owned frontiers, dependency-aware slices, integration, decision flow, and replanning. Contract evolution defines what must remain true; the migration plan defines how the system moves; program orchestration keeps the participating workstreams delivering the end-to-end outcome.
+Use `migration-planning` after those contract decisions are accepted when consumers, state, an authoritative traffic path, execution, infrastructure, or authority must move to a target and the old state becomes retireable. Cohort assignment or version exposure alone is controlled release, not traffic migration. Migration planning owns permitted online or offline transition states, authority transfer, cutover, retreat or compensation, and retirement order. Use `technical-program-orchestration` when adoption forms several concurrent or interdependent workstreams and needs owned frontiers, dependency-aware slices, integration, decision flow, and replanning. Contract evolution defines what must remain true; the migration plan defines how technical state and authority move; program orchestration keeps the participating workstreams delivering the end-to-end outcome.
 
 `service-boundary-design` consumes semantic boundaries from `domain-modeling` and decides whether data, deployment, failure, and operating enforcement should move. When in-process modularity is selected, `deep-module-design` owns the hidden knowledge, interface, lifecycle semantics, and adoption details. A contract may evolve at a stable boundary, or a boundary decision may create contracts that then need an evolution policy.
 
 ### Architecture risk versus migration planning
 
-Use `architecture-risk-evaluation` to ask whether the proposed target architecture can satisfy important scenarios and quality drivers. Use `migration-planning` after a target direction exists to design survivable old, transitional, and new states.
+Use `architecture-risk-evaluation` to ask whether the proposed target architecture can satisfy important scenarios and quality drivers. Use `migration-planning` only after a target direction exists and its adoption requires material consumer, state, traffic, execution, infrastructure, or authority movement through controlled transition states, cutover, and retirement.
 
 ```text
 architecture-risk-evaluation
@@ -300,21 +302,21 @@ architecture-risk-evaluation
 
 ### Technical decision, program orchestration, and migration planning
 
-Use `technical-decision-making` to close a consequential or contested choice with explicit authority and accepted tradeoffs. Use `technical-program-orchestration` when an outcome has several concurrent or interdependent workstreams whose dependencies, integration points, shared decisions, or constraints need active steering through local and program frontiers. Use `migration-planning` to design one survivable old, transitional, and new state for a consequential migration or production change.
+Use `technical-decision-making` to close a consequential or contested choice with explicit authority and accepted tradeoffs. Use `technical-program-orchestration` when an outcome has several concurrent or interdependent workstreams whose dependencies, integration points, shared decisions, or constraints need active steering through local and program frontiers. Use `migration-planning` to design one accepted target's current-to-transition-to-target movement and authority transfer. Risk or production impact alone does not create a migration.
 
 A technical program may contain several ordinary delivery slices and several specialized change plans. It references those plans and exposes their dependencies without taking over their invariants, release controls, measurement contracts, or verification oracles. A single-team feature or one local reversible change does not need program machinery merely because it has several tasks.
 
 ```text
 technical-decision-making, when closure is needed
   -> technical-program-orchestration, when delivery has several concurrent or interdependent workstreams
-       -> migration-planning for each consequential transition
+       -> migration-planning for each workstream that owns genuine technical movement, transition states, authority transfer, and retirement
        -> coordinated observability, release, verification, implementation, and integration
   -> accountable outcome and residual-risk decision
 ```
 
 ### Controlled release versus migration planning
 
-Use `controlled-release-design` to define exposure assignment, feature-flag semantics, cohorts, promotion, hold, abort, kill controls, and flag cleanup. Use `migration-planning` when the larger problem is a staged migration with data authority, coexistence, irreversible effects, consumer coordination, cutover, and recovery. When both apply, controlled release is an optional nested subplan of the authoritative migration plan; many ordinary feature releases need controlled exposure without the full migration workflow, and some migrations need no exposure subplan.
+Use `controlled-release-design` to define exposure assignment, feature-flag semantics, cohorts, promotion, hold, abort, kill controls, and flag cleanup. Use it alone when one compatible behavior is merely being exposed gradually. Use `migration-planning` when an accepted replacement must take over obligations from an established technical state through material consumer, state, execution, infrastructure, or authoritative-path movement and the old state is retired. When both apply, controlled release is an optional nested subplan of the authoritative migration plan; many ordinary feature releases need controlled exposure without a migration, and some migrations need no exposure subplan.
 
 ### Observability design versus operational feedback audit
 

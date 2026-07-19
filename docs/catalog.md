@@ -58,7 +58,7 @@ Do not start from a fashionable method or invoke every skill as a stage gate. As
 | [`technical-program-orchestration`](../skills/technical-program-orchestration/) | Multi-workstream outcome coherence, owned local loops, dependency and integration flow, shared constraints, and replanning | Canonical program surface, delivery topology, workstream contracts and frontiers, integration state, evidence trend, and closure |
 | [`software-contract-evolution`](../skills/software-contract-evolution/) | Shared contract semantics, compatibility, translation, deprecation, consumer adoption, and retirement policy | Actual-contract frame, compatibility matrix, evolution choice, adoption obligations, and retirement evidence |
 | [`controlled-release-design`](../skills/controlled-release-design/) | Feature flags, exposure assignment, cohorts, release phases, and kill controls | Release contract, control topology, evidence, phase criteria, retreat, and cleanup |
-| [`migration-planning`](../skills/migration-planning/) | Transition states for consequential API, schema, data, service, and infrastructure migrations | Phased coexistence plan with invariants, evidence, abort, retreat, and cleanup |
+| [`migration-planning`](../skills/migration-planning/) | Current-to-transition-to-target technical movement and authority transfer after the target and contract decisions are accepted | Migration state model with evidence-gated cutover, retreat or compensation, retirement, and cleanup |
 | [`verification-strategy-design`](../skills/verification-strategy-design/) | Matching engineering claims and risks to falsifying evidence | Upstream-linked risk-to-evidence portfolio with methods, oracles, limits, evidence gaps, and renewal triggers |
 
 ### Implement, diagnose, and verify

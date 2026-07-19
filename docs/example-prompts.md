@@ -82,8 +82,10 @@ operability, and cost scenarios. Identify evidence needed before a decision.
 
 ```text
 Use $migration-planning to plan this PostgreSQL-to-Spanner migration.
-Include coexistence, write authority, delayed consumers, correctness oracles,
-abort criteria, recovery, communications, and cleanup.
+Treat the target engine and compatibility policy as accepted inputs. Model old,
+transitional, and target representations; write and read authority; backfill and stale
+executors; delayed consumers; cutover and retreat; risk-specific retirement
+evidence; and cleanup. Do not turn the state model into a project schedule.
 ```
 
 ```text
