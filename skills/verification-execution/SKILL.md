@@ -10,6 +10,7 @@ Turn a verification plan into inspectable evidence. Judge only what the executed
 ## Preserve evidence integrity and authority
 
 - Consume an existing strategy or explicit claim set. If important claims, methods, or oracles are missing, pause those entries and route them to `$verification-strategy-design`; do not invent success criteria after observing results.
+- When orchestration supplies an active evidence index, validate each entry's claim, method, snapshot, environment, and validity limit. Execute missing, stale, invalidated, suspicious, or explicitly independent claims; do not rerun matching valid evidence merely because this workflow began. Honor a strategy that explicitly requires a complete fresh set.
 - Freeze each claim key and plain-language label, method, oracle, tolerance, inputs, environment, and evidence owner before execution. Record any approved correction visibly.
 - Execute only authorized checks. Require explicit permission and safeguards for production traffic, fault injection, destructive tests, data mutation, external writes, expensive load, or experiments that can affect other users.
 - Preserve relevant raw output and diagnostic artifacts. Summaries supplement evidence; they do not replace it.
@@ -18,7 +19,7 @@ Turn a verification plan into inspectable evidence. Judge only what the executed
 
 ## Execution workflow
 
-1. **Ingest the evidence contract.** Build the execution set from named `VER-*` claims and labels, their risks, methods, oracles, execution points, owners, dependencies, and renewal conditions. Reject ambiguous references that cannot be wired back to plain-language meaning.
+1. **Ingest the evidence contract.** Build the execution set from named `VER-*` claims and labels, their risks, methods, oracles, execution points, owners, dependencies, renewal conditions, and the disposition of matching existing evidence. Reject ambiguous references that cannot be wired back to plain-language meaning.
 2. **Preflight the method.** Confirm tools, versions, permissions, data handling, environment fidelity, isolation, expected duration, stop controls, reset or cleanup, and artifact locations. Record deviations that can weaken interpretation before running.
 3. **Establish the comparison state.** Capture the relevant baseline, current version, configuration, workload, dependency state, time window, and prior authoritative result. For differential checks, identify both sides and the allowed difference.
 4. **Execute in feedback order.** Run cheap deterministic evidence before expensive, risky, or production-shaped methods unless the strategy specifies another dependency. Preserve the exact invocation, inputs, environment identity, timestamps when material, exit status, and raw result.
@@ -34,6 +35,7 @@ Use [references/evidence-execution.md](references/evidence-execution.md) for the
 ## Quality gates
 
 - Every result retains its claim key and plain-language label.
+- Reused, rerun, invalidated, and omitted evidence has an explicit snapshot-bound disposition.
 - The oracle and allowed tolerance were fixed before the decisive observation.
 - Exact invocation, inputs, version, environment, and raw evidence are recoverable in proportion to consequence.
 - Dynamic evidence states which behavior and population were exercised.

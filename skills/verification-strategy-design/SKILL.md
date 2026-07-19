@@ -12,10 +12,11 @@ Create an evidence portfolio in which every method owns a specific uncertainty. 
 - Design the strategy by default. Do not run load tests, fault injection, production experiments, traffic replay, destructive tests, or external writes without explicit authorization and safeguards.
 - Respect security, privacy, data-handling, environment, and change-management requirements.
 - Identify the decision owner and evidence owners. Verification findings inform a decision; they do not silently approve release.
+- When upstream work supplies named behavior, invariant, compatibility, transition, or architecture claims, preserve their keys, labels, and meaning. Create `VER-*` entries for evidence obligations rather than relabeling the product contract. Use the active evidence index to design only missing, stale, renewal, or explicitly independent coverage.
 
 ## Strategy workflow
 
-1. **Inventory claims.** Rewrite vague confidence goals as falsifiable claims about design state, code behavior, consumer contracts, data, performance, failure handling, recovery, rollout, or diagnosis. Give each claim a stable key and plain-language label, such as `VER-ledger-conservation — Ledger value is conserved`; repeat both whenever another artifact cites it.
+1. **Inventory claims.** Consume stable upstream claims and rewrite only vague confidence goals as falsifiable evidence claims about design state, code behavior, consumer contracts, data, performance, failure handling, recovery, rollout, or diagnosis. Give each new verification claim a stable key and plain-language label, such as `VER-ledger-conservation — Ledger value is conserved`; repeat both whenever another artifact cites it.
 2. **Classify risk.** For each claim, record consequence, likelihood or uncertainty, exposure, reversibility, affected population, and detection/recovery difficulty.
 3. **Expose assumptions.** Name environment, traffic, timing, ordering, dependency, identity, clock, failure, operator, and data assumptions that make the claim true.
 4. **Choose falsifying evidence.** Select the cheapest credible method that can disprove the claim. Add layers only when they cover distinct uncertainty or consequence justifies defense in depth.
@@ -31,7 +32,7 @@ Use [references/evidence-portfolio.md](references/evidence-portfolio.md) for met
 
 ## Quality gates
 
-- Every required method maps to a named claim and risk.
+- Every required method maps to a named claim and risk without replacing the upstream behavior contract.
 - Every claim reference includes a plain-language label and traces to its owning strategy entry.
 - Every claim has an explicit oracle or a documented evidence gap.
 - Consumer-visible semantics receive cross-boundary evidence.

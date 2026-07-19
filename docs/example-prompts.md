@@ -79,7 +79,9 @@ Use $software-change-specification to define the refund-approval change before
 we delegate implementation. Recover current and desired behavior, use boundary
 examples to expose policy ambiguity, name preserved invariants and affected
 consumers, separate accepted constraints from proposed implementation, produce
-keyed acceptance claims, and state whether the change is ready. Do not edit code.
+keyed acceptance claims, and state whether the change is ready. If orchestration
+supplies a canonical specification, update only the owned specification delta.
+Do not edit code.
 ```
 
 ```text
@@ -130,9 +132,10 @@ findings with tight locations and residual risks.
 
 ```text
 Use $verification-execution to run the named VER claims for this migration.
-Freeze methods and oracles before execution, preserve exact invocations and raw
-evidence, classify pass/fail/inconclusive/not-run per claim, stop on safety
-thresholds, and leave cutover authority with the accountable owner.
+Validate any supplied evidence index, reuse matching evidence, execute missing
+or invalidated claims against frozen methods and oracles, preserve exact
+invocations and raw evidence, classify each claim, stop on safety thresholds,
+and leave cutover authority with the accountable owner.
 ```
 
 Good prompts name the decision, scope, constraints, evidence, desired artifact, and whether implementation is authorized. The skills should identify missing evidence rather than filling gaps with invented facts.

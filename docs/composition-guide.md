@@ -17,15 +17,14 @@ software-change-orchestration
   -> loop through clarification, design, evaluation, or decision only as evidence requires
   -> choose one primary executor: behavior-preserving-refactoring for pure structure, scoped-change-implementation for intended behavior
   -> independent code-review consumes snapshot-matched producer evidence and runs focused challenges
-  -> remediate in scope, independently confirm affected findings, then run one successful closure set on the final candidate snapshot
+  -> verification design preserves upstream claims; execution fills missing or invalidated evidence
+  -> remediate in scope, confirm affected findings, then run one successful closure set on the final candidate snapshot
   -> loop back on counterexamples, or close with reusable evidence and residual ownership
 ```
 
-Use the owning repository when one repository owns the behavior, even if it consumes another repository's data. Use an established control repository when the outcome and decisions are genuinely cross-repository. Do not create a directory for every bug or small enhancement. Compact discussion normally stays inline; compact authorized execution uses one minimal repository-backed record but no orchestration directory. Standard work normally uses one living specification, and high-assurance work uses a directory only when several artifacts need independent lifecycles. Persist a resume point only when the work pauses, becomes blocked, changes hands or sessions, or cannot be safely re-entered from the accepted specification.
+Use the owning repository when one repository owns the behavior, even if it consumes another repository's data. Use an established control repository only for genuinely distributed ownership. Compact discussion normally stays inline; compact authorized execution uses one minimal record but no orchestration directory. Standard work normally uses one living specification. High-assurance work uses several artifacts only when they need independent lifecycles. Persist a resume point only for a pause, block, handoff, session change, or non-obvious re-entry.
 
-In authorized or auto mode, write `Authorized modes: record writes, implementation, delegated review, verification`, accepted scope and non-goals, and the four escalation conditions into the smallest repository-backed canonical record before implementation. Then proceed without workflow or subagent approval. Escalate only for a material scope change, new external or production action, destructive action, or an accountable decision that changes supported behavior.
-
-Preserve the behavior meaning of the originating request or accepted specification when writing that record. Authorization is permission to execute the accepted change, not permission to narrow an outcome into a more convenient implementation claim.
+In authorized or auto mode, write the authorized modes, accepted scope and non-goals, and the four escalation conditions into the smallest canonical record before implementation. Proceed without workflow approval, but preserve the originating behavior meaning and escalate material scope, external or production action, destructive action, or a decision changing supported behavior.
 
 ### Product opportunity to delivery
 

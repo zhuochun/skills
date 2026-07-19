@@ -147,7 +147,7 @@ Discovery and prioritization form a feedback loop. Prioritization may fund anoth
 ### Change orchestration, specification, and program execution
 
 - `software-change-orchestration` owns continuity and composition economy for one bounded change effort: authorization and escalation boundaries, derived assurance posture and workflow budget, evolving canonical specification or work surface, one primary owner per move, reusable evidence, and durable handoff state when needed. It keeps the immediate frontier in the active session during uninterrupted work and may use an existing specification or issue instead of creating another document.
-- `software-change-specification` owns the implementation-ready behavior contract for one accepted but ambiguous change. It can classify the change as not ready; orchestration preserves and routes those unresolved decisions.
+- `software-change-specification` owns the implementation-ready behavior contract for one accepted but ambiguous change. Within orchestration it consumes the originating request and accepted frame, updates the supplied canonical surface with only its specification delta when authorized, and can classify the change as not ready.
 - `technical-program-execution` owns multi-team delivery topology, dependencies, integration, constraints, and replanning. Orchestration must route there rather than becoming a smaller duplicate program office.
 - `behavior-preserving-refactoring` is the primary executor for a pure structural slice whose supported behavior must remain unchanged. `scoped-change-implementation` is the primary executor for an intended observable behavior change. Do not stack both complete workflows around one pure refactor; split a mixed change or nominate one primary executor and borrow only the needed checks. Review, verification, promotion, and residual-risk acceptance remain separate judgments.
 
@@ -208,7 +208,7 @@ The agent supports a human incident commander by default. It may maintain the op
 
 Use `code-review` to inspect a bounded diff against intent, repository constraints, behavior, contracts, maintainability, and claimed evidence. It produces prioritized findings and does not change the target.
 
-Use `verification-execution` to run already-defined `VER-*` claims against fixed methods and oracles. It preserves raw evidence, environment context, counterexamples, inconclusive results, and cleanup. Review can identify an evidence gap; execution can show a claim failed; neither silently approves release.
+Use `verification-strategy-design` to preserve upstream behavior and invariant claims while defining the missing `VER-*` methods, oracles, limits, and renewal obligations. Use `verification-execution` to validate existing snapshot-bound evidence and run claims that are missing, stale, invalidated, suspicious, explicitly independent, or required as a fresh set. It preserves raw evidence, environment context, counterexamples, inconclusive results, and cleanup. Review can identify an evidence gap; execution can show a claim failed; neither silently approves release.
 
 ### Contract evolution versus transition and program execution
 

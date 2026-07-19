@@ -13,7 +13,7 @@ Turn an intended software change into a reviewable behavioral contract that an i
 - Identify the accountable change owner and the domain, product, consumer, security, privacy, data, and operational owners needed for consequential interpretations. The agent can propose a readiness classification; accountable humans confirm disputed meaning and residual risk.
 - Recover evidence from the request, current behavior, code, tests, contracts, decisions, telemetry, incidents, and named stakeholders. Mark material statements as confirmed, inferred, assumed, proposed, or unresolved instead of manufacturing certainty.
 - Match depth to uncertainty, consequence, reversibility, and coordination cost. Let a local reversible change proceed through the compact inline contract in `scoped-change-implementation`; use this skill when clarification has decision value.
-- Keep the specification in the user's existing issue, plan, conversation, or repository artifact unless they request a file. Do not create a mandatory handoff document.
+- Use the user's existing issue, plan, conversation, or repository artifact. When orchestration supplies a canonical surface and record-write authority, update that surface with the owned specification delta; otherwise return an inline or read-only result as authorized. Never create a second handoff record.
 - Keep opportunity selection, domain meaning, architecture design, contract evolution, rollout, verification methods, and implementation with their canonical owners. Reference their decisions by stable key and plain-language label when present rather than copying entire artifacts.
 - A delivery target or request for an “implementation-ready” result does not authorize the specifier to resolve missing domain, architecture, compatibility, security, data, or recovery decisions. Produce a conditional partial specification and `not ready` result when those owners have not decided.
 
@@ -34,6 +34,7 @@ Read [references/change-specification.md](references/change-specification.md) wh
 
 ## Compose without taking over
 
+- When orchestration supplies the originating request, accepted scope and non-goals, existing claims, evidence status, and a bounded specification question, consume them instead of repeating the whole change frame. Preserve source meaning, reopen only contradictions or blocking ambiguity, and return the behavior-contract and readiness delta.
 - `software-change-orchestration` owns cross-session continuity, persistence, and selection of the current frontier. This skill owns one bounded change specification inside that flow and does not create an orchestration record by itself.
 - `product-opportunity-discovery` and `product-opportunity-prioritization` own whether an opportunity or bet deserves investment; this skill specifies one accepted software change.
 - `domain-modeling` owns disputed vocabulary, rules, invariants, and semantic contexts. This skill consumes resolved meaning and exposes unresolved meaning rather than deciding it silently.

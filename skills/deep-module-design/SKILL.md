@@ -20,9 +20,7 @@ Keep module, bounded context, vertical slice, deployable service, data owner, fa
 
 ## Compose proportionately
 
-When orchestration supplies an accepted pressure, commitment set, canonical specification, assurance posture, and bounded design question, consume them rather than repeating product framing or closure planning. Reopen an upstream claim only when repository evidence contradicts it or the missing detail prevents an honest boundary.
-
-For compact and standard local decisions, default the durable result to a concise design delta: pressure, selected ownership and interface, materially different alternative when one affects the choice, preserved commitments, rejection gates, and implementation implication. Expand the analysis only when alternatives have materially different safety, compatibility, data, lifecycle, operational, or migration consequences. Return the design delta and invalidated assumptions; do not produce another complete change plan.
+When orchestration supplies accepted pressure, commitments, a canonical specification, assurance posture, and a bounded question, consume them and return a concise design delta: selected ownership and interface, material alternative when it affects the choice, preserved commitments, rejection gates, implementation implication, and invalidated assumptions. Reopen upstream framing or expand the analysis only when evidence contradicts it, a missing fact blocks an honest boundary, or alternatives differ materially in safety, compatibility, data, lifecycle, operations, or migration. Do not produce another complete change plan.
 
 ## Design workflow
 

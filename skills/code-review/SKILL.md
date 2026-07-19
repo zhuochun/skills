@@ -13,9 +13,8 @@ Judge the change, not the author's narrative or the volume of activity. Recover 
 - Establish the review range: working tree, staged changes, commit, branch against merge base, pull request, or named artifact. Preserve the exact base and head identities when available.
 - Recover the change intent, acceptance criteria, non-goals, repository instructions, relevant decisions, and claimed evidence. Compare the canonical scope with the originating request, issue, or accepted specification when available; flag a later record that silently narrows the promised behavior into an easier implementation proxy. Treat missing intent as a review limitation, not permission to invent a specification.
 - When orchestration supplies an accepted contract, assurance posture, exact candidate snapshot, and evidence index, consume them without repeating the producer's framing. Challenge them when the diff or surrounding repository evidence contradicts the claim.
-- Treat fresh judgment, complete diff inspection, risk-path tracing, and authority to reject as reviewer independence. Do not equate independence with rerunning every producer command.
 - Inspect the changed artifact and enough surrounding code, tests, schemas, configuration, consumers, runtime semantics, and history to evaluate the diff in context. Do not turn a change review into an unbounded codebase assessment.
-- Keep generation and judgment distinct. The reviewer may use tool-backed checks and fresh context, but a different role label without different criteria, evidence, or permission to reject does not create independence.
+- Keep generation and judgment distinct. Independence requires fresh judgment, complete diff inspection, risk-path tracing, distinct evidence or criteria, and authority to reject—not a different role label or automatic repetition of every producer command.
 
 ## Review workflow
 

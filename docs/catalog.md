@@ -51,13 +51,13 @@ Do not start from a fashionable method or invoke every skill as a stage gate. As
 
 | Skill | It owns | Primary output |
 | --- | --- | --- |
-| [`software-change-specification`](../skills/software-change-specification/) | Pre-implementation intent, behavior delta, scope, invariants, affected surfaces, acceptance claims, unknowns, and readiness for one bounded change | Evidence-ranked change contract, representative examples, `CHG-*` claims, routes, and readiness classification |
+| [`software-change-specification`](../skills/software-change-specification/) | Pre-implementation intent, behavior delta, scope, invariants, affected surfaces, acceptance claims, unknowns, and readiness for one bounded change | Source-faithful specification delta, representative examples, `CHG-*` claims, routes, and readiness classification |
 | [`software-change-orchestration`](../skills/software-change-orchestration/) | Resumable routing and repository-backed state across a bounded software change | Outcome and authorization boundary, derived assurance posture and workflow budget, evolving canonical specification, exclusive executor route, reusable evidence, and durable handoff state when needed |
 | [`technical-program-execution`](../skills/technical-program-execution/) | Multi-team outcomes, vertical slices, dependencies, integration, flow, and replanning | Outcome contract, delivery topology, active slices, constraints, decision state, and evidence trend |
 | [`software-contract-evolution`](../skills/software-contract-evolution/) | Shared contract semantics, compatibility, translation, deprecation, consumer adoption, and retirement policy | Actual-contract frame, compatibility matrix, evolution choice, adoption obligations, and retirement evidence |
 | [`controlled-release-design`](../skills/controlled-release-design/) | Feature flags, exposure assignment, cohorts, release phases, and kill controls | Release contract, control topology, evidence, phase criteria, retreat, and cleanup |
 | [`high-risk-change-planning`](../skills/high-risk-change-planning/) | Transition states for risky API, schema, data, service, and infrastructure changes | Phased coexistence plan with invariants, evidence, abort, retreat, and cleanup |
-| [`verification-strategy-design`](../skills/verification-strategy-design/) | Matching engineering claims and risks to falsifying evidence | Risk-to-evidence portfolio with methods, oracles, limits, and renewal triggers |
+| [`verification-strategy-design`](../skills/verification-strategy-design/) | Matching engineering claims and risks to falsifying evidence | Upstream-linked risk-to-evidence portfolio with methods, oracles, limits, evidence gaps, and renewal triggers |
 
 ### Implement, diagnose, and verify
 
@@ -67,7 +67,7 @@ Do not start from a fashionable method or invoke every skill as a stage gate. As
 | [`behavior-preserving-refactoring`](../skills/behavior-preserving-refactoring/) | Structural improvement without intentional supported-behavior change | Consolidated ownership, refactoring-safe evidence, retired old paths, and equivalence limits |
 | [`software-failure-diagnosis`](../skills/software-failure-diagnosis/) | Causal investigation of bugs, regressions, intermittent failures, and performance degradation | Symptom contract, evidence loop, competing hypotheses, supported cause, and repair boundary |
 | [`code-review`](../skills/code-review/) | Independent read-only review of a bounded software change | Prioritized evidence-backed findings, questions, scope limits, and residual risks |
-| [`verification-execution`](../skills/verification-execution/) | Execution of fixed verification claims, methods, and oracles | Per-claim results, raw evidence, counterexamples, cleanup, and unresolved gaps |
+| [`verification-execution`](../skills/verification-execution/) | Execution of fixed verification claims, methods, and oracles | Per-claim reused, rerun, invalidated, or omitted dispositions; raw evidence; counterexamples; cleanup; and unresolved gaps |
 
 ### Operate, learn, and renew
 
