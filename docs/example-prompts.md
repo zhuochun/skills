@@ -48,6 +48,21 @@ runtime dependencies, incidents, and on-call ownership. Recommend only.
 ```
 
 ```text
+Use $codebase-architecture-assessment to decide which structural improvement
+deserves investment first across this codebase. Compare recurring change,
+defect, runtime, testing, and ownership pressure, rank a small portfolio, and
+stop before focused redesign or implementation.
+```
+
+```text
+Use $retrospective-architecture-review to reconsider this completed checkout
+capability after six months of repeated changes and operating workarounds.
+Establish what we learned, recover durable commitments, compare the current
+design with credible alternatives, and recommend whether to retain, quarantine,
+prune, reshape, or rebuild it. Do not modify the system.
+```
+
+```text
 Use $technical-program-execution to steer this checkout modernization across
 the web, identity, payments, ledger, data, and support teams. Define the
 outcome and evidence, shape vertical increments, map hard dependencies and

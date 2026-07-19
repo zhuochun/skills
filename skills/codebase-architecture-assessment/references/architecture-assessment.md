@@ -2,12 +2,14 @@
 
 ## Scope
 
+- Portfolio decision: which structural investments deserve attention first
 - Business or engineering goal:
 - Portfolio/value stream/subsystem:
 - Change-history window:
 - Included runtime and data dependencies:
 - Constraints and ADRs:
 - Exclusions and known blind spots:
+- Preselected completed design: none; if present with a material knowledge delta, route to `$retrospective-architecture-review`
 
 ## Evidence surfaces
 

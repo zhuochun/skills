@@ -41,7 +41,7 @@ Do not start from a fashionable method or invoke every skill as a stage gate. As
 | Skill | It owns | Primary output |
 | --- | --- | --- |
 | [`product-opportunity-prioritization`](../skills/product-opportunity-prioritization/) | Product-level allocation among opportunities and bets across evidence, constraints, capacity, and learning horizons | Normalized candidate set, feasible portfolio options, priority rationale, dispositions, and review triggers |
-| [`codebase-architecture-assessment`](../skills/codebase-architecture-assessment/) | Portfolio-level diagnosis of an existing codebase | Ranked evidence-backed architecture improvement portfolio |
+| [`codebase-architecture-assessment`](../skills/codebase-architecture-assessment/) | Discovering and ranking which structural opportunities deserve investment before a redesign target is selected | Ranked evidence-backed architecture improvement portfolio |
 | [`architecture-risk-evaluation`](../skills/architecture-risk-evaluation/) | Scenario-based evaluation of architecture assumptions and quality tradeoffs | Risks, non-risks, sensitivities, tradeoffs, unknowns, and evidence needs |
 | [`service-capacity-engineering`](../skills/service-capacity-engineering/) | End-to-end demand, capacity, headroom, overload, and recovery behavior | Capacity model, operating envelope, falsification evidence, and overload controls |
 | [`service-ownership-design`](../skills/service-ownership-design/) | Sustainable lifecycle ownership and its enabling conditions | Ownership trace, cognitive-load assessment, model options, prerequisites, and transition |
@@ -76,7 +76,7 @@ Do not start from a fashionable method or invoke every skill as a stage gate. As
 | [`incident-response-coordination`](../skills/incident-response-coordination/) | Live stabilization, accountable command, delegated workstreams, and response communication | Operational picture, impact trend, command decisions, workstreams, recovery criteria, and handoff |
 | [`operational-feedback-audit`](../skills/operational-feedback-audit/) | The live telemetry-to-decision-to-action loop | Contract counterexamples and deltas, alert and diagnostic findings, routing and control-path risks |
 | [`incident-learning`](../skills/incident-learning/) | Learning from incidents, near misses, and operational surprises | Evidence timeline, local perspectives, model gaps, protective capacity, and branching follow-through |
-| [`architecture-consolidation-review`](../skills/architecture-consolidation-review/) | Reviewing whether accumulated implementation and operational learning warrants architectural consolidation | Knowledge delta, pressure diagnosis, durable commitments, candidate comparison, and retain/quarantine/prune/reshape/rebuild route |
+| [`retrospective-architecture-review`](../skills/retrospective-architecture-review/) | Reconsidering one selected completed design after material implementation or operational learning changes its premises | Knowledge delta, durable commitments, candidate comparison, and retain/quarantine/prune/reshape/rebuild route |
 
 ### Develop technical capability
 

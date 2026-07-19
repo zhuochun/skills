@@ -1,0 +1,7 @@
+interface:
+  display_name: "Retrospective Architecture Review"
+  short_description: "Reconsider one learned architecture"
+  default_prompt: "Use $retrospective-architecture-review to reconsider this completed design after material learning and recommend whether to retain, quarantine, prune, reshape, or rebuild it."
+
+policy:
+  allow_implicit_invocation: false

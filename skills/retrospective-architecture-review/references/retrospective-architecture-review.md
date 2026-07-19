@@ -1,6 +1,6 @@
-# Architecture consolidation review
+# Retrospective architecture review
 
-Use this reference to make the redesign reasoning explicit without turning it into a user-maintained handoff artifact.
+Use this reference to reconsider one selected completed design after a material knowledge delta, without turning the reasoning into a user-maintained handoff artifact. For a broad search and ranking of architecture opportunities, use `$codebase-architecture-assessment` instead.
 
 ## Knowledge-derived reasoning model
 
@@ -78,8 +78,8 @@ Route gaps by their actual type:
 
 ## Report format
 
-1. **Scale, route, confidence, and decisive uncertainty**
-2. **Knowledge delta, pressure diagnosis, and why consolidation is justified**
+1. **Selected review unit, scale, route, confidence, and decisive uncertainty**
+2. **Knowledge delta, pressure diagnosis, and why retrospective reconsideration is justified**
 3. **Learned commitments and contradictions**
 4. **Candidate designs and current-design baseline**
 5. **Convergence, divergence, and structural learning to encode**

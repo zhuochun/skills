@@ -92,11 +92,11 @@ flowchart LR
     IL --> OWN
     IL --> CR
     IL --> HR
-    IL -.-> ACR["Architecture consolidation review"]
-    ACR --> DM
-    ACR --> SB
-    ACR --> MD
-    ACR --> BPR
+    IL -.-> RAR["Retrospective architecture review"]
+    RAR --> DM
+    RAR --> SB
+    RAR --> MD
+    RAR --> BPR
 ```
 
 `software-change-orchestration` can maintain a bounded change's evolving canonical specification across this graph and preserve a resume point when work spans sessions or artifacts. The immediate frontier normally remains in the active session. Orchestration does not add a required path through the graph or take ownership from any node.
@@ -126,7 +126,7 @@ A skill that creates an artifact should not silently certify that artifact. For 
 | Behavior-preserving refactoring | `code-review`, plus `verification-execution` when equivalence crosses consumer, data, concurrency, performance, failure, or operating boundaries |
 | Failure diagnosis | Reproducible or durable causal evidence reviewed by the relevant owner; any repair becomes a separately authorized implementation |
 | Live incident response and recovery claim | Accountable incident commander, observed customer and system stability, and a deliberate recovery handoff; use `incident-learning` only after restoration |
-| Completed implementation | Executed repository evidence, `code-review`, and independent `verification-execution` when warranted; `architecture-consolidation-review` only when accumulated learning creates a material reason to reconsider the design |
+| Completed implementation | Executed repository evidence, `code-review`, and independent `verification-execution` when warranted; `retrospective-architecture-review` only when accumulated learning creates a material reason to reconsider the design |
 
 Separation does not require bureaucracy or different people for every local change. It requires a distinct contract: the evaluator receives the artifact and evidence, can identify missing claims, and is not required to defend the producer's original choices. Increase independence with consequence, irreversibility, and uncertainty.
 
@@ -178,6 +178,13 @@ For existing service sprawl, boundary evidence may expose semantic confusion and
 ### Codebase assessment versus focused design
 
 Use `codebase-architecture-assessment` to discover and rank structural problems across an existing codebase. Use `deep-module-design` after one module, interface, seam, or vertical slice has been selected for design.
+
+### Portfolio assessment versus retrospective review
+
+- `codebase-architecture-assessment` starts before a redesign target is selected. It compares structural pressures across a declared codebase or subsystem scope and ranks which opportunities deserve focused investigation or investment.
+- `retrospective-architecture-review` starts with one selected completed design and a material knowledge delta from implementation, repeated change, operation, support, or ownership. It recovers durable commitments, compares the current design with alternatives, and recommends retain, quarantine, prune, reshape, or rebuild.
+
+Route by the decision, not by shared evidence. “Where should we invest in architecture?” belongs to portfolio assessment. “Has what we learned changed the right design for this capability?” belongs to retrospective review. Do not run both as serial general assessments; route a selected portfolio candidate to the focused design skill it needs, and use retrospective review only when accumulated learning creates its distinct decision.
 
 ### Design, specification, implementation, and refactoring
 

@@ -1,6 +1,6 @@
 ---
 name: behavior-preserving-refactoring
-description: Improve the internal structure of an existing software capability while preserving its supported observable behavior, compatibility, and operational semantics. Use when implementing an authorized module redesign, opening seams in legacy code, extracting or collapsing abstractions, moving ownership, reducing coupling or meaning-search, or consolidating learned architecture without intentionally changing product behavior. Use scoped-change-implementation for requested behavior changes and architecture-consolidation-review when accumulated learning exists but the target design is still undecided.
+description: Improve the internal structure of an existing software capability while preserving its supported observable behavior, compatibility, and operational semantics. Use when implementing an authorized module redesign, opening seams in legacy code, extracting or collapsing abstractions, moving ownership, reducing coupling or meaning-search, or consolidating learned architecture without intentionally changing product behavior. Use scoped-change-implementation for requested behavior changes and retrospective-architecture-review when accumulated learning exists but the target design is still undecided.
 ---
 
 # Behavior-Preserving Refactoring

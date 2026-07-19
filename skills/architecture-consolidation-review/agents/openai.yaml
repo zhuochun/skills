@@ -1,7 +1,0 @@
-interface:
-  display_name: "Architecture Consolidation Review"
-  short_description: "Consolidate architecture learned through real use"
-  default_prompt: "Use $architecture-consolidation-review to establish what this completed capability has taught us, then recommend whether to retain, quarantine, prune, reshape, or rebuild it without modifying the system."
-
-policy:
-  allow_implicit_invocation: false

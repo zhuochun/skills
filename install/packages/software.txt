@@ -1,5 +1,4 @@
 # Larger-scale software understanding, design, change, coordination, and verification
-architecture-consolidation-review
 architecture-risk-evaluation
 behavior-preserving-refactoring
 code-review
@@ -8,6 +7,7 @@ controlled-release-design
 deep-module-design
 high-risk-change-planning
 platform-capability-design
+retrospective-architecture-review
 scoped-change-implementation
 service-boundary-design
 service-surface-mapping

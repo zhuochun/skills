@@ -130,6 +130,8 @@ codebase-architecture-assessment
   -> high-risk-change-planning, only for consequential transition work
 ```
 
+Use this route when the decision is which structural opportunity deserves attention first. If one completed design is already selected and material implementation or operational learning has changed its premises, start with `retrospective-architecture-review` instead of running a second broad assessment.
+
 ### Contested technical choice
 
 ```text
@@ -169,7 +171,7 @@ software-failure-diagnosis
 ### Behavior-preserving structural change
 
 ```text
-deep-module-design for a current design question, or architecture-consolidation-review when accumulated learning leaves the target undecided
+deep-module-design for a current design question, or retrospective-architecture-review when accumulated learning leaves the target undecided
   -> behavior-preserving-refactoring
   -> code-review
   -> verification-execution when equivalence is consequential
@@ -202,12 +204,12 @@ incident-response-coordination, during an active incident
   -> controlled-release-design or high-risk-change-planning for rollout gaps
   -> service-ownership-design or technical-decision-making for authority gaps
   -> update a runbook, automation, or local process directly when sufficient
-  -> architecture-consolidation-review only when accumulated learning creates a material foundational design question
+  -> retrospective-architecture-review only when accumulated learning creates a material foundational design question
 ```
 
-One incident may produce several independent branches. Do not force every finding through architecture consolidation or through one serial workflow.
+One incident may produce several independent branches. Do not force every finding through retrospective architecture review or through one serial workflow.
 
-### Architecture consolidation review by scale
+### Retrospective architecture review by scale
 
 ```text
 module or capability
@@ -226,7 +228,7 @@ multi-service system or wider estate
      and independent verification execution before consequential cutover
 ```
 
-The consolidation reviewer works read-only and activates only when implementation, repeated change, operation, support, or ownership has produced a material knowledge delta. It does not provide a generic second attempt for a weak first design pass. It compares the current or minimally consolidated design as a competent baseline, may recommend retain or quarantine when change would outrun evidence, and names the focused follow-up skills needed for deeper design, scoped implementation, behavior-preserving refactoring, controlled release, or verification. The accountable human confirms support-policy changes, route selection, cutover, and residual-risk acceptance. Builder-run checks may support the decision but do not become an independent equivalence verdict merely because the same agent reports them.
+The retrospective architecture reviewer works read-only on one selected completed design and activates only when implementation, repeated change, operation, support, or ownership has produced a material knowledge delta. It does not discover or rank a general codebase improvement portfolio and does not provide a generic second attempt for a weak first design pass. It compares the current or minimally consolidated design as a competent baseline, may recommend retain or quarantine when change would outrun evidence, and names the focused follow-up skills needed for deeper design, scoped implementation, behavior-preserving refactoring, controlled release, or verification. The accountable human confirms support-policy changes, route selection, cutover, and residual-risk acceptance. Builder-run checks may support the decision but do not become an independent equivalence verdict merely because the same agent reports them.
 
 These are routing examples, not mandatory stage gates.
 
