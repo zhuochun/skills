@@ -39,7 +39,7 @@ this public repository:
 
 ```sh
 npx skills add zhuochun/skills --list
-npx skills add zhuochun/skills --agent codex --skill service-surface-mapping
+npx skills add zhuochun/skills --agent codex --skill architecture-surface-mapping
 ```
 
 For Codex, the complete catalog is available as one Marketplace plugin. Add
@@ -50,7 +50,7 @@ includes local-development and update commands.
 Invoke the skill explicitly:
 
 ```text
-Use $service-surface-mapping to orient me to this service before I change it.
+Use $architecture-surface-mapping to orient me to this unfamiliar system before I change it.
 Map the critical runtime, data, dependency, observability, and recovery
 surfaces, distinguish confirmed evidence from unknowns, and recommend the next
 probes. Do not modify the repository.
@@ -65,7 +65,7 @@ top-level intents. You can also invoke any specialist explicitly as
 | When you need to... | Start with |
 | --- | --- |
 | Guide a bounded software change across sessions and artifacts | [`software-change-orchestration`](skills/software-change-orchestration/) |
-| Orient to an unfamiliar service before changing or operating it | [`service-surface-mapping`](skills/service-surface-mapping/) |
+| Orient to unfamiliar software before changing or operating it | [`architecture-surface-mapping`](skills/architecture-surface-mapping/) |
 | Implement an authorized bounded behavior change | [`scoped-change-implementation`](skills/scoped-change-implementation/) |
 | Improve structure without intentionally changing supported behavior | [`behavior-preserving-refactoring`](skills/behavior-preserving-refactoring/) |
 | Diagnose a bug, regression, intermittent failure, or performance problem | [`software-failure-diagnosis`](skills/software-failure-diagnosis/) |
@@ -90,7 +90,7 @@ If none of these describes the missing decision or artifact, use the
 
 The catalog is a directed graph, not a required stage-gate process. A local
 reversible feature may need only implementation and repository checks. A risky
-multi-team transition may warrant independent design, planning, review, and
+multi-workstream transition may warrant independent design, planning, review, and
 verification. Use only the nodes justified by the decision and its consequence.
 
 ## Repository development

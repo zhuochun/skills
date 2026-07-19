@@ -72,7 +72,7 @@ Name only the evidence that a promotion, hold, or abort decision consumes:
 
 Reference each item with its namespaced key and plain-language label, such as `OBS-settlement-age — Settlement completion age` or `VER-ledger-conservation — Ledger value is conserved`. The prefix identifies the contract family. Do not duplicate the measurement contract or verification method here. State the comparison or decision rule, uncertainty, missing-evidence behavior, and accountable promotion owner.
 
-When this release is nested inside a high-risk change, inherit the master transition's scope, invariants, compatibility matrix, irreversible effects, data authority, recovery, and cutover. This subplan remains authoritative only for exposure assignment and decisions.
+When this release is nested inside a migration plan, inherit the master transition's scope, invariants, compatibility matrix, irreversible effects, data authority, recovery, and cutover. This subplan remains authoritative only for exposure assignment and decisions.
 
 ## Completion checklist
 
@@ -86,5 +86,5 @@ When this release is nested inside a high-risk change, inherit the master transi
 
 - Use `observability-design` to design the feature and release signals in detail.
 - Use `verification-strategy-design` when the larger question is which methods can falsify all engineering claims.
-- Use `high-risk-change-planning` when exposure is one part of a migration with coexistence, data authority, irreversible transitions, and organizational coordination.
+- Use `migration-planning` when exposure is one part of a migration with coexistence, data authority, irreversible transitions, and organizational coordination.
 - Use `operational-feedback-audit` later to evaluate whether live evidence and controls produced correct operational action.

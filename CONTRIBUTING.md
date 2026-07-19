@@ -119,7 +119,7 @@ Integrate a new owner in both directions:
   `docs/example-prompts.md`; at least one applicable package manifest under
   `install/packages/`; and the skill count in `README.md`; and
 - keep orchestration, specification, design, implementation, evaluation, and
-  multi-team program flow distinct.
+  multi-workstream program flow distinct.
 
 ## Forward-test boundaries before polishing
 

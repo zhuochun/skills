@@ -1,9 +1,9 @@
 ---
-name: high-risk-change-planning
+name: migration-planning
 description: Plan high-risk API, schema, data, service, infrastructure, authorization, or production-behavior changes as staged, observable, and reversible transitions. Use for migrations, breaking contracts, destructive operations, large rollouts, storage replacement, traffic moves, or changes requiring coexistence, approval, rollback, compensation, or coordinated consumer adoption.
 ---
 
-# High-Risk Change Planning
+# Migration Planning
 
 Turn a proposed end state into a sequence of survivable intermediate states. Optimize for controlled learning, bounded blast radius, and an explicit end to temporary migration machinery.
 
@@ -25,7 +25,7 @@ Turn a proposed end state into a sequence of survivable intermediate states. Opt
 8. **Bound coordination.** Inventory consumer order, old/new version combinations, data authority, freezes, communications, and support requirements. Prefer local migrations over synchronized flag days.
 9. **Plan cleanup.** Name removal criteria, deprecation telemetry, deadline, and owner for flags, adapters, duplicate paths, temporary stores, and documentation.
 
-Use [references/change-plan.md](references/change-plan.md) for change-specific patterns and the plan template.
+Use [references/migration-plan.md](references/migration-plan.md) for change-specific patterns and the plan template.
 
 ## Compose specialized controls
 

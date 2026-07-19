@@ -1,6 +1,6 @@
 ---
 name: code-review
-description: Review a proposed or completed software change against its stated intent, repository constraints, supported behavior, evidence, and future change cost, producing prioritized actionable findings without modifying the target. Use for working-tree, commit, branch, pull-request, generated-code, migration, configuration, or mixed software changes when the user wants code review, implementation review, maintainability review, regression-risk review, or an independent challenge before merge or release. Use architecture-risk-evaluation for whole-architecture scenarios and codebase-architecture-assessment for portfolio-wide diagnosis.
+description: Review a proposed or completed software change against its stated intent, repository constraints, supported behavior, evidence, and future change cost, producing prioritized actionable findings without modifying the target. Use for working-tree, commit, branch, pull-request, generated-code, migration, configuration, or mixed software changes when the user wants code review, implementation review, maintainability review, regression-risk review, or an independent challenge before merge or release. Use architecture-risk-evaluation for whole-architecture scenarios and architecture-assessment for portfolio-wide diagnosis.
 ---
 
 # Code Review

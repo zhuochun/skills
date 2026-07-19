@@ -1,0 +1,7 @@
+interface:
+  display_name: "Migration Planning"
+  short_description: "Plan survivable old-to-new migrations"
+  default_prompt: "Use $migration-planning to design a staged, observable, and reversible migration for this consequential change."
+
+policy:
+  allow_implicit_invocation: false

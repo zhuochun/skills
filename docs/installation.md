@@ -25,7 +25,7 @@ npx skills add zhuochun/skills --list
 Install one skill into the current project's Codex skills directory:
 
 ```sh
-npx skills add zhuochun/skills --agent codex --skill service-surface-mapping
+npx skills add zhuochun/skills --agent codex --skill architecture-surface-mapping
 ```
 
 Add `--global` for a user-scoped installation. The CLI selects individual
@@ -110,7 +110,7 @@ is intentionally a smaller version of another.
 | Package | Contents |
 | --- | --- |
 | `product` | 3 product-opportunity and domain-framing skills |
-| `software` | 19 larger-scale software understanding, service and platform design, multi-team change, release, and verification skills |
+| `software` | 19 larger-scale software understanding, service and platform design, multi-workstream change, release, and verification skills |
 | `software-light` | 12 small-project, monolith, and single-service skills for orientation, architecture assessment and consolidation, orchestration, implementation, diagnosis, review, and verification |
 | `operational` | 6 service operation, ownership, feedback, and incident skills |
 | `misc` | 2 cross-cutting decision and capability-development skills |
@@ -140,7 +140,7 @@ Install one skill for tools that discover `$HOME/.agents/skills`:
 
 ```sh
 sh install/install.sh \
-  --skill service-surface-mapping \
+  --skill architecture-surface-mapping \
   --target user-agents
 ```
 
@@ -188,7 +188,7 @@ Install one skill for tools that discover the user's `.agents\skills`:
 
 ```powershell
 .\install\install.ps1 `
-  -Skill service-surface-mapping `
+  -Skill architecture-surface-mapping `
   -Target user-agents
 ```
 

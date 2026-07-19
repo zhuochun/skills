@@ -21,7 +21,7 @@ deferred work, and define evidence-timed continue, pivot, or stop reviews.
 ```
 
 ```text
-Use $service-surface-mapping to orient me to this inherited payments service
+Use $architecture-surface-mapping to orient me to this inherited payments service
 before I change refund behavior. Time-box the investigation, trace the refund
 and recovery paths, distinguish observed from declared evidence, and identify
 the next focused review. Do not change anything.
@@ -48,7 +48,7 @@ runtime dependencies, incidents, and on-call ownership. Recommend only.
 ```
 
 ```text
-Use $codebase-architecture-assessment to decide which structural improvement
+Use $architecture-assessment to decide which structural improvement
 deserves investment first across this codebase. Compare recurring change,
 defect, runtime, testing, and ownership pressure, rank a small portfolio, and
 stop before focused redesign or implementation.
@@ -63,11 +63,12 @@ prune, reshape, or rebuild it. Do not modify the system.
 ```
 
 ```text
-Use $technical-program-execution to steer this checkout modernization across
-the web, identity, payments, ledger, data, and support teams. Define the
-outcome and evidence, shape vertical increments, map hard dependencies and
-integration points, expose decision latency and the current constraint, and
-keep replanning in the existing issue tracker without inventing status theater.
+Use $technical-program-orchestration to steer this checkout modernization
+across the web, identity, payments, ledger, data, and support teams. Define the
+outcome and canonical program surface, give each workstream a driver and current
+frontier, shape vertical increments, map integration contracts and the current
+constraint, and keep replanning in the existing issue tracker without copying
+local workstream artifacts into status theater.
 ```
 
 ```text
@@ -77,7 +78,7 @@ operability, and cost scenarios. Identify evidence needed before a decision.
 ```
 
 ```text
-Use $high-risk-change-planning to plan this PostgreSQL-to-Spanner migration.
+Use $migration-planning to plan this PostgreSQL-to-Spanner migration.
 Include coexistence, write authority, delayed consumers, correctness oracles,
 abort criteria, recovery, communications, and cleanup.
 ```

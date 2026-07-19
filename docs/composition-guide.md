@@ -34,7 +34,7 @@ product-opportunity-discovery
   -> domain-modeling when business meaning, rules, or invariants need design
   -> service-boundary-design and deep-module-design when structure is in question
   -> software-change-specification when an accepted change remains too ambiguous for safe delegation
-  -> technical-program-execution when accepted delivery spans teams or workstreams
+  -> technical-program-orchestration when accepted delivery has several concurrent or interdependent workstreams
   -> co-design observability, verification, and controlled release when applicable
   -> scoped-change-implementation in coherent vertical slices
   -> code-review and verification-execution
@@ -54,8 +54,8 @@ domain-modeling
   -> architecture-risk-evaluation, when consequences justify it
   -> technical-decision-making
   -> software-change-specification, when the accepted change needs a bounded implementation-ready behavior contract
-  -> technical-program-execution, when delivery spans teams or workstreams
-  -> high-risk-change-planning, when transition risk justifies it
+  -> technical-program-orchestration, when delivery has several concurrent or interdependent workstreams
+  -> migration-planning, when transition risk justifies it
   -> co-design observability, verification, and controlled release when they apply
   -> scoped-change-implementation in coherent vertical slices
   -> code-review
@@ -71,8 +71,11 @@ domain-modeling
   -> service-boundary-design
   -> software-contract-evolution for changed APIs, events, schemas, protocols,
      translations, consumer adoption, and retirement obligations
-  -> technical-program-execution for the outcome, delivery topology,
-     vertical slices, dependencies, integration, and decision cadence
+  -> technical-program-orchestration for the canonical program surface,
+     workstream drivers and frontiers, delivery topology, integration contracts,
+     current constraint, and decision cadence
+  -> software-change-orchestration for each bounded software-change workstream
+     that needs an independently resumable decision-to-evidence loop
   -> deep-module-design in each affected codebase
   -> co-design:
        observability-design for end-to-end and component evidence
@@ -93,8 +96,8 @@ Do not let each service independently decide feature exposure when the workflow 
 domain-modeling, when meaning or context differs across participants
   -> software-contract-evolution for the actual contract, compatibility matrix,
      translation, deprecation, consumer adoption, and retirement evidence
-  -> technical-program-execution, when migration spans teams or consumer groups
-  -> high-risk-change-planning, when coexistence, state, irreversible effects,
+  -> technical-program-orchestration, when migration has several concurrent or interdependent adoption workstreams
+  -> migration-planning, when coexistence, state, irreversible effects,
      cutover, or recovery make the transition consequential
   -> observability-design and verification-strategy-design for named evidence
   -> scoped-change-implementation, code-review, and verification-execution
@@ -106,7 +109,7 @@ Do not remove the old contract because a deadline elapsed or current telemetry i
 ### Inheriting a brownfield service
 
 ```text
-service-surface-mapping
+architecture-surface-mapping
   -> domain-modeling, service-boundary-design, or deep-module-design for the discovered problem
   -> verification-strategy-design for characterization and change claims
   -> software-failure-diagnosis when an observed failure is still unexplained
@@ -121,13 +124,13 @@ Orientation should stop once the immediate decision can move into focused work. 
 ### Existing codebase with recurring friction
 
 ```text
-codebase-architecture-assessment
-  -> service-surface-mapping, when one unfamiliar service needs runtime and ownership orientation
+architecture-assessment
+  -> architecture-surface-mapping, when an unfamiliar module, service, subsystem, or capability needs evidence-ranked orientation
   -> domain-modeling, for semantic confusion
   -> service-boundary-design, for deployment/data/ownership coupling
   -> deep-module-design, for local structure and interfaces
   -> behavior-preserving-refactoring for authorized structural execution
-  -> high-risk-change-planning, only for consequential transition work
+  -> migration-planning, only for consequential transition work
 ```
 
 Use this route when the decision is which structural opportunity deserves attention first. If one completed design is already selected and material implementation or operational learning has changed its premises, start with `retrospective-architecture-review` instead of running a second broad assessment.
@@ -137,8 +140,8 @@ Use this route when the decision is which structural opportunity deserves attent
 ```text
 architecture-risk-evaluation, when assumptions need technical analysis
   -> technical-decision-making
-  -> technical-program-execution, when execution spans teams or workstreams
-  -> high-risk-change-planning
+  -> technical-program-orchestration, when coordination spans several concurrent or interdependent workstreams
+  -> migration-planning
   -> co-design verification, observability, and optional controlled release
   -> scoped-change-implementation
   -> code-review and verification-execution
@@ -198,10 +201,10 @@ incident-response-coordination, during an active incident
   -> verification-strategy-design for escaped behavior or evidence gaps
   -> software-failure-diagnosis for an unresolved technical cause
   -> verification-execution for a defined regression or resilience claim
-  -> domain-modeling, codebase-architecture-assessment, deep-module-design,
+  -> domain-modeling, architecture-assessment, deep-module-design,
      or service-boundary-design for focused model or structure gaps
   -> service-capacity-engineering for overload and recovery gaps
-  -> controlled-release-design or high-risk-change-planning for rollout gaps
+  -> controlled-release-design or migration-planning for rollout gaps
   -> service-ownership-design or technical-decision-making for authority gaps
   -> update a runbook, automation, or local process directly when sufficient
   -> retrospective-architecture-review only when accumulated learning creates a material foundational design question
@@ -224,7 +227,7 @@ service or subsystem
 multi-service system or wider estate
   -> architecture-risk-evaluation
   -> technical-decision-making for accountable closure when needed
-  -> high-risk-change-planning, scoped implementation, change review,
+  -> migration-planning, scoped implementation, change review,
      and independent verification execution before consequential cutover
 ```
 

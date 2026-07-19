@@ -8,7 +8,7 @@ Use this worksheet for a formal review. Adapt the depth to decision consequence 
 - Decision owner:
 - Affected owners and consumers:
 - Business outcome or recurring pain:
-- Boundary types in question: semantic / code / deployment / data / team
+- Enforcement types in question: in-process module / deployment / data / failure / operating ownership
 - Decision horizon and constraints:
 
 ## Domain and workflow
@@ -60,15 +60,17 @@ For each scenario, record the participating boundaries, data movement, remote ca
 Compare at least these when plausible:
 
 - Keep the current physical boundary and improve internal modularity.
-- Expose or repair a logical boundary before extraction.
+- Expose or repair a logical boundary before extraction; route detailed hidden-knowledge and interface design to `deep-module-design`.
 - Split deployment while retaining explicit translation and ownership.
 - Merge boundaries that cannot fail, change, or transact independently.
 
 ## Decision
 
 - Recommendation and confidence:
+- Selected enforcement boundary and desired locality:
 - Decisive evidence:
 - Prerequisites:
+- `deep-module-design` handoff when logical modularity is selected: pressure, preserved commitments, service constraints, and rejection gates
 - Migration outline and reversibility:
 - Temporary complexity and retirement owner:
 - Accepted risks:

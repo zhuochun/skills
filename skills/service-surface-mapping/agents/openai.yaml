@@ -1,7 +1,0 @@
-interface:
-  display_name: "Service Surface Mapping"
-  short_description: "Map an unfamiliar service quickly and safely"
-  default_prompt: "Use $service-surface-mapping to map the critical surfaces of this unfamiliar service and identify the next evidence to gather."
-
-policy:
-  allow_implicit_invocation: true

@@ -1,6 +1,6 @@
 ---
 name: software-change-orchestration
-description: Orchestrate one bounded software change from rough intent or an accepted opportunity through proportional specification, specialist design, authorized implementation, independent review, verification, and evidence-based closure. Use when a user wants a resumable repository-backed flow and help selecting the next specialist without remembering the catalog. Keep small reversible discussion inline, choose repository persistence by outcome ownership, and route multi-team delivery to technical-program-execution.
+description: Orchestrate one bounded software change from rough intent or an accepted opportunity through proportional specification, specialist design, authorized implementation, independent review, verification, and evidence-based closure. Use when a user wants a resumable repository-backed flow and help selecting the next specialist without remembering the catalog. Keep small reversible discussion inline, choose repository persistence by outcome ownership, and route interdependent multi-workstream delivery to technical-program-orchestration.
 ---
 
 # Software Change Orchestration
@@ -24,7 +24,7 @@ Keep one software change moving through the smallest useful sequence of decision
 Define one **change effort** by one outcome, a coherent behavior or risk boundary, and a closure condition. Group slices only when they share the decisions or invariants that determine completion.
 
 - Keep unrelated enhancements and bugs separate unless they are necessary for the active outcome.
-- Route unexplained failures to `software-failure-diagnosis`, competing opportunities to product discovery or prioritization, and interdependent multi-team delivery to `technical-program-execution`.
+- Route unexplained failures to `software-failure-diagnosis`, competing opportunities to product discovery or prioritization, and interdependent multi-workstream delivery to `technical-program-orchestration`.
 
 Choose persistence by ownership and re-entry need:
 

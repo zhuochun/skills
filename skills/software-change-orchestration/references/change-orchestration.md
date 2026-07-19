@@ -25,7 +25,7 @@ A change effort has one outcome and one closure condition. Group slices only whe
 | Add a small page note crossing persistent state, HTTP behavior, desktop/mobile UI, and focus | One compact owning-repository specification; no orchestration directory. |
 | Add an app feature that consumes a separate corpus repository | Owning-repository effort in the app when it owns the user behavior. |
 | Make unrelated shell-polish fixes | Separate inline changes or separately prioritized efforts. |
-| Migrate a shared contract across repositories and teams | One control-repository effort with linked local artifacts; use `technical-program-execution` for delivery coordination. |
+| Migrate a shared contract across repositories and teams | One control-repository effort with linked local artifacts; use `technical-program-orchestration` for delivery coordination. |
 
 ## Place durable state
 
@@ -111,11 +111,11 @@ Keep the immediate frontier in the active session during uninterrupted work. A c
 | Shared API, schema, event, or protocol compatibility must evolve | `software-contract-evolution` |
 | Architecture quality assumptions need scenario challenge | `architecture-risk-evaluation` |
 | A consequential or contested choice needs accountable closure | `technical-decision-making` |
-| Old, mixed, and target states need survivable sequencing | `high-risk-change-planning` |
+| Old, mixed, and target states need survivable sequencing | `migration-planning` |
 | Feature exposure, cohorts, promotion, or kill controls need design | `controlled-release-design` |
 | Runtime signal semantics and operational navigation are missing | `observability-design` |
 | Claims need falsifying methods, oracles, and evidence limits | `verification-strategy-design` |
-| Multi-team dependencies, integration, and replanning need active steering | `technical-program-execution` |
+| Several concurrent or interdependent workstreams need dependency, integration, and constraint steering | `technical-program-orchestration` |
 | A fixed behavior change is understood and authorized | `scoped-change-implementation` |
 | An authorized structural change must preserve supported behavior | `behavior-preserving-refactoring` |
 | Failure cause remains uncertain | `software-failure-diagnosis` |

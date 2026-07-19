@@ -1,4 +1,4 @@
-# Safe Change Plan
+# Migration Plan
 
 ## Select patterns by change class
 
@@ -66,6 +66,6 @@
 - Add a controlled-release subplan only when flags, cohorts, traffic, regions, dark launch, or other exposure control matters. It owns assignment, exposure states, promotion, hold, abort, kill controls, and flag retirement.
 - Reference observability contracts for signal meaning, correlation, missing-data behavior, and navigation.
 - Reference verification strategy entries for methods, oracles, limitations, run points, and renewal.
-- Keep this change plan authoritative for transition states, invariants, data and effect authority, compatibility, cutover, recovery, compensation, and overall cleanup.
+- Keep this migration plan authoritative for transition states, invariants, data and effect authority, compatibility, cutover, recovery, compensation, and overall cleanup.
 
 Use a namespaced key together with its plain-language label, for example `VER-ledger-conservation — Ledger value is conserved`. The prefix identifies the contract family. Never require a reader to decode a naked ID or search several copied tables for the authoritative version.

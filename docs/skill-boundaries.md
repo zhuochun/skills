@@ -15,18 +15,18 @@ flowchart LR
     PD --> DM["Domain modeling"]
     PD -.-> OD["Observability design"]
     PD -.-> CR["Controlled release design"]
-    PP --> TP["Technical program execution"]
+    PP --> TP["Technical program orchestration"]
     PP --> SPEC["Software change specification"]
     PP --> SCI["Scoped change implementation"]
 
-    SM["Service surface mapping"] --> DM["Domain modeling"]
+    SM["Architecture surface mapping"] --> DM["Domain modeling"]
     SM --> SB["Service boundary design"]
     SM --> MD["Deep module design"]
     SM --> OD["Observability design"]
 
     DM --> SB
     SB --> MD["Deep module design"]
-    CA["Codebase architecture assessment"] --> DM
+    CA["Architecture assessment"] --> DM
     CA --> SB
     CA --> MD
 
@@ -37,7 +37,7 @@ flowchart LR
     OWN["Service ownership design"] --> AR
 
     AR --> TD["Technical decision making"]
-    TD --> TP["Technical program execution"]
+    TD --> TP["Technical program orchestration"]
     SB --> TP
     DM --> CE["Software contract evolution"]
     DM --> SPEC
@@ -46,11 +46,11 @@ flowchart LR
     MD --> SPEC
     CE -.-> TP
     CE --> SPEC
-    CE --> HR["High-risk change planning"]
+    CE --> HR["Migration planning"]
     CE --> OD
     CE --> VS
     CE --> SCI
-    TD --> HR["High-risk change planning"]
+    TD --> HR["Migration planning"]
     MD --> OD
     SB --> OD
     MD --> CR["Controlled release design"]
@@ -101,7 +101,7 @@ flowchart LR
 
 `software-change-orchestration` can maintain a bounded change's evolving canonical specification across this graph and preserve a resume point when work spans sessions or artifacts. The immediate frontier normally remains in the active session. Orchestration does not add a required path through the graph or take ownership from any node.
 
-This is not a mandatory lifecycle. For example, an uncertain product request may loop only between opportunity discovery and prioritization until evidence supports stopping or investment. A local reversible feature may need only `scoped-change-implementation` and repository checks. A structure-only cleanup may use `behavior-preserving-refactoring` without architecture review. A multi-team feature may use `technical-program-execution` to coordinate slices and integration while composing observability, controlled release, change review, and verification without a heavyweight architecture evaluation. A multi-region ledger migration may require architecture evaluation, a decision record, technical program execution, high-risk change planning, controlled exposure, layered verification, and an operational feedback audit. An active outage may need incident-response coordination and diagnosis before it can move into recovery and incident learning.
+This is not a mandatory lifecycle. For example, an uncertain product request may loop only between opportunity discovery and prioritization until evidence supports stopping or investment. A local reversible feature may need only `scoped-change-implementation` and repository checks. A structure-only cleanup may use `behavior-preserving-refactoring` without architecture review. A multi-workstream feature may use `technical-program-orchestration` to coordinate owned frontiers and integration while composing observability, controlled release, change review, and verification without a heavyweight architecture evaluation. A multi-region ledger migration may require architecture evaluation, a decision record, technical program orchestration, migration planning, controlled exposure, layered verification, and an operational feedback audit. An active outage may need incident-response coordination and diagnosis before it can move into recovery and incident learning.
 
 ## Design and evaluation are different jobs
 
@@ -111,11 +111,11 @@ A skill that creates an artifact should not silently certify that artifact. For 
 | --- | --- |
 | Product opportunity discovery result | Accountable product owner and cross-functional decision group challenge the evidence, affected population, alternatives, and limits; prioritization may reject investment readiness without rewriting the discovery result |
 | Product opportunity priority recommendation | Accountable product owner or declared forum closes the decision after customer, commercial, technical, operational, and mandatory-risk owners challenge the rationale and feasibility |
-| Service surface map | Source-owner review and focused follow-up; orientation does not certify readiness or safety |
+| Architecture surface map | Source-owner review and focused follow-up; orientation does not certify architecture fitness, readiness, or safety |
 | Domain, service-boundary, module, or platform design | `architecture-risk-evaluation` for consequential quality and operating scenarios |
 | Codebase improvement proposal | Local evidence review, followed by the relevant focused design skill |
 | Architecture option comparison | `technical-decision-making` for accountable weighting and closure |
-| Technical program execution state | Accountable outcome owner and integrated delivery evidence; activity and coordinator confidence do not certify the outcome |
+| Technical program orchestration state | Accountable outcome owner and integrated delivery evidence; activity and coordinator confidence do not certify the outcome |
 | Software contract evolution design | Producer, consumer, data, and support-policy owners review the recovered contract and compatibility claims; use `verification-strategy-design` and independent architecture challenge as consequence warrants |
 | Software change specification | Accountable change, product, domain, consumer, security, data, and operational owners challenge the interpretations they own; consequential architecture and evidence claims route to independent evaluation rather than being self-certified by the specifier |
 | Observability design | Instrumentation and signal verification, then `operational-feedback-audit` against representative runtime use |
@@ -140,24 +140,26 @@ When skills compose in one task, keep the decision context in flow instead of cr
 
 - `product-opportunity-discovery` reduces uncertainty about a desired outcome, customer opportunity, assumptions, and alternative solution directions. It may recommend learning, narrowing, pivoting, stopping, prioritization, or investment readiness; it does not allocate the roadmap or promise delivery.
 - `product-opportunity-prioritization` allocates bounded product attention and capacity among sufficiently framed opportunities and bets. It keeps mandatory and enabling work visible, preserves different learning horizons, and makes selection, deferral, and review rationale inspectable; it does not discover every opportunity or sequence execution.
-- `technical-program-execution` coordinates teams, dependencies, integration, and evidence after an outcome and investment direction have been accepted. `scoped-change-implementation` owns a bounded authorized implementation.
+- `technical-program-orchestration` coordinates several concurrent or interdependent workstream loops, dependencies, integration, and evidence after an outcome and investment direction have been accepted. Team count alone does not define a program. `scoped-change-implementation` owns a bounded authorized implementation.
 
 Discovery and prioritization form a feedback loop. Prioritization may fund another discovery slice rather than a full solution; discovery evidence may split, merge, weaken, strengthen, or remove an opportunity and reopen priority. `domain-modeling` owns complex software meaning, behavior, and invariants once those become the problem, while `controlled-release-design` and `observability-design` own governed production exposure and deployed measurement contracts.
 
-### Change orchestration, specification, and program execution
+### Change orchestration, specification, and program orchestration
 
 - `software-change-orchestration` owns continuity and composition economy for one bounded change effort: authorization and escalation boundaries, derived assurance posture and workflow budget, evolving canonical specification or work surface, one primary owner per move, reusable evidence, and durable handoff state when needed. It keeps the immediate frontier in the active session during uninterrupted work and may use an existing specification or issue instead of creating another document.
 - `software-change-specification` owns the implementation-ready behavior contract for one accepted but ambiguous change. Within orchestration it consumes the originating request and accepted frame, updates the supplied canonical surface with only its specification delta when authorized, and can classify the change as not ready.
-- `technical-program-execution` owns multi-team delivery topology, dependencies, integration, constraints, and replanning. Orchestration must route there rather than becoming a smaller duplicate program office.
+- `technical-program-orchestration` owns the canonical program surface, multi-workstream delivery topology, workstream contracts and drivers, local and program frontiers, integration, constraints, and replanning. It links canonical local artifacts rather than becoming their executor or a duplicate program office.
 - `behavior-preserving-refactoring` is the primary executor for a pure structural slice whose supported behavior must remain unchanged. `scoped-change-implementation` is the primary executor for an intended observable behavior change. Do not stack both complete workflows around one pure refactor; split a mixed change or nominate one primary executor and borrow only the needed checks. Review, verification, promotion, and residual-risk acceptance remain separate judgments.
 
 The orchestration unit is a **change effort**, not necessarily a whole product or repository. Related slices may share one effort when they serve one outcome and depend on the same behavior or risk decisions. Small reversible changes stay inline with no orchestration directory. When durable state is justified, use the owning repository if one repo owns the behavior; use an established control repository when no code repository owns the cross-repository outcome. Touching or reading several repositories is not by itself a reason to create control-repository state.
 
+A program is not merely a larger change effort. Program orchestration steers a graph of workstream contributions, dependencies, integration contracts, and simultaneous frontiers. A program may link several bounded change efforts, while one change effort may also require program orchestration when its delivery spans interdependent teams. Use `software-change-orchestration` only for workstreams that need their own resumable software-change loop; keep non-code or already well-governed workstreams in their existing canonical surfaces.
+
 ### Orientation versus assessment
 
-Use `service-surface-mapping` to become safely useful in an unfamiliar service: trace critical workflows, reconcile declared and observed dependencies, locate controls and owners, and rank the next probes. It does not score readiness or prescribe a portfolio.
+Use `architecture-surface-mapping` to become safely useful in unfamiliar software at a declared module, service, subsystem, platform, codebase, or capability scope: trace critical workflows, reconcile declared, executable, and observed structure, locate controls and owners, and rank the next probes. It does not evaluate architecture fitness, score readiness, prescribe a portfolio, or design the target architecture.
 
-Use `codebase-architecture-assessment` to diagnose and rank structural improvement opportunities across a codebase. Use `architecture-risk-evaluation` to challenge a consequential proposal against stakeholder and quality scenarios.
+Use `architecture-assessment` to diagnose and rank structural improvement opportunities across a declared module, service, subsystem, platform, codebase, capability, or estate scope. Use `architecture-risk-evaluation` to challenge a consequential proposal against stakeholder and quality scenarios.
 
 ### Domain, service, and module boundaries
 
@@ -175,13 +177,13 @@ domain-modeling
 
 For existing service sprawl, boundary evidence may expose semantic confusion and route back through domain modeling before the boundary is reconsidered.
 
-### Codebase assessment versus focused design
+### Architecture assessment versus focused design
 
-Use `codebase-architecture-assessment` to discover and rank structural problems across an existing codebase. Use `deep-module-design` after one module, interface, seam, or vertical slice has been selected for design.
+Use `architecture-assessment` to discover and rank structural problems across a declared existing architecture scope. Use `deep-module-design` after one module, interface, seam, or vertical slice has been selected for design.
 
 ### Portfolio assessment versus retrospective review
 
-- `codebase-architecture-assessment` starts before a redesign target is selected. It compares structural pressures across a declared codebase or subsystem scope and ranks which opportunities deserve focused investigation or investment.
+- `architecture-assessment` starts before a redesign target is selected. It compares structural pressures across a declared module, service, subsystem, platform, codebase, capability, or estate scope and ranks which opportunities deserve focused investigation or investment.
 - `retrospective-architecture-review` starts with one selected completed design and a material knowledge delta from implementation, repeated change, operation, support, or ownership. It recovers durable commitments, compares the current design with alternatives, and recommends retain, quarantine, prune, reshape, or rebuild.
 
 Route by the decision, not by shared evidence. “Where should we invest in architecture?” belongs to portfolio assessment. “Has what we learned changed the right design for this capability?” belongs to retrospective review. Do not run both as serial general assessments; route a selected portfolio candidate to the focused design skill it needs, and use retrospective review only when accumulated learning creates its distinct decision.
@@ -217,45 +219,45 @@ Use `code-review` to inspect a bounded diff against intent, repository constrain
 
 Use `verification-strategy-design` to preserve upstream behavior and invariant claims while defining the missing `VER-*` methods, oracles, limits, and renewal obligations. Use `verification-execution` to validate existing snapshot-bound evidence and run claims that are missing, stale, invalidated, suspicious, explicitly independent, or required as a fresh set. It preserves raw evidence, environment context, counterexamples, inconclusive results, and cleanup. Review can identify an evidence gap; execution can show a claim failed; neither silently approves release.
 
-### Contract evolution versus transition and program execution
+### Contract evolution versus transition and program orchestration
 
 Use `software-contract-evolution` to recover what producers and consumers actually rely on and decide how shared semantics, compatibility, translation, deprecation, adoption, and retirement should work. It owns the producer-consumer-state-executor compatibility matrix and the support-policy obligations, not merely an API version number.
 
-Use `high-risk-change-planning` when that decision must become a survivable production transition with explicit phases, authority, cutover, recovery, and cleanup. Use `technical-program-execution` when adoption spans teams and needs dependency-aware slices, integration, decision flow, and replanning. Contract evolution defines what must remain true; the transition plan defines how the system moves; program execution keeps the participating workstreams delivering the end-to-end outcome.
+Use `migration-planning` when that decision must become a survivable production transition with explicit phases, authority, cutover, recovery, and cleanup. Use `technical-program-orchestration` when adoption forms several concurrent or interdependent workstreams and needs owned frontiers, dependency-aware slices, integration, decision flow, and replanning. Contract evolution defines what must remain true; the migration plan defines how the system moves; program orchestration keeps the participating workstreams delivering the end-to-end outcome.
 
-`service-boundary-design` remains responsible for where semantic, data, deployment, failure, and ownership boundaries belong. A contract may evolve at a stable boundary, or a boundary decision may create contracts that then need an evolution policy.
+`service-boundary-design` consumes semantic boundaries from `domain-modeling` and decides whether data, deployment, failure, and operating enforcement should move. When in-process modularity is selected, `deep-module-design` owns the hidden knowledge, interface, lifecycle semantics, and adoption details. A contract may evolve at a stable boundary, or a boundary decision may create contracts that then need an evolution policy.
 
-### Architecture risk versus high-risk change
+### Architecture risk versus migration planning
 
-Use `architecture-risk-evaluation` to ask whether the proposed target architecture can satisfy important scenarios and quality drivers. Use `high-risk-change-planning` after a target direction exists to design survivable old, transitional, and new states.
+Use `architecture-risk-evaluation` to ask whether the proposed target architecture can satisfy important scenarios and quality drivers. Use `migration-planning` after a target direction exists to design survivable old, transitional, and new states.
 
 ```text
 architecture-risk-evaluation
   -> technical-decision-making
-  -> high-risk-change-planning
+  -> migration-planning
   -> co-design verification, observability, and optional controlled release
   -> scoped-change-implementation
   -> code-review and verification-execution
   -> accountable cutover
 ```
 
-### Technical decision, program execution, and high-risk change
+### Technical decision, program orchestration, and migration planning
 
-Use `technical-decision-making` to close a consequential or contested choice with explicit authority and accepted tradeoffs. Use `technical-program-execution` when an outcome spans several teams, services, workstreams, integration points, or decision cadences and needs active dependency-aware steering. Use `high-risk-change-planning` to design one survivable old, transitional, and new state for a consequential migration or production change.
+Use `technical-decision-making` to close a consequential or contested choice with explicit authority and accepted tradeoffs. Use `technical-program-orchestration` when an outcome has several concurrent or interdependent workstreams whose dependencies, integration points, shared decisions, or constraints need active steering through local and program frontiers. Use `migration-planning` to design one survivable old, transitional, and new state for a consequential migration or production change.
 
 A technical program may contain several ordinary delivery slices and several specialized change plans. It references those plans and exposes their dependencies without taking over their invariants, release controls, measurement contracts, or verification oracles. A single-team feature or one local reversible change does not need program machinery merely because it has several tasks.
 
 ```text
 technical-decision-making, when closure is needed
-  -> technical-program-execution, when delivery spans teams or workstreams
-       -> high-risk-change-planning for each consequential transition
+  -> technical-program-orchestration, when delivery has several concurrent or interdependent workstreams
+       -> migration-planning for each consequential transition
        -> coordinated observability, release, verification, implementation, and integration
   -> accountable outcome and residual-risk decision
 ```
 
-### Controlled release versus high-risk change
+### Controlled release versus migration planning
 
-Use `controlled-release-design` to define exposure assignment, feature-flag semantics, cohorts, promotion, hold, abort, kill controls, and flag cleanup. Use `high-risk-change-planning` when the larger problem is a staged migration with data authority, coexistence, irreversible effects, consumer coordination, cutover, and recovery. When both apply, controlled release is an optional nested subplan of the authoritative transition plan; many ordinary feature releases need controlled exposure without the full migration workflow, and some migrations need no exposure subplan.
+Use `controlled-release-design` to define exposure assignment, feature-flag semantics, cohorts, promotion, hold, abort, kill controls, and flag cleanup. Use `migration-planning` when the larger problem is a staged migration with data authority, coexistence, irreversible effects, consumer coordination, cutover, and recovery. When both apply, controlled release is an optional nested subplan of the authoritative migration plan; many ordinary feature releases need controlled exposure without the full migration workflow, and some migrations need no exposure subplan.
 
 ### Observability design versus operational feedback audit
 

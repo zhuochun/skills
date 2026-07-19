@@ -1,6 +1,6 @@
 {
   "name": "zhuochun-skills",
-  "version": "1.0.3",
+  "version": "1.0.6",
   "description": "Evidence-oriented product and software engineering workflows for Codex.",
   "author": {
     "name": "Zhuochun",
@@ -27,7 +27,7 @@
     ],
     "websiteURL": "https://github.com/zhuochun/skills",
     "defaultPrompt": [
-      "Use $zhuochun-skills:service-surface-mapping to orient me to this service.",
+      "Use $zhuochun-skills:architecture-surface-mapping to orient me to this unfamiliar software.",
       "Use $zhuochun-skills:software-change-orchestration for this bounded change.",
       "Use $zhuochun-skills:code-review to review this completed software change."
     ]

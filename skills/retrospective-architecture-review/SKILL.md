@@ -1,6 +1,6 @@
 ---
 name: retrospective-architecture-review
-description: Reconsider one selected, completed software capability or system only after implementation, repeated change, representative operation, incidents, support, or ownership experience has produced a material knowledge delta that changes its design premises. Recover durable commitments, compare the current design with alternatives, and recommend retain, quarantine, prune, reshape, or rebuild without modifying the target. Use for retrospective architecture review, retrospective redesign, post-implementation simplification, or a "build it again knowing what we know now" decision. Do not use for broad codebase health checks or to discover what should improve first; use codebase-architecture-assessment. Do not use for routine implementation review, a weak first design pass, or an already-decided refactor.
+description: Reconsider one selected, completed software capability or system only after implementation, repeated change, representative operation, incidents, support, or ownership experience has produced a material knowledge delta that changes its design premises. Recover durable commitments, compare the current design with alternatives, and recommend retain, quarantine, prune, reshape, or rebuild without modifying the target. Use for retrospective architecture review, retrospective redesign, post-implementation simplification, or a "build it again knowing what we know now" decision. Do not use for broad architecture portfolio health checks or to discover what should improve first; use architecture-assessment. Do not use for routine implementation review, a weak first design pass, or an already-decided refactor.
 ---
 
 # Retrospective Architecture Review
@@ -9,7 +9,7 @@ Reconsider one selected design after real work has materially changed what is kn
 
 ## Require a material knowledge delta
 
-- Own retrospective route selection for a selected completed design, not discovery or ranking of unrelated architecture opportunities. Use `$codebase-architecture-assessment` when the decision is where structural investment should go across a codebase or subsystem.
+- Own retrospective route selection for a selected completed design, not discovery or ranking of unrelated architecture opportunities. Use `$architecture-assessment` when the decision is where structural investment should go across a declared architecture scope.
 - Establish what implementation, repeated change, production behavior, incidents, support work, or ownership experience revealed that was uncertain or unknowable during the original design.
 - Stop and route elsewhere when no material knowledge delta exists. Use `$architecture-risk-evaluation` to challenge a proposed design, `$code-review` to review an implementation, `$deep-module-design` for a known module-design question, and `$behavior-preserving-refactoring` when the structural target is already accepted.
 - Do not use a second context or retrospective framing as a generic remedy for a weak first agent pass. Independent evaluation requires distinct criteria, evidence, and permission to reject—not merely another attempt.
@@ -62,7 +62,7 @@ Read [references/retrospective-architecture-review.md](references/retrospective-
 ## Reject weak retrospective reviews
 
 - Do not use retrospective framing to compensate for a weak first pass, ordinary review, or missing independent evaluation.
-- Do not scan a codebase for general architecture health or rank unrelated improvements; route that portfolio question to `$codebase-architecture-assessment`.
+- Do not scan a broad software scope for general architecture health or rank unrelated improvements; route that portfolio question to `$architecture-assessment`.
 - Do not recommend change from age, language, framework, aesthetics, line count, or generic doctrine.
 - Do not mistake a cleaner representation for a better answer to unresolved domain meaning.
 - Do not merge or delete distinctions merely because they look duplicated; compare purpose, invariants, consumers, and change pressure.

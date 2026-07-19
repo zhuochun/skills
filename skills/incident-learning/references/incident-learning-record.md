@@ -66,10 +66,10 @@ Balance quick containment, deeper prevention, detection, recovery, and preservat
 | Missing or misleading signal contract | `observability-design` |
 | Escaped invariant, behavior, or evidence layer | `verification-strategy-design`, followed by executed verification |
 | Ambiguous business meaning or policy | `domain-modeling` |
-| Local interface, state, seam, or change-locality problem | `deep-module-design` or `codebase-architecture-assessment` |
+| Local interface, state, seam, or change-locality problem | `deep-module-design` or `architecture-assessment` |
 | Deployable, data, failure, or ownership boundary | `service-boundary-design` or `architecture-risk-evaluation` |
 | Queueing, overload, retry, headroom, or recovery capacity | `service-capacity-engineering` |
-| Exposure, rollout, rollback, coexistence, or migration | `controlled-release-design` or `high-risk-change-planning` |
+| Exposure, rollout, rollback, coexistence, or migration | `controlled-release-design` or `migration-planning` |
 | Responsibility, authority, access, escalation, or specialist support | `service-ownership-design` or `technical-decision-making` |
 | Stale runbook or fragile manual procedure | Update and exercise the runbook or local automation directly |
 | Repeated manual work that deserves shared capability | `platform-capability-design` |

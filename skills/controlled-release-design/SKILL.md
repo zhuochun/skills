@@ -1,6 +1,6 @@
 ---
 name: controlled-release-design
-description: Design feature flags, staged exposure, dark launches, canaries, cohort rollouts, kill switches, and release evidence for new or changing behavior, including features spanning multiple services. Use when deployment must be separated from user exposure, a team needs business, service, and infrastructure guardrails, or release control, mixed-version behavior, abort, ownership, and flag cleanup must be explicit. Use high-risk-change-planning for the larger migration or irreversible transition plan.
+description: Design feature flags, staged exposure, dark launches, canaries, cohort rollouts, kill switches, and release evidence for new or changing behavior, including features spanning multiple services. Use when deployment must be separated from user exposure, a team needs business, service, and infrastructure guardrails, or release control, mixed-version behavior, abort, ownership, and flag cleanup must be explicit. Use migration-planning for the larger migration or irreversible transition plan.
 ---
 
 # Controlled Release Design
@@ -20,7 +20,7 @@ Turn release from a binary event into governed exposure with observable outcomes
 2. **Classify effects and reversibility.** Identify reads, writes, schema or contract changes, messages, money movement, notifications, security decisions, and other effects that disablement cannot undo. Define compensation or fail-forward where rollback is false.
 3. **Choose the control topology.** Decide where exposure is assigned and enforced. Prefer one authoritative assignment propagated across services when independent evaluation could create inconsistent behavior; add local gates only for genuinely local controls.
 4. **Specify flag semantics.** Define states, defaults, targeting rules, precedence, propagation delay, cache behavior, unavailable-control behavior, authorization, audit, owner, expiry, and whether clients can observe or influence assignment.
-5. **Design exposure during coexistence.** State how valid old, mixed, and new producer/consumer combinations behave under each exposure state, including retries, duplicate execution, delayed work, and compatibility. Consume the declared data and effect authority from the enclosing change contract; if it is absent or disputed, route to `high-risk-change-planning` rather than redefining it here. Use additive contracts or shadow paths where needed.
+5. **Design exposure during coexistence.** State how valid old, mixed, and new producer/consumer combinations behave under each exposure state, including retries, duplicate execution, delayed work, and compatibility. Consume the declared data and effect authority from the enclosing change contract; if it is absent or disputed, route to `migration-planning` rather than redefining it here. Use additive contracts or shadow paths where needed.
 6. **Select exposure steps.** Choose internal users, shadow traffic, opt-in tenants, representative cohorts, regional or cell slices, percentage ramps, or other units based on what isolates consequence and produces useful evidence.
 7. **Define promotion evidence requirements.** State which named business outcomes, correctness claims, service signals, capacity limits, operational-load measures, and control-health checks a promotion, hold, or abort decision consumes. Cite each with its namespaced key and plain-language label. Do not redefine signal semantics owned by `observability-design` or verification methods owned by `verification-strategy-design`.
 8. **Write phase contracts.** Give each exposure phase entry criteria, action, observation window, success, hold, abort, recovery, communication, and owner. Reference the named evidence requirements rather than copying their contracts. Promotion must be an accountable decision based on evidence, not elapsed time alone.
@@ -32,7 +32,7 @@ Use [references/controlled-release-design.md](references/controlled-release-desi
 ## Compose with a transition plan
 
 - Use this skill alone for an ordinary feature whose deployment and exposure need separation.
-- When a risky migration already has a `high-risk-change-planning` artifact, make this an optional nested release-control subplan. Inherit transition scope, invariants, compatibility, irreversible effects, data authority, and recovery; do not create a competing master phase plan.
+- When a risky migration already has a `migration-planning` artifact, make this an optional nested release-control subplan. Inherit transition scope, invariants, compatibility, irreversible effects, data authority, and recovery; do not create a competing master phase plan.
 - Keep this subplan authoritative only for assignment topology, exposure states, cohorts, promotion, hold, abort, kill controls, and flag retirement.
 
 ## Quality gates

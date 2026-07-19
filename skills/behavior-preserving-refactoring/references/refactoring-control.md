@@ -38,7 +38,7 @@ Dispositions are **preserve**, **explicit retirement decision required**, and **
 | Step | One structural move | Behavior signal | Reversal | Ownership transferred | Temporary state introduced or removed |
 | --- | --- | --- | --- | --- | --- |
 
-Each step should leave the repository understandable and runnable. If a step cannot be checked or reversed locally, split it or use high-risk change planning.
+Each step should leave the repository understandable and runnable. If a step cannot be checked or reversed locally, split it or use migration planning.
 
 ## Evidence migration
 

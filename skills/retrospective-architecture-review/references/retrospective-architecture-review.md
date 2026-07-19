@@ -1,6 +1,6 @@
 # Retrospective architecture review
 
-Use this reference to reconsider one selected completed design after a material knowledge delta, without turning the reasoning into a user-maintained handoff artifact. For a broad search and ranking of architecture opportunities, use `$codebase-architecture-assessment` instead.
+Use this reference to reconsider one selected completed design after a material knowledge delta, without turning the reasoning into a user-maintained handoff artifact. For a broad search and ranking of architecture opportunities, use `$architecture-assessment` instead.
 
 ## Knowledge-derived reasoning model
 
@@ -55,8 +55,8 @@ Reject an option eliminated by a hard constraint before weighting preferences. N
 | **Retain** | The current structure remains justified, evidence is too weak, remaining lifetime is short, or redesign would not repay its migration and proof cost | State what learning is already encoded, what friction remains, and what signal would trigger reconsideration | No design project; optionally add a focused test, rationale, or operational probe |
 | **Quarantine** | Disorder contains valuable or poorly understood behavior and full consolidation is currently too risky or expensive | Define the stable boundary, ownership, allowed leakage, evidence to collect, and exit trigger | `$deep-module-design` for the boundary; `$verification-strategy-design` for characterization when needed |
 | **Prune** | Ownership, model, interfaces, state, and flow substantially converge with the learned target | Demonstrate which concepts, paths, layers, or compatibility obligations are obsolete and which protections remain | Scoped implementation with proportionate repository verification |
-| **Reshape** | The learned model agrees on outcomes but bounded ownership, interfaces, state, or flow differ | Identify stable seams, incremental slices, compatibility, temporary complexity, and retirement | `$domain-modeling`, `$deep-module-design`, or `$service-boundary-design`; add `$high-risk-change-planning` when transition states or irreversible effects matter |
-| **Rebuild** | The foundational model differs, adaptation would preserve excessive accidental complexity, and durable commitments can judge a replacement | Compare replacement economics, externalized commitments, equivalence limits, dual-system cost, cutover, and rollback or fail-forward | Fresh `$architecture-risk-evaluation`, `$technical-decision-making` where closure is contested, `$high-risk-change-planning`, and `$verification-strategy-design`; add `$controlled-release-design` when exposure must be governed |
+| **Reshape** | The learned model agrees on outcomes but bounded ownership, interfaces, state, or flow differ | Identify stable seams, incremental slices, compatibility, temporary complexity, and retirement | `$domain-modeling`, `$deep-module-design`, or `$service-boundary-design`; add `$migration-planning` when transition states or irreversible effects matter |
+| **Rebuild** | The foundational model differs, adaptation would preserve excessive accidental complexity, and durable commitments can judge a replacement | Compare replacement economics, externalized commitments, equivalence limits, dual-system cost, cutover, and rollback or fail-forward | Fresh `$architecture-risk-evaluation`, `$technical-decision-making` where closure is contested, `$migration-planning`, and `$verification-strategy-design`; add `$controlled-release-design` when exposure must be governed |
 
 Local exceptions may be reported without changing the primary route. A clean diagram is not evidence for rebuild.
 
@@ -71,7 +71,7 @@ Route gaps by their actual type:
 - deployable, data, failure, or team boundary gap → `$service-boundary-design`;
 - systemic quality or assumption risk → `$architecture-risk-evaluation`;
 - contested alternative or risk acceptance → `$technical-decision-making`;
-- risky migration or cutover → `$high-risk-change-planning`;
+- risky migration or cutover → `$migration-planning`;
 - feature exposure, cohorts, promotion, or kill controls → `$controlled-release-design`;
 - missing prospective telemetry contract → `$observability-design`;
 - missing claim, oracle, or evidence portfolio → `$verification-strategy-design`.

@@ -1,8 +1,20 @@
-# Service Surface Map Reference
+# Architecture Surface Map Reference
 
 Choose the fast path that matches the user's decision, then fill only the artifact sections needed to support it.
 
 ## Fast paths
+
+### Repository or codebase orientation
+
+Prioritize purpose, executable entry points, module and dependency shape, representative workflows, build and verification paths, deployment or containing runtime, data and effect authority, ownership, and the first safe change path. Do not turn orientation into a ranked architecture assessment.
+
+### Module or subsystem orientation
+
+Prioritize responsibility, callers, hidden knowledge and state, interfaces, dependency direction, representative behavior and error paths, tests, change history, containing runtime, and accountable owner. Mark service-level operational surfaces as inherited, not applicable, or still unknown.
+
+### Platform or end-to-end capability
+
+Prioritize user promise, participating modules and services, interfaces, state and effect authority, runtime and deployment topology, critical dependencies, change and adoption paths, operating controls, and ownership across the full value path.
 
 ### Inherited service
 
@@ -41,23 +53,25 @@ When sources disagree, record the contradiction, consequence, and next observati
 - Stop condition:
 - Explicitly out of scope:
 
-### Service identity
+### Subject and purpose
 
-- Promise and critical workflows:
+- Subject type and scope boundary:
+- Responsibility or promise and critical workflows:
 - Users, callers, and important populations:
-- Runtime/deploy units:
+- Modules, runtime, or deploy units where applicable:
 - Repositories and canonical entry points:
-- SLOs or operating expectations:
+- Invariants, SLOs, or operating expectations:
 
 ### Critical surface matrix
 
 | Surface | What matters | Evidence and recency | Owner/authority | Confidence | Contradiction or next probe |
 | --- | --- | --- | --- | --- | --- |
-| Product/workflow |  |  |  |  |  |
+| Purpose/semantics/workflow |  |  |  |  |  |
+| Code/modules |  |  |  |  |  |
 | Interfaces/contracts |  |  |  |  |  |
 | Data and external effects |  |  |  |  |  |
 | Runtime/dependencies |  |  |  |  |  |
-| Deploy/config/release |  |  |  |  |  |
+| Change/build/test/deploy |  |  |  |  |  |
 | Health/diagnosis/alerts |  |  |  |  |  |
 | Capacity/failure/recovery |  |  |  |  |  |
 | Ownership/access/escalation |  |  |  |  |  |
@@ -72,7 +86,7 @@ Trace success first, then annotate partial completion, retry, timeout, duplicati
 ### Scenario walks
 
 1. **Normal:** How does useful work enter, complete, become visible, and get measured?
-2. **Change:** Which contracts, services, data, flags, tests, owners, and recovery paths does the proposed change touch?
+2. **Change:** Which components, contracts, data, flags, tests, owners, and recovery paths does the proposed change touch?
 3. **Failure:** How is impact detected, localized, routed, mitigated, and verified as recovered?
 
 ### Handoff
@@ -86,14 +100,15 @@ Trace success first, then annotate partial completion, retry, timeout, duplicati
 Route to:
 
 - `domain-modeling` for disputed meaning or invariants;
-- `service-boundary-design` for split, merge, data, deployment, or ownership boundaries;
+- `service-boundary-design` for split, merge, data, deployment, or failure boundaries;
 - `deep-module-design` for a selected code seam or interface;
+- `architecture-assessment` for discovering and ranking structural investment opportunities;
 - `architecture-risk-evaluation` for consequential scenario and quality-risk judgment;
 - `controlled-release-design` for flags, cohorts, and exposure control;
 - `observability-design` for missing prospective telemetry;
 - `operational-feedback-audit` for whether the live operating loop works;
-- `high-risk-change-planning` for a staged, reversible transition.
+- `migration-planning` for a staged, reversible transition.
 
 ## Stop rules
 
-Stop orientation when the immediate decision has enough evidence to move into focused work, even if the whole service is not documented. Continue only when an unknown can materially change scope, safety, authority, or the next skill. The output should make ignorance navigable, not pretend to eliminate it.
+Stop orientation when the immediate decision has enough evidence to move into focused work, even if the whole subject is not documented. Continue only when an unknown can materially change scope, safety, authority, or the next skill. The output should make ignorance navigable, not pretend to eliminate it.

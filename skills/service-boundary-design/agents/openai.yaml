@@ -1,7 +1,7 @@
 interface:
   display_name: "Service Boundary Design"
-  short_description: "Design service splits, merges, and ownership"
-  default_prompt: "Use $service-boundary-design to evaluate these service boundaries against domain, change, data, and runtime evidence."
+  short_description: "Choose service versus module enforcement"
+  default_prompt: "Use $service-boundary-design to decide whether this boundary needs an in-process module, a deployable service change, or stronger data and runtime enforcement."
 
 policy:
   allow_implicit_invocation: false

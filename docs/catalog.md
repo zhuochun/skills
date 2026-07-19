@@ -9,7 +9,7 @@ confuse, continue to the [skill boundaries and relationships](skill-boundaries.m
 Keep implicit invocation for a small set of front doors that represent distinct top-level user intents:
 
 - `software-change-orchestration`
-- `service-surface-mapping`
+- `architecture-surface-mapping`
 - `scoped-change-implementation`
 - `behavior-preserving-refactoring`
 - `software-failure-diagnosis`
@@ -29,9 +29,9 @@ Do not start from a fashionable method or invoke every skill as a stage gate. As
 | Skill | It owns | Primary output |
 | --- | --- | --- |
 | [`product-opportunity-discovery`](../skills/product-opportunity-discovery/) | Customer opportunity and solution-direction learning before heavy implementation | Decision frame, opportunity model, hypotheses, alternatives, learning evidence, and bounded disposition |
-| [`service-surface-mapping`](../skills/service-surface-mapping/) | Rapid evidence-ranked orientation to an unfamiliar service | Critical-surface map, path traces, contradictions, confidence, and next probes |
+| [`architecture-surface-mapping`](../skills/architecture-surface-mapping/) | Rapid evidence-ranked orientation to unfamiliar software architecture at a declared module, service, subsystem, platform, codebase, or capability scope | Architecture-surface map, path traces, contradictions, confidence, and next probes |
 | [`domain-modeling`](../skills/domain-modeling/) | Problem-specific behavior, invariants, vocabulary, and semantic contexts | Operational principles, compared models, semantic boundaries, translations, and unresolved questions |
-| [`service-boundary-design`](../skills/service-boundary-design/) | Logical, deployment, data, failure, and ownership boundaries | Boundary force matrix, scenario traces, options, recommendation, and prerequisites |
+| [`service-boundary-design`](../skills/service-boundary-design/) | Choosing whether service-level enforcement belongs in an existing deployment, an in-process module, a split or merged service, or stronger data and failure isolation | Boundary force matrix, scenario traces, enforcement choice, prerequisites, and focused module-design handoff when needed |
 | [`deep-module-design`](../skills/deep-module-design/) | Knowledge boundaries, interfaces, seams, state ownership, and testable contracts | Compared boundaries, deep or composable interface strategy, honest contract, tests, and adoption direction |
 | [`platform-capability-design`](../skills/platform-capability-design/) | Self-service internal capabilities, paved roads, controls, and escape hatches | User-work evidence, capability boundary, interface, operating contract, and adoption slice |
 | [`observability-design`](../skills/observability-design/) | Prospective business, service, dependency, infrastructure, and control evidence | Execution-path map, measurement contracts, navigation, alerts, correlation, and lifecycle |
@@ -41,7 +41,7 @@ Do not start from a fashionable method or invoke every skill as a stage gate. As
 | Skill | It owns | Primary output |
 | --- | --- | --- |
 | [`product-opportunity-prioritization`](../skills/product-opportunity-prioritization/) | Product-level allocation among opportunities and bets across evidence, constraints, capacity, and learning horizons | Normalized candidate set, feasible portfolio options, priority rationale, dispositions, and review triggers |
-| [`codebase-architecture-assessment`](../skills/codebase-architecture-assessment/) | Discovering and ranking which structural opportunities deserve investment before a redesign target is selected | Ranked evidence-backed architecture improvement portfolio |
+| [`architecture-assessment`](../skills/architecture-assessment/) | Discovering and ranking which structural opportunities deserve investment across a declared software architecture scope before a redesign target is selected | Ranked evidence-backed architecture improvement portfolio |
 | [`architecture-risk-evaluation`](../skills/architecture-risk-evaluation/) | Scenario-based evaluation of architecture assumptions and quality tradeoffs | Risks, non-risks, sensitivities, tradeoffs, unknowns, and evidence needs |
 | [`service-capacity-engineering`](../skills/service-capacity-engineering/) | End-to-end demand, capacity, headroom, overload, and recovery behavior | Capacity model, operating envelope, falsification evidence, and overload controls |
 | [`service-ownership-design`](../skills/service-ownership-design/) | Sustainable lifecycle ownership and its enabling conditions | Ownership trace, cognitive-load assessment, model options, prerequisites, and transition |
@@ -53,10 +53,10 @@ Do not start from a fashionable method or invoke every skill as a stage gate. As
 | --- | --- | --- |
 | [`software-change-specification`](../skills/software-change-specification/) | Pre-implementation intent, behavior delta, scope, invariants, affected surfaces, acceptance claims, unknowns, and readiness for one bounded change | Source-faithful specification delta, representative examples, `CHG-*` claims, routes, and readiness classification |
 | [`software-change-orchestration`](../skills/software-change-orchestration/) | Resumable routing and repository-backed state across a bounded software change | Outcome and authorization boundary, derived assurance posture and workflow budget, evolving canonical specification, exclusive executor route, reusable evidence, and durable handoff state when needed |
-| [`technical-program-execution`](../skills/technical-program-execution/) | Multi-team outcomes, vertical slices, dependencies, integration, flow, and replanning | Outcome contract, delivery topology, active slices, constraints, decision state, and evidence trend |
+| [`technical-program-orchestration`](../skills/technical-program-orchestration/) | Multi-workstream outcome coherence, owned local loops, dependency and integration flow, shared constraints, and replanning | Canonical program surface, delivery topology, workstream contracts and frontiers, integration state, evidence trend, and closure |
 | [`software-contract-evolution`](../skills/software-contract-evolution/) | Shared contract semantics, compatibility, translation, deprecation, consumer adoption, and retirement policy | Actual-contract frame, compatibility matrix, evolution choice, adoption obligations, and retirement evidence |
 | [`controlled-release-design`](../skills/controlled-release-design/) | Feature flags, exposure assignment, cohorts, release phases, and kill controls | Release contract, control topology, evidence, phase criteria, retreat, and cleanup |
-| [`high-risk-change-planning`](../skills/high-risk-change-planning/) | Transition states for risky API, schema, data, service, and infrastructure changes | Phased coexistence plan with invariants, evidence, abort, retreat, and cleanup |
+| [`migration-planning`](../skills/migration-planning/) | Transition states for consequential API, schema, data, service, and infrastructure migrations | Phased coexistence plan with invariants, evidence, abort, retreat, and cleanup |
 | [`verification-strategy-design`](../skills/verification-strategy-design/) | Matching engineering claims and risks to falsifying evidence | Upstream-linked risk-to-evidence portfolio with methods, oracles, limits, evidence gaps, and renewal triggers |
 
 ### Implement, diagnose, and verify

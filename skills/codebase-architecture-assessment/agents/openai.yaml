@@ -1,7 +1,0 @@
-interface:
-  display_name: "Codebase Architecture Assessment"
-  short_description: "Rank codebase architecture investments"
-  default_prompt: "Use $codebase-architecture-assessment to find and rank which structural improvements deserve investment across this codebase."
-
-policy:
-  allow_implicit_invocation: false

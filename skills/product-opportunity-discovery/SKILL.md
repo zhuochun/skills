@@ -34,7 +34,7 @@ Reduce uncertainty about the customer, problem, behavior, value mechanism, and s
 
 - `product-opportunity-prioritization` owns allocation among framed opportunities and product-level bets. Discovery supplies evidence and receives weak or contradicted bets back for another learning loop.
 - `domain-modeling` owns complex business meaning, behavior, rules, and invariants after or alongside opportunity framing; customer desirability does not determine the correct software model.
-- `technical-program-execution` owns multi-team delivery after an outcome and investment direction are accepted. Discovery does not create delivery commitments.
+- `technical-program-orchestration` owns multi-workstream delivery coordination after an outcome and investment direction are accepted. Discovery does not create delivery commitments.
 - `controlled-release-design` owns production exposure, cohort assignment, promotion, abort, and cleanup. `observability-design` owns deployed signal semantics and navigation.
 - `verification-strategy-design` owns evidence for software correctness, resilience, migration, and other engineering claims. This skill owns evidence for customer opportunity, product value, usability, adoption, and solution-direction hypotheses.
 

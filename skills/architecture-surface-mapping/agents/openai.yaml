@@ -1,0 +1,7 @@
+interface:
+  display_name: "Architecture Surface Mapping"
+  short_description: "Map unfamiliar architecture surfaces safely"
+  default_prompt: "Use $architecture-surface-mapping to orient me to the critical architecture surfaces of this unfamiliar software and identify the next evidence to gather."
+
+policy:
+  allow_implicit_invocation: true

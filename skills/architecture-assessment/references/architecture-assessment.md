@@ -4,7 +4,8 @@
 
 - Portfolio decision: which structural investments deserve attention first
 - Business or engineering goal:
-- Portfolio/value stream/subsystem:
+- Architecture subject: module/service/subsystem/platform/codebase/capability/estate
+- Portfolio, value stream, dependency region, or other scope boundary:
 - Change-history window:
 - Included runtime and data dependencies:
 - Constraints and ADRs:
@@ -54,7 +55,7 @@ Use qualitative judgments with evidence. Do not sum weak guesses into a precise 
 
 1. Executive outcome and top recommendation
 2. Scope, constraints, and evidence used
-3. Current structural or runtime view
+3. Current architecture views at the declared scope
 4. Three to seven ranked candidate cards
 5. Portfolio dependencies and sequencing
 6. Areas intentionally left unchanged
