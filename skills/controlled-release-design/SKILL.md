@@ -29,7 +29,7 @@ Turn release from a binary event into governed exposure with observable outcomes
 
 Use [references/controlled-release-design.md](references/controlled-release-design.md) for control patterns and the release contract template.
 
-## Compose with a transition plan
+## Compose with migration planning
 
 - Use this skill alone for an ordinary feature whose deployment and exposure need separation.
 - When a genuine technical migration already has a `migration-planning` artifact, make this an optional nested release-control subplan. Inherit movement, transition scope, invariants, compatibility, irreversible effects, data authority, and recovery; do not create a competing master state or phase plan.
