@@ -163,7 +163,7 @@ fresh agent.
 
 ## Keep the distribution surfaces current
 
-The repository root is also the `zhuochun-skills` Codex plugin. Keep
+The repository root is also the `bicrement` Codex plugin. Keep
 [`skills/`](skills/) as the only source of skill content: do not create copied
 Marketplace skill directories. When a published skill, its supporting files, or
 the plugin metadata changes, update the strict-semver `version` in

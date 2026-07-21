@@ -45,7 +45,7 @@ npx skills add zhuochun/skills --agent codex --skill architecture-surface-mappin
 
 For Codex, the complete catalog is available as one Marketplace plugin. Add
 the marketplace with `codex plugin marketplace add zhuochun/skills`, then
-install **Zhuochun Skills** from the Plugins Directory. The installation guide
+install **Bicrement** from the Plugins Directory. The installation guide
 includes local-development and update commands.
 
 Invoke the skill explicitly:

@@ -1,6 +1,6 @@
 {
-  "name": "zhuochun-skills",
-  "version": "1.0.9",
+  "name": "bicrement",
+  "version": "1.0.9+codex.20260721021214",
   "description": "Evidence-oriented product and software engineering workflows for Codex.",
   "author": {
     "name": "Zhuochun",
@@ -16,7 +16,7 @@
   ],
   "skills": "./skills/",
   "interface": {
-    "displayName": "Zhuochun Skills",
+    "displayName": "Bicrement",
     "shortDescription": "Evidence-oriented product and software engineering skills",
     "longDescription": "Thirty reusable workflows for product, software, service, and operational work.",
     "developerName": "Zhuochun",
@@ -27,9 +27,9 @@
     ],
     "websiteURL": "https://github.com/zhuochun/skills",
     "defaultPrompt": [
-      "Use $zhuochun-skills:architecture-surface-mapping to orient me to this unfamiliar software.",
-      "Use $zhuochun-skills:software-change-orchestration for this bounded change.",
-      "Use $zhuochun-skills:code-review to review this completed software change."
+      "Use $bicrement:architecture-surface-mapping to orient me to this unfamiliar software.",
+      "Use $bicrement:software-change-orchestration for this bounded change.",
+      "Use $bicrement:code-review to review this completed software change."
     ]
   }
 }

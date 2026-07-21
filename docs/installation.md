@@ -27,9 +27,9 @@ codex plugin marketplace add zhuochun/skills
 ```
 
 Restart Codex, open the Plugins Directory or `/plugins`, and install
-**Zhuochun Skills**. For local plugin development, add this checkout with
+**Bicrement**. For local plugin development, add this checkout with
 `codex plugin marketplace add .`. To refresh a published installation, run
-`codex plugin marketplace upgrade zhuochun-skills` and reinstall the plugin.
+`codex plugin marketplace upgrade bicrement` and reinstall the plugin.
 
 Use the repository installer below when you want a package, project or custom
 target, dry-run, doctor, uninstall, or live links to this checkout.

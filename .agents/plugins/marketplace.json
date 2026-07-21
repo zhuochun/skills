@@ -1,11 +1,11 @@
 {
-  "name": "zhuochun-skills",
+  "name": "bicrement",
   "interface": {
-    "displayName": "Zhuochun Skills"
+    "displayName": "Bicrement"
   },
   "plugins": [
     {
-      "name": "zhuochun-skills",
+      "name": "bicrement",
       "source": {
         "source": "local",
         "path": "./"
