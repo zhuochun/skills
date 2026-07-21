@@ -15,6 +15,15 @@ credible learning test. Do not contact customers or build production code.
 ```
 
 ```text
+Use $research-synthesis to determine what rigorous papers, standards, and
+first-party operational reports support about cost-aware cloud architecture.
+Check existing repository coverage first, preserve exact provenance for each
+consequential claim, distinguish empirical evidence from normative and vendor
+guidance, explain contradictions and transfer limits, and stop with a bounded
+answer and unresolved gaps. Do not make the architecture decision.
+```
+
+```text
 Use $product-opportunity-prioritization to recommend the next-quarter product
 portfolio for checkout recovery. Reframe feature requests as opportunities,
 separate mandatory reliability and enabling work, compare only defensible peer

@@ -69,6 +69,7 @@ intents. You can also invoke any specialist explicitly.
 
 | When you need to... | Start with |
 | --- | --- |
+| Determine what high-trust sources support about a bounded question | [`research-synthesis`](skills/research-synthesis/) |
 | Orient to unfamiliar software before changing or operating it | [`architecture-surface-mapping`](skills/architecture-surface-mapping/) |
 | Specify an accepted but behaviorally ambiguous software change | [`software-change-specification`](skills/software-change-specification/) |
 | Implement an authorized bounded behavior change | [`scoped-change-implementation`](skills/scoped-change-implementation/) |
