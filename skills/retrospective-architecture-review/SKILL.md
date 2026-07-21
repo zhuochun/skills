@@ -29,7 +29,7 @@ Resolve the selected review unit and its scale before deriving a target. Use the
 
 - **Module or capability:** Load and use `$deep-module-design` for interface depth, state ownership, seams, behavior, and testability.
 - **Service or subsystem:** Use `$deep-module-design` for internals and `$service-boundary-design` when deployable, data, failure, or ownership boundaries are in question. Use `$architecture-risk-evaluation` for consequential quality claims.
-- **Multi-service system or wider estate:** Use `$architecture-risk-evaluation` for systemic scenarios and tradeoffs, `$service-boundary-design` for disputed boundaries, and `$technical-decision-making` when alternatives or risk acceptance require accountable closure.
+- **Multi-service system or wider estate:** Use `$architecture-risk-evaluation` for systemic scenarios and tradeoffs, `$service-boundary-design` for disputed boundaries, and `$decision-facilitation` when alternatives or risk acceptance require accountable closure.
 
 Propose the scale and consequence classification. Let the accountable human confirm, narrow, or override them.
 

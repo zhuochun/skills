@@ -5,6 +5,7 @@ architecture-surface-mapping
 behavior-preserving-refactoring
 code-review
 controlled-release-design
+decision-facilitation
 deep-module-design
 domain-modeling
 migration-planning
@@ -20,7 +21,6 @@ software-change-orchestration
 software-change-specification
 software-contract-evolution
 software-failure-diagnosis
-technical-decision-making
 technical-program-orchestration
 verification-execution
 verification-strategy-design

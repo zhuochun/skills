@@ -55,6 +55,25 @@ accountable human. Keep `agents/openai.yaml` synchronized and name the skill as
 its own output; require greater evaluator independence as consequence,
 irreversibility, or uncertainty increases.
 
+## Clarify and challenge with decision value
+
+Every skill remains responsible for baseline clarity even when the user does
+not request an interactive exchange. Inspect discoverable evidence first,
+surface material ambiguity, assumptions, unknowns, and missing authority, and
+ask only questions whose answers can change the decision or artifact the skill
+owns. Return a conditional, partial, routed, or not-ready result rather than
+silently filling a consequential gap.
+
+When interactive clarification or stress-testing is useful, partition questions
+by both decision dependency and disclosure dependency. Batch only a current
+low-sensitivity frontier whose answers remain independently understandable.
+Serialize when an answer should shape the next question, when ambiguity needs
+adaptive follow-up, when trust, power, or sensitive disclosure affects candor,
+or when a gating answer determines later relevance. Update the working model
+after each batch and suppress questions already answered by evidence or prior
+responses. Keep each skill's questions within its own decision or artifact
+lens; shared cadence does not merge specialist ownership.
+
 ## Preserve composition boundaries
 
 Composition is optional, not a mandatory lifecycle. Route specialized work to

@@ -13,6 +13,13 @@ Expose which architectural decisions and assumptions control outcomes that matte
 - Include affected product, engineering, operations, security, data, compliance, support, and platform perspectives in proportion to the decision.
 - Record absent stakeholders and contested priorities rather than manufacturing consensus.
 
+## Clarify and challenge with scenarios
+
+- Inspect the architecture, decisions, operating evidence, and known constraints before asking stakeholders. Even without an interactive exchange, expose material ambiguity, assumptions, sensitivities, failure paths, and evidence gaps.
+- Use interactive clarification when the user asks to grill, challenge, or stress-test the architecture, or when owner-controlled drivers or risk tolerance materially block the evaluation.
+- Ask only questions that can change stakeholder outcomes, scenario priority, architecture boundaries, sensitivities, tradeoffs, assumptions, or evidence needs. Batch a low-sensitivity frontier only when its answers remain independently understandable. Serialize when a prior answer should shape the next scenario, ambiguity needs adaptive follow-up, trust, power, or sensitive disclosure affects candor, or a gating answer changes later scenario work.
+- Clarify drivers and owner-controlled constraints first, then challenge the architecture through consequential scenarios, counter-assumptions, failure and recovery paths, and credible alternatives. Route accountable closure to `decision-facilitation` rather than making the evaluation vote on its own findings.
+
 ## Evaluation workflow
 
 1. **Frame the decision.** State the system boundary, lifecycle stage, decision owner, business drivers, constraints, alternatives, and reversibility.

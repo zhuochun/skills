@@ -16,6 +16,13 @@ Judge the change, not the author's narrative or the volume of activity. Recover 
 - Inspect the changed artifact and enough surrounding code, tests, schemas, configuration, consumers, runtime semantics, and history to evaluate the diff in context. Do not turn a change review into an unbounded codebase assessment.
 - Keep generation and judgment distinct. Independence requires fresh judgment, complete diff inspection, risk-path tracing, distinct evidence or criteria, and authority to reject—not a different role label or automatic repetition of every producer command.
 
+## Clarify without negotiating the review
+
+- Inspect the diff, repository evidence, and supplied intent independently before asking the author or owner. Even without an interactive exchange, surface material ambiguity, assumptions, evidence gaps, and review limitations.
+- Ask only clarification questions whose answers can materially change the review judgment. Batch a low-sensitivity frontier only when its answers remain independently understandable. Serialize when a prior answer changes the interpretation or next challenge, ambiguity needs adaptive follow-up, trust, power, or sensitive disclosure affects candor, or a gating answer changes the relevant review scope or criteria.
+- When the user asks to grill, challenge, or stress-test the change, deepen counterexample search across behavior boundaries, invariants, failure paths, mixed states, and evidence validity. Do not turn the exchange into co-authoring the change, negotiating findings, or coaching the author toward answers that make the review pass.
+- Treat unanswered questions as explicit limitations or findings according to their demonstrated consequence; never invent intent to avoid a conditional review outcome.
+
 ## Review workflow
 
 1. **Pin scope and intent.** Record base/head or working-tree state, commits, change description, desired behavior, non-goals, compatibility and operational commitments, and consequence if wrong. Note unrelated changes and exclude them unless they affect the reviewed behavior.

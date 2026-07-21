@@ -1,0 +1,7 @@
+interface:
+  display_name: "Decision Facilitation"
+  short_description: "Clarify, challenge, and close decisions"
+  default_prompt: "Use $decision-facilitation to clarify and stress-test this decision, then return a bounded disposition and next commitment."
+
+policy:
+  allow_implicit_invocation: false

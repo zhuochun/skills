@@ -110,7 +110,7 @@ Keep the immediate frontier in the active session during uninterrupted work. A c
 | Deployment, data authority, failure, or team boundary is unclear | `service-boundary-design` |
 | Shared API, schema, event, or protocol compatibility must evolve | `software-contract-evolution` |
 | Architecture quality assumptions need scenario challenge | `architecture-risk-evaluation` |
-| A consequential or contested choice needs accountable closure | `technical-decision-making` |
+| A consequential or contested choice needs accountable clarification, challenge, or closure | `decision-facilitation` |
 | Supported obligations must move to an accepted replacement through controlled transition states, with old authority intended to become retireable | `migration-planning` |
 | Feature exposure, cohorts, promotion, or kill controls need design | `controlled-release-design` |
 | Runtime signal semantics and operational navigation are missing | `observability-design` |

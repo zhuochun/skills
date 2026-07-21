@@ -17,6 +17,18 @@ another.
 
 ## Common compositions
 
+### Research evidence into specialist judgment
+
+```text
+research-synthesis for the bounded cross-source question
+  + architecture-surface-mapping when applicability depends on how a current software subject actually works
+  -> product-opportunity-discovery for customer opportunity and product-value learning
+  -> domain-modeling, architecture-risk-evaluation, or another specialist for subject-matter judgment
+  -> decision-facilitation when accountable weighting and closure are still needed
+```
+
+A request for papers, reports, standards, official guidance, or competing evidence can stop after `research-synthesis`. Do not require a downstream decision workflow merely because the brief may inform one later. Conversely, do not let external literature substitute for current-system traces, direct customer evidence, causal diagnosis, or executed verification when those evidence surfaces control the decision.
+
 ### Resumable bounded software change
 
 ```text
@@ -63,7 +75,7 @@ domain-modeling
   -> software-contract-evolution, when a shared API, event, schema, protocol, or library contract changes
   -> deep-module-design
   -> architecture-risk-evaluation, when consequences justify it
-  -> technical-decision-making
+  -> decision-facilitation
   -> software-change-specification, when the accepted change needs a bounded implementation-ready behavior contract
   -> technical-program-orchestration, when delivery has several concurrent or interdependent workstreams
   -> migration-planning, when the accepted target requires material state,
@@ -154,7 +166,7 @@ Use this route when the decision is which structural opportunity deserves attent
 
 ```text
 architecture-risk-evaluation, when assumptions need technical analysis
-  -> technical-decision-making
+  -> decision-facilitation
   -> technical-program-orchestration, when coordination spans several concurrent or interdependent workstreams
   -> migration-planning, only when adopting the decision requires genuine
      technical movement, controlled transition states, retireability, and retirement
@@ -204,7 +216,7 @@ platform-capability-design
   -> service-capacity-engineering
   -> service-ownership-design
   -> architecture-risk-evaluation
-  -> technical-decision-making
+  -> decision-facilitation
 ```
 
 ### Incident-driven renewal
@@ -222,7 +234,7 @@ incident-response-coordination, during an active incident
   -> service-capacity-engineering for overload and recovery gaps
   -> controlled-release-design for exposure gaps, or migration-planning for
      technical movement, transition-state, authority, or retirement gaps
-  -> service-ownership-design or technical-decision-making for authority gaps
+  -> service-ownership-design or decision-facilitation for authority gaps
   -> update a runbook, automation, or local process directly when sufficient
   -> retrospective-architecture-review only when accumulated learning creates a material foundational design question
 ```
@@ -243,7 +255,7 @@ deployment, data authority, failure, or operating-ownership question
 
 cross-boundary quality scenario, multi-service system, or wider estate question
   -> architecture-risk-evaluation
-  -> technical-decision-making for accountable closure when needed
+  -> decision-facilitation for accountable closure when needed
   -> migration-planning, scoped implementation, change review,
      and independent verification execution before consequential cutover
 ```

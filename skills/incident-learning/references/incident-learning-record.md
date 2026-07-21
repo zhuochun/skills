@@ -71,7 +71,7 @@ Balance quick containment, deeper prevention, detection, recovery, and preservat
 | Queueing, overload, retry, headroom, or recovery capacity | `service-capacity-engineering` |
 | Exposure assignment, staged rollout, flags, canaries, or kill controls | `controlled-release-design` |
 | Technical movement, controlled transition states, authority transfer, cutover, retreat, retireability, or retirement | `migration-planning` |
-| Responsibility, authority, access, escalation, or specialist support | `service-ownership-design` or `technical-decision-making` |
+| Responsibility, authority, access, escalation, or specialist support | `service-ownership-design` or `decision-facilitation` |
 | Stale runbook or fragile manual procedure | Update and exercise the runbook or local automation directly |
 | Repeated manual work that deserves shared capability | `platform-capability-design` |
 | Accumulated learning invalidates the foundational design | `retrospective-architecture-review` at the appropriate module, service, system, or estate scale |

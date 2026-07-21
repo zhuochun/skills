@@ -15,6 +15,7 @@ separately; they are cross-cutting axes, not one size hierarchy. See the
 
 Keep implicit invocation for a small set of front doors that represent distinct top-level user intents:
 
+- `research-synthesis`
 - `architecture-surface-mapping`
 - `software-change-specification`
 - `scoped-change-implementation`
@@ -38,6 +39,7 @@ Do not start from a fashionable method or invoke every skill as a stage gate. As
 
 | Skill | It owns | Primary output |
 | --- | --- | --- |
+| [`research-synthesis`](../skills/research-synthesis/) | Question-driven synthesis across papers, standards, official guidance, reports, datasets, and other high-trust sources | Bounded answer, claim-level provenance, contradictions, applicability, confidence, unresolved gaps, and stop rationale |
 | [`product-opportunity-discovery`](../skills/product-opportunity-discovery/) | Customer opportunity and solution-direction learning before heavy implementation | Decision frame, opportunity model, hypotheses, alternatives, learning evidence, and bounded disposition |
 | [`architecture-surface-mapping`](../skills/architecture-surface-mapping/) | Rapid evidence-ranked orientation to unfamiliar software architecture at a declared module, service, subsystem, platform, codebase, or capability scope | Architecture-surface map, path traces, contradictions, confidence, and next probes |
 | [`domain-modeling`](../skills/domain-modeling/) | Problem-specific behavior, invariants, vocabulary, and semantic contexts | Operational principles, compared models, semantic boundaries, translations, and unresolved questions |
@@ -55,7 +57,7 @@ Do not start from a fashionable method or invoke every skill as a stage gate. As
 | [`architecture-risk-evaluation`](../skills/architecture-risk-evaluation/) | Scenario-based evaluation of architecture assumptions and quality tradeoffs | Risks, non-risks, sensitivities, tradeoffs, unknowns, and evidence needs |
 | [`service-capacity-engineering`](../skills/service-capacity-engineering/) | End-to-end demand, capacity, headroom, overload, and recovery behavior | Capacity model, operating envelope, falsification evidence, and overload controls |
 | [`service-ownership-design`](../skills/service-ownership-design/) | Sustainable lifecycle ownership and its enabling conditions | Ownership trace, cognitive-load assessment, model options, prerequisites, and transition |
-| [`technical-decision-making`](../skills/technical-decision-making/) | Authority, participation, option comparison, closure, and commitment | Decision frame, authority map, decision or escalation, execution, and revisit conditions |
+| [`decision-facilitation`](../skills/decision-facilitation/) | Intent, authority, participation, alternatives, assumptions, tradeoffs, closure, and commitment for consequential or contested choices | Decision frame, authority map, challenge result, bounded disposition, commitments, and reopening conditions |
 
 ### Plan, coordinate, and control change
 

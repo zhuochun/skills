@@ -17,7 +17,7 @@ into one size hierarchy. Before routing work, name three independent things:
 | Axis | Question | Typical terms |
 | --- | --- | --- |
 | **Subject of interest** | What named thing and boundary are being examined? | module, codebase, service, subsystem, platform, product, capability, system, estate |
-| **Decision lens** | What judgment or action is missing? | domain modeling, architecture orientation or assessment, boundary or ownership design, capacity, observability, incident response or learning |
+| **Decision lens** | What judgment or action is missing? | research synthesis, domain modeling, architecture orientation or assessment, boundary or ownership design, capacity, observability, incident response or learning |
 | **Work or coordination unit** | What state must remain coherent while work moves? | bounded change, migration, workstream, technical program |
 
 These are roles in the current request, not mutually exclusive types. A
@@ -77,6 +77,10 @@ The skills form a directed graph. A downstream skill consumes an upstream artifa
 
 ```mermaid
 flowchart LR
+    RS["Research synthesis"] -.-> PD
+    RS -.-> DM
+    RS -.-> AR
+
     PD["Product opportunity discovery"] <--> PP["Product opportunity prioritization"]
     PD --> DM["Domain modeling"]
     PD -.-> OD["Observability design"]
@@ -177,10 +181,11 @@ A skill that creates an artifact should not silently certify that artifact. For 
 | --- | --- |
 | Product opportunity discovery result | Accountable product owner and cross-functional decision group challenge the evidence, affected population, alternatives, and limits; prioritization may reject investment readiness without rewriting the discovery result |
 | Product opportunity priority recommendation | Accountable product owner or declared forum closes the decision after customer, commercial, technical, operational, and mandatory-risk owners challenge the rationale and feasibility |
+| Research synthesis | Source-owner checks for exact claims and accountable specialist challenge for interpretation and applicability; the synthesis does not certify truth or close the downstream decision |
 | Architecture surface map | Source-owner review and focused follow-up; orientation does not certify architecture fitness, readiness, or safety |
 | Domain, service-boundary, module, or platform design | `architecture-risk-evaluation` for consequential quality and operating scenarios |
 | Architecture improvement portfolio or selected candidate | Local evidence review, followed by the relevant focused design skill |
-| Architecture option comparison | `technical-decision-making` for accountable weighting and closure |
+| Architecture option comparison | `decision-facilitation` for accountable weighting and closure |
 | Technical program orchestration state | Accountable outcome owner and integrated delivery evidence; activity and coordinator confidence do not certify the outcome |
 | Software contract evolution design | Producer, consumer, data, and support-policy owners review the recovered contract and compatibility claims; use `verification-strategy-design` and independent architecture challenge as consequence warrants |
 | Software change specification | Accountable change, product, domain, consumer, security, data, and operational owners challenge the interpretations they own; consequential architecture and evidence claims route to independent evaluation rather than being self-certified by the specifier |
@@ -220,6 +225,14 @@ Discovery and prioritization form a feedback loop. Prioritization may fund anoth
 The orchestration unit is a **change effort**, not necessarily a whole product or repository. Related slices may share one effort when they serve one outcome and depend on the same behavior or risk decisions. Small reversible changes stay inline with no orchestration directory. When durable state is justified, use the owning repository if one repo owns the behavior; use an established control repository when no code repository owns the cross-repository outcome. Touching or reading several repositories is not by itself a reason to create control-repository state.
 
 A program is not merely a larger change effort. Program orchestration steers a graph of workstream contributions, dependencies, integration contracts, and simultaneous frontiers. A program may link several bounded change efforts, while one change effort may also require program orchestration when its delivery contains several concurrent or interdependent workstreams. One team can own such a topology, and several teams can still be executing only one bounded change loop; team count is neither necessary nor sufficient. Use `software-change-orchestration` only for workstreams that need their own resumable software-change loop; keep non-code or already well-governed workstreams in their existing canonical surfaces.
+
+### Research synthesis versus surface mapping and specialist inquiry
+
+Use `research-synthesis` when the missing artifact is a bounded answer assembled across papers, standards, official guidance, reports, datasets, or other high-trust sources. It owns source strategy, exact claim provenance, comparison, contradiction, applicability, confidence, and the decision to stop or return an inconclusive result. It does not own the customer, architecture, domain, causal, verification, or accountable decision judgment that may consume the brief.
+
+Use `architecture-surface-mapping` when the question is how a declared current software subject actually works. Its primary evidence is the subject's semantics, code, configuration, interfaces, data, runtime, dependencies, change paths, controls, recovery, and ownership. When external evidence and current-system facts both matter, the research synthesis and surface map remain separate inputs to the relevant specialist; neither substitutes for the other.
+
+Route direct customer learning to `product-opportunity-discovery`, a concrete unexplained software failure to `software-failure-diagnosis`, fixed engineering claims to verification design or execution, and accountable weighting or closure to `decision-facilitation`. Capturing or summarizing one source is not cross-source research synthesis unless the user also asks what the broader evidence supports.
 
 ### Orientation versus assessment
 
@@ -299,7 +312,7 @@ Use `architecture-risk-evaluation` to ask whether the proposed target architectu
 
 ```text
 architecture-risk-evaluation
-  -> technical-decision-making
+  -> decision-facilitation
   -> migration-planning
   -> co-design verification, observability, and optional controlled release
   -> scoped-change-implementation
@@ -309,12 +322,12 @@ architecture-risk-evaluation
 
 ### Technical decision, program orchestration, and migration planning
 
-Use `technical-decision-making` to close a consequential or contested choice with explicit authority and accepted tradeoffs. Use `technical-program-orchestration` when an outcome has several concurrent or interdependent workstreams whose dependencies, integration points, shared decisions, or constraints need active steering through local and program frontiers. Use `migration-planning` to design one accepted target's current-to-transition-to-target movement and authority transfer. Risk or production impact alone does not create a migration.
+Use `decision-facilitation` to clarify, challenge, and close a consequential or contested choice with explicit authority and accepted tradeoffs; route subject-matter analysis to its specialist. Use `technical-program-orchestration` when an outcome has several concurrent or interdependent workstreams whose dependencies, integration points, shared decisions, or constraints need active steering through local and program frontiers. Use `migration-planning` to design one accepted target's current-to-transition-to-target movement and authority transfer. Risk or production impact alone does not create a migration.
 
 A technical program may contain several ordinary delivery slices and several specialized change plans. It references those plans and exposes their dependencies without taking over their invariants, release controls, measurement contracts, or verification oracles. A single-team feature or one local reversible change does not need program machinery merely because it has several tasks.
 
 ```text
-technical-decision-making, when closure is needed
+decision-facilitation, when clarification, challenge, or closure is needed
   -> technical-program-orchestration, when delivery has several concurrent or interdependent workstreams
        -> migration-planning for each workstream that owns genuine technical movement, transition states, authority transfer, retireability, and retirement
        -> coordinated observability, release, verification, implementation, and integration

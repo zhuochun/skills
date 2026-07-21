@@ -16,6 +16,14 @@ Turn an intended software change into a reviewable behavioral contract that an i
 - Use the user's existing issue, plan, conversation, or repository artifact. When orchestration supplies a canonical surface and record-write authority, update that surface with the owned specification delta; otherwise return an inline or read-only result as authorized. Never create a second handoff record.
 - Keep opportunity selection, domain meaning, architecture design, contract evolution, rollout, verification methods, and implementation with their canonical owners. Reference their decisions by stable key and plain-language label when present rather than copying entire artifacts.
 - A delivery target or request for an “implementation-ready” result does not authorize the specifier to resolve missing domain, architecture, compatibility, security, data, or recovery decisions. Produce a conditional partial specification and `not ready` result when those owners have not decided.
+- Inspect discoverable behavior and evidence before asking the change owner. Even without an interactive exchange, expose specification-relevant ambiguity, assumptions, unknowns, and missing authority rather than silently completing the contract.
+
+## Clarify and stress-test interactively
+
+- Use interactive clarification when the user asks to grill, challenge, or stress-test the change, or when material owner-controlled ambiguity blocks a useful specification.
+- Ask only questions that can change desired or preserved behavior, examples, boundaries, invariants, failure semantics, acceptance claims, or readiness. Route product, domain, architecture, contract, security, data, recovery, and transition decisions to their owners.
+- Partition questions by both behavioral dependency and disclosure dependency. Batch a low-sensitivity frontier only when its answers remain independently understandable. Serialize when a prior answer should shape the next example, ambiguity needs adaptive follow-up, trust, power, or sensitive disclosure affects candor, or a gating answer changes which contract questions remain relevant.
+- After each batch, update the behavioral model and suppress questions answered by repository evidence or prior responses. Challenge the clarified model with disagreement-rich examples and failure cases before declaring readiness.
 
 ## Specification workflow
 
