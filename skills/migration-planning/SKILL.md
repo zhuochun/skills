@@ -44,8 +44,9 @@ state deliberately.
   and retirement order. Phases express technical states and gates, not a task
   schedule or percent-complete program plan.
 - Consume an accepted target direction and preserved obligations. Route an
-  undecided target to the relevant design, architecture evaluation, or
-  technical decision skill. Consume compatibility policy, consumer promises,
+  undecided target to the relevant design or architecture evaluation, or to
+  `decision-facilitation` for accountable choice clarification and closure.
+  Consume compatibility policy, consumer promises,
   and semantic translation from `software-contract-evolution` when a shared
   contract changes; do not redefine them here.
 - Route assignment, cohorts, percentage ramps, promotion, hold, abort, and flag

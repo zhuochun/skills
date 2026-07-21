@@ -106,8 +106,8 @@ flowchart LR
     CAP["Service capacity engineering"] --> AR
     OWN["Service ownership design"] --> AR
 
-    AR --> TD["Technical decision making"]
-    TD --> TP["Technical program orchestration"]
+    AR --> DF["Decision facilitation"]
+    DF --> TP["Technical program orchestration"]
     SB --> TP
     DM --> CE["Software contract evolution"]
     DM --> SPEC
@@ -120,7 +120,7 @@ flowchart LR
     CE --> OD
     CE --> VS
     CE --> SCI
-    TD --> HR["Migration planning"]
+    DF --> HR["Migration planning"]
     MD --> OD
     SB --> OD
     MD --> CR["Controlled release design"]
@@ -320,7 +320,7 @@ architecture-risk-evaluation
   -> accountable cutover
 ```
 
-### Technical decision, program orchestration, and migration planning
+### Decision facilitation, technical program orchestration, and migration planning
 
 Use `decision-facilitation` to clarify, challenge, and close a consequential or contested choice with explicit authority and accepted tradeoffs; route subject-matter analysis to its specialist. Use `technical-program-orchestration` when an outcome has several concurrent or interdependent workstreams whose dependencies, integration points, shared decisions, or constraints need active steering through local and program frontiers. Use `migration-planning` to design one accepted target's current-to-transition-to-target movement and authority transfer. Risk or production impact alone does not create a migration.
 
