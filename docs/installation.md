@@ -1,75 +1,42 @@
 # Installation
 
-The installers create directory links from an agent's skills directory to the
-skill sources in this checkout. Because the links are live, a later `git pull`
-updates installed skills without copying them again. Keep the checkout at a
-stable absolute path; moving it will break existing links.
+The repository installers create live links from an agent's skills directory
+to this checkout. A later `git pull` updates installed skills in place. Keep the
+checkout at a stable absolute path; moving it breaks existing links.
 
-Use [`install.sh`](../install/install.sh) on macOS and Unix, and
-[`install.ps1`](../install/install.ps1) on Windows. Both installers provide the
-same selections, targets, package manifests, dry-run behavior, and safety
-rules.
+Use [`install.sh`](../install/install.sh) on macOS and Unix, or
+[`install.ps1`](../install/install.ps1) on Windows. They provide the same
+packages, targets, dry runs, diagnostics, and ownership-safe removal.
 
-## Other installation methods
+## Quick installation
 
-### skills.sh
-
-[`skills.sh`](https://www.skills.sh/) can install individual skills from this
-public repository for Codex and other supported agents. List the available
-skills before selecting one:
+Install one or more individual skills with
+[`skills.sh`](https://www.skills.sh/):
 
 ```sh
 npx skills add zhuochun/skills --list
-```
-
-Install one skill into the current project's Codex skills directory:
-
-```sh
 npx skills add zhuochun/skills --agent codex --skill architecture-surface-mapping
 ```
 
-Add `--global` for a user-scoped installation. The CLI selects individual
-skills; use this repository's installers when you want one of the curated
-packages below, such as `software-light`.
+Add `--global` for a user-scoped installation.
 
-### Codex Marketplace
-
-The complete catalog is published by this repository as the single
-**Zhuochun Skills** plugin. It loads the canonical [`skills/`](../skills/)
-directory, so the Marketplace does not maintain a copied second catalog.
-
-Add the public Git marketplace:
+For Codex, the Marketplace plugin installs the complete catalog:
 
 ```sh
 codex plugin marketplace add zhuochun/skills
 ```
 
-For local plugin development from this checkout, add the current repository
-instead:
+Restart Codex, open the Plugins Directory or `/plugins`, and install
+**Zhuochun Skills**. For local plugin development, add this checkout with
+`codex plugin marketplace add .`. To refresh a published installation, run
+`codex plugin marketplace upgrade zhuochun-skills` and reinstall the plugin.
 
-```powershell
-codex plugin marketplace add .
-```
+Use the repository installer below when you want a package, project or custom
+target, dry-run, doctor, uninstall, or live links to this checkout.
 
-Restart the Codex app or start a new CLI session, open the Plugins Directory
-or run `/plugins`, select **Zhuochun Skills**, and install it.
+## Repository installer
 
-When a published plugin release changes, update the plugin version in
-[`plugin.json`](../.codex-plugin/plugin.json), then refresh the marketplace and
-reinstall the plugin:
-
-```sh
-codex plugin marketplace upgrade zhuochun-skills
-codex plugin add zhuochun-skills@zhuochun-skills
-```
-
-The Marketplace plugin is intentionally an all-skills installation. Use the
-repository installers or `skills.sh` if a project should receive only a
-smaller profile or individual skills.
-
-## Interactive installation
-
-Run either installer without selection or target arguments:
+Run without arguments for interactive installation:
 
 ```sh
 sh install/install.sh
@@ -79,53 +46,15 @@ sh install/install.sh
 .\install\install.ps1
 ```
 
-The installer prompts for:
+Choose one skill with `--skill` or `-Skill`, or one package with `--package` or
+`-Package`. Installation is the default action. The other actions are:
 
-1. an individual skill or package;
-2. the skill or package name; and
-3. a user, project, or custom target.
+| Action | macOS and Unix | Windows |
+| --- | --- | --- |
+| Diagnose | `doctor` after the script path | `-Action Doctor` |
+| Remove links | `uninstall` after the script path | `-Action Uninstall` |
 
-## Installation targets
-
-| Target | Destination |
-| --- | --- |
-| `user-agents` | `$HOME/.agents/skills` |
-| `user-codex` | `$HOME/.codex/skills` |
-| `user-claude` | `$HOME/.claude/skills` |
-| `project-agents` | `<project-root>/.agents/skills` |
-| `project-codex` | `<project-root>/.codex/skills` |
-| `project-claude` | `<project-root>/.claude/skills` |
-| `custom` | The exact skills directory supplied by the user |
-
-Project targets require an existing project repository root and append the
-selected agent's skills path. A custom target is already the final skills
-directory; the installer does not append another path segment.
-
-## Skill packages
-
-Packages are curated installation bundles, not a replacement for the
-[catalog](catalog.md) or its relationship model. Profiles may overlap when one
-is intentionally a smaller version of another. Package names are distribution
-profiles, not architectural scope levels.
-
-| Package | Contents |
-| --- | --- |
-| `product` | 3 product-opportunity and domain-framing skills |
-| `software` | 21 larger-scale software understanding, domain and technical decision design, service and platform design, multi-workstream change, release, and verification skills |
-| `software-light` | 14 small-project, monolith, and single-service skills for orientation, domain and technical decision design, architecture assessment and retrospective review, orchestration, implementation, refactoring, diagnosis, review, and verification |
-| `operational` | 6 service operation, ownership, feedback, and incident skills |
-| `misc` | 2 cross-cutting decision and capability-development skills |
-| `all` | Every skill currently present under `skills/` |
-
-The tracked manifests are
-[`product.txt`](../install/packages/product.txt),
-[`software.txt`](../install/packages/software.txt),
-[`software-light.txt`](../install/packages/software-light.txt),
-[`operational.txt`](../install/packages/operational.txt), and
-[`misc.txt`](../install/packages/misc.txt). The `all` package is computed from
-the skill directories so newly added skills are not silently omitted.
-
-List the available names without writing anything:
+List available skills and packages without writing:
 
 ```sh
 sh install/install.sh --list
@@ -135,129 +64,131 @@ sh install/install.sh --list
 .\install\install.ps1 -List
 ```
 
-## macOS and Unix examples
+## Targets
 
-Install one skill for tools that discover `$HOME/.agents/skills`:
+| Target | Destination | Required option |
+| --- | --- | --- |
+| `user-agents` | `$HOME/.agents/skills` | — |
+| `user-codex` | `$HOME/.codex/skills` | — |
+| `user-claude` | `$HOME/.claude/skills` | — |
+| `project-agents` | `<project>/.agents/skills` | `--project-root` / `-ProjectRoot` |
+| `project-codex` | `<project>/.codex/skills` | `--project-root` / `-ProjectRoot` |
+| `project-claude` | `<project>/.claude/skills` | `--project-root` / `-ProjectRoot` |
+| `custom` | Exact supplied directory | `--target-dir` / `-TargetDirectory` |
+
+Project targets require an existing repository root. A custom target is already
+the final skills directory; the installer does not append another segment.
+
+## Packages
+
+A topic bundle ends in `-bundles` and groups skills around a user-facing theme.
+Bundles may overlap and need not cover every downstream specialist. A workflow
+profile ends in `-profile` and is composition-closed for its declared normal
+paths; exceptional routes may leave the profile. See the
+[catalog](catalog.md) for individual skill ownership and relationships.
+
+| Package | Kind | Contents |
+| --- | --- | --- |
+| [`product-bundles`](../install/packages/product-bundles.txt) | Topic bundle | 3 product-opportunity and domain-framing skills |
+| [`operational-bundles`](../install/packages/operational-bundles.txt) | Topic bundle | 6 service operation, ownership, feedback, and incident skills |
+| [`leadership-bundles`](../install/packages/leadership-bundles.txt) | Topic bundle | 5 technical leadership, coordination, ownership, decision, and growth skills |
+| [`dev-base-profile`](../install/packages/dev-base-profile.txt) | Workflow profile | 14 skills for bounded local change, diagnosis, refactoring, review, and verification |
+| [`dev-profile`](../install/packages/dev-profile.txt) | Workflow profile | 25 skills for larger-scale design, delivery, release, operational feedback, and verification |
+| `all` | Computed | Every current skill under `skills/` |
+
+`all` is computed so new skills are not silently omitted. Other manifests are
+validated for current, unique, alphabetically sorted entries; they may overlap
+or omit unrelated catalog skills.
+
+## Common commands
+
+Install the base development profile for user-scoped Codex discovery:
+
+```sh
+sh install/install.sh --package dev-base-profile --target user-codex
+```
+
+```powershell
+.\install\install.ps1 -Package dev-base-profile -Target user-codex
+```
+
+For a project target, add its existing root:
 
 ```sh
 sh install/install.sh \
   --skill architecture-surface-mapping \
-  --target user-agents
-```
-
-Install the product package for user-scoped Codex discovery:
-
-```sh
-sh install/install.sh \
-  --package product \
-  --target user-codex
-```
-
-Install the light software profile into a small project or monolith:
-
-```sh
-sh install/install.sh \
-  --package software-light \
   --target project-agents \
   --project-root /path/to/project
 ```
 
-Install the operational package into a project's Claude skills directory:
-
-```sh
-sh install/install.sh \
-  --package operational \
-  --target project-claude \
-  --project-root /path/to/project
-```
-
-Use an exact custom skills directory:
-
-```sh
-sh install/install.sh \
-  --skill code-review \
-  --target custom \
-  --target-dir /path/to/custom/skills
-```
-
-Add `--dry-run` to validate selection and print every planned link without
-creating directories or links.
-
-## Windows examples
-
-Install one skill for tools that discover the user's `.agents\skills`:
-
 ```powershell
 .\install\install.ps1 `
   -Skill architecture-surface-mapping `
-  -Target user-agents
-```
-
-Install the larger-scale software package for user-scoped Codex discovery:
-
-```powershell
-.\install\install.ps1 `
-  -Package software `
-  -Target user-codex
-```
-
-Install the light software profile into a small project or monolith:
-
-```powershell
-.\install\install.ps1 `
-  -Package software-light `
   -Target project-agents `
   -ProjectRoot 'D:\path\to\project'
 ```
 
-Install the operational package into a project's Claude skills directory:
+Add `--dry-run` or `-DryRun` to print planned install or uninstall effects
+without writing.
+
+Windows symbolic links may require Developer Mode or an elevated shell. Use a
+directory junction when symbolic-link privileges are unavailable:
 
 ```powershell
 .\install\install.ps1 `
-  -Package operational `
-  -Target project-claude `
-  -ProjectRoot 'D:\path\to\project'
-```
-
-Use an exact custom skills directory:
-
-```powershell
-.\install\install.ps1 `
-  -Skill code-review `
-  -Target custom `
-  -TargetDirectory 'D:\path\to\custom\skills'
-```
-
-Windows symbolic links may require Developer Mode or an elevated shell. When
-symbolic-link privileges are unavailable, request a directory junction:
-
-```powershell
-.\install\install.ps1 `
-  -Package product `
+  -Package product-bundles `
   -Target user-agents `
   -LinkType Junction
 ```
 
-Add `-DryRun` to validate selection and print every planned link without
-creating directories or links.
+## Doctor
 
-## Safety and repeatability
+Doctor is read-only. Without a selection it scans links owned by this checkout
+in the chosen target. With a skill or package it also checks completeness. It
+reports missing, broken, wrongly named, wrong-source, and conflicting entries,
+and exits unsuccessfully when it finds an issue.
 
-- Sources are resolved from the checkout containing the installer, not from the
-  caller's current directory.
-- Every skill must contain `SKILL.md`, and every package entry must resolve to a
-  valid skill before installation begins.
-- The complete selection is checked for destination conflicts before any links
-  are created.
-- Existing files, directories, and links to different sources are never
-  replaced.
-- An existing link to the same absolute source is reported as already installed,
-  making repeated runs idempotent.
-- Every package is validated for duplicate or missing skills, and the combined
-  manifests must cover every catalog skill. Intentional overlap between package
-  profiles is allowed.
-- Entries in each manifest must remain alphabetically sorted for quick visual
-  comparison and review.
+```sh
+sh install/install.sh doctor --target user-codex
+```
 
-The installers create links only. They do not remove installations or modify
-agent configuration files.
+```powershell
+.\install\install.ps1 -Action Doctor -Target user-codex
+```
+
+Doctor never scans unrelated targets or repairs links automatically.
+
+## Uninstall
+
+Uninstall preflights the complete selection and removes only links whose target
+exactly matches the selected source in this checkout. Missing links are already
+absent; a regular file, directory, or foreign link stops the operation before
+anything is removed.
+
+```sh
+sh install/install.sh uninstall \
+  --package leadership-bundles \
+  --target user-codex \
+  --dry-run
+```
+
+```powershell
+.\install\install.ps1 `
+  -Action Uninstall `
+  -Package leadership-bundles `
+  -Target user-codex `
+  -DryRun
+```
+
+The installers do not keep receipts. Package uninstall therefore uses the
+current manifest rather than reconstructing an older installation. An explicit
+dangling link can still be removed when its stored target matches this checkout.
+
+## Safety
+
+- Sources are resolved from the checkout containing the installer.
+- Every selection is fully validated and preflighted before links are changed.
+- Existing files, directories, and foreign links are never replaced or removed.
+- Reinstalling the same source is idempotent and reported as already linked.
+- Doctor stays read-only and uninstall never removes the target skills directory.
+- The installers do not modify agent configuration files.

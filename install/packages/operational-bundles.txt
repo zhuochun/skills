@@ -1,4 +1,4 @@
-# Service operation, ownership, feedback, and incidents
+# Topic bundle for service operation, ownership, feedback, and incidents
 incident-learning
 incident-response-coordination
 observability-design

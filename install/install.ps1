@@ -1,5 +1,8 @@
 [CmdletBinding()]
 param(
+  [ValidateSet('Install', 'Doctor', 'Uninstall')]
+  [string]$Action = 'Install',
+
   [string]$Skill,
   [string]$Package,
 
@@ -50,7 +53,7 @@ function Get-SkillNames {
 }
 
 function Get-PackageNames {
-  @('all') + @(
+  @(
     Get-ChildItem -LiteralPath $packagesRoot -File -Filter '*.txt' |
       Sort-Object -Property BaseName |
       ForEach-Object { $_.BaseName }
@@ -91,12 +94,18 @@ function Read-Selection {
   return $matchedChoice[0]
 }
 
-function Assert-SkillName {
+function Assert-SkillSyntax {
   param([Parameter(Mandatory)][string]$Name)
 
   if ($Name -notmatch '^[a-z0-9-]+$') {
     throw "Invalid skill name: $Name"
   }
+}
+
+function Assert-CurrentSkill {
+  param([Parameter(Mandatory)][string]$Name)
+
+  Assert-SkillSyntax $Name
   if (-not (Test-Path -LiteralPath (Join-Path $skillsRoot "$Name\SKILL.md") -PathType Leaf)) {
     throw "Skill was not found: $Name"
   }
@@ -124,50 +133,81 @@ function Get-LinkTargetPath {
   return [IO.Path]::GetFullPath((Join-Path (Split-Path -Parent $DestinationPath) $rawTarget))
 }
 
+function Test-PathEqual {
+  param(
+    [AllowNull()][string]$Left,
+    [AllowNull()][string]$Right
+  )
+
+  if ($null -eq $Left -or $null -eq $Right) {
+    return $false
+  }
+  $Left.Equals($Right, [StringComparison]::OrdinalIgnoreCase)
+}
+
+function Test-CheckoutSkillTarget {
+  param([AllowNull()][string]$Path)
+
+  if ([string]::IsNullOrWhiteSpace($Path)) {
+    return $false
+  }
+  Test-PathEqual (Split-Path -Parent $Path) $skillsRoot
+}
+
+function Get-ManifestSkills {
+  param([Parameter(Mandatory)][string]$ManifestPath)
+
+  @(
+    Get-Content -LiteralPath $ManifestPath -Encoding UTF8 |
+      Where-Object { $_ -and -not $_.StartsWith('#') }
+  )
+}
+
 $availableSkills = @(Get-SkillNames)
 $availablePackages = @(Get-PackageNames)
-$packageSkillNames = @(
-  Get-ChildItem -LiteralPath $packagesRoot -File -Filter '*.txt' |
-    Sort-Object -Property BaseName |
-    ForEach-Object {
-      $manifestSkills = @(
-        Get-Content -LiteralPath $_.FullName -Encoding UTF8 |
-          Where-Object { $_ -and -not $_.StartsWith('#') }
-      )
-      if ($manifestSkills.Count -eq 0) {
-        throw "Package is empty: $($_.FullName)"
-      }
-      $manifestDuplicates = @(
-        $manifestSkills |
-          Group-Object |
-          Where-Object { $_.Count -gt 1 } |
-          ForEach-Object { $_.Name }
-      )
-      if ($manifestDuplicates.Count -ne 0) {
-        throw "Package contains duplicate skills: $($_.FullName) -> $($manifestDuplicates -join ', ')"
-      }
-      $sortedManifestSkills = @($manifestSkills | Sort-Object)
-      if (($manifestSkills -join "`n") -cne ($sortedManifestSkills -join "`n")) {
-        throw "Package entries must be alphabetically sorted: $($_.FullName)"
-      }
-      foreach ($manifestSkill in $manifestSkills) {
-        Assert-SkillName $manifestSkill
-        $manifestSkill
-      }
-    }
-)
-$packageCoverageDifference = @(
-  Compare-Object `
-    -ReferenceObject $availableSkills `
-    -DifferenceObject @($packageSkillNames | Sort-Object -Unique)
-)
-if ($packageCoverageDifference.Count -ne 0) {
-  throw "Package manifests must cover every skill at least once: $($packageCoverageDifference | Out-String)"
+
+foreach ($packageName in $availablePackages) {
+  if ($packageName -notmatch '^[a-z0-9-]+$') {
+    throw "Invalid package name: $packageName"
+  }
+  if ($packageName -notmatch '(-bundles|-profile)$') {
+    throw "Package name must end in -bundles or -profile: $packageName"
+  }
+
+  $manifestPath = Join-Path $packagesRoot "$packageName.txt"
+  $manifestSkills = @(Get-ManifestSkills $manifestPath)
+  if ($manifestSkills.Count -eq 0) {
+    throw "Package is empty: $manifestPath"
+  }
+  $manifestDuplicates = @(
+    $manifestSkills |
+      Group-Object |
+      Where-Object { $_.Count -gt 1 } |
+      ForEach-Object { $_.Name }
+  )
+  if ($manifestDuplicates.Count -ne 0) {
+    throw "Package contains duplicate skills: $manifestPath -> $($manifestDuplicates -join ', ')"
+  }
+  $sortedManifestSkills = @($manifestSkills | Sort-Object)
+  if (($manifestSkills -join "`n") -cne ($sortedManifestSkills -join "`n")) {
+    throw "Package entries must be alphabetically sorted: $manifestPath"
+  }
+  foreach ($manifestSkill in $manifestSkills) {
+    Assert-CurrentSkill $manifestSkill
+  }
 }
 
 if ($List) {
-  Write-Host 'Packages:'
-  $availablePackages | ForEach-Object { Write-Host "  $_" }
+  Write-Host 'Topic bundles:'
+  $availablePackages |
+    Where-Object { $_.EndsWith('-bundles', [StringComparison]::Ordinal) } |
+    ForEach-Object { Write-Host "  $_" }
+  Write-Host 'Workflow profiles:'
+  $availablePackages |
+    Where-Object { $_.EndsWith('-profile', [StringComparison]::Ordinal) } |
+    ForEach-Object { Write-Host "  $_" }
+  Write-Host 'Computed package:'
+  Write-Host '  all'
   Write-Host 'Skills:'
   $availableSkills | ForEach-Object { Write-Host "  $_" }
   return
@@ -176,15 +216,23 @@ if ($List) {
 if ($Skill -and $Package) {
   throw 'Choose either -Skill or -Package, not both.'
 }
+if ($Action -eq 'Doctor' -and $DryRun) {
+  throw '-DryRun is not valid with -Action Doctor because doctor never writes.'
+}
+if ($Action -ne 'Install' -and $PSBoundParameters.ContainsKey('LinkType')) {
+  throw '-LinkType is valid only with -Action Install.'
+}
 
-if (-not $Skill -and -not $Package) {
+if (-not $Skill -and -not $Package -and $Action -ne 'Doctor') {
   $selectionKind = Read-Selection `
-    -Prompt 'Install an individual skill or a package?' `
+    -Prompt "$Action an individual skill or a package?" `
     -Choices @('skill', 'package')
   if ($selectionKind -eq 'skill') {
     $Skill = Read-Selection -Prompt 'Choose a skill:' -Choices $availableSkills
   } else {
-    $Package = Read-Selection -Prompt 'Choose a package:' -Choices $availablePackages
+    $Package = Read-Selection `
+      -Prompt 'Choose a topic bundle, workflow profile, or all:' `
+      -Choices @($availablePackages + 'all')
   }
 }
 
@@ -250,12 +298,16 @@ if ($TargetDirectory -and $Target -ne 'custom') {
   throw '-TargetDirectory is valid only with the custom target.'
 }
 
+$selectedSkills = @()
 if ($Skill) {
-  Assert-SkillName $Skill
+  Assert-SkillSyntax $Skill
+  if ($Action -eq 'Install') {
+    Assert-CurrentSkill $Skill
+  }
   $selectedSkills = @($Skill)
 } elseif ($Package -eq 'all') {
   $selectedSkills = $availableSkills
-} else {
+} elseif ($Package) {
   if ($Package -notmatch '^[a-z0-9-]+$') {
     throw "Invalid package name: $Package"
   }
@@ -263,25 +315,142 @@ if ($Skill) {
   if (-not (Test-Path -LiteralPath $manifestPath -PathType Leaf)) {
     throw "Package was not found: $Package"
   }
-  $selectedSkills = @(
-    Get-Content -LiteralPath $manifestPath -Encoding UTF8 |
-      Where-Object { $_ -and -not $_.StartsWith('#') }
-  )
-  if ($selectedSkills.Count -eq 0) {
-    throw "Package is empty: $Package"
+  $selectedSkills = @(Get-ManifestSkills $manifestPath)
+}
+
+if ($Action -eq 'Doctor') {
+  $healthyCount = 0
+  $issueCount = 0
+
+  if (-not (Test-Path -LiteralPath $targetRoot -PathType Container)) {
+    Write-Host "[missing-target] $targetRoot"
+    $issueCount++
+  } elseif ($selectedSkills.Count -gt 0) {
+    foreach ($selectedSkill in $selectedSkills) {
+      $sourcePath = Get-UnresolvedFullPath (Join-Path $skillsRoot $selectedSkill)
+      $destinationPath = Join-Path $targetRoot $selectedSkill
+      $existingItem = Get-Item -LiteralPath $destinationPath -Force -ErrorAction SilentlyContinue
+
+      if ($null -eq $existingItem) {
+        Write-Host "[missing] $destinationPath"
+        $issueCount++
+        continue
+      }
+      if ($existingItem.LinkType -notin @('SymbolicLink', 'Junction')) {
+        Write-Host "[conflict] $destinationPath is not a supported link"
+        $issueCount++
+        continue
+      }
+
+      $existingTarget = Get-LinkTargetPath -Item $existingItem -DestinationPath $destinationPath
+      if (-not (Test-PathEqual $existingTarget $sourcePath)) {
+        Write-Host "[wrong-source] $destinationPath -> $existingTarget"
+        $issueCount++
+        continue
+      }
+      if (-not (Test-Path -LiteralPath (Join-Path $sourcePath 'SKILL.md') -PathType Leaf)) {
+        Write-Host "[broken] $destinationPath -> $sourcePath"
+        $issueCount++
+        continue
+      }
+
+      Write-Host "[healthy] $destinationPath -> $sourcePath"
+      $healthyCount++
+    }
+  } else {
+    $ownedLinkCount = 0
+    foreach ($existingItem in Get-ChildItem -LiteralPath $targetRoot -Force) {
+      if ($existingItem.LinkType -notin @('SymbolicLink', 'Junction')) {
+        continue
+      }
+      $existingTarget = Get-LinkTargetPath `
+        -Item $existingItem `
+        -DestinationPath $existingItem.FullName
+      if (-not (Test-CheckoutSkillTarget $existingTarget)) {
+        continue
+      }
+
+      $ownedLinkCount++
+      $targetSkillName = Split-Path -Leaf $existingTarget
+      if (-not $existingItem.Name.Equals($targetSkillName, [StringComparison]::Ordinal)) {
+        Write-Host "[wrong-name] $($existingItem.FullName) -> $existingTarget"
+        $issueCount++
+      } elseif (-not (Test-Path -LiteralPath (Join-Path $existingTarget 'SKILL.md') -PathType Leaf)) {
+        Write-Host "[broken] $($existingItem.FullName) -> $existingTarget"
+        $issueCount++
+      } else {
+        Write-Host "[healthy] $($existingItem.FullName) -> $existingTarget"
+        $healthyCount++
+      }
+    }
+    if ($ownedLinkCount -eq 0) {
+      Write-Host 'No links from this checkout were found.'
+    }
   }
-  foreach ($selectedSkill in $selectedSkills) {
-    Assert-SkillName $selectedSkill
+
+  Write-Host "Target: $targetRoot"
+  Write-Host "Healthy links: $healthyCount; issues: $issueCount"
+  if ($issueCount -gt 0) {
+    throw "Doctor found $issueCount installation issue(s)."
   }
-  $duplicates = @(
-    $selectedSkills |
-      Group-Object |
-      Where-Object { $_.Count -gt 1 } |
-      ForEach-Object { $_.Name }
-  )
-  if ($duplicates.Count -ne 0) {
-    throw "Package contains duplicate skills: $($duplicates -join ', ')"
+  return
+}
+
+if ($Action -eq 'Uninstall') {
+  $plan = foreach ($selectedSkill in $selectedSkills) {
+    $sourcePath = Get-UnresolvedFullPath (Join-Path $skillsRoot $selectedSkill)
+    $destinationPath = Join-Path $targetRoot $selectedSkill
+    $existingItem = Get-Item -LiteralPath $destinationPath -Force -ErrorAction SilentlyContinue
+
+    if ($null -eq $existingItem) {
+      [pscustomobject]@{
+        Skill = $selectedSkill
+        Source = $sourcePath
+        Destination = $destinationPath
+        Absent = $true
+      }
+      continue
+    }
+    if ($existingItem.LinkType -notin @('SymbolicLink', 'Junction')) {
+      throw "Destination is not a supported link and will not be removed: $destinationPath"
+    }
+    $existingTarget = Get-LinkTargetPath -Item $existingItem -DestinationPath $destinationPath
+    if (-not (Test-PathEqual $existingTarget $sourcePath)) {
+      throw "Destination is a different link and will not be removed: $destinationPath -> $existingTarget"
+    }
+
+    [pscustomobject]@{
+      Skill = $selectedSkill
+      Source = $sourcePath
+      Destination = $destinationPath
+      Absent = $false
+    }
   }
+
+  $removedCount = 0
+  $absentCount = 0
+  foreach ($item in $plan) {
+    if ($item.Absent) {
+      Write-Host "Already absent: $($item.Destination)"
+      $absentCount++
+      continue
+    }
+    if ($DryRun) {
+      Write-Host "[dry-run] Remove link: $($item.Destination) -> $($item.Source)"
+    } else {
+      Remove-Item -LiteralPath $item.Destination -Force
+      Write-Host "Removed link: $($item.Destination) -> $($item.Source)"
+    }
+    $removedCount++
+  }
+
+  Write-Host "Target: $targetRoot"
+  if ($DryRun) {
+    Write-Host "Planned removals: $removedCount; already absent: $absentCount"
+  } else {
+    Write-Host "Removed links: $removedCount; already absent: $absentCount"
+  }
+  return
 }
 
 $plan = foreach ($selectedSkill in $selectedSkills) {
@@ -294,10 +463,8 @@ $plan = foreach ($selectedSkill in $selectedSkills) {
     if ($existingItem.LinkType -notin @('SymbolicLink', 'Junction')) {
       throw "Destination already exists and will not be replaced: $destinationPath"
     }
-    $existingTarget = Get-LinkTargetPath `
-      -Item $existingItem `
-      -DestinationPath $destinationPath
-    if (-not $existingTarget -or -not $existingTarget.Equals($sourcePath, [StringComparison]::OrdinalIgnoreCase)) {
+    $existingTarget = Get-LinkTargetPath -Item $existingItem -DestinationPath $destinationPath
+    if (-not (Test-PathEqual $existingTarget $sourcePath)) {
       throw "Destination is already a different link: $destinationPath -> $existingTarget"
     }
     $alreadyLinked = $true

@@ -1,4 +1,4 @@
-# Product opportunity and domain framing
+# Topic bundle for product opportunity and domain framing
 domain-modeling
 product-opportunity-discovery
 product-opportunity-prioritization

@@ -116,8 +116,8 @@ Integrate a new owner in both directions:
 - update the catalog row in `docs/catalog.md`; the relationship graph,
   important distinctions, and evaluator table in `docs/skill-boundaries.md`;
   common compositions in `docs/composition-guide.md`; the relevant prompt in
-  `docs/example-prompts.md`; at least one applicable package manifest under
-  `install/packages/`; and the skill count in `README.md`; and
+  `docs/example-prompts.md`; applicable topic-bundle or workflow-profile
+  manifests under `install/packages/`; and the skill count in `README.md`; and
 - keep orchestration, specification, design, implementation, evaluation, and
   multi-workstream program flow distinct.
 
@@ -149,8 +149,10 @@ fresh agent.
 - Check generated metadata for shell-expanded `$skill-name` values, scaffold
   residue, broken reference links, and stale catalog counts.
 - Run both installers in list mode so package validation confirms that every
-  manifest is internally unique and alphabetically sorted, and the combined
-  manifests cover every skill.
+  manifest is internally unique, alphabetically sorted, and references current
+  skills. Confirm that each workflow profile remains closed for its declared
+  normal-path compositions; topic bundles may intentionally overlap or omit
+  unrelated catalog skills.
 - Forward-test consequential workflow changes against realistic ordinary and
   boundary cases. The correct boundary result may be to stop, retain a
   protection, or use a smaller or independent skill.

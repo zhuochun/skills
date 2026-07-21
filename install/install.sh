@@ -3,15 +3,19 @@ set -eu
 
 usage() {
   cat <<'EOF'
-Install skill links from this checkout.
+Manage skill links from this checkout.
 
 Usage:
-  sh install/install.sh [selection] [target] [options]
+  sh install/install.sh [install|doctor|uninstall] [selection] [target] [options]
+
+Actions:
+  install               Create skill links (default).
+  doctor                Inspect one target without writing. Selection is optional.
+  uninstall             Remove only links owned by this checkout.
 
 Selection (choose one):
-  --skill NAME          Install one skill.
-  --package NAME        Install product, software, software-light,
-                        operational, misc, or all.
+  --skill NAME          Select one skill.
+  --package NAME        Select a *-bundles or *-profile package, or all.
 
 Target (choose one; prompted when omitted):
   --target user-agents  $HOME/.agents/skills
@@ -25,13 +29,14 @@ Target (choose one; prompted when omitted):
 Options:
   --project-root PATH   Existing repository root for a project target.
   --target-dir PATH     Exact skills directory for the custom target.
-  --dry-run             Validate and print links without writing.
+  --dry-run             Print install or uninstall effects without writing.
   --list                List available skills and packages.
   -h, --help            Show this help.
 
-With no selection or target arguments, the script opens interactive menus.
-Existing files and directories are never replaced. An existing absolute
-symlink to the same source is treated as already installed.
+With no selection or target arguments, install and uninstall open interactive
+menus. Doctor scans all links from this checkout unless a selection is given.
+Existing files, directories, and links from other sources are never replaced
+or removed.
 EOF
 }
 
@@ -47,6 +52,14 @@ packages_root=$script_dir/packages
 
 [ -d "$skills_root" ] || die "Skills root was not found: $skills_root"
 [ -d "$packages_root" ] || die "Package root was not found: $packages_root"
+
+action=install
+case "${1-}" in
+  install|doctor|uninstall)
+    action=$1
+    shift
+    ;;
+esac
 
 skill_name=
 package_name=
@@ -109,9 +122,8 @@ list_skills() {
   done | LC_ALL=C sort
 }
 
-list_packages() {
-  printf '%s\n' all
-  for manifest_path in "$packages_root"/*.txt; do
+list_bundle_packages() {
+  for manifest_path in "$packages_root"/*-bundles.txt; do
     if [ -f "$manifest_path" ]; then
       manifest_name=$(basename "$manifest_path")
       printf '%s\n' "${manifest_name%.txt}"
@@ -119,68 +131,93 @@ list_packages() {
   done | LC_ALL=C sort
 }
 
-validate_skill_name() {
+list_profile_packages() {
+  for manifest_path in "$packages_root"/*-profile.txt; do
+    if [ -f "$manifest_path" ]; then
+      manifest_name=$(basename "$manifest_path")
+      printf '%s\n' "${manifest_name%.txt}"
+    fi
+  done | LC_ALL=C sort
+}
+
+list_packages() {
+  list_bundle_packages
+  list_profile_packages
+  printf '%s\n' all
+}
+
+validate_skill_syntax() {
   candidate=$1
   case "$candidate" in
     ''|*[!a-z0-9-]*) die "Invalid skill name: $candidate" ;;
   esac
+}
+
+validate_current_skill() {
+  candidate=$1
+  validate_skill_syntax "$candidate"
   [ -f "$skills_root/$candidate/SKILL.md" ] || die "Skill was not found: $candidate"
 }
 
-validate_package_partition() {
-  partition_entries=
-  partition_carriage_return=$(printf '\r')
+validate_packages() {
+  package_count=0
+  package_carriage_return=$(printf '\r')
 
-  for partition_manifest in "$packages_root"/*.txt; do
-    [ -f "$partition_manifest" ] || continue
-    partition_manifest_count=0
-    partition_manifest_entries=
-    while IFS= read -r partition_line || [ -n "$partition_line" ]; do
-      partition_line=${partition_line%"$partition_carriage_return"}
-      case "$partition_line" in
+  for package_manifest in "$packages_root"/*.txt; do
+    [ -f "$package_manifest" ] || continue
+    package_count=$((package_count + 1))
+    package_base=$(basename "$package_manifest" .txt)
+    case "$package_base" in
+      *-bundles|*-profile) ;;
+      *) die "Package name must end in -bundles or -profile: $package_base" ;;
+    esac
+
+    package_manifest_count=0
+    package_manifest_entries=
+    while IFS= read -r package_line || [ -n "$package_line" ]; do
+      package_line=${package_line%"$package_carriage_return"}
+      case "$package_line" in
         ''|'#'*) continue ;;
       esac
-      validate_skill_name "$partition_line"
-      partition_manifest_count=$((partition_manifest_count + 1))
-      if [ -z "$partition_manifest_entries" ]; then
-        partition_manifest_entries=$partition_line
+      validate_current_skill "$package_line"
+      package_manifest_count=$((package_manifest_count + 1))
+      if [ -z "$package_manifest_entries" ]; then
+        package_manifest_entries=$package_line
       else
-        partition_manifest_entries="$partition_manifest_entries
-$partition_line"
+        package_manifest_entries="$package_manifest_entries
+$package_line"
       fi
-      if [ -z "$partition_entries" ]; then
-        partition_entries=$partition_line
-      else
-        partition_entries="$partition_entries
-$partition_line"
-      fi
-    done < "$partition_manifest"
-    [ "$partition_manifest_count" -gt 0 ] || die "Package is empty: $partition_manifest"
-    partition_manifest_duplicates=$(printf '%s\n' "$partition_manifest_entries" | LC_ALL=C sort | uniq -d)
-    [ -z "$partition_manifest_duplicates" ] || \
-      die "Package contains duplicate skills: $partition_manifest -> $partition_manifest_duplicates"
-    partition_manifest_sorted=$(printf '%s\n' "$partition_manifest_entries" | LC_ALL=C sort)
-    [ "$partition_manifest_entries" = "$partition_manifest_sorted" ] || \
-      die "Package entries must be alphabetically sorted: $partition_manifest"
+    done < "$package_manifest"
+
+    [ "$package_manifest_count" -gt 0 ] || die "Package is empty: $package_manifest"
+    package_manifest_duplicates=$(printf '%s\n' "$package_manifest_entries" | LC_ALL=C sort | uniq -d)
+    [ -z "$package_manifest_duplicates" ] || \
+      die "Package contains duplicate skills: $package_manifest -> $package_manifest_duplicates"
+    package_manifest_sorted=$(printf '%s\n' "$package_manifest_entries" | LC_ALL=C sort)
+    [ "$package_manifest_entries" = "$package_manifest_sorted" ] || \
+      die "Package entries must be alphabetically sorted: $package_manifest"
   done
 
-  [ -n "$partition_entries" ] || die 'No package entries were found.'
-
-  for partition_skill in $(list_skills); do
-    partition_count=$(printf '%s\n' "$partition_entries" | grep -F -x -c "$partition_skill" || true)
-    [ "$partition_count" -ge 1 ] || die "Skill must appear in at least one package: $partition_skill"
-  done
+  [ "$package_count" -gt 0 ] || die 'No package manifests were found.'
 }
 
-validate_package_partition
+validate_packages
 
 if [ "$list_only" -eq 1 ]; then
-  printf 'Packages:\n'
-  list_packages | sed 's/^/  /'
+  printf 'Topic bundles:\n'
+  list_bundle_packages | sed 's/^/  /'
+  printf 'Workflow profiles:\n'
+  list_profile_packages | sed 's/^/  /'
+  printf 'Computed package:\n  all\n'
   printf 'Skills:\n'
   list_skills | sed 's/^/  /'
   exit 0
 fi
+
+[ -z "$skill_name" ] || [ -z "$package_name" ] || \
+  die 'Choose either --skill or --package, not both.'
+[ "$action" != doctor ] || [ "$dry_run" -eq 0 ] || \
+  die '--dry-run is not valid with doctor because doctor never writes.'
 
 choose_item() {
   prompt=$1
@@ -220,16 +257,12 @@ choose_item() {
   esac
 }
 
-if [ -n "$skill_name" ] && [ -n "$package_name" ]; then
-  die 'Choose either --skill or --package, not both.'
-fi
-
-if [ -z "$skill_name" ] && [ -z "$package_name" ]; then
-  selection_kind=$(choose_item 'Install an individual skill or a package?' skill package)
+if [ -z "$skill_name" ] && [ -z "$package_name" ] && [ "$action" != doctor ]; then
+  selection_kind=$(choose_item "$action an individual skill or a package?" skill package)
   if [ "$selection_kind" = skill ]; then
     skill_name=$(choose_item 'Choose a skill:' $(list_skills))
   else
-    package_name=$(choose_item 'Choose a package:' $(list_packages))
+    package_name=$(choose_item 'Choose a topic bundle, workflow profile, or all:' $(list_packages))
   fi
 fi
 
@@ -292,40 +325,156 @@ if [ -n "$target_dir" ] && [ "$target_name" != custom ]; then
   die '--target-dir is valid only with the custom target.'
 fi
 
+selected_skills=
 if [ -n "$skill_name" ]; then
-  validate_skill_name "$skill_name"
+  validate_skill_syntax "$skill_name"
+  if [ "$action" = install ]; then
+    validate_current_skill "$skill_name"
+  fi
   selected_skills=$skill_name
-else
+elif [ "$package_name" = all ]; then
+  selected_skills=$(list_skills)
+elif [ -n "$package_name" ]; then
   case "$package_name" in
-    all)
-      selected_skills=$(list_skills)
-      ;;
-    ''|*[!a-z0-9-]*)
-      die "Invalid package name: $package_name"
-      ;;
-    *)
-      manifest_path=$packages_root/$package_name.txt
-      [ -f "$manifest_path" ] || die "Package was not found: $package_name"
-      selected_skills=
-      carriage_return=$(printf '\r')
-      while IFS= read -r manifest_line || [ -n "$manifest_line" ]; do
-        manifest_line=${manifest_line%"$carriage_return"}
-        case "$manifest_line" in
-          ''|'#'*) continue ;;
-        esac
-        validate_skill_name "$manifest_line"
-        if [ -z "$selected_skills" ]; then
-          selected_skills=$manifest_line
-        else
-          selected_skills="$selected_skills
-$manifest_line"
-        fi
-      done < "$manifest_path"
-      [ -n "$selected_skills" ] || die "Package is empty: $package_name"
-      duplicate_skills=$(printf '%s\n' "$selected_skills" | LC_ALL=C sort | uniq -d)
-      [ -z "$duplicate_skills" ] || die "Package contains duplicate skills: $duplicate_skills"
-      ;;
+    *[!a-z0-9-]*) die "Invalid package name: $package_name" ;;
   esac
+  manifest_path=$packages_root/$package_name.txt
+  [ -f "$manifest_path" ] || die "Package was not found: $package_name"
+  carriage_return=$(printf '\r')
+  while IFS= read -r manifest_line || [ -n "$manifest_line" ]; do
+    manifest_line=${manifest_line%"$carriage_return"}
+    case "$manifest_line" in
+      ''|'#'*) continue ;;
+    esac
+    if [ -z "$selected_skills" ]; then
+      selected_skills=$manifest_line
+    else
+      selected_skills="$selected_skills
+$manifest_line"
+    fi
+  done < "$manifest_path"
+fi
+
+if [ "$action" = doctor ]; then
+  healthy_count=0
+  issue_count=0
+
+  if [ ! -d "$target_root" ]; then
+    printf '[missing-target] %s\n' "$target_root"
+    issue_count=$((issue_count + 1))
+  elif [ -n "$selected_skills" ]; then
+    while IFS= read -r selected_skill; do
+      [ -n "$selected_skill" ] || continue
+      source_path=$skills_root/$selected_skill
+      destination_path=$target_root/$selected_skill
+
+      if [ -L "$destination_path" ]; then
+        existing_target=$(readlink "$destination_path")
+        if [ "$existing_target" != "$source_path" ]; then
+          printf '[wrong-source] %s -> %s\n' "$destination_path" "$existing_target"
+          issue_count=$((issue_count + 1))
+        elif [ ! -f "$source_path/SKILL.md" ]; then
+          printf '[broken] %s -> %s\n' "$destination_path" "$source_path"
+          issue_count=$((issue_count + 1))
+        else
+          printf '[healthy] %s -> %s\n' "$destination_path" "$source_path"
+          healthy_count=$((healthy_count + 1))
+        fi
+      elif [ -e "$destination_path" ]; then
+        printf '[conflict] %s is not a symbolic link\n' "$destination_path"
+        issue_count=$((issue_count + 1))
+      else
+        printf '[missing] %s\n' "$destination_path"
+        issue_count=$((issue_count + 1))
+      fi
+    done <<EOF
+$selected_skills
+EOF
+  else
+    owned_link_count=0
+    for destination_path in "$target_root"/*; do
+      [ -L "$destination_path" ] || continue
+      existing_target=$(readlink "$destination_path")
+      case "$existing_target" in
+        "$skills_root"/*)
+          target_tail=${existing_target#"$skills_root"/}
+          case "$target_tail" in
+            */*) continue ;;
+          esac
+          owned_link_count=$((owned_link_count + 1))
+          target_skill_name=${existing_target##*/}
+          destination_skill_name=${destination_path##*/}
+          if [ "$destination_skill_name" != "$target_skill_name" ]; then
+            printf '[wrong-name] %s -> %s\n' "$destination_path" "$existing_target"
+            issue_count=$((issue_count + 1))
+          elif [ ! -f "$existing_target/SKILL.md" ]; then
+            printf '[broken] %s -> %s\n' "$destination_path" "$existing_target"
+            issue_count=$((issue_count + 1))
+          else
+            printf '[healthy] %s -> %s\n' "$destination_path" "$existing_target"
+            healthy_count=$((healthy_count + 1))
+          fi
+          ;;
+      esac
+    done
+    if [ "$owned_link_count" -eq 0 ]; then
+      printf 'No links from this checkout were found.\n'
+    fi
+  fi
+
+  printf 'Target: %s\n' "$target_root"
+  printf 'Healthy links: %s; issues: %s\n' "$healthy_count" "$issue_count"
+  [ "$issue_count" -eq 0 ] || exit 1
+  exit 0
+fi
+
+if [ "$action" = uninstall ]; then
+  # Preflight the whole selection before removing any links.
+  while IFS= read -r selected_skill; do
+    [ -n "$selected_skill" ] || continue
+    source_path=$skills_root/$selected_skill
+    destination_path=$target_root/$selected_skill
+
+    if [ -L "$destination_path" ]; then
+      existing_target=$(readlink "$destination_path")
+      [ "$existing_target" = "$source_path" ] || \
+        die "Destination is a different symlink and will not be removed: $destination_path -> $existing_target"
+    elif [ -e "$destination_path" ]; then
+      die "Destination is not a symbolic link and will not be removed: $destination_path"
+    fi
+  done <<EOF
+$selected_skills
+EOF
+
+  removed_count=0
+  absent_count=0
+  while IFS= read -r selected_skill; do
+    [ -n "$selected_skill" ] || continue
+    source_path=$skills_root/$selected_skill
+    destination_path=$target_root/$selected_skill
+
+    if [ ! -L "$destination_path" ]; then
+      printf 'Already absent: %s\n' "$destination_path"
+      absent_count=$((absent_count + 1))
+    elif [ "$dry_run" -eq 1 ]; then
+      printf '[dry-run] Remove link: %s -> %s\n' "$destination_path" "$source_path"
+      removed_count=$((removed_count + 1))
+    else
+      rm "$destination_path"
+      printf 'Removed link: %s -> %s\n' "$destination_path" "$source_path"
+      removed_count=$((removed_count + 1))
+    fi
+  done <<EOF
+$selected_skills
+EOF
+
+  printf 'Target: %s\n' "$target_root"
+  if [ "$dry_run" -eq 1 ]; then
+    printf 'Planned removals: %s; already absent: %s\n' "$removed_count" "$absent_count"
+  else
+    printf 'Removed links: %s; already absent: %s\n' "$removed_count" "$absent_count"
+  fi
+  exit 0
 fi
 
 # Preflight the whole selection before creating any links.

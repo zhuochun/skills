@@ -1,4 +1,4 @@
-# Larger-scale software understanding, design, change, coordination, and verification
+# Composition-closed profile for larger-scale software delivery workflows
 architecture-assessment
 architecture-risk-evaluation
 architecture-surface-mapping
@@ -8,10 +8,14 @@ controlled-release-design
 deep-module-design
 domain-modeling
 migration-planning
+observability-design
+operational-feedback-audit
 platform-capability-design
 retrospective-architecture-review
 scoped-change-implementation
 service-boundary-design
+service-capacity-engineering
+service-ownership-design
 software-change-orchestration
 software-change-specification
 software-contract-evolution

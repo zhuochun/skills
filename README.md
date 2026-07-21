@@ -29,10 +29,11 @@ user, project, or custom destination:
 sh install/install.sh
 ```
 
-Both scripts create live directory links and support user-scoped `.agents`,
-`.codex`, and `.claude` skills; their project-scoped equivalents; or an exact
-custom directory. See the [installation guide](docs/installation.md) for
-non-interactive examples, curated packages, dry runs, and Windows junctions.
+Both scripts install, diagnose, and safely uninstall live directory links for
+user-scoped `.agents`, `.codex`, and `.claude` skills; their project-scoped
+equivalents; or an exact custom directory. See the
+[installation guide](docs/installation.md) for topic bundles, workflow
+profiles, non-interactive examples, dry runs, and Windows junctions.
 
 You can also use the cross-agent `skills.sh` installer to select skills from
 this public repository:
@@ -76,8 +77,9 @@ If none of these describes the missing decision or artifact, use the
 
 ## Explore the collection
 
-- [Installation guide](docs/installation.md) — select a skill or package and
-  link it into a user, project, or custom skills directory.
+- [Installation guide](docs/installation.md) — install, diagnose, or uninstall
+  a skill, topic bundle, or workflow profile in a user, project, or custom
+  skills directory.
 - [Skill catalog](docs/catalog.md) — choose the owner of the decision, artifact,
   or action you need.
 - [Skill boundaries and relationships](docs/skill-boundaries.md) — compare

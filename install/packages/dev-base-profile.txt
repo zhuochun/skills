@@ -1,4 +1,4 @@
-# Small-project and monolith software change, design, and verification
+# Composition-closed profile for bounded local software change workflows
 architecture-assessment
 architecture-surface-mapping
 behavior-preserving-refactoring
