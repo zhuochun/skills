@@ -3,6 +3,10 @@
 Use this catalog to choose the skill that owns the decision, artifact, or
 action currently missing. For neighboring skills whose boundaries are easy to
 confuse, continue to the [skill boundaries and relationships](skill-boundaries.md).
+Each workflow produces an inspectable result: evidence and uncertainty remain
+visible, authority stays explicit, and weak inputs can lead to a conditional or
+`not ready` outcome instead of invented completeness.
+
 Name the subject of interest, decision lens, and work or coordination unit
 separately; they are cross-cutting axes, not one size hierarchy. See the
 [scope vocabulary](skill-boundaries.md#scope-vocabulary).
@@ -18,7 +22,11 @@ Keep implicit invocation for a small set of front doors that represent distinct 
 - `software-failure-diagnosis`
 - `code-review`
 
-Set `policy.allow_implicit_invocation: false` in `agents/openai.yaml` for every other catalog skill. These specialist, evaluator, planning, and control workflows remain available through explicit `$skill-name` invocation and through an active front-door workflow's routing guidance, but their metadata does not compete in Codex's default skill context.
+Set `policy.allow_implicit_invocation: false` in `agents/openai.yaml` for every
+other catalog skill. These specialist, evaluator, planning, and control
+workflows remain available through explicit `$skill-name` invocation and an
+active front-door workflow's routing guidance, without competing in the
+default agent context.
 
 Treat this as an invocation policy, not an importance ranking or a mandatory lifecycle. Add another implicit front door only when it owns a common top-level intent that the existing front doors cannot route reliably without already knowing the specialist name.
 

@@ -5,6 +5,10 @@ boundaries differ, and why producing and evaluating an artifact remain
 separate jobs. For common multi-skill routes, see the
 [composition guide](composition-guide.md).
 
+These boundaries keep evidence-based work honest: a broad request does not
+silently become permission to decide everything, and a producer's confidence
+does not substitute for independent evaluation.
+
 ## Scope vocabulary
 
 Do not force module, codebase, service, platform, product, change, and program

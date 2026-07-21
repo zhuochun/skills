@@ -1,54 +1,59 @@
-# Product and Software Engineering Skills for Codex
+# Evidence-Based Product and Software Engineering Skills
 
-This repository contains 30 reusable Codex skills for consequential product
-and software-engineering work. Each skill owns a distinct decision, reasoning
-artifact, or action so that you can use the smallest workflow appropriate to
-the task instead of adopting a mandatory lifecycle.
+Make consequential product and engineering work inspectable, not merely
+plausible. This collection provides agent skills for decisions, artifacts, and
+actions that need stronger reasoning than a generic checklist.
 
-The skills require evidence, expose uncertainty, preserve accountable human
-decisions, and distinguish producing an artifact from independently evaluating
-whether it works.
+Its workflows are designed to:
+
+- ground claims in repository, runtime, customer, and organizational evidence;
+- distinguish observations, inferences, assumptions, and unresolved questions;
+- give each decision or artifact one clear owner without imposing a universal
+  lifecycle;
+- scale ceremony and independent challenge with consequence and
+  irreversibility; and
+- preserve accountable human authority for risk, investment, release, and
+  operational decisions.
+
+The result is work that can be challenged, resumed, verified, and acted on—not
+just polished output that sounds confident.
 
 ## Get started
 
-Clone the collection:
+To install selected skills across supported agents, use `skills.sh`:
+
+```sh
+npx skills add zhuochun/skills --list
+npx skills add zhuochun/skills --skill architecture-surface-mapping
+```
+
+Codex users can add the marketplace below, then install the `bicrement` plugin
+from the Plugins Directory:
+
+```sh
+codex plugin marketplace add zhuochun/skills
+```
+
+For package selection, project-scoped installation, live links, dry runs,
+diagnosis, or safe uninstall, clone the repository and use its installer:
 
 ```powershell
 git clone https://github.com/zhuochun/skills.git zhuochun-skills
 Set-Location -LiteralPath '.\zhuochun-skills'
-```
-
-Run the interactive installer and choose an individual skill or package, then a
-user, project, or custom destination:
-
-```powershell
 .\install\install.ps1
 ```
 
 ```sh
+git clone https://github.com/zhuochun/skills.git zhuochun-skills
+cd zhuochun-skills
 sh install/install.sh
 ```
 
-Both scripts install, diagnose, and safely uninstall live directory links for
-user-scoped `.agents`, `.codex`, and `.claude` skills; their project-scoped
-equivalents; or an exact custom directory. See the
-[installation guide](docs/installation.md) for topic bundles, workflow
-profiles, non-interactive examples, dry runs, and Windows junctions.
+See the [installation guide](docs/installation.md) for targets, packages,
+non-interactive commands, local plugin development, and update instructions.
 
-You can also use the cross-agent `skills.sh` installer to select skills from
-this public repository:
-
-```sh
-npx skills add zhuochun/skills --list
-npx skills add zhuochun/skills --agent codex --skill architecture-surface-mapping
-```
-
-For Codex, the complete catalog is available as one Marketplace plugin. Add
-the marketplace with `codex plugin marketplace add zhuochun/skills`, then
-install **Bicrement** from the Plugins Directory. The installation guide
-includes local-development and update commands.
-
-Invoke the skill explicitly:
+Invoke a directly installed skill by name. Plugin runtimes may add a namespace;
+the Codex plugin uses `$bicrement:skill-name`.
 
 ```text
 Use $architecture-surface-mapping to orient me to this unfamiliar system before I change it.
@@ -59,9 +64,8 @@ probes. Do not modify the repository.
 
 ## Choose a starting point
 
-These six skills are the collection's implicit front doors for common
-top-level intents. You can also invoke any specialist explicitly as
-`$skill-name`.
+These skills are the collection's implicit front doors for common top-level
+intents. You can also invoke any specialist explicitly.
 
 | When you need to... | Start with |
 | --- | --- |

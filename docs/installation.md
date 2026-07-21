@@ -1,8 +1,10 @@
 # Installation
 
-The repository installers create live links from an agent's skills directory
-to this checkout. A later `git pull` updates installed skills in place. Keep the
-checkout at a stable absolute path; moving it breaks existing links.
+Install individual skills, a topic bundle, a composition-closed workflow
+profile, or the complete collection. The repository installers create live
+links from an agent's skills directory to this checkout, so a later `git pull`
+updates installed skills in place. Keep the checkout at a stable absolute path;
+moving it breaks existing links.
 
 Use [`install.sh`](../install/install.sh) on macOS and Unix, or
 [`install.ps1`](../install/install.ps1) on Windows. They provide the same
@@ -15,19 +17,21 @@ Install one or more individual skills with
 
 ```sh
 npx skills add zhuochun/skills --list
-npx skills add zhuochun/skills --agent codex --skill architecture-surface-mapping
+npx skills add zhuochun/skills --skill architecture-surface-mapping
 ```
 
 Add `--global` for a user-scoped installation.
 
-For Codex, the Marketplace plugin installs the complete catalog:
+### Codex plugin
+
+The Marketplace plugin installs the complete collection:
 
 ```sh
 codex plugin marketplace add zhuochun/skills
 ```
 
 Restart Codex, open the Plugins Directory or `/plugins`, and install
-**Bicrement**. For local plugin development, add this checkout with
+`bicrement`. For local plugin development, add this checkout with
 `codex plugin marketplace add .`. To refresh a published installation, run
 `codex plugin marketplace upgrade bicrement` and reinstall the plugin.
 
@@ -89,11 +93,11 @@ paths; exceptional routes may leave the profile. See the
 
 | Package | Kind | Contents |
 | --- | --- | --- |
-| [`product-bundles`](../install/packages/product-bundles.txt) | Topic bundle | 3 product-opportunity and domain-framing skills |
-| [`operational-bundles`](../install/packages/operational-bundles.txt) | Topic bundle | 6 service operation, ownership, feedback, and incident skills |
-| [`leadership-bundles`](../install/packages/leadership-bundles.txt) | Topic bundle | 5 technical leadership, coordination, ownership, decision, and growth skills |
-| [`dev-base-profile`](../install/packages/dev-base-profile.txt) | Workflow profile | 14 skills for bounded local change, diagnosis, refactoring, review, and verification |
-| [`dev-profile`](../install/packages/dev-profile.txt) | Workflow profile | 25 skills for larger-scale design, delivery, release, operational feedback, and verification |
+| [`product-bundles`](../install/packages/product-bundles.txt) | Topic bundle | Product opportunity and domain framing |
+| [`operational-bundles`](../install/packages/operational-bundles.txt) | Topic bundle | Service operation, ownership, feedback, and incident work |
+| [`leadership-bundles`](../install/packages/leadership-bundles.txt) | Topic bundle | Technical leadership, coordination, ownership, decisions, and growth |
+| [`dev-base-profile`](../install/packages/dev-base-profile.txt) | Workflow profile | Bounded local change, diagnosis, refactoring, review, and verification |
+| [`dev-profile`](../install/packages/dev-profile.txt) | Workflow profile | Broader design, delivery, release, operational feedback, and verification |
 | `all` | Computed | Every current skill under `skills/` |
 
 `all` is computed so new skills are not silently omitted. Other manifests are
@@ -102,14 +106,14 @@ or omit unrelated catalog skills.
 
 ## Common commands
 
-Install the base development profile for user-scoped Codex discovery:
+Install the base development profile for user-scoped agent discovery:
 
 ```sh
-sh install/install.sh --package dev-base-profile --target user-codex
+sh install/install.sh --package dev-base-profile --target user-agents
 ```
 
 ```powershell
-.\install\install.ps1 -Package dev-base-profile -Target user-codex
+.\install\install.ps1 -Package dev-base-profile -Target user-agents
 ```
 
 For a project target, add its existing root:
@@ -149,11 +153,11 @@ reports missing, broken, wrongly named, wrong-source, and conflicting entries,
 and exits unsuccessfully when it finds an issue.
 
 ```sh
-sh install/install.sh doctor --target user-codex
+sh install/install.sh doctor --target user-agents
 ```
 
 ```powershell
-.\install\install.ps1 -Action Doctor -Target user-codex
+.\install\install.ps1 -Action Doctor -Target user-agents
 ```
 
 Doctor never scans unrelated targets or repairs links automatically.
@@ -168,7 +172,7 @@ anything is removed.
 ```sh
 sh install/install.sh uninstall \
   --package leadership-bundles \
-  --target user-codex \
+  --target user-agents \
   --dry-run
 ```
 
@@ -176,7 +180,7 @@ sh install/install.sh uninstall \
 .\install\install.ps1 `
   -Action Uninstall `
   -Package leadership-bundles `
-  -Target user-codex `
+  -Target user-agents `
   -DryRun
 ```
 

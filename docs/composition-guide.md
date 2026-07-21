@@ -4,6 +4,10 @@ Use these examples when a request spans several decisions or artifacts. They
 are optional routes through the catalog, not a mandatory lifecycle or
 universal stage-gate process.
 
+Compose only when the evidence or consequence demands another owner. Reuse
+accepted results, keep uncertainty visible, and stop when the smallest credible
+workflow has answered the decision.
+
 Before composing, name the subject of interest, the missing decision lens, and
 the work or coordination unit separately. Terms such as service, platform,
 product, architecture, change, and program can cross those axes; see the
