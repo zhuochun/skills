@@ -4,86 +4,34 @@ This repository maintains product and software-engineering workflows for
 consequential work. Keep [`README.md`](README.md) focused on installation and
 first use. The authoritative references are:
 
+- [`WRITE_SKILL.md`](WRITE_SKILL.md) for skill admission, ownership, contracts,
+  language, token efficiency, and composition boundaries;
 - [`docs/catalog.md`](docs/catalog.md) for the catalog;
 - [`docs/skill-boundaries.md`](docs/skill-boundaries.md) for ownership and
   relationships;
 - [`docs/composition-guide.md`](docs/composition-guide.md) for composition; and
 - [`evals/README.md`](evals/README.md) for comparative evaluation.
 
-## Admit only grounded, distinct workflows
+## Prepare a bounded contribution
 
-Before adding or materially changing a skill:
+Read [`WRITE_SKILL.md`](WRITE_SKILL.md) completely before adding or materially
+changing a skill. In the change description:
 
-- state the missing decision, artifact, or action and collect representative
-  triggers and non-triggers;
-- search the relevant `maps/` in the `talks-and-articles` knowledge base and
-  read the smallest sufficient source set;
-- extract supported mechanisms, inputs, outputs, authority boundaries, gates,
-  stop conditions, and specific failure modes; and
-- compare neighboring owners in the catalog and boundary model, refining an
-  existing skill when it already owns the work.
+- name the missing decision, artifact, or action;
+- identify the affected owner and nearest neighboring skills;
+- record the source set and representative triggers or non-triggers; and
+- state whether the change affects invocation, contract, composition,
+  distribution, or evaluation.
 
-Reject or defer generic advice that lacks a distinct owner or enforceable
-workflow. Preserve source provenance in review or commit context, not as a
-research diary in `SKILL.md`. If the maps provide only adjacent context, run a
-focused extraction and overlap check before authoring; keep concept extraction
-and map editing as separate scopes.
+Preserve source provenance in review or commit context. Keep research diaries
+out of `SKILL.md`.
 
-## Define one clear owner
-
-Choose a concise action or artifact name only after its proposition, output,
-and boundary are stable. A contributor should be able to answer:
-
-- What does this skill own that its nearest neighbor does not?
-- Is it producing, evaluating, executing, coordinating, or preserving state?
-- Which decisions remain with another specialist or accountable human?
-- Can a small reversible change bypass it safely?
-
-When ownership overlaps, nominate one canonical owner and make neighboring
-skills consume, route to, or preserve its result.
-
-## Satisfy the skill contract
-
-Use `skill-creator` for every new skill and material update. Encode inputs,
-outputs, authority, workflow, quality gates, stop conditions, and weak-result
-rejection. Separate confirmed, inferred, assumed, proposed, and unresolved
-material; never invent a blocking specialist decision to complete an artifact.
-
-Preserve consequential interpretation, risk acceptance, and cutover for the
-accountable human. Keep `agents/openai.yaml` synchronized and name the skill as
-`$skill-name` in its default prompt. A producing skill must not silently certify
-its own output; require greater evaluator independence as consequence,
-irreversibility, or uncertainty increases.
-
-## Clarify and challenge with decision value
-
-Every skill remains responsible for baseline clarity even when the user does
-not request an interactive exchange. Inspect discoverable evidence first,
-surface material ambiguity, assumptions, unknowns, and missing authority, and
-ask only questions whose answers can change the decision or artifact the skill
-owns. Return a conditional, partial, routed, or not-ready result rather than
-silently filling a consequential gap.
-
-When interactive clarification or stress-testing is useful, partition questions
-by both decision dependency and disclosure dependency. Batch only a current
-low-sensitivity frontier whose answers remain independently understandable.
-Serialize when an answer should shape the next question, when ambiguity needs
-adaptive follow-up, when trust, power, or sensitive disclosure affects candor,
-or when a gating answer determines later relevance. Update the working model
-after each batch and suppress questions already answered by evidence or prior
-responses. Keep each skill's questions within its own decision or artifact
-lens; shared cadence does not merge specialist ownership.
-
-## Preserve composition boundaries
-
-Composition is optional, not a mandatory lifecycle. Route specialized work to
-its owner and reference stable namespaced keys instead of requiring runtime
-handoff documents or duplicating contracts.
+## Update affected surfaces
 
 When adding or changing an owner, update only the affected catalog,
 relationship, composition, example-prompt, package-manifest, and neighboring
-route surfaces. Keep orchestration, specification, design, implementation,
-evaluation, and multi-workstream coordination distinct.
+route surfaces. When changing published content or metadata, include the
+distribution surfaces described below.
 
 ## Test boundaries and verify
 

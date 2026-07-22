@@ -113,9 +113,9 @@ skills/
         └── ...
 ```
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for the source-grounding, distinctness,
-skill-contract, composition, and verification requirements for adding or
-materially changing a skill.
+See [WRITE_SKILL.md](WRITE_SKILL.md) for the skill-authoring contract. See
+[CONTRIBUTING.md](CONTRIBUTING.md) for the contribution, verification, and
+distribution workflow.
 
 The [evaluation suite](evals/) compares fresh baseline and skill-assisted runs
 on pinned repository tasks. Its [protocol](evals/README.md) defines isolation,
