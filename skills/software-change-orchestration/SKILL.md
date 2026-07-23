@@ -1,6 +1,6 @@
 ---
 name: software-change-orchestration
-description: Orchestrate one bounded software change from rough intent or an accepted opportunity through proportional specification, specialist design, authorized implementation, independent review, verification, and evidence-based closure. Use when a user wants a resumable repository-backed flow and help selecting the next specialist without remembering the catalog. Keep small reversible discussion inline, choose repository persistence by outcome ownership, and route interdependent multi-workstream delivery to technical-program-orchestration.
+description: Orchestrate one bounded software change through proportional specification, specialist design, authorized implementation, independent review, verification, and evidence-based closure. Use when work needs a resumable repository-backed flow or catalog routing. Keep small reversible work inline, choose persistence by outcome ownership, and route interdependent multi-workstream delivery to technical-program-orchestration.
 ---
 
 # Software Change Orchestration
@@ -10,37 +10,62 @@ Keep one software change moving through the smallest useful sequence of decision
 ## Preserve authority and accepted meaning
 
 - Distinguish discussion, repository-record writes, implementation, external-system writes, production actions, destructive actions, and local-history writes. Perform only authorized modes.
-- Treat explicit `authorized mode`, `auto mode`, or a goal to execute an accepted bounded change through closure as authorization for repository-record writes, in-scope implementation, internal skill routing, delegated read-only review, and verification. Before implementation, seed or update the smallest repository-backed canonical record with:
+- Treat explicit `authorized mode`, `auto mode`, or a goal to execute an
+  accepted bounded change through closure as
+  authorization for record writes, in-scope implementation, internal routing,
+  delegated read-only review, and verification. Before implementation, seed or
+  update the smallest repository-backed record with:
   - `Authorized modes: record writes, implementation, delegated review, verification`
   - accepted scope and explicit non-goals;
   - `Escalation conditions: material scope change; new external or production action; destructive action; decision that changes supported behavior`.
-- In that mode, do not pause for workflow, skill, reviewer, test, or in-scope remediation approval. Pause only at a recorded escalation condition. External, production, destructive, and local-history actions remain separately authorized. Repository, platform, and safety constraints still apply.
-- Preserve the behavior meaning of the originating request, issue, or accepted specification. Do not narrow an outcome into an easier implementation proxy. Escalate when competing interpretations would change supported behavior.
-- Treat permission to maintain a canonical record as document authority only unless broader modes are explicit. If a durable record is justified without document authority, ask before substantial specialist analysis; if declined, remain explicitly ephemeral and return a compact copy-ready checkpoint.
-- Identify accountable change and interpretation owners. Specialists own their judgments and artifacts; orchestration routes and integrates them. A producer cannot certify its own design, implementation, evidence, release, or residual risk.
+- In that mode, continue without workflow, reviewer, test, or in-scope
+  remediation approval until an escalation condition occurs. External,
+  production, destructive, and local-history actions remain separately
+  authorized; repository and safety constraints still apply.
+- Preserve the originating behavior meaning. Escalate competing
+  interpretations that change supported behavior instead of narrowing the
+  outcome to an easier implementation.
+- Treat record permission as document authority only. Without it, ask before
+  durable specialist analysis; if declined, stay ephemeral and return a
+  copy-ready checkpoint.
+- Identify accountable change and interpretation owners. Specialists own their
+  judgments; orchestration routes and integrates them. A producer cannot
+  certify its own design, implementation, evidence, release, or residual risk.
 
 ## Bound the effort and its record
 
-Define one **change effort** by one outcome, a coherent behavior or risk boundary, and a closure condition. Group slices only when they share the decisions or invariants that determine completion.
-
-- Keep unrelated enhancements and bugs separate unless they are necessary for the active outcome.
-- Route unexplained failures to `software-failure-diagnosis`, competing opportunities to product discovery or prioritization, and interdependent multi-workstream delivery to `technical-program-orchestration`.
+Define one **change effort** by one outcome, coherent behavior or risk
+boundary, and closure condition. Group only slices that share completion
+decisions or invariants. Exclude unrelated work; route unexplained failures to
+`software-failure-diagnosis`, competing opportunities to product discovery or
+prioritization, and interdependent workstreams to
+`technical-program-orchestration`.
 
 Choose persistence by ownership and re-entry need:
 
-1. **Inline:** Local, reversible work with clear behavior, one owner, no consequential unresolved decision, and a short feedback loop. Keep discussion or a compact implementation contract in the active task and use the appropriate primary executor; create no orchestration directory.
-2. **Owning repository:** One repository owns the behavior and its existing specification, issue, design, or change surface is the natural source of truth.
-3. **Control repository:** No code repository owns the outcome, or an established product or system repository already coordinates the cross-repository decisions. Link code-local artifacts rather than copying them.
-4. **Hybrid:** One control record indexes important specifications, decisions, implementations, or evidence that remain canonical with their owners.
+1. **Inline:** Keep clear, local, reversible work in the active task with its
+   primary executor; create no orchestration directory.
+2. **Owning repository:** Use its existing issue, specification, design, or
+   change surface when one repository owns the behavior.
+3. **Control repository:** Use an established cross-repository outcome surface
+   when no code repository owns the outcome. Link code-local artifacts.
+4. **Hybrid:** Let one control record index artifacts that remain canonical
+   with their owners.
 
-Explicit authorized execution always uses at least one minimal repository-backed record, even when compact. Never create a new control repository, relocate artifacts, or create a directory merely to host one file without authorization and demonstrated need.
+Authorized execution requires one minimal repository-backed record. Do not
+create a control repository, relocate artifacts, or create a one-file
+directory without authorization and demonstrated need.
 
 Maintain one living canonical work surface:
 
-- Seed accepted outcome, scope, preserved behavior, constraints, authority, and available evidence before substantial specialist analysis when record writes are authorized.
-- Integrate each accepted specialist delta before dependent work. Keep rationale only when losing it would cause likely drift; do not append a decision ledger or session transcript.
-- Split artifacts only when ownership, audience, size, or review and evidence lifecycle requires independent maintenance. Keep canonical links instead of copies.
-- Keep the immediate frontier in the active session during uninterrupted work. Persist a resume point only for a pause, block, handoff, session change, or non-obvious re-entry; re-read the record and worktree before updating it.
+- Seed outcome, scope, preserved behavior, constraints, authority, and available
+  evidence before substantial specialist analysis.
+- Integrate accepted specialist deltas before dependent work. Retain only
+  rationale needed to prevent drift; do not append a ledger or transcript.
+- Split artifacts only for independent ownership, audience, size, review, or
+  evidence lifecycles. Link canonical artifacts instead of copying them.
+- Keep the immediate frontier in session. Persist it only for a pause, block,
+  handoff, session change, or non-obvious re-entry; reread current state first.
 
 Read [references/change-orchestration.md](references/change-orchestration.md) only when repository placement is unclear, multiple artifacts may need independent lifecycles, a compact record form is useful, or the next specialist route is uncertain.
 
@@ -86,18 +111,27 @@ Reuse evidence while its claim, snapshot, method, and material environment still
 
 ## Gates and stop conditions
 
-Do not advance past missing authority, materially ambiguous supported behavior, unsafe state or ownership, failed required verification, or unresolved actionable review findings. In authorized mode, investigate and remediate these autonomously while they remain inside the accepted scope; escalate only under the four recorded conditions.
+Do not advance past missing authority, materially ambiguous supported behavior,
+unsafe state or ownership, failed required verification, or unresolved
+actionable review findings. In authorized mode, investigate and remediate
+in-scope failures; escalate only at the four recorded conditions.
 
-Do not block the effort on optional narrative, nonessential metrics, still-valid evidence not rerun, artifact polish, or a weaker check already covered by stronger evidence. Record a limitation only where it narrows a claimed result or future action.
+Do not block on optional narrative, polish, nonessential metrics, valid evidence
+not rerun, or a weaker check already covered by stronger evidence. Record only
+limitations that narrow a claim or future action.
 
 Reject:
 
-- fixed stage sequences, stacked executors, or full specialist workflows invoked only to borrow one check;
-- canonical records that narrow the originating behavior or duplicate owned specifications, decisions, tests, or evidence;
-- orchestration directories, generic ledgers, session diaries, and status prose without a decision, contract, evidence limit, or re-entry value;
-- repeated framing, review, full-suite execution, or closure reporting merely because control moved to another skill;
-- closure inferred from document completion, implementation, test volume, or the producer's confidence;
-- continued orchestration after an accountable owner, specialist, or safety boundary requires a stop.
+- fixed stages, stacked executors, or full workflows invoked for one check;
+- records that narrow originating behavior or duplicate owned artifacts;
+- orchestration directories, ledgers, diaries, or status prose without
+  decision, evidence, or re-entry value;
+- repeated framing, review, full-suite execution, or closure reporting caused
+  only by a skill transition;
+- closure inferred from documents, implementation, test volume, or producer
+  confidence;
+- continuation after an accountable owner, specialist, or safety boundary
+  requires a stop.
 
 ## Completion
 

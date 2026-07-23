@@ -1,6 +1,6 @@
 ---
 name: migration-planning
-description: Design a survivable technical migration when consumers, authoritative traffic, stored state, execution, infrastructure, or technical authority must move from an established state carrying supported obligations to an accepted replacement, with the old state intended to lose authority and become retireable. Use for database or storage replacement, online or offline schema or representation migration, service or authoritative traffic moves, runtime or platform replacement, and contract adoption after compatibility policy is decided. Own current-to-transition-to-target states, authority transfer, cutover, retreat or compensation, evidence-gated retireability, and retirement. Do not use when staged exposure, a bounded software change, or a destructive operation has no replacement-state movement and retireability goal. Also do not use to choose the target, define contract semantics, change organizational or service ownership, or coordinate multiple workstreams.
+description: Plan a survivable technical migration from an established state to an accepted replacement while supported obligations continue. Use when state, traffic, consumers, execution, infrastructure, or authority must move and the old state must become retireable. Own transition states, authority transfer, cutover, retreat or compensation, retireability, and retirement; route target, contract, ownership, and program decisions.
 ---
 
 # Migration Planning
@@ -12,27 +12,24 @@ state deliberately.
 
 ## Use precise terms
 
-- **Migration:** Movement from an established technical state to an accepted
-  target while supported obligations continue or a bounded interruption is
-  explicitly controlled.
-- **Migration unit:** One replacement relationship whose transition states,
-  authority movement, and retirement can be planned coherently.
-- **Transition state:** One permitted combination of live versions,
+- **Migration:** Move from an established state to an accepted target while
+  preserving supported obligations or controlling a bounded interruption.
+- **Migration unit:** One replacement relationship with coherent states,
+  authority movement, and retirement.
+- **Transition state:** One permitted combination of versions,
   representations, paths, operations, and authorities.
-- **Authority:** The source allowed to establish a fact, accept a write, route
-  work, or declare a state current.
-- **Cutover:** The accountable transfer of authority to the target state; it is
-  not merely deploying or exposing new code.
-- **Retreat:** A safe move to an earlier or reduced state. When escaped effects
-  make reversal false, use fail-forward, repair, or compensation explicitly.
-- **Retireable:** The old state's supported obligations and authority have been
-  transferred, drained, or fenced so their removal would preserve accepted
-  behavior and support commitments. Retained data, inactive fallback copies,
-  or compatibility may remain only when non-authoritative, bounded, explicitly
-  owned, and subject to a review trigger.
-- **Retirement:** Accountable removal of the now-non-authoritative old
-  representations, paths, compatibility machinery, or ability to return after
-  retireability has been established.
+- **Authority:** The source allowed to establish facts, accept writes, route
+  work, or declare current state.
+- **Cutover:** Accountable authority transfer to the target, not deployment or
+  exposure alone.
+- **Retreat:** Move safely to an earlier or reduced state; use fail-forward,
+  repair, or compensation when escaped effects make reversal false.
+- **Retireable:** Old obligations and authority are transferred, drained, or
+  fenced so removal preserves accepted behavior and support commitments. Any
+  retained data, fallback, or compatibility is non-authoritative, bounded,
+  owned, and reviewable.
+- **Retirement:** Remove the non-authoritative old paths, representations,
+  compatibility machinery, or ability to return.
 
 ## Own transition state, not neighboring decisions
 
@@ -127,72 +124,53 @@ retirement gates.
 
 ## Compose specialized controls
 
-- `software-change-specification` may define the accepted behavior delta and
-  invariants. Create a distinct migration plan only when transition-state,
-  movement, authority, and retirement knowledge needs its own owner or
-  lifecycle.
-- `software-contract-evolution` owns actual contract semantics, compatibility
-  matrices, translation obligations, deprecation policy, and consumer support.
-  This skill consumes those commitments and sequences their transition.
-- `controlled-release-design` is an optional nested subplan for exposure
-  assignment, cohorts, promotion, hold, abort, kill controls, and flag cleanup.
-  This plan may name which technical participants or populations are permitted
-  in a state, but it consumes their assignment and promotion policy. Controlled
-  release does not own data, routing, or effect authority.
-- `technical-program-orchestration` owns workstream drivers, dependencies,
-  integration contracts, shared constraints, forecasts, and replanning. It
-  links the migration plan without turning transition states into a project
-  schedule.
-- `observability-design` owns signal semantics, correlation, navigation, and
-  missing-data behavior. `verification-strategy-design` owns methods, oracles,
-  evidence limits, execution points, and renewal.
-- Keep composed work in the existing flow. Reference stable keys with their
-  plain-language labels instead of copying neighboring plans.
+- Consume accepted behavior and invariants from
+  `software-change-specification` when one exists, and contract semantics,
+  compatibility, translation, deprecation, and support from
+  `software-contract-evolution` when a shared contract changes.
+- Nest `controlled-release-design` only for exposure assignment, cohorts,
+  promotion, hold, abort, kill controls, and flag cleanup. It does not own
+  data, routing, or effect authority.
+- Let `technical-program-orchestration` own workstreams, dependencies,
+  integration, forecasts, and replanning; let `observability-design` own
+  signals and `verification-strategy-design` own methods and oracles.
+- Keep one flow. Link stable keys and labels rather than copying neighboring
+  plans. Create a distinct migration plan only when its state and retirement
+  knowledge needs an independent owner or lifecycle.
 
 ## Quality gates
 
 Require all of the following before calling the plan ready:
 
-- a genuine current-to-transition-to-target movement and migration unit are
-  explicit;
-- the target direction and relevant contract or support decisions are accepted
-  inputs rather than silently decided by the migration planner;
-- every transition state defines permitted participants, operations,
-  representations, visibility, and authority;
-- irreversible effects and compensations are explicit;
-- every state transition has measurable entry, success, hold or abort, retreat
-  or fail-forward, and ownership criteria;
-- specialized evidence, release, and observability details have one canonical
-  owner and remain traceable from the master transition;
-- cutover, retireability, and retirement are separate evidence-based decisions;
-- retreat, repair, fail-forward, or compensation has been tested at an
-  appropriate level;
-- the control path is independent enough for the targeted failure class;
-- ownership, communications, and escalation are named;
-- temporary compatibility machinery and old authority have retirement criteria,
-  and stale participants cannot silently restore them.
+- Define a genuine migration unit and current-to-transition-to-target movement.
+  Consume accepted target, contract, and support decisions.
+- Define participants, operations, representations, visibility, and authority
+  in every state. Make irreversible effects and compensations explicit.
+- Give every transition measurable entry, success, hold or abort, retreat or
+  fail-forward, evidence, and ownership criteria.
+- Keep release, observability, and verification details canonical and
+  traceable. Decide cutover, retireability, and retirement separately.
+- Test retreat, repair, fail-forward, or compensation proportionately. Keep
+  controls independent enough for the targeted failure.
+- Name ownership, communications, and escalation. Give old authority and
+  temporary compatibility retirement criteria, and fence stale participants.
 
 ## Reject false migrations and safety
 
-- A large, risky, or destructive change is not automatically a migration. Name
-  the technical movement, transition states, authority transfer, and
-  retirement.
-- Deleting or purging data without a replacement representation is a
-  destructive operation, not a migration. Give it proportionate specification,
-  authorization, execution, and verification without inventing a target state.
-- A project schedule, workstream map, or milestone sequence is not a migration
-  state model.
-- A feature flag, canary, or percentage ramp is controlled exposure unless it
-  also governs a real state or authority transition.
-- Removing old application code after compatible cohort exposure does not by
-  itself turn that release into a migration.
+- A large or risky change, project schedule, workstream map, milestone
+  sequence, or code removal is not a migration without technical movement,
+  authority transfer, and retirement.
+- Data deletion without a replacement representation is destructive work, not
+  migration. Specify, authorize, execute, and verify it without inventing a
+  target state.
+- A flag, canary, or percentage ramp is controlled exposure unless it governs
+  a real state or authority transition.
 - A feature flag is not a rollback if data or external effects already escaped.
-- Dual writes are not safe without authority, ordering, repair, and divergence
-  handling.
-- A dry run does not prove the effect path has the same permissions or behavior.
-- A canary tests current sampled conditions, not every failure mode.
-- “Backward compatible” is incomplete until producer and consumer version
-  combinations are stated.
+- Dual writes require authority, ordering, repair, and divergence handling.
+- A dry run does not prove effect-path permissions or behavior; a canary covers
+  sampled conditions, not every failure mode.
+- “Backward compatible” requires explicit producer-consumer version
+  combinations.
 - A migration is not complete while the old path remains unknowingly active.
 
 ## Completion

@@ -1,6 +1,6 @@
 ---
 name: software-change-specification
-description: Specify one accepted but behaviorally ambiguous software change before implementation by recovering current and desired behavior, scope, non-goals, invariants, affected surfaces, constraints, acceptance claims, and unresolved decisions. Use when an accepted feature, integration, diagnosed fix, migration slice, or consequential configuration change is assumption-heavy or cross-boundary and an implementer would otherwise need to invent material behavior; especially before delegating work to an agent, engineer, or multiple teams. Do not use to decide whether a product opportunity or solution direction merits investment, or to document a small reversible change already clear enough for scoped-change-implementation. Route unresolved product, domain, architecture, contract, diagnosis, or transition decisions to their owning skills.
+description: Specify an accepted but behaviorally ambiguous software change before implementation by recovering current and desired behavior, scope, invariants, affected surfaces, acceptance claims, and unresolved decisions. Use when implementers would otherwise invent consequential behavior. Keep small clear changes in scoped-change-implementation; route unresolved product, domain, architecture, contract, diagnosis, or transition decisions to their owners.
 ---
 
 # Software Change Specification
@@ -42,41 +42,51 @@ Read [references/change-specification.md](references/change-specification.md) wh
 
 ## Compose without taking over
 
-- When orchestration supplies the originating request, accepted scope and non-goals, existing claims, evidence status, and a bounded specification question, consume them instead of repeating the whole change frame. Preserve source meaning, reopen only contradictions or blocking ambiguity, and return the behavior-contract and readiness delta.
-- `software-change-orchestration` owns cross-session continuity, persistence, and selection of the current frontier. This skill owns one bounded change specification inside that flow and does not create an orchestration record by itself.
-- `product-opportunity-discovery` and `product-opportunity-prioritization` own whether an opportunity or bet deserves investment; this skill specifies one accepted software change.
-- `domain-modeling` owns disputed vocabulary, rules, invariants, and semantic contexts. This skill consumes resolved meaning and exposes unresolved meaning rather than deciding it silently.
-- `service-boundary-design` and `deep-module-design` own structural boundaries and interfaces. This skill records accepted design constraints and the behavior they must support; it does not assign service authority or select an interface to make the specification look implementable.
-- `software-contract-evolution` owns shared contract compatibility, versioning, translation, deprecation, and retirement. This skill records affected consumers, the compatibility obligation, and unresolved decision, then cites the evolution result; it does not choose a versioning or event-shape policy.
-- `software-failure-diagnosis` owns an unexplained failure. After causal support exists, this skill can define the corrected behavior and regression boundary before authorized repair.
-- `controlled-release-design`, `migration-planning`, `observability-design`, and `verification-strategy-design` own release controls, technical migration state and authority, measurement contracts, and falsifying evidence methods respectively.
-- `technical-program-orchestration` owns multi-workstream dependency, integration, and constraint flow. `scoped-change-implementation` consumes the change specification and owns code changes, feedback loops, deviations, and cleanup.
-- Route pure structure-only work to `behavior-preserving-refactoring`; do not invent desired behavior merely to make a refactoring look like a feature.
+- Consume an orchestration-supplied request, scope, claims, evidence status, and
+  bounded question. Preserve source meaning, reopen only contradictions or
+  blocking ambiguity, and return only the behavior-contract and readiness
+  delta. Orchestration owns continuity, persistence, and frontier selection.
+- Leave opportunity investment to product discovery or prioritization; domain
+  meaning to `domain-modeling`; structure to `service-boundary-design` or
+  `deep-module-design`; and unexplained failure to
+  `software-failure-diagnosis`.
+- Leave compatibility and deprecation to `software-contract-evolution`;
+  transition states to `migration-planning`; release controls to
+  `controlled-release-design`; signals to `observability-design`; evidence
+  methods to `verification-strategy-design`; and multi-workstream flow to
+  `technical-program-orchestration`.
+- Send intentional behavior changes to `scoped-change-implementation` and
+  structure-only work to `behavior-preserving-refactoring`. Do not create a
+  second orchestration record or invent behavior to make either route ready.
 
 ## Quality gates
 
-- The underlying outcome and authority are recoverable without relying on the requested implementation shape.
-- Current, desired, preserved, accidental, and unknown behavior are not conflated.
-- Concrete examples include meaningful disagreement-rich boundaries, not only happy paths, and probes are distinguished from durable claims.
-- Scope, non-goals, affected consumers and state, hard constraints, compatibility, failure behavior, and ownership are explicit in proportion to risk.
-- Acceptance claims describe observable behavior or properties rather than files, functions, mocks, or implementation steps.
-- Every consequential assumption is visible, owned, and either tolerable for implementation or routed before implementation.
-- Unaccepted architecture, authority, protocol, compatibility, security, data, and recovery options remain visibly proposed or unresolved; none appear as settled contract language.
-- The smallest coherent slice creates useful behavior without forcing unrelated architecture or rollout work into the specification.
-- Readiness is evidence-calibrated and does not impersonate implementation authorization, verification, or release approval.
+- Recover the outcome and authority independently of the requested
+  implementation shape.
+- Distinguish current, desired, preserved, accidental, and unknown behavior.
+  Use disagreement-rich examples and separate probes from durable claims.
+- Make scope, non-goals, affected consumers and state, constraints,
+  compatibility, failures, ownership, and consequential assumptions explicit
+  in proportion to risk.
+- Express acceptance claims as observable behavior or properties. Keep
+  unaccepted architecture, authority, protocol, security, data, and recovery
+  choices proposed or unresolved.
+- Define the smallest useful coherent slice. Calibrate readiness to evidence
+  without implying implementation authority, verification, or release
+  approval.
 
 ## Reject specification theater
 
-- Do not reformat a ticket and call it a specification.
-- Do not turn a stakeholder's screen, schema, endpoint, or technology request into an unquestioned requirement.
-- Do not treat a list of Given-When-Then scenarios as complete merely because it looks precise.
-- Do not make acceptance criteria restate the proposed code structure or test choreography.
-- Do not require every field, diagram, scenario type, or specialist skill for every change.
-- Do not produce a near-diff implementation plan, exhaustive file inventory, test strategy, rollout plan, or migration sequence under a new heading.
-- Do not fill blocking decisions with “recommended defaults” when the user asked for a specification rather than a design recommendation.
-- Do not copy product, domain, architecture, contract, or operational artifacts into a second source of truth.
-- Do not mark a change ready while consequential meaning, authority, compatibility, security, data, or recovery questions remain ownerless.
-- Do not block a cheap reversible change merely to complete a document, or let a thin specification legitimize a consequential change.
+- Do not reformat a ticket or accept a requested screen, schema, endpoint, or
+  technology as the behavioral contract.
+- Do not treat precise-looking scenarios, code-shaped acceptance criteria, or
+  complete-looking templates as sufficient evidence.
+- Do not produce a near-diff plan, exhaustive inventory, test strategy,
+  rollout plan, or migration sequence.
+- Do not fill blocking decisions with defaults, copy neighboring artifacts, or
+  mark ownerless consequential questions ready.
+- Do not block a cheap reversible change for document completeness or let a
+  thin specification legitimize a consequential change.
 
 ## Completion
 

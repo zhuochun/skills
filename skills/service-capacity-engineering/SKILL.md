@@ -1,6 +1,6 @@
 ---
 name: service-capacity-engineering
-description: Model, design, or review an online, asynchronous, batch, storage, or shared service's end-to-end capacity and behavior near or beyond saturation. Use for capacity plans, launch or peak readiness, nonlinear latency, queue growth, retry storms, fan-out, noisy-neighbor risk, failover headroom, load-test design, admission control, backpressure, load shedding, or incidents where nominal resource utilization did not explain collapse. Do not use as a complete cloud-cost optimization or financial forecasting workflow.
+description: Model, design, or review end-to-end service capacity and behavior near or beyond saturation across online, asynchronous, batch, storage, or shared workloads. Use for peak readiness, nonlinear latency, queue growth, retries, fan-out, noisy neighbors, failover headroom, load tests, admission control, backpressure, or shedding. Exclude complete cloud-cost optimization and financial forecasting.
 ---
 
 # Service Capacity Engineering
@@ -10,36 +10,33 @@ Treat capacity as an end-to-end service property. A component benchmark or avera
 ## Capacity review workflow
 
 1. **Define useful completion.** State the service boundary, demand units, workload classes, populations, correctness conditions, latency or freshness objectives, and the point where work is actually complete.
-2. **Describe demand.** Quantify arrival rate, concurrency, payload or job size, read/write mix, skew, fan-out, burst shape, seasonality, retries, and whether callers are open-loop, closed-loop, or partly self-throttling.
+2. **Describe demand.** Quantify arrival, concurrency, size, read-write mix, skew, fan-out, bursts, seasonality, retries, and caller feedback behavior.
 3. **Build the end-to-end model.** Trace queues, pools, locks, CPUs, memory, storage, networks, dependencies, control planes, and human operations. Identify serial, parallel, coordinated, and shared-resource sections.
-4. **Find candidate constraints.** Use throughput, latency distributions, queue age, saturation, service time, concurrency, rejection, and work-in-progress. Look for utilization knees and coordination costs rather than assuming linear scaling.
-5. **Falsify the model.** Design load and fault tests around realistic mixes, skew, bursts, dependency behavior, long enough duration, and useful-completion oracles. Compare predictions with observations and revise the model.
+4. **Find constraints.** Use throughput, latency distributions, queue age, saturation, service time, concurrency, rejection, and work in progress. Look for knees and coordination costs, not linearity.
+5. **Falsify the model.** Test representative load and fault conditions across realistic mix, skew, bursts, dependencies, duration, and useful-completion oracles. Compare prediction with observation and revise.
 6. **Set limits and headroom.** Define normal operating envelope, reserve purpose, failover demand, elasticity lag, recovery demand, and uncertainty. Do not count the same reserve twice.
 7. **Design overload semantics.** Layer quotas, concurrency or capacity tokens, admission control, bounded queues, backpressure, priority, degradation, and shedding at boundaries that can preserve intent.
 8. **Protect recovery.** Check retries, drains, replay, autoscaling, cache refill, failover, operator access, and control paths. A system that survives load but cannot recover safely is not protected.
 9. **Make operation inspectable.** Define signals, thresholds, owners, playbooks, and recalibration triggers. Tie them to user-visible completion and each protective mechanism.
 
-Use [references/capacity-overload-review.md](references/capacity-overload-review.md) for the model and findings.
+Read [references/capacity-overload-review.md](references/capacity-overload-review.md) only when a durable capacity model, operating envelope, overload findings report, or review worksheet is needed.
 
 ## Quality gates
 
-- Demand and capacity use compatible units at an explicit boundary.
-- The model includes queues, dependencies, fan-out, coordination, and completion semantics where relevant.
-- Tests challenge assumptions with realistic workload shape and duration.
-- Headroom has a named purpose and includes failure and recovery states.
-- Each overload control defines what is accepted, delayed, degraded, rejected, or shed.
-- Backpressure crosses boundaries in a form the caller can act on.
-- Production signals can distinguish rising demand, slower service, blocked drain, and control activation.
+- Demand and capacity share units and boundary.
+- The model includes relevant queues, dependencies, fan-out, coordination, and completion.
+- Realistic tests challenge assumptions; headroom covers named failure and recovery needs.
+- Overload controls define accepted, delayed, degraded, rejected, or shed work.
+- Actionable backpressure crosses boundaries.
+- Signals distinguish demand, slowdown, blocked drain, and control activation.
 
 ## Reject weak reviews
 
-- CPU alone as the capacity model.
-- Average latency where tails or fan-out determine completion.
-- Maximum benchmark throughput presented as a safe operating limit.
-- Unbounded queues as a way to avoid rejection.
-- Retries without budgets, deadlines, jitter, and overload interaction.
-- Autoscaling assumed instantaneous or independent of the saturated control plane.
-- Load tests that omit realistic skew, dependencies, correctness, or recovery.
+- Reject CPU-only models, averages hiding tails, and benchmark maxima as safe limits.
+- Queues cannot defer rejection without bound.
+- Retries need budgets, deadlines, jitter, and overload interaction.
+- Autoscaling is neither instant nor independent of control-plane saturation.
+- Load tests need realistic skew, dependencies, correctness, and recovery.
 
 ## Completion
 

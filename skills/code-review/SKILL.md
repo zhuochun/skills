@@ -1,6 +1,6 @@
 ---
 name: code-review
-description: Review a proposed or completed software change against its stated intent, repository constraints, supported behavior, evidence, and future change cost, producing prioritized actionable findings without modifying the target. Use for working-tree, commit, branch, pull-request, generated-code, migration, configuration, or mixed software changes when the user wants code review, implementation review, maintainability review, regression-risk review, or an independent challenge before merge or release. Use architecture-risk-evaluation for whole-architecture scenarios and architecture-assessment for portfolio-wide diagnosis.
+description: Review a proposed or completed software change against its intent, constraints, supported behavior, evidence, and future change cost without modifying it. Use for working-tree, commit, branch, pull-request, generated-code, migration, or configuration review before merge or release. Route whole-architecture scenarios to architecture-risk-evaluation and portfolio diagnosis to architecture-assessment.
 ---
 
 # Code Review
@@ -11,51 +11,53 @@ Judge the change, not the author's narrative or the volume of activity. Recover 
 
 - Work read-only. Do not edit files, resolve findings, stage changes, publish comments, approve, merge, or release unless the user separately authorizes that action.
 - Establish the review range: working tree, staged changes, commit, branch against merge base, pull request, or named artifact. Preserve the exact base and head identities when available.
-- Recover the change intent, acceptance criteria, non-goals, repository instructions, relevant decisions, and claimed evidence. Compare the canonical scope with the originating request, issue, or accepted specification when available; flag a later record that silently narrows the promised behavior into an easier implementation proxy. Treat missing intent as a review limitation, not permission to invent a specification.
+- Recover intent, acceptance, non-goals, repository instructions, decisions, and evidence. Compare canonical scope with the originating request or specification; flag silent narrowing to an easier proxy. Missing intent limits review, not licenses invention.
 - When orchestration supplies an accepted contract, assurance posture, exact candidate snapshot, and evidence index, consume them without repeating the producer's framing. Challenge them when the diff or surrounding repository evidence contradicts the claim.
-- Inspect the changed artifact and enough surrounding code, tests, schemas, configuration, consumers, runtime semantics, and history to evaluate the diff in context. Do not turn a change review into an unbounded codebase assessment.
+- Inspect the artifact and enough surrounding code, tests, schemas, configuration, consumers, runtime, and history for context. Do not widen into codebase assessment.
 - Keep generation and judgment distinct. Independence requires fresh judgment, complete diff inspection, risk-path tracing, distinct evidence or criteria, and authority to reject—not a different role label or automatic repetition of every producer command.
 
 ## Clarify without negotiating the review
 
 - Inspect the diff, repository evidence, and supplied intent independently before asking the author or owner. Even without an interactive exchange, surface material ambiguity, assumptions, evidence gaps, and review limitations.
-- Ask only clarification questions whose answers can materially change the review judgment. Batch a low-sensitivity frontier only when its answers remain independently understandable. Serialize when a prior answer changes the interpretation or next challenge, ambiguity needs adaptive follow-up, trust, power, or sensitive disclosure affects candor, or a gating answer changes the relevant review scope or criteria.
+- Ask only questions that can change judgment. Batch low-sensitivity independent questions; serialize when an answer changes interpretation or scope, ambiguity needs follow-up, sensitivity affects candor, or a gate controls relevance.
 - When the user asks to grill, challenge, or stress-test the change, deepen counterexample search across behavior boundaries, invariants, failure paths, mixed states, and evidence validity. Do not turn the exchange into co-authoring the change, negotiating findings, or coaching the author toward answers that make the review pass.
 - Treat unanswered questions as explicit limitations or findings according to their demonstrated consequence; never invent intent to avoid a conditional review outcome.
 
 ## Review workflow
 
-1. **Pin scope and intent.** Record base/head or working-tree state, commits, change description, desired behavior, non-goals, compatibility and operational commitments, and consequence if wrong. Note unrelated changes and exclude them unless they affect the reviewed behavior.
+1. **Pin scope and intent.** Record snapshot, change, desired behavior, non-goals, commitments, and cost of error. Exclude unrelated changes unless they affect reviewed behavior.
 2. **Read the diff as a behavioral claim.** Summarize what the change actually adds, removes, redirects, or makes authoritative. Trace important paths from input through decisions, state, effects, outputs, and cleanup rather than reviewing hunks as isolated syntax.
 3. **Check specification fit.** Compare implementation with requested outcomes, edge cases, support policy, and explicit constraints. Identify missing behavior, unintended behavior, scope creep, and requirements satisfied only superficially.
-4. **Check correctness and contract risk.** Examine invariants, authorization, validation, data authority, compatibility, ordering, concurrency, retries, idempotency, failure semantics, resource lifecycle, cleanup, security, privacy, and operator controls in proportion to the change.
-5. **Check change locality and ownership.** Ask whether the change puts knowledge, state, representation, and effects under clear owners or spreads a new rule through flags, helpers, layers, and consumers. Flag dual authority, hidden dependencies, pass-through abstractions, speculative generality, and repeated unsafe invariants.
+4. **Check correctness and contracts.** Proportionately examine invariants, authorization, validation, data authority, compatibility, order, concurrency, retries, idempotency, failures, resource lifecycle, cleanup, security, privacy, and controls. For runtime-affecting changes, trace latency, capacity, dependency failure, cancellation, observability, control paths, and recovery.
+5. **Check change locality and ownership.** Ask whether the change puts knowledge, state, representation, and effects under clear owners or spreads a new rule through flags, helpers, layers, and consumers. Flag dual authority, hidden dependencies, pass-through abstractions, speculative generality, and repeated unsafe invariants. Recommend proportionate durable enforcement for recurring consequential findings instead of permanent reviewer memory.
 6. **Check meaning and maintainability.** Evaluate whether names, interfaces, tests, layout, and rationale let the next maintainer recover purpose and constraints. Distinguish necessary complexity from noise, and current readability from likely future change amplification.
-7. **Evaluate and reuse evidence, not test volume.** Verify that claimed checks match the reviewed snapshot, material environment, method, and risk. Map them to the behavior they can falsify and inspect raw results when available. Look for tautological assertions, implementation-coupled tests, absent consumer evidence, unexercised failure paths, stale snapshots, and claimed checks not actually run. Execute focused challenges where they can expose a consequential disagreement. Rerun broadly or use `$verification-execution` only when evidence is stale, incomplete, suspicious, invalidated by remediation, or inadequate for the assurance posture.
+7. **Evaluate evidence, not volume.** Match checks to snapshot, environment, method, risk, and falsifiable behavior; inspect raw results when useful. Challenge tautologies, implementation-coupled tests, missing consumer or failure evidence, stale snapshots, and unrun claims. Rerun broadly or use `$verification-execution` only when evidence is invalid, incomplete, suspicious, or inadequate.
 8. **Challenge independently.** Seek counterexamples at changed boundaries and mixed states. Use repository tools when safe and read-only, but do not create findings from generic preference, style already enforced by tooling, or hypothetical architecture unrelated to the change.
 9. **Prioritize findings.** Rank by demonstrated consequence, reach, reversibility, and confidence. For each actionable finding, name the affected behavior, evidence, impact, and smallest credible repair direction. Keep uncertainty visible and phrase questions as questions.
 10. **Report review outcome.** Lead with findings ordered by severity, each anchored to the tightest file and line. Then state assumptions, evidence run, residual risks, and whether no actionable findings were found. A clean review means no findings within the inspected scope and evidence—not certification of the entire system.
 
-Use [references/change-review.md](references/change-review.md) for the knowledge-derived review model, risk lenses, severity calibration, and finding format.
+## Calibrate and structure findings
+
+- **Critical:** Credible severe user, data, money, security, compliance, or availability harm; merge or release should stop pending accountable resolution.
+- **High:** Material incorrect behavior, contract break, data risk, unsafe failure, or broad realistic regression.
+- **Medium:** Bounded defect or structural decision likely to impose meaningful maintenance, reliability, or compatibility cost.
+- **Low:** Local issue worth fixing but unlikely to affect important behavior or change economics.
+- Lower confidence instead of inflating severity. A high-consequence question without a demonstrated path is residual risk or an evidence gap, not automatically critical.
+- For each finding, include severity and confidence, tight location, changed behavior or assumption, evidence or counterexample, impact, why current evidence misses it, and the smallest repair direction.
+- Separate evidence the reviewer executed from checks merely claimed and not independently run.
 
 ## Quality gates
 
-- The reviewed range and intent are explicit and reproducible.
-- Findings arise from the change and relevant surrounding behavior, not generic taste.
-- Each finding names evidence, impact, and a repair direction without implementing it.
-- Severity reflects consequence and reach rather than rhetorical confidence.
-- Supported behavior, consumer contracts, data, failure, and operations receive attention when affected.
-- Review distinguishes missing evidence from proven incorrectness.
-- Automated or agent-generated changes receive the same ownership and maintainability scrutiny as human changes.
-- The report can honestly say when no actionable findings were found.
+- Range and intent are reproducible; findings arise from changed behavior, not taste.
+- Each finding names evidence, impact, and repair direction without implementation.
+- Severity reflects consequence and reach; missing evidence differs from incorrectness.
+- Affected behavior, contracts, data, failures, operations, ownership, and maintainability are covered.
+- The report can honestly state when no actionable findings were found.
 
 ## Reject review theater
 
-- Do not reward a small diff, many tests, clean formatting, or plausible explanation without tracing behavior.
-- Do not flood the report with style preferences, speculative edge cases, or pre-existing problems unrelated to the change.
-- Do not assume generated code is lower quality or that passing generated tests prove it correct.
-- Do not ask every reviewer or tool to repeat the same criteria and call the repetition independent evidence.
-- Do not rerun a full repository suite solely because the producer executed it; require a risk, validity, or snapshot reason.
-- Do not collapse a whole-codebase architecture concern into an inline finding without showing how this change worsens it.
-- Do not hide a consequential behavioral issue below numerous minor maintainability notes.
-- Do not approve or reject release on behalf of the accountable owner.
+- Small diffs, many tests, formatting, and plausible prose do not replace behavior tracing.
+- Exclude style taste, speculative cases, and unrelated pre-existing problems.
+- Generated code deserves equal scrutiny; generated tests are not proof.
+- Repetition is not independence; full-suite reruns need a risk, validity, or snapshot reason.
+- Tie architecture concerns to change impact, lead with consequential behavior, and never approve release for its owner.

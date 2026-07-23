@@ -3,17 +3,6 @@
 Use these forms inside the active specification, migration record, or program
 surface. They are reasoning aids, not mandatory separate documents.
 
-## Contents
-
-- [Knowledge-derived reasoning model](#knowledge-derived-reasoning-model)
-- [Migration eligibility gate](#migration-eligibility-gate)
-- [Authority and state inventory](#authority-and-state-inventory)
-- [Transition-state model](#transition-state-model)
-- [Pattern prompts by migration class](#pattern-prompts-by-migration-class)
-- [State-gate template](#state-gate-template)
-- [Retirement evidence](#retirement-evidence)
-- [Composition](#composition)
-
 ## Knowledge-derived reasoning model
 
 | Mechanism | Migration consequence |

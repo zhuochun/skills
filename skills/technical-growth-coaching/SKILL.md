@@ -1,6 +1,6 @@
 ---
 name: technical-growth-coaching
-description: Design and run an evidence-based growth loop for a software engineer, technical lead, or engineering team by turning real work into deliberate practice, calibrated delegation, fast feedback, reflection, and increasing autonomy. Use for mentorship plans, stretch assignments, technical-lead development, stalled expertise, onboarding beyond orientation, or coaching a specific engineering capability. Do not use to assign performance ratings, decide promotion or compensation, diagnose a person, or replace formal performance-management and employee-support processes.
+description: Design and run an evidence-based growth loop for an engineer, technical lead, or team by turning real work into deliberate practice, calibrated delegation, fast feedback, reflection, and autonomy. Use for mentorship, stretch assignments, lead development, stalled expertise, onboarding, or capability coaching. Exclude performance ratings, promotion, compensation, diagnosis, and formal employee-support processes.
 ---
 
 # Technical Growth Coaching
@@ -16,37 +16,32 @@ Convert experience into observable improvement. More years, more tasks, or a har
 
 ## Growth workflow
 
-1. **Name the capability in behavior.** Translate “be more senior,” “improve architecture,” or “show leadership” into decisions, artifacts, interactions, and outcomes that can be observed in context.
-2. **Establish a baseline.** Use recent work samples, design reasoning, incidents, reviews, delivery outcomes, and the learner's self-assessment. Distinguish knowledge gaps, limited exposure, weak feedback, and environmental constraints.
+1. **Name behavior.** Translate vague growth goals into observable contextual decisions, artifacts, interactions, and outcomes.
+2. **Establish a baseline.** Use work, reasoning, incidents, reviews, outcomes, and self-assessment. Separate knowledge gaps, limited exposure, weak feedback, and environmental constraints.
 3. **Choose one learning edge.** Select a consequential behavior just beyond reliable independent performance. Explain why improving it matters to the learner, team, and current work.
 4. **Design representative practice.** Prefer a real bounded assignment, simulation, design exercise, incident replay, code review, pairing session, or decision rehearsal that produces repeated attempts and visible results.
 5. **Calibrate delegation.** Match scope, decision consequence, prior task experience, and coach confidence. Define outcome, constraints, authority, checkpoints, help signals, and decisions retained by the coach.
-6. **Create multiple feedback channels.** Combine artifact and outcome evidence with timely coach, peer, operator, or customer feedback. Make criteria known before the attempt and keep feedback specific to behavior.
+6. **Create feedback channels.** Combine artifact and outcome evidence with timely coach, peer, operator, or customer feedback. Publish criteria first and discuss behavior.
 7. **Review the attempt.** Ask the learner to reconstruct intent, options, signals, surprises, and next change before supplying the coach's answer. Separate outcome luck from decision quality.
 8. **Repeat with changed difficulty.** Narrow support, widen scope, vary the context, or isolate the next weakness. Do not reward fluent repetition that no longer stretches capability.
 9. **Transfer ownership.** Have the learner set future practice, request feedback, teach the mechanism, and apply it in a different context. The goal is self-correction, not permanent coach dependence.
 
-Use [references/technical-growth-loop.md](references/technical-growth-loop.md) for the coaching contract and review cadence.
+Read [references/technical-growth-loop.md](references/technical-growth-loop.md) only when a durable coaching, delegation, or review-cadence record is needed.
 
 ## Quality gates
 
-- The target is an observable engineering behavior with a contextual success signal.
-- Baseline evidence comes from actual work or representative performance.
-- The assignment stretches one primary capability without making failure recklessly expensive.
-- Delegated authority, retained decisions, checkpoints, and help signals are explicit.
-- Feedback arrives soon enough to change the next attempt.
-- The learner performs, explains, and reflects rather than only watching an expert.
-- Progress is tested through changed behavior or transfer, not course completion or task volume.
+- Target behavior and contextual success signal are observable from actual or representative work.
+- The assignment stretches one capability without reckless failure cost.
+- Authority, retained decisions, checkpoints, and help signals are explicit.
+- Timely feedback changes the next learner-led attempt.
+- Progress appears in changed behavior or transfer, not course or task volume.
 
 ## Reject weak coaching
 
-- “Get more experience” without practice design.
-- Delegating unwanted work while calling it development.
-- Rescue that removes every hard judgment, or abandonment labeled autonomy.
-- Advice before understanding the learner's model and evidence.
-- Feedback delayed until a review cycle or expressed as traits and labels.
-- Stretch work with unclear authority, invisible criteria, or production risk the learner cannot control.
-- Using a growth plan as covert promotion denial or disciplinary documentation.
+- Reject experience without practice design, unwanted work labeled development, rescue removing judgment, and abandonment labeled autonomy.
+- Understand the learner before advising; keep feedback timely and behavioral.
+- Stretch requires clear authority, visible criteria, and controlled risk.
+- Never use growth plans as covert promotion denial or discipline.
 
 ## Completion
 

@@ -1,6 +1,6 @@
 ---
 name: operational-feedback-audit
-description: Audit whether service telemetry forms an effective operating feedback loop from customer promise through health orientation, diagnosis, ownership routing, recovery control, and post-incident learning. Use for observability reviews, service onboarding, dashboard or alert redesign, noisy paging, missing user-impact signals, slow incident ownership, stale service maps, or production-readiness assessments across request, event, batch, storage, and control-plane systems.
+description: Audit whether service telemetry forms an effective operating loop from customer promise through health orientation, diagnosis, ownership routing, recovery control, and learning. Use for observability reviews, service onboarding, dashboard or alert redesign, noisy paging, missing user-impact signals, slow ownership, stale service maps, or production-readiness assessment across common workload types.
 ---
 
 # Operational Feedback Audit
@@ -10,41 +10,34 @@ Evaluate whether telemetry helps people and automation make correct, timely deci
 ## Preserve authority and data safety
 
 - Audit and recommend by default. Do not change alerts, retention, sampling, routing, or production configuration without explicit authorization.
-- Identify telemetry containing personal, customer, security, financial, or regulated data. Apply local access, minimization, retention, and redaction rules.
+- Apply local access, minimization, retention, and redaction to personal, customer, security, financial, or regulated telemetry.
 - Distinguish observed behavior from missing instrumentation. Do not interpret absence of a signal as proof of health.
 
 ## Audit workflow
 
 1. **Define the service promise.** State what useful behavior callers or customers expect, who owns it, and which populations or workflows matter.
-2. **Recover and test measurement contracts.** Locate the intended contract and reconstruct the deployed semantics for every key signal: identity, unit, population, time window, success/failure meaning, missing-volume behavior, aggregation, dimensions, and owner. Treat an absent contract, semantic mismatch, or untraceable signal as a finding. Do not silently author a replacement and then evaluate it.
+2. **Test measurement contracts.** Reconstruct each key signal's identity, unit, population, window, success and failure, missing volume, aggregation, dimensions, and owner. Missing contracts, semantic mismatch, or untraceable signals are findings; do not invent replacements.
 3. **Evaluate the health entry surface.** Check whether a responder unfamiliar with the implementation can orient from a small, comparable set of customer-proximate signals before opening specialized diagnostics.
-4. **Match diagnostic views to questions.** Verify that metrics, distributions, traces, logs, profiles, events, and resource views each answer a stated question. Check tails, recency, cardinality, and asynchronous delay where averages conceal behavior.
+4. **Match views to questions.** Verify that metrics, distributions, traces, logs, profiles, events, and resources answer stated questions. Check tails, recency, cardinality, and asynchronous delay.
 5. **Reconstruct runtime structure.** Compare declared dependencies with observed service graphs, request or job context, queues, retries, fanout, deployments, and ownership metadata.
-6. **Audit human interruption.** Require each page to represent user or service risk, a distinct diagnostic region, an authorized recipient, and a plausible first action. Route lower-urgency evidence to tickets, reports, or dashboards.
+6. **Audit interruption.** Each page needs user or service risk, a diagnostic region, authorized recipient, and plausible first action. Route lower urgency elsewhere.
 7. **Evaluate alert context and routing.** Check impact, affected slice, owner, recovery state, recent changes, dependency evidence, uncertainty, and drill-down links. Do not require an alert to prove root cause.
 8. **Test control-path independence.** Determine whether observation, identity, communication, runbooks, routing, credentials, abort controls, and cleanup remain available during the failures they govern.
 9. **Close the learning loop.** Check whether incidents and near misses revise metrics, service metadata, alert rules, dashboards, runbooks, defaults, architecture, and readiness checks.
 
-Use [references/operational-feedback-audit.md](references/operational-feedback-audit.md) for system-specific checks and the report template.
+Read [references/operational-feedback-audit.md](references/operational-feedback-audit.md) only when the audit needs system-specific health shapes, signal-conformance or human-alarm checks, runtime reconstruction, or a formal report.
 
 ## Quality gates
 
-- Tie the first health surface to a service promise rather than only host resources.
-- Make signal semantics and missing-data behavior explicit.
-- Distinguish intended, deployed, observed, and inferred signal semantics; preserve counterexamples and required deltas.
-- Trace at least one user-impact path from symptom to owner and control.
-- Review the pager as a finite human-attention surface.
-- Identify stale topology or metadata and its operational consequence.
-- Test the observability and recovery control path against relevant failure domains.
-- Connect findings to decisions, owners, and verification—not just more telemetry.
+- Anchor health to service promise with explicit signal and missing-data semantics.
+- Distinguish intended, deployed, observed, and inferred meaning; preserve counterexamples.
+- Trace user impact to owner and control; treat paging as finite attention.
+- Name stale topology consequences and test recovery controls against failure domains.
+- Findings connect to decisions, owners, and verification, not telemetry volume.
 
 ## Reject common anti-patterns
 
-- More telemetry without a decision or owner.
-- Lifetime averages for current incidents or hidden tail populations.
-- Resource health presented as customer health.
-- Exact-cause alarms that miss the wider failure class.
-- Paging proxy teams because ownership metadata is absent.
-- Dashboards and failover controls hosted only inside the impaired domain.
-- Postmortem action items that add signals but never retire misleading ones.
-- Recreating observability design inside the audit instead of reporting contract defects and routing required deltas to `observability-design`.
+- Reject ownerless telemetry, lifetime averages for current tails, and resource health as customer health.
+- Exact-cause alarms may miss the class; absent metadata does not justify paging proxies.
+- Dashboards and controls must survive the impaired domain.
+- Retire misleading signals; report contract defects and route design deltas to `observability-design`.

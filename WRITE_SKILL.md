@@ -98,12 +98,22 @@ Keep one common execution spine in `SKILL.md`. Move branch-specific detail,
 large schemas, extended examples, and specialist procedures into references.
 Load those references only when their branch applies.
 
+- Keep a description near 45–55 words. Include the owned action or artifact,
+  strongest triggers, and nearest exclusion or route. Exceed this range only
+  when shortening would make activation or ownership materially ambiguous.
+- Keep `SKILL.md` below 200 physical lines, including frontmatter and blank
+  lines. Exceed this default only when splitting the execution spine would
+  weaken safe execution or cause a commonly required reference load.
+- Treat these budgets as design constraints, not proof of quality. A shorter
+  skill must still preserve its complete operating contract.
 - State a rule once. Refer to its canonical owner instead of restating it.
 - Remove rationale that does not change execution, judgment, or a boundary.
 - Keep examples only when they distinguish valid behavior from a plausible
   failure.
 - Prefer existing repository helpers over prose that reconstructs their
   interface or validation behavior.
+- Do not use tables of contents in `SKILL.md` or references. Use descriptive
+  headings and direct conditional links from the entry point.
 - Keep headings and lists that improve retrieval. Do not impose a fixed report
   shape when the task does not need one.
 - Review each prose sentence above 35 words. Split or simplify it unless the
