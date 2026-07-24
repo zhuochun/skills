@@ -104,8 +104,6 @@ Load those references only when their branch applies.
 - Keep `SKILL.md` below 200 physical lines, including frontmatter and blank
   lines. Exceed this default only when splitting the execution spine would
   weaken safe execution or cause a commonly required reference load.
-- Treat these budgets as design constraints, not proof of quality. A shorter
-  skill must still preserve its complete operating contract.
 - State a rule once. Refer to its canonical owner instead of restating it.
 - Remove rationale that does not change execution, judgment, or a boundary.
 - Keep examples only when they distinguish valid behavior from a plausible

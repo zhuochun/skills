@@ -29,6 +29,17 @@ research-synthesis for the bounded cross-source question
 
 A request for papers, reports, standards, official guidance, or competing evidence can stop after `research-synthesis`. Do not require a downstream decision workflow merely because the brief may inform one later. Conversely, do not let external literature substitute for current-system traces, direct customer evidence, causal diagnosis, or executed verification when those evidence surfaces control the decision.
 
+### Technical evidence into a reader artifact
+
+```text
+research-synthesis, specialist decision artifact, implementation evidence, or operational knowledge
+  -> technical-writing when an explicit reader needs a tutorial, how-to guide, explanation, reference, procedure, runbook, or technical article
+  -> source or domain owner challenge for consequential claims
+  -> representative reader walk-through or proportionate execution check for functional quality
+```
+
+Let the upstream owner decide the product, domain, architecture, operational, support, or evidence claim. `technical-writing` selects the reader function, preserves provenance and uncertainty, shapes the reading path, and verifies commands, examples, links, and task success. Route `SKILL.md` authoring to `skill-creator` rather than composing technical writing as a second authoring contract.
+
 ### Resumable bounded software change
 
 ```text
@@ -48,6 +59,16 @@ software-change-orchestration
 Use the owning repository when one repository owns the behavior, even if it consumes another repository's data. Use an established control repository only for genuinely distributed ownership. Compact discussion normally stays inline; compact authorized execution uses one minimal record but no orchestration directory. Standard work normally uses one living specification. High-assurance work uses several artifacts only when they need independent lifecycles. Persist a resume point only for a pause, block, handoff, session change, or non-obvious re-entry.
 
 In authorized or auto mode, write the authorized modes, accepted scope and non-goals, and the four escalation conditions into the smallest canonical record before implementation. Proceed without workflow approval, but preserve the originating behavior meaning and escalate material scope, external or production action, destructive action, or a decision changing supported behavior.
+
+### Session boundary or non-obvious re-entry
+
+```text
+active work remains in the current session while continuation is obvious
+  -> handoff only for a pause, session change, context reset, delegation, or non-obvious re-entry
+  -> next agent rechecks linked canonical state and resumes from the named frontier
+```
+
+Keep specifications, plans, ADRs, issues, commits, diffs, and program surfaces canonical. When one of those surfaces owns resume state, update it when authorized and limit any separate handoff to the session delta. Use a temporary file only for an accessible same-environment transfer; cross-environment continuation needs a shared location. The handoff never transfers missing authority. Do not create one as routine stage-to-stage paperwork inside an uninterrupted composition.
 
 ### Product opportunity to delivery
 

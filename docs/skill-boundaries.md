@@ -188,6 +188,8 @@ A skill that creates an artifact should not silently certify that artifact. For 
 | Product opportunity priority recommendation | Accountable product owner or declared forum closes the decision after customer, commercial, technical, operational, and mandatory-risk owners challenge the rationale and feasibility |
 | Learning prototype | The user or relevant design owner drives the artifact and challenges whether it preserves the tested mechanism; any maintained implementation requires separate implementation and evidence |
 | Research synthesis | Source-owner checks for exact claims and accountable specialist challenge for interpretation and applicability; the synthesis does not certify truth or close the downstream decision |
+| Technical document or blog post | Source and domain owners challenge consequential claims; representative readers test whether the artifact performs its declared learning, action, reference, understanding, or argument job |
+| Session handoff | The next agent rechecks freshness and completion against linked canonical state before consequential continuation; the handoff does not certify the artifacts it compresses |
 | Architecture surface map | Source-owner review and focused follow-up; orientation does not certify architecture fitness, readiness, or safety |
 | Domain, service-boundary, module, or platform design | `architecture-risk-evaluation` for consequential quality and operating scenarios |
 | Architecture improvement portfolio or selected candidate | Local evidence review, followed by the relevant focused design skill |
@@ -212,6 +214,14 @@ Separation does not require bureaucracy or different people for every local chan
 When skills compose in one task, keep the decision context in flow instead of creating a handoff file. Use a stable namespaced key together with its plain-language label, for example `OBS-settlement-age — Settlement completion age`. Repeat both whenever the contract is cited. The prefix identifies the contract family; the label preserves human meaning.
 
 ## Important distinctions
+
+### Technical writing, source ownership, and session handoff
+
+- `technical-writing` owns transfer to a declared reader through a tutorial, how-to guide, explanation, reference, procedure, runbook, or technical article. It consumes accepted decisions and inspected evidence; it does not decide product value, domain meaning, architecture, support policy, operational risk, or factual truth merely because those claims appear in prose.
+- `handoff` owns task-scoped session compaction only when work is pausing, changing sessions, delegating, or becoming difficult to re-enter. When repository-backed orchestration, program state, a specification, or an issue already owns resume state, keep persistent continuation there and limit a separate handoff to the session delta. Use temporary transport only when the next agent can access the same environment. The handoff does not replace canonical state or ordinary in-session composition.
+- `skill-creator` and the repository authoring contract own new or materially revised skills. `technical-writing` may improve reader transfer in supporting documentation, but it must not become a second skill-authoring authority.
+
+Technical writing can follow research, design, implementation, or operational work when a reader artifact is requested. The source owner retains interpretation and decision authority, while the writing skill owns document function, reading path, provenance visibility, functional checks, and voice. A handoff is not a default output of that composition; create it only for a real continuation boundary.
 
 ### Product discovery, prioritization, and delivery
 

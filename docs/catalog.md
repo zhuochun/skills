@@ -82,6 +82,13 @@ Do not start from a fashionable method or invoke every skill as a stage gate. As
 | [`code-review`](../skills/code-review/) | Independent read-only review of a bounded software change | Prioritized evidence-backed findings, questions, scope limits, and residual risks |
 | [`verification-execution`](../skills/verification-execution/) | Execution of fixed verification claims, methods, and oracles | Per-claim reused, rerun, invalidated, or omitted dispositions; raw evidence; counterexamples; cleanup; and unresolved gaps |
 
+### Communicate and preserve knowledge
+
+| Skill | It owns | Primary output |
+| --- | --- | --- |
+| [`technical-writing`](../skills/technical-writing/) | Reader-task-specific technical documentation and evidence-grounded technical blog posts without taking over source decisions | Verified tutorial, how-to guide, explanation, reference, procedure, runbook, or technical article with visible source and freshness limits |
+| [`handoff`](../skills/handoff/) | Task-scoped compaction of active session state for a fresh agent or non-obvious re-entry without duplicating canonical resume state | Canonical resume update or accessible session-delta handoff with current evidence, authority, immediate frontier, links, and first next action |
+
 ### Operate, learn, and renew
 
 | Skill | It owns | Primary output |

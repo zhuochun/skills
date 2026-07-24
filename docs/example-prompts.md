@@ -177,4 +177,24 @@ invocations and raw evidence, classify each claim, stop on safety thresholds,
 and leave cutover authority with the accountable owner.
 ```
 
+```text
+Use $technical-writing to turn the inspected implementation, tests, and
+existing documentation into a technical blog post explaining why this queue
+consumer acknowledges only after durable output. Write for experienced
+application engineers, preserve source links and uncertainty, use one concrete
+failure trace, verify code and command examples, and keep my existing voice.
+Do not invent production results or make a new delivery-semantics decision.
+```
+
+```text
+Use $handoff to compact this session for a fresh agent who will finish the
+documentation change. Recheck the current worktree and executed evidence,
+preserve accepted decisions, unresolved authority, the immediate frontier, and
+canonical paths without copying their contents, and redact sensitive material.
+Keep persistent state in an existing canonical resume surface and put only the
+session delta in a separate artifact. The next session will run on this machine,
+so save any needed ephemeral handoff in the operating system's temporary
+directory.
+```
+
 Good prompts name the decision, scope, constraints, evidence, desired artifact, and whether implementation is authorized. The skills should identify missing evidence rather than filling gaps with invented facts.

@@ -1,0 +1,7 @@
+interface:
+  display_name: "Technical Writing"
+  short_description: "Write and refine technical docs and articles"
+  default_prompt: "Use $technical-writing to create or revise clear, evidence-grounded technical writing without flattening the author's voice."
+
+policy:
+  allow_implicit_invocation: false
