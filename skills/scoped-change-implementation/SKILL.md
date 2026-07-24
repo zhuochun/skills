@@ -1,6 +1,6 @@
 ---
 name: scoped-change-implementation
-description: Implement an authorized, bounded software change in coherent vertical slices while preserving repository conventions, unrelated work, supported behavior, and operational controls. Use for a ready feature, enhancement, integration, configuration change, or diagnosed fix requiring surgical, test-backed delivery. Route unexplained failures to software-failure-diagnosis and structure-only changes to behavior-preserving-refactoring.
+description: Implement an authorized, bounded software change in coherent vertical slices while preserving repository conventions, unrelated work, supported behavior, and operational controls. Use for a ready feature, enhancement, integration, configuration change, or diagnosed fix requiring surgical, test-backed delivery. Route unexplained failures to software-failure-diagnosis, structure-only changes to behavior-preserving-refactoring, and disposable learning artifacts to prototype-to-learn.
 ---
 
 # Scoped Change Implementation
@@ -10,6 +10,7 @@ Turn an understood change into maintained software. Keep each step small enough 
 ## Preserve scope and authority
 
 - Confirm that implementation is authorized. Treat requests to discuss, diagnose, assess, review, or plan as read-only.
+- Route a disposable artifact whose purpose is to answer a behavior, state, UI, or interaction design question to `prototype-to-learn`. Do not harden exploratory code by accident.
 - Be the sole primary executor for a behavior-changing slice. Route pure structure to `behavior-preserving-refactoring`; for mixed work, follow the nominated executor and borrow only necessary neighboring checks.
 - Consume accepted scope, claims, design, assurance, and valid evidence. Reopen framing only for contradictory evidence or a decision blocking authorized behavior.
 - Read repository instructions, local conventions, relevant decisions, tests, and the current worktree before editing. Preserve unrelated and partially completed user work.

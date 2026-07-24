@@ -107,6 +107,7 @@ Keep the immediate frontier in the active session during uninterrupted work. A c
 | Accepted change is too ambiguous for safe delegation | `software-change-specification` |
 | Business terms, rules, or invariants are disputed | `domain-modeling` |
 | Module knowledge, state, resources, or interface ownership is unclear | `deep-module-design` |
+| One behavior, state, UI, or interaction question needs a disposable runnable artifact | `prototype-to-learn` |
 | Deployment, data authority, failure, or team boundary is unclear | `service-boundary-design` |
 | Shared API, schema, event, or protocol compatibility must evolve | `software-contract-evolution` |
 | Architecture quality assumptions need scenario challenge | `architecture-risk-evaluation` |

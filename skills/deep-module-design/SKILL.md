@@ -20,7 +20,7 @@ Keep module, bounded context, vertical slice, deployable service, data owner, fa
 
 ## Compose proportionately
 
-Consume supplied pressure, commitments, specification, assurance, and bounded question. Return ownership and interface, material alternative, preserved commitments, rejection gates, implementation implication, and invalidated assumptions. Reopen only for contradictory evidence, a fact blocking an honest boundary, or materially different safety, compatibility, data, lifecycle, operations, or migration. Do not duplicate the change plan.
+Consume supplied pressure, commitments, specification, assurance, and bounded question. Return ownership and interface, material alternative, preserved commitments, rejection gates, implementation implication, and invalidated assumptions. Reopen only for contradictory evidence, a fact blocking an honest boundary, or materially different safety, compatibility, data, lifecycle, operations, or migration. Route one behavior, state, or interface question that needs a disposable runnable artifact to `prototype-to-learn`. Do not duplicate the change plan.
 
 ## Design workflow
 

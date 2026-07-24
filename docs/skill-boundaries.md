@@ -82,7 +82,9 @@ flowchart LR
     RS -.-> AR
 
     PD["Product opportunity discovery"] <--> PP["Product opportunity prioritization"]
+    PD <--> PTL["Prototype to learn"]
     PD --> DM["Domain modeling"]
+    DM <--> PTL
     PD -.-> OD["Observability design"]
     PD -.-> CR["Controlled release design"]
     PP --> TP["Technical program orchestration"]
@@ -127,6 +129,9 @@ flowchart LR
     MD --> VS["Verification strategy design"]
     MD --> SCI["Scoped change implementation"]
     MD --> BPR["Behavior-preserving refactoring"]
+    MD <--> PTL
+    PTL -.-> SPEC
+    PTL -.-> SCI
     HR -.-> CR
     HR --> OD
     HR --> VS
@@ -181,6 +186,7 @@ A skill that creates an artifact should not silently certify that artifact. For 
 | --- | --- |
 | Product opportunity discovery result | Accountable product owner and cross-functional decision group challenge the evidence, affected population, alternatives, and limits; prioritization may reject investment readiness without rewriting the discovery result |
 | Product opportunity priority recommendation | Accountable product owner or declared forum closes the decision after customer, commercial, technical, operational, and mandatory-risk owners challenge the rationale and feasibility |
+| Learning prototype | The user or relevant design owner drives the artifact and challenges whether it preserves the tested mechanism; any maintained implementation requires separate implementation and evidence |
 | Research synthesis | Source-owner checks for exact claims and accountable specialist challenge for interpretation and applicability; the synthesis does not certify truth or close the downstream decision |
 | Architecture surface map | Source-owner review and focused follow-up; orientation does not certify architecture fitness, readiness, or safety |
 | Domain, service-boundary, module, or platform design | `architecture-risk-evaluation` for consequential quality and operating scenarios |
@@ -210,10 +216,14 @@ When skills compose in one task, keep the decision context in flow instead of cr
 ### Product discovery, prioritization, and delivery
 
 - `product-opportunity-discovery` reduces uncertainty about a desired outcome, customer opportunity, assumptions, and alternative solution directions. It may recommend learning, narrowing, pivoting, stopping, prioritization, or investment readiness; it does not allocate the roadmap or promise delivery.
+- `prototype-to-learn` constructs a local disposable software artifact for one named behavior, state, UI, or interaction design question. It consumes a discovery or design question when supplied and returns an observation surface and captured learning; it does not decide customer value, architecture acceptance, or production readiness.
+- `domain-modeling` retains disputed business meaning, rules, and invariant
+  authority. `prototype-to-learn` may exercise supplied candidate models, but
+  internally coherent prototype behavior does not settle a semantic dispute.
 - `product-opportunity-prioritization` allocates bounded product attention and capacity among sufficiently framed opportunities and bets. It keeps mandatory and enabling work visible, preserves different learning horizons, and makes selection, deferral, and review rationale inspectable; it does not discover every opportunity or sequence execution.
 - `technical-program-orchestration` coordinates several concurrent or interdependent workstream loops, dependencies, integration, and evidence after an outcome and investment direction have been accepted. Team count alone does not define a program. `scoped-change-implementation` owns a bounded authorized implementation.
 
-Discovery and prioritization form a feedback loop. Prioritization may fund another discovery slice rather than a full solution; discovery evidence may split, merge, weaken, strengthen, or remove an opportunity and reopen priority. `domain-modeling` owns complex software meaning, behavior, and invariants once those become the problem, while `controlled-release-design` and `observability-design` own governed production exposure and deployed measurement contracts.
+Discovery, prototyping, and prioritization can form a feedback loop. Prioritization may fund another discovery slice rather than a full solution; discovery evidence may split, merge, weaken, strengthen, or remove an opportunity and reopen priority. Discovery owns the hypothesis and evidence contract while `prototype-to-learn` owns authorized local software construction. `domain-modeling` owns complex software meaning, behavior, and invariants once those become the problem, while `controlled-release-design` and `observability-design` own governed production exposure and deployed measurement contracts.
 
 ### Change orchestration, specification, and program orchestration
 
@@ -267,9 +277,10 @@ Use `architecture-assessment` to discover and rank structural problems across a 
 
 Route by the decision, not by shared evidence. “Where should we invest in architecture?” belongs to portfolio assessment. “Has what we learned changed the right design for this capability?” belongs to retrospective review. Do not run both as serial general assessments; route a selected portfolio candidate to the focused design skill it needs, and use retrospective review only when accumulated learning creates its distinct decision.
 
-### Design, specification, implementation, and refactoring
+### Design, prototyping, specification, implementation, and refactoring
 
 - `deep-module-design` decides where knowledge, state, resources, and interface semantics should live. It does not modify the target.
+- `prototype-to-learn` modifies local files only to create a disposable observation surface for one design question. Its code creates no supported behavior or production-readiness claim; preserve the learning and route any maintained implementation separately.
 - `software-change-specification` turns one accepted but ambiguous change into a reviewable behavioral contract: current and desired behavior, invariants, scope, affected surfaces, representative examples, acceptance claims, unknowns, and readiness. It specifies the change rather than the patch and does not authorize implementation.
 - `scoped-change-implementation` consumes that contract when one exists, or resolves a compact inline contract for a local reversible change, then changes supported behavior through coherent vertical slices. TDD is one optional inner feedback loop, not the skill's whole contract.
 - `behavior-preserving-refactoring` changes structure while keeping supported behavior stable. Any intentional behavior or support-policy change becomes a separate scoped implementation decision.

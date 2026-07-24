@@ -54,6 +54,7 @@ In authorized or auto mode, write the authorized modes, accepted scope and non-g
 ```text
 product-opportunity-discovery
   <-> product-opportunity-prioritization when opportunities or bets compete
+  <-> prototype-to-learn when a local runnable artifact can retire one behavior, state, UI, or interaction uncertainty
   -> domain-modeling when business meaning, rules, or invariants need design
   -> service-boundary-design and deep-module-design when structure is in question
   -> software-change-specification when an accepted change remains too ambiguous for safe delegation

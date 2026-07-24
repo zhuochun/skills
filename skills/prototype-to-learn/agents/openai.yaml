@@ -1,0 +1,7 @@
+interface:
+  display_name: "Prototype to Learn"
+  short_description: "Build runnable prototypes for design learning"
+  default_prompt: "Use $prototype-to-learn to build the smallest runnable prototype that can answer this design question."
+
+policy:
+  allow_implicit_invocation: false

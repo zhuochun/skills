@@ -15,6 +15,14 @@ credible learning test. Do not contact customers or build production code.
 ```
 
 ```text
+Use $prototype-to-learn to test whether this concept-review state model feels
+right before we implement it. Build a disposable interactive prototype against
+the real read-only notes, show the full relevant state after each action,
+include reset and revealing edge cases, add one repository-native run command,
+and leave production behavior unchanged.
+```
+
+```text
 Use $research-synthesis to determine what rigorous papers, standards, and
 first-party operational reports support about cost-aware cloud architecture.
 Check existing repository coverage first, preserve exact provenance for each

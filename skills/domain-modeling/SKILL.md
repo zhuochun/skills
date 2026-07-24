@@ -27,6 +27,10 @@ Build a problem-specific model that makes important decisions, rules, and behavi
 8. **Choose enforcement proportionately.** Use conversation, documentation, modules, ownership, private persistence, interfaces, or isolation as needed. Account for coordination, translation, latency, failure, observability, and operating cost. Route deployable, data, failure, or team boundaries to `$service-boundary-design`.
 9. **Express and renew the model.** Reflect stable concepts and behavior in names, types, values, events, tests, modules, APIs, and data authority where they reduce ambiguity. Record consequential alternatives and revisit signals. Use later changes, failures, and operational work as evidence that the model or boundary needs refinement.
 
+Route an accepted candidate rule or state model to `prototype-to-learn` when
+hands-on driving could expose ambiguity. Keep disputed meaning and invariant
+authority in this skill.
+
 Read [references/modeling-artifacts.md](references/modeling-artifacts.md) only when a facilitated session, model comparison, context boundary, or durable decision record is needed.
 
 ## Quality gates

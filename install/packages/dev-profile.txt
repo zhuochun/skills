@@ -12,6 +12,7 @@ migration-planning
 observability-design
 operational-feedback-audit
 platform-capability-design
+prototype-to-learn
 retrospective-architecture-review
 scoped-change-implementation
 service-boundary-design
