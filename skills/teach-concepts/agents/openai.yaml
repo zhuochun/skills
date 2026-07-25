@@ -1,0 +1,7 @@
+interface:
+  display_name: "Teach Concepts"
+  short_description: "Build and test transferable understanding"
+  default_prompt: "Use $teach-concepts to teach this concept from first principles and test whether I can transfer it."
+
+policy:
+  allow_implicit_invocation: false
