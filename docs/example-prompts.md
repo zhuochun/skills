@@ -15,6 +15,15 @@ credible learning test. Do not contact customers or build production code.
 ```
 
 ```text
+Use $trace-end-to-end-journey to walk me through how an order moves from
+customer checkout through merchant acceptance, warehouse fulfillment, carrier
+handoff, and delivery. Recover what the current evidence supports, keep one
+stable step spine across product, operational, domain, system, and interface
+views, show a flowchart and cross-view matrix, trace rejection and failed
+delivery, and mark every inferred or disputed step.
+```
+
+```text
 Use $prototype-to-learn to test whether this concept-review state model feels
 right before we implement it. Build a disposable interactive prototype against
 the real read-only notes, show the full relevant state after each action,

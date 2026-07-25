@@ -82,8 +82,10 @@ flowchart LR
     RS -.-> AR
 
     PD["Product opportunity discovery"] <--> PP["Product opportunity prioritization"]
+    PD -.-> JNY["End-to-end journey trace"]
     PD <--> PTL["Prototype to learn"]
     PD --> DM["Domain modeling"]
+    JNY <--> DM
     DM <--> PTL
     PD -.-> OD["Observability design"]
     PD -.-> CR["Controlled release design"]
@@ -92,6 +94,7 @@ flowchart LR
     PP --> SCI["Scoped change implementation"]
 
     SM["Architecture surface mapping"] --> DM["Domain modeling"]
+    SM <--> JNY
     SM --> SB["Service boundary design"]
     SM --> MD["Deep module design"]
     SM --> OD["Observability design"]
@@ -130,6 +133,7 @@ flowchart LR
     MD --> SCI["Scoped change implementation"]
     MD --> BPR["Behavior-preserving refactoring"]
     MD <--> PTL
+    JNY -.-> PTL
     PTL -.-> SPEC
     PTL -.-> SCI
     HR -.-> CR
@@ -186,6 +190,7 @@ A skill that creates an artifact should not silently certify that artifact. For 
 | --- | --- |
 | Product opportunity discovery result | Accountable product owner and cross-functional decision group challenge the evidence, affected population, alternatives, and limits; prioritization may reject investment readiness without rewriting the discovery result |
 | Product opportunity priority recommendation | Accountable product owner or declared forum closes the decision after customer, commercial, technical, operational, and mandatory-risk owners challenge the rationale and feasibility |
+| Cross-view journey trace | Customer, operational, domain, data, interface, and system owners challenge the steps they own; source evidence is rechecked before consequential use |
 | Learning prototype | The user or relevant design owner drives the artifact and challenges whether it preserves the tested mechanism; any maintained implementation requires separate implementation and evidence |
 | Research synthesis | Source-owner checks for exact claims and accountable specialist challenge for interpretation and applicability; the synthesis does not certify truth or close the downstream decision |
 | Technical document or blog post | Source and domain owners challenge consequential claims; representative readers test whether the artifact performs its declared learning, action, reference, understanding, or argument job |
@@ -222,6 +227,14 @@ When skills compose in one task, keep the decision context in flow instead of cr
 - `skill-creator` and the repository authoring contract own new or materially revised skills. `technical-writing` may improve reader transfer in supporting documentation, but it must not become a second skill-authoring authority.
 
 Technical writing can follow research, design, implementation, or operational work when a reader artifact is requested. The source owner retains interpretation and decision authority, while the writing skill owns document function, reading path, provenance visibility, functional checks, and voice. A handoff is not a default output of that composition; create it only for a real continuation boundary.
+
+### End-to-end journey tracing, customer journeys, and scenario planning
+
+- `trace-end-to-end-journey` owns one evidence-labeled scenario spine aligned across experience touchpoints, operational work, domain transitions, systems, data authority, and interfaces. It may explain a supplied picture, recover a current path, propose an expected path, or compare expected and observed behavior.
+- Customer journey mapping stays with `product-opportunity-discovery` when the missing artifact concerns only customer context, touchpoints, needs, pains, emotions, adoption, or value. A customer journey can become the experience lane of a cross-view trace.
+- `architecture-surface-mapping` owns broad evidence-ranked orientation to current software. End-to-end journey tracing owns one bounded outcome path intended for shared product-to-system walkthrough.
+- Alternative-futures scenario planning varies external worlds, driving uncertainties, and strategic responses. Rejection, cancellation, timeout, and recovery are branches within one journey, not scenario planning.
+- `prototype-to-learn` owns runnable software for hands-on learning. A story, matrix, flowchart, sequence diagram, or state trace is not a prototype merely because it is interactive to discuss.
 
 ### Product discovery, prioritization, and delivery
 

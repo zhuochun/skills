@@ -23,5 +23,6 @@ software-change-specification
 software-contract-evolution
 software-failure-diagnosis
 technical-program-orchestration
+trace-end-to-end-journey
 verification-execution
 verification-strategy-design

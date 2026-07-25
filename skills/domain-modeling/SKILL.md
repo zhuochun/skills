@@ -31,6 +31,10 @@ Route an accepted candidate rule or state model to `prototype-to-learn` when
 hands-on driving could expose ambiguity. Keep disputed meaning and invariant
 authority in this skill.
 
+Route an accepted workflow to `trace-end-to-end-journey` when the missing
+artifact is a shared experience-to-system walkthrough. Keep disputed semantics
+and invariants in this skill.
+
 Read [references/modeling-artifacts.md](references/modeling-artifacts.md) only when a facilitated session, model comparison, context boundary, or durable decision record is needed.
 
 ## Quality gates

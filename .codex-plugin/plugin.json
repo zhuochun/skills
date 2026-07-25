@@ -1,6 +1,6 @@
 {
   "name": "bicrement",
-  "version": "1.0.12+codex.20260724100405",
+  "version": "1.0.13+codex.20260725000631",
   "description": "Evidence-oriented product and software engineering workflows for Codex.",
   "author": {
     "name": "Zhuochun",
@@ -18,7 +18,7 @@
   "interface": {
     "displayName": "Bicrement",
     "shortDescription": "Evidence-oriented product and software engineering skills",
-    "longDescription": "Thirty-four reusable workflows for product, software, service, and operational work.",
+    "longDescription": "Reusable workflows for product, software, service, and operational work.",
     "developerName": "Zhuochun",
     "category": "Productivity",
     "capabilities": [

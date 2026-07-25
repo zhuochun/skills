@@ -70,11 +70,26 @@ active work remains in the current session while continuation is obvious
 
 Keep specifications, plans, ADRs, issues, commits, diffs, and program surfaces canonical. When one of those surfaces owns resume state, update it when authorized and limit any separate handoff to the session delta. Use a temporary file only for an accessible same-environment transfer; cross-environment continuation needs a shared location. The handoff never transfers missing authority. Do not create one as routine stage-to-stage paperwork inside an uninterrupted composition.
 
+### Cross-view journey walkthrough
+
+```text
+supplied, recovered, expected, or current-versus-expected cross-view journey
+  -> trace-end-to-end-journey for one stable scenario spine across experience, operations, domain state, systems, and interfaces
+customer-only touchpoints, pain, emotion, adoption, need, or value
+  -> product-opportunity-discovery directly
+  -> domain-modeling when terms, rules, events, states, or invariants are disputed
+  -> architecture-surface-mapping when broad current-system orientation is still missing
+  -> prototype-to-learn only when a runnable artifact is needed
+```
+
+Keep product, operational, domain, and system views as aligned lanes of one journey rather than independent pictures. Normal and exception paths are branches inside that journey. Alternative-futures scenario planning asks a different question and should not be composed as another journey branch.
+
 ### Product opportunity to delivery
 
 ```text
 product-opportunity-discovery
   <-> product-opportunity-prioritization when opportunities or bets compete
+  <-> trace-end-to-end-journey when one outcome must be aligned across experience, operations, domain state, systems, and interfaces
   <-> prototype-to-learn when a local runnable artifact can retire one behavior, state, UI, or interaction uncertainty
   -> domain-modeling when business meaning, rules, or invariants need design
   -> service-boundary-design and deep-module-design when structure is in question

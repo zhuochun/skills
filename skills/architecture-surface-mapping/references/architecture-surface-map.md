@@ -99,6 +99,7 @@ Trace success first, then annotate partial completion, retry, timeout, duplicati
 
 Route to:
 
+- `trace-end-to-end-journey` for one bounded product-to-system walkthrough with aligned experience, operational, domain, system, and interface views;
 - `domain-modeling` for disputed meaning or invariants;
 - `service-boundary-design` for split, merge, data, deployment, or failure boundaries;
 - `deep-module-design` for a selected code seam or interface;

@@ -21,6 +21,9 @@ support for that function, not as the artifact's substitute.
   architecture, operational, security, legal, or support policy.
 - Route `SKILL.md` creation or material revision to `skill-creator` and the
   repository's authoring contract. Do not duplicate that workflow here.
+- Route recovery or construction of a cross-view product-to-system journey to
+  `trace-end-to-end-journey`. Explain an accepted trace here when prose is the
+  missing reader artifact.
 - Keep factual observation, source-supported synthesis, inference, assumption,
   proposal, opinion, and unresolved uncertainty distinguishable.
 - Preserve the author's voice when samples or an existing draft make it

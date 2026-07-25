@@ -12,5 +12,6 @@ scoped-change-implementation
 software-change-orchestration
 software-change-specification
 software-failure-diagnosis
+trace-end-to-end-journey
 verification-execution
 verification-strategy-design
