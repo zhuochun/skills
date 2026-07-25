@@ -135,4 +135,4 @@ Reject:
 
 ## Completion
 
-Return or update the bounded outcome, canonical location, accepted contract, relevant artifact and evidence links, current frontier or delivered state, authority still required, and completion or re-entry condition. If discussion remains inline, say why no durable record is needed.
+Return or update the bounded outcome, canonical location, accepted contract, relevant artifact and evidence links, current frontier or delivered state, authority still required, and completion or re-entry condition.
