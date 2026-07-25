@@ -42,6 +42,7 @@ Use [references/decision-record.md](references/decision-record.md) for a working
 
 ## Route specialist judgments
 
+- `$research-synthesis`: a bounded cross-source evidence answer needed before weighting or closure.
 - `$architecture-risk-evaluation`: architecture quality and systemic scenarios.
 - `$product-opportunity-discovery`: opportunity or solution investment; `$product-opportunity-prioritization`: allocation among framed bets.
 - `$domain-modeling`: disputed meaning, rules, invariants, and semantic boundaries.

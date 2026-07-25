@@ -1,6 +1,6 @@
 # Evidence synthesis record
 
-Adapt these forms to the current task or the repository's existing research-note convention. Do not create a durable record merely to complete the template.
+Use these forms only when the full workflow or a durable brief is justified. For a compact answer, do not instantiate this record, `RES-*` keys, or a matrix merely to complete the template.
 
 ## Inquiry frame
 
@@ -10,7 +10,7 @@ Adapt these forms to the current task or the repository's existing research-note
 - Included subjects, populations, systems, jurisdictions, versions, and time window:
 - Included and excluded source classes:
 - Freshness requirement:
-- Existing local coverage and reuse boundary:
+- Authorized in-scope local coverage and reuse boundary:
 - Output location and mutation authority:
 - Stop condition:
 

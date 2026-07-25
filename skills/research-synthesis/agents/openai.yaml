@@ -1,7 +1,7 @@
 interface:
   display_name: "Research Synthesis"
-  short_description: "Synthesize primary evidence into defensible claims"
-  default_prompt: "Use $research-synthesis to investigate this question across high-trust sources, preserve claim-level provenance, and return a bounded evidence synthesis."
+  short_description: "Synthesize cross-source evidence into bounded claims"
+  default_prompt: "Use $research-synthesis to determine what bounded cross-source evidence supports, preserve claim provenance and uncertainty, and stop before downstream judgment."
 
 policy:
   allow_implicit_invocation: true

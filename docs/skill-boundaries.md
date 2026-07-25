@@ -80,6 +80,8 @@ flowchart LR
     RS["Research synthesis"] -.-> PD
     RS -.-> DM
     RS -.-> AR
+    RS -.-> TC["Teach concepts"]
+    TC -.-> TGC["Technical growth coaching"]
 
     PD["Product opportunity discovery"] <--> PP["Product opportunity prioritization"]
     PD -.-> JNY["End-to-end journey trace"]
@@ -193,6 +195,7 @@ A skill that creates an artifact should not silently certify that artifact. For 
 | Cross-view journey trace | Customer, operational, domain, data, interface, and system owners challenge the steps they own; source evidence is rechecked before consequential use |
 | Learning prototype | The user or relevant design owner drives the artifact and challenges whether it preserves the tested mechanism; any maintained implementation requires separate implementation and evidence |
 | Research synthesis | Source-owner checks for exact claims and accountable specialist challenge for interpretation and applicability; the synthesis does not certify truth or close the downstream decision |
+| Concept teaching session | The learner reconstructs and transfers the concept in a changed case; source or domain owners challenge consequential facts and interpretations |
 | Technical document or blog post | Source and domain owners challenge consequential claims; representative readers test whether the artifact performs its declared learning, action, reference, understanding, or argument job |
 | Session handoff | The next agent rechecks freshness and completion against linked canonical state before consequential continuation; the handoff does not certify the artifacts it compresses |
 | Architecture surface map | Source-owner review and focused follow-up; orientation does not certify architecture fitness, readiness, or safety |
@@ -219,6 +222,13 @@ Separation does not require bureaucracy or different people for every local chan
 When skills compose in one task, keep the decision context in flow instead of creating a handoff file. Use a stable namespaced key together with its plain-language label, for example `OBS-settlement-age — Settlement completion age`. Repeat both whenever the contract is cited. The prefix identifies the contract family; the label preserves human meaning.
 
 ## Important distinctions
+
+### Concept teaching, writing, research, and growth coaching
+
+- `teach-concepts` owns one learner-specific explanation, misconception repair, reconstruction, and transfer loop for a bounded concept. It may compress to a direct explanation when the user does not want an interactive exchange.
+- `technical-writing` owns a durable technical tutorial, explanation, reference, or other reader artifact. A static explanation does not become concept teaching merely because readers may learn from it.
+- `research-synthesis` owns what cross-source evidence supports. `teach-concepts` consumes supplied or verified subject evidence and does not make a disputed claim true by explaining it clearly.
+- `technical-growth-coaching` owns repeated performance practice, feedback, delegation, and transfer into independent work. One successful concept check does not certify professional capability.
 
 ### Technical writing, source ownership, and session handoff
 
@@ -265,7 +275,7 @@ Use `research-synthesis` when the missing artifact is a bounded answer assembled
 
 Use `architecture-surface-mapping` when the question is how a declared current software subject actually works. Its primary evidence is the subject's semantics, code, configuration, interfaces, data, runtime, dependencies, change paths, controls, recovery, and ownership. When external evidence and current-system facts both matter, the research synthesis and surface map remain separate inputs to the relevant specialist; neither substitutes for the other.
 
-Route direct customer learning to `product-opportunity-discovery`, a concrete unexplained software failure to `software-failure-diagnosis`, fixed engineering claims to verification design or execution, and accountable weighting or closure to `decision-facilitation`. Capturing or summarizing one source is not cross-source research synthesis unless the user also asks what the broader evidence supports.
+Route direct customer learning to `product-opportunity-discovery`, a concrete unexplained software failure to `software-failure-diagnosis`, local meaning and rules to `domain-modeling`, fixed engineering claims to verification design or execution, regulated applicability to the accountable domain owner, and accountable weighting or closure to `decision-facilitation`. Capturing or summarizing one source is not cross-source research synthesis unless the user also asks what broader evidence supports; when no repository-native workflow exists, summarize or extract that source directly without research-record machinery.
 
 ### Orientation versus assessment
 

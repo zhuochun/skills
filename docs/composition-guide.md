@@ -27,7 +27,18 @@ research-synthesis for the bounded cross-source question
   -> decision-facilitation when accountable weighting and closure are still needed
 ```
 
-A request for papers, reports, standards, official guidance, or competing evidence can stop after `research-synthesis`. Do not require a downstream decision workflow merely because the brief may inform one later. Conversely, do not let external literature substitute for current-system traces, direct customer evidence, causal diagnosis, or executed verification when those evidence surfaces control the decision.
+A bounded cross-source request for papers, reports, standards, official guidance, or competing evidence can stop after `research-synthesis`. Do not require a downstream decision workflow merely because the brief may inform one later. Conversely, do not let external literature substitute for current-system traces, direct customer evidence, local domain authority, regulated applicability judgment, causal diagnosis, or designed and executed verification when those evidence surfaces control the decision.
+
+### Evidence into learner understanding
+
+```text
+supplied, inspected, or research-synthesized subject evidence
+  -> teach-concepts for one learner-specific mental model, explanation, reconstruction, and transfer check
+  -> technical-growth-coaching when capability needs repeated representative work, feedback, delegation, and independence
+  -> technical-writing when the requested durable reader artifact is technical
+```
+
+`teach-concepts` can stop after a compact explanation or one bounded interactive learning loop. It preserves learner reasoning and tests use of the concept without claiming expertise from one exchange. Source truth remains with supplied evidence, `research-synthesis`, or the accountable subject owner; a factual dispute is not repaired by clearer teaching.
 
 ### Technical evidence into a reader artifact
 

@@ -39,7 +39,7 @@ Do not start from a fashionable method or invoke every skill as a stage gate. As
 
 | Skill | It owns | Primary output |
 | --- | --- | --- |
-| [`research-synthesis`](../skills/research-synthesis/) | Question-driven synthesis across papers, standards, official guidance, reports, datasets, and other high-trust sources | Bounded answer, claim-level provenance, contradictions, applicability, confidence, unresolved gaps, and stop rationale |
+| [`research-synthesis`](../skills/research-synthesis/) | Bounded synthesis of what papers, standards, official guidance, reports, datasets, and other high-trust sources collectively support | Bounded answer, claim-level provenance, contradictions, applicability, confidence, unresolved gaps, and stop rationale |
 | [`product-opportunity-discovery`](../skills/product-opportunity-discovery/) | Customer opportunity and solution-direction learning before heavy implementation | Decision frame, opportunity model, hypotheses, alternatives, learning evidence, and bounded disposition |
 | [`trace-end-to-end-journey`](../skills/trace-end-to-end-journey/) | Alignment of one bounded journey across experience, operational, domain, system, data, and interface views | Evidence-labeled scenario spine, cross-view trace, normal and revealing branches, contradictions, and routed gaps |
 | [`prototype-to-learn`](../skills/prototype-to-learn/) | Construction of one disposable runnable software artifact for a behavior, state, UI, or interaction design question | Local prototype, observation surface, fidelity limits, captured learning, and lifecycle route |
@@ -103,4 +103,5 @@ Do not start from a fashionable method or invoke every skill as a stage gate. As
 
 | Skill | It owns | Primary output |
 | --- | --- | --- |
+| [`teach-concepts`](../skills/teach-concepts/) | Learner-specific understanding and transfer of one bounded concept | Current mental model, first-principles explanation, misconception repair, retrieval or transfer evidence, and next learning move |
 | [`technical-growth-coaching`](../skills/technical-growth-coaching/) | Deliberate practice, calibrated delegation, feedback, and transfer | Capability baseline, practice assignment, delegation contract, and transfer test |

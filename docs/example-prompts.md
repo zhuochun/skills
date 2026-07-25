@@ -34,10 +34,20 @@ and leave production behavior unchanged.
 ```text
 Use $research-synthesis to determine what rigorous papers, standards, and
 first-party operational reports support about cost-aware cloud architecture.
-Check existing repository coverage first, preserve exact provenance for each
-consequential claim, distinguish empirical evidence from normative and vendor
-guidance, explain contradictions and transfer limits, and stop with a bounded
-answer and unresolved gaps. Do not make the architecture decision.
+Treat the supplied source packet and this repository as inside the authorized
+source boundary, preserve exact provenance for each consequential claim,
+distinguish empirical evidence from normative and vendor guidance, explain
+contradictions and transfer limits, and stop with a bounded answer and
+unresolved gaps. Do not make the architecture decision.
+```
+
+```text
+Use $teach-concepts to help me understand why event-time watermarks exist. I
+understand batch processing but not how a streaming system reasons about
+out-of-order events. Start from that model, trace one concrete example, expose
+where a useful analogy breaks, and then give me a changed case that tests
+whether I can predict when a result is provisional. Do not turn this into a
+written tutorial or claim mastery before I respond.
 ```
 
 ```text
