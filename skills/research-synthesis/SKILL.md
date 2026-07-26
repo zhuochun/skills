@@ -51,6 +51,8 @@ Use [references/evidence-synthesis-record.md](references/evidence-synthesis-reco
 - `domain-modeling` owns local meaning, behavior, rules, invariants, and translations. External definitions are evidence, not authority for the local model.
 - Accountable legal, compliance, privacy, security, safety, medical, and financial owners retain context-specific applicability judgments; do not issue compliant, noncompliant, safe, unsafe, eligible, or ineligible verdicts.
 - `decision-facilitation` owns owner criteria, downstream recommendations, accountable tradeoffs, and closure.
+- `teach-concepts` owns learner-specific explanation, misconception repair, reconstruction, and transfer checks. It may consume supplied or synthesized evidence; teaching does not establish source truth.
+- `technical-writing` owns a durable reader artifact and its reading path. When cross-source evidence is needed, `research-synthesis` supplies the evidence foundation; it does not own the tutorial, article, or documentation structure.
 - For one artifact, use repository capture or summarization when available; otherwise summarize or extract it directly.
 
 ## Quality gates

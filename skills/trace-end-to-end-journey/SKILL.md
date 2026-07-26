@@ -13,13 +13,35 @@ easy to walk without presenting an inferred picture as established truth.
 
 - Confirm whether the user wants analysis, an in-conversation walkthrough, or
   an authorized durable artifact. Keep discussion and review read-only.
-- Read repository instructions, the current worktree, supplied pictures, and
-  the smallest relevant evidence set before tracing. Preserve unrelated work.
+- Read repository instructions when operating in a repository. Inspect the
+  current worktree only when recovered or comparison mode depends on
+  current-system evidence. For a supplied or expected walkthrough, inspect only
+  supplied and explicitly authorized in-scope sources. Preserve unrelated work.
 - Name the trace mode:
   - **supplied** explains and checks a provided picture;
   - **recovered** reconstructs current behavior from evidence;
-  - **expected** proposes or records an intended journey; and
+  - **expected** records an intended journey or makes gaps and alternatives
+    inspectable; and
   - **comparison** aligns expected and observed behavior.
+- In expected mode, consume accepted outcomes, semantics, constraints, and
+  ownership decisions. Propose connective steps only to expose a gap or make
+  alternatives inspectable. Do not settle disputed domain meaning, data or
+  effect authority, service boundaries, interface contracts, migration states,
+  cutover policy, or operating and recovery policy. Stop and route those
+  decisions to their specialist or accountable owner.
+- Choose a proportional trace form. Apply the stable-trace criteria before the
+  compact fallback:
+  - use a **stable trace** when several representations must stay aligned,
+    expected and observed paths are compared, another artifact will consume the
+    trace, or a durable or consequential trace must be rechecked; or
+  - otherwise, use a **compact trace** for a low-consequence in-conversation
+    walkthrough. Number the steps without requiring `EVD-*` or `JNY-*` keys.
+    Mark each distinct claim inline with the applicable label: `[Observed]`,
+    `[Executable]`, `[Declared]`, `[Reported]`, `[Inferred]`, `[Proposed]`, or
+    `[Unresolved]`. Use a form such as
+    `1. [Declared] Actor acts. [Inferred] This may leave state X.` Do not let a
+    declared action lend its status to an added state, result, handoff, or
+    owner.
 - Label consequential content as observed, executable, declared, reported,
   inferred, proposed, or unresolved. Do not fill an evidence gap with a clean
   arrow.
@@ -40,6 +62,14 @@ easy to walk without presenting an inferred picture as established truth.
 - Route disputed terms, rules, events, states, or invariants to
   `domain-modeling`. Use accepted or explicitly proposed domain transitions in
   the trace.
+- Route service boundaries and data or effect authority to
+  `service-boundary-design`. Route contract compatibility and coexistence to
+  `software-contract-evolution`; leave new interface contracts with the
+  accountable design owner, then route accepted ambiguous behavior to
+  `software-change-specification`.
+- Route migration states, authority transfer, and cutover behavior to
+  `migration-planning`. Leave operating and recovery policy with its
+  accountable owner.
 - Route broad orientation to unfamiliar current software to
   `architecture-surface-mapping`. This skill owns one bounded outcome path, not
   a complete architecture map.
@@ -58,14 +88,16 @@ easy to walk without presenting an inferred picture as established truth.
 1. **Frame the journey.** State the outcome, primary actor, starting trigger,
    observable completion, scope boundary, audience, trace mode, and question
    the walkthrough must answer.
-2. **Recover the evidence.** Inspect relevant experience maps, screens,
-   procedures, domain records, code, interfaces, schemas, events, traces,
-   support material, and owner reports. Give material sources stable `EVD-*`
-   keys and record their location, observed-at or effective date, and conflicts.
-3. **Create the scenario spine.** Give each material step a stable `JNY-*` key.
-   Name the acting party, intent or trigger, starting condition, action,
-   visible result, and resulting journey state. Link supported claims to their
-   `EVD-*` keys; keep unsupported content inferred, proposed, or unresolved.
+2. **Recover the evidence.** Inspect the evidence allowed by the selected mode:
+   relevant experience maps, screens, procedures, domain records, code,
+   interfaces, schemas, events, traces, support material, or owner reports. For
+   a stable trace, give material sources `EVD-*` keys and record their locator,
+   observed-at or effective date, and conflicts.
+3. **Create the scenario spine.** Number each material step. Name the acting
+   party, intent or trigger, starting condition, action, visible result, and
+   resulting journey state. For a stable trace, use `JNY-*` keys and link
+   supported claims to `EVD-*` keys. Keep unsupported content inferred,
+   proposed, or unresolved.
 4. **Align the views.** For each step, connect applicable experience
    touchpoints, human or operational work, domain transitions, systems, data,
    interfaces, external effects, and ownership. Mark a lane not applicable
@@ -83,8 +115,9 @@ easy to walk without presenting an inferred picture as established truth.
    every theoretical edge case.
 8. **Render for the question.** Use a short story for comprehension, a
    cross-view matrix for alignment, a flowchart for actor flow, a sequence
-   diagram for interfaces, or a state diagram for lifecycle. Keep stable step
-   keys across every representation.
+   diagram for interfaces, or a state diagram for lifecycle. Keep numbered step
+   references clear in a compact trace and stable keys aligned across every
+   representation in a stable trace.
 9. **Walk the trace.** Explain one coherent segment at a time. In an
    interactive walkthrough, invite corrections at consequential gaps and
    update the shared trace before continuing.
@@ -100,7 +133,9 @@ when producing a matrix, diagram, durable map, or facilitated walkthrough.
 ## Quality gates
 
 - One bounded outcome and explicit start and completion control the trace.
-- Stable step keys connect the narrative, lanes, diagrams, and branches.
+- Consistent step references connect the narrative, lanes, diagrams, and
+  branches. Use stable keys for comparison, multiple representations,
+  downstream consumption, or durable and consequential traces.
 - Each material step identifies the actor, visible result, state transition,
   and system or handoff where those views apply.
 - Product, operational, domain, and technical views agree or show their
@@ -110,8 +145,8 @@ when producing a matrix, diagram, durable map, or facilitated walkthrough.
 - Intermediate and failure states remain visible when work is long-running,
   asynchronous, external, or human-dependent.
 - Expected, observed, inferred, and proposed content remain distinguishable.
-- Material current-state claims retain recheckable evidence references and
-  recency; volatile evidence is refreshed before consequential use.
+- Durable or consequential current-state claims retain recheckable evidence
+  references and recency; volatile evidence is refreshed before use.
 - Relevant owners can challenge the steps they own before consequential use.
 
 ## Reject weak traces
@@ -126,6 +161,8 @@ when producing a matrix, diagram, durable map, or facilitated walkthrough.
   invented domain behavior.
 - Labeling customer, future, or strategy invention as hypothetical does not
   bring excluded work into scope.
+- Labeling a target design as proposed does not authorize decisions owned by
+  another workflow or accountable owner.
 - An attractive walkthrough does not validate customer value, system
   correctness, architecture quality, or operational readiness.
 
@@ -133,6 +170,6 @@ when producing a matrix, diagram, durable map, or facilitated walkthrough.
 
 Lead with the journey boundary and how to read or continue the walkthrough.
 Return the aligned trace, normal and revealing branch paths, evidence labels,
-evidence references and recency for material claims, contradictions, unresolved
-owner questions, artifact location when one was authorized, and focused next
-routes.
+evidence references and recency when the selected form requires them,
+contradictions, unresolved owner questions, artifact location when one was
+authorized, and focused next routes.

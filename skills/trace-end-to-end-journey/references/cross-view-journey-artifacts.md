@@ -1,7 +1,9 @@
 # Cross-View Journey Artifacts
 
 Use the smallest artifact combination that makes the user's question
-inspectable. Preserve the same `JNY-*` step keys across every selected form.
+inspectable. Use numbered steps for a compact trace. Use stable `JNY-*` keys
+across every selected form when comparison, reuse, durability, or consequence
+requires a stable trace.
 
 ## Journey frame
 
@@ -11,17 +13,20 @@ inspectable. Preserve the same `JNY-*` step keys across every selected form.
 - Scope boundary and deliberate omissions:
 - Audience and walkthrough question:
 - Mode: supplied, recovered, expected, or comparison
+- Trace form: compact or stable
 - Evidence horizon and material missing perspectives:
 
 ## Cross-view step matrix
 
-| Step | Actor, intent, and trigger | Touchpoint and visible result | Operational work or handoff | Domain transition and resulting state | System, interface, and interaction type | Data or effect authority | Evidence status, `EVD-*` keys, and owner |
+| Step | Actor, intent, and trigger | Touchpoint and visible result | Operational work or handoff | Domain transition and resulting state | System, interface, and interaction type | Data or effect authority | Evidence status, reference, and owner |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| `JNY-01` |  |  |  |  |  |  |  |
+| `1` or `JNY-01` |  |  |  |  |  |  |  |
 
 Keep a cell empty or mark it not applicable when that view does not exist.
 Do not repeat a transport payload as a domain fact unless the named owner makes
-it authoritative.
+it authoritative. Use inline evidence labels for a compact trace and `EVD-*`
+references for a stable trace. Label mixed-status content separately: a
+declared action does not make an added state, handoff, result, or owner declared.
 
 Use evidence labels consistently:
 
@@ -35,7 +40,7 @@ Use evidence labels consistently:
 - **Proposed:** intended future behavior that is not yet authoritative.
 - **Unresolved:** a material gap or contradiction.
 
-For a durable or consequential trace, keep a compact evidence index:
+For a stable trace, keep a compact evidence index:
 
 | Evidence | Type and locator | Supports | Observed-at or effective date | Owner | Limits or conflicts |
 | --- | --- | --- | --- | --- | --- |
@@ -74,14 +79,15 @@ step as if a participant confirmed it.
   picture.
 
 Label manual, synchronous, asynchronous, batch, and third-party crossings.
-Keep the stable step key in each diagram node or message. A diagram may omit
-detail only when the matrix preserves it and the omission is stated.
+Keep the numbered step reference in a compact diagram or the stable key in each
+stable-trace node or message. A diagram may omit detail only when the matrix
+preserves it and the omission is stated.
 
 ## Branch trace
 
 | Branch | Diverges at | Trigger or condition | Changed steps and states | Visible consequence | Recovery, compensation, or terminal result | Evidence status |
 | --- | --- | --- | --- | --- | --- | --- |
-| `JNY-B01` |  |  |  |  |  |  |
+| `B1` or `JNY-B01` |  |  |  |  |  |  |
 
 Prefer branches that challenge authority, state, time, or ownership:
 

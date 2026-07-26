@@ -46,12 +46,13 @@ override generic preferences.
 - Prefer concrete facts, named actors, direct verbs, mechanisms, dates, and
   measurements that the evidence supports.
 
-## Diagnose slop by reader effect
+## Diagnose formulaic prose by reader effect
 
-Use the pattern and language catalogue loaded from the entrypoint. Avoid its
-default-watch items in normal prose and revise density-watch items when they
-cluster. Treat context-only items as possible prompts for inspection, never as
-defects or authorship evidence by themselves.
+When the entrypoint loads the pattern and language catalogue, use it as a
+diagnostic aid. Revise only repeated patterns or clusters that materially harm
+clarity, trust, or voice. Treat watchlist matches as prompts, not defects or
+release failures. Treat context-only items as possible prompts for inspection,
+never as authorship evidence by themselves.
 
 For each finding, identify the exact passage and explain its reader effect.
 Remove the empty function rather than swapping one watched term for another.

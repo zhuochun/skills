@@ -1,6 +1,6 @@
 ---
 name: prototype-to-learn
-description: Build a disposable, runnable software prototype that answers one explicit behavior, state, UI, or interaction design question before maintained implementation. Use when the user wants to try a V1, compare interface variants, or drive a model through cases. Route customer-value experiments to product-opportunity-discovery and production changes to scoped-change-implementation.
+description: Build a disposable, runnable software prototype that answers one explicit behavior, state, UI, or interaction design question before maintained implementation. Use when users want to compare runnable candidates, exercise an interaction direction before choosing maintained behavior, or drive candidate rules or state models through cases. Route customer-value experiments to product-opportunity-discovery and production changes to scoped-change-implementation.
 ---
 
 # Prototype to Learn
@@ -41,6 +41,12 @@ maintained implementation.
 - If both branches appear relevant, prototype the uncertainty most likely to
   change the decision first. Keep a second artifact separate unless the user
   needs both mechanisms together to evaluate the question.
+
+Route a non-runnable cross-view journey—whether expressed as a story, matrix,
+flowchart, sequence diagram, or state trace—to `trace-end-to-end-journey`.
+Route other non-runnable representations to the relevant design owner. A visual
+representation is not a software prototype unless hands-on execution is
+necessary to answer the question.
 
 Route customer need, demand, adoption, value, or experiment design to
 `product-opportunity-discovery`. Route disputed business meaning, rules, or

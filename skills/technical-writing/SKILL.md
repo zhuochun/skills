@@ -1,6 +1,6 @@
 ---
 name: technical-writing
-description: Produce and revise task-fit technical documentation and evidence-grounded technical articles from source material, code, and observed behavior. Use for tutorials, how-to guides, explanations, reference documentation, runbooks, procedures, technical blog posts, AI-slop audits, or humanizing technical prose. Preserve provenance, uncertainty, and author voice. Route skill authoring to skill-creator and unresolved domain decisions to their owning specialist.
+description: Write or revise task-fit technical documentation and evidence-grounded articles from supplied sources, code, and observed behavior. Use for tutorials, how-to guides, durable explanations, reference, runbooks, procedures, technical blogs, AI-slop audits, or humanizing and voice-preserving edits. Route learner-specific teaching to teach-concepts, cross-source evidence to research-synthesis, skill authoring to skill-creator, and unresolved domain decisions to their owners.
 ---
 
 # Technical Writing
@@ -13,14 +13,22 @@ support for that function, not as the artifact's substitute.
 
 - Confirm that the request authorizes creating or editing the target artifact.
   Treat discussion, assessment, and review requests as read-only.
-- Inspect repository instructions, the current worktree, local templates, and
-  nearby documentation before writing. Preserve unrelated work and established
-  terminology.
+- When the target belongs to a repository, inspect its instructions, current
+  worktree, local templates, and nearby documentation. Preserve unrelated work
+  and established terminology.
+- For a supplied draft or standalone article outside a repository, inspect only
+  the sources and destination constraints relevant to that artifact.
 - Treat supplied decisions, specifications, code, tests, runtime evidence, and
   sources as inputs. Do not silently decide unresolved product, domain,
   architecture, operational, security, legal, or support policy.
 - Route `SKILL.md` creation or material revision to `skill-creator` and the
   repository's authoring contract. Do not duplicate that workflow here.
+- Check current or version-specific facts against their canonical source.
+  Route a disputed or cross-source factual foundation to
+  `research-synthesis`; technical writing does not establish source truth.
+- Route learner-specific explanation, misconception repair, reconstruction, or
+  transfer checking to `teach-concepts`. Keep a durable tutorial, explanation,
+  or reference artifact here.
 - Route recovery or construction of a cross-view product-to-system journey to
   `trace-end-to-end-journey`. Explain an accepted trace here when prose is the
   missing reader artifact.
@@ -52,18 +60,18 @@ instead of blending their complete workflows into one page.
 
 ## Select the editorial action
 
-For drafting, material revision, voice preservation, humanizing, or AI-slop
-analysis, read both:
+For drafting, material revision, voice-preserving editing, humanizing review,
+or AI-slop analysis, read
+[references/editorial-style.md](references/editorial-style.md).
 
-- [references/editorial-style.md](references/editorial-style.md) for the
-  editing method and documentation defaults; and
-- [references/slop-pattern-catalog.md](references/slop-pattern-catalog.md) for
-  the complete pattern, word, and phrase watchlist.
+Read [references/slop-pattern-catalog.md](references/slop-pattern-catalog.md)
+when the user explicitly requests AI-slop analysis or humanizing review, or
+when an initial editorial pass finds a repeated cluster of formulaic patterns
+that materially harms the reader.
 
-Avoid catalogued patterns and language by default. Keep an item when it is
-accurate, required, quoted, established in the author's voice, or clearer than
-the available alternative. Do not contort prose merely to remove a watchlist
-match.
+When the catalogue is loaded, use it as a set of diagnostic prompts. Revise
+only patterns with an observable reader effect. Do not treat watchlist matches
+as release failures or authorship evidence.
 
 - For an edit, make the minimum effective change. Preserve strong passages and
   return a concise summary of material changes when it helps the user review
@@ -123,8 +131,8 @@ match.
   isolated words, punctuation, or detector output as proof.
 - Editing leaves strong prose alone and changes only what improves truth,
   clarity, reader transfer, or the requested voice.
-- The final prose avoids dense clusters of catalogued slop patterns and watched
-  language unless a documented context exception applies.
+- Formulaic language or structure does not form a repeated cluster that
+  materially harms the reader.
 - Verification matches the artifact's consequence; the producer does not
   silently certify its own high-consequence guidance.
 
@@ -141,6 +149,6 @@ match.
   uncertainty makes the artifact weaker.
 - A style edit must not change requirements, permissions, support commitments,
   or factual meaning without explicit authority.
-- Treat the language catalogue as a default-avoid watchlist, not an absolute
-  ban. A punctuation quota, forced sentence variation, or invented personality
-  is not a substitute for editorial judgment.
+- When the pattern catalogue is loaded, treat it as a diagnostic aid rather
+  than a ban list. A watchlist match, punctuation quota, forced sentence
+  variation, or invented personality is not an editorial result.
