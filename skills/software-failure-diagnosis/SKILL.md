@@ -1,6 +1,6 @@
 ---
 name: software-failure-diagnosis
-description: Diagnose bugs, regressions, intermittent failures, incorrect results, crashes, and performance degradation by turning symptoms into discriminating evidence and a causal explanation with explicit confidence. Use when software is broken, flaky, slow, environment-dependent, production-only, or not understood well enough to fix. Remain diagnosis-first; route an authorized repair with its supported cause to scoped-change-implementation.
+description: Diagnose bugs, regressions, intermittent failures, incorrect results, crashes, and performance degradation by turning symptoms into discriminating evidence and a supported cause. Use first whenever a newly reported symptom remains unexplained, even when the user also authorizes a fix. After causal support, route the bounded repair to scoped-change-implementation.
 ---
 
 # Software Failure Diagnosis
@@ -10,7 +10,7 @@ Reduce uncertainty before changing behavior. Build the smallest safe evidence lo
 ## Preserve diagnostic integrity and authority
 
 - For diagnosis requests, preserve supported behavior. Run non-mutating checks and create no lasting target changes without authorization.
-- If the user also authorizes a fix, complete the causal diagnosis first, then route the bounded repair to `$scoped-change-implementation`. Do not let a plausible patch substitute for understanding the failure.
+- If the user reports a new symptom and also authorizes a fix, keep diagnosis primary until the cause is supported. Authorization permits a later repair; it does not make the failure a diagnosed fix. Then route the bounded repair to `$scoped-change-implementation`.
 - Preserve symptoms, times, environment, versions, inputs, impact, and negative evidence before retries, restarts, or instrumentation overwrite them.
 - Respect privacy, secrets, production safety, retention, and access controls. Require explicit authorization for temporary instrumentation, traffic replay, production queries, fault injection, or state mutation, and remove diagnostic changes afterward.
 - Separate observed facts, interpretation, hypotheses, and unknowns. State confidence rather than presenting the first plausible story as root cause.

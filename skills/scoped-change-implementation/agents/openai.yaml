@@ -1,7 +1,7 @@
 interface:
   display_name: "Scoped Change Implementation"
   short_description: "Implement scoped changes in coherent slices"
-  default_prompt: "Use $scoped-change-implementation to implement this authorized change in small coherent slices and verify each step."
+  default_prompt: "Use $scoped-change-implementation to implement this authorized, ready change in small coherent slices and verify each step."
 
 policy:
   allow_implicit_invocation: true
