@@ -117,6 +117,6 @@ See [WRITE_SKILL.md](WRITE_SKILL.md) for the skill-authoring contract. See
 [CONTRIBUTING.md](CONTRIBUTING.md) for the contribution, verification, and
 distribution workflow.
 
-The [evaluation suite](evals/) compares fresh baseline and skill-assisted runs
-on pinned repository tasks. Its [protocol](evals/README.md) defines isolation,
-grading, hard failures, and efficiency measures.
+Evaluation harnesses, cases, and raw results are kept as local development
+assets. [Evaluation learnings](evals/learnings.md) captures the durable public
+lessons from that work.

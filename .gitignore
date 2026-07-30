@@ -1,2 +1,6 @@
 /AGENTS.md
 .tmp-orchestration-forward-tests/
+
+# Evaluation harnesses, cases, and results are local development assets.
+/evals/*
+!/evals/learnings.md

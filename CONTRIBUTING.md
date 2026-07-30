@@ -10,7 +10,7 @@ first use. The authoritative references are:
 - [`docs/skill-boundaries.md`](docs/skill-boundaries.md) for ownership and
   relationships;
 - [`docs/composition-guide.md`](docs/composition-guide.md) for composition; and
-- [`evals/README.md`](evals/README.md) for comparative evaluation.
+- [`evals/learnings.md`](evals/learnings.md) for durable evaluation principles.
 
 ## Prepare a bounded contribution
 
@@ -52,7 +52,8 @@ Before completion:
 - check metadata, links, and scaffold residue;
 - run both installers in list mode to validate sorted, unique, current package
   manifests and composition-closed workflow profiles;
-- follow [`evals/README.md`](evals/README.md) for comparative evaluations; and
+- use the local evaluation assets for comparative evaluations when available;
+  and
 - run `git diff --check`.
 
 On Windows, run Python catalog validation in explicit UTF-8 mode when required
