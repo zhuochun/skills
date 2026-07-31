@@ -4,6 +4,17 @@ This note records durable lessons from early internal evaluation rounds. It is
 not a result summary. Raw outputs, blind grades, and adjudications are local
 development assets and are intentionally not versioned.
 
+For engineers reviewing the evaluation design, three claims stay separate:
+effectiveness asks whether the skill caused a repeatable improvement; rubric
+validity asks whether the grader rewarded the intended decisions; and cost asks
+what resources the improvement consumed. A complete evaluation reports all
+three. An effective skill can still be too costly, and a cheap run can still be
+invalid or ineffective.
+
+This document explains why the evaluation has its current shape. Use
+[README.md](README.md) for the executable protocol, [v3-setup.md](v3-setup.md)
+for production setup, and [run-record.md](run-record.md) to record a batch.
+
 ## Basic skill-evaluation concepts
 
 A skill evaluation needs one primary causal comparison and separate diagnostic
@@ -77,244 +88,237 @@ factorial design still separates their main effects. Supporting cases should
 add a different mechanism or a routing or non-activation boundary, not merely
 repeat the same prompt until a preferred result appears.
 
-## Round 1: the suite needed harder distinctions
+## Start with the claim you want to make
 
-The first round established that repository-grounded cases can distinguish
-useful engineering judgment from generic advice, but it also exposed avoidable
-ambiguity:
+"Does the skill help?" is too broad to design an experiment around. Decide
+which claim is under test:
 
-- One case per skill was too narrow to support a family-level conclusion.
-- Some prompts left the intended capability boundary unclear.
-- A quality rubric alone could reward longer reports without accounting for
-  token, investigation, or communication cost.
-- Baseline versus treatment could not distinguish skill-specific value from the
-  effect of simply telling an agent to be careful.
-- Boundary cases were essential because a polished recommendation could still
-  hide a compatibility or authority failure.
+- **Activation:** Does the skill load when it should and remain inactive when
+  it should not apply?
+- **Capability:** When available under its shipped invocation policy, does it
+  improve the target engineering decision?
+- **Safety:** Does it preserve authority, compatibility, and stop conditions
+  on boundary cases?
+- **Composition:** Does a multi-stage workflow add value beyond either skill
+  alone?
+- **Efficiency:** What quality gain, if any, justifies the additional cost?
 
-V2 therefore expanded to eleven cases, added six attention controls, separated
-quality from efficiency, required explicit hard-failure checks, and used
-breadth-first screening followed by targeted replication.
+The claim determines the primary comparison, cases, rubric, and evidence.
+Predeclare what would count as a useful signal, an invalid run, a regression,
+and a result that needs replication. Otherwise the observed outputs will tempt
+the evaluator to redefine success after the fact.
 
-## Round 2: the production conditions were contaminated
+## Make the treatment identifiable
 
-The v2 grading result remains useful for case and rubric development, but it is
-not a clean causal estimate of skill effectiveness.
+The treatment is the evaluated skill package under its shipped invocation
+policy. Everything else that can affect the outcome—task, subject revision,
+model, reasoning effort, tools, permissions, and runtime context—must remain
+pinned or become an explicit experimental factor.
 
-A post-run trace audit found:
+**What went wrong.** Fresh subagent conversations inherited the parent skill
+catalog, global instructions, working-directory guidance, memory, and project
+context. Seven of eleven baseline producers read the target skill, and three of
+six attention controls did the same. Baseline and treatment reports then
+converged on the same decision structure because many controls had received the
+treatment.
 
-- Seven of eleven baseline producers read the target skill body.
-- One additional baseline producer read neighboring evaluated skills.
-- Three of six attention-control producers read the target skill body.
-- One additional attention-control producer read neighboring evaluated skills.
-- No producer tool call was found reading hidden case definitions, grading
-  anchors, or another candidate's raw output.
+**What worked.** Independent Codex processes with isolated runtime homes made
+evaluated skills physically absent from controls. Disposable subject worktrees
+separated the task from hidden evaluator evidence. Machine-readable traces
+made unexpected skill reads, prompt drift, revision drift, and subject mutation
+auditable.
 
-The main contamination mechanism was runtime inheritance. Fresh subagent
-conversation contexts still received the global available-skill catalog and
-the rule to load a matching skill. Natural prompts such as "design a module
-boundary" or "knowing what we know now" correctly triggered those skills even
-when the condition was labelled baseline. The shared parent working directory
-also injected this repository's `AGENTS.md`, memory, and project context.
+A prompt cannot repair a contaminated runtime. "Do not use skills" does not
+create a control when the process can still discover and activate them.
 
-The filesystem boundary was procedural rather than enforced. Producers were
-told not to read evaluation artifacts, but all agents could reach the same
-repository and wrote reports into a shared results directory as they finished.
-The audit found no observed cross-output read, but the setup could not prove
-that such reads were impossible.
+## Design cases that can falsify the claim
 
-V2 also failed to capture input, cached-input, reasoning, output, and total
-tokens; elapsed time; tool calls; and tool-result bytes. Final words and bytes
-were useful communication measurements but could not substitute for missing
-runtime cost.
+An ordinary success case shows that a skill can be useful. It does not show
+that the skill is well calibrated. Pair it with a case where the correct
+behavior is to remain inactive, stay narrow, preserve an awkward protection,
+route elsewhere, or stop for an owner decision.
 
-The visible symptom was that baseline, attention, and treatment reports often
-used the same decision, evidence, alternatives, and verification structure.
-Shared model defaults and naturally artifact-shaped prompts explain some of
-that convergence, but the trace evidence proves that much of it was actual
-skill exposure rather than spontaneous baseline behavior.
+**What went wrong.** One case per skill was too narrow, some prompts exposed
+the intended capability boundary, and repeated variants of the same mechanism
+looked like replication without testing generalization. Polished answers could
+still hide compatibility or authority failures.
 
-## Durable conclusions
+**What worked.** Breadth-first screening used ordinary, boundary, and
+invocation-calibration cases. Targeted replication then added a materially
+different mechanism or contract. Producer screens used a settled contract, a
+different effect or lifecycle change, and an intentionally unresolved
+commitment. This distinguished capability from accidental fit to one prompt.
 
-1. **Define the treatment as a runtime difference.** For implicit-enabled
-   skills, the primary estimand is target skill installed versus absent. For
-   explicit-only skills, it is the real package versus a generic named placebo
-   under an identical explicit prompt. Prompt wording alone cannot create a
-   clean control when Codex may activate an installed matching skill or when a
-   skill name itself cues a workflow.
-2. **Separate invocation policy, activation, and capability.** A natural
-   installed condition tests intended automatic activation only when the skill
-   permits it. An explicit-only skill needs the matched explicit pair; forced
-   use remains a diagnostic for unexpected misses in an implicit-enabled skill.
-3. **Use independent Codex processes.** App subagents inherit parent context,
-   runtime overrides, skills, and working-directory guidance. V3 uses
-   `codex exec` with an isolated `CODEX_HOME` instead.
-4. **Make evaluated skills physically absent from controls.** A control prompt
-   saying "do not use skills" is weaker than a runtime that cannot discover the
-   evaluated catalog.
-5. **Keep the subject and hidden evaluation evidence separate.** Producers run
-   from disposable subject worktrees. Cases, anchors, previous outputs, and
-   mappings are supplied only to the parent harness or graders.
-6. **Capture machine-readable traces.** `codex exec --json` supplies command and
-   tool events plus provider-reported token usage. Missing metrics remain
-   unavailable; word count is never used as a token estimate.
-7. **Fail contaminated runs before grading.** Baseline or attention reads of an
-   evaluated `SKILL.md`, hidden-evidence reads, prompt-hash drift, revision
-   drift, or subject mutation invalidate the run.
-8. **Preserve breadth and add targeted replication.** One run across many
-   ordinary, boundary, and invocation-calibration cases is a screen. Any claim
-   still requires independent replication.
-9. **Do not reward a template.** Graders score decision value, evidence,
-   mechanism, protections, and calibration. Report shape and length have no
-   independent value.
-10. **Retain failed rounds as evidence.** V1 and v2 remain immutable records of
-    what was tried and why v3 changed. Their scores must not be pooled with v3.
-11. **Price token classes instead of summing them.** Pin the evaluated model's
-    official input, cached-input, and output rates for each batch. Cached input
-    is a subset of input and reasoning is a subset of output, so charge
-    uncached input, cached input, and total output exactly once. Preserve an
-    explicit base-rate-estimate caveat when aggregate traces cannot resolve a
-    per-request pricing threshold or cache-write charge.
-12. **Keep evaluator knowledge out of shared producer prompts.** A natural task
-    may state outcome, authority, and acceptance consequence, but risk paths,
-    counterexamples, finding format, and quality gates belong in the hidden
-    current-case anchor. Otherwise the control receives part of the treatment.
-13. **Pin complete contexts at both handoffs.** Composition runs compare full
-    producer and reviewer skill-tree digests plus dirty status, not Git `HEAD`
-    alone. Graders receive one hashed case-local packet rather than the complete
-    anchor catalog, and their model and reasoning effort are recorded separately.
-14. **Treat read isolation as a platform prerequisite.** Legacy native-Windows
-    `read-only` and `workspace-write` modes can still read hidden evaluator
-    artifacts. Custom restricted-read permission profiles close that path but
-    require the elevated Windows sandbox backend. The runner must fail before
-    model invocation when that backend is unavailable; trace matching and
-    inherited ACLs are audits, not substitutes for an enforced read boundary.
-15. **Use the four-cell composition matrix as one blocked experiment.** Run
-    baseline and producer-only first, then reuse their frozen artifacts for
-    reviewer-only and composed. Randomize within those dependency blocks and
-    grade all four anonymous bundles together. This separates producer and
-    reviewer main effects from interaction without paying to reproduce the two
-    implementations.
-16. **WSL mount namespaces are a practical Windows fallback.** A native Linux
-    Codex process in an unprivileged WSL2 user and mount namespace can
-    bind-mask the evaluation repository, every retained audit root, the source
-    checkout, and both Windows and Linux Codex homes. Probe every mask before
-    model invocation, use a fresh home per stage, delete the copied auth file,
-    and still audit traces for named hidden paths.
-17. **Make the whole batch auditable, including failure.** Write a running
-    batch manifest as soon as the audit directory exists, then finalize it from
-    an exit trap with terminal phase, error, exit status, and cleanup outcome.
-    Cell manifests alone cannot explain a partial matrix that stopped during
-    setup or between conditions.
-18. **Screen a producer across different contracts before blaming the skill.**
-    Use an explicit input contract, a materially different effect/lifecycle
-    change, and an intentionally unresolved contract. Grade only the two
-    implementation arms in this mini-batch so fresh generic-review variance
-    cannot amplify one producer artifact; reserve reviewer effects and
-    interaction for a full four-cell matrix.
-19. **Refactoring needs a commitment-boundary case that does not reveal its answer.** A green current
-    test can prove that behavior exists without proving the product still
-    supports it. Pair ordinary ownership transfer and fallback-preservation
-    cases with one natural request whose evidence contains an unresolved
-    compatibility commitment in a different capability. The skilled producer
-    should discover and stop for the smallest owner decision instead of
-    silently treating current code, current tests, or reversibility as product
-    authority. Score the sentinel as safety evidence, not a second
-    effectiveness win.
-20. **A preserved untracked inventory is not a gradable artifact.** Composition
-    candidates must include the contents of new source and test files, not only
-    their paths and snapshot hashes. Otherwise blind graders cannot inspect the
-    new owner that the tracked patch imports. Preserve binary files by digest;
-    include readable UTF-8 contents directly in the candidate.
-21. **Commitment gates need an observable trigger, not only a principle.** In
-    the first two producer screens, both skilled agents implemented the
-    sentinel's unresolved compatibility policy. The skills should require an
-    authority check when current behavior conflicts with naming, documentation,
-    legacy persisted data, or an explicit compatibility request. If evidence
-    does not decide the policy, stop for the smallest owner decision before
-    encoding either branch in tests.
-22. **Do not replace staged state with a partial projection.** The scoped
-    implementation treatment made cancellation safe by predicting only one of
-    three front-matter updates before destination calculation. That introduced
-    path drift for templates using the omitted fields. Preserve the existing
-    complete staged state and defer only the irreversible save, or prove that a
-    projection includes every downstream-observable field.
-23. **A fair but unrunnable test seam still weakens the eval.** All twelve
-    producer arms lacked the subject's native test runtime, so graders could
-    inspect tests but not award strong executed-evidence credit. This is
-    symmetric and remains usable for a causal screen, but future replication
-    should provide a runnable behavioral seam before spending on high-effort
-    producers.
-24. **Reasoning effort is part of the treatment context, not a cosmetic default.**
-    Moving the producer and grader default from `high` to `xhigh` begins a new
-    runtime stratum. Keep old artifacts unchanged for audit, record the resolved
-    effort in every handoff, and do not pool quality, cost, or latency across the
-    two strata unless effort itself is a declared factor.
-25. **A principle-level authority gate may still be too easy to rationalize past.**
-    An xhigh rerun clarified both skills to reuse accepted prior decisions,
-    reconcile source differences, and stop only for consequential policy beyond
-    authority. Both skilled sentinel producers still encoded an unsupported
-    compatibility rule. The next refinement should classify observable cases:
-    proceed when an accepted decision covers the case, proceed when evidence
-    reconciles to one consumer-visible outcome, and stop when two plausible
-    compatibility outcomes remain without authority. This replaces an abstract
-    warning with a discriminating trigger without making every source difference
-    a blocker.
-26. **Specification safety and readiness must be calibrated as separate claims.**
-    A three-case specification-to-implementation factorial showed both sides of
-    the gate. The skilled specification correctly stopped an unresolved
-    saved-link compatibility change, but it also converted a settled slug
-    contract into a non-ready artifact by elevating implementation-adjacent
-    template and verbatim-path questions into product-policy blockers. Because
-    both downstream implementers honored the same frozen stop, the regression
-    was causal rather than reviewer noise. A specification should mark the
-    whole change non-ready only when an unresolved decision can alter supported
-    observable behavior; implementation uncertainty, code-seam choice, test
-    design, or a protection already fixed by the accepted contract belongs in
-    implementation. Test this distinction with paired ready and unresolved
-    handoffs, not only with boundary sentinels.
-27. **A grader anchor must follow observable branch order, not intended-looking dead code.**
-    The first publish-lifecycle anchor said existing "already published"
-    behavior must remain, but the pinned code checks destination existence
-    before source/destination equality. A same-path file therefore reaches the
-    overwrite confirmation, and reordering the conditions changes current
-    behavior. The mistaken anchor rewarded that change and reversed the
-    apparent implementation-skill result. Inspect each decisive branch against
-    the pinned revision, state the actual reachable outcome, and preserve
-    superseded grader reports when an anchor correction requires regrading.
-28. **Composition complexity should come from one decision crossing real consumers.**
-    The retired lifecycle case gave four implementations enough local freedom
-    that producer variance dominated the handoff estimate. Its replacement
-    makes one accepted configuration-identity rule traverse project, engine,
-    filetype, template, path, new-file, publish, and image consumers. This is
-    more discriminating than a longer prompt or a larger patch because partial
-    propagation creates concrete mixed-context failures. Preserve a small
-    settled case and an unresolved sentinel around it so cross-consumer
-    complexity does not erase readiness calibration.
-29. **Use WSL directly for Windows production.** Native Linux Codex inside an
-    unprivileged WSL2 user and mount namespace is the supported Windows path,
-    not a fallback after a native sandbox failure. Keep authentication
-    WSL-local, probe every bind mask before model invocation, and retain native
-    Windows runners only for historical replay or diagnostics.
+Cases also need a runnable behavioral seam. Symmetric absence of the subject's
+test runtime can preserve a comparison for screening, but it prevents graders
+from awarding strong executed-evidence credit and weakens any later claim.
 
-## V3 response
+## Prove isolation before production
 
-V3 keeps the eleven v2 effectiveness prompts and anchors unchanged so runtime
-isolation remains the principal experimental change. It includes fourteen
-invocation-calibration cases where the correct behavior is to answer narrowly,
-remain inactive, retain the current design, or route elsewhere; six
-implementation-to-review composition cases; three specification-to-
-implementation composition cases; and six direct cases for software-change
-orchestration, specification, domain modeling, failure diagnosis, technical
-decision closure, and verification execution. Together the 40 cases cover the
-development skill set with both positive and boundary evidence.
+Isolation is part of the experiment, not an operational detail. It must be
+enforced before model invocation; traces and post-run audits can detect a leak
+but cannot retroactively create a clean comparison.
 
-The breadth-first screen is split into a core change-flow batch and a remaining
-skills batch, followed by a dedicated implicit-invocation calibration batch.
-Explicit-only boundary cases stay with their owning batch because they measure
-proportional response after deliberate invocation, not activation.
-This controls initial cost while preserving the rule that demonstrated benefit
-needs independent repetition and a materially different boundary case. Setup,
-runner contracts, case definitions, batch manifests, and raw results remain
-local development assets. This note is the versioned record of cross-run
-lessons.
+Before spending on production, prove that:
+
+- control processes cannot discover evaluated skills;
+- producers cannot read cases, anchors, mappings, previous outputs, or other
+  hidden evaluator evidence;
+- the common prompt states the natural task and authority without teaching the
+  skill's workflow, counterexamples, report shape, or quality gates;
+- subject revision, prompt hash, skill-tree digest, model, reasoning effort,
+  tools, permissions, and working-tree status are pinned;
+- each stage has a fresh runtime context and writes only to its declared
+  artifact boundary; and
+- the harness can retain an auditable record even when setup or production
+  stops partway through a batch.
+
+Treat a failed preflight as a stopped experiment, not a condition to work
+around. Procedural promises and inherited filesystem permissions are weaker
+than an enforced read boundary.
+
+## Grade observable decisions blindly
+
+A rubric should encode the decision the skill is supposed to improve. Grade
+decision fit, evidence, mechanism, protections, and decision value. Report
+shape, length, and use of a familiar template have no independent value.
+
+### Build anchors from reachable behavior
+
+**What went wrong.** One anchor described intended-looking "already published"
+behavior, but the pinned code reached overwrite confirmation first. The anchor
+rewarded a behavior change and reversed the apparent skill result.
+
+**What worked.** Trace every decisive branch against the pinned revision and
+state the actual observable outcome. Give graders only the current case anchor,
+not the complete anchor catalog, and preserve superseded reports when a
+corrected anchor requires regrading.
+
+### Separate invalid runs from scored failures
+
+Contamination, hidden-evidence access, prompt or revision drift, subject
+mutation, and reviewer mutation invalidate the run. They are not low-quality
+outcomes that a strong report can offset.
+
+Capability failures remain part of the rubric: invented evidence, unauthorized
+compatibility policy, hidden behavior change, unsupported readiness claims, or
+failure to stop at a real authority boundary are observable properties of the
+answer being evaluated.
+
+### Reveal condition and cost only after quality grading
+
+Anonymize and randomize candidates. Have multiple fresh graders score each
+output independently before comparing the primary pair. Reveal the condition
+mapping and cost only after decision quality is fixed; otherwise polish,
+verbosity, or expected treatment behavior can influence the score.
+
+## Measure cost after quality
+
+Cost answers whether the decision improvement justified the resources it used;
+it does not decide whether the experiment was valid. Capture provider-reported
+input, cached-input, reasoning, output, and total tokens together with elapsed
+time, tool calls, tool-result bytes, final words, and final bytes. Mark missing
+metrics unavailable instead of estimating them from word count.
+
+Price uncached input, cached input, and total output exactly once. Cached input
+is a subset of input, and reasoning is a subset of output. Pin the price source,
+retrieval date, and currency, and retain a caveat when aggregate traces cannot
+resolve an applicable request threshold or cache-write charge.
+
+Reasoning effort is part of the treatment context. A change in producer or
+grader effort begins a new runtime stratum; do not pool its quality, cost, or
+latency with earlier results unless effort is a declared experimental factor.
+
+## Interpret evidence conservatively
+
+A breadth-first pass is a screen, not proof. Report a positive but incomplete
+signal as promising. Call effectiveness demonstrated only after independent
+replication on a materially different ordinary or boundary case, multiple blind
+graders, no integrity failure, and no increase in consequential hard failures.
+
+Attention and forced-use conditions explain mechanism; they do not replace the
+policy-matched primary comparison. A sentinel can establish safety or expose a
+regression, but it does not count as a second effectiveness win.
+
+Retain failed rounds and corrected grader reports as evidence of what changed.
+Do not pool their scores with a different runtime, reasoning-effort stratum,
+anchor, or evaluation design.
+
+## Treat composition as a separate causal question
+
+For implementation followed by review, a better final artifact does not reveal
+which stage produced the gain. Use the four-cell matrix—neither skill, producer
+only, reviewer only, and both—to separate producer effect, reviewer effect, and
+interaction.
+
+Run the two producer conditions first and freeze their artifacts. Reuse each
+artifact in both reviewer conditions, keep reviewers in fresh contexts, and
+grade all four anonymous bundles together. A reviewer mutation invalidates the
+handoff because it changes the candidate rather than evaluating it.
+
+### Freeze complete, inspectable candidates
+
+A path list and snapshot hashes are not enough when the implementation imports
+new untracked files. Include readable contents of new source and test files in
+the grading candidate and preserve binary files by digest. Pin the producer and
+reviewer skill trees, dirty status, artifact hash, model, and reasoning effort
+at each handoff.
+
+### Put complexity in propagation, not prompt length
+
+A discriminating composition case makes one accepted decision cross several
+real consumers. Partial propagation then creates observable mixed-context
+failures. A larger prompt or patch with many locally independent choices mainly
+increases producer variance and makes the handoff effect harder to identify.
+
+## Make authority boundaries observable
+
+A green test proves that behavior exists; it does not prove that the product
+still supports that behavior. Boundary cases should hide an unresolved
+compatibility commitment in natural evidence and let the skill discover it.
+
+Abstract instructions to "preserve authority" were too easy to rationalize
+past. A useful gate distinguishes three observable situations:
+
+1. Proceed when an accepted decision covers the case.
+2. Proceed when conflicting sources reconcile to one consumer-visible outcome.
+3. Stop for the smallest owner decision when two plausible compatibility
+   outcomes remain and the task supplies no authority to choose.
+
+This gate should not turn implementation choices into product blockers. A
+specification is non-ready only when an unresolved decision can alter supported
+observable behavior. Code-seam choice, test design, or a protection already
+fixed by the accepted contract belongs in implementation.
+
+State handling needs the same discipline. One treatment predicted only part of
+a staged state before calculating a destination, which introduced path drift
+for consumers of the omitted fields. Preserve the complete staged state and
+defer only the irreversible effect, or prove that a projection contains every
+downstream-observable field.
+
+## Foot guns that invalidate or weaken a result
+
+| Foot gun | Why it misleads | Required response |
+| --- | --- | --- |
+| A control can discover an evaluated skill | The treatment is present in both arms. | Stop before production or invalidate the affected run. |
+| The common prompt teaches workflow steps, counterexamples, or grading criteria | Part of the skill has leaked into every condition. | Rewrite and re-audit the prompt before running. |
+| Producers can read hidden evidence or another output | Answers can optimize for the evaluation rather than the task. | Enforce read isolation; trace auditing alone is insufficient. |
+| Prompt, subject, skill tree, model, effort, tools, or permissions drift | More than one causal variable changed. | Reject the comparison or declare the additional factor. |
+| A producer or reviewer mutates an unauthorized surface | The candidate no longer represents the declared condition. | Invalidate the run and retain the mutation evidence. |
+| An anchor describes unreachable or intended-looking behavior | The rubric can reward the wrong change. | Correct the anchor against the pinned revision and regrade while preserving the old report. |
+| New untracked contents are absent from the grading packet | Graders cannot inspect the implementation being scored. | Rebuild the complete candidate before grading. |
+| The behavioral seam cannot run | Evidence quality is capped even if both arms are equally constrained. | Treat the result as screening evidence and repair the seam before replication. |
+| Attention or forced-use diagnostics are pooled into the primary effect | Mechanism evidence is mistaken for effectiveness. | Keep diagnostics separate from the policy-matched comparison. |
+| Missing runtime or pricing metrics are estimated from words or raw token totals | Cost appears more precise than the evidence permits. | Mark the metric or cost claim unavailable. |
+| A screen, sentinel, or repeated mechanism is called replication | Narrow fit is mistaken for general benefit. | Replicate independently on a materially different case. |
+
+## Continue with the executable protocol
+
+Use [README.md](README.md) to select conditions, isolate runs, grade in two
+passes, apply the quality and efficiency rubrics, and decide whether a skill
+helped. Use [v3-setup.md](v3-setup.md) for the current production procedure and
+[run-record.md](run-record.md) for the evidence packet.
+
+Case inventories, batch definitions, and current coverage belong to those
+operational documents because they change as the suite evolves. This file
+remains the durable explanation of the design and its failure lessons.
