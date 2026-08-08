@@ -152,6 +152,12 @@ Composition is optional, not a mandatory lifecycle. Route specialized work to
 its owner. Reference stable namespaced keys instead of requiring runtime handoff
 documents or duplicating contracts.
 
+Make each skill a valid independent starting point for the requests that it
+owns. Let it inspect available evidence and return a useful owned result without
+assuming that another skill ran first. Genuine evidence, authority, or
+subject-state prerequisites may still gate the work. Route only the unresolved
+part to its owner.
+
 Keep orchestration, specification, design, implementation, evaluation, and
 multi-workstream coordination distinct. A skill may consume another owner's
 result without reproducing the other skill's complete workflow.

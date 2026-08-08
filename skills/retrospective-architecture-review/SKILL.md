@@ -27,9 +27,9 @@ Reconsider one selected design after real work has materially changed what is kn
 
 Resolve the selected review unit and its scale before deriving a target. Use the smallest sufficient set of lenses. Do not widen a capability review into a codebase improvement portfolio unless the knowledge delta itself crosses those boundaries and the accountable owner accepts the wider decision surface.
 
-- **Module or capability:** Load and use `$deep-module-design` for interface depth, state ownership, seams, behavior, and testability.
-- **Service or subsystem:** Use `$deep-module-design` for internals and `$service-boundary-design` when deployable, data, failure, or ownership boundaries are in question. Use `$architecture-risk-evaluation` for consequential quality claims.
-- **Multi-service system or wider estate:** Use `$architecture-risk-evaluation` for systemic scenarios and tradeoffs, `$service-boundary-design` for disputed boundaries, and `$decision-facilitation` when alternatives or risk acceptance require accountable closure.
+- **Module or capability:** Apply the review directly to interface depth, state ownership, seams, behavior, and testability. Compose with `$deep-module-design` only when a separate module-design judgment is needed.
+- **Service or subsystem:** Apply the review directly to internals and learned deployment, data, failure, and ownership consequences. Compose with `$deep-module-design`, `$service-boundary-design`, or `$architecture-risk-evaluation` only for unresolved specialist judgments in those areas.
+- **Multi-service system or wider estate:** Apply the review directly to learned systemic scenarios and tradeoffs. Compose with `$architecture-risk-evaluation`, `$service-boundary-design`, or `$decision-facilitation` only when separate specialist judgment or accountable closure is needed.
 
 Propose the scale and consequence classification. Let the accountable human confirm, narrow, or override them.
 

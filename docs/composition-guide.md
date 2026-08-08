@@ -15,6 +15,31 @@ product, architecture, change, and program can cross those axes; see the
 request needs several owned decisions, not because one term sounds larger than
 another.
 
+## Choose an interaction mode
+
+Start with the lightest mode that can answer the request:
+
+- **Direct specialist:** Use one skill as an independent starting point when it
+  owns the decision, artifact, or action. It inspects available evidence and
+  returns its own useful result without requiring a prior skill invocation.
+- **Peer lenses:** Apply two or more skills as distinct judgments on the same
+  subject when their findings should coexist or disagree. Compare the findings
+  without making one skill the producer or authority for another. A shared
+  context does not create independent certification.
+- **Dependent handoff:** Let a downstream skill consume another owner's result
+  only when its work genuinely depends on that decision, evidence, or artifact.
+  Preserve whether the result is proposed, accepted, or unresolved, who has
+  authority, and the remaining uncertainty.
+- **Reflective application:** Apply a skill's lens to the current session, the
+  skill collection, a plan, a workflow, or an output to improve how the work
+  proceeds. Treat the result as self-challenge, not independent review or
+  certification.
+
+A skill can route work or return a useful partial or not-ready result when a
+genuine evidence, authority, or subject-state prerequisite is missing. Mix
+modes as needed, but do not turn optional peer or reflective use into a required
+sequence.
+
 ## Common compositions
 
 ### Research evidence into specialist judgment
