@@ -51,6 +51,25 @@ research-synthesis, specialist decision artifact, implementation evidence, or op
 
 Let the upstream owner decide the product, domain, architecture, operational, support, or evidence claim. `technical-writing` selects the reader function, preserves provenance and uncertainty, shapes the reading path, and verifies commands, examples, links, and task success. Route `SKILL.md` authoring to `skill-creator` rather than composing technical writing as a second authoring contract.
 
+### Specification before downstream use
+
+```text
+product, domain, architecture, contract, decision, or software-change producer
+  -> fixed specification, RFC, requirements set, behavioral contract, or decision-bearing proposal
+  -> specification-review for independent artifact-integrity findings and readiness limits
+  -> producer or accountable owner applies accepted repairs
+  -> specialist evaluation only where a finding exposes a substantive unresolved judgment
+  -> implementation, adoption, or decision when the accountable owner accepts the remaining limits
+```
+
+Use `specification-review` when ambiguity can propagate into consequential
+downstream work. It finds contradictions, competing interpretations, hidden
+decisions, unsupported claims, missing boundaries or failure behavior, and
+wording loopholes without rewriting the candidate. A small clear reversible
+action can bypass the pass. Editorial documents remain with `technical-writing`,
+architecture fitness with `architecture-risk-evaluation`, and code candidates
+with `code-review`.
+
 ### Resumable bounded software change
 
 ```text
@@ -59,6 +78,7 @@ software-change-orchestration
   -> derive compact, standard, or high-assurance posture and bound full skill workflows, artifacts, review, and verification
   -> keep the immediate frontier in session and route it to software-change-specification or the smallest owning specialist
   -> integrate each accepted result into the specification before dependent implementation
+  -> use specification-review on a fixed candidate when misunderstanding could propagate materially
   -> loop through clarification, design, evaluation, or decision only as evidence requires
   -> choose one primary executor: behavior-preserving-refactoring for pure structure, scoped-change-implementation for intended behavior
   -> independent code-review consumes snapshot-matched producer evidence and runs focused challenges

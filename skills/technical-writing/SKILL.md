@@ -26,6 +26,10 @@ support for that function, not as the artifact's substitute.
 - Check current or version-specific facts against their canonical source.
   Route a disputed or cross-source factual foundation to
   `research-synthesis`; technical writing does not establish source truth.
+- Route a decision-bearing specification, RFC, requirements set, or behavioral
+  contract to `specification-review` when the missing judgment is normative
+  ambiguity, contradiction, hidden decisions, or wording loopholes. Keep
+  reader function and editorial quality here.
 - Route learner-specific explanation, misconception repair, reconstruction, or
   transfer checking to `teach-concepts`. Keep a durable tutorial, explanation,
   or reference artifact here.

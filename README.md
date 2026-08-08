@@ -75,6 +75,7 @@ intents. You can also invoke any specialist explicitly.
 | Implement an authorized bounded behavior change | [`scoped-change-implementation`](skills/scoped-change-implementation/) |
 | Improve structure without intentionally changing supported behavior | [`behavior-preserving-refactoring`](skills/behavior-preserving-refactoring/) |
 | Diagnose a bug, regression, intermittent failure, or performance problem | [`software-failure-diagnosis`](skills/software-failure-diagnosis/) |
+| Independently review a fixed specification, RFC, requirements set, behavioral contract, or decision-bearing proposal | [`specification-review`](skills/specification-review/) |
 | Independently review a bounded software change | [`code-review`](skills/code-review/) |
 
 If none of these describes the missing decision or artifact, use the

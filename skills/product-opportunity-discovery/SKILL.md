@@ -39,6 +39,9 @@ Reduce uncertainty about the customer, problem, behavior, value mechanism, and s
 - `technical-program-orchestration` owns accepted multi-workstream delivery; discovery creates no delivery commitment.
 - `controlled-release-design` owns exposure and cleanup; `observability-design` owns deployed signals.
 - `verification-strategy-design` owns engineering evidence; this skill owns customer opportunity, value, usability, adoption, and solution hypotheses.
+- Send a fixed PRD, RFC, or other product proposal to `specification-review`
+  for independent artifact-integrity review. Discovery retains customer
+  opportunity, product evidence, and solution-direction judgment.
 
 Keep the discovery state in the team's existing product, research, or decision surface when authorized. Otherwise return a compact result that can be applied there; do not create a mandatory handoff document.
 

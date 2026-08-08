@@ -1,0 +1,7 @@
+interface:
+  display_name: "Specification Review"
+  short_description: "Review specifications before they multiply work"
+  default_prompt: "Use $specification-review to independently review this specification for ambiguity, contradictions, missing decisions, and wording loopholes without rewriting it."
+
+policy:
+  allow_implicit_invocation: true

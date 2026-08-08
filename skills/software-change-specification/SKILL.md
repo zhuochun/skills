@@ -1,6 +1,6 @@
 ---
 name: software-change-specification
-description: Specify an accepted but behaviorally ambiguous software change before implementation by recovering current and desired behavior, scope, invariants, affected surfaces, acceptance claims, and unresolved decisions. Use when implementers would otherwise invent consequential behavior. Keep small clear changes in scoped-change-implementation; route unresolved product, domain, architecture, contract, diagnosis, or transition decisions to their owners.
+description: Specify an accepted but behaviorally ambiguous software change before implementation by recovering current and desired behavior, scope, invariants, affected surfaces, acceptance claims, and unresolved decisions. Use when implementers would otherwise invent consequential behavior. Do not use to review a fixed candidate; use specification-review. Keep small clear changes in scoped-change-implementation; route unresolved specialist decisions to their owners.
 ---
 
 # Software Change Specification
@@ -46,6 +46,10 @@ Read [references/change-specification.md](references/change-specification.md) wh
   bounded question. Preserve source meaning, reopen only contradictions or
   blocking ambiguity, and return only the behavior-contract and readiness
   delta. Orchestration owns continuity, persistence, and frontier selection.
+- Send a fixed consequential candidate to `specification-review` when an
+  independent ambiguity, contradiction, loophole, and readiness judgment is
+  warranted. Apply accepted repairs here; the reviewer does not rewrite the
+  contract or settle routed decisions.
 - Leave opportunity investment to product discovery or prioritization; domain
   meaning to `domain-modeling`; structure to `service-boundary-design` or
   `deep-module-design`; and unexplained failure to

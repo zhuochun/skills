@@ -143,6 +143,16 @@ Do not edit code.
 ```
 
 ```text
+Use $specification-review to independently review this fixed product spec
+before implementation. Work read-only. Find contradictions, ambiguous or
+undefined terms, hidden owner decisions, unsupported claims, missing boundary
+and failure behavior, and ways a faithful implementation could satisfy the
+wording while violating the intended outcome. Lead with prioritized findings,
+route substantive product, domain, architecture, or contract judgments to their
+owners, and state the artifact's readiness limits without rewriting or approving it.
+```
+
+```text
 Use $software-change-orchestration to guide this atlas feature from the rough
 idea through the smallest necessary specification, design, implementation,
 review, and verification work in authorized mode. You may maintain the canonical

@@ -21,6 +21,7 @@ Keep implicit invocation for a small set of front doors that represent distinct 
 - `scoped-change-implementation`
 - `behavior-preserving-refactoring`
 - `software-failure-diagnosis`
+- `specification-review`
 - `code-review`
 
 Set `policy.allow_implicit_invocation: false` in `agents/openai.yaml` for every
@@ -60,6 +61,7 @@ Do not start from a fashionable method or invoke every skill as a stage gate. As
 | [`service-capacity-engineering`](../skills/service-capacity-engineering/) | End-to-end demand, capacity, headroom, overload, and recovery behavior | Capacity model, operating envelope, falsification evidence, and overload controls |
 | [`service-ownership-design`](../skills/service-ownership-design/) | Sustainable lifecycle ownership and its enabling conditions | Ownership trace, cognitive-load assessment, model options, prerequisites, and transition |
 | [`decision-facilitation`](../skills/decision-facilitation/) | Intent, authority, participation, alternatives, assumptions, tradeoffs, closure, and commitment for consequential or contested choices | Decision frame, authority map, challenge result, bounded disposition, commitments, and reopening conditions |
+| [`specification-review`](../skills/specification-review/) | Independent read-only evaluation of a fixed specification, RFC, requirements set, behavioral contract, or decision-bearing proposal before downstream use | Prioritized integrity findings, decision-changing questions, specialist routes, readiness limits, and review outcome |
 
 ### Plan, coordinate, and control change
 

@@ -104,7 +104,12 @@ Reuse evidence while its claim, snapshot, method, and material environment still
 3. **Choose persistence and budget.** Select inline, owning-repository, control-repository, or hybrid mode and compact, standard, or high-assurance posture. Seed the canonical record immediately when required and authorized.
 4. **Route the limiting frontier.** Send one bounded question or action to the smallest owning skill. Use `software-change-specification` for ambiguous accepted behavior, `prototype-to-learn` for a disposable runnable answer to one behavior, state, UI, or interaction question, domain or design skills for disputed meaning or ownership, contract evolution for compatibility, and accountable decision-making for consequential closure.
 5. **Integrate the delta.** Update the owning specification section, evidence status, stable keys and labels, implications, and invalidated assumptions. Do not duplicate the specialist artifact or persist transient routing without a re-entry need.
-6. **Test implementation readiness.** Require understood behavior, owned material decisions, explicit non-goals, authorization, and risk-proportionate feedback. Add verification, observability, release, or transition design only when their uncertainty is material.
+6. **Test implementation readiness.** Require understood behavior, owned
+   material decisions, explicit non-goals, authorization, and risk-proportionate
+   feedback. When misunderstanding could propagate materially, send the fixed
+   candidate to `specification-review` and integrate accepted repairs before
+   implementation. Add verification, observability, release, or transition
+   design only when their uncertainty is material.
 7. **Use one executor.** Route a pure structural change with preserved supported behavior to `behavior-preserving-refactoring`; route an intended observable behavior change to `scoped-change-implementation`. Split a mixed change or nominate one primary executor and borrow only the other contract's needed checks. Reopen the owning decision when code contradicts the accepted contract.
 8. **Challenge and close proportionately.** Send the final bounded candidate, accepted contract, and valid evidence index to `code-review`. After in-scope remediation, obtain focused independent confirmation of affected findings and run one successful risk-proportionate closure set on the final candidate. Reuse unaffected evidence.
 9. **Close or stop deliberately.** Record delivered behavior, observed evidence and limits, accepted deviations, operational and support ownership, cleanup, residual risk, and accountable closure. For stopped or deferred work, record why and the re-entry condition.

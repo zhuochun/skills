@@ -149,6 +149,8 @@ flowchart LR
     TP -.-> OD
     TP -.-> VS
     TP -.-> SPEC
+    SPEC -.-> SPR["Specification review"]
+    SPR -.-> SPEC
     SPEC --> VS
     SPEC --> SCI
     TP --> SCI
@@ -196,6 +198,7 @@ A skill that creates an artifact should not silently certify that artifact. For 
 | Learning prototype | The user or relevant design owner drives the artifact and challenges whether it preserves the tested mechanism; any maintained implementation requires separate implementation and evidence |
 | Research synthesis | Source-owner checks for exact claims and accountable specialist challenge for interpretation and applicability; the synthesis does not certify truth or close the downstream decision |
 | Concept teaching session | The learner reconstructs and transfers the concept in a changed case; source or domain owners challenge consequential facts and interpretations |
+| Specification, RFC, requirements set, behavioral contract, or decision-bearing proposal | `specification-review` challenges artifact integrity, ambiguity, contradictions, hidden decisions, unsupported claims, missing boundaries, failure behavior, and wording loopholes; specialist owners retain substantive judgment |
 | Technical document or blog post | Source and domain owners challenge consequential claims; representative readers test whether the artifact performs its declared learning, action, reference, understanding, or argument job |
 | Session handoff | The next agent rechecks freshness and completion against linked canonical state before consequential continuation; the handoff does not certify the artifacts it compresses |
 | Architecture surface map | Source-owner review and focused follow-up; orientation does not certify architecture fitness, readiness, or safety |
@@ -204,7 +207,7 @@ A skill that creates an artifact should not silently certify that artifact. For 
 | Architecture option comparison | `decision-facilitation` for accountable weighting and closure |
 | Technical program orchestration state | Accountable outcome owner and integrated delivery evidence; activity and coordinator confidence do not certify the outcome |
 | Software contract evolution design | Producer, consumer, data, and support-policy owners review the recovered contract and compatibility claims; use `verification-strategy-design` and independent architecture challenge as consequence warrants |
-| Software change specification | Accountable change, product, domain, consumer, security, data, and operational owners challenge the interpretations they own; consequential architecture and evidence claims route to independent evaluation rather than being self-certified by the specifier |
+| Software change specification | `specification-review` independently challenges the fixed artifact's integrity and readiness limits; accountable change, product, domain, consumer, security, data, and operational owners retain the interpretations they own |
 | Observability design | Instrumentation and signal verification, then `operational-feedback-audit` against representative runtime use |
 | Controlled release design | `verification-strategy-design` for claims and phase evidence; accountable owners retain promotion authority |
 | Migration plan | `verification-strategy-design` for falsifiable phase and invariant evidence |
@@ -229,6 +232,26 @@ When skills compose in one task, keep the decision context in flow instead of cr
 - `technical-writing` owns a durable technical tutorial, explanation, reference, or other reader artifact. A static explanation does not become concept teaching merely because readers may learn from it.
 - `research-synthesis` owns what cross-source evidence supports. `teach-concepts` consumes supplied or verified subject evidence and does not make a disputed claim true by explaining it clearly.
 - `technical-growth-coaching` owns repeated performance practice, feedback, delegation, and transfer into independent work. One successful concept check does not certify professional capability.
+
+### Specification production, review, and specialist judgment
+
+- The producing skill owns the specification's substantive content and accepted
+  revisions. `specification-review` owns a read-only judgment of one fixed
+  candidate's integrity, ambiguity, contradictions, hidden decisions,
+  unsupported claims, missing boundaries or failure behavior, loopholes, and
+  readiness limits.
+- Artifact integrity does not establish subject-matter correctness. Keep
+  customer opportunity and product evidence with `product-opportunity-discovery`,
+  domain meaning with `domain-modeling`, architecture fitness with
+  `architecture-risk-evaluation`, contract compatibility with
+  `software-contract-evolution`, and accountable closure with
+  `decision-facilitation`.
+- A fresh agent supports independence only when it directly inspects the fixed
+  artifact, applies distinct criteria or evidence, and may reject it. Replaying
+  the producer workflow or changing the role label does not certify the result.
+- Let a small clear reversible action proceed without a separate specification
+  review. Increase review depth with ambiguity, propagation, consequence,
+  irreversibility, feedback delay, and coordination boundaries.
 
 ### Technical writing, source ownership, and session handoff
 
@@ -315,6 +338,10 @@ Route by the decision, not by shared evidence. “Where should we invest in arch
 - `deep-module-design` decides where knowledge, state, resources, and interface semantics should live. It does not modify the target.
 - `prototype-to-learn` modifies local files only to create a disposable observation surface for one design question. Its code creates no supported behavior or production-readiness claim; preserve the learning and route any maintained implementation separately.
 - `software-change-specification` turns one accepted but ambiguous change into a reviewable behavioral contract: current and desired behavior, invariants, scope, affected surfaces, representative examples, acceptance claims, unknowns, and readiness. It specifies the change rather than the patch and does not authorize implementation.
+- `specification-review` independently challenges one fixed specification for
+  artifact-integrity failures and readiness limits. It does not rewrite the
+  contract or decide unresolved product, domain, architecture, compatibility,
+  security, data, or operational meaning.
 - `scoped-change-implementation` consumes that contract when one exists, or resolves a compact inline contract for a local reversible change, then changes supported behavior through coherent vertical slices. TDD is one optional inner feedback loop, not the skill's whole contract.
 - `behavior-preserving-refactoring` changes structure while keeping supported behavior stable. Any intentional behavior or support-policy change becomes a separate scoped implementation decision.
 
@@ -336,7 +363,14 @@ Use `operational-feedback-audit` outside the urgent command loop to evaluate whe
 
 The agent supports a human incident commander by default. It may maintain the operational picture, draft updates, detect conflicts, and coordinate within explicit delegation; consequential production actions, customer commitments, risk acceptance, and incident closure require accountable authorization or a pre-approved bounded runbook.
 
-### Change review versus verification execution
+### Specification review, change review, and verification execution
+
+Use `specification-review` before downstream use to challenge a fixed
+specification, RFC, requirements set, behavioral contract, or decision-bearing
+proposal for contradictions, ambiguity, hidden decisions, unsupported claims,
+missing boundaries or failure behavior, and wording loopholes. It evaluates
+the artifact's integrity and readiness limits, not the correctness of every
+specialist decision inside it.
 
 Use `code-review` to inspect a bounded diff against intent, repository constraints, behavior, contracts, maintainability, and claimed evidence. It produces prioritized findings and does not change the target.
 
