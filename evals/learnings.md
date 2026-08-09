@@ -11,9 +11,10 @@ what resources the improvement consumed. A complete evaluation reports all
 three. An effective skill can still be too costly, and a cheap run can still be
 invalid or ineffective.
 
-This document explains why the evaluation has its current shape. Use
-[README.md](README.md) for the executable protocol, [v3-setup.md](v3-setup.md)
-for production setup, and [run-record.md](run-record.md) to record a batch.
+This document explains why the evaluation has its current shape. The v1-v3
+records remain immutable historical evidence. Use [v4/README.md](v4/README.md)
+for the current typed, policy-matched protocol; raw plans, packets, results, and
+audit stores remain local development assets.
 
 ## Basic skill-evaluation concepts
 
@@ -244,6 +245,80 @@ Retain failed rounds and corrected grader reports as evidence of what changed.
 Do not pool their scores with a different runtime, reasoning-effort stratum,
 anchor, or evaluation design.
 
+### Test both semantic power and proportionality
+
+A workflow can improve a genuinely complex case and still make a smaller case
+worse. One domain-modeling treatment recovered distinct completion semantics,
+ownership, and translations across three learning workflows, yet the same skill
+missed an existing UI-state owner for a two-value browser preference and
+proposed a new controller. One retrospective treatment stopped cleanly when no
+learning delta existed, yet was less decisive than control about quarantining
+an optional mechanism with cost but no validating outcome evidence.
+
+Do not average those mechanisms into a vague positive impression. Pair every
+substantive case with a proportionality or no-learning-delta boundary and make
+the family gate require both useful depth and bounded restraint. A strong
+early-exit path is part of the skill's capability, not a failure to apply its
+full method.
+
+An early exit still needs enough evidence to establish why the smaller route is
+sound. In a presentation-only domain case, the treatment found the file that
+owned the requested copy but described the existing behavior owner merely as
+out of scope. The control won because it established both owners: one for the
+changed surface and one for the storage, defaults, and behavior being
+preserved. A `no modeling needed` result is a sufficiency claim, not permission
+to truncate discovery.
+
+### Challenge identity models through transformations
+
+A plausible stable key can still encode the wrong kind of identity. Content,
+occurrence, semantic subject, version, and mutable location coincide in easy
+examples, then diverge under identical copies, reorder, split or merge, edits,
+regeneration, deletion, and reappearance. One domain-modeling treatment
+correctly diagnosed an unstable positional cluster key but overstated which
+changes a content-derived replacement would survive.
+
+When identity is material, make those transformations part of candidate
+comparison and state what remains the same, what becomes new, what provenance
+is required, and which cases remain an owner decision. A hash proves equality
+of its observed input, not universal semantic identity.
+
+### Make disguised behavior changes fail before editing
+
+A request can call itself refactoring while adding accepted input, choosing
+compatibility precedence, or changing migration behavior. If the skill begins
+structural work before classifying that semantic change, later preservation
+checks are too late: the implementation has already invented policy.
+
+Boundary cases should therefore test the first routing decision. When an alias,
+fallback, or stale-state request lacks the signal or precedence needed to
+distinguish safe outcomes, the expected artifact is a precise owner decision
+with a clean worktree. The checker message must describe that authority boundary
+accurately; calling it a generic read-only violation can bias absolute grading
+even when both experimental arms see the same text.
+
+### Expect ceiling compression from strong controls
+
+On ready, well-scoped executable changes, ordinary Codex can produce a correct,
+focused patch without a skill. Multiple candidates can pass hidden tests and
+score near the rubric ceiling. This is useful evidence: the skill must improve
+verification, clarity, change cost, or safety rather than receive credit merely
+for completing the task.
+
+Use more than binary checker success. Retain inspectable patches and untracked
+files, grade verification breadth and maintainability, include an unresolved
+boundary, and use materially different mechanisms. Treat one-point forced
+preferences at the ceiling as weak evidence unless replicated.
+
+### Keep provider schema and engine validation separate
+
+Provider structured-output implementations may support only a subset of JSON
+Schema. Use the provider schema to constrain the output shape, then let the
+evaluation engine enforce exact candidate and dimension inventories, score
+bounds, evidence requirements, contrasts, and ranking permutations. Preserve a
+rejected schema attempt and give its replacement a new run identity; do not
+erase it or accept an unvalidated free-form report.
+
 ## Treat composition as a separate causal question
 
 For implementation followed by review, a better final artifact does not reveal
@@ -314,11 +389,11 @@ downstream-observable field.
 
 ## Continue with the executable protocol
 
-Use [README.md](README.md) to select conditions, isolate runs, grade in two
-passes, apply the quality and efficiency rubrics, and decide whether a skill
-helped. Use [v3-setup.md](v3-setup.md) for the current production procedure and
-[run-record.md](run-record.md) for the evidence packet.
+Use [v4/README.md](v4/README.md) to compile the immutable study plan, prove WSL2
+isolation and failure cleanup, run policy-matched producers, validate strict
+blind judgments, invoke only triggered adjudicators, and reveal conditions
+after judgment validity is fixed.
 
-Case inventories, batch definitions, and current coverage belong to those
-operational documents because they change as the suite evolves. This file
-remains the durable explanation of the design and its failure lessons.
+Case inventories, plans, batch definitions, and current results remain local
+because they change as the suite evolves. This file remains the tracked,
+durable explanation of the design and its failure lessons.

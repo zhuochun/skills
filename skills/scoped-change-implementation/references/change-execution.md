@@ -7,6 +7,7 @@ Adapt these forms in the current task or repository artifact. Do not create a ha
 | Mechanism | Execution consequence |
 | --- | --- |
 | **Vertical Slices Localize Business Change** | Sequence work by one user-visible activity rather than completing technical layers in isolation. |
+| **Concrete Examples Expose Requirement Ambiguity** | Require requested outcome differences to be distinguishable from available inputs and state; surface a missing rule or signal instead of inventing behavior. |
 | **Fearless Competence Through Fast Trusted Tests** | Keep feedback fast and credible enough to guide each small step; revert or repair the latest move when it fails. |
 | **Correctness Should Come From Structure, Not Vigilance** | Encode repeated important obligations in types, schemas, tests, boundaries, defaults, or guardrails instead of reviewer memory. |
 | **Reversibility Preserves Adaptive Capacity** | Keep uncertain steps narrow, observable, and retreatable; remove temporary coexistence once learning stabilizes. |
@@ -26,6 +27,7 @@ the specification into this execution record.
 - Consumers, data, dependencies, and operating paths affected:
 - Explicit non-goals:
 - Consequential assumptions:
+- Required outcome distinctions and their observable signals:
 - Change-specification keys and labels consumed:
 - Verification keys and labels consumed:
 - Observability or release keys and labels consumed:

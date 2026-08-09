@@ -8,6 +8,8 @@ Adapt these formats to the repository's established conventions. They are thinki
 | --- | --- |
 | **Solution-Shaped Requirements Hide Business Intent** | Recover outcomes, constraints, examples, and desired behavior before accepting a proposed screen, schema, service, or technology as the model. |
 | **Model Usefulness Is Problem-Specific** | Select a model for the difficult decision or workflow it clarifies; require explicit omissions instead of rewarding completeness. |
+| **Architecture Investment Follows Learning Stage** | Match modeling and enforcement effort to demonstrated semantic uncertainty and pressure; keep settled local technical choices simple. |
+| **Immutable Identity Reduces Coordination** | Separate stable content, semantic identity, version, occurrence, and mutable names; do not claim a key survives transformations its inputs cannot distinguish. |
 | **Operational Principles Explain Behavioral Concepts** | Connect purpose, state, actions, and observable outcome in a compact multi-action scenario before hardening concepts into interfaces. |
 | **Model Friction Signals Domain Misalignment** | Use repeated exceptions, missing terms, awkward translations, and difficult changes as investigation signals rather than automatic redesign verdicts. |
 | **Bounded Context Enables Precise Meaning** | Bound where language, rules, and invariants can be trusted; translate rather than silently importing foreign assumptions. |
@@ -20,10 +22,14 @@ These are practice-grounded heuristics. The knowledge map still identifies bound
 ## Modeling session
 
 - Problem, decision, or workflow under study:
+- Requested surface and change owner:
+- Preserved semantic, state, and lifecycle owners:
+- Evidence that a material modeling problem exists, or smaller route:
 - Outcomes, hard constraints, and mandated implementation choices:
 - Perspectives represented and missing:
 - Purpose-linked behavioral scenario:
 - Rules, invariants, events, and meaningful transitions:
+- Identity kind, multiplicity, provenance, and split/merge/edit/reappearance counterexamples when relevant:
 - Exceptions, time, authorization, partial progress, failure, and repair:
 - Terms used inconsistently or absent from the model:
 - Existing code, data, interface, and operational representations:

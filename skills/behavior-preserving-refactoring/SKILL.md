@@ -11,6 +11,8 @@ Change structure without hiding a support-policy decision. Use evidence to prese
 
 - Confirm that structural implementation is authorized. For discuss, assess, or redesign requests, remain read-only and route to the relevant design skill.
 - Be the sole primary executor for an authorized behavior-preserving slice. Do not wrap it in `scoped-change-implementation`; route only intentional behavior change there.
+- Classify the requested effect rather than trusting words such as cleanup, compatibility, simplification, or refactor. A change to accepted inputs, returned values, errors or fallbacks, ordering or precedence, state transitions, data meaning, compatibility or support, or operational semantics is not behavior-preserving.
+- Route an accepted semantic change to `scoped-change-implementation`; route unresolved behavior or support policy to `software-change-specification` or its accountable owner. Split mixed work so the structural slice has an explicit preservation boundary.
 - When orchestration supplies accepted scope, design, preserved commitments, assurance posture, and valid evidence, consume them and produce the structural implementation delta. Recheck only contradictions or missing facts that block safe equivalence.
 - Define observable behavior and compatibility before editing. Declared, tested, observed, and inferred evidence may disagree.
 - Ask the accountable owner to decide intentional retirements or behavior changes. Split those changes into an explicit `$scoped-change-implementation` contract rather than smuggling them into refactoring.
@@ -35,6 +37,7 @@ Read [references/refactoring-control.md](references/refactoring-control.md) only
 ## Quality gates
 
 - Structural pressure and preserved behavior are explicit; retirements remain accountable.
+- The requested effect is classified before editing; no semantic or support change is hidden inside structural wording.
 - A credible baseline detects regressions and each step is attributable.
 - One-owner knowledge, state, resource, or lifecycle boundaries improve.
 - Durable tests observe behavior, not moved implementation.

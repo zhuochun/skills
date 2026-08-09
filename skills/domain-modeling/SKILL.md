@@ -10,6 +10,7 @@ Build a problem-specific model that makes important decisions, rules, and behavi
 ## Preserve context and authority
 
 - Discover existing language, schemas, decisions, context maps, APIs, tests, events, reports, and ownership first.
+- Locate both the owner of the requested surface and the owner of the behavior, state, or meaning that must remain coherent before proposing another model or control point. Existing implementation is evidence, not automatic authority; reconcile it with work, language, and outcomes.
 - Default to analysis and proposal. Update documentation or code only when the user requests it, and preserve established artifact names and locations.
 - Treat stakeholder prescriptions, code, schemas, and services as evidence, not sole authority. Preserve mandated constraints and rationale.
 - Record disagreement, context-specific meanings, and missing perspectives. Do not force one enterprise-wide definition where several precise local models are healthier.
@@ -18,10 +19,11 @@ Build a problem-specific model that makes important decisions, rules, and behavi
 ## Modeling workflow
 
 1. **Recover the problem.** Translate requested screens, fields, services, schemas, rules, or technologies into outcomes, decisions, constraints, examples, invariants, and success or failure. Keep implementation as one candidate unless constrained.
-2. **Bound the modeling investment.** Name the important workflow or decision and the modeling horizon. Use intensive modeling where meaning and behavior are the hard part; use simpler standard models where local differentiation is low. State what this model deliberately will not answer.
+2. **Test whether modeling is needed and bound the investment.** Name the important workflow or decision, its current owners, and the modeling horizon. Use intensive modeling where meaning, rules, invariants, lifecycle, or translation are genuinely disputed or repeatedly create friction. When the existing values, defaults, lifecycle, and ownership are settled and the remaining choice is local presentation or technical policy, stop intensive modeling and return the smallest owner finding, compact rule, or route to implementation. A no-modeling result still cites evidence for the changed-surface owner and the preserved semantic or state owner, states why no material conflict remains, and lists the important non-changes. Do not create a second semantic owner. State what the model deliberately will not answer.
 3. **Gather language and evidence.** Compare experts, work, users, support, code, data, tests, interfaces, incidents, and operations. Mark synonyms, homonyms, missing or overloaded concepts, hidden state, and declared-executable contradictions.
 4. **Write operational principles.** For each important behavioral concept, trace a compact scenario from purpose through actors, starting state, actions, transitions, and observable outcome. Add separate edge scenarios for reversal, authorization, time, partial progress, failure, repair, and reporting where they affect the model.
 5. **Generate and compare candidates.** For consequential choices, create materially different lightweight models. Judge them by difficult decisions, workflows, operations, invariants simplified, omissions, new complexity, and awkward adjacent scenarios—not realism or completeness alone.
+   - When a candidate depends on identity, distinguish occurrence, content, semantic subject, version, and mutable locator. Challenge multiplicity, reorder, split or merge, edits, regeneration, deletion, and reappearance before claiming stability. Preserve provenance and unresolved identity policy rather than treating a hash or current key as universal identity.
 6. **Diagnose model friction.** Use repeated exceptions, flag clusters, generic records, missing domain terms, awkward transitions, cross-cutting edits, user-visible inconsistency, and rules dependent on hidden historical state as prompts for model investigation—not proof that one fashionable pattern is required.
 7. **Draw semantic boundaries and translations.** State where vocabulary, rules, invariants, and authority remain coherent. At each edge, identify the foreign and local meanings, translation or deliberate conformance, contract, ownership, and power constraints. Describe the relationship actually evidenced; do not force a context-map label.
 8. **Choose enforcement proportionately.** Use conversation, documentation, modules, ownership, private persistence, interfaces, or isolation as needed. Account for coordination, translation, latency, failure, observability, and operating cost. Route deployable, data, failure, or team boundaries to `$service-boundary-design`.
@@ -40,7 +42,9 @@ Read [references/modeling-artifacts.md](references/modeling-artifacts.md) only w
 ## Quality gates
 
 - The selective model names its problem, decision, or workflow.
+- Modeling effort is justified by a material semantic question or friction; otherwise the changed-surface and preserved-behavior owners, sufficiency evidence, and smaller route are named.
 - Concepts connect purpose, state, action, and outcomes; consequential choices compare scenarios and omissions.
+- Identity-bearing models state what remains the same, what creates a new identity, and which transformations or duplicates break the proposed key.
 - Language and rules reconcile with work, code, data, and operations or expose contradictions.
 - Boundaries define precise meaning and foreign translation or conformance.
 - Logical, code, data, deployment, failure, and team boundaries remain distinct.

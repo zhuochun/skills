@@ -9,6 +9,7 @@ This workflow is grounded in the following mechanisms from the knowledge base:
 | Mechanism | Consequence for this skill |
 | --- | --- |
 | **Architectural Learning Requires Consolidation** | Trigger on demonstrated learning from exploration, repeated change, and operation; convert it into boundaries, tests, rationale, defaults, merging, splitting, retirement, or quarantine rather than generic cleanup. |
+| **Zero Reported Failures May Reflect Detection Gaps** | Do not infer that optional complexity is valuable or useless from silence; compare exposure and observation coverage before retaining or removing it. |
 | **Essential Work Sets Improvement Ceilings** | Diagnose whether redesign addresses conceptual problem work, accidental friction, or both before predicting leverage. |
 | **Model Friction Signals Domain Misalignment** | Treat repeated exceptions, awkward business language, and non-local changes as evidence for model investigation, not automatically as module-cleanliness problems. |
 | **Triple Debt Model for Software Health** | Recover evidence across code and structure, shared understanding, and preserved intent so a cleaner target does not deepen cognitive or intent debt. |
@@ -42,6 +43,8 @@ Treat code as removable only when no required contract, real consumer, runtime d
 ## Candidate comparison
 
 Compare the current or minimally consolidated design with materially different candidates when the decision warrants it.
+
+When an optional mechanism has continuing cost but no demonstrated outcome contribution, include a credible disabled, quarantined, or removed candidate. This is a comparison obligation, not a presumption that deletion is safe.
 
 | Candidate | Learning encoded | Commitments preserved or changed | Meaning and change locality | Failure and operating consequences | Reversibility and migration | Debt left behind |
 | --- | --- | --- | --- | --- | --- | --- |

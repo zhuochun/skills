@@ -24,6 +24,9 @@ Turn an understood change into maintained software. Keep each step small enough 
 
 1. **Trace the current behavior.** Follow the user or caller path through entry point, decisions, state, effects, dependencies, and observable outcome. Identify the smallest public or operational seam that can prove the requested difference.
 2. **Consume or define the contract.** Use supplied claims or owner decisions; reopen only when evidence exposes an uncovered case or contradiction. Otherwise name changed behavior, preserved invariants, consumers, compatibility, controls, evidence, and non-goals. Reconcile code, tests, docs, data, and expectations. Stop only when conflict requires an unauthorized behavior, compatibility, state, security, data, or recovery decision; name the competing outcomes and route to `software-change-specification` or the narrower owning skill. Reference existing claim keys and labels.
+   - Prove that each requested behavioral distinction is executable from the information available at its decision seam. Name the input, state, event, capability, or other observable signal that separates outcomes which must differ.
+   - If materially different required states are indistinguishable there, stop and identify the missing signal, contract rule, or owner decision. Do not invent a heuristic, broaden acceptance, or weaken an invariant to make the patch possible.
+   - Keep moving on routine implementation choices whose outcomes remain inside the accepted contract; lack of a prescribed code shape is not behavioral ambiguity.
 3. **Select a coherent vertical slice.** Prefer one user-visible action or business activity that can be exercised end to end. Include only the input, decision, state, effect, output, and interface changes needed to make that slice real. A surgical change minimizes unnecessary coupling and ownership ambiguity, not merely line count.
 4. **Choose feedback.** Use test-driven development for a stable seam and valuable deterministic red-green loop. Otherwise choose the cheapest credible compiler, static, example, contract, visual, migration, performance, or other named check. Do not freeze implementation shape.
 5. **Implement through the current owners.** Follow repository-native patterns until evidence justifies changing them. Put each rule, mutable representation, resource, and side effect under one clear owner. Avoid speculative abstractions; preserve small local duplication when variation is still evidence, but never duplicate security, financial, compliance, protocol, or domain invariants whose divergence is unsafe.
@@ -42,6 +45,7 @@ Read [references/change-execution.md](references/change-execution.md) only when 
 - The diff follows ownership and conventions or explains deviation.
 - A reviewer can recover the behavioral reason for each material edit without unrelated archaeology.
 - Checks observe supported behavior or contracts and trace to an executed environment.
+- Every required behavior branch has an available discriminating signal, or the change stops with the missing information or decision named.
 - Temporary paths and controls have owners and exits; one authoritative behavior path remains.
 
 ## Reject weak implementation

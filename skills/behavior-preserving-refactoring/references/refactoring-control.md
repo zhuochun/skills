@@ -8,6 +8,7 @@ Use these forms inside the active work item, plan, or review surface. They are t
 | --- | --- |
 | **Characterization Tests Open Refactoring Seams** | Protect valuable behavior at an existing boundary, then use that confidence to expose smaller and faster seams. |
 | **Refactoring-Safe Tests Observe Behavior** | Keep durable assertions on outcomes, public contracts, and externally meaningful effects rather than private choreography. |
+| **Compatible Growth Preserves Software Contracts** | Treat changed meanings, accepted inputs, precedence, and support obligations as explicit contract evolution rather than structural cleanup. |
 | **Fearless Competence Through Fast Trusted Tests** | Refactor in small green-to-green steps whose feedback is fast and credible enough for immediate retreat. |
 | **Architectural Learning Requires Consolidation** | Encode learned structure in names, ownership, interfaces, tests, and rationale rather than leaving it in workarounds or memory. |
 | **Information Hiding Localizes Change** | Move leaked representations, sequences, policies, and resources behind one owner with an honest contract. |

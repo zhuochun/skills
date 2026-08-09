@@ -308,7 +308,7 @@ Use `architecture-assessment` to diagnose and rank structural improvement opport
 
 ### Domain, service, and module boundaries
 
-- `domain-modeling` owns meaning, behavior, invariants, vocabulary, and bounded contexts.
+- `domain-modeling` owns disputed or materially complex meaning, behavior, invariants, vocabulary, and bounded contexts. It first locates both the requested-surface owner and the preserved semantic or state owner; settled local presentation or technical policy stays with those owners or a compact implementation rather than creating another model.
 - `service-boundary-design` owns deployment, data authority, failure, change cadence, and operating ownership. A bounded context is not automatically a service.
 - `deep-module-design` owns interfaces, seams, state, and hidden complexity inside a codebase or service. A module is not automatically a deployable unit.
 
@@ -329,7 +329,7 @@ Use `architecture-assessment` to discover and rank structural problems across a 
 ### Portfolio assessment versus retrospective review
 
 - `architecture-assessment` starts before a redesign target is selected. It compares structural pressures across a declared module, service, subsystem, platform, codebase, capability, or estate scope and ranks which opportunities deserve focused investigation or investment.
-- `retrospective-architecture-review` starts with one selected completed design and a material knowledge delta from implementation, repeated change, operation, support, or ownership. It recovers durable commitments, compares the current design with alternatives, and recommends retain, quarantine, prune, reshape, or rebuild.
+- `retrospective-architecture-review` starts with one selected completed design and a material knowledge delta from implementation, repeated change, operation, support, or ownership. It recovers durable commitments, compares the current design with materially different alternatives—including a credible lower-complexity option when optional machinery has cost but no demonstrated benefit—and recommends retain, quarantine, prune, reshape, or rebuild without presuming removal.
 
 Route by the decision, not by shared evidence. “Where should we invest in architecture?” belongs to portfolio assessment. “Has what we learned changed the right design for this capability?” belongs to retrospective review. Do not run both as serial general assessments; route a selected portfolio candidate to the focused design skill it needs, and use retrospective review only when accumulated learning creates its distinct decision.
 
@@ -342,8 +342,8 @@ Route by the decision, not by shared evidence. “Where should we invest in arch
   artifact-integrity failures and readiness limits. It does not rewrite the
   contract or decide unresolved product, domain, architecture, compatibility,
   security, data, or operational meaning.
-- `scoped-change-implementation` consumes that contract when one exists, or resolves a compact inline contract for a local reversible change, then changes supported behavior through coherent vertical slices. TDD is one optional inner feedback loop, not the skill's whole contract.
-- `behavior-preserving-refactoring` changes structure while keeping supported behavior stable. Any intentional behavior or support-policy change becomes a separate scoped implementation decision.
+- `scoped-change-implementation` consumes that contract when one exists, or resolves a compact inline contract for a local reversible change, then changes supported behavior through coherent vertical slices. It proceeds independently on routine code choices, but stops when required behavioral outcomes cannot be distinguished from the inputs or state available at the decision seam. TDD is one optional inner feedback loop, not the skill's whole contract.
+- `behavior-preserving-refactoring` changes structure while keeping supported behavior stable. Classify by semantic effect rather than request wording: changed accepted inputs, results, errors, precedence, state, data meaning, support, or operational semantics become a separate scoped implementation decision, or specification when unresolved.
 
 A specification is an optional escalation, not a universal gate. A short diff is not automatically surgical, but a cheap reversible change should not wait for document completion when its intent and contract are already clear. Surgical implementation minimizes unnecessary coupling, dual authority, and unrelated change while completing the ownership and cleanup required by the requested behavior.
 

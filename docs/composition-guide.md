@@ -114,6 +114,8 @@ software-change-orchestration
 
 Use the owning repository when one repository owns the behavior, even if it consumes another repository's data. Use an established control repository only for genuinely distributed ownership. Compact discussion normally stays inline; compact authorized execution uses one minimal record but no orchestration directory. Standard work normally uses one living specification. High-assurance work uses several artifacts only when they need independent lifecycles. Persist a resume point only for a pause, block, handoff, session change, or non-obvious re-entry.
 
+Choose the executor by the requested semantic effect, not by labels such as cleanup or compatibility. An accepted change to observable behavior belongs to `scoped-change-implementation`; pure structure belongs to `behavior-preserving-refactoring`; unresolved behavior belongs to specification or its accountable owner. Implementation remains autonomous over routine code shape, but missing information that makes required outcomes indistinguishable is a contract boundary, not permission to guess or weaken the behavior.
+
 In authorized or auto mode, write the authorized modes, accepted scope and non-goals, and the four escalation conditions into the smallest canonical record before implementation. Proceed without workflow approval, but preserve the originating behavior meaning and escalate material scope, external or production action, destructive action, or a decision changing supported behavior.
 
 ### Session boundary or non-obvious re-entry
