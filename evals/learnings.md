@@ -233,9 +233,11 @@ latency with earlier results unless effort is a declared experimental factor.
 ## Interpret evidence conservatively
 
 A breadth-first pass is a screen, not proof. Report a positive but incomplete
-signal as promising. Call effectiveness demonstrated only after independent
-replication on a materially different ordinary or boundary case, multiple blind
-graders, no integrity failure, and no increase in consequential hard failures.
+signal as promising. Multiple graders judging one pair improve measurement;
+they do not replicate producer behavior. Claims about repeatability require
+fresh producer pairs, while claims about transfer require materially different
+cases. Reserve confirmatory language for work whose external importance
+justifies sealed holdouts and an evaluator-independence audit.
 
 Attention and forced-use conditions explain mechanism; they do not replace the
 policy-matched primary comparison. A sentinel can establish safety or expose a
@@ -319,6 +321,47 @@ bounds, evidence requirements, contrasts, and ranking permutations. Preserve a
 rejected schema attempt and give its replacement a new run identity; do not
 erase it or accept an unvalidated free-form report.
 
+## Separate eligibility, repetition, and transfer
+
+One family score cannot safely answer whether the comparison was valid, whether
+the skill loaded appropriately, whether it was safe, whether quality improved,
+and whether the improvement repeated. Keep those facts visible in the reveal
+and make the conclusion in a reviewed summary. An invalid pair is not neutral
+evidence; a treatment hard failure or boundary regression can outweigh a higher
+mean score.
+
+Grader votes over one producer pair are correlated measurements of the same
+artifacts, so counting them as independent preferences exaggerates sample size.
+They may remain unresolved when another judgment would not change the tuning
+decision. Repeat producer conditions in fresh contexts only when behavioral
+repeatability matters; use a materially different case when transfer matters.
+
+Coached capability, natural invocation, and routing discipline are also
+different claims. A coached prompt can diagnose whether a workflow helps when
+clearly framed, but cannot establish automatic invocation or transfer. A sealed
+natural holdout removes workflow steps, supplied alternatives, route hints, and
+rubric language from the producer prompt. A routing boundary gates a positive
+result; correct nonactivation or an early stop does not contribute a positive
+effect score.
+
+## Keep the evaluator proportional
+
+Evaluation code can become a second product. In one iteration, repeated-run
+schemas, per-grader candidate remapping, automatic family classification, and
+mandatory adjudication created more inference and provenance failure modes than
+the developer decision required. A green harness suite did not make those
+inferences trustworthy: pooling still overstated replication, remapping made
+labels and cited evidence disagree, and automatic resolution could erase useful
+disagreement.
+
+The stable default is smaller: one policy-matched producer pair per case, one
+anonymous packet shared by blind graders, factual reveal data, optional
+adjudication, and a reviewed conclusion. Add repeated producers, order-bias
+experiments, automated decision rules, or formal independence controls only
+when automated tuning, a public comparative claim, or another consequential
+decision needs them. If evaluator machinery creates more material failure modes
+than it removes, simplify it before repairing every edge case.
+
 ## Treat composition as a separate causal question
 
 For implementation followed by review, a better final artifact does not reveal
@@ -384,15 +427,22 @@ downstream-observable field.
 | New untracked contents are absent from the grading packet | Graders cannot inspect the implementation being scored. | Rebuild the complete candidate before grading. |
 | The behavioral seam cannot run | Evidence quality is capped even if both arms are equally constrained. | Treat the result as screening evidence and repair the seam before replication. |
 | Attention or forced-use diagnostics are pooled into the primary effect | Mechanism evidence is mistaken for effectiveness. | Keep diagnostics separate from the policy-matched comparison. |
+| The runner requires an installed implicit skill to load | A correct non-trigger is rejected, so activation calibration becomes impossible. | Record whether the skill loaded; require loading only for explicit real and named-placebo conditions. |
+| An unloaded implicit boundary cell contributes to the skill-family effect | Stochastic output differences, including shared failures, are credited to a workflow that never ran. | Report the pair as activation calibration; exclude it from mediated skill-benefit claims and flag shared hard failures separately. |
+| Grader votes are counted as producer repetitions | Agreement about one artifact is mistaken for repeatable agent behavior. | Resolve one result per producer pair and report producer pairs separately from grader judgments. |
+| A gate-only boundary improves the family mean | Correct restraint or nonactivation is credited as positive execution value. | Use boundaries to disqualify regressions or establish calibration, never to add effect wins. |
+| A coached prompt is reported as natural transfer | The task supplies the reasoning, alternatives, or route the skill was meant to discover. | Label coached capability separately and require a sealed natural holdout for invocation or transfer claims. |
+| A clean review case has no plausible adjacent concern | It tests willingness to say no findings but not discrimination between changed behavior and preserved context. | Include a realistic tempting concern, state the relevant non-goal naturally, and anchor why it is or is not in scope. |
 | Missing runtime or pricing metrics are estimated from words or raw token totals | Cost appears more precise than the evidence permits. | Mark the metric or cost claim unavailable. |
 | A screen, sentinel, or repeated mechanism is called replication | Narrow fit is mistaken for general benefit. | Replicate independently on a materially different case. |
+| The evaluator automates a conclusion the current decision can review directly | Harness behavior becomes another source of inference bugs and false precision. | Return to factual reveal data and add machinery only for a named need. |
 
 ## Continue with the executable protocol
 
 Use [v4/README.md](v4/README.md) to compile the immutable study plan, prove WSL2
 isolation and failure cleanup, run policy-matched producers, validate strict
-blind judgments, invoke only triggered adjudicators, and reveal conditions
-after judgment validity is fixed.
+blind judgments, optionally adjudicate material disagreements, and reveal
+conditions after judgment validity is fixed.
 
 Case inventories, plans, batch definitions, and current results remain local
 because they change as the suite evolves. This file remains the tracked,

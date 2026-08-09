@@ -4,3 +4,5 @@
 # Evaluation harnesses, cases, and results are local development assets.
 /evals/*
 !/evals/learnings.md
+!/evals/report.md
+!/evals/setup.md
