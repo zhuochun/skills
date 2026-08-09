@@ -1,7 +1,7 @@
 interface:
   display_name: "Domain Modeling"
   short_description: "Model behavior and semantic boundaries"
-  default_prompt: "Use $domain-modeling to locate the requested-surface and preserved-behavior owners, test whether a material domain problem exists, and compare problem-specific models without assuming contexts are services."
+  default_prompt: "Use $domain-modeling to locate requested-surface and preserved-meaning owners, test whether modeling is warranted, compare problem-specific models, and expose consequential classification choices without assuming contexts are services."
 
 policy:
   allow_implicit_invocation: false

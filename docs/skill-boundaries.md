@@ -308,9 +308,9 @@ Use `architecture-assessment` to diagnose and rank structural improvement opport
 
 ### Domain, service, and module boundaries
 
-- `domain-modeling` owns disputed or materially complex meaning, behavior, invariants, vocabulary, and bounded contexts. It first locates both the requested-surface owner and the preserved semantic or state owner; settled local presentation or technical policy stays with those owners or a compact implementation rather than creating another model.
+- `domain-modeling` owns disputed or materially complex meaning, behavior, invariants, vocabulary, consequential classifications, and bounded contexts. It exposes category exclusions, affected perspectives, and contest or revision authority while leaving legal, privacy, fairness, and safety judgments with accountable owners. It first locates both the requested-surface owner and the preserved semantic or state owner; settled local presentation or technical policy stays with those owners or a compact implementation rather than creating another model.
 - `service-boundary-design` owns deployment, data authority, failure, change cadence, and operating ownership. A bounded context is not automatically a service.
-- `deep-module-design` owns interfaces, seams, state, and hidden complexity inside a codebase or service. A module is not automatically a deployable unit.
+- `deep-module-design` owns the read-only decision to retain or redesign interfaces, seams, state, resources, hidden complexity, and request, stream, or process lifecycle semantics inside a codebase or service. A module is not automatically a deployable unit.
 
 For a new capability, the common direction is:
 
@@ -335,7 +335,7 @@ Route by the decision, not by shared evidence. “Where should we invest in arch
 
 ### Design, prototyping, specification, implementation, and refactoring
 
-- `deep-module-design` decides where knowledge, state, resources, and interface semantics should live. It does not modify the target.
+- `deep-module-design` explains a sufficient current boundary or decides where knowledge, state, resources, and interface semantics should live. It does not modify the target. Accepted structure-only execution routes to `behavior-preserving-refactoring`; intentional behavior change routes through `software-change-specification` or `scoped-change-implementation`.
 - `prototype-to-learn` modifies local files only to create a disposable observation surface for one design question. Its code creates no supported behavior or production-readiness claim; preserve the learning and route any maintained implementation separately.
 - `software-change-specification` turns one accepted but ambiguous change into a reviewable behavioral contract: current and desired behavior, invariants, scope, affected surfaces, representative examples, acceptance claims, unknowns, and readiness. It specifies the change rather than the patch and does not authorize implementation.
 - `specification-review` independently challenges one fixed specification for
