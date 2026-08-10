@@ -195,6 +195,21 @@ state the actual observable outcome. Give graders only the current case anchor,
 not the complete anchor catalog, and preserve superseded reports when a
 corrected anchor requires regrading.
 
+### Treat a clean-case anchor as a hypothesis
+
+A case designed to contain no material finding can still be wrong about its
+subject. In one specification-review screen, both candidates surfaced concrete
+contract defects in the supposedly clean artifact. Scoring those observations
+against the intended clean answer would have rewarded agreement with the
+evaluator and punished correct scrutiny.
+
+After reveal, compare surprising findings with the pinned source rather than
+assuming the anchor is authoritative. If the source falsifies the clean-case
+premise, invalidate and replace the case; do not reinterpret the result as a
+skill regression or tune the skill to ignore the discovered defect. This check
+is especially important for review skills because finding an evaluator mistake
+is part of the capability being measured.
+
 ### Separate invalid runs from scored failures
 
 Contamination, hidden-evidence access, prompt or revision drift, subject

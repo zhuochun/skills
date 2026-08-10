@@ -44,6 +44,8 @@ Use evidence types, not one universal truth hierarchy:
 
 When sources disagree, record the contradiction, consequence, and next observation. Do not silently privilege a clean diagram over runtime evidence or one runtime sample over an executable latent path.
 
+Treat silence or an empty failure record as health evidence only when the relevant path was exercised and the observation or reporting channel could detect the failure. Otherwise mark the path or failure class as uninspected.
+
 ## Orientation artifact
 
 ### Decision frame
@@ -83,11 +85,13 @@ When sources disagree, record the contradiction, consequence, and next observati
 
 Trace success first, then annotate partial completion, retry, timeout, duplication, fallback, and recovery. For asynchronous paths, include enqueue, durable acceptance, processing, externally visible completion, dead-letter or repair, and age/freshness.
 
+At runtime or library boundaries, record lifecycle, scheduling, cancellation, resource ownership, isolation, backpressure, and introspection semantics only when they affect the outcome. For cross-layer controls, show their ordering and whether stopped caller work also stops underlying work.
+
 ### Scenario walks
 
-1. **Normal:** How does useful work enter, complete, become visible, and get measured?
-2. **Change:** Which components, contracts, data, flags, tests, owners, and recovery paths does the proposed change touch?
-3. **Failure:** How is impact detected, localized, routed, mitigated, and verified as recovered?
+1. **Normal:** How does useful work enter, complete, become visible, release its resources, and get measured?
+2. **Change:** Which components, contracts, data, flags, tests, owners, and recovery paths does the proposed change touch? When versions coexist, what shared state or interpretation must remain valid?
+3. **Failure:** Which observer detects impact? How do cancellation, retry, fallback, containment, and recovery compose until the system reaches a usable state and verifies the consumer-visible outcome?
 
 ### Handoff
 
