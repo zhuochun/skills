@@ -154,6 +154,12 @@ function Test-CheckoutSkillTarget {
   Test-PathEqual (Split-Path -Parent $Path) $skillsRoot
 }
 
+function ConvertTo-PowerShellLiteral {
+  param([Parameter(Mandatory)][string]$Value)
+
+  "'$($Value.Replace("'", "''"))'"
+}
+
 function Get-ManifestSkills {
   param([Parameter(Mandatory)][string]$ManifestPath)
 
@@ -321,10 +327,37 @@ if ($Skill) {
 if ($Action -eq 'Doctor') {
   $healthyCount = 0
   $issueCount = 0
+  $correctionActions = @()
+  $installerLiteral = ConvertTo-PowerShellLiteral $PSCommandPath
+  $targetArguments = "-Target $(ConvertTo-PowerShellLiteral $Target)"
+  if ($Target -like 'project-*') {
+    $targetArguments += " -ProjectRoot $(ConvertTo-PowerShellLiteral $resolvedProjectRoot)"
+  } elseif ($Target -eq 'custom') {
+    $targetArguments += " -TargetDirectory $(ConvertTo-PowerShellLiteral $targetRoot)"
+  }
+
+  function Get-DoctorInstallCommand {
+    param([Parameter(Mandatory)][string]$Name)
+
+    "& $installerLiteral -Action Install -Skill $(ConvertTo-PowerShellLiteral $Name) $targetArguments"
+  }
+
+  function Get-DoctorUninstallCommand {
+    param([Parameter(Mandatory)][string]$Name)
+
+    "& $installerLiteral -Action Uninstall -Skill $(ConvertTo-PowerShellLiteral $Name) $targetArguments"
+  }
 
   if (-not (Test-Path -LiteralPath $targetRoot -PathType Container)) {
     Write-Host "[missing-target] $targetRoot"
     $issueCount++
+    if ($Skill) {
+      $correctionActions += Get-DoctorInstallCommand $Skill
+    } elseif ($Package) {
+      $correctionActions += "& $installerLiteral -Action Install -Package $(ConvertTo-PowerShellLiteral $Package) $targetArguments"
+    } else {
+      $correctionActions += "Run Install with -Skill or -Package and $targetArguments to create the target."
+    }
   } elseif ($selectedSkills.Count -gt 0) {
     foreach ($selectedSkill in $selectedSkills) {
       $sourcePath = Get-UnresolvedFullPath (Join-Path $skillsRoot $selectedSkill)
@@ -334,11 +367,13 @@ if ($Action -eq 'Doctor') {
       if ($null -eq $existingItem) {
         Write-Host "[missing] $destinationPath"
         $issueCount++
+        $correctionActions += Get-DoctorInstallCommand $selectedSkill
         continue
       }
       if ($existingItem.LinkType -notin @('SymbolicLink', 'Junction')) {
         Write-Host "[conflict] $destinationPath is not a supported link"
         $issueCount++
+        $correctionActions += "Move or remove $(ConvertTo-PowerShellLiteral $destinationPath), then run: $(Get-DoctorInstallCommand $selectedSkill)"
         continue
       }
 
@@ -346,11 +381,13 @@ if ($Action -eq 'Doctor') {
       if (-not (Test-PathEqual $existingTarget $sourcePath)) {
         Write-Host "[wrong-source] $destinationPath -> $existingTarget"
         $issueCount++
+        $correctionActions += "Resolve the foreign link at $(ConvertTo-PowerShellLiteral $destinationPath), then run: $(Get-DoctorInstallCommand $selectedSkill)"
         continue
       }
       if (-not (Test-Path -LiteralPath (Join-Path $sourcePath 'SKILL.md') -PathType Leaf)) {
         Write-Host "[broken] $destinationPath -> $sourcePath"
         $issueCount++
+        $correctionActions += Get-DoctorUninstallCommand $selectedSkill
         continue
       }
 
@@ -375,9 +412,11 @@ if ($Action -eq 'Doctor') {
       if (-not $existingItem.Name.Equals($targetSkillName, [StringComparison]::Ordinal)) {
         Write-Host "[wrong-name] $($existingItem.FullName) -> $existingTarget"
         $issueCount++
+        $correctionActions += "Remove-Item -LiteralPath $(ConvertTo-PowerShellLiteral $existingItem.FullName) -Force"
       } elseif (-not (Test-Path -LiteralPath (Join-Path $existingTarget 'SKILL.md') -PathType Leaf)) {
         Write-Host "[broken] $($existingItem.FullName) -> $existingTarget"
         $issueCount++
+        $correctionActions += Get-DoctorUninstallCommand $targetSkillName
       } else {
         Write-Host "[healthy] $($existingItem.FullName) -> $existingTarget"
         $healthyCount++
@@ -391,7 +430,9 @@ if ($Action -eq 'Doctor') {
   Write-Host "Target: $targetRoot"
   Write-Host "Healthy links: $healthyCount; issues: $issueCount"
   if ($issueCount -gt 0) {
-    throw "Doctor found $issueCount installation issue(s)."
+    Write-Host 'Correction actions:'
+    $correctionActions | Select-Object -Unique | ForEach-Object { Write-Host "  $_" }
+    exit 1
   }
   return
 }

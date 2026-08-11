@@ -45,6 +45,12 @@ die() {
   exit 1
 }
 
+quote_shell_literal() {
+  printf "'"
+  printf '%s' "$1" | sed "s/'/'\\\\''/g"
+  printf "'"
+}
+
 script_dir=$(CDPATH= cd "$(dirname "$0")" && pwd -P)
 repo_root=$(dirname "$script_dir")
 skills_root=$repo_root/skills
@@ -358,10 +364,50 @@ fi
 if [ "$action" = doctor ]; then
   healthy_count=0
   issue_count=0
+  correction_actions=
+  installer_literal=$(quote_shell_literal "$script_dir/install.sh")
+  doctor_target_arguments="--target $target_name"
+  case "$target_name" in
+    project-*)
+      project_root_literal=$(quote_shell_literal "$project_root")
+      doctor_target_arguments="$doctor_target_arguments --project-root $project_root_literal"
+      ;;
+    custom)
+      target_root_literal=$(quote_shell_literal "$target_root")
+      doctor_target_arguments="$doctor_target_arguments --target-dir $target_root_literal"
+      ;;
+  esac
+
+  add_correction_action() {
+    correction_action=$1
+    if [ -z "$correction_actions" ]; then
+      correction_actions=$correction_action
+    else
+      correction_actions="$correction_actions
+$correction_action"
+    fi
+  }
+
+  doctor_install_command() {
+    printf 'sh %s install --skill %s %s' \
+      "$installer_literal" "$1" "$doctor_target_arguments"
+  }
+
+  doctor_uninstall_command() {
+    printf 'sh %s uninstall --skill %s %s' \
+      "$installer_literal" "$1" "$doctor_target_arguments"
+  }
 
   if [ ! -d "$target_root" ]; then
     printf '[missing-target] %s\n' "$target_root"
     issue_count=$((issue_count + 1))
+    if [ -n "$skill_name" ]; then
+      add_correction_action "$(doctor_install_command "$skill_name")"
+    elif [ -n "$package_name" ]; then
+      add_correction_action "sh $installer_literal install --package $package_name $doctor_target_arguments"
+    else
+      add_correction_action "Run install with --skill or --package and $doctor_target_arguments to create the target."
+    fi
   elif [ -n "$selected_skills" ]; then
     while IFS= read -r selected_skill; do
       [ -n "$selected_skill" ] || continue
@@ -373,9 +419,12 @@ if [ "$action" = doctor ]; then
         if [ "$existing_target" != "$source_path" ]; then
           printf '[wrong-source] %s -> %s\n' "$destination_path" "$existing_target"
           issue_count=$((issue_count + 1))
+          destination_literal=$(quote_shell_literal "$destination_path")
+          add_correction_action "Resolve the foreign link at $destination_literal, then run: $(doctor_install_command "$selected_skill")"
         elif [ ! -f "$source_path/SKILL.md" ]; then
           printf '[broken] %s -> %s\n' "$destination_path" "$source_path"
           issue_count=$((issue_count + 1))
+          add_correction_action "$(doctor_uninstall_command "$selected_skill")"
         else
           printf '[healthy] %s -> %s\n' "$destination_path" "$source_path"
           healthy_count=$((healthy_count + 1))
@@ -383,9 +432,12 @@ if [ "$action" = doctor ]; then
       elif [ -e "$destination_path" ]; then
         printf '[conflict] %s is not a symbolic link\n' "$destination_path"
         issue_count=$((issue_count + 1))
+        destination_literal=$(quote_shell_literal "$destination_path")
+        add_correction_action "Move or remove $destination_literal, then run: $(doctor_install_command "$selected_skill")"
       else
         printf '[missing] %s\n' "$destination_path"
         issue_count=$((issue_count + 1))
+        add_correction_action "$(doctor_install_command "$selected_skill")"
       fi
     done <<EOF
 $selected_skills
@@ -407,9 +459,12 @@ EOF
           if [ "$destination_skill_name" != "$target_skill_name" ]; then
             printf '[wrong-name] %s -> %s\n' "$destination_path" "$existing_target"
             issue_count=$((issue_count + 1))
+            destination_literal=$(quote_shell_literal "$destination_path")
+            add_correction_action "rm -f $destination_literal"
           elif [ ! -f "$existing_target/SKILL.md" ]; then
             printf '[broken] %s -> %s\n' "$destination_path" "$existing_target"
             issue_count=$((issue_count + 1))
+            add_correction_action "$(doctor_uninstall_command "$target_skill_name")"
           else
             printf '[healthy] %s -> %s\n' "$destination_path" "$existing_target"
             healthy_count=$((healthy_count + 1))
@@ -424,7 +479,11 @@ EOF
 
   printf 'Target: %s\n' "$target_root"
   printf 'Healthy links: %s; issues: %s\n' "$healthy_count" "$issue_count"
-  [ "$issue_count" -eq 0 ] || exit 1
+  if [ "$issue_count" -gt 0 ]; then
+    printf 'Correction actions:\n'
+    printf '%s\n' "$correction_actions" | sed 's/^/  /'
+    exit 1
+  fi
   exit 0
 fi
 

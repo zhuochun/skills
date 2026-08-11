@@ -150,7 +150,8 @@ directory junction when symbolic-link privileges are unavailable:
 Doctor is read-only. Without a selection it scans links owned by this checkout
 in the chosen target. With a skill or package it also checks completeness. It
 reports missing, broken, wrongly named, wrong-source, and conflicting entries,
-and exits unsuccessfully when it finds an issue.
+prints correction actions for each issue, and exits unsuccessfully when it
+finds an issue. PowerShell Doctor reports this without throwing an exception.
 
 ```sh
 sh install/install.sh doctor --target user-agents
