@@ -14,7 +14,7 @@ Use these prompts proportionately. They support a design decision; they are not 
 | **Deep Interfaces Concentrate Complexity** | Make the caller's learning burden smaller than the useful behavior and complexity hidden. |
 | **Composable Interfaces Externalize Feature Growth** | Let behavior grow through safe combinations when a shared exchange contract preserves the needed semantics. |
 | **Code Should Minimize Meaning Search** | Judge names, modules, tests, and interfaces by total intent-recovery cost, not local tidiness. |
-| **Explicit Dependencies Reduce Hidden Coupling** | Make required collaborators, configuration, context, and external structures visible where change decisions are made. |
+| **Explicit Dependencies Reduce Hidden Coupling** | Make required collaborators, configuration, context, and external structures visible where change decisions are made; expose a seam only when ownership, production variation, or failure semantics justify it. |
 | **Correctness Should Come From Structure, Not Vigilance** | Put repeated consequential obligations into types, contracts, defaults, tests, or owned state rather than caller memory. |
 | **Purity Boundaries Make Architecture Self-Reinforcing** | Use deterministic value transformations when they make the decision/effect boundary cheaper to preserve; do not treat purity as the goal. |
 | **Vertical Slices Localize Business Change** | Group artifacts that change for one activity while keeping truly shared invariants authoritative. |
@@ -65,6 +65,17 @@ Delete inapplicable columns; do not force composability when the domain requires
 - Which repeated consequential obligation becomes structural rather than something every caller must remember?
 - Is each proposed policy or escape path justified by recurring variation, with invalid combinations rejectable?
 - Would deleting the module spread real complexity across callers or merely remove a pass-through?
+
+## Dependency and test-surface probes
+
+For each dependency that could shape the seam, inspect:
+
+- who owns it and whether it changes independently;
+- which failure, timing, and lifecycle semantics cross it;
+- whether a faithful local substitute or deterministic setup can exercise the module; and
+- whether alternate implementations exist in production or only for testing.
+
+Keep locally owned or faithfully substitutable mechanics behind the module when callers do not need their contract. Expose the smallest honest seam for an independently controlled collaborator or external contract. A mock alone is not evidence of production variation. Treat deletion as a probe rather than a score: adaptation or orchestration may still localize real change even when little algorithmic complexity reappears in callers. Keep the public interface as the primary durable behavior surface; use internal tests for faster diagnosis without freezing private structure.
 
 ## Deep versus composable growth
 

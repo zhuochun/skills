@@ -27,7 +27,7 @@ Change structure without hiding a support-policy decision. Use evidence to prese
 4. **Choose the next seam.** Consume a `$deep-module-design` result when one exists. Otherwise choose a small boundary around one hidden decision, coherent behavior, state owner, resource, or effect. Avoid extracting an interface merely because a class, phase, or mock boundary is available.
 5. **Refactor green to green.** Make one structural move, run the narrow trusted signal, and keep green or undo. Prefer reviewable, reversible rename, move, inline, extract, value, redirection, or interface narrowing.
 6. **Transfer ownership deliberately.** Move behavior, state, representation, and lifecycle responsibility together when they form one decision boundary. If old and new paths must coexist, name the authoritative path, synchronization or comparison rule, and removal condition. Do not leave two owners making the same decision.
-7. **Evolve evidence.** Keep durable tests on behavior and public contracts. As seams appear, move confidence from broad characterization to faster unit, component, contract, or integration evidence; retain broad cases protecting end-to-end risk.
+7. **Evolve evidence.** Keep durable tests on behavior and public contracts. As seams appear, move confidence from broad characterization to faster unit, component, contract, or integration evidence. Remove implementation-coupled tests that protect only a superseded seam after interface-level evidence covers the same behavior. Retain broad cases that protect independent integration or end-to-end risk. Do not layer duplicate suites around old and new ownership.
 8. **Check nonfunctional equivalence proportionately.** Inspect performance, concurrency, ordering, resource lifecycle, failure handling, observability, data shape, and operational procedures when callers or operators rely on them. Use `$verification-execution` for consequential equivalence claims or separately authored evidence.
 9. **Remove superseded structure.** Delete old implementations, pass-through layers, temporary adapters, obsolete mocks, duplicated state, flags, and migration scaffolding after callers move and exit evidence passes. A wrapper around the old authority is not completed refactoring.
 10. **Report preserved and changed structure.** Lead with the new ownership and interface shape. State behavior evidence, intentional differences, unresolved commitments, removed paths, remaining temporary machinery, and the limits of equivalence demonstrated.
@@ -41,6 +41,7 @@ Read [references/refactoring-control.md](references/refactoring-control.md) only
 - A credible baseline detects regressions and each step is attributable.
 - One-owner knowledge, state, resource, or lifecycle boundaries improve.
 - Durable tests observe behavior, not moved implementation.
+- Tests on superseded seams are removed or retained for a named independent risk.
 - Old authority and coexistence are removed or have exits.
 - Equivalence claims name exercised functional and operational dimensions.
 

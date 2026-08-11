@@ -46,7 +46,7 @@ Each step should leave the repository understandable and runnable. If a step can
 | Broad characterization | Risk protected | New narrower seam | New evidence | Broad case retain/narrow/remove decision |
 | --- | --- | --- | --- | --- |
 
-Do not mechanically replace all broad tests. Retain the few that protect integration disagreement or end-to-end behavior unavailable at narrower seams.
+Remove evidence tied only to retired structure rather than layering new interface checks on top. Do not mechanically remove all broad tests. Retain the few that protect integration disagreement or end-to-end behavior unavailable at narrower seams.
 
 ## Equivalence dimensions
 

@@ -9,7 +9,7 @@ Adapt these forms in the current task or repository artifact. Do not create a ha
 | **Vertical Slices Localize Business Change** | Sequence work by one user-visible activity rather than completing technical layers in isolation. |
 | **Concrete Examples Expose Requirement Ambiguity** | Require requested outcome differences to be distinguishable from available inputs and state; surface a missing rule or signal instead of inventing behavior. |
 | **Fearless Competence Through Fast Trusted Tests** | Keep feedback fast and credible enough to guide each small step; revert or repair the latest move when it fails. |
-| **Correctness Should Come From Structure, Not Vigilance** | Encode repeated important obligations in types, schemas, tests, boundaries, defaults, or guardrails instead of reviewer memory. |
+| **Correctness Should Come From Structure, Not Vigilance** | Encode repeated important obligations in types, schemas, tests, boundaries, defaults, or guardrails instead of reviewer memory; make failure checks discriminate system behavior from harness behavior. |
 | **Reversibility Preserves Adaptive Capacity** | Keep uncertain steps narrow, observable, and retreatable; remove temporary coexistence once learning stabilizes. |
 | **Plan-Effect Split Makes Dangerous Actions Testable** | Make target selection and policy inspectable before destructive or external effects, then recheck stale assumptions at apply time. |
 | **Duplication Reveals Stable Abstraction Boundaries** | Share proven knowledge, not merely matching text; preserve local variation evidence unless divergence would be unsafe. |
@@ -47,6 +47,7 @@ Prefer a slice that proves one meaningful behavior over a smaller collection of 
 - Is a short local exception leaking knowledge that belongs under another owner?
 - Does the change introduce a second authoritative path or representation?
 - Is repeated code stable shared knowledge, unsafe duplicated policy, or still-useful variation evidence?
+- Does each failure-path check reject unexpected success and distinguish the promised system failure from an assertion or sentinel created by the test?
 - Can a reviewer recover the behavioral reason for each material edit without reconstructing unrelated architecture?
 
 ## Design deviation

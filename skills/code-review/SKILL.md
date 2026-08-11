@@ -15,6 +15,7 @@ Judge the change, not the author's narrative or the volume of activity. Recover 
 - When orchestration supplies an accepted contract, assurance posture, exact candidate snapshot, and evidence index, consume them without repeating the producer's framing. Challenge them when the diff or surrounding repository evidence contradicts the claim.
 - Inspect the artifact and enough surrounding code, tests, schemas, configuration, consumers, runtime, and history for context. Do not widen into codebase assessment.
 - Keep generation and judgment distinct. Independence requires fresh judgment, complete diff inspection, risk-path tracing, distinct evidence or criteria, and authority to reject—not a different role label or automatic repetition of every producer command.
+- Form separate judgments about **contract fit** and **engineering integrity** before synthesis. Contract fit covers accepted intent and non-goals. Engineering integrity covers correctness, repository constraints, evidence, and future change cost. Keep each lens visible, then rank findings together by consequence. Separate reviewers are optional and add independence only through distinct evidence or criteria.
 
 ## Clarify without negotiating the review
 
@@ -31,9 +32,9 @@ Judge the change, not the author's narrative or the volume of activity. Recover 
 4. **Check correctness and contracts.** Proportionately examine invariants, authorization, validation, data authority, compatibility, order, concurrency, retries, idempotency, failures, resource lifecycle, cleanup, security, privacy, and controls. For runtime-affecting changes, trace latency, capacity, dependency failure, cancellation, observability, control paths, and recovery.
 5. **Check change locality and ownership.** Ask whether the change puts knowledge, state, representation, and effects under clear owners or spreads a new rule through flags, helpers, layers, and consumers. Flag dual authority, hidden dependencies, pass-through abstractions, speculative generality, and repeated unsafe invariants. Recommend proportionate durable enforcement for recurring consequential findings instead of permanent reviewer memory.
 6. **Check meaning and maintainability.** Evaluate whether names, interfaces, tests, layout, and rationale let the next maintainer recover purpose and constraints. Distinguish necessary complexity from noise, and current readability from likely future change amplification.
-7. **Evaluate evidence, not volume.** Match checks to snapshot, environment, method, risk, and falsifiable behavior; inspect raw results when useful. Challenge tautologies, implementation-coupled tests, missing consumer or failure evidence, stale snapshots, and unrun claims. Rerun broadly or use `$verification-execution` only when evidence is invalid, incomplete, suspicious, or inadequate.
+7. **Evaluate evidence, not volume.** Map each materially changed behavior and failure promise to evidence that would fail if it broke. If no such evidence exists, construct a realistic counterexample before reporting a gap; do not request tests generically. For failure-path tests, verify that unexpected success fails the check and that the test cannot satisfy itself with its own assertion or sentinel. Match checks to snapshot, environment, method, risk, and falsifiable behavior; inspect raw results when useful. Challenge tautologies, implementation-coupled tests, stale snapshots, and unrun claims. Rerun broadly or use `$verification-execution` only when evidence is invalid, incomplete, suspicious, or inadequate.
 8. **Challenge independently.** Seek counterexamples at changed boundaries and mixed states. Use repository tools when safe and read-only, but do not create findings from generic preference, style already enforced by tooling, or hypothetical architecture unrelated to the change.
-9. **Prioritize findings.** Rank by demonstrated consequence, reach, reversibility, and confidence. For each actionable finding, name the affected behavior, evidence, impact, and smallest credible repair direction. Keep uncertainty visible and phrase questions as questions.
+9. **Prioritize findings.** Rank across contract-fit and engineering-integrity findings by demonstrated consequence, reach, reversibility, and confidence. Do not let separate lenses hide a more consequential defect. For each actionable finding, name the affected behavior, evidence, impact, and smallest credible repair direction. Keep uncertainty visible and phrase questions as questions.
 10. **Report review outcome.** Lead with findings ordered by severity, each anchored to the tightest file and line. Then state assumptions, evidence run, residual risks, and whether no actionable findings were found. A clean review means no findings within the inspected scope and evidence—not certification of the entire system.
 
 ## Calibrate and structure findings
@@ -49,7 +50,9 @@ Judge the change, not the author's narrative or the volume of activity. Recover 
 ## Quality gates
 
 - Range and intent are reproducible; findings arise from changed behavior, not taste.
+- Contract fit and engineering integrity are judged separately before findings are ordered together by consequence.
 - Each finding names evidence, impact, and repair direction without implementation.
+- Evidence gaps name a realistic uncovered counterexample; generic requests for more tests are excluded.
 - Severity reflects consequence and reach; missing evidence differs from incorrectness.
 - Affected behavior, contracts, data, failures, operations, ownership, and maintainability are covered.
 - The report can honestly state when no actionable findings were found.

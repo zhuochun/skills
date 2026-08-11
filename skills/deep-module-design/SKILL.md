@@ -1,6 +1,6 @@
 ---
 name: deep-module-design
-description: Decide whether to retain or redesign software module boundaries so demonstrated change stays local, hidden knowledge has one owner, and interfaces remain honest and testable. Use when shaping modules, deepening abstractions, locating seams, reducing meaning search or leaked representation, separating decisions from effects, choosing deep versus composable growth, or explaining an existing boundary before implementation.
+description: Decide whether to retain or redesign a software module or interface before implementation. Use when a request asks where a seam belongs, whether duplication should gain one owner, how to deepen a shallow abstraction, make dependencies testable, or add a new variant without leaking policy. Do not use for an accepted implementation or behavior-preserving refactor.
 ---
 
 # Deep Module Design
@@ -30,9 +30,9 @@ Route disputed business meaning to `domain-modeling`; route deployment, data aut
 1. **Name pressure, horizon, and desired locality.** Use planned behavior, repeated change, defects, incidents, performance, meaning search, or test pain. State the expected lifetime, contributor and consumer spread, compatibility exposure, and cost of misunderstanding or reversal. Separate essential complexity from structural friction; avoid hypothetical reuse and long-lived machinery for disposable work.
 2. **Recover intent and commitments.** State the business activity, decisions, invariants, observable behavior, compatibility, and terminology the boundary must preserve. Treat awkward observed behavior as a compatibility commitment until evidence shows it unsupported or an accountable owner authorizes a change. Identify framework vocabulary, accidental state, or current control flow that should not define the model.
 3. **Map leaked knowledge and interaction.** Find callers sharing representation, order, format, algorithm, lifecycle, policy, or failure knowledge. Trace code, state, and decisions that interact or change together.
-4. **Propose candidate knowledge boundaries.** Place seams around volatile decisions, exclusive state or resource ownership, coherent domain behavior, or reasoning cases that can become local. Do not choose a processing phase, folder convention, or test mock as a boundary by itself.
+4. **Propose candidate knowledge boundaries.** Place seams around volatile decisions, exclusive state or resource ownership, coherent domain behavior, or reasoning cases that can become local. Classify dependencies by ownership, control, failure and lifecycle semantics, test fidelity, and real production variation. Keep a dependency internal when the module can exercise it credibly. Add a seam when an independently varying collaborator or external contract requires one; do not introduce a port solely for a mock. Do not choose a processing phase or folder convention as a boundary by itself.
 5. **Preserve variation evidence.** Distinguish repeated knowledge from repeated orchestration. Keep small duplication temporarily when cases may diverge; centralize security, financial, compliance, protocol, or domain invariants when divergence is unsafe. Revisit duplication once change patterns are visible.
-6. **Compare interfaces.** Include the current shape as a competent candidate that may win. For consequential choices, compare caller burden, hidden knowledge, ownership, interaction, meaning search, failure and lifecycle semantics, compatibility, testability, adoption, and migration cost.
+6. **Compare interfaces.** Include the current shape as a competent candidate that may win. For consequential choices, compare caller burden, hidden knowledge, ownership, interaction, meaning search, failure and lifecycle semantics, compatibility, testability, adoption, and migration cost. Use deletion as a counterfactual: useful hidden complexity should reappear under callers if the boundary vanishes; complexity that simply disappears signals a pass-through, not automatic rejection. Prefer proving public behavior through the proposed interface and owned state. Use internal tests for diagnosis when useful, but do not make private structure the only proof.
 7. **Choose the growth strategy.** Prefer a **deep interface** when one owner can absorb substantial coherent complexity behind a smaller stable capability contract. Prefer a **composable interface** when a shared exchange contract can preserve needed semantics and future workflows should grow by connecting bounded components. Promote repeated glue into a deeper higher-level capability only after the composition proves stable. For recurring specialized constraints, preserve a safe default and expose only orthogonal replaceable policies; do not make every mechanism configurable.
 8. **Make the contract honest.** Expose correctness assumptions while hiding representation. Specify real ownership, errors, latency, retries, idempotency, ordering, cancellation, cleanup, observability, and lifecycle. Distinguish request-shaped, stream-shaped, and process-shaped work: keep direct work direct, make producer lifecycle explicit for streams, and give durable intermediate state and transitions an owner for long-running work. Treat remoteness as an additional failure-semantic concern, not a workflow shape.
 9. **Place correctness, decisions, and effects deliberately.** Move repeated high-cost correctness obligations into types, contracts, tests, defaults, or owned state instead of caller vigilance. Keep dependencies visible. Separate deterministic decisions from I/O where this makes dangerous or complex behavior reviewable, while retaining the module—not extracted helper fragments—as the meaningful behavior surface.
@@ -45,12 +45,14 @@ Read [references/module-design-review.md](references/module-design-review.md) on
 - The current boundary is retained unless demonstrated pressure and the design horizon justify added structure.
 - Material claims have evidence status; assumptions and revisit signals are explicit.
 - One module owns each claimed decision, mutable representation, or resource.
+- Seams follow real dependency ownership or production variation, not test-double convenience.
 - Internal interaction exceeds cross-boundary interaction, or remaining coupling is explicit.
 - The growth strategy avoids leaked knowledge and option accumulation.
 - Interface burden is smaller than hidden behavior and reasoning.
 - Request, stream, and process lifecycles are represented honestly; remoteness exposes its additional failure semantics.
 - Repeated consequential correctness obligations are structural rather than reminders to callers.
 - Callers receive correctness semantics without coordinating internals; production-contract tests and adoption retire obsolete ownership.
+- Public behavior can be proven through the interface; internal evidence does not freeze private structure.
 
 ## Reject weak abstractions
 

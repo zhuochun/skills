@@ -1,7 +1,7 @@
 interface:
   display_name: "Deep Module Design"
-  short_description: "Design or retain modules around real change"
-  default_prompt: "Use $deep-module-design to compare the current boundary with alternatives and decide whether to retain it or adopt a deep or composable interface for this demonstrated change pressure."
+  short_description: "Decide module and interface boundaries"
+  default_prompt: "Use $deep-module-design to decide whether the current module boundary should remain or change before implementation."
 
 policy:
-  allow_implicit_invocation: false
+  allow_implicit_invocation: true
