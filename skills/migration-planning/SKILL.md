@@ -5,17 +5,16 @@ description: Plan a survivable technical migration from an established state to 
 
 # Migration Planning
 
-Turn an accepted target and its preserved obligations into a sequence of
-survivable intermediate states. Keep online or offline transition operation
-correct while state, traffic, consumers, or authority moves, then end the old
-state deliberately.
+Turn an accepted target and preserved obligations into survivable intermediate
+states. Keep transition operation correct while state, traffic, consumers, or
+authority moves, then end the old state deliberately.
 
 ## Use precise terms
 
 - **Migration:** Move from an established state to an accepted target while
   preserving supported obligations or controlling a bounded interruption.
-- **Migration unit:** One replacement relationship with coherent states,
-  authority movement, and retirement.
+- **Migration unit:** One replacement with coherent states, authority movement,
+  and retirement.
 - **Transition state:** One permitted combination of versions,
   representations, paths, operations, and authorities.
 - **Authority:** The source allowed to establish facts, accept writes, route
@@ -25,98 +24,79 @@ state deliberately.
 - **Retreat:** Move safely to an earlier or reduced state; use fail-forward,
   repair, or compensation when escaped effects make reversal false.
 - **Retireable:** Old obligations and authority are transferred, drained, or
-  fenced so removal preserves accepted behavior and support commitments. Any
-  retained data, fallback, or compatibility is non-authoritative, bounded,
-  owned, and reviewable.
+  fenced; retained data, fallback, or compatibility is non-authoritative,
+  bounded, owned, and reviewable.
 - **Retirement:** Remove the non-authoritative old paths, representations,
   compatibility machinery, or ability to return.
 
 ## Own transition state, not neighboring decisions
 
-- Produce a plan by default. Do not execute deployments, migrations,
-  destructive effects, traffic changes, cutover, or external writes without
-  explicit authorization.
-- Keep this skill authoritative for the migration state machine, permitted
-  operations and authorities in each state, cutover, retreat or compensation,
-  and retirement order. Phases express technical states and gates, not a task
-  schedule or percent-complete program plan.
-- Consume an accepted target direction and preserved obligations. Route an
-  undecided target to the relevant design or architecture evaluation, or to
-  `decision-facilitation` for accountable choice clarification and closure.
-  Consume compatibility policy, consumer promises,
-  and semantic translation from `software-contract-evolution` when a shared
-  contract changes; do not redefine them here.
+- Plan by default; do not deploy, migrate, cause destructive effects, move
+  traffic, cut over, or write externally without authorization.
+- Own the migration state machine, per-state operations and authority, cutover,
+  retreat or compensation, and retirement order. Phases are technical states
+  and gates, not a schedule.
+- Consume an accepted target and preserved obligations. Route an undecided
+  target to design, architecture evaluation, or `decision-facilitation`.
+  Consume shared-contract compatibility, promises, and translation from
+  `software-contract-evolution`; do not redefine them.
 - Route assignment, cohorts, percentage ramps, promotion, hold, abort, and flag
   cleanup to `controlled-release-design`. Route several concurrent or
   interdependent workstreams to `technical-program-orchestration`. Route the
   sustainable service ownership model and ownership handover to
   `service-ownership-design`; consume its accepted operating responsibilities.
 - Identify target-decision, transition, execution, observation, approval,
-  cutover, retreat, and retirement owners. Do not silently assign teams,
-  shorten support promises, or accept residual risk. Name only the accountable
-  control roles needed to operate migration gates; do not create a staffing or
-  program RACI.
+  cutover, retreat, and retirement owners. Do not assign teams, shorten support
+  promises, or accept residual risk. Avoid a staffing/program RACI.
 - Respect existing change-management, security, privacy, regulatory, support,
   and incident procedures.
 
 ## Planning workflow
 
-1. **Confirm that a migration exists.** Name what established state persists,
-   what target state has been accepted, what must move, which online coexistence
-   or bounded offline transition states are required, what authority changes,
-   and what becomes retireable. Traffic qualifies only when routing, serving,
-   execution, infrastructure, or technical authority is replaced—not when a
-   cohort is merely exposed to a compatible behavior. If no material state,
-   consumer, authoritative-path, execution, infrastructure, or authority
-   movement ends in retirement, route the unresolved work to
-   `software-change-specification`,
-   `controlled-release-design`, or `scoped-change-implementation` as
-   appropriate instead of manufacturing a migration plan.
+1. **Confirm a migration.** Name current and accepted target states, what moves,
+   required coexistence or bounded offline states, authority change, and what
+   becomes retireable. Traffic counts only when routing, serving, execution,
+   infrastructure, or technical authority is replaced. Without movement ending
+   in retirement, route to `software-change-specification`,
+   `controlled-release-design`, or `scoped-change-implementation`.
 2. **Define the migration contract.** State the migration unit, current and
    target states, affected populations and systems, preserved invariants,
    compatibility and support inputs, exclusions, success, deadline or
    constraint, and consequences of premature cutover or retirement.
 3. **Map participants, state, and authority.** Inventory producers, consumers,
-   stored representations, executors, caches, queues, replicas, traffic paths,
-   control planes, operators, and delayed or stale participants. State who may
-   read, write, route, validate, repair, and declare completion today.
+   representations, executors, caches, queues, replicas, traffic/control paths,
+   operators, and stale participants. State who may read, write, route,
+   validate, repair, and declare completion.
 4. **Model explicit transition states.** Define the allowed versions,
    representations, reads, writes, deletes, validation, visibility, routing,
    and authority in each state. Use intermediate delete-only, write-only,
    shadow, dual-maintained, backfilled, or fenced states only when their
    invariants justify them.
-5. **Classify irreversible effects.** Identify lost or transformed data,
-   external messages, money movement, security or authorization changes,
-   client-visible semantics, and downstream facts that rollback cannot undo.
-   Separate reversible control actions from repair and compensation.
+5. **Classify irreversible effects.** Identify data loss/transformation,
+   messages, money movement, security changes, client semantics, and downstream
+   facts rollback cannot undo. Separate reversal, repair, and compensation.
 6. **Choose migration mechanisms.** Prefer compatible introduction before
    removal when possible. Select adapters, replication, backfill, shadow reads,
    comparison, facades, translation, traffic movement, or stronger isolation
    according to the actual state and authority risks; do not apply every
    pattern by default.
-7. **Define state gates.** Give each state transition entry conditions,
-   authorized actions, named evidence obligations, observation window, success,
-   hold or abort conditions, retreat or fail-forward route, and owner. Treat a
-   calendar milestone as a coordination aid, not proof that the state is safe.
-8. **State evidence obligations.** Name the invariants and transition claims
-   that need evidence, such as consumer drainage, representative behavior
-   agreement, state reconciliation, stale-writer fencing, recovery, and control
-   availability. Reference observability and verification contracts by stable
-   key and plain-language label; do not duplicate their signal semantics,
-   methods, or oracles.
+7. **Define state gates.** Give each transition entry, authorized actions,
+   evidence, observation window, success, hold/abort, retreat/fail-forward, and
+   owner. Calendar milestones do not prove safety.
+8. **State evidence obligations.** Name evidenced invariants and claims, such as
+   consumer drainage, behavior agreement, reconciliation, stale-writer fencing,
+   recovery, and control availability. Reference observability and verification
+   contracts by key and label; do not duplicate semantics or methods.
 9. **Design retreat and control survival.** Specify the last safely reversible
    state, rollback or traffic reduction where truthful, and fail-forward,
    repair, or compensation after irreversible effects. Verify that observation,
    credentials, communications, and emergency controls survive the failure
    being managed.
 10. **Gate cutover, retireability, and retirement separately.** Transfer
-    authority only when its gate passes. After retireability evidence passes,
-    remove or fence old writes, active representations, consumers,
-    compatibility paths, permissions, tooling, and telemetry in dependency
-    order using evidence matched to the harm of premature removal. Fence stale
-    executors. Keep retained data, inactive fallbacks, or compatibility
-    non-authoritative and give each an owner, bounded purpose, and review
-    trigger.
+    authority only after its gate. Then remove or fence old writes,
+    representations, consumers, compatibility, permissions, tooling, and
+    telemetry in dependency order with risk-matched evidence. Fence stale
+    executors; bound, own, and review anything retained.
 
 Use [references/migration-plan.md](references/migration-plan.md) when testing
 migration eligibility, selecting state patterns, or writing the state and
@@ -124,16 +104,15 @@ retirement gates.
 
 ## Compose specialized controls
 
-- Consume accepted behavior and invariants from
-  `software-change-specification` when one exists, and contract semantics,
-  compatibility, translation, deprecation, and support from
-  `software-contract-evolution` when a shared contract changes.
+- Consume accepted behavior from `software-change-specification` and shared
+  contract semantics, compatibility, translation, deprecation, and support from
+  `software-contract-evolution`.
 - Nest `controlled-release-design` only for exposure assignment, cohorts,
   promotion, hold, abort, kill controls, and flag cleanup. It does not own
   data, routing, or effect authority.
-- Let `technical-program-orchestration` own workstreams, dependencies,
-  integration, forecasts, and replanning; let `observability-design` own
-  signals and `verification-strategy-design` own methods and oracles.
+- `technical-program-orchestration` owns workstreams and replanning;
+  `observability-design` owns signals; `verification-strategy-design` owns
+  methods and oracles.
 - Keep one flow. Link stable keys and labels rather than copying neighboring
   plans. Create a distinct migration plan only when its state and retirement
   knowledge needs an independent owner or lifecycle.
@@ -146,9 +125,9 @@ Require all of the following before calling the plan ready:
   Consume accepted target, contract, and support decisions.
 - Define participants, operations, representations, visibility, and authority
   in every state. Make irreversible effects and compensations explicit.
-- Keep the state model self-contained with the smallest text view from current
-  through transition to target and retirement. Label authority, unchanged
-  obligations, gates, and unresolved states; do not depend on richer rendering.
+- Keep one smallest self-contained text view from current through transition,
+  target, and retirement. Label authority, unchanged obligations, gates, and
+  unresolved states; do not depend on rendering.
 - Give every transition measurable entry, success, hold or abort, retreat or
   fail-forward, evidence, and ownership criteria.
 - Keep release, observability, and verification details canonical and
@@ -160,9 +139,8 @@ Require all of the following before calling the plan ready:
 
 ## Reject false migrations and safety
 
-- A large or risky change, project schedule, workstream map, milestone
-  sequence, or code removal is not a migration without technical movement,
-  authority transfer, and retirement.
+- Large change, schedules, workstreams, milestones, and code removal are not
+  migration without technical movement, authority transfer, and retirement.
 - Data deletion without a replacement representation is destructive work, not
   migration. Specify, authorize, execute, and verify it without inventing a
   target state.
@@ -178,12 +156,9 @@ Require all of the following before calling the plan ready:
 
 ## Completion
 
-Return one migration contract and state model containing the accepted target
-inputs, current and target authority, explicit transition states,
-state-transition gates, irreversible effects, evidence obligations, cutover and
-retreat logic, retireability conditions, retirement order, owners, unresolved
-decisions, and routed specialist work.
-State whether the request is a genuine migration, not ready because an upstream
-decision is missing, or better owned as change specification, scoped
-implementation, controlled release, contract evolution, or program
+Return one migration contract and state model: accepted target, current/target
+authority, transition states and gates, irreversible effects, evidence, cutover,
+retreat, retireability, retirement order, owners, unknowns, and routed work.
+State whether this is a migration, awaits an upstream decision, or belongs to
+change specification, implementation, release, contract evolution, or program
 orchestration.

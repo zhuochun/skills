@@ -5,25 +5,25 @@ description: Decide whether deployable service boundaries should be kept, split,
 
 # Service Boundary Design
 
-Produce an evidence-backed boundary decision, not a service-count opinion. Treat a bounded context, deployable service, team boundary, data owner, and runtime failure domain as related but distinct structures.
+Produce an evidence-backed boundary decision, not a service-count opinion. Keep context, service, team, data authority, and failure domain distinct.
 
 ## Preserve authority
 
-- Default to analysis and recommendation. Do not split services, move data, or change ownership unless the user explicitly requests implementation.
+- Analyze by default; do not split services, move data, or change ownership without authorized implementation.
 - Identify the decision, service, data, operations, security, and consumer owners before material recommendation.
 - Mark missing production or organizational evidence as uncertainty. Do not invent traffic, ownership, or failure behavior from code structure alone.
 
 ## Compose boundary scopes
 
-- `domain-modeling` owns meaning, rules, invariants, and contexts; this skill chooses enforcement in an existing, split, or merged service, stronger data or runtime isolation, or an in-process module.
+- `domain-modeling` owns meaning, rules, invariants, and contexts; this skill chooses service, data/runtime, or in-process enforcement.
 - `deep-module-design` owns the selected module's knowledge, state, interface, lifecycle, seams, and adoption. Pass pressure, commitments, service constraints, and why physical separation was rejected.
 - `service-ownership-design` owns whether a team can sustain production responsibility. Deployment shape does not imply organization design.
 
 ## Gather evidence
 
-Inspect the smallest sufficient set: business workflows and invariants; change and release history; calls, events, bulk paths, stores, caches, and projections; runtime topology, traces, latency, and failures; security, compliance, scale, consistency, and recovery; team and on-call boundaries, platform maturity, and migration constraints.
+Inspect only what can decide the boundary: workflows, invariants, change history, interfaces, stores, projections, topology, traces, failures, security, compliance, scale, consistency, recovery, teams, platform maturity, and migration constraints.
 
-Prefer measured runtime behavior and actual change history over declared diagrams. Reconcile disagreements rather than choosing one source silently.
+Prefer measured runtime behavior and change history over declared diagrams; expose source disagreements.
 
 ## Review workflow
 
@@ -33,8 +33,8 @@ Prefer measured runtime behavior and actual change history over declared diagram
 4. **Balance forces.** Compare forces apart—volatility, scale, security, ownership, reliability, isolation—with transactions, invariants, chatty workflows, data dependence, latency, and coordinated releases.
 5. **Test change and failure independence.** Trace representative business changes and failure scenarios through the proposed shape. Check whether the boundary localizes them or merely moves coupling behind the network.
 6. **Price the operating model.** Check deployability, observability, incident routing, capacity, compatibility, local development, testing, and on-call readiness. A structurally plausible service can still be operationally premature.
-7. **Compare enforcement.** Consider current service, stronger in-process module, split, or merge. Compare localized knowledge and change, caller burden, data authority, runtime cost, migration, and reversibility without designing the module interface.
-8. **Recommend and route conditionally.** Give a boundary decision, confidence level, decisive evidence, rejected alternatives, risks, prerequisites, and reconsideration signals. When the selected option is logical modularity, hand the pressure, commitments, constraints, and rejection gates to `deep-module-design`; when physical separation is selected, preserve any internal module work as a distinct follow-up rather than assuming the service boundary completes it.
+7. **Compare enforcement.** Consider current service, stronger module, split, or merge across localized knowledge and change, caller burden, data authority, runtime cost, migration, and reversibility. Do not design the module interface.
+8. **Recommend and route conditionally.** Give the decision, confidence, decisive evidence, rejected alternatives, risks, prerequisites, and revisit signals. For logical modularity, hand pressure, commitments, constraints, and rejection gates to `deep-module-design`. For physical separation, keep internal module work as a distinct follow-up.
 
 Read [references/boundary-review.md](references/boundary-review.md) only when a formal interface inventory, force matrix, scenario trace, or boundary decision record is needed.
 
@@ -44,7 +44,7 @@ Do not complete the review until:
 
 - workflow, invariants, data authority, and non-API interfaces are visible;
 - integration and disintegration forces include a traced change and failure scenario;
-- materially different enforcement options include the smallest self-contained text comparison of service or module shape, data authority, runtime and failure boundaries, and operating ownership; richer rendering is optional;
+- materially different options include the smallest self-contained text comparison of service or module shape, data authority, runtime/failure boundaries, and operating ownership; rendering is optional;
 - runtime and organizational readiness are considered;
 - semantic, code, deployment, data, and team boundaries remain distinct;
 - in-process recommendations state locality and service constraints, then route design to `deep-module-design`;

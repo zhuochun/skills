@@ -5,7 +5,7 @@ description: Facilitate or analyze incidents, outages, near misses, and operatio
 
 # Incident Learning
 
-Reconstruct how the system and organization behaved from the perspectives available at the time. Produce a richer operating model and durable follow-through, not a morality story about the person nearest the failure.
+Reconstruct system and organizational behavior from what was knowable at the time. Produce a richer operating model and durable follow-through, not a morality story.
 
 ## Protect participants and evidence
 
@@ -17,14 +17,14 @@ Reconstruct how the system and organization behaved from the perspectives availa
 ## Facilitation workflow
 
 1. **Frame the review.** State the event, impact, review purpose, participants, evidence window, and known limitations. Separate restoration status from learning status.
-2. **Build an evidence timeline.** Record observable system events, alerts, changes, communications, decisions, and recovery actions. Preserve conflicting timestamps or accounts until reconciled.
+2. **Build an evidence timeline.** Record observable events, alerts, changes, communications, decisions, and recovery. Preserve conflicting accounts until reconciled.
 3. **Recover perspectives.** Ask what participants saw, expected, knew, attempted, communicated, and used as cues. Explain local rationality before judging outcomes.
-4. **Identify critical junctures.** Examine moments where information, authority, time, tooling, or coordination could have changed the path. Avoid a single linear “five whys” chain.
+4. **Identify critical junctures.** Examine where information, authority, time, tooling, or coordination could have changed the path. Avoid a single linear cause chain.
 5. **Locate surprise and representation gaps.** Compare the system model responders relied on with what later evidence showed. Include dashboards that stayed green, hidden dependencies, stale runbooks, and misleading ownership.
 6. **Study what went right.** Identify expertise, redundancy, improvisation, escalation, tooling, or slack that kept the outcome from becoming worse. Preserve that capacity deliberately.
 7. **Examine systemic conditions.** Look for drift, competing goals, normal workarounds, latent conditions, protective controls that became failure paths, and organizational handoffs.
 8. **Separate learning from remediation.** Generate multiple intervention options only after the account is sufficiently rich. Consider effectiveness, new complexity, ownership, and verification.
-9. **Create branching follow-through.** Classify gaps before intervention. Route feedback, signal, verification, design, capacity, release, ownership, and decision gaps to their owners; route accumulated foundational mismatch to `retrospective-architecture-review`. Parallelize independent branches; update a runbook or local process when sufficient. Assign owners and review dates.
+9. **Create branching follow-through.** Classify gaps, then route feedback, signal, verification, design, capacity, release, ownership, and decision work to their owners; route accumulated foundational mismatch to `retrospective-architecture-review`. Use local remedies when sufficient. Assign owners and review dates.
 
 Read [references/incident-learning-record.md](references/incident-learning-record.md) only when facilitating a multi-participant review, reconstructing a detailed timeline, selecting follow-up by learned gap, or recording durable follow-through.
 
@@ -32,7 +32,7 @@ Read [references/incident-learning-record.md](references/incident-learning-recor
 
 - Separate facts, recollections, and analysis; include relevant cross-boundary perspectives or explain their absence.
 - Explain local rationality, constraints, surprises, and successful adaptations.
-- When the responder model and later evidence diverge across several components or owners, include the smallest self-contained text comparison of expected and observed paths, controls, and ownership. Preserve evidence status and successful adaptations; richer rendering is optional.
+- Multi-component divergence includes the smallest self-contained text comparison of expected and observed paths, controls, and ownership. Preserve evidence status and successful adaptations; rendering is optional.
 - Identify interacting conditions, not one trigger or person.
 - Actions are proportional, routed by gap, tied to risk reduction and verification, and explain why narrower work is insufficient.
 - Owners and dates do not make action count a quality measure.

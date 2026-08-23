@@ -5,45 +5,45 @@ description: Decide whether to retain or redesign a software module or interface
 
 # Deep Module Design
 
-Design boundaries that hide consequential knowledge and bound reasoning. A deep module is one strong answer; a composable interface may be better when future behavior should grow through combinations rather than feature accretion. Retaining the current boundary is correct when it already localizes the demonstrated pressure or the design horizon does not justify more structure.
+Design boundaries that hide consequential knowledge and bound reasoning. Prefer composition when behavior should grow through combinations. Retain the current boundary when it localizes demonstrated pressure or the horizon cannot justify more structure.
 
 ## Use precise terms
 
 - **Module:** A responsibility with interface and implementation, not necessarily a class, package, process, or phase.
-- **Interface:** Everything callers must know: operations, values, invariants, failures, ordering, configuration, performance, and lifecycle.
-- **Seam:** A place where behavior or implementation can vary without editing callers there.
-- **Hidden decision:** Representation, order, algorithm, resource, policy, or lifecycle owned behind an interface.
-- **Depth:** Useful behavior and complexity hidden per unit of interface burden.
-- **Locality:** The degree to which one meaningful change can be understood, implemented, and verified in one place.
-- **Design horizon:** Expected lifetime, contributor and consumer spread, compatibility exposure, consequence of misunderstanding, and cost of reversal.
+- **Interface:** What callers must know, including behavior, failures, performance, and lifecycle.
+- **Seam:** Where behavior or implementation can vary without editing callers.
+- **Hidden decision:** Owned representation, order, algorithm, resource, policy, or lifecycle.
+- **Depth:** Hidden useful behavior and complexity per unit of interface burden.
+- **Locality:** One meaningful change understood, implemented, and verified in one place.
+- **Design horizon:** Lifetime, consumer spread, compatibility exposure, consequence, and reversal cost.
 
 Keep module, bounded context, vertical slice, deployable service, data owner, failure domain, and team boundary distinct unless evidence says they align.
 
 ## Compose proportionately
 
-Work read-only: inspect and design, but do not modify the target or implement the result. Consume supplied pressure, commitments, specification, assurance, and bounded question. Label material claims **confirmed**, **inferred**, **assumed**, **proposed**, or **unresolved**. Return a retain-or-redesign decision, ownership and interface, material alternative, preserved commitments, rejection gates, implementation implication, invalidated assumptions, and revisit signals. If no change pressure is demonstrated or the current owner and interface already localize it, explain that boundary and stop without inventing a module. Reopen only for contradictory evidence, a fact blocking an honest boundary, or materially different safety, compatibility, data, lifecycle, operations, or migration.
+Work read-only. Consume supplied pressure, commitments, specification, assurance, and question. Label material claims **confirmed**, **inferred**, **assumed**, **proposed**, or **unresolved**. Return a retain-or-redesign decision, ownership/interface, material alternative, preserved commitments, rejection gates, implementation implication, invalidated assumptions, and revisit signals. With no demonstrated pressure, explain the adequate current boundary and stop. Reopen only for contradiction or materially different safety, compatibility, data, lifecycle, operations, or migration.
 
-Route disputed business meaning to `domain-modeling`; route deployment, data authority, failure isolation, or operating ownership to `service-boundary-design`. Keep interface shape and behavior-preservation commitments here. Route coexistence, versioning, deprecation, adoption, or retirement policy for independently evolving producers, consumers, or stored state to `software-contract-evolution`. Route one behavior, state, or interface question needing a disposable runnable artifact to `prototype-to-learn`. Once the design is accepted, route structure-only execution to `behavior-preserving-refactoring`; route an intentional but ambiguous behavior change through `software-change-specification`, or a ready bounded change to `scoped-change-implementation`. Do not duplicate their change plan.
+Route disputed meaning to `domain-modeling`; deployment, data authority, failure isolation, or operating ownership to `service-boundary-design`; independent contract coexistence and retirement to `software-contract-evolution`; and a disposable runnable question to `prototype-to-learn`. After acceptance, route structure-only execution to `behavior-preserving-refactoring`, ambiguous behavior to `software-change-specification`, and ready behavior change to `scoped-change-implementation`. Do not duplicate their plans.
 
 ## Design workflow
 
-1. **Name pressure, horizon, and desired locality.** Use planned behavior, repeated change, defects, incidents, performance, meaning search, or test pain. State the expected lifetime, contributor and consumer spread, compatibility exposure, and cost of misunderstanding or reversal. Separate essential complexity from structural friction; avoid hypothetical reuse and long-lived machinery for disposable work.
+1. **Name pressure, horizon, and locality.** Use planned behavior, repeated change, defects, incidents, performance, meaning search, or test pain. State lifetime, contributor/consumer spread, compatibility, consequence, and reversal cost. Separate essential complexity from structural friction.
 2. **Recover intent and commitments.** State the business activity, decisions, invariants, observable behavior, compatibility, and terminology the boundary must preserve. Treat awkward observed behavior as a compatibility commitment until evidence shows it unsupported or an accountable owner authorizes a change. Identify framework vocabulary, accidental state, or current control flow that should not define the model.
-3. **Map leaked knowledge and interaction.** Find callers sharing representation, order, format, algorithm, lifecycle, policy, or failure knowledge. Trace code, state, and decisions that interact or change together.
+3. **Map leaked knowledge.** Find callers sharing representation, order, algorithm, lifecycle, policy, or failure knowledge. Trace code, state, and decisions changing together.
 4. **Propose candidate knowledge boundaries.** Place seams around volatile decisions, exclusive state or resource ownership, coherent domain behavior, or reasoning cases that can become local. Classify dependencies by ownership, control, failure and lifecycle semantics, test fidelity, and real production variation. Keep a dependency internal when the module can exercise it credibly. Add a seam when an independently varying collaborator or external contract requires one; do not introduce a port solely for a mock. Do not choose a processing phase or folder convention as a boundary by itself.
-5. **Preserve variation evidence.** Distinguish repeated knowledge from repeated orchestration. Keep small duplication temporarily when cases may diverge; centralize security, financial, compliance, protocol, or domain invariants when divergence is unsafe. Revisit duplication once change patterns are visible.
+5. **Preserve variation evidence.** Distinguish repeated knowledge from orchestration. Keep small duplication while cases may diverge; centralize invariants when divergence is unsafe. Revisit with change evidence.
 6. **Compare interfaces.** Include the current shape as a competent candidate that may win. For consequential choices, compare caller burden, hidden knowledge, ownership, interaction, meaning search, failure and lifecycle semantics, compatibility, testability, adoption, and migration cost. Use deletion as a counterfactual: useful hidden complexity should reappear under callers if the boundary vanishes; complexity that simply disappears signals a pass-through, not automatic rejection. Prefer proving public behavior through the proposed interface and owned state. Use internal tests for diagnosis when useful, but do not make private structure the only proof.
-7. **Choose the growth strategy.** Prefer a **deep interface** when one owner can absorb substantial coherent complexity behind a smaller stable capability contract. Prefer a **composable interface** when a shared exchange contract can preserve needed semantics and future workflows should grow by connecting bounded components. Promote repeated glue into a deeper higher-level capability only after the composition proves stable. For recurring specialized constraints, preserve a safe default and expose only orthogonal replaceable policies; do not make every mechanism configurable.
+7. **Choose growth strategy.** Prefer a **deep interface** when one owner can hide coherent complexity behind a smaller stable contract; prefer a **composable interface** when future workflows should connect bounded components through shared semantics. Deepen repeated glue only after composition stabilizes. Expose only justified orthogonal policies.
 8. **Make the contract honest.** Expose correctness assumptions while hiding representation. Specify real ownership, errors, latency, retries, idempotency, ordering, cancellation, cleanup, observability, and lifecycle. Distinguish request-shaped, stream-shaped, and process-shaped work: keep direct work direct, make producer lifecycle explicit for streams, and give durable intermediate state and transitions an owner for long-running work. Treat remoteness as an additional failure-semantic concern, not a workflow shape.
 9. **Place correctness, decisions, and effects deliberately.** Move repeated high-cost correctness obligations into types, contracts, tests, defaults, or owned state instead of caller vigilance. Keep dependencies visible. Separate deterministic decisions from I/O where this makes dangerous or complex behavior reviewable, while retaining the module—not extracted helper fragments—as the meaningful behavior surface.
-10. **Organize and adopt by change.** Use a vertical slice when one business activity changes across technical layers. For shared modules, make the common path easy to understand and trust while preserving an explicit advanced or lower-level path where justified. Migrate callers incrementally, verify through the production interface, and retire the replaced abstraction rather than leaving a new wrapper around the old owner.
+10. **Adopt by change.** Use vertical slices across technical layers. Make the common shared-module path easy while preserving justified advanced access. Migrate incrementally, verify through the production interface, and retire the old owner.
 
 Read [references/module-design-review.md](references/module-design-review.md) only when comparing consequential alternatives, auditing lifecycle or adoption contracts, or producing a durable design record.
 
 ## Quality gates
 
 - The current boundary is retained unless demonstrated pressure and the design horizon justify added structure.
-- When redesign materially changes responsibility, interface, state, control, or dependency ownership, include the smallest self-contained text comparison of the current and candidate shapes. Mark unchanged commitments and unresolved elements; keep the candidate proposed.
+- Material redesign requires the smallest self-contained text comparison of current and candidate responsibility, interface, state, control, or dependencies. Mark unchanged commitments, unresolved elements, and proposed status.
 - Material claims have evidence status; assumptions and revisit signals are explicit.
 - One module owns each claimed decision, mutable representation, or resource.
 - Seams follow real dependency ownership or production variation, not test-double convenience.
