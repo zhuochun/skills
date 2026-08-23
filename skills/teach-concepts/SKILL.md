@@ -5,19 +5,17 @@ description: Teach one bounded concept by recovering the learner's current model
 
 # Teach Concepts
 
-Build an operational mental model that the learner can reconstruct, use, and
-revise. Recognition, fluent explanation, and one correct answer do not by
-themselves demonstrate understanding.
+Build an operational mental model the learner can reconstruct, use, and revise. Recognition,
+fluent explanation, or one correct answer does not demonstrate understanding.
 
 ## Preserve learning and source boundaries
 
-- Let the learner's intended use and starting model control depth, vocabulary,
-  examples, and checks. Inspect supplied context before asking questions.
+- Let the learner's intended use and starting model control depth, vocabulary, examples,
+  and checks. Inspect supplied context before asking.
 - Use a compact explanation when the user wants a direct answer. Offer a check
   without forcing a quiz or withholding the useful explanation.
-- Use an interactive sequence when the user asks to be taught, quizzed, or
-  helped through a misconception. Ask one question at a time when each answer
-  should shape the next teaching move.
+- Use an interactive sequence when asked to teach, quiz, or repair a misconception.
+  Ask one question at a time when each answer shapes the next move.
 - Preserve the learner's selection, explanation, evaluation, and adaptation.
   Use read-only lookup or an in-response example when it creates room for that
   reasoning.
@@ -27,40 +25,34 @@ themselves demonstrate understanding.
   or version-specific, consequential, or attribution-sensitive. Route a
   bounded cross-source evidence question to `research-synthesis`.
 - Treat stateful setup as task execution. Do not create files, install
-  dependencies, configure systems, or perform other state changes unless the
-  user explicitly authorizes those effects and the owning specialist executes
-  them.
+  dependencies, configure systems, or make other state changes unless explicitly
+  authorized and executed by the owning specialist.
 - Do not turn concept teaching into professional advice, regulated
   applicability, performance evaluation, curriculum design, document
   production, procedural certification, or a long-term development plan.
 
 ## Teaching workflow
 
-1. **Frame the concept.** Name the concept, intended use, relevant context,
-   learner starting point, interaction preference, and success signal. State
-   reasonable assumptions when an immediate answer is more useful than a
-   question.
+1. **Frame the concept.** Name the concept, intended use, context, starting point,
+   interaction preference, and success signal. State reasonable assumptions when
+   an immediate answer is more useful than a question.
 2. **Probe the current model.** When diagnosis will change the explanation,
    ask for a prediction, example, distinction, or causal account. Prefer
    observable reasoning over confidence ratings.
-3. **Locate prerequisites.** Separate an unfamiliar term from a missing
-   dependency, causal link, representation, or existing misconception. Repair
-   only the prerequisite that blocks the current concept.
-4. **Construct the model.** Explain the problem the concept solves, relevant
-   entities or state, relationships, mechanism, conditions, outcomes, and
-   limits. Introduce the minimum vocabulary needed to reason.
+3. **Locate prerequisites.** Distinguish an unfamiliar term from a missing
+   dependency, causal link, representation, or misconception. Repair only what blocks the concept.
+4. **Construct the model.** Explain the problem, entities or state, relationships,
+   mechanism, conditions, outcomes, and limits with minimum necessary vocabulary.
 5. **Trace a concrete case.** Walk one representative example step by step.
    Connect every important outcome to the mechanism rather than only naming
    the pattern.
-6. **Vary the representation.** Use a diagram, analogy, counterexample, or
-   contrasting case when it exposes structure. State the mapping and where it
-   breaks; analogy generates understanding, not factual evidence.
+6. **Vary representation.** Use a diagram, analogy, counterexample, or contrast
+   when it exposes structure. State the mapping and its break; analogy is not evidence.
 7. **Elicit reconstruction.** Ask the learner to explain, predict, distinguish,
    or solve without copying the answer. Match the check to the intended use,
    not to trivia that is easy to grade.
-8. **Repair the model.** Diagnose the smallest gap shown by the response.
-   Change the representation, example, or prerequisite instead of repeating
-   the same explanation more loudly.
+8. **Repair the model.** Diagnose the smallest shown gap. Change the representation,
+   example, or prerequisite instead of repeating the explanation.
 9. **Test transfer.** Change the surface details, scale, boundary condition, or
    neighboring case. Ask what happens and why. Treat recall without transfer
    as partial understanding.
@@ -70,9 +62,8 @@ themselves demonstrate understanding.
 
 ## Route neighboring outcomes
 
-- Route a durable technical tutorial, explanation, reference, or other reader
-  artifact to `technical-writing`; route other durable artifacts to their
-  applicable writing owner. A live teaching exchange is not documentation.
+- Route durable technical tutorials, explanations, or references to
+  `technical-writing`, and other durable artifacts to their writing owner.
 - Route a cross-source comparison or contested factual foundation to
   `research-synthesis`; teaching does not establish source truth.
 - Route repeated real-work practice, feedback, delegation, and independence to
@@ -82,9 +73,8 @@ themselves demonstrate understanding.
 
 ## Quality gates
 
-- The explanation fits the learner's intended use and current model.
-- The concept is represented as a mechanism with conditions and limits, not
-  only as a definition or label.
+- The explanation fits intended use and current model; the concept appears as a
+  mechanism with conditions and limits, not only a definition.
 - Examples, analogies, and counterexamples expose structure without hiding
   where the comparison fails.
 - Retrieval or transfer evidence supports any learning claim; absent evidence
@@ -96,9 +86,8 @@ themselves demonstrate understanding.
 
 ## Reject weak teaching
 
-- Do not mistake information volume, simplified wording, or learner agreement
-  for understanding.
-- Do not answer every reasoning step for the learner and then claim transfer.
+- Do not mistake information volume, simplified wording, learner agreement, or
+  answered-for-them reasoning for understanding or transfer.
 - Do not quiz unexplained material, use trick questions, or keep asking
   questions after the learner requested a direct answer.
 - Do not let a vivid analogy replace the actual mechanism or its boundaries.

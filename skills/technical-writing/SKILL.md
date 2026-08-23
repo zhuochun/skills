@@ -5,31 +5,28 @@ description: Write or revise task-fit technical documentation and evidence-groun
 
 # Technical Writing
 
-Produce a technical artifact that helps its intended reader learn, act, find
-facts, understand a mechanism, or evaluate an argument. Treat prose quality as
-support for that function, not as the artifact's substitute.
+Produce a technical artifact that helps its reader learn, act, find facts,
+understand a mechanism, or evaluate an argument. Prose quality supports that function.
 
 ## Preserve scope and authority
 
 - Confirm that the request authorizes creating or editing the target artifact.
   Treat discussion, assessment, and review requests as read-only.
-- When the target belongs to a repository, inspect its instructions, current
-  worktree, local templates, and nearby documentation. Preserve unrelated work
-  and established terminology.
+- For repository targets, inspect instructions, worktree, templates, and nearby
+  documentation. Preserve unrelated work and established terminology.
 - For a supplied draft or standalone article outside a repository, inspect only
   the sources and destination constraints relevant to that artifact.
 - Treat supplied decisions, specifications, code, tests, runtime evidence, and
-  sources as inputs. Do not silently decide unresolved product, domain,
-  architecture, operational, security, legal, or support policy.
+  sources as inputs. Route unresolved product, domain, architecture, operations,
+  security, legal, or support-policy decisions.
 - Route `SKILL.md` creation or material revision to `skill-creator` and the
   repository's authoring contract. Do not duplicate that workflow here.
 - Check current or version-specific facts against their canonical source.
   Route a disputed or cross-source factual foundation to
   `research-synthesis`; technical writing does not establish source truth.
-- Route a decision-bearing specification, RFC, requirements set, or behavioral
-  contract to `specification-review` when the missing judgment is normative
-  ambiguity, contradiction, hidden decisions, or wording loopholes. Keep
-  reader function and editorial quality here.
+- Route decision-bearing specifications, RFCs, requirements, or contracts to
+  `specification-review` for normative ambiguity, contradiction, hidden decisions,
+  or loopholes. Keep reader function and editorial quality here.
 - Route learner-specific explanation, misconception repair, reconstruction, or
   transfer checking to `teach-concepts`. Keep a durable tutorial, explanation,
   or reference artifact here.
@@ -38,9 +35,8 @@ support for that function, not as the artifact's substitute.
   missing reader artifact.
 - Keep factual observation, source-supported synthesis, inference, assumption,
   proposal, opinion, and unresolved uncertainty distinguishable.
-- Preserve the author's voice when samples or an existing draft make it
-  observable. Never fabricate personal experience, quotations, results, or
-  source support to make a draft more compelling.
+- Preserve observable author voice. Never fabricate personal experience, quotations,
+  results, or source support.
 - Treat humanizing as reader and voice improvement, not concealment of AI use.
   Preserve any authorship, attribution, or disclosure requirement.
 
@@ -59,8 +55,7 @@ Choose one primary reader job, then read only the matching branch:
 - For a technical article or blog post, read
   [references/technical-blog-posts.md](references/technical-blog-posts.md).
 
-When one artifact serves several jobs, keep one primary and link to the others
-instead of blending their complete workflows into one page.
+When one artifact serves several jobs, keep one primary and link to the others.
 
 ## Select the editorial action
 
@@ -73,45 +68,39 @@ when the user explicitly requests AI-slop analysis or humanizing review, or
 when an initial editorial pass finds a repeated cluster of formulaic patterns
 that materially harms the reader.
 
-When the catalogue is loaded, use it as a set of diagnostic prompts. Revise
-only patterns with an observable reader effect. Do not treat watchlist matches
-as release failures or authorship evidence.
+When loaded, use the catalogue as diagnostic prompts. Revise only patterns with
+an observable reader effect; watchlist matches prove neither failure nor authorship.
 
 - For an edit, make the minimum effective change. Preserve strong passages and
-  return a concise summary of material changes when it helps the user review
-  them.
+  summarize material changes when useful.
 - For a detection-only request, quote the exact passage, name the pattern and
   its reader effect, and suggest a minimal fix. Do not rewrite without
   authorization, assign an AI score, or guess who wrote the text.
 
 ## Writing workflow
 
-1. **Define the writing contract.** Name the intended reader, their starting
-   context, the job the artifact must perform, the primary document mode,
-   scope, canonical location, voice, constraints, and observable success.
-2. **Recover the evidence base.** Read the smallest sufficient set of code,
-   tests, specifications, existing docs, runtime evidence, and supplied
-   sources. Identify contradictions, freshness limits, missing authority, and
-   content that already has a canonical owner.
-3. **Build the content model.** Select the claims, steps, examples, interfaces,
-   decisions, failure cases, and open questions the reader needs. Attach
-   consequential derived claims to inspectable evidence or label their status.
-4. **Design the reading path.** Lead with the outcome, problem, or proposition
-   the reader came for. Order sections by the reader's task or reasoning path.
-   Move branch detail behind descriptive links and keep related rules,
-   conditions, and exceptions together.
+1. **Define the writing contract.** Name reader, starting context, job, primary
+   document mode, scope, canonical location, voice, constraints, and observable success.
+2. **Recover evidence.** Read the smallest sufficient set of code, tests,
+   specifications, docs, runtime evidence, and sources. Identify contradictions,
+   freshness limits, missing authority, and canonically owned content.
+3. **Build the content model.** Select needed claims, steps, examples, interfaces,
+   decisions, failures, and open questions. Attach consequential derived claims
+   to inspectable evidence or label their status.
+4. **Design the reading path.** Lead with the desired outcome, problem, or
+   proposition. Follow the reader's task or reasoning path; link branch detail
+   and keep rules with conditions and exceptions.
 5. **Draft for transfer.** Use concrete examples to anchor abstractions, local
    terms consistently, and enough context for a reader who cannot interrupt the
    author. Keep explanation, steps, and reference detail in their selected
    roles.
-6. **Connect the artifact to change.** Prefer canonical source links, generated
-   views, executable examples, tested commands, and code-adjacent placement
-   over copied facts that will drift. Name freshness, ownership, or retirement
-   expectations when stale guidance could mislead.
-7. **Verify functional quality.** Walk the artifact as the intended reader.
-   Execute commands and examples when authorized and practical. Check links,
-   names, versions, prerequisites, expected results, failure paths, and claims
-   against their sources. Record what was not verified.
+6. **Connect the artifact to change.** Prefer canonical links, generated views,
+   executable examples, tested commands, and code-adjacent placement over copied
+   facts. Name freshness, ownership, or retirement when drift could mislead.
+7. **Verify function.** Walk the artifact as its reader. When authorized and
+   practical, execute commands and examples. Check links, names, versions,
+   prerequisites, expected results, failure paths, and claims against their sources;
+   record what was not verified.
 8. **Edit without flattening meaning.** Remove unsupported, duplicated, stale,
    formulaic, and nonfunctional prose. Improve clarity and rhythm while
    preserving technical precision, normative force, uncertainty, conditions,
@@ -122,11 +111,10 @@ as release failures or authorship evidence.
 
 ## Quality gates
 
-- One primary reader job controls the artifact's structure and content.
-- Consequential claims remain traceable or visibly qualified.
+- One primary reader job controls structure and content; consequential claims
+  remain traceable or visibly qualified.
 - Commands, examples, interfaces, and expected results match checked evidence.
-- The artifact links to canonical facts instead of becoming a competing source
-  of truth.
+- The artifact links to canonical facts instead of competing with them.
 - A reader can distinguish what to do, why it works, what is guaranteed, and
   what remains uncertain.
 - The writing preserves local language and author voice without sacrificing
@@ -144,9 +132,8 @@ as release failures or authorship evidence.
 
 - Polished prose without a reader task, supported proposition, or usable result
   is not complete.
-- A generic template does not justify sections the reader does not need.
-- A tutorial, how-to, explanation, reference page, procedure, and blog post are
-  not interchangeable merely because each contains technical prose.
+- A generic template does not justify unneeded sections. Tutorials, how-tos,
+  explanations, references, procedures, and blog posts are not interchangeable.
 - Documentation does not repair a missing product decision, unsafe procedure,
   ambiguous contract, or unverified technical claim.
 - Concision that removes conditions, authority, evidence, recovery, or

@@ -5,7 +5,7 @@ description: Orchestrate one accepted technical outcome across concurrent or int
 
 # Technical Program Orchestration
 
-Steer a multi-workstream technical outcome as a recursive delivery feedback system. Keep one program outcome coherent while each workstream drives its own frontier. Optimize for verified end-to-end progress, early integration, and reduced waiting rather than task volume, universal utilization, or reporting ceremony.
+Steer one multi-workstream outcome while each workstream drives its frontier. Optimize for verified end-to-end progress, early integration, and reduced waiting—not task volume or reporting.
 
 ## Preserve authority and working flow
 
@@ -18,15 +18,15 @@ Steer a multi-workstream technical outcome as a recursive delivery feedback syst
 
 - The **program** owns one outcome, delivery topology, integration contracts, current constraint, shared decisions, evidence trend, and closure.
 - A **workstream** owns one coherent contribution; its driver maintains the local contract, frontier, evidence, dependencies, and closure or re-entry condition.
-- A **frontier** is the smallest decision, action, integration, or evidence gap currently limiting useful progress. Keep one explicit frontier per active workstream and one program frontier focused on the current system constraint.
+- A **frontier** is the smallest decision, action, integration, or evidence gap limiting progress. Keep one per active workstream and one program frontier on the current constraint.
 - An **integration contract** states what a provider workstream must make usable to which consumer, under what compatibility, timing, evidence, and failure conditions.
-- Route by distinct local truth and coordination need, not reporting lines. Use `software-change-orchestration` only for bounded software-change workstreams needing a resumable decision-to-evidence loop; program orchestration never absorbs local design, execution, judgment, or evidence ownership.
+- Route by local truth and coordination need, not reporting lines. Use `software-change-orchestration` only for bounded software-change workstreams needing a resumable decision-to-evidence loop; never absorb local design, execution, judgment, or evidence ownership.
 
 ## Keep state recoverable without artifact sprawl
 
-Maintain one canonical program surface that indexes the outcome, topology, active workstreams, integration state, evidence, decisions, current constraint, and closure conditions.
+Maintain one canonical program surface for outcome, topology, active workstreams, integration, evidence, decisions, current constraint, and closure.
 
-- Keep each workstream contract and frontier in the program surface unless ownership, audience, repository, authorization, review, evidence, or re-entry requires a linked independent artifact. Never copy canonical local detail.
+- Keep workstream contracts and frontiers in the program surface unless ownership, audience, repository, authorization, review, evidence, or re-entry requires a linked independent artifact. Never copy canonical local detail.
 - Let drivers update local truth; retain centrally only the contribution, dependencies, integration state, frontier, evidence limit, and steering implication.
 - Keep immediate frontiers in the active session during uninterrupted work. Persist a resume point only for a pause, block, handoff, session change, or non-obvious re-entry.
 - Re-read the program surface and linked workstream state before updating them. Integrate concurrent changes rather than overwriting another owner's accepted state.
@@ -36,20 +36,19 @@ Read [references/program-orchestration.md](references/program-orchestration.md) 
 ## Orchestration workflow
 
 1. **Define the outcome contract.** State outcome, observable success, boundary, constraints, non-goals, affected services and teams, owner, cost of delay or failure, and closure evidence. Reject activity lists without outcomes.
-2. **Choose the coordination budget and surface.** Scale coordination to consequence, workstreams, dependencies, integration, decision latency, evidence, and re-entry. Reuse the smallest adequate source of truth.
-3. **Map the delivery topology.** Trace the value path through teams, services, data, dependencies, environments, approvals, vendors, and operating owners. Classify dependencies as product, technical, decision, information, resource, external, or merely conventional. Identify integration points and the current limiting constraint.
+2. **Choose budget and surface.** Scale coordination to consequence, workstreams, dependencies, integration, decision latency, evidence, and re-entry. Reuse the smallest adequate source of truth.
+3. **Map delivery topology.** Trace the value path through teams, services, data, dependencies, environments, approvals, vendors, and operating owners. Classify product, technical, decision, information, resource, external, and merely conventional dependencies. Identify integration and the current constraint.
 4. **Establish workstream contracts.** Record a stable key and label, contribution, driver, boundary, inputs, consumers, integration contract, evidence, frontier, and closure or re-entry condition. Exclude unrelated work.
 5. **Shape vertical increments.** Prefer the smallest demonstrable cross-workstream slices that retire uncertainty. Include enablement, observability, verification, rollout, documentation, ownership, and cleanup when required for done.
-6. **Design concurrency and integration deliberately.** Separate work that can progress independently from work that only looks parallel while sharing decisions, state, environments, reviewers, or integration points. Prefer tracer paths, early consumer integration, and risk-retiring increments over late horizontal convergence.
+6. **Design concurrency and integration.** Separate independent work from apparent parallelism sharing decisions, state, environments, reviewers, or integration. Prefer tracer paths, early consumer integration, and risk-retiring increments.
 7. **Drive the frontiers.** Drivers advance local frontiers; the program intervenes at the current constraint by clarifying contracts, routing decisions, removing waits, splitting or resequencing work, limiting work in progress, or narrowing scope. Keep authorized local decisions local.
-8. **Route specialist judgments.** Use `decision-facilitation` for contested closure, `migration-planning` for technical transition and authority transfer, `controlled-release-design` for exposure, `observability-design` for measurement, and `verification-strategy-design` for claims and oracles. Reference, do not copy, owned plans.
+8. **Route specialist judgments.** Use `decision-facilitation` for contested closure, `migration-planning` for technical transition and authority transfer, `controlled-release-design` for exposure, `observability-design` for measurement, and `verification-strategy-design` for claims and oracles. Link, do not copy, owned plans.
 9. **Run the evidence control loop.** At each review, compare integrated evidence with the outcome and assumptions; refresh workstream and program frontiers; identify the current constraint; and stop, split, resequence, escalate, or narrow work. Preserve why forecasts, commitments, or topology changed.
 10. **Close deliberately.** Verify the integrated outcome, consumer adoption, operational ownership, remaining risk, cleanup, and support transition. Close or hand off every workstream, retire temporary coordination, and route accumulated architectural learning to `retrospective-architecture-review` only when foundational design should be reconsidered.
 
 ## Quality gates
 
-- One owned outcome, integrated evidence, end-to-end topology, and current constraint are explicit.
-- Every active workstream has a driver, recoverable contract, frontier, and closure or re-entry condition.
+- One owned outcome, integrated evidence, end-to-end topology, and current constraint are explicit. Every active workstream has a driver, recoverable contract, frontier, and closure or re-entry condition.
 - Canonical local detail is linked, not duplicated.
 - Hard dependencies name provider, consumer, need, integration contract, evidence, and escalation.
 - Local work can advance independently; integration and verification precede final convergence.
@@ -58,8 +57,7 @@ Read [references/program-orchestration.md](references/program-orchestration.md) 
 
 ## Reject program theater
 
-- Task dumps without a value path, contracts, or dependency topology.
-- One file per workstream, copied central status, or percent complete without integrated evidence.
+- Reject task dumps without a value path, contracts, or topology; one file per workstream; copied status; and percent complete without integrated evidence.
 - Workstreams lacking a driver, frontier, consumer, or completion evidence.
 - Keeping teams busy while the constraint or integration path waits.
 - Late giant-bang integration or program machinery justified only by team count.

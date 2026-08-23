@@ -6,25 +6,23 @@ description: Independently review a specification, RFC, requirements set, behavi
 # Specification Review
 
 Judge whether a specification makes consequential intent clear enough for its
-next use. Find disagreements before implementation, approval, or downstream
-documents multiply them; do not become the artifact's author.
+next use. Find disagreements before they propagate; do not become the author.
 
 ## Preserve reviewer independence and authority
 
 - Work read-only. Do not rewrite the artifact, accept its decisions, authorize
   implementation, approve adoption, or resolve findings unless the user
   separately authorizes that action.
-- Pin the exact artifact or snapshot, its canonical sources, intended next use,
-  accountable owner, affected parties, and cost of a wrong interpretation.
+- Pin the exact artifact or snapshot, canonical sources, intended next use, accountable
+  owner, affected parties, and cost of wrong interpretation.
 - Recover intent independently from the originating request, current behavior,
   accepted decisions, constraints, and evidence. Treat the producer's rationale
   as a claim to inspect, not the review oracle.
 - Separate specification integrity from subject-matter correctness. Expose a
   missing product, domain, architecture, contract, security, data, legal, or
   operational decision, then route that judgment to its owner.
-- Keep generation and judgment distinct. Independence requires fresh judgment,
-  direct artifact inspection, distinct criteria or evidence, and permission to
-  reject. A second agent or role label alone is insufficient.
+- Independence requires fresh judgment, direct artifact inspection, distinct
+  criteria or evidence, and permission to reject—not a second label alone.
 - Match review depth to ambiguity, propagation, consequence, reversibility,
   feedback delay, and coordination boundaries. Let a clear, cheap, reversible
   action bypass formal specification review.
@@ -32,12 +30,10 @@ documents multiply them; do not become the artifact's author.
 ## Clarify without co-authoring
 
 - Inspect the artifact and discoverable evidence before asking its owner.
-- Inspect only evidence that can change a finding or specialist route. Stop
-  context recovery when further reading would widen into product, architecture,
-  or system assessment; state the limitation and route the judgment instead.
-- Ask only questions that can change a finding, interpretation, readiness
-  outcome, or specialist route. Batch independent low-sensitivity questions;
-  serialize when an answer changes later relevance or needs adaptive follow-up.
+- Inspect only decision-changing evidence. Stop when more context would widen
+  into product, architecture, or system assessment; state the limit and route it.
+- Ask only questions that can change a finding, interpretation, readiness, or
+  route. Batch independent low-sensitivity questions; serialize dependent ones.
 - When the user asks to grill, challenge, or stress-test the specification,
   deepen counterexample and loophole search. Do not negotiate findings or coach
   the author toward answers that make the review pass.
@@ -49,24 +45,22 @@ documents multiply them; do not become the artifact's author.
 1. **Pin the review contract.** Record the artifact identity, review scope,
    authoritative inputs, intended audience or consumer, next decision or action,
    non-goals, and consequence of error. Exclude unrelated document quality.
-2. **Recover the proposition.** State the outcome, problem, desired and
+2. **Recover the proposition.** State the asserted outcome, problem, desired and
    preserved behavior, accepted decisions, constraints, evidence claims, and
-   unresolved questions that the artifact actually asserts. Flag silent
-   narrowing from the originating intent to an easier proxy.
+   unresolved questions. Flag silent narrowing to an easier proxy.
 3. **Map claims and authority.** Distinguish confirmed, inferred, assumed,
    proposed, and unresolved material. Identify undefined normative terms,
    ownerless decisions, unsupported certainty, stale sources, and competing
    authorities.
-4. **Trace plausible interpretations.** Follow important inputs, decisions,
-   state, effects, outputs, consumers, and lifecycle obligations. Show where two
-   reasonable readers or implementers could derive incompatible outcomes.
+4. **Trace interpretations.** Follow important inputs, decisions, state, effects,
+   outputs, consumers, and lifecycle obligations. Show where reasonable readers
+   could derive incompatible outcomes.
 5. **Challenge coherence.** Find contradictions, circular definitions, hidden
    dependencies, incompatible constraints, omitted prerequisites, duplicate
    authority, and claims that rely on an unstated sequence or environment.
-6. **Probe boundaries and failures.** Use ordinary positive and negative cases,
-   then vary identity, permission, state, ordering, timing, repetition, limits,
-   partial failure, recovery, compatibility, and retirement as relevant. Ask
-   what could satisfy the wording while violating the intended result.
+6. **Probe boundaries and failures.** Use positive and negative cases, then vary
+   identity, permission, state, ordering, timing, repetition, limits, partial
+   failure, recovery, compatibility, and retirement. Seek wording-compliant failures.
 7. **Check evaluability.** Determine whether acceptance or decision claims are
    observable and falsifiable enough for the next owner. Separate missing
    oracles from missing evidence methods; route method design to
@@ -76,10 +70,9 @@ documents multiply them; do not become the artifact's author.
    architecture fitness with `architecture-risk-evaluation`; shared contract
    compatibility with `software-contract-evolution`; and accountable choice
    closure with `decision-facilitation`.
-9. **Prioritize findings.** Rank by consequence, propagation, reversibility,
-   and confidence. For each finding, give the tightest locator, conflicting
-   interpretations or counterexample, impact, and smallest credible repair
-   direction or receiving owner.
+9. **Prioritize findings.** Rank by consequence, propagation, reversibility, and
+   confidence. Give each the tightest locator, conflicting interpretations or
+   counterexample, impact, and smallest credible repair direction or receiving owner.
 10. **Report the outcome.** Lead with findings, then questions, assumptions,
     evidence inspected, routed judgments, and residual limits. Return `ready for
     next accountable use`, `ready with owned follow-through`, or `not ready`.
@@ -96,9 +89,8 @@ documents multiply them; do not become the artifact's author.
   unlikely to redirect the core outcome.
 - **Question or limitation:** Evidence is insufficient to claim a defect. State
   the decision-changing uncertainty without inflating severity.
-- Keep a local, cheap, reversible interpretation gap at Minor even when exact
-  implementation must pause for clarification; stopping alone does not make
-  the consequence Major or Blocker.
+- Keep a local, cheap, reversible gap at Minor even when implementation pauses;
+  stopping alone does not make it Major or Blocker.
 - Lower confidence instead of raising severity for a merely plausible concern.
   Phrase questions as questions.
 
@@ -108,8 +100,7 @@ documents multiply them; do not become the artifact's author.
   software behavior contract. Review its fixed candidate here without replaying
   the producer workflow.
 - Use the relevant product, domain, architecture, contract, or decision skill to
-  produce or revise its owned content. A reviewer may recommend a repair but
-  does not silently make it.
+  produce or revise owned content. A reviewer recommends repairs but does not make them.
 - Use `technical-writing` for tutorials, how-to guides, explanations, reference,
   procedures, articles, editorial quality, and representative-reader function.
   A decision-bearing document remains reviewable here only for its normative
@@ -120,7 +111,7 @@ documents multiply them; do not become the artifact's author.
 ## Quality gates
 
 - The exact artifact, authoritative inputs, scope, and next use are reproducible.
-- Findings arise from a demonstrated contradiction, competing interpretation,
+- Findings arise from demonstrated contradiction, competing interpretation,
   counterexample, unsupported claim, missing authority, or consequential gap.
 - Each actionable finding names impact and a repair direction or receiving
   owner without rewriting the artifact.
@@ -131,10 +122,8 @@ documents multiply them; do not become the artifact's author.
 
 ## Reject review theater
 
-- Length, polish, templates, detailed diagrams, and many examples do not prove
-  that the specification preserves intent.
-- Missing sections and style preferences are not findings unless they create a
-  demonstrated interpretation, authority, evidence, or use failure.
+- Length, polish, templates, diagrams, and examples do not prove preserved intent.
+  Missing sections or style preferences matter only when they cause a demonstrated failure.
 - Do not reward precision that encodes the wrong goal or acceptance wording
   that can pass while the intended outcome fails.
 - Do not add unrequested features, reopen accepted decisions without evidence,

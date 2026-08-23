@@ -5,34 +5,34 @@ description: Implement a ready, authorized, bounded feature, enhancement, integr
 
 # Scoped Change Implementation
 
-Turn an understood change into maintained software. Keep each step small enough to learn from and complete enough to exercise through a meaningful behavior boundary.
+Turn an understood change into maintained software through small steps that exercise meaningful behavior boundaries.
 
 ## Preserve scope and authority
 
 - Confirm that implementation is authorized. Treat requests to discuss, diagnose, assess, review, or plan as read-only.
-- Treat authorization, bounded scope, and causal readiness as separate gates. A small requested fix with an unexplained symptom is not ready; route it to `software-failure-diagnosis` first.
-- Route a disposable artifact whose purpose is to answer a behavior, state, UI, or interaction design question to `prototype-to-learn`. Do not harden exploratory code by accident.
+- Treat authorization, bounded scope, and causal readiness as separate gates. Route even a small fix with an unexplained symptom to `software-failure-diagnosis` first.
+- Route a disposable behavior, state, UI, or interaction artifact to `prototype-to-learn`; do not harden exploratory code accidentally.
 - Be the sole primary executor for a behavior-changing slice. Route pure structure to `behavior-preserving-refactoring`; for mixed work, follow the nominated executor and borrow only necessary neighboring checks.
 - Consume accepted scope, claims, design, assurance, and valid evidence. Reopen framing only for contradictory evidence or a decision blocking authorized behavior.
 - Read repository instructions, local conventions, relevant decisions, tests, and the current worktree before editing. Preserve unrelated and partially completed user work.
-- State the requested outcome, supported behavior, non-goals, hard constraints, and consequential assumptions. Do not silently enlarge a local change into an architecture migration.
+- State the outcome, supported behavior, non-goals, hard constraints, and consequential assumptions. Do not enlarge a local change into an architecture migration.
 - Consume supplied `CHG-*` claims, labels, evidence, non-goals, and unresolved decisions; reconcile contradictions rather than rewriting them. A local reversible change may use a compact inline contract.
-- Treat a supplied design or plan as intent and decision context, not permission to ignore contradictory code, runtime, data, or consumer evidence.
+- A supplied design or plan is intent and decision context, not permission to ignore contradictory code, runtime, data, or consumer evidence.
 - Do not perform production experiments, releases, external writes, destructive operations, or irreversible migrations without explicit authority and safeguards.
 
 ## Implementation workflow
 
 1. **Trace the current behavior.** Follow the user or caller path through entry point, decisions, state, effects, dependencies, and observable outcome. Identify the smallest public or operational seam that can prove the requested difference.
-2. **Consume or define the contract.** Use supplied claims or owner decisions; reopen only when evidence exposes an uncovered case or contradiction. Otherwise name changed behavior, preserved invariants, consumers, compatibility, controls, evidence, and non-goals. Reconcile code, tests, docs, data, and expectations. Stop only when conflict requires an unauthorized behavior, compatibility, state, security, data, or recovery decision; name the competing outcomes and route to `software-change-specification` or the narrower owning skill. Reference existing claim keys and labels.
-   - Prove that each requested behavioral distinction is executable from the information available at its decision seam. Name the input, state, event, capability, or other observable signal that separates outcomes which must differ.
-   - If materially different required states are indistinguishable there, stop and identify the missing signal, contract rule, or owner decision. Do not invent a heuristic, broaden acceptance, or weaken an invariant to make the patch possible.
+2. **Consume or define the contract.** Use supplied claims or owner decisions; reopen only for an uncovered case or contradiction. Otherwise name changed behavior, preserved invariants, consumers, compatibility, controls, evidence, and non-goals. Reconcile code, tests, docs, data, and expectations. Stop when conflict requires an unauthorized behavior, compatibility, state, security, data, or recovery decision; name competing outcomes and route to `software-change-specification` or the narrower owner. Preserve existing claim keys and labels.
+   - Prove each requested behavioral distinction is executable from information at its decision seam. Name the observable input, state, event, or capability separating outcomes that must differ.
+   - If required states are indistinguishable there, stop and identify the missing signal, contract rule, or owner decision. Do not invent a heuristic, broaden acceptance, or weaken an invariant.
    - Keep moving on routine implementation choices whose outcomes remain inside the accepted contract; lack of a prescribed code shape is not behavioral ambiguity.
-3. **Select a coherent vertical slice.** Prefer one user-visible action or business activity that can be exercised end to end. Include only the input, decision, state, effect, output, and interface changes needed to make that slice real. A surgical change minimizes unnecessary coupling and ownership ambiguity, not merely line count.
-4. **Choose feedback.** Use test-driven development for a stable seam and valuable deterministic red-green loop. Otherwise choose the cheapest credible compiler, static, example, contract, visual, migration, performance, or other named check. For a required failure behavior, make the check fail when the operation unexpectedly succeeds. Distinguish the system's promised failure from an assertion or sentinel created by the test, and assert the observable error, state, and effects that the contract requires. Do not freeze implementation shape.
-5. **Implement through the current owners.** Follow repository-native patterns until evidence justifies changing them. Put each rule, mutable representation, resource, and side effect under one clear owner. Avoid speculative abstractions; preserve small local duplication when variation is still evidence, but never duplicate security, financial, compliance, protocol, or domain invariants whose divergence is unsafe.
+3. **Select a vertical slice.** Prefer one user-visible action or business activity exercised end to end. Include only needed input, decision, state, effect, output, and interface changes. Surgical means minimal coupling and ownership ambiguity, not line count.
+4. **Choose feedback.** Use test-driven development for a stable, valuable deterministic loop; otherwise choose the cheapest credible named check. A failure-path check must reject unexpected success, distinguish promised system failure from a test assertion or sentinel, and assert required error, state, and effects. Do not freeze implementation shape.
+5. **Implement through current owners.** Follow repository patterns until evidence justifies change. Give each rule, mutable representation, resource, and effect one owner. Avoid speculative abstractions; local duplication may preserve variation, but never duplicate security, financial, compliance, protocol, or domain invariants whose divergence is unsafe.
 6. **Keep dangerous decisions inspectable.** Separate target selection and policy from irreversible effects when this enables dry-run, review, testing, idempotency, or stale-plan protection. Preserve authorization, rollback, compensation, and stop controls required by the change contract.
-7. **Verify each slice.** Reuse valid snapshot-matched evidence; run and inspect the narrowest meaningful new check first. Continue only from green evidence; otherwise repair or revert the latest slice before expanding the change. Expand to affected integration, contract, static, build, and repository checks with the surface. Record execution; planned, skipped, or unnecessary reruns are not evidence.
-8. **Respond to discovered design mismatch.** If implementation reveals a wrong domain assumption, boundary, public contract, transition state, or safety model, stop expanding the patch. Preserve the counterexample, explain the decision that must be revisited, name the safe state left behind, and route to the smallest appropriate design or planning skill.
+7. **Verify each slice.** Reuse snapshot-matched evidence and run the narrowest meaningful new check first. Continue only from green evidence; otherwise repair or revert before expanding. Add affected integration, contract, static, build, and repository checks. Record execution; planned or skipped checks are not evidence.
+8. **Respond to design mismatch.** For a wrong domain assumption, boundary, public contract, transition state, or safety model, stop expanding. Preserve the counterexample, decision to revisit, safe state, and smallest appropriate route.
 9. **Complete ownership and cleanup.** Remove superseded paths, temporary instrumentation, obsolete tests, dead configuration, and migration scaffolding when their exit condition is satisfied and removal is authorized. Do not leave old and new implementations simultaneously authoritative by accident.
 10. **Report the implemented change.** Lead with the delivered behavior. List material files or surfaces changed, evidence executed and its limits, deviations from the original design, remaining uncertainty, and any release, operational, or human decision still required.
 
@@ -40,8 +40,7 @@ Read [references/change-execution.md](references/change-execution.md) only when 
 
 ## Quality gates
 
-- Change stays within outcome and non-goals; each slice advances end-to-end behavior or retires named risk.
-- Every edited surface contributes to the requested outcome, preservation, evidence, or cleanup.
+- Change stays within outcome and non-goals; every edit advances end-to-end behavior, preservation, evidence, cleanup, or named risk retirement.
 - The diff follows ownership and conventions or explains deviation.
 - A reviewer can recover the behavioral reason for each material edit without unrelated archaeology.
 - Checks observe supported behavior or contracts and trace to an executed environment.
@@ -51,7 +50,6 @@ Read [references/change-execution.md](references/change-execution.md) only when 
 
 ## Reject weak implementation
 
-- Short diffs can still create costly exceptions; avoid unrelated rewrites, broad renames, upgrades, and frameworks.
-- Deliver one end-to-end behavior before horizontal layers.
+- Short diffs can still create costly exceptions; avoid unrelated rewrites, broad renames, upgrades, and frameworks. Deliver one end-to-end behavior before horizontal layers.
 - Reject pass-through abstractions and hypothetical configurability.
 - Do not hide behavior changes or claim success from compilation, one convenient test, or confidence alone.

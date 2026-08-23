@@ -5,7 +5,7 @@ description: Model, design, or review end-to-end service capacity and behavior n
 
 # Service Capacity Engineering
 
-Treat capacity as an end-to-end service property. A component benchmark or average utilization number is not proof that useful work completes within the service promise.
+Treat capacity as an end-to-end service property. Component benchmarks or average utilization do not prove useful completion within the service promise.
 
 ## Capacity review workflow
 
@@ -17,7 +17,7 @@ Treat capacity as an end-to-end service property. A component benchmark or avera
 6. **Set limits and headroom.** Define normal operating envelope, reserve purpose, failover demand, elasticity lag, recovery demand, and uncertainty. Do not count the same reserve twice.
 7. **Design overload semantics.** Layer quotas, concurrency or capacity tokens, admission control, bounded queues, backpressure, priority, degradation, and shedding at boundaries that can preserve intent.
 8. **Protect recovery.** Check retries, drains, replay, autoscaling, cache refill, failover, operator access, and control paths. A system that survives load but cannot recover safely is not protected.
-9. **Make operation inspectable.** Define signals, thresholds, owners, playbooks, and recalibration triggers. Tie them to user-visible completion and each protective mechanism.
+9. **Make operation inspectable.** Tie signals, thresholds, owners, playbooks, and recalibration triggers to user-visible completion and protective mechanisms.
 
 Read [references/capacity-overload-review.md](references/capacity-overload-review.md) only when a durable capacity model, operating envelope, overload findings report, or review worksheet is needed.
 
@@ -32,8 +32,7 @@ Read [references/capacity-overload-review.md](references/capacity-overload-revie
 
 ## Reject weak reviews
 
-- Reject CPU-only models, averages hiding tails, and benchmark maxima as safe limits.
-- Queues cannot defer rejection without bound.
+- Reject CPU-only models, averages hiding tails, benchmark maxima as safe limits, and unbounded queues that merely defer rejection.
 - Retries need budgets, deadlines, jitter, and overload interaction.
 - Autoscaling is neither instant nor independent of control-plane saturation.
 - Load tests need realistic skew, dependencies, correctness, and recovery.
