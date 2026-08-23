@@ -138,6 +138,21 @@ Load those references only when their branch applies.
   longer form keeps one condition, action, and exception semantically intact.
 - Judge efficiency across the full run. A few extra words are justified when
   they prevent a wrong route, repeated investigation, or unsupported action.
+- Before material or multi-skill pruning, list the clauses that must survive:
+  activation and exclusion, authority, primary-executor and sole-owner rules,
+  canonical routes, decision-bearing evidence, gates and stops, state or role
+  distinctions, verification, and output or comparison contracts.
+- Treat exact skill names, owner roles, modes, states, and high-consequence
+  evidence terms as contract-bearing terms. Replace them only when the
+  surviving text selects the same owner, action, distinction, and constraint.
+- For each removed or merged clause, identify semantically equivalent wording
+  in the always-loaded entry point or classify it as an intentional contract
+  change. A conditional reference does not preserve a rule needed during
+  ordinary execution.
+- Review the deletion side of the diff against neighboring skills and
+  `docs/skill-boundaries.md`. Reduction metrics and structural validators prove
+  neither semantic preservation nor route fidelity. After material multi-skill
+  pruning, require an independent semantic review with authority to reject.
 
 Do not optimize word count by removing source reading, evidence gates,
 authority boundaries, review independence, stop controls, or verification.
