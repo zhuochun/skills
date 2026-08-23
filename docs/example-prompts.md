@@ -94,6 +94,16 @@ portfolio; and stop before focused redesign or implementation.
 ```
 
 ```text
+Use $architecture-assessment in a counterview posture for this fresh-eye
+portfolio reassessment. Reconsider which structural opportunity deserves
+investment first. Preserve supported behavior and hard constraints, but treat
+the current topology and prior recommendations as candidates rather than
+vetoes. Build the evidence baseline before reconciling earlier conclusions,
+return one ranked portfolio, and state which prior decisions remain justified
+or should be reopened.
+```
+
+```text
 Use $retrospective-architecture-review to reconsider this completed checkout
 capability after six months of repeated changes and operating workarounds.
 Establish what we learned, recover durable commitments, compare the current

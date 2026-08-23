@@ -1,7 +1,7 @@
 interface:
   display_name: "Architecture Assessment"
   short_description: "Rank architecture investment opportunities"
-  default_prompt: "Use $architecture-assessment to find and rank which structural improvements deserve investment across this software scope."
+  default_prompt: "Use $architecture-assessment to find and rank which structural improvements deserve investment across this software scope. State which parts of prior architecture decisions remain binding constraints and which assumptions are challengeable."
 
 policy:
   allow_implicit_invocation: false

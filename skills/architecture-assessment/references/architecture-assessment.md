@@ -3,6 +3,8 @@
 ## Scope
 
 - Portfolio decision: which structural investments deserve attention first
+- Assessment posture: evolutionary / counterview / comparative
+- Portfolio reassessment delta: changed evidence, context, scope, horizon, or posture
 - Business or engineering goal:
 - Architecture subject: module/service/subsystem/platform/codebase/capability/estate
 - Portfolio, value stream, dependency region, or other scope boundary:
@@ -36,6 +38,7 @@ Use available sources proportionately:
 - **Migration:** Tracer step, compatibility, coexistence, rollback, cleanup
 - **Risks and tradeoffs:** New complexity, coupling, ownership, or platform needs
 - **Conflicts:** Standards or ADRs that must be respected or reopened
+- **Posture sensitivity:** Whether evolutionary or counterview analysis changes the candidate's rank, and why
 - **Unknowns:** Evidence required before implementation
 
 ## Ranking rubric
@@ -54,10 +57,10 @@ Use qualitative judgments with evidence. Do not sum weak guesses into a precise 
 ## Report structure
 
 1. Executive outcome and top recommendation
-2. Scope, constraints, and evidence used
+2. Scope, constraints, posture, reassessment delta, and evidence used
 3. Current architecture views at the declared scope
 4. Three to seven ranked candidate cards
-5. Portfolio dependencies and sequencing
+5. Posture convergence or disagreement, portfolio dependencies, and sequencing
 6. Areas intentionally left unchanged
 7. Unknowns and proposed validation
 8. Selection question before implementation
