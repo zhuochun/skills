@@ -100,7 +100,9 @@ investment first. Preserve supported behavior and hard constraints, but treat
 the current topology and prior recommendations as candidates rather than
 vetoes. Build the evidence baseline before reconciling earlier conclusions,
 return one ranked portfolio, and state which prior decisions remain justified
-or should be reopened.
+or should be reopened. Include the smallest self-contained text comparison when
+candidate structure materially affects the ranking; keep every candidate
+explicitly unselected.
 ```
 
 ```text

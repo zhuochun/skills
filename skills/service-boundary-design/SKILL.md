@@ -44,6 +44,7 @@ Do not complete the review until:
 
 - workflow, invariants, data authority, and non-API interfaces are visible;
 - integration and disintegration forces include a traced change and failure scenario;
+- materially different enforcement options include the smallest self-contained text comparison of service or module shape, data authority, runtime and failure boundaries, and operating ownership; richer rendering is optional;
 - runtime and organizational readiness are considered;
 - semantic, code, deployment, data, and team boundaries remain distinct;
 - in-process recommendations state locality and service constraints, then route design to `deep-module-design`;

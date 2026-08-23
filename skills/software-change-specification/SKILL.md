@@ -69,6 +69,10 @@ Read [references/change-specification.md](references/change-specification.md) wh
   implementation shape.
 - Distinguish current, desired, preserved, accidental, and unknown behavior.
   Use disagreement-rich examples and separate probes from durable claims.
+- When current and desired behavior differ across several decisions, states,
+  effects, or owners, include the smallest self-contained text flow, table, or
+  diff. Label current, desired, preserved, and unresolved behavior without
+  prescribing implementation structure.
 - Make scope, non-goals, affected consumers and state, constraints,
   compatibility, failures, ownership, and consequential assumptions explicit
   in proportion to risk.

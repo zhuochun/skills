@@ -33,6 +33,7 @@ Read [references/diagnosis-record.md](references/diagnosis-record.md) only when 
 ## Quality gates
 
 - Expected and observed behavior can disagree through named evidence; original context is preserved proportionately.
+- When good and bad behavior diverge across several components or state transitions, include the smallest self-contained text comparison of causal paths and order. Mark observed, inferred, and unresolved elements; richer rendering is optional.
 - Hypotheses are falsifiable, compared with discriminating observations, and measured for the causal question.
 - The supported cause explains trigger, mechanism, enabling conditions, and propagation.
 - Counterevidence and uncertainty remain visible.

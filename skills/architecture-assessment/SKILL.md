@@ -46,6 +46,7 @@ Read [references/architecture-assessment.md](references/architecture-assessment.
 - Plausible investments span the declared scope; one preselected design is not a portfolio.
 - Counterview work preserves supported behavior and hard constraints while allowing the current topology or a prior recommendation to lose the comparison.
 - Comparative work returns one reconciled ranking and traces disagreements to evidence, assumptions, constraints, or migration economics.
+- When candidate structure materially affects ranking, include the smallest self-contained text comparison of current pressures and candidate responsibility, state, control, data, or ownership shifts. Keep every candidate explicitly unselected; do not label one as the after state.
 - Boundaries connect domain intent to change pressure and improve tests, operations, or comprehension.
 - Migration, compatibility, rollback, decisions, and uncertainty are explicit.
 - Implementation waits for selection and authorization.

@@ -53,6 +53,7 @@ Read [references/retrospective-architecture-review.md](references/retrospective-
 - Conceptual work and accidental friction are distinguished; code, understanding, intent, and operations are proportionately considered.
 - Declared, tested, observed, and inferred commitments are reconciled with explicit dispositions.
 - The current design is a real alternative; the recommendation explains economics, reversibility, proof, uncertainty, and learned structure.
+- When route differences are materially structural, include the smallest self-contained text comparison of the current baseline and credible candidates. Mark preserved, changed, and unresolved elements; richer rendering is optional.
 - Optional complexity with unproven benefit receives a credible lower-complexity alternative and an evidence burden, without presuming removal.
 - Rebuild waits until important commitments have another source of truth.
 - Accountable decisions and follow-up are named; the target remains unchanged.

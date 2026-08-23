@@ -146,6 +146,9 @@ Require all of the following before calling the plan ready:
   Consume accepted target, contract, and support decisions.
 - Define participants, operations, representations, visibility, and authority
   in every state. Make irreversible effects and compensations explicit.
+- Keep the state model self-contained with the smallest text view from current
+  through transition to target and retirement. Label authority, unchanged
+  obligations, gates, and unresolved states; do not depend on richer rendering.
 - Give every transition measurable entry, success, hold or abort, retreat or
   fail-forward, evidence, and ownership criteria.
 - Keep release, observability, and verification details canonical and

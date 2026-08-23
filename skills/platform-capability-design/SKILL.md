@@ -26,6 +26,7 @@ Read [references/platform-capability-design.md](references/platform-capability-d
 - Evidence shows repeated work or risk across contexts.
 - The interface reduces cognitive load without concealing operations.
 - The ordinary path is self-service without tickets.
+- When the capability changes a multi-step user or ownership path, include the smallest self-contained text comparison of the current repeated work and proposed self-service path. Keep hidden operations, controls, escapes, and unresolved ownership visible.
 - Defaults, guidance, guardrails, escapes, and escalations have distinct roles.
 - Ownership covers build through retirement.
 - Adoption measures user outcomes and platform burden.

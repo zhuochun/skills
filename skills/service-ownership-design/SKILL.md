@@ -32,6 +32,7 @@ Read [references/service-ownership-readiness.md](references/service-ownership-re
 
 - One service promise and lifecycle anchors traced build and operation work.
 - Responsibility, authority, capability, and feedback remain distinct.
+- When ownership models differ materially, include the smallest self-contained text comparison of current and candidate responsibility, authority, capability, feedback, and handoffs. Keep transfer stages and unresolved owners explicit; richer rendering is optional.
 - Cognitive and interrupt load use evidence.
 - Platform and specialist prerequisites precede expanded ownership.
 - The model explains retained handoffs and controls.

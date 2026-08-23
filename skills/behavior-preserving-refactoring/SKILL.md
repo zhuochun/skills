@@ -40,6 +40,7 @@ Read [references/refactoring-control.md](references/refactoring-control.md) only
 - The requested effect is classified before editing; no semantic or support change is hidden inside structural wording.
 - A credible baseline detects regressions and each step is attributable.
 - One-owner knowledge, state, resource, or lifecycle boundaries improve.
+- When structure changes materially, report the smallest self-contained text before/after view of responsibility, interface, state, control, or dependencies. Show preserved behavior commitments and transferred or removed ownership; richer rendering is optional.
 - Durable tests observe behavior, not moved implementation.
 - Tests on superseded seams are removed or retained for a named independent risk.
 - Old authority and coexistence are removed or have exits.

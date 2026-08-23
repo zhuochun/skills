@@ -46,6 +46,7 @@ Do not call the design ready until:
 - semantic and operational behavior, not only shape, forms the actual contract;
 - declared, observed, inferred, unknown, and unobservable reliance are distinguished;
 - supported producer-consumer-state-executor combinations and preserved or broken dimensions are explicit;
+- when lifecycle relationships are material, the compatibility matrix or the smallest alternative self-contained text view makes current, proposed, transition, and retired contract states explicit without duplicating an equivalent representation; richer rendering is optional;
 - semantic differences have owned translation or an explicit decision not to translate;
 - deprecation has a replacement, blocked new adoption, migration ownership, and consumer feedback;
 - adoption and retirement claims have representative risk-specific evidence obligations;

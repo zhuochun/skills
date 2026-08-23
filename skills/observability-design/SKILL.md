@@ -35,6 +35,7 @@ Read [references/observability-design.md](references/observability-design.md) on
 - Outcomes, service, dependencies, infrastructure, and controls stay distinct.
 - Semantics cover population, denominator, window, missing volume, and owner.
 - Cross-service paths reconstruct ordinary, degraded, failed, and mixed-release behavior.
+- When execution or diagnostic navigation spans several components, include the smallest self-contained text view linking outcomes, signals, dependencies, controls, and owners. Mark proposed instrumentation and unknown paths; richer rendering is optional.
 - Alerts name impact, owner, uncertainty, and first action without claiming cause.
 - Data safety, cost, sampling, retention, cardinality, verification, rollout, and retirement are owned.
 

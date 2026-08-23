@@ -44,6 +44,7 @@ Expose which architectural decisions and assumptions control outcomes that matte
 
 - Prioritized qualities tie to stakeholder drivers and refutable observable scenarios.
 - Traces cross software and operating models.
+- When scenarios or options depend on structural relationships, include the smallest self-contained text view with explicit scope, elements, relationships, data or ownership meaning, and evidence status. Do not depend on a diagram renderer.
 - Findings name sensitivities and tradeoffs, separating facts, assumptions, and questions.
 - High-consequence findings have evidence or mitigation owners.
 - Accepted risk and revisit signals are recorded.

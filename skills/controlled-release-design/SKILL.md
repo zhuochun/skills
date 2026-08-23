@@ -38,6 +38,7 @@ Use this skill alone for ordinary deployment-exposure separation. Within a `migr
 - Deployment, exposure, assignment, and permanent enablement remain distinct.
 - Exposure has one explicit unit and authoritative assignment model.
 - Old, mixed, and new behavior is defined across affected services and durable effects.
+- When exposure topology or phase behavior spans several actors or states, include the smallest self-contained text view of assignment, enforcement, old/mixed/new behavior, promotion, and retreat. Richer rendering is optional.
 - Irreversible effects and compensation are explicit.
 - Phases define entry, success, hold, abort, observation, and owner.
 - Outcomes, correctness, service, infrastructure, and control health trace by labeled claim to canonical owners.

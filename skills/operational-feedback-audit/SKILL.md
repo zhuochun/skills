@@ -31,6 +31,7 @@ Read [references/operational-feedback-audit.md](references/operational-feedback-
 
 - Anchor health to service promise with explicit signal and missing-data semantics.
 - Distinguish intended, deployed, observed, and inferred meaning; preserve counterexamples.
+- When the operating loop spans several components or owners, include the smallest self-contained text comparison of declared and observed paths from promise through signal, diagnosis, routing, control, and learning. Keep missing links explicit rather than inventing replacements.
 - Trace user impact to owner and control; treat paging as finite attention.
 - Name stale topology consequences and test recovery controls against failure domains.
 - Findings connect to decisions, owners, and verification, not telemetry volume.

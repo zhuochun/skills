@@ -42,6 +42,7 @@ Read [references/architecture-surface-map.md](references/architecture-surface-ma
 - A workflow crosses applicable semantic, code, interface, data, runtime, and ownership boundaries.
 - Declared, executable, reported, and observed evidence are reconciled.
 - Each critical path reaches its consumer-visible outcome and next usable state. Runtime or resource semantics and cross-layer controls stay visible when they change completion, containment, or recovery.
+- When relationships across surfaces materially affect orientation, include the smallest self-contained text map or flow. Richer rendering may supplement but never replace it.
 - Important claims retain evidence type, recency, confidence, and either an owner or next probe.
 - Contradictions and uninspected decision-relevant surfaces stay explicit. A health or absence claim names the exercised path, observer, and coverage evidence. Handoff names focused follow-up without adding irrelevant inventory.
 

@@ -117,7 +117,9 @@ easy to walk without presenting an inferred picture as established truth.
    cross-view matrix for alignment, a flowchart for actor flow, a sequence
    diagram for interfaces, or a state diagram for lifecycle. Keep numbered step
    references clear in a compact trace and stable keys aligned across every
-   representation in a stable trace.
+   representation in a stable trace. Every selected form must be self-contained
+   in the available output; prefer a text story, matrix, tree, flow, or diff
+   that needs no external renderer. Richer rendering may supplement it.
 9. **Walk the trace.** Explain one coherent segment at a time. In an
    interactive walkthrough, invite corrections at consequential gaps and
    update the shared trace before continuing.

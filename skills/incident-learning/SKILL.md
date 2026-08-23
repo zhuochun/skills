@@ -32,6 +32,7 @@ Read [references/incident-learning-record.md](references/incident-learning-recor
 
 - Separate facts, recollections, and analysis; include relevant cross-boundary perspectives or explain their absence.
 - Explain local rationality, constraints, surprises, and successful adaptations.
+- When the responder model and later evidence diverge across several components or owners, include the smallest self-contained text comparison of expected and observed paths, controls, and ownership. Preserve evidence status and successful adaptations; richer rendering is optional.
 - Identify interacting conditions, not one trigger or person.
 - Actions are proportional, routed by gap, tied to risk reduction and verification, and explain why narrower work is insufficient.
 - Owners and dates do not make action count a quality measure.

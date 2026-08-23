@@ -51,6 +51,7 @@ Read [references/modeling-artifacts.md](references/modeling-artifacts.md) only w
 - The selective model names its problem, decision, or workflow.
 - Modeling effort is justified by a material semantic question or friction; otherwise the changed-surface and preserved-behavior owners, sufficiency evidence, and smaller route are named.
 - Concepts connect purpose, state, action, and outcomes; consequential choices compare scenarios and omissions.
+- When candidate models differ materially, include the smallest self-contained text comparison of concepts, invariants, state, action, authority, and translation. Mark current evidence, proposed meaning, unchanged commitments, and unresolved decisions.
 - Identity-bearing models state what remains the same, what creates a new identity, and which transformations or duplicates break the proposed key.
 - Language and rules reconcile with work, code, data, and operations or expose contradictions.
 - Consequential classifications expose exclusions, affected perspectives, and contest or revision authority without taking adjacent legal, privacy, fairness, or safety decisions.

@@ -71,6 +71,26 @@ accountable human. Keep `agents/openai.yaml` synchronized. Name the skill as
 its own output. Require greater evaluator independence as consequence,
 irreversibility, or uncertainty increases.
 
+## Keep structural comparisons self-contained
+
+When a skill compares current, candidate, expected, observed, transition, or
+target structure, require the smallest self-contained view that materially
+improves its owned decision.
+
+- Show only decision-bearing responsibility, state, control, data, interface,
+  dependency, or ownership relationships.
+- Distinguish current, candidate, unchanged, and unresolved elements, adapting
+  those labels to the skill's evidence model.
+- Prefer a plain-text tree, flow, table, or diff that needs no external skill,
+  renderer, or artifact. Richer rendering may supplement but never replace the
+  self-contained view.
+- Check for duplicate representations. A compatibility matrix, state model,
+  tree, flow, table, or diff that already carries the comparison satisfies the
+  contract; add another view only when it exposes a distinct decision-bearing
+  relationship or uncertainty.
+- Do not call a candidate the after state or imply selection, approval, or
+  implementation before the accountable decision and action occur.
+
 ## Write for reliable execution
 
 - Lead with the outcome or decision that the skill owns.

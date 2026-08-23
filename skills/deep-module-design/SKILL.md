@@ -43,6 +43,7 @@ Read [references/module-design-review.md](references/module-design-review.md) on
 ## Quality gates
 
 - The current boundary is retained unless demonstrated pressure and the design horizon justify added structure.
+- When redesign materially changes responsibility, interface, state, control, or dependency ownership, include the smallest self-contained text comparison of the current and candidate shapes. Mark unchanged commitments and unresolved elements; keep the candidate proposed.
 - Material claims have evidence status; assumptions and revisit signals are explicit.
 - One module owns each claimed decision, mutable representation, or resource.
 - Seams follow real dependency ownership or production variation, not test-double convenience.
