@@ -1,0 +1,7 @@
+interface:
+  display_name: "Pursue a Goal"
+  short_description: "Adaptively pursue a goal through evidence"
+  default_prompt: "Use $goal-pursuit to pursue this goal through proportional upfront system planning, the smallest sufficient skills and tools, and evidence-backed adaptation; preserve scope and authority, and stop only at verified success, verified terminal failure, justified abandonment, infeasibility, or an authority boundary."
+
+policy:
+  allow_implicit_invocation: false

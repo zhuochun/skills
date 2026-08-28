@@ -1,6 +1,6 @@
 {
   "name": "bicrement",
-  "version": "1.0.25",
+  "version": "1.0.27",
   "description": "Evidence-oriented product and software engineering workflows for Codex.",
   "author": {
     "name": "Zhuochun",
@@ -27,9 +27,10 @@
     ],
     "websiteURL": "https://github.com/zhuochun/skills",
     "defaultPrompt": [
+      "Use $bicrement:goal-pursuit to pursue one non-trivial goal through proportional system planning, adaptive evidence, and the smallest sufficient available capabilities.",
       "Use $bicrement:research-synthesis to determine what bounded cross-source evidence supports.",
       "Use $bicrement:architecture-surface-mapping to orient me to this unfamiliar software.",
-      "Use $bicrement:software-change-orchestration for this bounded change.",
+      "Use $bicrement:software-change-orchestration when this bounded change needs continuity across sessions, artifacts, or specialist owners.",
       "Use $bicrement:code-review to review this completed software change."
     ]
   }

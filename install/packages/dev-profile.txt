@@ -8,6 +8,7 @@ controlled-release-design
 decision-facilitation
 deep-module-design
 domain-modeling
+goal-pursuit
 migration-planning
 observability-design
 operational-feedback-audit

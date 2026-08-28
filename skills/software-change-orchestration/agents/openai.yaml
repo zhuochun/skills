@@ -1,7 +1,7 @@
 interface:
   display_name: "Software Change Orchestration"
-  short_description: "Guide a software change from idea to evidence"
-  default_prompt: "Use $software-change-orchestration to guide this software change from rough intent through evidence-based closure; you may create and maintain the smallest canonical specification or change record, but do not modify code, external systems, or production without separate authorization."
+  short_description: "Preserve a resumable change through evidence"
+  default_prompt: "Use $software-change-orchestration when this bounded software change needs continuity across sessions, artifacts, or specialist owners; keep clear uninterrupted work inline, and do not modify code, external systems, or production without authorization."
 
 policy:
   allow_implicit_invocation: false

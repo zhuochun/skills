@@ -81,6 +81,14 @@ intents. You can also invoke any specialist explicitly.
 If none of these describes the missing decision or artifact, use the
 [full skill catalog](docs/catalog.md).
 
+For intentional end-to-end pursuit across several uncertain moves, invoke
+[`goal-pursuit`](skills/goal-pursuit/) explicitly. It forms a proportional
+system-level plan, selects the smallest sufficient available owners and tools,
+and adapts from evidence without turning the catalog into a fixed lifecycle.
+In Codex, it can operate inside an official
+[`/goal`](https://learn.chatgpt.com/use-cases/follow-goals) loop while the
+runtime owns continuation and the skill owns pursuit decisions.
+
 ## Explore the collection
 
 - [Installation guide](docs/installation.md) — install, diagnose, or uninstall

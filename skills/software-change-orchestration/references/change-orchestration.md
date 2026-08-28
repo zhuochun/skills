@@ -8,7 +8,7 @@ Use these forms selectively. The main skill owns authority, posture, composition
 | --- | --- |
 | **Context and intent before execution** | Recover outcome, constraints, rationale, and current state before selecting or implementing a solution. |
 | **Repository memory steers agent work** | Persist decisions and contracts that must survive the conversation in versioned, searchable work surfaces. |
-| **Process models preserve intermediate state** | Preserve the frontier and re-entry conditions when work pauses or crosses sessions and owners. |
+| **Process models preserve intermediate state** | Preserve the frontier and re-entry conditions when work pauses or crosses sessions and owners; keep uninterrupted work inline. |
 | **Workflow-native delegation converts activity into impact** | Route work through the repositories, issues, reviews, and evidence surfaces people already use. |
 | **Executable knowledge keeps documentation current** | Prefer keyed contracts, checks, revisions, and canonical links over copied status narrative. |
 | **Agentic throughput shifts work toward verification** | Preserve independent challenge and falsifying evidence rather than treating cheap implementation as completion. |
@@ -131,4 +131,4 @@ Use these as routing questions, not universal stages.
 
 Implementation is ready when desired and preserved behavior are understood, material decisions are owned, non-goals are explicit, one coherent slice is known, implementation is authorized, and its feedback loop is credible.
 
-Closure requires delivered behavior in the owning repositories, resolved or owned findings, focused independent confirmation after material remediation, executed evidence on the final candidate or still-valid matching evidence, owned operations and cleanup, and a canonical record that explains completion or re-entry without copied status prose.
+Closure requires delivered behavior in the owning repositories, resolved or owned applicable findings, focused independent confirmation after material review remediation, executed evidence on the final candidate or still-valid matching evidence, and owned operations and cleanup. When durable state was justified, the canonical record must explain completion or re-entry without copied status prose.

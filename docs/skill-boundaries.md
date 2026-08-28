@@ -63,6 +63,9 @@ Use the terms consistently:
   later. A **workstream** is one coherent contribution with a driver and
   frontier. A **technical program** keeps one outcome coherent across several
   concurrent or interdependent workstreams.
+- A **goal** is an intended outcome with observable success and termination
+  conditions. It may contain several decisions or work units, but it does not
+  replace their specialist, change, migration, workstream, or program owners.
 - A **slice** is a bounded increment of learning or delivery, not a scope level.
   A vertical slice crosses enough input, decision, state, effect, and output to
   demonstrate useful behavior. Product, service, architecture, and incident are
@@ -74,6 +77,10 @@ repository count, or team count.
 ## The relationship model
 
 The skills form a directed graph. A downstream skill consumes an upstream artifact only when the decision warrants it.
+
+`goal-pursuit` is an explicit navigation layer over this graph, not another
+artifact-owning node. It selects the smallest current owner, preserves the
+parent outcome and system hypothesis, and updates the route from evidence.
 
 ```mermaid
 flowchart LR
@@ -182,7 +189,7 @@ flowchart LR
     RAR --> BPR
 ```
 
-`software-change-orchestration` can maintain a bounded change's evolving canonical specification across this graph and preserve a resume point when work spans sessions or artifacts. The immediate frontier normally remains in the active session. Orchestration does not add a required path through the graph or take ownership from any node.
+`software-change-orchestration` can maintain a bounded change's evolving canonical specification across this graph and preserve a resume point when work spans sessions, artifacts, or specialist owners. Clear uninterrupted work remains inline with its primary owner. Orchestration does not add a required path through the graph or take ownership from any node.
 
 This is not a mandatory lifecycle. For example, an uncertain product request may loop only between opportunity discovery and prioritization until evidence supports stopping or investment. A local reversible feature may need only `scoped-change-implementation` and repository checks. A structure-only cleanup may use `behavior-preserving-refactoring` without architecture review. A multi-workstream feature may use `technical-program-orchestration` to coordinate owned frontiers and integration while composing observability, controlled release, change review, and verification without a heavyweight architecture evaluation. A multi-region ledger migration may require architecture evaluation, a decision record, technical program orchestration, migration planning, controlled exposure, layered verification, and an operational feedback audit. An active outage may need incident-response coordination and diagnosis before it can move into recovery and incident learning.
 
@@ -281,16 +288,26 @@ Technical writing can follow research, design, implementation, or operational wo
 
 Discovery, prototyping, and prioritization can form a feedback loop. Prioritization may fund another discovery slice rather than a full solution; discovery evidence may split, merge, weaken, strengthen, or remove an opportunity and reopen priority. Discovery owns the hypothesis and evidence contract while `prototype-to-learn` owns authorized local software construction. `domain-modeling` owns complex software meaning, behavior, and invariants once those become the problem, while `controlled-release-design` and `observability-design` own governed production exposure and deployed measurement contracts.
 
-### Change orchestration, specification, and program orchestration
+### Goal pursuit, change orchestration, specification, and program orchestration
 
-- `software-change-orchestration` owns continuity and composition economy for one bounded change effort: authorization and escalation boundaries, derived assurance posture and workflow budget, evolving canonical specification or work surface, one primary owner per move, reusable evidence, and durable handoff state when needed. It keeps the immediate frontier in the active session during uninterrupted work and may use an existing specification or issue instead of creating another document.
+- `goal-pursuit` owns proportional upfront system planning and adaptive
+  next-capability selection for one explicit parent goal. It retains goal-level
+  evidence and termination while specialists retain their decisions and
+  artifacts. A host goal runtime owns continuation, pause, resume, and status.
+- `software-change-orchestration` owns continuity and composition economy for one bounded change effort when accepted decisions, evidence, or resume state must remain coherent across sessions, artifacts, or specialist owners. It keeps clear uninterrupted work inline, uses one primary owner per move, and creates or reuses durable state only when ownership or re-entry requires it.
 - `software-change-specification` owns the implementation-ready behavior contract for one accepted but ambiguous change. Within orchestration it consumes the originating request and accepted frame, updates the supplied canonical surface with only its specification delta when authorized, and can classify the change as not ready.
-- `technical-program-orchestration` owns the canonical program surface, multi-workstream delivery topology, workstream contracts and drivers, local and program frontiers, integration, constraints, and replanning. It links canonical local artifacts rather than becoming their executor or a duplicate program office.
+- `technical-program-orchestration` owns the canonical program surface, multi-workstream delivery topology, workstream contracts and drivers, local and program frontiers, integration, evidence-labeled dominant or coupled constraints, and replanning. It links canonical local artifacts rather than becoming their executor or a duplicate program office.
 - `behavior-preserving-refactoring` is the primary executor for a pure structural slice whose supported behavior must remain unchanged. `scoped-change-implementation` is the primary executor for an intended observable behavior change. Do not stack both complete workflows around one pure refactor; split a mixed change or nominate one primary executor and borrow only the needed checks. Review, verification, promotion, and residual-risk acceptance remain separate judgments.
 
-The orchestration unit is a **change effort**, not necessarily a whole product or repository. Related slices may share one effort when they serve one outcome and depend on the same behavior or risk decisions. Small reversible changes stay inline with no orchestration directory. When durable state is justified, use the owning repository if one repo owns the behavior; use an established control repository when no code repository owns the cross-repository outcome. Touching or reading several repositories is not by itself a reason to create control-repository state.
+The orchestration unit is a **change effort**, not necessarily a whole product or repository. Related slices may share one effort when they serve one outcome and depend on the same behavior or risk decisions. Small reversible and other clear uninterrupted changes stay inline even when implementation is authorized. When durable state is justified, use the owning repository if one repo owns the behavior; use an established control repository when no code repository owns the cross-repository outcome. Touching or reading several repositories is not by itself a reason to create control-repository state.
 
-A program is not merely a larger change effort. Program orchestration steers a graph of workstream contributions, dependencies, integration contracts, and simultaneous frontiers. A program may link several bounded change efforts, while one change effort may also require program orchestration when its delivery contains several concurrent or interdependent workstreams. One team can own such a topology, and several teams can still be executing only one bounded change loop; team count is neither necessary nor sufficient. Use `software-change-orchestration` only for workstreams that need their own resumable software-change loop; keep non-code or already well-governed workstreams in their existing canonical surfaces.
+A program is not merely a larger change effort. Program orchestration steers a graph of workstream contributions, dependencies, integration contracts, simultaneous frontiers, and an evidence-labeled dominant or coupled constraint model. A program may link several bounded change efforts, while one change effort may also require program orchestration when its delivery contains several concurrent or interdependent workstreams. One team can own such a topology, and several teams can still be executing only one bounded change loop; team count is neither necessary nor sufficient. Generic goal pursuit and serial specialist routing do not create a program. Use `software-change-orchestration` only for workstreams that need their own resumable software-change loop; keep non-code or already well-governed workstreams in their existing canonical surfaces.
+
+Goal pursuit does not prove success by completing every child task. It closes
+against a parent outcome-level oracle and links canonical specialist results
+instead of copying their plans. Several services in one coherent sequential
+slice do not require a program surface; several concurrent or interdependent
+workstreams with shared integration or constraint steering do.
 
 ### Research synthesis versus surface mapping and specialist inquiry
 
@@ -400,7 +417,7 @@ architecture-risk-evaluation
 
 ### Decision facilitation, technical program orchestration, and migration planning
 
-Use `decision-facilitation` to clarify, challenge, and close a consequential or contested choice with explicit authority and accepted tradeoffs; route subject-matter analysis to its specialist. Use `technical-program-orchestration` when an outcome has several concurrent or interdependent workstreams whose dependencies, integration points, shared decisions, or constraints need active steering through local and program frontiers. Use `migration-planning` to design one accepted target's current-to-transition-to-target movement and authority transfer. Risk or production impact alone does not create a migration.
+Use `decision-facilitation` to clarify, challenge, and close a consequential or contested choice with explicit authority and accepted tradeoffs; route subject-matter analysis to its specialist. Use `technical-program-orchestration` when an outcome has several concurrent or interdependent workstreams whose dependencies, integration points, shared decisions, or constraints need active steering through local and program frontiers. Preserve coupled constraints when evidence does not support one dominant limiter. Use `migration-planning` to design one accepted target's current-to-transition-to-target movement and authority transfer. Risk or production impact alone does not create a migration.
 
 A technical program may contain several ordinary delivery slices and several specialized change plans. It references those plans and exposes their dependencies without taking over their invariants, release controls, measurement contracts, or verification oracles. A single-team feature or one local reversible change does not need program machinery merely because it has several tasks.
 

@@ -1,7 +1,7 @@
 interface:
   display_name: "Technical Program Orchestration"
   short_description: "Orchestrate interdependent workstream frontiers"
-  default_prompt: "Use $technical-program-orchestration to coordinate this multi-workstream outcome through owned frontiers, integration evidence, and constraint-aware replanning."
+  default_prompt: "Use $technical-program-orchestration to coordinate this genuinely multi-workstream outcome through owned frontiers, integration evidence, and an evidence-labeled constraint model."
 
 policy:
   allow_implicit_invocation: false

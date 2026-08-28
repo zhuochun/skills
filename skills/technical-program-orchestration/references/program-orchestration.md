@@ -4,7 +4,7 @@ Adapt these forms to the organization's existing tracker, roadmap, repositories,
 
 ## Artifact placement
 
-- Keep one canonical program surface for the outcome, topology, integration state, current constraint, evidence trend, and closure.
+- Keep one canonical program surface for the outcome, topology, integration state, limiting constraints, evidence trend, and closure.
 - Keep a workstream inline in that surface when one driver, a compact frontier, and linked execution evidence are enough.
 - Split or link a workstream artifact only when it has an independently maintained owner, repository, authorization boundary, audience, review or evidence lifecycle, or non-obvious re-entry need.
 - When a workstream is a bounded software change, let `software-change-orchestration` choose its owning-repository, control-repository, hybrid, or inline persistence. Reference that canonical surface here.
@@ -36,7 +36,8 @@ Adapt these forms to the organization's existing tracker, roadmap, repositories,
 
 ### Program control state
 
-- Current system constraint:
+- Constraint model: dominant / coupled / not yet supported
+- Dominant or coupled constraints and evidence:
 - Program frontier and why it is limiting:
 - Work that can proceed independently:
 - Decisions due and latest useful decision time:
@@ -77,7 +78,7 @@ For each review, ask:
 
 1. Does every active workstream have one current frontier rather than a backlog summary?
 2. Which frontier is blocked by another workstream, shared environment, decision, reviewer, or integration contract?
-3. Which current system constraint limits end-to-end outcome throughput?
-4. What is the smallest intervention that changes that constraint or produces decisive evidence?
+3. Does evidence support one dominant constraint, a coupled constraint set, or no constraint conclusion yet?
+4. What is the smallest intervention that changes the limiting gap or produces decisive constraint evidence?
 5. Which work can continue without increasing unfinished integration risk?
 6. What changed enough to revise a forecast, commitment, topology, or workstream boundary?

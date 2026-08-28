@@ -42,6 +42,25 @@ sequence.
 
 ## Common compositions
 
+### Intentional end-to-end goal pursuit
+
+```text
+goal-pursuit
+  -> compact parent goal contract and proportional system-level pursuit model
+  -> one meaningful checkpoint owned by the smallest sufficient available specialist, tool, or bounded subgoal
+  -> compare checkpoint evidence with the parent outcome and revise the route
+  -> transfer detailed continuity to software-change-orchestration or multi-workstream steering to technical-program-orchestration only when their topology appears
+  -> close only from outcome-level evidence, verified terminal failure, justified abandonment, infeasibility, or an authority boundary
+```
+
+Use `goal-pursuit` only as an explicit entry point when the user wants the agent
+to keep selecting and adapting moves toward one non-trivial outcome. It does not
+become the canonical owner of specialist artifacts, a bounded change record, or
+a technical program surface. A host `/goal` runtime may preserve continuation;
+the skill supplies the pursuit model and evidence loop inside that lifetime.
+Clear reversible work can still move directly to one executor after a compact
+micro-plan.
+
 ### Research evidence into specialist judgment
 
 ```text
@@ -99,24 +118,24 @@ with `code-review`.
 
 ```text
 software-change-orchestration
-  -> keep a tiny reversible change inline, or obtain document-write authority and seed one living canonical specification
+  -> keep clear uninterrupted work inline, or obtain document-write authority and seed one living canonical specification when ownership or re-entry requires durable state
   -> derive compact, standard, or high-assurance posture and bound full skill workflows, artifacts, review, and verification
   -> keep the immediate frontier in session and route it to software-change-specification or the smallest owning specialist
   -> integrate each accepted result into the specification before dependent implementation
   -> use specification-review on a fixed candidate when misunderstanding could propagate materially
   -> loop through clarification, design, evaluation, or decision only as evidence requires
   -> choose one primary executor: behavior-preserving-refactoring for pure structure, scoped-change-implementation for intended behavior
-  -> independent code-review consumes snapshot-matched producer evidence and runs focused challenges
+  -> use independent code-review when consequence, uncertainty, novelty, an explicit request, or the workflow budget requires it
   -> verification design preserves upstream claims; execution fills missing or invalidated evidence
-  -> remediate in scope, confirm affected findings, then run one successful closure set on the final candidate snapshot
+  -> remediate applicable findings in scope, confirm material review repairs, then run one successful closure set on the final candidate snapshot
   -> loop back on counterexamples, or close with reusable evidence and residual ownership
 ```
 
-Use the owning repository when one repository owns the behavior, even if it consumes another repository's data. Use an established control repository only for genuinely distributed ownership. Compact discussion normally stays inline; compact authorized execution uses one minimal record but no orchestration directory. Standard work normally uses one living specification. High-assurance work uses several artifacts only when they need independent lifecycles. Persist a resume point only for a pause, block, handoff, session change, or non-obvious re-entry.
+Use the owning repository when one repository owns the behavior, even if it consumes another repository's data. Use an established control repository only for genuinely distributed ownership. Compact uninterrupted execution stays inline even when authorized. Standard or resumable work normally reuses or creates one living specification when ownership or re-entry needs durable state. High-assurance work uses several artifacts only when they need independent lifecycles. Persist a resume point only for a pause, block, handoff, session change, or non-obvious re-entry.
 
 Choose the executor by the requested semantic effect, not by labels such as cleanup or compatibility. An accepted change to observable behavior belongs to `scoped-change-implementation`; pure structure belongs to `behavior-preserving-refactoring`; unresolved behavior belongs to specification or its accountable owner. Implementation remains autonomous over routine code shape, but missing information that makes required outcomes indistinguishable is a contract boundary, not permission to guess or weaken the behavior.
 
-In authorized or auto mode, write the authorized modes, accepted scope and non-goals, and the four escalation conditions into the smallest canonical record before implementation. Proceed without workflow approval, but preserve the originating behavior meaning and escalate material scope, external or production action, destructive action, or a decision changing supported behavior.
+In authorized or auto mode, keep the authorized modes, accepted scope and non-goals, and four escalation conditions in the active task. When durable state is justified, write them into the smallest canonical record before implementation. Proceed without workflow approval, but preserve the originating behavior meaning and escalate material scope, external or production action, destructive action, or a decision changing supported behavior.
 
 ### Session boundary or non-obvious re-entry
 
@@ -193,7 +212,7 @@ domain-modeling
      translations, consumer adoption, and retirement obligations
   -> technical-program-orchestration for the canonical program surface,
      workstream drivers and frontiers, delivery topology, integration contracts,
-     current constraint, and decision cadence
+     evidence-labeled dominant or coupled constraints, and decision cadence
   -> software-change-orchestration for each bounded software-change workstream
      that needs an independently resumable decision-to-evidence loop
   -> deep-module-design in each affected codebase

@@ -1,6 +1,6 @@
 ---
 name: software-change-orchestration
-description: Orchestrate one bounded software change through proportional specification, specialist design, authorized implementation, independent review, verification, and evidence-based closure. Use when work needs a resumable repository-backed flow or catalog routing. Keep small reversible work inline, choose persistence by outcome ownership, and route interdependent multi-workstream delivery to technical-program-orchestration.
+description: Orchestrate one bounded software change when accepted decisions, evidence, and resume state must remain coherent across sessions, artifacts, or specialist owners. Keep clear uninterrupted work with its primary owner; do not use this as a default goal loop or mandatory path through specialists. Route interdependent multi-workstream delivery to technical-program-orchestration.
 ---
 
 # Software Change Orchestration
@@ -13,7 +13,7 @@ Move one software change through the smallest useful set of decisions, artifacts
 - Treat explicit `authorized mode`, `auto mode`, or a goal to execute an accepted
   bounded change through closure as authorization for record writes, in-scope
   implementation, internal routing, delegated read-only review, and verification.
-  Before implementation, seed or update the smallest repository-backed record with:
+  Before implementation, when resumability or artifact ownership requires durable state, seed or update the smallest repository-backed record with:
   - `Authorized modes: record writes, implementation, delegated review, verification`
   - accepted scope and explicit non-goals;
   - `Escalation conditions: material scope change; new external or production action; destructive action; decision that changes supported behavior`.
@@ -49,11 +49,13 @@ Choose persistence by ownership and re-entry need:
 4. **Hybrid:** Let one control record index artifacts that remain canonical
    with their owners.
 
-Authorized execution requires one minimal repository-backed record. Do not create
-a control repository, relocate artifacts, or create a one-file directory without
-authorization and demonstrated need.
+Resumable, multi-artifact, or non-obvious re-entry work requires one existing or
+minimal repository-backed surface. Keep clear uninterrupted work inline even
+when implementation is authorized. Do not create a control repository, relocate
+artifacts, or create a one-file directory without authorization and demonstrated
+need.
 
-Maintain one living canonical work surface:
+When durable state is justified, maintain one living canonical work surface:
 
 - Seed outcome, scope, preserved behavior, constraints, authority, and evidence
   before substantial specialist analysis.
@@ -70,7 +72,7 @@ Read [references/change-orchestration.md](references/change-orchestration.md) on
 
 Derive assurance from consequence, reversibility, ambiguity, compatibility and data exposure, operational reach, coordination, and proof difficulty. File count and diff size are only signals.
 
-- **Compact:** Local, reversible, low-consequence work with an obvious contract. Use one primary skill or executor, focused checks, direct closure, and either inline discussion or one minimal record for authorized execution.
+- **Compact:** Local, reversible, low-consequence work with an obvious contract. Use one primary skill or executor, focused checks, and direct inline closure. Reuse or create one minimal record only when ownership or re-entry actually requires durable state.
 - **Standard:** Several surfaces or a meaningful state, lifecycle, compatibility, or ownership decision. Use one living specification, one primary executor, independent review, focused incremental checks, and one successful closure set.
 - **High-assurance:** Security, destructive or hard-to-reverse data, broad compatibility, production control, regulated behavior, or difficult recovery. Add only risk-owned design, transition, release, operational, and verification work.
 
@@ -98,7 +100,7 @@ Reuse evidence while claim, snapshot, method, and material environment match. In
 
 1. **Load authority and truth.** Confirm authorized modes; read repository guidance, intent, canonical records, decisions, code, tests, evidence, and material worktree state. Distinguish `specified`, `accepted`, `implemented`, `integrated`, `verified`, `released`, and `closed`.
 2. **State the destination.** Capture outcome, behavior or risk boundary, non-goals, preserved commitments, closure evidence, accountable owner, and consequence of error. Route unresolved opportunity selection rather than inventing a feature contract.
-3. **Choose persistence and budget.** Select `inline`, `owning-repository`, `control-repository`, or `hybrid` mode and `compact`, `standard`, or `high-assurance` posture. Seed the canonical record when required and authorized.
+3. **Choose persistence and budget.** Select `inline`, `owning-repository`, `control-repository`, or `hybrid` mode and `compact`, `standard`, or `high-assurance` posture. Seed a canonical record only when ownership or re-entry requires it and record writes are authorized.
 4. **Route the limiting frontier.** Send one bounded question or action to the smallest owning skill. Use `software-change-specification` for ambiguous accepted behavior, `prototype-to-learn` for a disposable runnable answer to one behavior, state, UI, or interaction question, domain or design skills for disputed meaning or ownership, contract evolution for compatibility, and accountable decision-making for consequential closure.
 5. **Integrate the delta.** Update the owning specification section, evidence status, stable keys and labels, implications, and invalidated assumptions. Do not duplicate specialist artifacts or persist transient routing without re-entry need.
 6. **Test implementation readiness.** Require understood behavior, owned
@@ -108,14 +110,14 @@ Reuse evidence while claim, snapshot, method, and material environment match. In
    implementation. Add verification, observability, release, or transition
    design only when their uncertainty is material.
 7. **Use one executor.** Route a pure structural change with preserved supported behavior to `behavior-preserving-refactoring`; route an intended observable behavior change to `scoped-change-implementation`. Split a mixed change or nominate one primary executor and borrow only the other contract's needed checks. Reopen the owning decision when code contradicts the accepted contract.
-8. **Challenge and close proportionately.** Send the final bounded candidate, accepted contract, and valid evidence index to `code-review`. After in-scope remediation, obtain focused independent confirmation and run one successful risk-proportionate closure set. Reuse unaffected evidence.
+8. **Challenge and close proportionately.** Use `code-review` when consequence, uncertainty, novelty, an explicit request, or the workflow budget requires independent challenge. Otherwise close compact work through the primary executor's focused observable checks. After material review remediation, obtain focused independent confirmation and run one successful risk-proportionate closure set. Reuse unaffected evidence.
 9. **Close or stop deliberately.** Record delivered behavior, observed evidence and limits, accepted deviations, operational and support ownership, cleanup, residual risk, and accountable closure. For stopped or deferred work, record why and the re-entry condition.
 
 ## Gates and stop conditions
 
 Do not advance past missing authority, materially ambiguous supported behavior,
 unsafe state or ownership, failed required verification, or unresolved
-actionable review findings. In authorized mode, investigate and remediate
+applicable actionable review findings. In authorized mode, investigate and remediate
 in-scope failures; escalate only at the four recorded conditions.
 
 Do not block on optional narrative, polish, nonessential metrics, valid evidence

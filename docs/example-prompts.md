@@ -7,6 +7,16 @@ see the [scope vocabulary](skill-boundaries.md#scope-vocabulary).
 
 
 ```text
+Use $goal-pursuit to deliver a working refund-approval capability from the
+current repository state through verified end-to-end behavior. Start with a
+compact system-level plan, preserve the requested outcome and authority, select
+only the smallest sufficient available skills and tools for each checkpoint,
+and revise the route when evidence contradicts the plan. Do not treat component
+completion as success; close against the observable user and system outcome.
+```
+
+
+```text
 Use $product-opportunity-discovery to investigate this request for an AI reply
 assistant before we commit engineering capacity. Recover the desired outcome and
 customer opportunity, distinguish anecdotes from prevalence, compare materially

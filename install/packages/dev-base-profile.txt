@@ -6,6 +6,7 @@ code-review
 decision-facilitation
 deep-module-design
 domain-modeling
+goal-pursuit
 prototype-to-learn
 retrospective-architecture-review
 scoped-change-implementation
