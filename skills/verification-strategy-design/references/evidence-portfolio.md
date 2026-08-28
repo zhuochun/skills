@@ -12,12 +12,23 @@
 | Property-based tests | Generated input spaces with explicit invariants | Properties not encoded in the oracle |
 | Stateful/model-based tests | Interaction sequences and state-machine behavior | Environment contracts outside the model |
 | Formal specification/model checking | Design-state counterexamples and protocol logic | Implementation, hardware, operations, and omitted assumptions |
+| Bidirectional model-code conformance | Repair a formal model without making it too restrictive or too permissive | Traces and invariants can both omit behavior; disagreement still needs diagnosis |
 | Deterministic simulation | Replayable concurrency, timing, and failure histories | Simulator fidelity and third-party behavior |
 | Load/performance tests | Capacity, latency, queueing, and resource assumptions | Production demand feedback and unmodeled workloads |
 | Failure injection/game day | Runtime containment, recovery, and operator behavior | Faults and conditions not injected |
 | Shadow/replay/differential checks | Old/new comparison under realistic inputs | Side effects, sampling bias, and hidden state |
 | Canary/staged rollout | Current rollout behavior with bounded exposure | Rare paths and future conditions |
 | Telemetry and incident evidence | Actual production behavior and unknown interactions | Reactive evidence after exposure |
+
+For model repair, require representative implementation traces to remain possible and explicit safety invariants to exclude prohibited traces. Treat disagreement as evidence about the model, implementation, invariant, instrumentation, or harness; do not automatically weaken either check.
+
+## Agent and tool-using systems
+
+- Define business-grounded cases and separate control activation, execution trajectory, artifact or output result, and customer or business outcome claims.
+- Match deterministic, semantic, behavioral, and production-derived evidence to distinct uncertainty instead of relying on one evaluator.
+- For a consequential semantic judge, retain blind reviewer labels, inter-rater disagreement and resolution, per-class held-out errors, and rubric-reopen triggers; do not coerce genuine unknowns into pass or fail.
+- Bind results to relevant model, prompt, policy, context, tool, harness, environment, and task-set versions. Feed reviewed production failures and corrections back into named regression cases.
+- When deciding whether to retain a model-invoked component, include trigger negatives and a with-or-without ablation; a plausible component is not yet an earned one.
 
 ## Strategy matrix
 

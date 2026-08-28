@@ -21,14 +21,14 @@ Create an evidence portfolio where every method owns a specific uncertainty. One
 3. **Expose assumptions.** Name environment, traffic, timing, ordering, dependency, identity, clock, failure, operator, and data assumptions that make the claim true.
 4. **Choose falsifying evidence.** Select the cheapest credible method that can disprove the claim. Add layers only for distinct uncertainty or justified defense in depth.
 5. **State method boundaries.** Record what the method exercises, what it omits, how representative inputs and environments are, and how results can become stale.
-6. **Design oracles.** Define observable pass/fail properties, invariants, tolerances, and comparison rules. Avoid tests that merely reproduce implementation steps.
+6. **Design oracles.** Define observable pass/fail properties, invariants, tolerances, and comparison rules. Avoid tests that merely reproduce implementation steps. Before a semantic judge controls a consequential gate, require a rubric that independent human reviewers can apply coherently. Preserve genuine ambiguity, calibrate on development cases, and test against held-out human labels.
 7. **Sequence feedback.** Put fast, deterministic evidence early; reserve expensive, risky, or production-like evidence for claims that need it. Keep diagnostic artifacts when a layer fails.
 8. **Consume operational evidence.** Reference named `observability-design` signals for canary, shadow, health, rollback, or incident evidence. Define falsification and limits without recreating signal semantics, navigation, or routing. Production observation does not replace earlier verification.
 9. **Close the loop.** Convert counterexamples, escaped defects, incidents, and rollout findings into revised assumptions, regression evidence, runbooks, guardrails, or design changes.
 
 The strategy is a plan, not proof. A claim is verified only after named evidence runs or is observed in the specified environment and is adjudicated against its oracle. Preserve the executor handoff and remaining evidence gaps.
 
-Read [references/evidence-portfolio.md](references/evidence-portfolio.md) only when method selection is non-obvious, cross-boundary or failure-recovery prompts are needed, or a formal strategy matrix is required.
+Read [references/evidence-portfolio.md](references/evidence-portfolio.md) when designing evidence for an agent or tool-using system or a semantic judge. Also read it when method selection is non-obvious, cross-boundary or failure-recovery prompts are needed, or a formal strategy matrix is required.
 
 ## Quality gates
 

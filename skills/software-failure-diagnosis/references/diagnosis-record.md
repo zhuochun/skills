@@ -9,6 +9,7 @@ Use the smallest subset that keeps the active investigation inspectable. Prefer 
 | **Executable Reproductions Localize Bug Ownership** | Turn the symptom into a runnable disagreement at a supported boundary and remove only variables that do not carry the mechanism. |
 | **Written Hypotheses Direct Inquiry** | Make provisional causes inspectable and choose the next observation by what could change their rank. |
 | **Observable Execution Preserves Debugging Context** | Retain transitions, intermediate state, and causal links so temporal failures can be investigated after the symptom appears. |
+| **Bidirectional Checks Bound Model Repair** | When trace inclusion and invariant exclusion disagree, keep inaccurate model, implementation defect, faulty invariant, and faulty instrumentation or harness as competing hypotheses; do not repair by automatically weakening either check. |
 | **Request Context Makes Distributed Behavior Reconstructable** | Follow causal identity across services, queues, retries, and asynchronous work instead of joining unrelated timestamps. |
 | **Measurement Views Must Match Bottleneck Questions** | Select logs, traces, profiles, distributions, timelines, or outside-in probes for the mechanism each can discriminate. |
 | **Dynamic Tools Need Exercised Behavior** | Record the workload, schedule, input, and runtime mode observed; a clean run does not cover unexercised behavior. |

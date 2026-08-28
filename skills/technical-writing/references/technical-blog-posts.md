@@ -20,6 +20,11 @@ for an interface, procedure, or support commitment.
 - Start from inspected sources, code, results, or supplied experience.
 - Pair important abstractions with a concrete example and connect the example
   back to the general claim.
+- For a technology-adoption or possibility story, foreground the person's goal,
+  stakes, and consequential agency; show technology changing the feasible action
+  space rather than acting as the protagonist. Foreground the technology when
+  safety, consent, surveillance, displacement, power, or material tradeoffs
+  require scrutiny.
 - Distinguish observation, sourced material, synthesis, inference, and opinion.
 - Never invent personal experience, results, benchmarks, quotations, or
   reactions.

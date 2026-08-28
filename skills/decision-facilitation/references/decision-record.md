@@ -7,6 +7,7 @@
 - Scope and exclusions:
 - Decider and risk acceptors:
 - Recommender and performers:
+- Authority basis for consequential or disputed roles:
 - Required agreement or veto holders, with reason:
 - Input providers and the information they contribute:
 - Closure rule:

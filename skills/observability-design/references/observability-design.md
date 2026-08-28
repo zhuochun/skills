@@ -88,6 +88,10 @@ Observe authoritative writes, conflicts, repair, divergence, idempotency, irreve
 
 Observe desired versus applied state, propagation delay, stale agents, rejected updates, partial rollout, credential or identity failure, and the availability of disablement and recovery controls.
 
+### Agent or tool-using workflow
+
+Separate evidence for control activation, execution trajectory, artifact or output result, and customer or business outcome. Record model, prompt, policy, context, router, tool, harness, environment, release, and task-set versions when they can change behavior. Observe required and prohibited paths, tool selection, retries, cost, fallback, and human intervention; link traces to named evaluation cases or failure classes. Keep judges, oracles, and release gates with `verification-strategy-design`.
+
 ## Design boundary
 
 This artifact says what evidence and navigation should exist. It does not certify that responders use it correctly or that incidents become visible. After representative operation, use `operational-feedback-audit` to test the live signal-to-decision-to-action loop and feed findings back into this design.

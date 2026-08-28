@@ -31,7 +31,7 @@ Use a compact pass when evidence is sufficient. Use interactive clarification th
 
 1. **Frame the decision.** State choice, boundary, urgency, owner, affected parties, constraints, delay cost, and error consequence. Separate adjacent issues.
 2. **Classify consequence.** Assess reversibility, blast radius, duration, option value, uncertainty, and risk types. Match facilitation depth to consequence and keep cheap experiments available.
-3. **Design participation and closure.** Name recommendation, decision, agreement or veto, input, execution, and information roles. Declare the closure rule.
+3. **Design participation and closure.** Name recommendation, decision, agreement or veto, input, execution, and information roles. For a consequential or disputed role, identify the accepted rule, delegation, or record that grants its authority. Do not infer authority from a title, badge, or status indicator without that basis. Declare the closure rule.
 4. **Recover owner intent.** Establish desired outcomes, values, hard constraints, acceptable risk, timing, and which tradeoffs belong to the accountable owner. Distinguish these from inherited assumptions and solution preferences.
 5. **Develop real alternatives.** Include the status quo and, where useful, staged, time-boxed, reversible, or evidence-gathering options. Reject cosmetic alternatives that make a favored answer inevitable.
 6. **Challenge the model.** Test criteria, weights, assumptions, causality, scenarios, failure paths, dissent, missing participants, and evidence quality. Ask what changes each position; route deeper specialist analysis.

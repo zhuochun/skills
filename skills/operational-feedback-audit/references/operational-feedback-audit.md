@@ -22,6 +22,10 @@ Include successful operations, latency by operation class, correctness or durabi
 
 Include desired-versus-observed convergence, queue age, reconciliation failures, stale authority, propagation lag, and the health of the independent control path.
 
+### Agent or tool-using system
+
+Audit control activation, execution trajectory, artifact or output result, and customer or business outcome semantics. Check whether traces localize recurring failures to model, context, prompt, tool, router, policy, or harness ownership. Check whether reviewed production failures update the owned evaluation or regression surface, fallback rules, or staged-authority decisions. Report missing links; do not design or certify the evaluation suite inside this audit.
+
 ## Contract recovery and conformance
 
 | Signal key and label | Intended contract and source | Deployed or inferred semantics | Runtime counterexample or deviation | Decision consequence | Required design delta and owner |

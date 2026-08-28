@@ -19,6 +19,8 @@ Keep uncertain ordering visible. Link primary artifacts where policy permits.
 
 ## Perspective prompts
 
+Choose questions by purpose and governing constraints. Use open questions to recover the participant's model and local reasoning; use direct or closed questions when a known material gap, governing process, or adversarial risk requires a boundary. Revisit a sensitive earlier detail only when it serves the current review and recall, confidentiality, power, and participant risk have been checked.
+
 - What did you think was happening?
 - What cues or representations supported that view?
 - What were you trying to protect or accomplish?
