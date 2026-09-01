@@ -60,4 +60,4 @@ Remove evidence tied only to retired structure rather than layering new interfac
 - Unsupported or intentionally retired behavior:
 - Evidence executed and regions not exercised:
 
-For consequential refactoring, hand these dimensions and their fixed oracles to `verification-execution`; the refactoring agent's green checks do not become independent certification merely because they are reported clearly.
+For consequential refactoring, hand these dimensions and their fixed oracles to `software-verification`; the refactoring agent's green checks do not become independent certification merely because they are reported clearly.

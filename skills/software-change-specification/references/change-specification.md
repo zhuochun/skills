@@ -74,7 +74,9 @@ Probe likely disagreement, not every combinatorial case. When outcomes differ, p
 | --- | --- | --- | --- | --- |
 | `CHG-* — plain-language label` | | | | |
 
-The specification owns the claim. `verification-strategy-design` owns the method and oracle; `observability-design` owns runtime signal semantics; `verification-execution` owns observed results.
+The specification owns the claim. `software-verification` owns methods, fixed
+oracles, and observed results; `observability-design` owns runtime signal
+semantics.
 
 ### Unknowns and readiness
 

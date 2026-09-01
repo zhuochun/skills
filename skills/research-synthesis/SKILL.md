@@ -47,7 +47,8 @@ Use [references/evidence-synthesis-record.md](references/evidence-synthesis-reco
 - `product-opportunity-discovery` owns customer context and product hypotheses; literature cannot replace customer evidence.
 - `software-failure-diagnosis` owns causal bug and performance investigation.
 - `architecture-risk-evaluation` owns architecture verdicts; synthesis may supply external evidence.
-- `verification-strategy-design` and `verification-execution` own project-specific engineering claims, methods, oracles, execution, and adjudication.
+- `software-verification` owns project-specific engineering claims, methods,
+  fixed oracles, execution, and adjudication.
 - `domain-modeling` owns local meaning, behavior, rules, invariants, and translations. External definitions are evidence, not authority for the local model.
 - Legal, compliance, privacy, security, safety, medical, and financial owners retain context-specific applicability judgments; do not issue `compliant`, `noncompliant`, `safe`, `unsafe`, `eligible`, or `ineligible` verdicts.
 - `decision-facilitation` owns owner criteria, downstream recommendations, accountable tradeoffs, and closure.

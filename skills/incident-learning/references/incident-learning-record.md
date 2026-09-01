@@ -64,9 +64,9 @@ Balance quick containment, deeper prevention, detection, recovery, and preservat
 
 | Learned gap | Smallest likely route |
 | --- | --- |
-| Detection, diagnosis, paging, or ownership routing | `operational-feedback-audit` |
-| Missing or misleading signal contract | `observability-design` |
-| Escaped invariant, behavior, or evidence layer | `verification-strategy-design`, followed by executed verification |
+| Detection, diagnosis, paging, or ownership routing | Audit mode of `observability-design` |
+| Missing or misleading signal contract | Design mode of `observability-design` |
+| Escaped invariant, behavior, or evidence layer | `software-verification` strategy and execution modes |
 | Ambiguous business meaning or policy | `domain-modeling` |
 | Local interface, state, seam, or change-locality problem | `deep-module-design` or `architecture-assessment` |
 | Deployable, data, failure, or ownership boundary | `service-boundary-design` or `architecture-risk-evaluation` |

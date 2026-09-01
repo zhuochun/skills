@@ -1,7 +1,0 @@
-interface:
-  display_name: "Verification Execution"
-  short_description: "Execute verification plans against fixed oracles"
-  default_prompt: "Use $verification-execution to execute this verification strategy against its fixed claims and oracles."
-
-policy:
-  allow_implicit_invocation: false

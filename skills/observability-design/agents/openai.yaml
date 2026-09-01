@@ -1,7 +1,7 @@
 interface:
   display_name: "Observability Design"
-  short_description: "Design telemetry for operational decisions"
-  default_prompt: "Use $observability-design to design service, infrastructure, and business telemetry for this feature."
+  short_description: "Design or audit operational feedback"
+  default_prompt: "Use $observability-design to design the needed measurement contracts or audit whether the deployed signal-to-decision-to-action loop works."
 
 policy:
   allow_implicit_invocation: false

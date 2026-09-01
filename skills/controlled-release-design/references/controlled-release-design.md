@@ -85,6 +85,6 @@ When this release is nested inside a migration plan, inherit the master transiti
 ## Boundary with adjacent skills
 
 - Use `observability-design` to design the feature and release signals in detail.
-- Use `verification-strategy-design` when the larger question is which methods can falsify all engineering claims.
+- Use `software-verification` when the larger question is which methods can falsify all engineering claims.
 - Use `migration-planning` when exposure is one part of accepted technical movement through controlled transition states, authority transfer, retireability, and retirement. Use `technical-program-orchestration` separately when several workstreams need dependency and integration steering.
-- Use `operational-feedback-audit` later to evaluate whether live evidence and controls produced correct operational action.
+- Use audit mode of `observability-design` later to evaluate whether live evidence and controls produced correct operational action.

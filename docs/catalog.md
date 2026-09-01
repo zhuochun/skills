@@ -17,6 +17,8 @@ Keep implicit invocation for a small set of front doors that represent distinct 
 
 - `research-synthesis`
 - `architecture-surface-mapping`
+- `deep-module-design`
+- `decision-facilitation`
 - `software-change-specification`
 - `scoped-change-implementation`
 - `behavior-preserving-refactoring`
@@ -42,14 +44,12 @@ Do not start from a fashionable method or invoke every skill as a stage gate. As
 | --- | --- | --- |
 | [`research-synthesis`](../skills/research-synthesis/) | Bounded synthesis of what papers, standards, official guidance, reports, datasets, and other high-trust sources collectively support | Bounded answer, claim-level provenance, contradictions, applicability, confidence, unresolved gaps, and stop rationale |
 | [`product-opportunity-discovery`](../skills/product-opportunity-discovery/) | Customer opportunity and solution-direction learning before heavy implementation | Decision frame, opportunity model, hypotheses, alternatives, learning evidence, and bounded disposition |
-| [`trace-end-to-end-journey`](../skills/trace-end-to-end-journey/) | Alignment of one bounded journey across experience, operational, domain, system, data, and interface views | Evidence-labeled scenario spine, cross-view trace, normal and revealing branches, contradictions, and routed gaps |
 | [`prototype-to-learn`](../skills/prototype-to-learn/) | Construction of one disposable runnable software artifact for a behavior, state, UI, or interaction design question | Local prototype, observation surface, fidelity limits, captured learning, and lifecycle route |
-| [`architecture-surface-mapping`](../skills/architecture-surface-mapping/) | Rapid evidence-ranked orientation to unfamiliar software architecture at a declared module, service, subsystem, platform, codebase, or capability scope | Architecture-surface map, path traces, contradictions, confidence, and next probes |
+| [`architecture-surface-mapping`](../skills/architecture-surface-mapping/) | Evidence-ranked orientation to unfamiliar software and bounded cross-view journeys across experience, operations, domain state, systems, data, interfaces, and owners | Architecture-surface map or stable journey spine, path traces, branches, contradictions, confidence, and next probes |
 | [`domain-modeling`](../skills/domain-modeling/) | Problem-specific behavior, invariants, vocabulary, consequential classifications, and semantic contexts | Operational principles, compared models, classification choices, semantic boundaries, translations, and unresolved owner decisions |
 | [`service-boundary-design`](../skills/service-boundary-design/) | Choosing whether service-level enforcement belongs in an existing deployment, an in-process module, a split or merged service, or stronger data and failure isolation | Boundary force matrix, scenario traces, enforcement choice, prerequisites, and focused module-design handoff when needed |
 | [`deep-module-design`](../skills/deep-module-design/) | Read-only retain-or-redesign decisions for in-process knowledge, interfaces, seams, state, resources, and lifecycle semantics | Current baseline and alternatives, deep or composable growth strategy, honest contract, tests, and adoption or retirement direction |
 | [`platform-capability-design`](../skills/platform-capability-design/) | Self-service internal capabilities, paved roads, controls, and escape hatches | User-work evidence, capability boundary, interface, operating contract, and adoption slice |
-| [`observability-design`](../skills/observability-design/) | Prospective business, service, dependency, infrastructure, and control evidence | Execution-path map, measurement contracts, navigation, alerts, correlation, and lifecycle |
 
 ### Assess, engineer, and decide
 
@@ -74,7 +74,6 @@ Do not start from a fashionable method or invoke every skill as a stage gate. As
 | [`software-contract-evolution`](../skills/software-contract-evolution/) | Shared contract semantics, compatibility, translation, deprecation, consumer adoption, and retirement policy | Actual-contract frame, compatibility matrix, evolution choice, adoption obligations, and retirement evidence |
 | [`controlled-release-design`](../skills/controlled-release-design/) | Feature flags, exposure assignment, cohorts, release phases, and kill controls | Release contract, control topology, evidence, phase criteria, retreat, and cleanup |
 | [`migration-planning`](../skills/migration-planning/) | Current-to-transition-to-target technical movement and authority transfer after the target and contract decisions are accepted | Migration state model with evidence-gated cutover, retreat or compensation, retireability, retirement, and cleanup |
-| [`verification-strategy-design`](../skills/verification-strategy-design/) | Matching engineering claims and risks to falsifying evidence | Upstream-linked risk-to-evidence portfolio with methods, oracles, limits, evidence gaps, and renewal triggers |
 
 ### Implement, diagnose, and verify
 
@@ -84,21 +83,20 @@ Do not start from a fashionable method or invoke every skill as a stage gate. As
 | [`behavior-preserving-refactoring`](../skills/behavior-preserving-refactoring/) | Structural improvement without intentional supported-behavior change | Consolidated ownership, refactoring-safe evidence, retired old paths, and equivalence limits |
 | [`software-failure-diagnosis`](../skills/software-failure-diagnosis/) | Causal investigation of bugs, regressions, intermittent failures, and performance degradation | Symptom contract, evidence loop, competing hypotheses, supported cause, and repair boundary |
 | [`code-review`](../skills/code-review/) | Independent read-only review of a bounded software change | Prioritized evidence-backed findings, questions, scope limits, and residual risks |
-| [`verification-execution`](../skills/verification-execution/) | Execution of fixed verification claims, methods, and oracles | Per-claim reused, rerun, invalidated, or omitted dispositions; raw evidence; counterexamples; cleanup; and unresolved gaps |
+| [`software-verification`](../skills/software-verification/) | The claim-to-evidence lifecycle: designing falsifiable methods and fixed oracles, then reusing or executing evidence without moving the criteria after observation | Risk-to-evidence portfolio plus per-claim pass, fail, inconclusive, or not-run results, raw evidence, counterexamples, validity limits, and gaps |
 
-### Communicate and preserve knowledge
+### Communicate knowledge
 
 | Skill | It owns | Primary output |
 | --- | --- | --- |
 | [`technical-writing`](../skills/technical-writing/) | Reader-task-specific technical documentation and evidence-grounded technical blog posts without taking over source decisions | Verified tutorial, how-to guide, explanation, reference, procedure, runbook, or technical article with visible source and freshness limits |
-| [`handoff`](../skills/handoff/) | Task-scoped compaction of active session state for a fresh agent or non-obvious re-entry without duplicating canonical resume state | Canonical resume update or accessible session-delta handoff with current evidence, authority, immediate frontier, links, and first next action |
 
 ### Operate, learn, and renew
 
 | Skill | It owns | Primary output |
 | --- | --- | --- |
 | [`incident-response-coordination`](../skills/incident-response-coordination/) | Live stabilization, accountable command, delegated workstreams, and response communication | Operational picture, impact trend, command decisions, workstreams, recovery criteria, and handoff |
-| [`operational-feedback-audit`](../skills/operational-feedback-audit/) | The live telemetry-to-decision-to-action loop | Contract counterexamples and deltas, alert and diagnostic findings, routing and control-path risks |
+| [`observability-design`](../skills/observability-design/) | Prospective measurement contracts and the live telemetry-to-decision-to-action loop after representative operation | Execution-path map, signals, navigation, alerts, runtime counterexamples, contract deltas, routing, control-path, and learning findings |
 | [`incident-learning`](../skills/incident-learning/) | Learning from incidents, near misses, and operational surprises | Evidence timeline, local perspectives, model gaps, protective capacity, and branching follow-through |
 | [`retrospective-architecture-review`](../skills/retrospective-architecture-review/) | Reconsidering one selected completed design after material implementation or operational learning changes its premises | Knowledge delta, durable commitments, candidate comparison, and retain/quarantine/prune/reshape/rebuild route |
 

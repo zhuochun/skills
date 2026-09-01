@@ -103,15 +103,15 @@ At runtime or library boundaries, record lifecycle, scheduling, cancellation, re
 
 Route to:
 
-- `trace-end-to-end-journey` for one bounded product-to-system walkthrough with aligned experience, operational, domain, system, and interface views;
+- cross-view journey mode for one bounded product-to-system walkthrough with aligned experience, operational, domain, system, and interface views;
 - `domain-modeling` for disputed meaning or invariants;
 - `service-boundary-design` for split, merge, data, deployment, or failure boundaries;
 - `deep-module-design` for a selected code seam or interface;
 - `architecture-assessment` for discovering and ranking structural investment opportunities;
 - `architecture-risk-evaluation` for consequential scenario and quality-risk judgment;
 - `controlled-release-design` for flags, cohorts, and exposure control;
-- `observability-design` for missing prospective telemetry;
-- `operational-feedback-audit` for whether the live operating loop works;
+- design mode of `observability-design` for missing prospective telemetry;
+- audit mode of `observability-design` for whether the live operating loop works;
 - `migration-planning` when an accepted target requires material technical movement, controlled transition states, authority transfer, cutover, retireability, and retirement.
 
 ## Stop rules

@@ -1,0 +1,7 @@
+interface:
+  display_name: "Software Verification"
+  short_description: "Design and execute claim-bound evidence"
+  default_prompt: "Use $software-verification to define or run risk-proportionate verification while keeping fixed oracles, observed evidence, independence, and release authority distinct."
+
+policy:
+  allow_implicit_invocation: false

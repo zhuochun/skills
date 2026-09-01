@@ -32,7 +32,7 @@ Build a problem-specific model that clarifies important decisions, rules, and be
 8. **Choose enforcement proportionately.** Use conversation, documentation, modules, ownership, private persistence, interfaces, or isolation as needed. Account for coordination, translation, latency, failure, observability, and operating cost. Route deployable, data, failure, or team boundaries to `$service-boundary-design`.
 9. **Express and renew.** Reflect stable concepts in names, types, events, tests, modules, APIs, and data authority where useful. Record alternatives and revisit signals; use later change and failure as refinement evidence.
 
-Route an accepted rule or state model to `prototype-to-learn` when hands-on driving could expose ambiguity, and an accepted workflow to `trace-end-to-end-journey` when a shared experience-to-system walkthrough is missing. Keep disputed meaning and invariant authority here.
+Route an accepted rule or state model to `prototype-to-learn` when hands-on driving could expose ambiguity, and an accepted workflow to `architecture-surface-mapping` when a shared experience-to-system walkthrough is missing. Keep disputed meaning and invariant authority here.
 
 Return the smallest useful result: an evidence-backed no-modeling finding, compact principle, or selective model with alternatives, boundaries, translations, unresolved owner decisions, and revisit signals.
 

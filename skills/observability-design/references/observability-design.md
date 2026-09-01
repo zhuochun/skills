@@ -56,7 +56,7 @@ For every page, record the user or service risk, distinct diagnostic region, aut
 
 Verify emission, semantics, expected-volume behavior, trace continuity, label cardinality, redaction, retention, dashboard queries, alert routing, links, and control-path reachability. A synthetic event can verify plumbing; it does not prove production representativeness.
 
-This table supplies evidence contracts. `controlled-release-design` owns promotion, hold, and abort rules; `verification-strategy-design` owns the methods and oracles that decide whether a claim is supported.
+This table supplies evidence contracts. `controlled-release-design` owns promotion, hold, and abort rules; `software-verification` owns the methods and oracles that decide whether a claim is supported.
 
 ## Multi-service feature rules
 
@@ -90,8 +90,8 @@ Observe desired versus applied state, propagation delay, stale agents, rejected 
 
 ### Agent or tool-using workflow
 
-Separate evidence for control activation, execution trajectory, artifact or output result, and customer or business outcome. Record model, prompt, policy, context, router, tool, harness, environment, release, and task-set versions when they can change behavior. Observe required and prohibited paths, tool selection, retries, cost, fallback, and human intervention; link traces to named evaluation cases or failure classes. Keep judges, oracles, and release gates with `verification-strategy-design`.
+Separate evidence for control activation, execution trajectory, artifact or output result, and customer or business outcome. Record model, prompt, policy, context, router, tool, harness, environment, release, and task-set versions when they can change behavior. Observe required and prohibited paths, tool selection, retries, cost, fallback, and human intervention; link traces to named evaluation cases or failure classes. Keep judges, oracles, and release gates with `software-verification`.
 
 ## Design boundary
 
-This artifact says what evidence and navigation should exist. It does not certify that responders use it correctly or that incidents become visible. After representative operation, use `operational-feedback-audit` to test the live signal-to-decision-to-action loop and feed findings back into this design.
+This artifact says what evidence and navigation should exist. It does not certify that responders use it correctly or that incidents become visible. After representative operation, use audit mode to test the live signal-to-decision-to-action loop and feed findings back into this design.

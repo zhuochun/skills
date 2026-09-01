@@ -39,15 +39,14 @@ it available for hands-on learning without treating its code as maintained.
   needs both mechanisms together to evaluate the question.
 
 Route a non-runnable cross-view journey—story, matrix, flowchart, sequence
-diagram, or state trace—to `trace-end-to-end-journey`, and other representations
+diagram, or state trace—to `architecture-surface-mapping`, and other representations
 to their design owner. A visual needs hands-on execution to qualify as a prototype.
 
 Route customer need, demand, adoption, value, or experiment design to
 `product-opportunity-discovery`. Route disputed business meaning, rules, or
 invariants to `domain-modeling`, and production capacity claims to
 `service-capacity-engineering`. Route engineering claims with undefined methods
-or oracles to `verification-strategy-design`, fixed verification contracts to
-`verification-execution`, and unexplained failures to
+or fixed verification contracts to `software-verification`, and unexplained failures to
 `software-failure-diagnosis`.
 
 ## Prototype workflow

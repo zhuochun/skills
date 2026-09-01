@@ -1,4 +1,4 @@
-# Cross-View Journey Artifacts
+# Architecture Cross-View Journey Artifacts
 
 Use the smallest artifact combination that makes the user's question
 inspectable. Use numbered steps for a compact trace. Use stable `JNY-*` keys

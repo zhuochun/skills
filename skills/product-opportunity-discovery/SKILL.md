@@ -33,12 +33,12 @@ Reduce uncertainty about the customer, problem, behavior, value mechanism, and s
 ## Compose without losing ownership
 
 - `product-opportunity-prioritization` owns allocation; discovery supplies evidence and reopens weak bets.
-- `trace-end-to-end-journey` aligns an accepted or proposed experience path with operational, domain, system, and interface views; discovery retains customer need, value, adoption, and opportunity hypotheses.
+- `architecture-surface-mapping` aligns an accepted or proposed experience path with operational, domain, system, and interface views; discovery retains customer need, value, adoption, and opportunity hypotheses.
 - `prototype-to-learn` builds an authorized disposable software artifact; discovery owns the customer, value, adoption, and solution hypothesis that the artifact informs.
 - `domain-modeling` owns business meaning and invariants; desirability does not determine the software model.
 - `technical-program-orchestration` owns accepted multi-workstream delivery; discovery creates no delivery commitment.
 - `controlled-release-design` owns exposure and cleanup; `observability-design` owns deployed signals.
-- `verification-strategy-design` owns engineering evidence; discovery owns customer opportunity, value, usability, adoption, and solution hypotheses.
+- `software-verification` owns engineering evidence; discovery owns customer opportunity, value, usability, adoption, and solution hypotheses.
 - Send a fixed PRD, RFC, or other product proposal to `specification-review`
   for independent artifact-integrity review. Discovery retains customer
   opportunity, product evidence, and solution-direction judgment.

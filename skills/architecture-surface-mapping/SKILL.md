@@ -1,6 +1,6 @@
 ---
 name: architecture-surface-mapping
-description: Orient across multiple architecture surfaces of unfamiliar software. Use when a brownfield decision requires tracing a workflow across modules, runtime components, state or effect authorities, contracts, dependencies, change, recovery, or owners. Do not use when one discoverable owner, file, symbol, test, or simple call path fully answers the question; route architecture judgment or redesign elsewhere.
+description: Orient across multiple architecture surfaces of unfamiliar software or trace one bounded end-to-end journey across experience, operations, domain state, systems, data, interfaces, and owners. Use when a decision depends on cross-surface relationships or expected and observed paths disagree. Keep simple lookups direct; route architecture judgment, product discovery, and redesign elsewhere.
 ---
 
 # Architecture Surface Mapping
@@ -11,6 +11,39 @@ Build the smallest trustworthy map needed for the next decision. The subject may
 
 - When one discoverable owner, file, symbol, command, call path, or test answers the request, perform only that lookup; do not produce a map or load the reference.
 - Continue to the mapping workflow only when the decision depends on relationships across multiple applicable surfaces or when the relevant path or authority remains unclear.
+
+## Use a cross-view journey when the path is the subject
+
+When the request centers on one actor-visible outcome rather than broad
+orientation, use the same evidence model with a stable journey spine:
+
+- Name the mode as **supplied**, **recovered**, **expected**, or **comparison**.
+  Expected paths remain proposed unless an accountable source accepted them.
+- Bound the journey by primary actor, starting trigger and state, observable
+  completion, audience, and the question the walkthrough must answer.
+- Number material steps. Use stable `JNY-*` keys and recheckable `EVD-*`
+  evidence only when several representations must align, expected and observed
+  paths are compared, or a durable or consequential trace will be reused.
+- At each step, connect only applicable experience touchpoints, operational
+  work, domain transition, system interaction, data or effect authority,
+  interface, owner, visible result, and resulting state. Mark absent views
+  rather than inventing them.
+- Preserve waiting, retry, duplicate delivery, partial completion, manual
+  intervention, cancellation, compensation, and recovery when they change
+  what participants can observe or do.
+- Route customer need or value to `product-opportunity-discovery`, disputed
+  meaning to `domain-modeling`, boundary or contract decisions to their design
+  owner, architecture fitness to `architecture-risk-evaluation`, and runnable
+  experiments to `prototype-to-learn`.
+- Route migration states, authority transfer, and cutover behavior to
+  `migration-planning`; leave operating and recovery policy with its
+  accountable owner. Do not use one bounded journey to decide
+  alternative-futures scenarios.
+
+Read
+[references/cross-view-journey-artifacts.md](references/cross-view-journey-artifacts.md)
+when producing a matrix, diagram, durable expected-versus-observed overlay, or
+facilitated walkthrough.
 
 ## Preserve scope and authority
 
@@ -45,11 +78,16 @@ Read [references/architecture-surface-map.md](references/architecture-surface-ma
 - Material cross-surface relationships require the smallest self-contained text map or flow; rendering may supplement, never replace it.
 - Important claims retain evidence type, recency, confidence, and either an owner or next probe.
 - Contradictions and uninspected decision-relevant surfaces stay explicit. A health or absence claim names the exercised path, observer, and coverage evidence. Handoff names focused follow-up without adding irrelevant inventory.
+- A cross-view journey keeps consistent steps across narrative, lanes, diagrams,
+  and branches; data and effect authority remain distinct from transport,
+  touchpoint, and screen ownership.
 
 ## Reject orientation theater
 
 - Identify critical paths before broad reading; trees, catalogs, and diagrams are not current reality.
 - Repository layout does not prove runtime, write authority, or ownership.
 - Orientation does not justify readiness scoring, opportunity ranking, or redesign.
+- A polished happy path does not validate customer value, domain meaning,
+  system correctness, architecture quality, or operational readiness.
 - Quiet windows do not disprove rare or failure paths.
 - Polish must not conceal missing access, stale docs, or disputed ownership.

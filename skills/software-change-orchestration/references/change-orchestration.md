@@ -115,13 +115,13 @@ Keep the immediate frontier in the active session during uninterrupted work. A c
 | Supported obligations must move to an accepted replacement through controlled transition states, with old authority intended to become retireable | `migration-planning` |
 | Feature exposure, cohorts, promotion, or kill controls need design | `controlled-release-design` |
 | Runtime signal semantics and operational navigation are missing | `observability-design` |
-| Claims need falsifying methods, oracles, and evidence limits | `verification-strategy-design` |
+| Claims need falsifying methods, fixed oracles, and evidence limits | `software-verification` strategy mode |
 | Several concurrent or interdependent workstreams need dependency, integration, and constraint steering | `technical-program-orchestration` |
 | A fixed behavior change is understood and authorized | `scoped-change-implementation` |
 | An authorized structural change must preserve supported behavior | `behavior-preserving-refactoring` |
 | Failure cause remains uncertain | `software-failure-diagnosis` |
 | A bounded diff needs independent challenge | `code-review` |
-| Fixed consequential claims are ready to execute | `verification-execution` |
+| Fixed consequential claims are ready to execute | `software-verification` execution mode |
 
 Routing can loop backward. Code can reopen specification or design; review can reopen implementation or a decision; inconclusive evidence can require a better method without changing implementation.
 

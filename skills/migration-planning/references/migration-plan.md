@@ -137,6 +137,6 @@ bounded in purpose, and governed by a review trigger.
 - Keep this plan authoritative for transition states, operations, authority,
   cutover, retreat or compensation, retirement order, and overall cleanup.
 - Nest `controlled-release-design` only for exposure assignment and decisions.
-- Link `observability-design` and `verification-strategy-design` contracts.
+- Link `observability-design` and `software-verification` contracts.
 - Let `technical-program-orchestration` coordinate workstreams and integration
   without copying the state model into a schedule.

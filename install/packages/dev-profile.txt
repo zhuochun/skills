@@ -11,7 +11,6 @@ domain-modeling
 goal-pursuit
 migration-planning
 observability-design
-operational-feedback-audit
 platform-capability-design
 prototype-to-learn
 retrospective-architecture-review
@@ -23,8 +22,6 @@ software-change-orchestration
 software-change-specification
 software-contract-evolution
 software-failure-diagnosis
+software-verification
 specification-review
 technical-program-orchestration
-trace-end-to-end-journey
-verification-execution
-verification-strategy-design

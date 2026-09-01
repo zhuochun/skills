@@ -1,7 +1,0 @@
-interface:
-  display_name: "Trace End-to-End Journey"
-  short_description: "Align journeys across product and systems"
-  default_prompt: "Use $trace-end-to-end-journey to walk this journey across experience, operational, domain, system, and interface views."
-
-policy:
-  allow_implicit_invocation: false

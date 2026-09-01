@@ -64,4 +64,5 @@ Prefer a slice that proves one meaningful behavior over a smaller collection of 
 | Claim key and label | Method executed | Environment and inputs | Result | Evidence location | Limitation or remaining gap |
 | --- | --- | --- | --- | --- | --- |
 
-Use only results actually observed. Planned evidence belongs to `verification-strategy-design`; broader independent execution belongs to `verification-execution`.
+Use only results actually observed. `software-verification` owns planned
+evidence, fixed oracles, and broader independent execution.

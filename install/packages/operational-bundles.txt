@@ -2,6 +2,5 @@
 incident-learning
 incident-response-coordination
 observability-design
-operational-feedback-audit
 service-capacity-engineering
 service-ownership-design

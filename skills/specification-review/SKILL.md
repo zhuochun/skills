@@ -64,7 +64,7 @@ next use. Find disagreements before they propagate; do not become the author.
 7. **Check evaluability.** Determine whether acceptance or decision claims are
    observable and falsifiable enough for the next owner. Separate missing
    oracles from missing evidence methods; route method design to
-   `verification-strategy-design` and execution to `verification-execution`.
+   verification strategy and execution to `software-verification`.
 8. **Route specialist judgment.** Keep product value and customer evidence with
    `product-opportunity-discovery`; domain meaning with `domain-modeling`;
    architecture fitness with `architecture-risk-evaluation`; shared contract

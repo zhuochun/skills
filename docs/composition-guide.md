@@ -126,7 +126,7 @@ software-change-orchestration
   -> loop through clarification, design, evaluation, or decision only as evidence requires
   -> choose one primary executor: behavior-preserving-refactoring for pure structure, scoped-change-implementation for intended behavior
   -> use independent code-review when consequence, uncertainty, novelty, an explicit request, or the workflow budget requires it
-  -> verification design preserves upstream claims; execution fills missing or invalidated evidence
+  -> software-verification freezes claims, methods, and oracles before execution fills missing or invalidated evidence
   -> remediate applicable findings in scope, confirm material review repairs, then run one successful closure set on the final candidate snapshot
   -> loop back on counterexamples, or close with reusable evidence and residual ownership
 ```
@@ -141,21 +141,22 @@ In authorized or auto mode, keep the authorized modes, accepted scope and non-go
 
 ```text
 active work remains in the current session while continuation is obvious
-  -> handoff only for a pause, session change, context reset, delegation, or non-obvious re-entry
+  -> update the existing canonical resume surface only for a pause, session change, context reset, delegation, or non-obvious re-entry
+  -> use software-change-orchestration when one bounded software change needs continuity across sessions, artifacts, or specialist owners
   -> next agent rechecks linked canonical state and resumes from the named frontier
 ```
 
-Keep specifications, plans, ADRs, issues, commits, diffs, and program surfaces canonical. When one of those surfaces owns resume state, update it when authorized and limit any separate handoff to the session delta. Use a temporary file only for an accessible same-environment transfer; cross-environment continuation needs a shared location. The handoff never transfers missing authority. Do not create one as routine stage-to-stage paperwork inside an uninterrupted composition.
+Keep specifications, plans, ADRs, issues, commits, diffs, and program surfaces canonical. When one of those surfaces owns resume state, update it when authorized. Use session-local transport only when the next agent can access the same environment; cross-environment continuation needs a shared canonical location. Continuation never transfers missing authority. Do not create routine stage-to-stage paperwork inside an uninterrupted composition.
 
 ### Cross-view journey walkthrough
 
 ```text
 supplied, recovered, expected, or current-versus-expected cross-view journey
-  -> trace-end-to-end-journey for one stable scenario spine across experience, operations, domain state, systems, and interfaces
+  -> architecture-surface-mapping for one stable scenario spine across experience, operations, domain state, systems, and interfaces
 customer-only touchpoints, pain, emotion, adoption, need, or value
   -> product-opportunity-discovery directly
   -> domain-modeling when terms, rules, events, states, or invariants are disputed
-  -> architecture-surface-mapping when broad current-system orientation is still missing
+  -> broaden architecture-surface-mapping orientation when the current-system path is still missing
   -> prototype-to-learn only when a runnable artifact is needed
 ```
 
@@ -166,7 +167,7 @@ Keep product, operational, domain, and system views as aligned lanes of one jour
 ```text
 product-opportunity-discovery
   <-> product-opportunity-prioritization when opportunities or bets compete
-  <-> trace-end-to-end-journey when one outcome must be aligned across experience, operations, domain state, systems, and interfaces
+  <-> architecture-surface-mapping when one outcome must be aligned across experience, operations, domain state, systems, and interfaces
   <-> prototype-to-learn when a local runnable artifact can retire one behavior, state, UI, or interaction uncertainty
   -> domain-modeling when business meaning, rules, or invariants need design
   -> service-boundary-design and deep-module-design when structure is in question
@@ -174,7 +175,7 @@ product-opportunity-discovery
   -> technical-program-orchestration when accepted delivery has several concurrent or interdependent workstreams
   -> co-design observability, verification, and controlled release when applicable
   -> scoped-change-implementation in coherent vertical slices
-  -> code-review and verification-execution
+  -> code-review and software-verification
   -> accountable promotion and product-outcome review
   -> discovery and prioritization reopen when evidence contradicts the bet
 ```
@@ -198,9 +199,9 @@ domain-modeling
   -> co-design observability, verification, and controlled release when they apply
   -> scoped-change-implementation in coherent vertical slices
   -> code-review
-  -> verification-execution for the required claim set
+  -> software-verification for the required claim set
   -> accountable promotion, abort, or risk decision
-  -> operational-feedback-audit after release
+  -> audit mode of observability-design after representative use
 ```
 
 ### Feature spanning multiple services
@@ -219,12 +220,12 @@ domain-modeling
   -> co-design:
        observability-design for end-to-end and component evidence
        controlled-release-design for authoritative assignment and mixed states
-       verification-strategy-design for claims, methods, and oracles
+       software-verification for claims, methods, and oracles
   -> scoped-change-implementation in each affected codebase
   -> code-review for each bounded change and the composed workflow
-  -> verification-execution for local and end-to-end claims
+  -> software-verification for local and end-to-end claims
   -> accountable promotion or abort
-  -> operational-feedback-audit after representative use
+  -> audit mode of observability-design after representative use
 ```
 
 Do not let each service independently decide feature exposure when the workflow requires a consistent cohort. Assign once, propagate context, observe end-to-end outcomes, and retain local kill controls only where they govern distinct hazardous effects.
@@ -238,8 +239,8 @@ domain-modeling, when meaning or context differs across participants
   -> technical-program-orchestration, when migration has several concurrent or interdependent adoption workstreams
   -> migration-planning, when consumers or state must move through controlled
      contract transition states, authority transfer, retireability, and retirement
-  -> observability-design and verification-strategy-design for named evidence
-  -> scoped-change-implementation, code-review, and verification-execution
+  -> observability-design and software-verification for named evidence
+  -> scoped-change-implementation, code-review, and software-verification
   -> accountable support, promotion, and retirement decisions
 ```
 
@@ -250,11 +251,11 @@ Do not remove the old contract because a deadline elapsed or current telemetry i
 ```text
 architecture-surface-mapping
   -> domain-modeling, service-boundary-design, or deep-module-design for the discovered problem
-  -> verification-strategy-design for characterization and change claims
+  -> software-verification for characterization and change claims
   -> software-failure-diagnosis when an observed failure is still unexplained
   -> behavior-preserving-refactoring for an authorized structure-only repair
-  -> observability-design when prospective evidence is missing
-  -> operational-feedback-audit when the live response loop needs evaluation
+  -> design mode of observability-design when prospective evidence is missing
+  -> audit mode of observability-design when the live response loop needs evaluation
   -> controlled-release-design before the first consequential feature rollout
 ```
 
@@ -286,7 +287,7 @@ architecture-risk-evaluation, when assumptions need technical analysis
      technical movement, controlled transition states, retireability, and retirement
   -> co-design verification, observability, and optional controlled release
   -> scoped-change-implementation
-  -> code-review and verification-execution
+  -> code-review and software-verification
 ```
 
 ### Active production incident
@@ -296,7 +297,7 @@ incident-response-coordination
   -> stabilize customer impact and establish delegated workstreams
   -> software-failure-diagnosis for uncertain technical cause
   -> scoped-change-implementation for an authorized repair
-  -> code-review and verification-execution as urgency and consequence allow
+  -> code-review and software-verification as urgency and consequence allow
   -> controlled recovery, stability evidence, and accountable closure
   -> incident-learning after restoration
 ```
@@ -309,7 +310,7 @@ The incident commander owns response priorities, risk decisions, and closure. Th
 software-failure-diagnosis
   -> scoped-change-implementation, only when repair is authorized
   -> code-review
-  -> verification-execution when the repair has broader claims
+  -> software-verification when the repair has broader claims
   -> incident-learning when the failure carries operational or organizational learning
 ```
 
@@ -319,7 +320,7 @@ software-failure-diagnosis
 deep-module-design for a current design question, or retrospective-architecture-review when accumulated learning leaves the target undecided
   -> behavior-preserving-refactoring
   -> code-review
-  -> verification-execution when equivalence is consequential
+  -> software-verification when equivalence is consequential
   -> accountable decision on any intentional behavior retirement
 ```
 
@@ -338,11 +339,11 @@ platform-capability-design
 ```text
 incident-response-coordination, during an active incident
   -> incident-learning after restoration
-  -> operational-feedback-audit for detection, diagnosis, paging, or routing gaps
-  -> observability-design for signal-contract gaps
-  -> verification-strategy-design for escaped behavior or evidence gaps
+  -> audit mode of observability-design for detection, diagnosis, paging, or routing gaps
+  -> design mode of observability-design for signal-contract gaps
+  -> software-verification for escaped behavior, claim, oracle, or evidence gaps
   -> software-failure-diagnosis for an unresolved technical cause
-  -> verification-execution for a defined regression or resilience claim
+  -> software-verification for a defined regression or resilience claim
   -> domain-modeling, architecture-assessment, deep-module-design,
      or service-boundary-design for focused model or structure gaps
   -> service-capacity-engineering for overload and recovery gaps

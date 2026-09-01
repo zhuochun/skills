@@ -31,7 +31,7 @@ understand a mechanism, or evaluate an argument. Prose quality supports that fun
   transfer checking to `teach-concepts`. Keep a durable tutorial, explanation,
   or reference artifact here.
 - Route recovery or construction of a cross-view product-to-system journey to
-  `trace-end-to-end-journey`. Explain an accepted trace here when prose is the
+  `architecture-surface-mapping`. Explain an accepted trace here when prose is the
   missing reader artifact.
 - Keep factual observation, source-supported synthesis, inference, assumption,
   proposal, opinion, and unresolved uncertainty distinguishable.

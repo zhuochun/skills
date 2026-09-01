@@ -25,7 +25,7 @@ credible learning test. Do not contact customers or build production code.
 ```
 
 ```text
-Use $trace-end-to-end-journey to walk me through how an order moves from
+Use $architecture-surface-mapping to walk me through how an order moves from
 customer checkout through merchant acceptance, warehouse fulfillment, carrier
 handoff, and delivery. Recover what the current evidence supports, keep one
 stable step spine across product, operational, domain, system, and interface
@@ -221,7 +221,7 @@ findings with tight locations and residual risks.
 ```
 
 ```text
-Use $verification-execution to run the named VER claims for this migration.
+Use $software-verification to run the named VER claims for this migration.
 Validate any supplied evidence index, reuse matching evidence, execute missing
 or invalidated claims against frozen methods and oracles, preserve exact
 invocations and raw evidence, classify each claim, stop on safety thresholds,
@@ -235,17 +235,6 @@ consumer acknowledges only after durable output. Write for experienced
 application engineers, preserve source links and uncertainty, use one concrete
 failure trace, verify code and command examples, and keep my existing voice.
 Do not invent production results or make a new delivery-semantics decision.
-```
-
-```text
-Use $handoff to compact this session for a fresh agent who will finish the
-documentation change. Recheck the current worktree and executed evidence,
-preserve accepted decisions, unresolved authority, the immediate frontier, and
-canonical paths without copying their contents, and redact sensitive material.
-Keep persistent state in an existing canonical resume surface and put only the
-session delta in a separate artifact. The next session will run on this machine,
-so save any needed ephemeral handoff in the operating system's temporary
-directory.
 ```
 
 Good prompts name the decision, scope, constraints, evidence, desired artifact, and whether implementation is authorized. The skills should identify missing evidence rather than filling gaps with invented facts.

@@ -34,7 +34,7 @@ Turn an intended change into a reviewable behavioral contract an implementer can
 5. **Probe with examples.** Start with positive and negative cases, then vary boundaries, order, identity, timing, retries, failures, and permissions. Collect disagreeing roles independently. Treat scenarios as probes until an owner resolves the rule; retain only representative acceptance cases.
 6. **Define the change contract.** State confirmed desired behavior, preserved behavior, invariants, validation and authorization rules, state transitions and authority, effects, error and failure semantics, compatibility expectations, quality constraints, recovery expectations, and explicit non-goals. Where an owning decision is unresolved, state the obligation and conditional alternatives without selecting one; keep dependent claims conditional. Describe what must be true without prescribing file edits, service ownership, protocol shape, migration policy, or implementation choreography.
 7. **Bound delivery.** Identify the smallest useful end-to-end slice and independent follow-ons. Name prerequisites and cross-slice invariants; route workstream steering to `technical-program-orchestration` and replacement-state movement to `migration-planning`.
-8. **Name acceptance claims.** Give each consequential claim a stable key and plain-language label, such as `CHG-refund-once — One approved refund produces at most one transfer`. State the behavior and representative conditions that make the claim meaningful. Do not select test methods, environments, or production signals here; route those to `verification-strategy-design` and `observability-design`.
+8. **Name acceptance claims.** Give each consequential claim a stable key and plain-language label, such as `CHG-refund-once — One approved refund produces at most one transfer`. State the behavior and representative conditions that make the claim meaningful. Do not select test methods, environments, or production signals here; route those to `software-verification` and `observability-design`.
 9. **Route uncertainty.** For each material unknown outside behavioral-specification authority, state why it matters, owner, smallest probe/skill, and whether work can proceed. Do not gate every unknown, hide decisions as assumptions, or invent closure.
 10. **Make readiness explicit.** Return `ready`, `ready with owned follow-through`, or `not ready`, with the evidence basis and accountable confirmation still required. A ready specification means an implementer should not need to invent consequential behavior; it does not prove the design, authorize implementation, or certify release.
 
@@ -54,7 +54,7 @@ Read [references/change-specification.md](references/change-specification.md) wh
 - Leave compatibility and deprecation to `software-contract-evolution`;
   transition states to `migration-planning`; release controls to
   `controlled-release-design`; signals to `observability-design`; evidence
-  methods to `verification-strategy-design`; and multi-workstream flow to
+  methods to `software-verification`; and multi-workstream flow to
   `technical-program-orchestration`.
 - Send intentional behavior changes to `scoped-change-implementation` and
   structure-only work to `behavior-preserving-refactoring`. Do not create a

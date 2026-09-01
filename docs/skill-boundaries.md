@@ -213,17 +213,17 @@ A skill that creates an artifact should not silently certify that artifact. For 
 | Architecture improvement portfolio or selected candidate | Local evidence review, followed by the relevant focused design skill |
 | Architecture option comparison | `decision-facilitation` for accountable weighting and closure |
 | Technical program orchestration state | Accountable outcome owner and integrated delivery evidence; activity and coordinator confidence do not certify the outcome |
-| Software contract evolution design | Producer, consumer, data, and support-policy owners review the recovered contract and compatibility claims; use `verification-strategy-design` and independent architecture challenge as consequence warrants |
+| Software contract evolution design | Producer, consumer, data, and support-policy owners review the recovered contract and compatibility claims; use `software-verification` and independent architecture challenge as consequence warrants |
 | Software change specification | `specification-review` independently challenges the fixed artifact's integrity and readiness limits; accountable change, product, domain, consumer, security, data, and operational owners retain the interpretations they own |
-| Observability design | Instrumentation and signal verification, then `operational-feedback-audit` against representative runtime use |
-| Controlled release design | `verification-strategy-design` for claims and phase evidence; accountable owners retain promotion authority |
-| Migration plan | `verification-strategy-design` for falsifiable phase and invariant evidence |
-| Running telemetry and response system | `operational-feedback-audit` against observed decisions and incidents |
-| Scoped implementation | `code-review` for an independent diff challenge and `verification-execution` for fixed consequential claims |
-| Behavior-preserving refactoring | `code-review`, plus `verification-execution` when equivalence crosses consumer, data, concurrency, performance, failure, or operating boundaries |
+| Observability design | Instrumentation and signal verification, then audit mode against representative runtime use |
+| Controlled release design | `software-verification` for claims and phase evidence; accountable owners retain promotion authority |
+| Migration plan | `software-verification` for falsifiable phase and invariant evidence |
+| Running telemetry and response system | `observability-design` against observed decisions and incidents |
+| Scoped implementation | `code-review` for an independent diff challenge and `software-verification` for fixed consequential claims |
+| Behavior-preserving refactoring | `code-review`, plus `software-verification` when equivalence crosses consumer, data, concurrency, performance, failure, or operating boundaries |
 | Failure diagnosis | Reproducible or durable causal evidence reviewed by the relevant owner; any repair becomes a separately authorized implementation |
 | Live incident response and recovery claim | Accountable incident commander, observed customer and system stability, and a deliberate recovery handoff; use `incident-learning` only after restoration |
-| Completed implementation | Executed repository evidence, `code-review`, and independent `verification-execution` when warranted; `retrospective-architecture-review` only when accumulated learning creates a material reason to reconsider the design |
+| Completed implementation | Executed repository evidence, `code-review`, and independent `software-verification` when warranted; `retrospective-architecture-review` only when accumulated learning creates a material reason to reconsider the design |
 
 Separation does not require bureaucracy or different people for every local change. It requires a distinct contract: the evaluator receives the artifact and evidence, can identify missing claims, and is not required to defend the producer's original choices. Increase independence with consequence, irreversibility, and uncertainty.
 
@@ -260,19 +260,28 @@ When skills compose in one task, keep the decision context in flow instead of cr
   review. Increase review depth with ambiguity, propagation, consequence,
   irreversibility, feedback delay, and coordination boundaries.
 
-### Technical writing, source ownership, and session handoff
+### Technical writing, source ownership, and session continuity
 
 - `technical-writing` owns transfer to a declared reader through a tutorial, how-to guide, explanation, reference, procedure, runbook, or technical article. It consumes accepted decisions and inspected evidence; it does not decide product value, domain meaning, architecture, support policy, operational risk, or factual truth merely because those claims appear in prose.
-- `handoff` owns task-scoped session compaction only when work is pausing, changing sessions, delegating, or becoming difficult to re-enter. When repository-backed orchestration, program state, a specification, or an issue already owns resume state, keep persistent continuation there and limit a separate handoff to the session delta. Use temporary transport only when the next agent can access the same environment. The handoff does not replace canonical state or ordinary in-session composition.
+- `software-change-orchestration` is the sole continuity owner when one bounded
+  software change must preserve accepted meaning, evidence validity, canonical
+  artifacts, or resume state across sessions or specialist owners. Other work
+  updates its existing canonical surface directly. Session transport does not
+  replace canonical state, transfer authority, or justify routine paperwork.
 - `skill-creator` and the repository authoring contract own new or materially revised skills. `technical-writing` may improve reader transfer in supporting documentation, but it must not become a second skill-authoring authority.
 
-Technical writing can follow research, design, implementation, or operational work when a reader artifact is requested. The source owner retains interpretation and decision authority, while the writing skill owns document function, reading path, provenance visibility, functional checks, and voice. A handoff is not a default output of that composition; create it only for a real continuation boundary.
+Technical writing can follow research, design, implementation, or operational work when a reader artifact is requested. The source owner retains interpretation and decision authority, while the writing skill owns document function, reading path, provenance visibility, functional checks, and voice. A continuation record is not a default output of that composition; update canonical state only for a real continuation boundary.
 
 ### End-to-end journey tracing, customer journeys, and scenario planning
 
-- `trace-end-to-end-journey` owns one evidence-labeled scenario spine aligned across experience touchpoints, operational work, domain transitions, systems, data authority, and interfaces. It may explain a supplied picture, recover a current path, propose an expected path, or compare expected and observed behavior.
+- `architecture-surface-mapping` owns broad evidence-ranked orientation to
+  current software and one bounded evidence-labeled journey spine aligned
+  across experience touchpoints, operational work, domain transitions,
+  systems, data authority, interfaces, and owners. It may explain a supplied
+  picture, recover a current path, propose an expected path, or compare
+  expected and observed behavior without taking product or architecture
+  judgment.
 - Customer journey mapping stays with `product-opportunity-discovery` when the missing artifact concerns only customer context, touchpoints, needs, pains, emotions, adoption, or value. A customer journey can become the experience lane of a cross-view trace.
-- `architecture-surface-mapping` owns broad evidence-ranked orientation to current software. End-to-end journey tracing owns one bounded outcome path intended for shared product-to-system walkthrough.
 - Alternative-futures scenario planning varies external worlds, driving uncertainties, and strategic responses. Rejection, cancellation, timeout, and recovery are branches within one journey, not scenario planning.
 - `prototype-to-learn` owns runnable software for hands-on learning. A story, matrix, flowchart, sequence diagram, or state trace is not a prototype merely because it is interactive to discuss.
 
@@ -315,7 +324,7 @@ Use `research-synthesis` when the missing artifact is a bounded answer assembled
 
 Use `architecture-surface-mapping` when the question is how a declared current software subject actually works. Its primary evidence is the subject's semantics, code, configuration, interfaces, data, runtime, dependencies, change paths, controls, recovery, and ownership. When external evidence and current-system facts both matter, the research synthesis and surface map remain separate inputs to the relevant specialist; neither substitutes for the other.
 
-Route direct customer learning to `product-opportunity-discovery`, a concrete unexplained software failure to `software-failure-diagnosis`, local meaning and rules to `domain-modeling`, fixed engineering claims to verification design or execution, regulated applicability to the accountable domain owner, and accountable weighting or closure to `decision-facilitation`. Capturing or summarizing one source is not cross-source research synthesis unless the user also asks what broader evidence supports; when no repository-native workflow exists, summarize or extract that source directly without research-record machinery.
+Route direct customer learning to `product-opportunity-discovery`, a concrete unexplained software failure to `software-failure-diagnosis`, local meaning and rules to `domain-modeling`, engineering claim design or execution to `software-verification`, regulated applicability to the accountable domain owner, and accountable weighting or closure to `decision-facilitation`. Capturing or summarizing one source is not cross-source research synthesis unless the user also asks what broader evidence supports; when no repository-native workflow exists, summarize or extract that source directly without research-record machinery.
 
 ### Orientation versus assessment
 
@@ -376,11 +385,11 @@ Use `incident-response-coordination` during an active outage or severe degradati
 
 Use `software-failure-diagnosis` for the causal technical investigation, whether or not an incident is active. Use `incident-learning` only after restoration to reconstruct local perspectives, system conditions, protective capacity, and durable follow-through. The response coordinator preserves evidence for that later review but does not conduct the postmortem while responders are still stabilizing the system.
 
-Use `operational-feedback-audit` outside the urgent command loop to evaluate whether telemetry, routing, diagnosis, and control paths produced effective operational action. The live coordinator consumes those mechanisms under pressure; it does not independently audit and certify them during the response.
+Use `observability-design` outside the urgent command loop to evaluate whether telemetry, routing, diagnosis, and control paths produced effective operational action. The live coordinator consumes those mechanisms under pressure; it does not independently audit and certify them during the response.
 
 The agent supports a human incident commander by default. It may maintain the operational picture, draft updates, detect conflicts, and coordinate within explicit delegation; consequential production actions, customer commitments, risk acceptance, and incident closure require accountable authorization or a pre-approved bounded runbook.
 
-### Specification review, change review, and verification execution
+### Specification review, change review, and software verification
 
 Use `specification-review` before downstream use to challenge a fixed
 specification, RFC, requirements set, behavioral contract, or decision-bearing
@@ -391,7 +400,13 @@ specialist decision inside it.
 
 Use `code-review` to inspect a bounded diff against intent, repository constraints, behavior, contracts, maintainability, and claimed evidence. It produces prioritized findings and does not change the target.
 
-Use `verification-strategy-design` to preserve upstream behavior and invariant claims while defining the missing `VER-*` methods, oracles, limits, and renewal obligations. Use `verification-execution` to validate existing snapshot-bound evidence and run claims that are missing, stale, invalidated, suspicious, explicitly independent, or required as a fresh set. It preserves raw evidence, environment context, counterexamples, inconclusive results, and cleanup. Review can identify an evidence gap; execution can show a claim failed; neither silently approves release.
+Use `software-verification` in strategy mode to preserve upstream behavior and
+invariant claims while defining missing `VER-*` methods, fixed oracles, limits,
+and renewal obligations. Use execution mode to validate snapshot-bound
+evidence and run claims that are missing, stale, invalidated, suspicious,
+explicitly independent, or required as a fresh set. Freeze criteria before
+observation. Preserve raw evidence, environment context, counterexamples,
+inconclusive results, and cleanup; neither mode silently approves release.
 
 ### Contract evolution versus transition and program orchestration
 
@@ -411,7 +426,7 @@ architecture-risk-evaluation
   -> migration-planning
   -> co-design verification, observability, and optional controlled release
   -> scoped-change-implementation
-  -> code-review and verification-execution
+  -> code-review and software-verification
   -> accountable cutover
 ```
 
@@ -433,15 +448,15 @@ decision-facilitation, when clarification, challenge, or closure is needed
 
 Use `controlled-release-design` to define exposure assignment, feature-flag semantics, cohorts, promotion, hold, abort, kill controls, and flag cleanup. Use it alone when one compatible behavior is merely being exposed gradually. Use `migration-planning` when an accepted replacement must take over obligations from an established technical state through material consumer, state, execution, infrastructure, or authoritative-path movement and the old state is intended to lose authority and become retireable. When both apply, controlled release is an optional nested subplan of the authoritative migration plan; many ordinary feature releases need controlled exposure without a migration, and some migrations need no exposure subplan.
 
-### Observability design versus operational feedback audit
+### Prospective observability versus operational feedback audit
 
-Use `observability-design` before implementation or release to define normative measurement contracts, correlation, health entry points, diagnostic navigation, alerts, and control evidence. Use `operational-feedback-audit` after representative operation to recover those contracts, compare intended and deployed semantics, and report runtime counterexamples and required design deltas. A missing contract is an audit finding, not permission for the auditor to create and certify its own replacement.
+Use `observability-design` before implementation or release to define normative measurement contracts, correlation, health entry points, diagnostic navigation, alerts, and control evidence. Use `observability-design` after representative operation to recover those contracts, compare intended and deployed semantics, and report runtime counterexamples and required design deltas. A missing contract is an audit finding, not permission for the auditor to create and certify its own replacement.
 
 ```text
 observability-design
   -> scoped-change-implementation, with controlled release when applicable
-  -> verification-execution for claims that consume runtime evidence
-  -> operational-feedback-audit
+  -> software-verification for claims that consume runtime evidence
+  -> audit mode after representative operation
   -> revise observability design
 ```
 
@@ -450,9 +465,14 @@ The designer and auditor may be the same person for low-risk work, but the audit
 ### Observability, verification, and operational feedback
 
 - `observability-design` owns the runtime evidence substrate: signal semantics, correlation, navigation, alerts, and control visibility.
-- `verification-strategy-design` owns the broader claim-to-evidence portfolio. It may select tests, static checks, formal methods, simulation, load tests, failure injection, rollout evidence, and production telemetry according to risk.
-- `verification-execution` runs that portfolio against fixed oracles and preserves per-claim results, counterexamples, environment context, safety stops, and inconclusive evidence.
-- `operational-feedback-audit` evaluates whether the running telemetry, ownership routing, diagnosis, and control paths actually produced correct operational action.
+- `software-verification` owns the broader claim-to-evidence lifecycle. Strategy
+  mode selects tests, static checks, formal methods, simulation, load tests,
+  failure injection, rollout evidence, and production telemetry according to
+  risk; execution mode runs fixed claims and preserves results,
+  counterexamples, environment context, safety stops, and inconclusive evidence.
+- Audit mode of `observability-design` evaluates whether running telemetry,
+  ownership routing, diagnosis, and control paths actually produced useful
+  operational action.
 
 Observability can supply evidence to verification, but telemetry is not a substitute for earlier checks. An operational audit can reject both a weak observability design and the assumption that a green signal proved the system healthy.
 

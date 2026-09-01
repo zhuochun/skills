@@ -7,6 +7,11 @@ description: Orchestrate one bounded software change when accepted decisions, ev
 
 Move one software change through the smallest useful set of decisions, artifacts, actions, and evidence without creating a mandatory lifecycle or taking specialist ownership.
 
+This is the catalog's sole continuity owner for one bounded software change.
+Use it only when accepted meaning, evidence validity, canonical artifacts, or
+resume state must remain coherent across sessions or specialist owners. Keep
+clear uninterrupted work with its primary executor.
+
 ## Preserve authority and accepted meaning
 
 - Distinguish discussion, repository-record writes, implementation, external-system writes, production actions, destructive actions, and local-history writes. Perform only authorized modes.
@@ -65,6 +70,10 @@ When durable state is justified, maintain one living canonical work surface:
   evidence lifecycles; link rather than copy them.
 - Keep the immediate frontier in session. Persist it only for a pause, block,
   handoff, session change, or non-obvious re-entry; reread current state first.
+- Persist only the minimum source-linked state a cold reader needs. Redact or
+  omit secrets and sensitive material, preserve unresolved authority, and
+  recheck the worktree, canonical artifacts, and evidence freshness before
+  consequential continuation.
 
 Read [references/change-orchestration.md](references/change-orchestration.md) only when repository placement is unclear, multiple artifacts may need independent lifecycles, a compact record form is useful, or the next specialist route is uncertain.
 

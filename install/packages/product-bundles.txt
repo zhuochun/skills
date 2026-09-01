@@ -1,7 +1,7 @@
 # Topic bundle for product opportunity and domain framing
+architecture-surface-mapping
 domain-modeling
 product-opportunity-discovery
 product-opportunity-prioritization
 prototype-to-learn
 specification-review
-trace-end-to-end-journey

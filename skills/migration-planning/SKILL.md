@@ -111,7 +111,7 @@ retirement gates.
   promotion, hold, abort, kill controls, and flag cleanup. It does not own
   data, routing, or effect authority.
 - `technical-program-orchestration` owns workstreams and replanning;
-  `observability-design` owns signals; `verification-strategy-design` owns
+  `observability-design` owns signals; `software-verification` owns
   methods and oracles.
 - Keep one flow. Link stable keys and labels rather than copying neighboring
   plans. Create a distinct migration plan only when its state and retirement

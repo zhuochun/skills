@@ -4,4 +4,4 @@ interface:
   default_prompt: "Use $decision-facilitation to clarify and stress-test this decision, then return a bounded disposition and next commitment."
 
 policy:
-  allow_implicit_invocation: false
+  allow_implicit_invocation: true

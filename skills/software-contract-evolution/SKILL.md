@@ -25,7 +25,7 @@ Preserve independent change without reducing a contract to its signature. Design
 6. **Prefer compatible growth.** Favor additive optional capability, relaxed acceptance, and explicit new names whose meaning can remain stable. Preserve old readers and writers long enough for independent adoption. Reject in-place reinterpretation merely because the wire shape remains parseable.
 7. **Design deprecation as migration.** Provide replacement, block new adoption, segment consumers, assign ownership, supply needed docs/tools, define feedback/support, and state window, exceptions, and escalation. Notice plus deadline is insufficient.
 8. **Define transition obligations.** At the contract level, state the supported producer-consumer-state-executor combinations, compatibility invariants, semantic authority rules, and conditions needed for adoption and retirement. Do not expand these obligations into a second executable transition-state model. Route technical movement states, operational authority transfer, cutover, retreat or compensation, and cleanup sequencing to `migration-planning`; route multi-workstream adoption flow and dependency steering to `technical-program-orchestration`.
-9. **Define evidence obligations.** Give consequential claims stable keys and labels. Specify the learning, represented population and lifecycle, and remaining uncertainty. Route usage signals to `observability-design` and methods, oracles, evidence limits, and renewal to `verification-strategy-design`.
+9. **Define evidence obligations.** Give consequential claims stable keys and labels. Specify the learning, represented population and lifecycle, and remaining uncertainty. Route usage signals to `observability-design` and methods, oracles, evidence limits, and renewal to `software-verification`.
 10. **Gate retirement by risk.** Match evidence to remaining obligations: consumer drainage for compatibility, old/new comparison for behavior, reconciliation/invariants for state, and leases/fencing for stale executors. Observe a meaningful lifecycle, remove in dependency order, and leave residual risk to its owner.
 11. **Close the lifecycle.** Remove obsolete versions, adapters, flags, writes, schemas, documentation, telemetry, permissions, and support procedures only after their exit criteria pass. Record intentional residual compatibility and its owner instead of calling permanent temporary machinery complete.
 
@@ -34,7 +34,8 @@ Preserve independent change without reducing a contract to its signature. Design
 - `domain-modeling` owns disputed meaning; `service-boundary-design` owns responsibility, data, deployment, and team boundaries.
 - `migration-planning` owns executable transition and cleanup; this skill supplies compatibility, support, consumer, and retirement obligations.
 - `technical-program-orchestration` owns adoption workstreams; `controlled-release-design` owns exposure.
-- `observability-design` owns measurement; `verification-strategy-design` owns methods and oracles; `verification-execution` runs fixed claims.
+- `observability-design` owns measurement; `software-verification` owns methods,
+  fixed oracles, and claim execution.
 - `architecture-risk-evaluation` independently challenges consequential scenarios.
 
 Keep composed work in the existing flow. Reference contract claims by key and plain-language label rather than creating a mandatory handoff document.
