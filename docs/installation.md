@@ -96,7 +96,7 @@ paths; exceptional routes may leave the profile. See the
 | [`product-bundles`](../install/packages/product-bundles.txt) | Topic bundle | Product opportunity and domain framing |
 | [`operational-bundles`](../install/packages/operational-bundles.txt) | Topic bundle | Service operation, ownership, feedback, and incident work |
 | [`leadership-bundles`](../install/packages/leadership-bundles.txt) | Topic bundle | Technical leadership, coordination, ownership, decisions, and growth |
-| [`dev-base-profile`](../install/packages/dev-base-profile.txt) | Workflow profile | Goal pursuit, bounded local change, diagnosis, refactoring, review, and verification |
+| [`dev-base-profile`](../install/packages/dev-base-profile.txt) | Workflow profile | Repository setup, goal pursuit, bounded local change, contract evolution, diagnosis, refactoring, review, and verification |
 | [`dev-profile`](../install/packages/dev-profile.txt) | Workflow profile | Goal pursuit across broader design, delivery, release, operational feedback, and verification |
 | `all` | Computed | Every current skill under `skills/` |
 

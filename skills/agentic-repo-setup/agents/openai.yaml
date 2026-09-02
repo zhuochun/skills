@@ -1,0 +1,7 @@
+interface:
+  display_name: "Agentic Repo Setup"
+  short_description: "Set up repositories for reliable coding-agent work"
+  default_prompt: "Use $agentic-repo-setup to bootstrap around accepted constraints or retrofit this repository with effective local instructions, stable commands, accepted verification wiring, and proportional non-deployment CI."
+
+policy:
+  allow_implicit_invocation: false

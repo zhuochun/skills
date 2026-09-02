@@ -79,6 +79,7 @@ Do not start from a fashionable method or invoke every skill as a stage gate. As
 
 | Skill | It owns | Primary output |
 | --- | --- | --- |
+| [`agentic-repo-setup`](../skills/agentic-repo-setup/) | Bootstrap around accepted product and technical constraints, retrofit, and renewal of the repo-local harness that makes coding-agent work discoverable, executable, and verifiable | Changed effective instructions, knowledge placement, command and accepted-verification wiring, deterministic controls, compatibility-safe path disposition, evidence, and remaining external actions |
 | [`scoped-change-implementation`](../skills/scoped-change-implementation/) | Authorized bounded behavior change through coherent vertical slices | Maintained code, behavior evidence, completed ownership, deviations, and remaining gaps |
 | [`behavior-preserving-refactoring`](../skills/behavior-preserving-refactoring/) | Structural improvement without intentional supported-behavior change | Consolidated ownership, refactoring-safe evidence, retired old paths, and equivalence limits |
 | [`software-failure-diagnosis`](../skills/software-failure-diagnosis/) | Causal investigation of bugs, regressions, intermittent failures, and performance degradation | Symptom contract, evidence loop, competing hypotheses, supported cause, and repair boundary |

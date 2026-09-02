@@ -277,6 +277,33 @@ architecture-assessment
 
 Use this route when the decision is which structural opportunity deserves attention first. If one completed design is already selected and material implementation or operational learning has changed its premises, start with `retrospective-architecture-review` instead of running a second broad assessment.
 
+### New or existing repository setup
+
+```text
+agentic-repo-setup
+  -> bootstrap around accepted product, delivery, runtime, and architecture constraints; retrofit an existing repository; or renew a failing harness
+  -> architecture-surface-mapping only when the relevant repository journey is unfamiliar
+  -> domain-modeling, deep-module-design, behavior-preserving-refactoring, or another focused owner only for a discovered change outside the harness
+  -> software-verification when claims or oracles are missing or disputed, coverage or full-verify scope is undefined, a method choice is consequential, or an independent verdict is needed
+  -> software-contract-evolution before changing or retiring a supported or independently consumed command
+  -> skill-creator when repeated local procedure warrants a new or materially revised repo skill
+  -> implement guidance in the selected active instruction files, knowledge placement, local command wiring, accepted checks or mechanically derived inner-loop checks, hooks, and non-deployment CI directly
+  -> distinct post-change consumer-session cold-start and failure rehearsal, safe redirection or authorized retirement, and remaining external actions
+```
+
+Start with the repository and its existing systems of record. Setup owns its
+authorized harness edits instead of delegating them to a generic implementation
+stage. Stop rather than choose missing product, delivery, runtime, or foundational
+architecture constraints for an empty repository. Preserve product behavior,
+previously passing checks, baseline failure identity, and compatibility in a
+retrofit; route any required production-code restructuring or domain decision to
+its focused owner. Keep general skills installed or plugin-provided, and create a
+repo skill through `skill-creator` only for stable local procedure. Use
+`technical-program-orchestration` only when the retrofit becomes several
+interdependent workstreams, and
+`platform-capability-design` only when repeated cross-context demand warrants a
+supported self-service product.
+
 ### Contested technical choice
 
 ```text

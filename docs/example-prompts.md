@@ -34,6 +34,20 @@ delivery, and mark every inferred or disputed step.
 ```
 
 ```text
+Use $agentic-repo-setup to retrofit this existing repository for reliable
+coding-agent work. Preserve supported behavior and unrelated work; recover
+current versus historical authorities; resolve the effective instruction chain,
+update its selected active files rather than shadowed AGENTS.md files, and keep
+them concise; establish stable setup, dev, focused-test,
+full-verify, and build commands; and add only the runtime pins, accepted checks,
+hooks, non-deployment CI, or repo-specific skill routing that solve observed
+friction. After mutation, use a distinct new consumer session to prove
+discovery; preserve distinguishable baseline failures; redirect or deprecate old
+paths unless exact retirement is authorized and compatible; and report external
+or production actions not done.
+```
+
+```text
 Use $prototype-to-learn to test whether this concept-review state model feels
 right before we implement it. Build a disposable interactive prototype against
 the real read-only notes, show the full relevant state after each action,

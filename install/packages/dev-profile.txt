@@ -1,4 +1,5 @@
 # Composition-closed profile for larger-scale software delivery workflows
+agentic-repo-setup
 architecture-assessment
 architecture-risk-evaluation
 architecture-surface-mapping

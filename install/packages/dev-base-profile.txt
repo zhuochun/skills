@@ -1,4 +1,5 @@
-# Composition-closed profile for bounded local software change workflows
+# Composition-closed profile for repository setup and bounded local software change workflows
+agentic-repo-setup
 architecture-assessment
 architecture-surface-mapping
 behavior-preserving-refactoring
@@ -12,6 +13,7 @@ retrospective-architecture-review
 scoped-change-implementation
 software-change-orchestration
 software-change-specification
+software-contract-evolution
 software-failure-diagnosis
 software-verification
 specification-review

@@ -476,6 +476,46 @@ The designer and auditor may be the same person for low-risk work, but the audit
 
 Observability can supply evidence to verification, but telemetry is not a substitute for earlier checks. An operational audit can reject both a weak observability design and the assumption that a green signal proved the system healthy.
 
+### Agentic repo setup, change orchestration, and platform capability
+
+- `agentic-repo-setup` directly bootstraps, retrofits, or renews the reusable
+  repository harness when repo writes are authorized and the product, delivery,
+  runtime, and foundational architecture constraints needed by scaffolding are
+  accepted. It owns effective local instruction routing, knowledge placement,
+  agent-facing wrapper commands, runtime setup within those constraints, wiring
+  of accepted verification entry points, hooks, setup and verification CI, and
+  repo-specific skill placement and routing. Assessment and design are
+  supporting steps, not its final artifact.
+- `software-change-orchestration` owns continuity for one bounded software
+  change using that setup. It does not rebuild the harness around every
+  change.
+- `technical-program-orchestration` owns coherence among several concurrent or
+  interdependent workstreams. It does not become the runtime or source of truth
+  for their local work.
+- `platform-capability-design` owns a shared self-service product and operating
+  contract for internal users. A repository-local harness becomes a platform
+  question only after repeated cross-context demand and support obligations
+  justify that product boundary.
+
+Keep local placement explicit: the target agent's effective instruction chain
+routes discovery and execution; owned documents and code preserve durable
+meaning; skills expose reusable judgment; commands and tools execute operations;
+tests, hooks, CI, permissions, and protected gates enforce non-negotiables; the
+established issue or change surface owns durable pause and re-entry state.
+`software-verification` owns fixed claim-to-evidence contracts;
+`software-contract-evolution` owns compatibility, deprecation, and retirement
+for supported or independently consumed commands; `skill-creator` owns new or
+materially revised repo skills; and `observability-design` owns the runtime
+signal substrate. General skills remain installed or plugin-provided. Setup may
+change its harness surfaces directly. It may mechanically derive an inner-loop
+check only from an accepted, unambiguous claim and oracle; that does not define
+coverage or a full-verification contract. Missing or disputed claims and
+oracles, consequential method choices, evidence limits, full-verify scope, and
+independent verdicts remain with `software-verification`. Setup routes product
+behavior, domain meaning, production-code redesign, release or deployment
+design, supported command evolution, skill authoring, and external actions to
+their owners.
+
 ### Capacity, ownership, and platform capability
 
 - `platform-capability-design` creates a self-service capability and its operating contract.
