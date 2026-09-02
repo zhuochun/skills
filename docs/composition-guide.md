@@ -312,17 +312,19 @@ agentic-repo-setup
   -> software-verification when claims or oracles are missing or disputed, coverage or full-verify scope is undefined, a method choice is consequential, or an independent verdict is needed
   -> software-contract-evolution before changing or retiring a supported or independently consumed command
   -> skill-creator when repeated local procedure warrants a new or materially revised repo skill
-  -> implement guidance in the selected active instruction files, knowledge placement, local command wiring, accepted checks or mechanically derived inner-loop checks, hooks, and non-deployment CI directly
-  -> distinct post-change consumer-session cold-start and failure rehearsal, safe redirection or authorized retirement, and remaining external actions
+  -> implement the effective AGENTS bootstrap route, claim-level authority placement and retrieval, local command wiring, explicit focused and full evidence states, accepted checks or mechanically derived inner-loop checks, hooks, and non-deployment CI directly
+  -> sampled consumer-path cold-start and failure rehearsal, gate scope-delta evidence, safe redirection or authorized retirement, and remaining untested partitions or external actions
 ```
 
 Start with the repository and its existing systems of record. Setup owns its
 authorized harness edits instead of delegating them to a generic implementation
 stage. Stop rather than choose missing product, delivery, runtime, or foundational
-architecture constraints for an empty repository. Preserve product behavior,
-previously passing checks, baseline failure identity, and compatibility in a
-retrofit; route any required production-code restructuring or domain decision to
-its focused owner. Keep general skills installed or plugin-provided, and create a
+architecture constraints for an empty repository; observable files do not
+establish acceptance. Preserve product behavior, previously passing checks,
+baseline failure identity, and compatibility in a retrofit. Keep semantic
+authority conflicts unresolved and route them with production-code restructuring
+or domain decisions to their focused owners. Keep general skills installed or
+plugin-provided, and create a
 repo skill through `skill-creator` only for stable local procedure. Use
 `technical-program-orchestration` only when the retrofit becomes several
 interdependent workstreams, and

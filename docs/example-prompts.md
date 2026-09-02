@@ -35,16 +35,18 @@ delivery, and mark every inferred or disputed step.
 
 ```text
 Use $agentic-repo-setup to retrofit this existing repository for reliable
-coding-agent work. Preserve supported behavior and unrelated work; recover
-current versus historical authorities; resolve the effective instruction chain,
-update its selected active files rather than shadowed AGENTS.md files, and keep
-them concise; establish stable setup, dev, focused-test,
-full-verify, and build commands; and add only the runtime pins, accepted checks,
-hooks, non-deployment CI, or repo-specific skill routing that solve observed
-friction. After mutation, use a distinct new consumer session to prove
-discovery; preserve distinguishable baseline failures; redirect or deprecate old
-paths unless exact retirement is authorized and compatible; and report external
-or production actions not done.
+coding-agent work. Preserve supported behavior and unrelated work. Distinguish
+accepted intent, executable contracts, observed implementation, derived views,
+and history; do not settle semantic conflicts as setup. Resolve the effective
+instruction chain and keep selected active `AGENTS.md` files as concise bootstrap
+routers. Sample each materially distinct instruction, authority, runtime,
+feedback, or permission partition. Classify focused and full evidence as
+present, absent, not applicable, or disputed; never invent a missing oracle or
+gate. If gate composition changes, preserve its pre/post scope and use a fixed
+negative control or proportionate independent evidence. Use a fresh consumer
+context when available and mark it not run otherwise. Add only controls that
+displace observed friction, preserve baseline failures, and report untested
+partitions and external or production actions not done.
 ```
 
 ```text

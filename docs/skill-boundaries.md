@@ -489,11 +489,12 @@ Observability can supply evidence to verification, but telemetry is not a substi
 - `agentic-repo-setup` directly bootstraps, retrofits, or renews the reusable
   repository harness when repo writes are authorized and the product, delivery,
   runtime, and foundational architecture constraints needed by scaffolding are
-  accepted. It owns effective local instruction routing, knowledge placement,
-  agent-facing wrapper commands, runtime setup within those constraints, wiring
-  of accepted verification entry points, hooks, setup and verification CI, and
-  repo-specific skill placement and routing. Assessment and design are
-  supporting steps, not its final artifact.
+  accepted; observed files do not establish bootstrap acceptance. It owns
+  effective repo `AGENTS.md` routing, claim-level knowledge placement and
+  retrieval, agent-facing wrapper commands, runtime setup within those
+  constraints, wiring of accepted verification entry points, hooks, setup and
+  verification CI, and repo-specific skill placement and routing. Assessment and
+  design are supporting steps, not its final artifact.
 - `software-change-orchestration` owns continuity for one bounded software
   change using that setup. It does not rebuild the harness around every
   change.
@@ -505,11 +506,12 @@ Observability can supply evidence to verification, but telemetry is not a substi
   question only after repeated cross-context demand and support obligations
   justify that product boundary.
 
-Keep local placement explicit: the target agent's effective instruction chain
-routes discovery and execution; owned documents and code preserve durable
-meaning; skills expose reusable judgment; commands and tools execute operations;
-tests, hooks, CI, permissions, and protected gates enforce non-negotiables; the
-established issue or change surface owns durable pause and re-entry state.
+Keep local placement explicit: the effective instruction chain routes discovery
+and execution; accountable decisions and documents preserve accepted intent and
+rationale; tests and controls encode only their named executable claims; code
+and runtime evidence show observed state without establishing acceptance; skills
+expose reusable judgment; commands execute operations; and the established issue
+or change surface owns durable pause and re-entry state.
 `software-verification` owns fixed claim-to-evidence contracts;
 `software-contract-evolution` owns compatibility, deprecation, and retirement
 for supported or independently consumed commands; `skill-creator` owns new or
@@ -519,10 +521,13 @@ change its harness surfaces directly. It may mechanically derive an inner-loop
 check only from an accepted, unambiguous claim and oracle; that does not define
 coverage or a full-verification contract. Missing or disputed claims and
 oracles, consequential method choices, evidence limits, full-verify scope, and
-independent verdicts remain with `software-verification`. Setup routes product
-behavior, domain meaning, production-code redesign, release or deployment
-design, supported command evolution, skill authoring, and external actions to
-their owners.
+independent verdicts remain with `software-verification`. Setup leaves semantic
+authority conflicts unresolved and routes them to their accountable owner. When
+setup changes a gate or protected control, it preserves pre/post scope and does
+not use the changed gate as the sole proof that scope was preserved. Setup routes an individual document's
+reader task and prose to `technical-writing`, and routes product behavior, domain
+meaning, production-code redesign, release or deployment design, supported
+command evolution, skill authoring, and external actions to their owners.
 
 ### Capacity, ownership, and platform capability
 
