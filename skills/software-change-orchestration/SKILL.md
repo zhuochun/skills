@@ -83,7 +83,7 @@ Derive assurance from consequence, reversibility, ambiguity, compatibility and d
 
 - **Compact:** Local, reversible, low-consequence work with an obvious contract. Use one primary skill or executor, focused checks, and direct inline closure. Reuse or create one minimal record only when ownership or re-entry actually requires durable state.
 - **Standard:** Several surfaces or a meaningful state, lifecycle, compatibility, or ownership decision. Use one living specification, one primary executor, independent review, focused incremental checks, and one successful closure set.
-- **High-assurance:** Security, destructive or hard-to-reverse data, broad compatibility, production control, regulated behavior, or difficult recovery. Add only risk-owned design, transition, release, operational, and verification work.
+- **High-assurance:** Security, destructive or hard-to-reverse data, broad compatibility, production control, regulated behavior, or difficult recovery. Add only risk-owned security design, transition, release, operational, independent challenge, and verification work.
 
 The **workflow budget** limits full specialist workflows, primary executors, durable artifacts, independent passes, and repeated verification. Derive it automatically and revise it only when evidence changes consequence or proof burden. Artifact shape follows independent knowledge ownership, not posture alone.
 
@@ -110,14 +110,14 @@ Reuse evidence while claim, snapshot, method, and material environment match. In
 1. **Load authority and truth.** Confirm authorized modes; read repository guidance, intent, canonical records, decisions, code, tests, evidence, and material worktree state. Distinguish `specified`, `accepted`, `implemented`, `integrated`, `verified`, `released`, and `closed`.
 2. **State the destination.** Capture outcome, behavior or risk boundary, non-goals, preserved commitments, closure evidence, accountable owner, and consequence of error. Route unresolved opportunity selection rather than inventing a feature contract.
 3. **Choose persistence and budget.** Select `inline`, `owning-repository`, `control-repository`, or `hybrid` mode and `compact`, `standard`, or `high-assurance` posture. Seed a canonical record only when ownership or re-entry requires it and record writes are authorized.
-4. **Route the limiting frontier.** Send one bounded question or action to the smallest owning skill. Use `software-change-specification` for ambiguous accepted behavior, `prototype-to-learn` for a disposable runnable answer to one behavior, state, UI, or interaction question, domain or design skills for disputed meaning or ownership, contract evolution for compatibility, and accountable decision-making for consequential closure.
+4. **Route the limiting frontier.** Send one bounded question or action to the smallest owning skill. Use `software-change-specification` for ambiguous accepted behavior, `software-security-design` for material threat, security requirement, secure-default, or control-ownership decisions, `prototype-to-learn` for a disposable runnable answer to one behavior, state, UI, or interaction question, domain or design skills for disputed meaning or ownership, contract evolution for compatibility, and accountable decision-making for consequential closure.
 5. **Integrate the delta.** Update the owning specification section, evidence status, stable keys and labels, implications, and invalidated assumptions. Do not duplicate specialist artifacts or persist transient routing without re-entry need.
 6. **Test implementation readiness.** Require understood behavior, owned
    material decisions, explicit non-goals, authorization, and risk-proportionate
    feedback. When misunderstanding could propagate materially, send the fixed
    candidate to `specification-review` and integrate accepted repairs before
-   implementation. Add verification, observability, release, or transition
-   design only when their uncertainty is material.
+   implementation. Add security, verification, observability, release, or
+   transition design only when its uncertainty is material.
 7. **Use one executor.** Route a pure structural change with preserved supported behavior to `behavior-preserving-refactoring`; route an intended observable behavior change to `scoped-change-implementation`. Split a mixed change or nominate one primary executor and borrow only the other contract's needed checks. Reopen the owning decision when code contradicts the accepted contract.
 8. **Challenge and close proportionately.** Use `code-review` when consequence, uncertainty, novelty, an explicit request, or the workflow budget requires independent challenge. Otherwise close compact work through the primary executor's focused observable checks. After material review remediation, obtain focused independent confirmation and run one successful risk-proportionate closure set. Reuse unaffected evidence.
 9. **Close or stop deliberately.** Record delivered behavior, observed evidence and limits, accepted deviations, operational and support ownership, cleanup, residual risk, and accountable closure. For stopped or deferred work, record why and the re-entry condition.

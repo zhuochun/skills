@@ -44,7 +44,7 @@ candidate; it does not approve release, cutover, risk, or support policy.
 
 1. **Inventory claims.** Preserve accepted behavior and invariants. Rewrite
    vague confidence goals as falsifiable claims about behavior, contracts,
-   data, performance, failure, recovery, rollout, or diagnosis.
+   data, security, performance, failure, recovery, rollout, or diagnosis.
 2. **Classify risk.** Record consequence, uncertainty, exposure, reversibility,
    affected population, and detection or recovery difficulty.
 3. **Expose assumptions.** Name material environment, traffic, timing,
@@ -66,7 +66,8 @@ candidate; it does not approve release, cutover, risk, or support policy.
 
 Read [references/evidence-portfolio.md](references/evidence-portfolio.md) for
 agent or tool-system evaluation, semantic judges, non-obvious method selection,
-cross-boundary or failure-recovery coverage, or a durable strategy matrix.
+cross-boundary, security, or failure-recovery coverage, or a durable strategy
+matrix.
 
 ## Execute fixed claims
 
@@ -94,8 +95,8 @@ cross-boundary or failure-recovery coverage, or a durable strategy matrix.
 8. **Route the owning defect.** Send implementation defects to
    `$scoped-change-implementation`, unexplained causes to
    `$software-failure-diagnosis`, weak contracts back to strategy mode, missing
-   runtime signals to `$observability-design`, and unsafe design assumptions to
-   their design owner.
+   runtime signals to `$observability-design`, and missing or unsafe security
+   assumptions to `$software-security-design` or their narrower design owner.
 
 Read [references/evidence-execution.md](references/evidence-execution.md) when
 execution needs a durable ledger, attempt or counterexample record, non-obvious

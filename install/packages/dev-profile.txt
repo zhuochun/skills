@@ -23,6 +23,7 @@ software-change-orchestration
 software-change-specification
 software-contract-evolution
 software-failure-diagnosis
+software-security-design
 software-verification
 specification-review
 technical-program-orchestration

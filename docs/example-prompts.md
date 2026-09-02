@@ -179,6 +179,17 @@ Do not edit code.
 ```
 
 ```text
+Use $software-security-design to design the security contract for this new
+tenant-scoped export endpoint before implementation. Recover the protected data
+and effects, attacker and delegated-service capabilities, trust and tenant
+boundaries, direct and fallback paths, secure defaults, and dependency or
+logging exposure. Produce threat paths and keyed SEC requirements with control,
+exception, and residual-risk owners; define verification obligations without
+running active tests, implementing controls, certifying the design, or accepting
+risk.
+```
+
+```text
 Use $specification-review to independently review this fixed product spec
 before implementation. Work read-only. Find contradictions, ambiguous or
 undefined terms, hidden owner decisions, unsupported claims, missing boundary

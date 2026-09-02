@@ -60,7 +60,12 @@ next use. Find disagreements before they propagate; do not become the author.
    authority, and claims that rely on an unstated sequence or environment.
 6. **Probe boundaries and failures.** Use positive and negative cases, then vary
    identity, permission, state, ordering, timing, repetition, limits, partial
-   failure, recovery, compatibility, and retirement. Seek wording-compliant failures.
+   failure, recovery, compatibility, and retirement. When the artifact changes
+   attacker-controlled input, protected data or effects, identity, secrets,
+   dependencies, tenant boundaries, privilege, or security defaults, also test
+   plausible abuse, direct-entry, fallback, and control-unavailable paths. Seek
+   wording-compliant failures without pretending this integrity review is a
+   complete security assessment.
 7. **Check evaluability.** Determine whether acceptance or decision claims are
    observable and falsifiable enough for the next owner. Separate missing
    oracles from missing evidence methods; route method design to
@@ -68,8 +73,10 @@ next use. Find disagreements before they propagate; do not become the author.
 8. **Route specialist judgment.** Keep product value and customer evidence with
    `product-opportunity-discovery`; domain meaning with `domain-modeling`;
    architecture fitness with `architecture-risk-evaluation`; shared contract
-   compatibility with `software-contract-evolution`; and accountable choice
-   closure with `decision-facilitation`.
+   compatibility with `software-contract-evolution`; threat, security
+   requirement, secure-default, and control-ownership decisions with
+   `software-security-design`; and accountable choice closure with
+   `decision-facilitation`.
 9. **Prioritize findings.** Rank by consequence, propagation, reversibility, and
    confidence. Give each the tightest locator, conflicting interpretations or
    counterexample, impact, and smallest credible repair direction or receiving owner.
@@ -117,6 +124,8 @@ next use. Find disagreements before they propagate; do not become the author.
   owner without rewriting the artifact.
 - Subject-matter uncertainty remains visible and routed rather than converted
   into reviewer preference.
+- A material security surface either traces to accepted `SEC-*` requirements
+  and an accountable owner or remains an explicit readiness limitation.
 - The outcome distinguishes artifact readiness from accountable acceptance,
   implementation authority, and later verification.
 

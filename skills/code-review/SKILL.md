@@ -27,12 +27,24 @@ Judge the change, not its narrative or activity volume. Recover enough intent an
 ## Review workflow
 
 1. **Pin scope and intent.** Record snapshot, change, desired behavior, non-goals, commitments, and cost of error. Exclude unrelated changes unless they affect reviewed behavior.
-2. **Read the diff as a behavioral claim.** Summarize what it adds, removes, redirects, or makes authoritative. Trace important paths from input through decisions, state, effects, outputs, and cleanup.
+2. **Read the diff as a behavioral claim.** Summarize what it adds, removes, redirects, or makes authoritative. Trace important paths from input through decisions, trust boundaries, state, effects, outputs, and cleanup.
 3. **Check specification fit.** Compare implementation with requested outcomes, edge cases, support policy, and explicit constraints. Identify missing behavior, unintended behavior, scope creep, and requirements satisfied only superficially.
 4. **Check correctness and contracts.** Proportionately examine invariants, authorization, validation, data authority, compatibility, ordering, concurrency, retries, idempotency, failures, lifecycle, cleanup, security, privacy, and controls. For runtime changes, trace latency, capacity, dependency failure, cancellation, observability, control paths, and recovery.
+   - When the diff changes attacker-controlled input, protected data or effects,
+     identity or delegated authority, secrets, dependencies, tenant boundaries,
+     privilege, or security defaults, trace plausible bypass paths. Follow input
+     through parsers and interpreters to its sink; check actor, action, resource,
+     tenant, and context authorization at the effect-owning boundary; inspect
+     direct and fallback paths, sensitive output and logs, dependency or build
+     authority, configuration exposure, control failure, and accepted `SEC-*`
+     claims where applicable.
+   - Route a missing threat, security requirement, secure-default, or control
+     decision to `software-security-design`. Report implementation defects here;
+     do not invent the missing policy or call generic concern a finding without
+     a realistic path and consequence.
 5. **Check locality and ownership.** Determine whether knowledge, state, representation, and effects have clear owners or a new rule spreads through flags, helpers, layers, and consumers. Flag dual authority, hidden dependencies, pass-through abstractions, speculative generality, and repeated unsafe invariants; recommend proportionate durable enforcement for recurring consequential findings.
 6. **Check meaning and maintainability.** Evaluate whether names, interfaces, tests, layout, and rationale let the next maintainer recover purpose and constraints. Distinguish necessary complexity from noise, and current readability from likely future change amplification.
-7. **Evaluate evidence, not volume.** Map each changed behavior and failure promise to evidence that would fail if it broke. Before reporting a gap, construct a realistic uncovered counterexample. Confirm failure-path tests reject unexpected success and cannot satisfy themselves with an assertion or sentinel. Match checks to snapshot, environment, method, risk, and falsifiable behavior; challenge tautologies, implementation-coupled tests, stale snapshots, and unrun claims. Rerun broadly or use `$software-verification` only when evidence is invalid, incomplete, suspicious, or inadequate.
+7. **Evaluate evidence, not volume.** Map each changed behavior, `SEC-*` requirement, and failure promise to evidence that would fail if it broke. Before reporting a gap, construct a realistic uncovered counterexample. Confirm failure-path tests reject unexpected success and cannot satisfy themselves with an assertion or sentinel. Match checks to snapshot, environment, method, risk, and falsifiable behavior; challenge tautologies, implementation-coupled tests, stale snapshots, clean scanners with unexercised paths, and unrun claims. Rerun broadly or use `$software-verification` only when evidence is invalid, incomplete, suspicious, or inadequate.
 8. **Challenge independently.** Seek counterexamples at changed boundaries and mixed states. Use repository tools when safe and read-only, but do not create findings from generic preference, style already enforced by tooling, or hypothetical architecture unrelated to the change.
 9. **Prioritize findings.** Rank both lenses by demonstrated consequence, reach, reversibility, and confidence. For each actionable finding, name the affected behavior, evidence, impact, and smallest credible repair direction; keep uncertainty and questions explicit.
 10. **Report review outcome.** Lead with findings ordered by severity, each anchored to the tightest file and line. Then state assumptions, evidence run, residual risks, and whether no actionable findings were found. A clean review means no findings within the inspected scope and evidence—not certification of the entire system.
@@ -53,7 +65,7 @@ Judge the change, not its narrative or activity volume. Recover enough intent an
 - Contract fit and engineering integrity are judged separately, then ranked together.
 - Each finding names evidence or a realistic counterexample, impact, and repair direction without implementation.
 - Severity reflects consequence and reach; missing evidence remains distinct from incorrectness.
-- Behavior, contracts, data, failures, operations, ownership, and maintainability receive proportionate coverage.
+- Behavior, contracts, data, security, failures, operations, ownership, and maintainability receive proportionate coverage.
 
 ## Reject review theater
 

@@ -41,6 +41,29 @@ Use keys such as `VER-ledger-conservation — Ledger value is conserved`. Every 
 
 Check payload meaning, identifiers, optional or missing fields, ordering, duplication, headers, content types, authorization, timeouts, retry safety, deletion, side effects, and old/new version combinations.
 
+## Security claim prompts
+
+- Preserve accepted `SEC-*` requirements and threat boundaries. For each
+  material claim, state the attacker capability, entry or trust crossing,
+  protected outcome, control, candidate snapshot, environment, and falsifying
+  oracle.
+- Select security methods for distinct uncertainty: threat-model or architecture
+  challenge for missing paths and control ownership; manual review or SAST for
+  source and data flow; component and provenance analysis for dependencies;
+  secret and configuration analysis for exposed authority; negative contract
+  tests for fixed control behavior; property or fuzz testing for generated
+  input and state spaces; DAST or penetration testing for deployed paths; and
+  runtime evidence for actual control activation or escaped abuse.
+- State each method's reach and omissions. A clean scanner, dependency report,
+  penetration sample, or exercised happy path does not establish absence of
+  vulnerabilities or untested attack paths.
+- Require explicit authorization, isolation, test identity, rate and blast
+  limits, stop conditions, sensitive-evidence handling, and cleanup before
+  active testing against external, shared, or production-like systems.
+- Route missing threat, security requirement, secure-default, or control
+  decisions to `software-security-design`; verification fixes methods and
+  oracles but does not invent the security contract.
+
 ## Failure and recovery prompts
 
 - Which failure classes are expected, hazardous but known, or interaction-driven unknowns?

@@ -1,0 +1,7 @@
+interface:
+  display_name: "Software Security Design"
+  short_description: "Design threat-grounded software security contracts"
+  default_prompt: "Use $software-security-design to define threat paths, security requirements, secure defaults, control ownership, and verification obligations for this software change without implementing it or accepting residual risk."
+
+policy:
+  allow_implicit_invocation: false

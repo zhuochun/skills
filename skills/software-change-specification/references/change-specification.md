@@ -65,7 +65,9 @@ Probe likely disagreement, not every combinatorial case. When outcomes differ, p
 - Product and interface surfaces:
 - Domain, state, data, and effect owners:
 - Consumers, dependencies, contracts, and compatibility:
-- Permissions, privacy, security, failure, recovery, telemetry, and release controls when relevant:
+- Permissions, privacy, trust and tenant boundaries, attacker-controlled inputs,
+  protected effects, accepted `SEC-*` requirements, failure, recovery,
+  telemetry, and release controls when relevant:
 - Accepted design constraints cited by key and label:
 
 ### Acceptance claims
@@ -95,6 +97,7 @@ semantics.
 - **Priority or capacity commitment is unsettled:** `product-opportunity-prioritization`.
 - **Terms, rules, or invariants remain disputed:** `domain-modeling`.
 - **Module or service responsibility is the actual open decision:** `deep-module-design` or `service-boundary-design`.
+- **Credible abuse paths, security requirements, secure defaults, or control ownership remain undecided:** `software-security-design`.
 - **Shared API, event, schema, or protocol compatibility changes:** `software-contract-evolution`.
 - **Supported obligations must move to an accepted replacement through controlled transition states, with old authority intended to become retireable:** `migration-planning`.
 - **Failure cause is not supported:** `software-failure-diagnosis`.

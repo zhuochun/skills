@@ -114,13 +114,38 @@ action can bypass the pass. Editorial documents remain with `technical-writing`,
 architecture fitness with `architecture-risk-evaluation`, and code candidates
 with `code-review`.
 
+### Security-sensitive software change
+
+```text
+accepted product, domain, and software-change behavior
+  -> software-security-design when attacker-controlled inputs, protected data
+     or effects, identity, secrets, dependencies, tenant boundaries,
+     privilege, or unsafe defaults create material security decisions
+  -> fixed CHG-* and SEC-* requirements with owned residual risks
+  -> specification-review for artifact integrity and an independent security
+     challenge when consequence or governance requires distinct judgment
+  -> one scoped-change-implementation executor using repository and framework
+     secure paths
+  -> code-review for implementation defects and requirement conformance
+  -> software-verification for fixed security claims and method limits
+  -> accountable release and residual-risk decision
+```
+
+Security design enters only when the threat or control decision has material
+value. A local change governed by unchanged repository security policy can
+proceed through ordinary implementation and review. `software-security-design`
+produces the security contract; it does not implement controls, certify its own
+design, or replace independent challenge. Stable recurring findings should
+move into safe defaults, shared APIs, repository checks, or platform controls
+instead of remaining reviewer memory.
+
 ### Resumable bounded software change
 
 ```text
 software-change-orchestration
   -> keep clear uninterrupted work inline, or obtain document-write authority and seed one living canonical specification when ownership or re-entry requires durable state
   -> derive compact, standard, or high-assurance posture and bound full skill workflows, artifacts, review, and verification
-  -> keep the immediate frontier in session and route it to software-change-specification or the smallest owning specialist
+  -> keep the immediate frontier in session and route it to software-change-specification, software-security-design for material security decisions, or the smallest owning specialist
   -> integrate each accepted result into the specification before dependent implementation
   -> use specification-review on a fixed candidate when misunderstanding could propagate materially
   -> loop through clarification, design, evaluation, or decision only as evidence requires

@@ -1,0 +1,10 @@
+# Topic bundle for threat-grounded security design and secure software change
+code-review
+decision-facilitation
+deep-module-design
+scoped-change-implementation
+software-change-specification
+software-contract-evolution
+software-security-design
+software-verification
+specification-review
