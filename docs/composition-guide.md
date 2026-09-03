@@ -120,10 +120,12 @@ with `code-review`.
 accepted product, domain, and software-change behavior
   -> software-security-design when attacker-controlled inputs, protected data
      or effects, identity, secrets, dependencies, tenant boundaries,
-     privilege, or unsafe defaults create material security decisions
-  -> fixed CHG-* and SEC-* requirements with owned residual risks
-  -> specification-review for artifact integrity and an independent security
-     challenge when consequence or governance requires distinct judgment
+     privilege, AI agents, or unsafe defaults create material security decisions
+  -> prioritized THR-* paths, explicit exclusions, fixed CHG-* and SEC-*
+     requirements, safe finding handling, and owned residual risks
+  -> specification-review for artifact integrity
+  -> a fixed independent-security-challenge handoff to a named reviewer when
+     consequence or governance requires distinct subject-matter judgment
   -> one scoped-change-implementation executor using repository and framework
      secure paths
   -> code-review for implementation defects and requirement conformance
@@ -135,9 +137,13 @@ Security design enters only when the threat or control decision has material
 value. A local change governed by unchanged repository security policy can
 proceed through ordinary implementation and review. `software-security-design`
 produces the security contract; it does not implement controls, certify its own
-design, or replace independent challenge. Stable recurring findings should
-move into safe defaults, shared APIs, repository checks, or platform controls
-instead of remaining reviewer memory.
+design, or replace independent challenge. High-assurance work remains not ready
+for its dependent action when the required independent reviewer, evidence, or
+safe handling channel is unavailable. `ready for accountable decision` is not
+implementation readiness; implementation readiness requires accepted material
+security rules and residual risks plus named verification and challenge gates.
+Stable recurring findings should move into safe defaults, shared APIs,
+repository checks, or platform controls instead of remaining reviewer memory.
 
 ### Resumable bounded software change
 

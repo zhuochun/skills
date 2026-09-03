@@ -185,10 +185,22 @@ Use $software-security-design to design the security contract for this new
 tenant-scoped export endpoint before implementation. Recover the protected data
 and effects, attacker and delegated-service capabilities, trust and tenant
 boundaries, direct and fallback paths, secure defaults, and dependency or
-logging exposure. Produce threat paths and keyed SEC requirements with control,
-exception, and residual-risk owners; define verification obligations without
-running active tests, implementing controls, certifying the design, or accepting
-risk.
+logging exposure. Prioritize retained threat paths, justify excluded surfaces,
+and produce keyed SEC requirements with control, exception, and residual-risk
+owners. Define readiness, safe finding handling, verification obligations, and
+an executable independent-challenge handoff without running active tests,
+implementing controls, certifying the design, or accepting risk.
+```
+
+```text
+Use $software-security-design to revise the security contract for this existing
+retrieval agent after implementation exposed an unowned tool-authority decision.
+Trace direct and indirect prompt injection, retrieved content, memory, model
+output, tool selection and arguments, service identities, tenant data, approval,
+and protected effects. Treat prompts and model output as untrusted, minimize tool
+authority, prioritize credible paths, and return a defined readiness disposition
+and independent-challenge handoff. Keep sensitive reproduction detail out of
+ordinary chat or repository files unless an approved audience and channel exist.
 ```
 
 ```text

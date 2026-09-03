@@ -215,7 +215,7 @@ A skill that creates an artifact should not silently certify that artifact. For 
 | Technical program orchestration state | Accountable outcome owner and integrated delivery evidence; activity and coordinator confidence do not certify the outcome |
 | Software contract evolution design | Producer, consumer, data, and support-policy owners review the recovered contract and compatibility claims; use `software-verification` and independent architecture challenge as consequence warrants |
 | Software change specification | `specification-review` independently challenges the fixed artifact's integrity and readiness limits; accountable change, product, domain, consumer, security, data, and operational owners retain the interpretations they own |
-| Software security design | Accountable security owner or an independent security reviewer challenges threat coverage, requirement and control fit, secure defaults, and residual risks; `specification-review` checks artifact integrity and `software-verification` evaluates fixed claims without accepting risk |
+| Software security design | A named reviewer distinct from the producer challenges the fixed snapshot with relevant expertise, evidence access, safe finding handling, and authority to reject or require repair; `specification-review` checks artifact integrity and `software-verification` evaluates fixed claims without accepting risk |
 | Observability design | Instrumentation and signal verification, then audit mode against representative runtime use |
 | Controlled release design | `software-verification` for claims and phase evidence; accountable owners retain promotion authority |
 | Migration plan | `software-verification` for falsifiable phase and invariant evidence |
@@ -365,11 +365,14 @@ Route by the decision, not by shared evidence. “Where should we invest in arch
 - `deep-module-design` explains a sufficient current boundary or decides where knowledge, state, resources, and interface semantics should live. It does not modify the target. Accepted structure-only execution routes to `behavior-preserving-refactoring`; intentional behavior change routes through `software-change-specification` or `scoped-change-implementation`.
 - `prototype-to-learn` modifies local files only to create a disposable observation surface for one design question. Its code creates no supported behavior or production-readiness claim; preserve the learning and route any maintained implementation separately.
 - `software-change-specification` turns one accepted but ambiguous change into a reviewable behavioral contract: current and desired behavior, invariants, scope, affected surfaces, representative examples, acceptance claims, unknowns, and readiness. It specifies the change rather than the patch and does not authorize implementation.
-- `software-security-design` owns credible threat paths, security requirements,
-  secure defaults, control and exception ownership, security verification
-  obligations, and residual-risk framing. It consumes accepted behavior without
-  rewriting product intent, does not implement controls, and does not certify
-  its own design or accept risk.
+- `software-security-design` owns change-level threat paths and explicit
+  exclusions, relative risk priority, security requirements, secure defaults,
+  control and exception ownership, safe finding handling, verification and
+  independent-challenge obligations, defined readiness, and residual-risk
+  framing before or during delivery. It conditionally covers AI and agent trust
+  boundaries, consumes accepted behavior without rewriting product intent, and
+  does not implement controls, certify its own design, accept risk, or assess an
+  organization-wide security or compliance program.
 - `specification-review` independently challenges one fixed specification for
   artifact-integrity failures and readiness limits. It does not rewrite the
   contract or decide unresolved product, domain, architecture, compatibility,

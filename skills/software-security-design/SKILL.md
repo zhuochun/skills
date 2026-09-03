@@ -1,6 +1,6 @@
 ---
 name: software-security-design
-description: Design a risk-proportionate secure-by-design contract before implementation. Use for threat modeling or when attacker-controlled inputs, protected data or effects, identity, secrets, dependencies, tenant boundaries, privileged operations, or unsafe defaults create material security decisions. Produce threat paths, security requirements, control ownership, secure defaults, verification obligations, and residual risks; route implementation, independent review, and risk acceptance.
+description: Design or revise a change-level secure-by-design contract across delivery. Use for threat modeling or when attacker-controlled inputs, protected data or effects, identity, secrets, dependencies, tenant boundaries, privilege, AI agents, or unsafe defaults create material security decisions. Produce prioritized threat paths, security requirements, secure defaults, control ownership, assurance obligations, and residual-risk routes; exclude organization-wide security-program assessment.
 ---
 
 # Software Security Design
@@ -27,8 +27,17 @@ policy.
   blast radius, reversibility, and detection or recovery difficulty. Let a
   contained local change proceed without a formal threat model when its
   security behavior is already governed and unchanged.
+- For every plausibly applicable surface, retain a threat path or record why it
+  is not applicable or material, the supporting evidence and confidence, and
+  what change would reopen it. Rank retained paths by consequence, reach,
+  attacker feasibility, exposure, detectability or recovery difficulty, and
+  evidence confidence without inventing numeric precision.
 - Label material statements **confirmed**, **inferred**, **assumed**,
   **proposed**, or **unresolved**. Accountable humans accept residual risk.
+- Confirm the intended audience and approved handling surface before including
+  sensitive weakness or reproduction detail. When no safe channel exists,
+  report the minimum abstract weakness, consequence, owner, and restricted
+  follow-up needed; never place secrets in the design artifact.
 
 ## Security design workflow
 
@@ -39,11 +48,12 @@ policy.
    identities, trust and tenant boundaries, privileges, protected state and
    effects, secrets, dependencies, build and deployment paths, update paths,
    telemetry, and recovery controls. Omit irrelevant surfaces.
-3. **Construct credible threat paths.** For each material path, name the actor
-   capability, precondition, entry or trust crossing, action, affected asset or
-   security outcome, existing control, and evidence. Include alternate,
-   fallback, administrative, support, and direct-interface paths when they can
-   bypass the normal flow.
+3. **Construct and prioritize credible threat paths.** For each material path,
+   name the actor capability, precondition, entry or trust crossing, action,
+   and affected asset or security outcome. Record consequence and reach,
+   feasibility and exposure, existing control and evidence, confidence,
+   priority, and disposition. Include alternate, fallback, administrative,
+   support, and direct-interface paths when they can bypass the normal flow.
 4. **Choose the design response.** Prefer eliminating hazardous behavior or
    reducing exposed authority before adding detection. Then choose preventive,
    containment, detection, and recovery controls for distinct failure modes.
@@ -71,14 +81,32 @@ policy.
    resource exhaustion, unsafe defaults, version skew, logging and error
    disclosure, control unavailability, and operator access. Retain only
    plausible paths supported by the subject and threat frame.
-10. **Report the design disposition.** Return the security frame, surface and
-    threat paths, `SEC-*` requirements, control ownership and defaults,
-    verification obligations, unresolved owner decisions, residual risks, and
-    `ready for accountable decision`, `ready with owned follow-through`, or
-    `not ready`. A produced design is not independent certification.
+10. **Prepare independent challenge.** For consequential work, name a reviewer
+    distinct from the producer with relevant expertise, evidence access, and
+    authority to reject or require repair. Fix the artifact snapshot, review
+    scope and limits, material threats and claims, safe evidence channel,
+    required findings disposition, and confirmation gate. If the reviewer or
+    channel is unavailable, leave that assurance gate unresolved.
+11. **Report the design disposition.** Return the security frame, included and
+    excluded surfaces, prioritized threat paths, `SEC-*` requirements, control
+    ownership and defaults, verification and independent-challenge obligations,
+    unresolved owner decisions, residual risks, and one defined disposition.
+
+Use dispositions precisely:
+
+- **Ready for accountable decision:** evidence is sufficient for named humans
+  to decide unresolved controls or risks; this is not implementation readiness.
+- **Ready for implementation with named assurance gates:** accountable humans
+  accepted all material security rules and residual risks, and owners, timing,
+  safe evidence handling, verification, and required independent challenge are
+  fixed. This does not itself authorize implementation or release.
+- **Not ready:** a material protected outcome, threat, current-state fact,
+  enforcement boundary, owner, safe handling route, or required reviewer is
+  unresolved enough that the next proposed action could choose unsafe behavior.
 
 Read [references/security-design-and-assurance.md](references/security-design-and-assurance.md)
-when selecting risk prompts, secure-coding obligations, standards, or
+when selecting risk prompts, AI or agent trust boundaries, secure-coding
+obligations, sensitive-finding handling, independent challenge, standards, or
 verification methods for a material security surface.
 
 ## Compose without taking over
@@ -92,9 +120,11 @@ verification methods for a material security surface.
   implementer owns code shape and must stop when implementation exposes an
   unowned security decision.
 - Send fixed specifications to `specification-review` for artifact-integrity
-  challenge and implemented candidates to `code-review`. Consequential work
-  also needs an independent security challenge by an accountable reviewer who
-  can reject the design or candidate.
+  challenge and implemented candidates to `code-review`. Neither substitutes
+  for the fixed independent security challenge required for consequential work.
+- Route organization-wide security-program maturity, governance, or compliance
+  assessment to the accountable security or compliance owner. Use
+  `research-synthesis` only when the missing work is cross-standard evidence.
 - Route claim-to-method and evidence execution to `software-verification`.
   Security design defines the required outcome and threat boundary, not a
   passing result or release decision.
@@ -103,6 +133,8 @@ verification methods for a material security surface.
 
 - Protected outcomes, attacker capabilities, trust boundaries, and exposure
   are explicit enough to bound credible threat paths.
+- Plausibly applicable surfaces are included or have an evidence-backed
+  exclusion and reopening condition; retained threats have a relative priority.
 - Each material threat has a disposition, owner, evidence status, and linked
   requirement or accepted residual risk.
 - Each `SEC-*` requirement names its enforcement authority, failure behavior,
@@ -111,6 +143,8 @@ verification methods for a material security surface.
   defense in depth addresses distinct failures rather than duplicated theater.
 - Alternate and degraded paths cannot silently bypass stronger primary-path
   controls.
+- Consequential work has an executable, safely handled independent-challenge
+  handoff or remains not ready for the dependent action.
 - Readiness preserves unresolved product, architecture, privacy, compliance,
   operational, and risk-acceptance authority.
 
@@ -121,14 +155,16 @@ verification methods for a material security surface.
   subject-specific threat and control trace.
 - Do not demand every control for every change, equate internal with trusted,
   or assume a hidden client control protects a server effect.
-- Do not prescribe custom cryptography, collect secrets for analysis, expose
-  exploit details beyond the authorized audience, or perform active testing
-  without explicit authority and safeguards.
+- Do not prescribe custom cryptography, collect secrets for analysis, put
+  sensitive findings in an unapproved channel, expose more exploit detail than
+  the authorized reviewer needs, or perform active testing without explicit
+  authority and safeguards.
 - Do not mark the design secure, compliant, verified, or accepted. State the
   exercised scope, evidence limits, residual risk, and accountable next use.
 
 ## Completion
 
-Return a compact, evidence-ranked security design with threat paths, `SEC-*`
-requirements, secure defaults, control and exception ownership, verification
-obligations, unresolved routes, residual risks, and an explicit disposition.
+Return a compact security design with prioritized threat paths, evidence-backed
+exclusions, `SEC-*` requirements, secure defaults, control and exception
+ownership, safely handled findings, verification and independent-challenge
+obligations, unresolved routes, residual risks, and a defined disposition.
