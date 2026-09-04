@@ -497,9 +497,15 @@ Observability can supply evidence to verification, but telemetry is not a substi
   knowledge architecture, agent-facing commands, runtime setup within accepted
   constraints, implementation and wiring of fixed verification contracts,
   hooks, setup and verification CI, and repo-specific skill placement and routing.
-  Assessment supports the setup. Completion requires a usable bootstrap, or a
-  demonstrated improvement or evidence-backed no-op for retrofit or renewal;
-  an entrypoint edit alone is insufficient. A bootstrap remains incomplete when
+  Bootstrap recommends local reversible defaults and defers unneeded choices;
+  it enables renewal intake only for demonstrated repetition, recurring
+  intervention, or an accepted automation goal. Completion requires a usable
+  Bootstrap; a demonstrated improvement or evidence-backed no-op for Retrofit;
+  or an evidence-backed candidate disposition for Renew, including no change.
+  Renew promotion requires accepted correction and passing replay, contrast,
+  and guardrail evidence; evaluation can end in rejection or insufficient
+  evidence without a promotion pass. An entrypoint edit alone is insufficient.
+  A bootstrap remains incomplete when
   the accepted runtime or a required official command path is unavailable or
   failing; evidence obtained by bypassing that path is supplemental only.
 - `software-change-orchestration` owns continuity for one bounded software
@@ -555,10 +561,14 @@ actions remain with their canonical owners.
 
 An agent-ready or setup request does not authorize deletion of any pre-existing
 path. Each deletion needs explicit exact-target authority; tracked or supported
-paths additionally require proven replacement use and satisfied consumer and
-compatibility obligations. Unattended automation added by setup exposes a pause
-or operator-control path and remains bounded by accountable review capacity as
-well as permissions, budget, retries, cleanup, and stop conditions.
+paths being replaced additionally require proven replacement use and satisfied
+consumer and compatibility obligations. Unattended automation starts only after
+its artifact, command, and evidence loop are stable. It exposes a pause or
+operator-control path and remains bounded by accountable review capacity,
+permissions, resource budgets, retries, cleanup, and stop conditions. Enforce
+hard rules or label them advisory. Promotion levels select evidence and review,
+not action permissions; existing explicit task or adopted policy authorization
+is reusable, while uncovered commits, pushes, or publication remain blocked.
 
 ### Capacity, ownership, and platform capability
 

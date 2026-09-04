@@ -1,220 +1,198 @@
 ---
 name: agentic-repo-setup
-description: Bootstrap, retrofit, or renew a repository so coding agents retrieve minimum sufficient owned context, use stable commands, and receive risk-matched evidence from effective AGENTS.md routes. Use for new foundations, mature-repository improvement, or harness failures. Change repository knowledge architecture and fixed verification wiring; route product, domain, architecture, command-compatibility, and release decisions.
+description: Bootstrap, retrofit, or renew the repository-local environment for reliable coding-agent work. Use Bootstrap to recommend and materialize minimum information, execution, evidence, and control paths with renewal when justified; Retrofit to improve grounded task journeys; Renew to turn accepted execution corrections into validated reusable changes. Route product meaning, architecture decisions, command compatibility, and release authority.
 ---
 
 # Agentic Repo Setup
 
-Improve the repository environment in which coding agents discover, change,
-and verify work. Use the effective `AGENTS.md` instruction chain as the
-bootstrap route, not as a proxy for repository readiness. Apply the
-mode-specific completion evidence below; an entrypoint edit alone is not enough.
+Improve the repository environment for coding-agent discovery, execution, verification, and
+learning. Treat effective `AGENTS.md` instructions as routing, not proof of agent readiness.
 
 ## Select mode and authority
 
-- **Bootstrap** a new or young repository around accepted product, delivery,
-  runtime, and foundational architecture constraints. Create the smallest
-  useful knowledge, command, and evidence paths for representative work. Do not
-  generate empty domain, architecture, decision, or test templates. Observable
-  files may constrain setup but do not establish acceptance; accountable owner
-  confirmation or an explicitly adopted authority does. Stop and route every
-  unresolved foundational choice.
-- **Retrofit** an existing repository by tracing representative task scenarios,
-  improving repository knowledge architecture and feedback paths, and preserving
-  supported behavior, compatibility, baseline failures, and unrelated work.
-- **Renew** after repeated review friction, stale guidance, setup failure,
-  escaped defects, or operational learning. Reproduce or recover the trigger,
-  repair its earliest responsible owner, and rerun that scenario.
+- **Bootstrap** a new or young repository. Inspect available evidence, conduct a bounded
+  owner interview for scaffold-changing choices, recommend one minimum profile, and
+  materialize accepted or safely reversible environment paths.
+- **Retrofit** an existing repository. Trace grounded task scenarios, improve the
+  environment, and preserve supported behavior, compatibility, baseline failures, and
+  unrelated work.
+- **Renew** after an accepted execution correction, escaped defect, repeated intervention,
+  stale route, or measured burden. Qualify the learning, trial the smallest reusable change,
+  and record its disposition.
 - Treat an assessment or recommendation request as read-only.
 
-An explicit request to bootstrap, retrofit, renew, or make the repository
-agent-ready authorizes ordinary repository-foundation writes. This includes
-creating or reorganizing repository knowledge without changing accepted meaning,
-and creating or wiring verification artifacts for accepted, unambiguous claims.
-It does not authorize new product behavior, domain meaning, architecture or
-service-boundary decisions, production-code redesign, external settings,
-secrets, production actions, deletion of any pre-existing path, commits, pushes,
-deployments, or release acceptance.
+An explicit Bootstrap, Retrofit, Renew, or agent-ready request authorizes
+behavior-preserving repository knowledge changes and fixed verification wiring. It does not
+authorize new product behavior, domain meaning, application or service architecture,
+production-code redesign, supported-command semantics, external settings, secrets,
+production actions, deletion of a pre-existing path, commits, pushes, deployment, or release
+acceptance. Promotion criteria do not grant execution permission; use existing explicit task
+authorization or adopted policy without asking again for authority already granted.
 
-## Own the repository foundation
+## Own the repository environment
 
-This skill owns effective repo instructions, repository knowledge architecture,
-new agent-facing commands or wrappers, accepted runtime setup, implementation
-and wiring of fixed verification contracts, hooks, setup and verification CI,
-and repo-specific skill routing. It does not own a semantic change to a supported
-or independently consumed command. Repository knowledge architecture is the
-task-to-authority placement, retrieval, and freshness relationship among
-repository artifacts.
+- **Information architecture:** effective instruction precedence, task-to-authority
+  placement, consumption rules, and freshness across current intent, domain and architecture
+  knowledge, executable contracts, observed implementation, derived views, and history. Keep
+  plausible competing authorities visible until resolved.
+- **Execution environment:** accepted runtime setup and one stable agent-facing path per
+  recurring setup, development, focused-check, broader-verification, build, diagnosis, or
+  maintenance intent.
+- **Evidence and control environment:** fixed verification wiring, hooks, non-deployment CI,
+  permissions, and automation bounded by resource budgets, pause paths, retries, cleanup,
+  stop conditions, and accountable review capacity. Enable unattended operation only after
+  its artifact, command, and evidence loop are stable. Enforce hard rules or label them advisory.
+- **Learning environment:** repository-level intake, trial, promotion, supersession,
+  rollback, and reopening paths for accepted corrections.
 
-Preserve these authority classes:
+Repository information architecture is not product, domain, application, service,
+deployment, or data architecture. Setup may recommend logical repository placement; it does
+not choose missing semantic or structural decisions.
 
-- accountable decisions, specifications, ADRs, and domain or architecture
-  documents own accepted intent, meaning, commitments, and rationale;
-- tests, schemas, types, configuration, linters, hooks, CI, and permissions own
-  only the executable claims they encode;
-- code and runtime evidence show observed behavior, not accountable acceptance;
-- project and decision history preserve past intent and learning without becoming
-  current authority; and
-- derived views retain links to the stronger sources that determine them.
+## Bootstrap through evidence and recommendations
 
-Keep domain vocabulary, concepts, invariants, and semantic contexts distinguishable
-from architecture responsibilities, interfaces, dependencies, and deployment or
-data boundaries. Keep both distinguishable from behavior specifications,
-decision rationale, execution guidance, and history. This separation may use
-stable sections, anchors, files, or generated views; do not impose one document tree.
+Inspect the repository, product evidence, constraints, and existing answers before asking
+questions. Ask only about choices that change maintained scaffolding: target work classes,
+the first representative slice, fixed runtime and delivery constraints, the evidence
+contract, autonomy, information owners, and renewal policy.
 
-Use minimum sufficient context: retrieve every authoritative source needed for
-the task while avoiding demonstrably irrelevant, stale, or superseded material.
-Retrieve and surface plausible competing authorities until their conflict is
-resolved or an accountable owner selects the authority. Fewer files, tokens, or
-steps do not prove improvement. Treat two artifacts as competing authority only
-when both claim to govern the same material meaning; supporting explanation with
-a canonical link is not duplicate truth.
+Classify each scaffold-changing choice as:
 
-## Compose without becoming a meta-orchestrator
+- **accepted**;
+- **recommended reversible default**, with rationale and reversal path;
+- **consequentially unresolved**, blocking only dependent slices; or
+- **deferred**, because the walking skeleton does not need it.
 
-When an authorized improvement needs specialist judgment and the matching
-installed skill is available, compose with that workflow and resume setup after
-its result is fixed. Do not mark the slice complete merely by naming a route.
-If the skill, evidence, authority, or accountable decision is unavailable,
-route only the blocked slice and continue independent authorized work.
+Recommend one minimum profile instead of an unranked menu. Without an accountable response,
+return a conditional recommendation and do not materialize a consequential unresolved
+choice.
 
-- Use `technical-writing` for document function, reader path, and prose that
-  preserves accepted meaning.
-- Use `domain-modeling` for disputed vocabulary, concepts, invariants, or
-  semantic contexts.
-- Use `architecture-surface-mapping` to recover an unfamiliar task path;
-  use `architecture-assessment` only when several structural opportunities need
-  ranking.
-- Use `software-verification` strategy mode to fix missing or stale claims,
-  methods, oracles, environments, and evidence limits. Freeze that contract
-  before setup implements or wires it. Use its execution or independent mode
-  when the fixed contract requires that evidence.
+Design logical information architecture before a file tree. Materialize only owners with
+real content or an accepted need. Establish one walking skeleton from clean setup through
+representative work, focused feedback, broader evidence, and useful failure output. Establish
+renewal intake when repeated agent work, recurring intervention, or an accepted automation
+goal justifies it. Otherwise defer the interface with an activation signal; do not block
+Bootstrap or create governance artifacts merely to prepare for hypothetical learning.
 
-Route required behavior changes to `scoped-change-implementation`, unexplained
-failures to `software-failure-diagnosis`, and production-code restructuring to
-`behavior-preserving-refactoring` or its design owner. Obtain
-`software-contract-evolution` before changing, deprecating, or retiring the
-semantics of a supported or independently consumed command. If it is unavailable,
-preserve that command's behavior and repair routing around it or leave only that
-slice blocked. Route new or materially revised repo skills to `skill-creator`;
-durable continuity for one change to
-`software-change-orchestration`; and a supported cross-repository self-service
-product to `platform-capability-design`.
+Read [references/bootstrap.md](references/bootstrap.md) only for Bootstrap decisions and
+its walking skeleton; use existing owners and systems when renewal intake is justified.
 
-## Apply the opinionated defaults
+## Retrofit grounded task journeys
 
-1. Start with the repository and its existing systems of record, not a generic
-   template, control plane, workflow DSL, memory service, or platform.
-2. Resolve effective instruction precedence, launch directory, fallbacks, and
-   size limits. For Codex, inspect `AGENTS.override.md`, `AGENTS.md`, configured
-   fallbacks, and the root-to-working-directory chain. Keep active `AGENTS.md`
-   files concise routes from tasks and changed surfaces to owners, commands,
-   and evidence.
-3. Prefer one stable command for each recurring intent such as
-   setup, development, focused checking, broader verification, building,
-   diagnosis, or maintenance. Make automation-facing commands non-interactive
-   where appropriate, and make prerequisites and failures explicit.
-4. Keep cross-repository skills installed or plugin-provided. Add a repo skill
-   only for a repeated local procedure with a stable interface.
-5. Partition scenarios only when instruction chains, knowledge authority,
-   runtime, feedback implementation, or permission boundaries differ materially.
-6. Add unattended automation only after its artifact, command, and evidence loop
-   are stable. Bound permissions, budget, retries, pause or operator control,
-   cleanup, stop conditions, and accountable review capacity.
-7. Do not reorganize production code merely to look agent-friendly or create
-   repository artifacts that displace no observed need.
+Start from recent changes, repeated work, maintained responsibilities, or measured friction.
+Trace each scenario from the effective instruction route through minimum sufficient
+authority, command selection, focused feedback, broader evidence, and handoff. Existing
+artifacts and green commands prove presence, not task fitness.
 
-## Execute the setup
+Change only surfaces that displace observed friction. Preserve accepted meaning while
+improving document function, concern separation, retrieval, freshness, commands,
+diagnostics, and fixed evidence wiring. Finish with a demonstrated material improvement or
+an evidence-backed no-op; an `AGENTS.md` edit alone is not completion.
 
-1. **Establish the baseline.** Inspect Git state, effective instructions,
-   accepted constraints, repository knowledge architecture, commands, tests,
-   CI, hooks, permissions, recent failures, and existing task paths. Preserve
-   unrelated work and record the smallest credible current check.
-2. **Trace representative scenarios.** Ground scenarios in accepted bootstrap
-   workflows, recent changes, repeated work, or the renewal trigger. By default,
-   rehearse discovery, context retrieval, command selection, and evidence without
-   making an unrelated product change. Sample one scenario per selected material
-   partition and list untested partitions.
-3. **Diagnose functional friction.** Find the earliest gap in task-to-authority
-   retrieval, concern separation, freshness, setup, command clarity, focused
-   feedback, broader evidence, failure diagnostics, or re-entry. Existing files,
-   tests, and green commands prove presence, not task fitness or adequacy.
-4. **Obtain owned decisions.** Resolve mechanically provable routing or
-   behavior-preserving knowledge changes directly. Compose specialist workflows
-   for available judgment. Stop only the slice that still lacks authority,
-   accepted meaning, a fixed verification contract, or safe execution conditions.
-5. **Implement the smallest coherent improvements.** Change knowledge placement
-   and retrieval, new commands or behavior-preserving wrappers, fixed verification
-   artifacts and wiring, proportional hooks or CI, or repo-specific procedure
-   only when each change displaces observed friction. Keep local and CI paths on
-   one implementation where practical. Do not rewrite an existing supported
-   command's semantics as verification wiring.
-6. **Verify the delta.** Repeat each affected scenario from the effective
-   `AGENTS.md` route. Use a fresh consumer context when instruction or retrieval
-   behavior changed and the platform permits it; otherwise record **not run**.
-   Compare authority reached, unnecessary or conflicting retrieval, command
-   hops, diagnostics, and evidence scope without treating lower counts as proof.
-7. **Retire and report.** Redirect or deprecate obsolete paths by default.
-   Delete any pre-existing path only with explicit exact-target authority. A
-   tracked or supported path also requires proven replacement use and satisfied
-   compatibility obligations. Never infer deletion authority from a setup or
-   agent-ready request; remove temporary artifacts created by this run. Report
-   the trigger or baseline, changed owners and paths, evidence, limits, blocked
-   slices, and renewal signal.
+## Renew from accepted corrections
 
-Read [references/setup-checklist.md](references/setup-checklist.md) when the work
-spans several surfaces, needs a durable task-to-authority or feedback-topology
-record, changes a gate, or requires cold-start and failure rehearsal.
+Renew is the repository-level learning entry. It may consume evidence from any execution
+workflow; it does not own that workflow or require `goal-pursuit`.
+
+Bind the smallest sufficient episode evidence: task and revision, effective context, material
+actions, diff, checks, external evaluation, correction, and relevant intervention cost. Bound
+missing evidence. A raw failure, model reflection, or unaccepted preference is not a learning
+label; recover diagnosis or acceptance before treating it as a reusable correction.
+
+For each candidate:
+
+1. **Confirm the correction.** Establish what changed the result and who accepted that
+   meaning.
+2. **Assign the mechanism.** Distinguish context, authority, procedure, runtime, feedback,
+   permission, architecture, task-local implementation, model variance, and product
+   ambiguity.
+3. **Test learnability.** Retain only a supported, reusable, stable enough, encodable, and
+   verifiable correction.
+4. **Select the lowest durable owner.** Prefer removing the cause or adding an executable
+   control over a tool affordance, route, repo skill, prose rule, or historical note.
+5. **Trial a qualified candidate.** Replay the source episode, exercise an appropriate
+   held-out or contrast case, and protect an existing guardrail before promotion.
+6. **Dispose and consolidate.** Promote, retain as a trial, keep task-local, route,
+   quarantine, reject, supersede, or roll back. Replace obsolete paths instead of growing
+   instructions and controls monotonically.
+7. **Observe.** Record the validity limit and reopening or reversal signal.
+
+Scale evidence to the mechanism and consequence; a local route repair may use direct checks.
+Automate collection and trials only when repetition justifies them. A changed instruction,
+selector, check, judge, or gate must not be its own sole proof. Increase independence with risk.
+
+Read [references/renewal.md](references/renewal.md) only for Renew qualification, trials,
+promotion, and dispositions. An evidence-backed non-promotion outcome completes evaluation
+without requiring an environment change or a passing promotion trial.
+
+## Compose without losing lifecycle ownership
+
+Use specialist judgment only when its decision is missing, then resume the active mode. A
+route is not completion.
+
+- Use `technical-writing` for document function, `domain-modeling` for semantic conflict,
+  and `architecture-surface-mapping` for an unfamiliar path.
+- Use `software-failure-diagnosis` for an unexplained mechanism and `software-verification`
+  for an unfixed claim, method, oracle, scope, or independent verdict.
+- Route behavior changes to `scoped-change-implementation`; production-code structure to
+  `behavior-preserving-refactoring` or its design owner; supported command semantics to
+  `software-contract-evolution`; and repo skill authoring to `skill-creator`.
+- Use `software-change-orchestration` only for continuity of one bounded change, and
+  `platform-capability-design` only for a supported shared product.
+
+## Execute the common spine
+
+1. **Establish the baseline.** Start from the repository and existing systems of record.
+   Inspect Git state, effective instructions, accepted constraints, information
+   architecture, runtime, commands, evidence, controls, failures, and task paths.
+2. **Bind representative evidence.** Select accepted Bootstrap workflows, grounded Retrofit
+   scenarios, or the Renew episode. Preserve unrelated work and baseline failures.
+3. **Diagnose the earliest gap.** Separate an environment defect from missing product,
+   domain, architecture, compatibility, or release authority.
+4. **Obtain owned decisions.** Resolve mechanical routing and behavior-preserving changes
+   directly. Route only blocked slices.
+5. **Implement the smallest coherent change.** Keep local and CI paths on one
+   implementation. Do not add empty templates, duplicate truth, a generic control plane or
+   memory service, speculative controls, or one-off repo skills.
+6. **Verify the delta.** Repeat affected consumer paths. Use a fresh context when
+   instruction or retrieval behavior changed and the platform permits it; otherwise record
+   **not run**.
+7. **Consolidate and report.** Redirect or deprecate superseded paths. Delete a pre-existing
+   path only with explicit exact-target authority and applicable compatibility evidence.
+   When replacing a tracked or supported path, also prove replacement use and consumer coverage.
+
+Read [references/setup-checklist.md](references/setup-checklist.md) when several surfaces
+need one durable implementation, review, or handoff record.
 
 ## Strengthen verification proportionately
 
-For every sampled scenario, classify focused and broader evidence as **present**,
-**absent**, **not applicable**, or **disputed**. Inspect whether present evidence
-can falsify its named claim, exposes skips and omissions, and narrows likely
-causes. Presence, test count, coverage, or a green gate does not prove adequacy.
+Classify focused and broader evidence as **present**, **absent**, **not applicable**, or
+**disputed**. Presence, test count, coverage, or a green gate does not prove adequacy.
 
-When a material gap has an accepted claim and oracle, obtain and freeze the
-`software-verification` contract before implementing or wiring its artifacts.
-Route production-code seams separately. Use mutation, property, fuzz,
-differential, model-based, failure, or fixed negative-control probes only when
-the contract selects their risk, scope, environment, budget, and stop controls.
-
-Before changing test selection, broader gate composition, CI enforcement, or
-permissions, freeze pre-change claims, exercised and omitted scope, skips, and
-exit semantics. Preserve a pre/post scope delta. The changed gate cannot be its
-sole proof; use the fixed negative control or independent evidence required by
-the verification contract. Adding a new verification entry point or preserving
-an existing command's semantics remains setup; changing existing supported
-command semantics first requires its compatibility owner.
+Before changing test selection, broader-gate composition, CI enforcement, or permissions,
+freeze pre-change claims, exercised and omitted scope, skips, and exit semantics. Preserve a
+pre/post scope delta. Use a fixed negative control or independent evidence; the changed
+control cannot certify itself.
 
 ## Quality gates
 
-- Bootstrap yields usable task-to-authority, command, and evidence paths for
-  accepted work rather than empty scaffolding. Required official paths reach
-  their defined completion or readiness signal in the accepted runtime. If that
-  runtime is unavailable or a required official path fails, bootstrap is
-  incomplete or blocked; checks that bypass its prerequisites are supplemental
-  evidence, not completion evidence.
-- Retrofit yields a demonstrated material improvement or an evidence-backed
-  no-op from representative scenarios; an `AGENTS.md` edit alone is not proof.
-- Renew repairs the earliest responsible owner and reruns the triggering scenario
-  without hiding pre-existing failures or unresolved downstream gaps.
-- Each sampled scenario reaches minimum sufficient authority and risk-matched
-  evidence. Semantic conflicts, untested partitions, and unavailable fresh or
-  independent evidence remain visible.
-- Supported behavior and compatibility remain preserved unless separately
-  authorized. Hard rules are enforced or honestly advisory.
-- Added files, checks, dependencies, and automation displace demonstrated
-  friction. Cosmetic splits, duplicate truth, speculative controls, and
-  unsupported retirement do not remain as setup residue.
+- Bootstrap produces an accepted or safely reversible walking skeleton; renewal intake is
+  usable when justified, otherwise explicitly deferred with an activation signal.
+- Retrofit demonstrates a material task-path improvement or an evidence-backed no-op while
+  preserving behavior and baseline failure identity.
+- Renew evaluation ends with an evidence-backed disposition, including no environment change.
+  Promotion requires an accepted correction and passing replay, contrast, and guardrail evidence.
+  Failed or unavailable evidence prevents promotion, not an honest rejection or deferral.
+- Each sampled path reaches minimum sufficient authority and risk-matched evidence.
+  Unresolved meaning, untested partitions, and unavailable independent evidence remain
+  visible.
+- Added files, checks, dependencies, and automation displace demonstrated burden. Superseded
+  instructions and controls do not accumulate silently.
 
 ## Completion
 
-Return the mode, authority, representative scenarios, baseline or renewal
-trigger, repository knowledge and feedback changes, stable commands, exact
-evidence, before-and-after limits, preserved behavior, path dispositions,
-evidence-backed no-op basis when applicable, blocked slices, and next renewal
-signal. Never report bootstrap complete while the accepted runtime or a required
-official setup, work, or evidence path is unavailable or failing. A read-only
-assessment returns the same bounded delta without mutation.
+Return the mode, authority, decision frontier or triggering episode, representative paths,
+changed environment owners, stable commands, exact evidence, before-and-after limits,
+preserved behavior, candidate dispositions, path consolidation, blocked slices, and the next
+renewal or reopening signal. Never claim Bootstrap complete while its accepted runtime or a
+required official path is unavailable or failing.
