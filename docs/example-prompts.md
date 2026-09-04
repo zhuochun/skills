@@ -35,18 +35,36 @@ delivery, and mark every inferred or disputed step.
 
 ```text
 Use $agentic-repo-setup to retrofit this existing repository for reliable
-coding-agent work. Preserve supported behavior and unrelated work. Distinguish
-accepted intent, executable contracts, observed implementation, derived views,
-and history; do not settle semantic conflicts as setup. Resolve the effective
-instruction chain and keep selected active `AGENTS.md` files as concise bootstrap
-routers. Sample each materially distinct instruction, authority, runtime,
-feedback, or permission partition. Classify focused and full evidence as
-present, absent, not applicable, or disputed; never invent a missing oracle or
-gate. If gate composition changes, preserve its pre/post scope and use a fixed
-negative control or proportionate independent evidence. Use a fresh consumer
-context when available and mark it not run otherwise. Add only controls that
-displace observed friction, preserve baseline failures, and report untested
-partitions and external or production actions not done.
+coding-agent work. Trace grounded recent or repeated task scenarios from the
+effective `AGENTS.md` route through minimum sufficient authoritative context,
+commands, focused feedback, and broader evidence. Improve document function,
+separate domain meaning from architecture structure and history where the task
+path needs it, and strengthen verification only through a fixed claim and oracle.
+Compose available specialist workflows within current authority, preserve
+supported behavior and unrelated work, and prove a material improvement or an
+evidence-backed no-op. An `AGENTS.md` edit alone is not completion.
+```
+
+```text
+Use $agentic-repo-setup to bootstrap this new repository after the product,
+delivery target, runtime, and foundational architecture decisions have been
+accepted by their accountable owners; do not infer acceptance from files merely
+being present. Ground the structure in representative developer workflows.
+Establish minimum sufficient task-to-authority routes, stable setup and work
+commands, and the first risk-matched feedback paths without inventing domain
+models, ADR backlogs, empty templates, or unsupported product behavior. Report
+bootstrap incomplete if required official paths cannot run in the accepted runtime.
+```
+
+```text
+Use $agentic-repo-setup to renew this repository after agents repeatedly loaded
+stale architecture guidance and selected an unrelated full test command. Recover
+or safely reproduce that scenario, identify its earliest responsible knowledge,
+retrieval, command, or verification owner, compose the available specialist
+workflow, implement the smallest durable repair, and rerun the trigger. Preserve
+baseline failures and existing supported command semantics unless their
+compatibility owner approves a change. State what evidence should trigger another
+renewal.
 ```
 
 ```text

@@ -490,14 +490,18 @@ Observability can supply evidence to verification, but telemetry is not a substi
 ### Agentic repo setup, change orchestration, and platform capability
 
 - `agentic-repo-setup` directly bootstraps, retrofits, or renews the reusable
-  repository harness when repo writes are authorized and the product, delivery,
-  runtime, and foundational architecture constraints needed by scaffolding are
-  accepted; observed files do not establish bootstrap acceptance. It owns
-  effective repo `AGENTS.md` routing, claim-level knowledge placement and
-  retrieval, agent-facing wrapper commands, runtime setup within those
-  constraints, wiring of accepted verification entry points, hooks, setup and
-  verification CI, and repo-specific skill placement and routing. Assessment and
-  design are supporting steps, not its final artifact.
+  repository foundation when repo writes are authorized and the product,
+  delivery, runtime, and foundational architecture constraints needed by
+  scaffolding are accepted; observed files do not establish bootstrap acceptance.
+  It owns effective repo `AGENTS.md` routing, task-to-authority repository
+  knowledge architecture, agent-facing commands, runtime setup within accepted
+  constraints, implementation and wiring of fixed verification contracts,
+  hooks, setup and verification CI, and repo-specific skill placement and routing.
+  Assessment supports the setup. Completion requires a usable bootstrap, or a
+  demonstrated improvement or evidence-backed no-op for retrofit or renewal;
+  an entrypoint edit alone is insufficient. A bootstrap remains incomplete when
+  the accepted runtime or a required official command path is unavailable or
+  failing; evidence obtained by bypassing that path is supplemental only.
 - `software-change-orchestration` owns continuity for one bounded software
   change using that setup. It does not rebuild the harness around every
   change.
@@ -515,22 +519,46 @@ rationale; tests and controls encode only their named executable claims; code
 and runtime evidence show observed state without establishing acceptance; skills
 expose reusable judgment; commands execute operations; and the established issue
 or change surface owns durable pause and re-entry state.
+Keep domain vocabulary, concepts, invariants, and semantic contexts
+distinguishable from architecture responsibilities, interfaces, dependencies,
+and deployment or data boundaries. Keep both distinguishable from behavior
+specifications, execution guidance, and history without imposing one file tree.
+Judge context by minimum sufficiency and task success; lower file, token, or step
+counts do not independently prove improvement. Plausible competing authorities
+remain retrievable and visible until their conflict is resolved; setup does not
+optimize one away merely to reduce context.
+
 `software-verification` owns fixed claim-to-evidence contracts;
-`software-contract-evolution` owns compatibility, deprecation, and retirement
-for supported or independently consumed commands; `skill-creator` owns new or
-materially revised repo skills; and `observability-design` owns the runtime
-signal substrate. General skills remain installed or plugin-provided. Setup may
-change its harness surfaces directly. It may mechanically derive an inner-loop
-check only from an accepted, unambiguous claim and oracle; that does not define
-coverage or a full-verification contract. Missing or disputed claims and
-oracles, consequential method choices, evidence limits, full-verify scope, and
-independent verdicts remain with `software-verification`. Setup leaves semantic
-authority conflicts unresolved and routes them to their accountable owner. When
-setup changes a gate or protected control, it preserves pre/post scope and does
-not use the changed gate as the sole proof that scope was preserved. Setup routes an individual document's
-reader task and prose to `technical-writing`, and routes product behavior, domain
-meaning, production-code redesign, release or deployment design, supported
-command evolution, skill authoring, and external actions to their owners.
+`software-contract-evolution` owns compatibility design, versioning,
+deprecation, and retirement for semantic changes to supported or independently
+consumed commands;
+`skill-creator` owns new or materially revised repo skills; and
+`observability-design` owns the runtime signal substrate. Setup may add a new
+local command or behavior-preserving wrapper, but verification wiring does not
+authorize it to change an existing supported command's semantics. Cross-repository
+skills remain installed or plugin-provided.
+When authorized setup needs an available specialist workflow, it obtains that
+owned result and resumes integration; it does not treat a named route as completed
+work. If the skill, evidence, authority, or decision is unavailable, setup routes
+only the blocked slice.
+
+Setup may implement or wire a verification artifact only after the claim,
+method, oracle, environment, scope, and validity limit are fixed. Production-code
+seams route to their implementation or refactoring owner. Missing or disputed
+claims and oracles, consequential method choices, broader-gate scope, and
+independent verdicts remain with `software-verification`. When setup changes a
+gate or protected control, it preserves pre/post scope and does not use the
+changed gate as the sole proof that scope was preserved. Product behavior,
+domain meaning, architecture decisions, production-code redesign, release or
+deployment design, supported command evolution, skill authoring, and external
+actions remain with their canonical owners.
+
+An agent-ready or setup request does not authorize deletion of any pre-existing
+path. Each deletion needs explicit exact-target authority; tracked or supported
+paths additionally require proven replacement use and satisfied consumer and
+compatibility obligations. Unattended automation added by setup exposes a pause
+or operator-control path and remains bounded by accountable review capacity as
+well as permissions, budget, retries, cleanup, and stop conditions.
 
 ### Capacity, ownership, and platform capability
 

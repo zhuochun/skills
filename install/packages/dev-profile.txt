@@ -27,3 +27,4 @@ software-security-design
 software-verification
 specification-review
 technical-program-orchestration
+technical-writing

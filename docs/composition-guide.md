@@ -312,26 +312,41 @@ Use this route when the decision is which structural opportunity deserves attent
 
 ```text
 agentic-repo-setup
-  -> bootstrap around accepted product, delivery, runtime, and architecture constraints; retrofit an existing repository; or renew a failing harness
-  -> architecture-surface-mapping only when the relevant repository journey is unfamiliar
-  -> domain-modeling, deep-module-design, behavior-preserving-refactoring, or another focused owner only for a discovered change outside the harness
-  -> software-verification when claims or oracles are missing or disputed, coverage or full-verify scope is undefined, a method choice is consequential, or an independent verdict is needed
-  -> software-contract-evolution before changing or retiring a supported or independently consumed command
+  -> choose bootstrap, task-centered retrofit, or failure-driven renewal
+  -> trace grounded representative scenarios from effective AGENTS instructions through minimum sufficient authority, including plausible competing authorities until resolved, commands, focused feedback, and broader evidence
+  -> improve document function and retrieval through technical-writing when accepted meaning is fixed
+  -> compose domain-modeling for semantic conflict, architecture-surface-mapping for an unfamiliar path, or architecture-assessment only when several structural opportunities need ranking
+  -> use software-verification strategy mode to fix a missing or stale claim-to-evidence contract, then implement or wire the fixed repository-owned artifacts
+  -> software-contract-evolution before changing, deprecating, or retiring the semantics of a supported or independently consumed command
   -> skill-creator when repeated local procedure warrants a new or materially revised repo skill
-  -> implement the effective AGENTS bootstrap route, claim-level authority placement and retrieval, local command wiring, explicit focused and full evidence states, accepted checks or mechanically derived inner-loop checks, hooks, and non-deployment CI directly
-  -> sampled consumer-path cold-start and failure rehearsal, gate scope-delta evidence, safe redirection or authorized retirement, and remaining untested partitions or external actions
+  -> verify a usable bootstrap, or a material improvement or evidence-backed no-op for retrofit or renewal, through sampled consumer paths, gate scope-delta evidence, safe redirection or authorized retirement, and visible untested partitions or external actions
 ```
 
 Start with the repository and its existing systems of record. Setup owns its
 authorized harness edits instead of delegating them to a generic implementation
-stage. Stop rather than choose missing product, delivery, runtime, or foundational
-architecture constraints for an empty repository; observable files do not
-establish acceptance. Preserve product behavior, previously passing checks,
-baseline failure identity, and compatibility in a retrofit. Keep semantic
-authority conflicts unresolved and route them with production-code restructuring
-or domain decisions to their focused owners. Keep general skills installed or
-plugin-provided, and create a
-repo skill through `skill-creator` only for stable local procedure. Use
+stage. An explicit bootstrap, retrofit, renew, or agent-ready request includes
+behavior-preserving repository knowledge reorganization and implementation or
+wiring of verification artifacts for fixed claims; it does not authorize new
+meaning, product behavior, architecture decisions, or production restructuring.
+Stop rather than choose missing product, delivery, runtime, or foundational
+architecture constraints for an empty repository. Preserve product behavior,
+baseline failure identity, and compatibility in a retrofit. In renew mode,
+repair the earliest responsible owner and rerun the triggering scenario.
+Do not call bootstrap complete when the accepted runtime or a required official
+command path is unavailable or failing. Direct checks that bypass prerequisites
+are supplemental only.
+
+A setup or agent-ready request does not authorize deletion of a pre-existing
+path; each deletion needs explicit exact-target authority and any required
+consumer or compatibility evidence. Bound unattended automation by a pause or
+operator-control path and accountable review capacity as well as permissions,
+budget, retries, cleanup, and stop conditions.
+
+Composition remains conditional. When a needed specialist workflow is installed
+and the work is authorized, obtain its result and resume setup instead of treating
+the route itself as completion. Otherwise route only the blocked slice. Keep
+cross-repository skills installed or plugin-provided, and create a repo skill
+through `skill-creator` only for stable local procedure. Use
 `technical-program-orchestration` only when the retrofit becomes several
 interdependent workstreams, and
 `platform-capability-design` only when repeated cross-context demand warrants a

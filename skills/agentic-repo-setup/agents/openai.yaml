@@ -1,7 +1,7 @@
 interface:
   display_name: "Agentic Repo Setup"
-  short_description: "Set up repositories for reliable coding-agent work"
-  default_prompt: "Use $agentic-repo-setup to bootstrap or retrofit this repository around accepted constraints. Start from effective repo AGENTS instructions, route each claim to its accountable authority, establish stable commands with explicit focused and full evidence states, and add only proportional controls."
+  short_description: "Build and improve agent-ready repositories"
+  default_prompt: "Use $agentic-repo-setup to bootstrap, retrofit, or renew this repository around accepted constraints. Trace grounded task scenarios from effective AGENTS instructions, improve minimum sufficient context retrieval and risk-matched verification, and compose available specialist workflows without taking their authority. Establish a usable bootstrap, or prove a material delta or an evidence-backed no-op for retrofit or renewal."
 
 policy:
   allow_implicit_invocation: false

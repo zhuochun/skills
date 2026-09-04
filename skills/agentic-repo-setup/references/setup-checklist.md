@@ -11,10 +11,13 @@ or change surface when one already owns the work.
 - Accountable owner:
 - Accepted product shape and delivery target:
 - Accepted language, runtime, and foundational architecture:
+- Repository-foundation writes authorized, including behavior-preserving
+  knowledge reorganization and fixed verification artifacts:
 - Unresolved decisions that setup must stop and route:
-- Material path partitions and representative change for each:
+- Material partitions and grounded representative scenario for each:
 - Authorized repository writes:
-- Exact tracked paths authorized for deletion, if any:
+- Exact pre-existing tracked paths explicitly authorized for deletion, if any:
+- Exact pre-existing untracked or ignored paths explicitly authorized for deletion, if any:
 - External or production actions excluded:
 - Supported behavior and compatibility to preserve:
 - Unrelated work present:
@@ -24,24 +27,46 @@ or change surface when one already owns the work.
 | Surface | Observed current mechanism | Evidence or exact command | Friction, conflict, or gap | Accountable or artifact owner |
 | --- | --- | --- | --- | --- |
 | Effective instruction chain, precedence, launch directory, fallbacks, and size limits | | | | |
-| AGENTS-routed discovery of current knowledge and its owner | | | | |
-| Accepted intent, domain meaning, architecture commitments, and rationale | | | | |
+| Task-to-authority retrieval from effective `AGENTS.md` | | | | |
+| Domain vocabulary, concepts, invariants, and semantic contexts | | | | |
+| Architecture responsibilities, interfaces, dependencies, and boundaries | | | | |
+| Behavior specifications, accepted decisions, and rationale | | | | |
 | Executable contracts and hard controls | | | | |
 | Observed implementation and runtime behavior | | | | |
 | Historical project or decision records | | | | |
 | Derived or generated knowledge and its freshness mechanism | | | | |
 | Runtime, dependencies, and clean setup | | | | |
 | Dev, test, build, diagnosis, and maintenance commands | | | | |
-| Focused and full verification | | | | |
+| Focused and broader verification | | | | |
 | Hooks, CI, permissions, and protected gates | | | | |
-| General and repo-specific skill routing | | | | |
+| Installed specialist and repo-specific skill routing | | | | |
 | Pause, re-entry, retry, and handoff state | | | | |
 
 Classify evidence as observed, declared, inferred, missing, or conflicting.
 Record the pre-change check for an existing repository, including failures that
 must remain distinguishable from setup regressions.
 
-## AGENTS-routed repository knowledge map
+## Task-centered scenario traces
+
+| Partition and grounded scenario | Reader or agent job | Starting route | Authoritative sources selected | Discarded material and surfaced authority conflicts | Command and evidence path | Functional gap or no-op basis |
+| --- | --- | --- | --- | --- | --- | --- |
+
+Ground bootstrap scenarios in accepted product and developer workflows. Ground
+retrofit scenarios in recent changes, repeated work, or maintained repository
+responsibilities. Ground renew scenarios in the failure, friction, review
+comment, or operational learning that triggered renewal. Default to discovery,
+context retrieval, command selection, and evidence rehearsal; do not implement
+an unrelated product change merely to make a scenario concrete.
+
+Judge the path by minimum sufficient context and task success. Fewer files,
+tokens, commands, or steps are diagnostic signals only. Record whether the
+scenario reached every needed authority without loading demonstrably irrelevant,
+stale, or superseded material. Retrieve and surface plausible competing
+authorities until their conflict is resolved or an accountable owner selects the
+authority. A retrofit or renewal no-op requires this trace; artifact presence is
+not enough.
+
+## AGENTS-routed repository knowledge architecture
 
 | Claim, task, changed surface, operation, or control | Effective AGENTS route | Authority class | Accountable owner | Supporting or observed artifacts | Freshness or validation | Conflict or stale route |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -52,13 +77,18 @@ Default placement:
   invariants, approved commands, and checks; for Codex include overrides,
   `AGENTS.md`, configured fallbacks, launch directory, and truncation, and write
   required guidance only to the selected active file at each directory;
-- accountable decisions, specifications, ADRs, and domain or architecture
-  documents: accepted intent, meaning, commitments, and rationale;
+- domain artifacts: accepted vocabulary, concepts, invariants, classifications,
+  and semantic contexts;
+- architecture models, current architecture documents, and accepted ADRs:
+  responsibilities, interfaces, dependencies, deployment or data boundaries,
+  commitments, and rationale;
+- current decisions and behavior specifications: accepted outcomes, behavior,
+  constraints, and non-goals;
 - tests, schemas, types, configuration, linters, hooks, CI, and permissions:
   executable contracts and hard controls, each authoritative only for its claim;
 - code and runtime evidence: observed behavior, not accountable acceptance;
 - project or decision history: durable past intent, evidence, and learning;
-- installed general skills: cross-repository judgment and workflows;
+- installed specialist skills: cross-repository judgment and workflows;
 - `.agents/skills`: stable procedures specific to this repository or subtree,
   authored or materially revised through `skill-creator`;
 - scripts and manifest commands: repeatable, non-interactive operations; and
@@ -78,6 +108,15 @@ only when the transformation is mechanically derived or its semantic owner has
 accepted it. Record a freshness owner and repair trigger only where staleness
 would misroute work.
 
+Keep domain meaning distinguishable from architecture structure and both from
+behavior specifications, execution guidance, and history. Use stable sections,
+anchors, files, or generated views according to task fit and update cadence; do
+not impose one directory or file split. Treat artifacts as competing authority
+only when both claim to govern the same material meaning. Supporting explanation
+with a canonical link is not duplicate truth. Keep plausible competitors
+retrievable and surface their disagreement until the authority conflict is
+resolved; do not optimize one away merely to reduce context.
+
 Check for contradictory claims, history or observed code presented as accepted
 intent, unreachable owners, circular routing, duplicated commands, and generated
 views that cannot be rebuilt. Setup may repair a mechanically proven stale route.
@@ -88,14 +127,17 @@ owners and supporting evidence.
 
 ## Feedback topology
 
-| Partition and representative change or risk | Focused evidence status and command | Fixed claim and oracle owner | Expected failure diagnostic | Prerequisite, skip, or omission | Full evidence status and gate | Runtime or environment limit |
+| Partition and representative change or risk | Focused evidence status and command | Fixed claim and oracle owner | Expected failure diagnostic | Prerequisite, skip, or omission | Broader evidence status and gate | Runtime or environment limit |
 | --- | --- | --- | --- | --- | --- | --- |
 
-Classify focused and full evidence as **present**, **absent**, **not applicable**,
-or **disputed**. Run only fixed, accepted **present** checks. Preserve other
-states as gaps or justified exclusions. When a material claim needs absent or
-disputed evidence, route its contract to `software-verification`; do not invent
-a command, claim, oracle, or full gate.
+Classify focused and broader evidence as **present**, **absent**, **not applicable**,
+or **disputed**. Run only fixed, accepted **present** checks. Presence does not
+establish adequacy: inspect whether the method can falsify its named claim and
+whether its failure narrows the likely cause. When a material gap has an accepted
+claim and oracle, compose `software-verification` strategy mode, freeze the
+method, environment, scope, and validity limit, then implement or wire the fixed
+contract. If the skill, evidence, authority, or decision is unavailable, route
+only the blocked slice. Do not invent a claim, oracle, or broader gate.
 For a present command, confirm that it exercises the intended path, fails
 observably when its required runtime is absent, and narrows the likely cause.
 Keep unsupported behavior and broader integration risk visible.
@@ -141,9 +183,10 @@ as **not run**; do not downgrade it to a producer pass.
 
 ## Minimum change set
 
-| Slice | Demonstrated burden displaced | Files or owners changed | Compatibility and coexistence | Focused evidence | Full evidence | Old path retired |
+| Slice | Demonstrated burden displaced | Files or owners changed | Compatibility and coexistence | Focused evidence | Broader evidence | Old path retired |
 | --- | --- | --- | --- | --- | --- | --- |
-| Claim-level authority routing | | | | | | |
+| Task-to-authority retrieval and knowledge function | | | | | | |
+| Concern separation and freshness | | | | | | |
 | Stable setup and work commands | | | | | | |
 | Accepted verification wiring | | | | | | |
 | Proportional hooks or setup and verification CI | | | | | | |
@@ -161,11 +204,22 @@ unused scripts, speculative controls, or a repository skill for a one-off task.
   maintained scaffolding. Observable files constrain setup but do not establish
   acceptance. Stop and route unresolved choices.
 - Start from the actual language, runtime, product shape, and delivery target.
+- Trace representative accepted developer workflows before choosing structure.
+- Establish distinct, retrievable ownership for domain meaning, architecture
+  structure, behavior and rationale, execution guidance, and history only where
+  that knowledge exists or is required for accepted work.
 - Pin only versions whose variation would make setup or evidence unreliable.
-- Establish one obvious path for setup, development, focused checks, full
+- Establish one obvious path for setup, development, focused checks, broader
   verification, and build or packaging when those operations exist.
+- Run required official paths to their defined completion or readiness signal in
+  the accepted runtime. If that runtime is unavailable or a required path fails,
+  record bootstrap as incomplete or blocked; do not substitute direct tool
+  invocations that bypass prerequisites.
 - Create knowledge owners only for decisions already known; do not fabricate a
   domain model, architecture, roadmap, or ADR backlog.
+- Establish the first risk-matched feedback path for each sampled scenario. If a
+  required claim or oracle is not accepted, preserve the gap instead of creating
+  a ceremonial test.
 - Add non-deployment CI only after the local command is stable and reproducible.
 
 ### Retrofit
@@ -176,6 +230,12 @@ unused scripts, speculative controls, or a repository skill for a one-off task.
   guidance in a file shadowed by the selected override or fallback.
 - Recover declared and observed behavior before replacing commands or moving
   files. Preserve runtime, stored data, API, import, and deployment compatibility.
+- Trace grounded scenarios before editing. Improve document function, concern
+  separation, task-to-authority retrieval, and verification adequacy rather than
+  treating existing files or green commands as sufficient.
+- An explicit retrofit request authorizes behavior-preserving knowledge
+  reorganization and fixed verification artifacts. Route changes to meaning,
+  supported behavior, public contracts, or production structure separately.
 - Wrap or deepen a proven command before replacing the underlying toolchain.
 - Separate current authority from historical project records without rewriting
   history to match today's implementation.
@@ -184,25 +244,43 @@ unused scripts, speculative controls, or a repository skill for a one-off task.
 - Preserve previously passing checks, keep pre-existing failures distinguishable
   from setup regressions, and provide a coexistence path when consumers cannot
   switch atomically.
-- Add or wrap purely local command entry points directly. Route supported or
-  independently consumed command deprecation and retirement to
-  `software-contract-evolution`, retaining a shim until its exit evidence passes.
+- Add a new local command or behavior-preserving wrapper directly. Obtain
+  `software-contract-evolution` before changing, deprecating, or retiring the
+  semantics of a supported or independently consumed command; when unavailable,
+  preserve its behavior and route only that slice. Retain a shim until its exit
+  evidence passes when compatibility requires one.
+- Finish with either a demonstrated material improvement tied to the baseline
+  friction or an evidence-backed no-op from the sampled scenarios. An
+  `AGENTS.md` edit alone does not establish either result.
 
 ### Renew
 
 - Start from a repeated failure, review comment, manual workaround, stale
   instruction, escaped defect, or measured setup burden.
+- Reproduce the trigger when safe, or recover enough inspectable evidence to
+  distinguish an instruction, knowledge, command, harness, product, environment,
+  or oracle failure.
 - Repair the earliest responsible document, skill, command, test, hook, CI
   control, permission, or runtime seam.
+- Correct stale documentation or routing without changing an existing supported
+  command's semantics unless `software-contract-evolution` has fixed its
+  compatibility path.
+- Compose the responsible specialist workflow when the repair needs available
+  domain, architecture, writing, or verification judgment. Do not stop at a
+  handoff when the result can be obtained within current authority.
 - Rerun the scenario that exposed the gap and any accepted **present** affected
-  full verification. Preserve **absent**, **not applicable**, or **disputed** state.
+  broader verification. Preserve **absent**, **not applicable**, or **disputed** state.
+- Convert repeated learning into the smallest durable retrieval, freshness,
+  regression, diagnostic, or enforcement mechanism that prevents recurrence.
 - Redirect or deprecate the superseded path by default. Remove an exact tracked
-  path only with deletion authority and satisfied consumer obligations. State
-  what observation should trigger another renewal.
+  or untracked path only with explicit exact-target authority; tracked or
+  supported paths also require satisfied consumer obligations. State what
+  observation should trigger another renewal. Do not infer deletion authority
+  from the renew request.
 
 ## Cold-start and failure rehearsal
 
-| Exercise | Initial state | Expected discovery and command | Injected ambiguity or failure | Expected diagnostic or stop | Observed result | Gap owner |
+| Exercise | Initial state | Expected minimum sufficient sources and command | Injected ambiguity or failure | Expected diagnostic or stop | Observed task result and retrieval delta | Gap owner |
 | --- | --- | --- | --- | --- | --- | --- |
 
 Useful exercises include a clean clone or environment, a fresh-agent discovery
@@ -226,12 +304,14 @@ Check that:
 - documented commands exist and resolve from the stated working directory;
 - claims and oracles are accepted and unambiguous before setup derives a direct
   inner-loop check; disputed coverage, consequential method choices, undefined
-  evidence limits or full-verify scope, and independent verdicts come from
+  evidence limits or broader-gate scope, and independent verdicts come from
   `software-verification`;
 - clean setup does not depend on unrecorded global state or credentials;
 - every selected partition routes each material claim from effective `AGENTS.md`
   instructions to its accountable authority; untested partitions remain visible;
-- focused and full evidence states are explicit, and present checks exercise
+- domain meaning, architecture structure, behavior specifications, execution
+  guidance, and history are distinguishable without requiring a universal file tree;
+- focused and broader evidence states are explicit, and present checks exercise
   different justified scopes;
 - required runtimes fail clearly instead of silently skipping the intended path;
 - evidence-adequacy probes are bounded, reproducible, and wired only after their
@@ -240,15 +320,20 @@ Check that:
   was preserved, and keeps required negative-control or independent evidence
   inspectable or **not run**;
 - local and CI paths do not drift into separate implementations;
+- unattended automation exposes a pause or operator-control path and stays
+  within permissions, budget, retries, cleanup, stop conditions, and accountable
+  review capacity;
 - generated output is replaceable and ignored when it is not authoritative;
 - secrets, remote providers, destructive fixtures, and production effects are
   excluded or separately authorized; and
-- stale instructions, duplicate documents, and obsolete commands are clearly
-  redirected or deprecated, or removed with exact authority and satisfied
-  consumer obligations.
+- plausible competing authorities are surfaced until resolved or explicitly
+  blocked; stale instructions and obsolete commands are clearly redirected or
+  deprecated, or removed with exact authority and satisfied consumer obligations.
 
 ## Completion record
 
+- Grounded scenarios and task outcomes:
+- Minimum sufficient context and before-and-after retrieval limits:
 - Changed files and canonical owners:
 - New or changed commands:
 - Pre-change and post-change evidence:
@@ -263,3 +348,5 @@ Check that:
 - Remaining manual steps:
 - External settings or production actions not performed:
 - Specialist routes and unresolved gaps:
+- Material improvement or evidence-backed no-op basis:
+- Observation that should trigger the next renewal:
