@@ -46,25 +46,26 @@ evidence-backed no-op. An `AGENTS.md` edit alone is not completion.
 ```
 
 ```text
-Use $agentic-repo-setup to bootstrap this new repository after the product,
-delivery target, runtime, and foundational architecture decisions have been
-accepted by their accountable owners; do not infer acceptance from files merely
-being present. Ground the structure in representative developer workflows.
-Establish minimum sufficient task-to-authority routes, stable setup and work
-commands, and the first risk-matched feedback paths without inventing domain
-models, ADR backlogs, empty templates, or unsupported product behavior. Report
-bootstrap incomplete if required official paths cannot run in the accepted runtime.
+Use $agentic-repo-setup to bootstrap this young repository. Inspect available
+product evidence and existing constraints before asking questions. Interview me
+only about choices that change maintained scaffolding, recommend one minimum
+profile, and classify each choice as accepted, a recommended reversible default,
+consequentially unresolved, or deferred. Establish a logical repository
+information architecture, one executable walking skeleton from clean setup
+through focused and broader evidence, and a renewal interface for accepted
+future corrections. Do not invent product meaning or application architecture.
 ```
 
 ```text
-Use $agentic-repo-setup to renew this repository after agents repeatedly loaded
-stale architecture guidance and selected an unrelated full test command. Recover
-or safely reproduce that scenario, identify its earliest responsible knowledge,
-retrieval, command, or verification owner, compose the available specialist
-workflow, implement the smallest durable repair, and rerun the trigger. Preserve
-baseline failures and existing supported command semantics unless their
-compatibility owner approves a change. State what evidence should trigger another
-renewal.
+Use $agentic-repo-setup to renew this repository from the accepted correction
+to the attached failed agent run. Bind the task, revision, effective context,
+trajectory, diff, checks, review finding, correction, and intervention cost.
+Establish the supported failure mechanism and whether the lesson generalizes,
+select the lowest durable owner, then trial the smallest candidate against the
+source episode, one held-out or contrast case, and an existing guardrail. Record
+whether it is promoted, retained as a trial, task-local, routed, quarantined,
+rejected, superseded, or rolled back; do not append a global instruction merely
+because one execution failed.
 ```
 
 ```text
