@@ -52,8 +52,10 @@ only about choices that change maintained scaffolding, recommend one minimum
 profile, and classify each choice as accepted, a recommended reversible default,
 consequentially unresolved, or deferred. Establish a logical repository
 information architecture, one executable walking skeleton from clean setup
-through focused and broader evidence, and a renewal interface for accepted
-future corrections. Do not invent product meaning or application architecture.
+through focused and broader evidence. Enable renewal intake when repeated agent
+work, recurring intervention, or an accepted automation goal justifies it;
+otherwise defer it with an activation signal. Do not invent product meaning or
+application architecture.
 ```
 
 ```text
@@ -64,8 +66,10 @@ Establish the supported failure mechanism and whether the lesson generalizes,
 select the lowest durable owner, then trial the smallest candidate against the
 source episode, one held-out or contrast case, and an existing guardrail. Record
 whether it is promoted, retained as a trial, task-local, routed, quarantined,
-rejected, superseded, or rolled back; do not append a global instruction merely
-because one execution failed.
+rejected, superseded, or rolled back. Insufficient evidence or a failed contrast
+may complete evaluation without an environment change; only promotion requires
+passing trials. Preserve execution authorization independently of promotion
+criteria; do not append a global instruction merely because one execution failed.
 ```
 
 ```text

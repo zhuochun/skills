@@ -312,14 +312,15 @@ Use this route when the decision is which structural opportunity deserves attent
 
 ```text
 agentic-repo-setup
-  -> choose bootstrap, task-centered retrofit, or failure-driven renewal
+  -> choose evidence-first Bootstrap, task-centered Retrofit, or correction-driven Renew
   -> trace grounded representative scenarios from effective AGENTS instructions through minimum sufficient authority, including plausible competing authorities until resolved, commands, focused feedback, and broader evidence
   -> improve document function and retrieval through technical-writing when accepted meaning is fixed
   -> compose domain-modeling for semantic conflict, architecture-surface-mapping for an unfamiliar path, or architecture-assessment only when several structural opportunities need ranking
   -> use software-verification strategy mode to fix a missing or stale claim-to-evidence contract, then implement or wire the fixed repository-owned artifacts
   -> software-contract-evolution before changing, deprecating, or retiring the semantics of a supported or independently consumed command
   -> skill-creator when repeated local procedure warrants a new or materially revised repo skill
-  -> verify a usable bootstrap, or a material improvement or evidence-backed no-op for retrofit or renewal, through sampled consumer paths, gate scope-delta evidence, safe redirection or authorized retirement, and visible untested partitions or external actions
+  -> verify usable Bootstrap with renewal intake enabled only when justified or explicitly deferred; Retrofit improvement or evidence-backed no-op; or an explicit Renew disposition
+  -> require accepted correction and passing replay, contrast, and guardrail evidence for Renew promotion; keep rejection, insufficient evidence, and task-local outcomes valid without an environment change
 ```
 
 Start with the repository and its existing systems of record. Setup owns its
@@ -328,19 +329,27 @@ stage. An explicit bootstrap, retrofit, renew, or agent-ready request includes
 behavior-preserving repository knowledge reorganization and implementation or
 wiring of verification artifacts for fixed claims; it does not authorize new
 meaning, product behavior, architecture decisions, or production restructuring.
-Stop rather than choose missing product, delivery, runtime, or foundational
-architecture constraints for an empty repository. Preserve product behavior,
-baseline failure identity, and compatibility in a retrofit. In renew mode,
-repair the earliest responsible owner and rerun the triggering scenario.
+In Bootstrap, inspect before interviewing and block only scaffolding dependent
+on unresolved consequential choices. Materialize local reversible defaults;
+enable renewal intake for repeated agent work, recurring intervention, or an
+accepted automation goal, otherwise defer it with an activation signal.
+Preserve product behavior, baseline failure identity, and compatibility in
+Retrofit. In Renew, qualify the correction, trial reusable candidates at their
+lowest durable owner, and record a disposition. No environment change may be
+the correct evaluation result; only promotion requires passing trial evidence.
 Do not call bootstrap complete when the accepted runtime or a required official
 command path is unavailable or failing. Direct checks that bypass prerequisites
 are supplemental only.
 
 A setup or agent-ready request does not authorize deletion of a pre-existing
 path; each deletion needs explicit exact-target authority and any required
-consumer or compatibility evidence. Bound unattended automation by a pause or
-operator-control path and accountable review capacity as well as permissions,
-budget, retries, cleanup, and stop conditions.
+consumer or compatibility evidence. Before deleting a replaced tracked or
+supported path, prove replacement use. Enable unattended automation only after
+its artifact, command, and evidence loop are stable; bound permissions, resource
+budgets, pause paths, review capacity, retries, cleanup, and stop conditions.
+Enforce hard rules or label them advisory. Promotion criteria do not grant
+execution permission; reuse existing explicit task or adopted policy authority
+and leave uncovered commit, push, or publication actions blocked.
 
 Composition remains conditional. When a needed specialist workflow is installed
 and the work is authorized, obtain its result and resume setup instead of treating

@@ -1,13 +1,12 @@
 ---
 name: agentic-repo-setup
-description: Bootstrap, retrofit, or renew the repository-local environment for reliable coding-agent work. Use Bootstrap to recommend and materialize minimum information, execution, evidence, control, and learning paths; Retrofit to improve grounded task journeys; Renew to turn accepted execution corrections into validated reusable changes. Route product meaning, architecture decisions, command compatibility, and release authority.
+description: Bootstrap, retrofit, or renew the repository-local environment for reliable coding-agent work. Use Bootstrap to recommend and materialize minimum information, execution, evidence, and control paths with renewal when justified; Retrofit to improve grounded task journeys; Renew to turn accepted execution corrections into validated reusable changes. Route product meaning, architecture decisions, command compatibility, and release authority.
 ---
 
 # Agentic Repo Setup
 
-Build and continuously improve the repository environment through which coding agents
-discover, execute, verify, and learn. Treat the effective `AGENTS.md` chain as the entry
-router, not as proof that the repository is agent-ready.
+Improve the repository environment for coding-agent discovery, execution, verification, and
+learning. Treat effective `AGENTS.md` instructions as routing, not proof of agent readiness.
 
 ## Select mode and authority
 
@@ -27,11 +26,10 @@ behavior-preserving repository knowledge changes and fixed verification wiring. 
 authorize new product behavior, domain meaning, application or service architecture,
 production-code redesign, supported-command semantics, external settings, secrets,
 production actions, deletion of a pre-existing path, commits, pushes, deployment, or release
-acceptance.
+acceptance. Promotion criteria do not grant execution permission; use existing explicit task
+authorization or adopted policy without asking again for authority already granted.
 
 ## Own the repository environment
-
-This skill owns four connected surfaces:
 
 - **Information architecture:** effective instruction precedence, task-to-authority
   placement, consumption rules, and freshness across current intent, domain and architecture
@@ -41,8 +39,9 @@ This skill owns four connected surfaces:
   recurring setup, development, focused-check, broader-verification, build, diagnosis, or
   maintenance intent.
 - **Evidence and control environment:** fixed verification wiring, hooks, non-deployment CI,
-  permissions, and automation bounded by pause paths, retries, cleanup, stop conditions, and
-  accountable review capacity.
+  permissions, and automation bounded by resource budgets, pause paths, retries, cleanup,
+  stop conditions, and accountable review capacity. Enable unattended operation only after
+  its artifact, command, and evidence loop are stable. Enforce hard rules or label them advisory.
 - **Learning environment:** repository-level intake, trial, promotion, supersession,
   rollback, and reopening paths for accepted corrections.
 
@@ -70,12 +69,13 @@ choice.
 
 Design logical information architecture before a file tree. Materialize only owners with
 real content or an accepted need. Establish one walking skeleton from clean setup through
-representative work, focused feedback, broader evidence, and useful failure output. Name the
-episode source, accepted-correction signal, trial surface, promotion authority, and rollback
-or reopening path that Renew will use.
+representative work, focused feedback, broader evidence, and useful failure output. Establish
+renewal intake when repeated agent work, recurring intervention, or an accepted automation
+goal justifies it. Otherwise defer the interface with an activation signal; do not block
+Bootstrap or create governance artifacts merely to prepare for hypothetical learning.
 
-Read [references/bootstrap-and-renewal.md](references/bootstrap-and-renewal.md) for the
-decision frontier, minimum logical information architecture, and renewal interface.
+Read [references/bootstrap.md](references/bootstrap.md) only for Bootstrap decisions and
+its walking skeleton; use existing owners and systems when renewal intake is justified.
 
 ## Retrofit grounded task journeys
 
@@ -94,10 +94,10 @@ an evidence-backed no-op; an `AGENTS.md` edit alone is not completion.
 Renew is the repository-level learning entry. It may consume evidence from any execution
 workflow; it does not own that workflow or require `goal-pursuit`.
 
-Start from a closed or bounded episode that identifies the task, repository revision,
-effective context, trajectory, diff, checks, review findings, accepted correction or
-trustworthy outcome, human intervention, and relevant cost. A raw failure, model reflection,
-or unaccepted review preference is not a learning label.
+Bind the smallest sufficient episode evidence: task and revision, effective context, material
+actions, diff, checks, external evaluation, correction, and relevant intervention cost. Bound
+missing evidence. A raw failure, model reflection, or unaccepted preference is not a learning
+label; recover diagnosis or acceptance before treating it as a reusable correction.
 
 For each candidate:
 
@@ -110,19 +110,20 @@ For each candidate:
    verifiable correction.
 4. **Select the lowest durable owner.** Prefer removing the cause or adding an executable
    control over a tool affordance, route, repo skill, prose rule, or historical note.
-5. **Trial the candidate.** Replay the source episode, exercise an appropriate held-out or
-   contrast case, and protect an existing guardrail.
+5. **Trial a qualified candidate.** Replay the source episode, exercise an appropriate
+   held-out or contrast case, and protect an existing guardrail before promotion.
 6. **Dispose and consolidate.** Promote, retain as a trial, keep task-local, route,
    quarantine, reject, supersede, or roll back. Replace obsolete paths instead of growing
    instructions and controls monotonically.
 7. **Observe.** Record the validity limit and reopening or reversal signal.
 
-Automate evidence collection and bounded trials before promotion. Increase independent
-review with blast radius. A changed instruction, selector, check, judge, or gate must not be
-its own sole proof.
+Scale evidence to the mechanism and consequence; a local route repair may use direct checks.
+Automate collection and trials only when repetition justifies them. A changed instruction,
+selector, check, judge, or gate must not be its own sole proof. Increase independence with risk.
 
-Read [references/bootstrap-and-renewal.md](references/bootstrap-and-renewal.md) for episode
-qualification, owner routing, trial evidence, promotion levels, and dispositions.
+Read [references/renewal.md](references/renewal.md) only for Renew qualification, trials,
+promotion, and dispositions. An evidence-backed non-promotion outcome completes evaluation
+without requiring an environment change or a passing promotion trial.
 
 ## Compose without losing lifecycle ownership
 
@@ -158,6 +159,7 @@ route is not completion.
    **not run**.
 7. **Consolidate and report.** Redirect or deprecate superseded paths. Delete a pre-existing
    path only with explicit exact-target authority and applicable compatibility evidence.
+   When replacing a tracked or supported path, also prove replacement use and consumer coverage.
 
 Read [references/setup-checklist.md](references/setup-checklist.md) when several surfaces
 need one durable implementation, review, or handoff record.
@@ -174,13 +176,13 @@ control cannot certify itself.
 
 ## Quality gates
 
-- Bootstrap produces an accepted or safely reversible walking skeleton and a usable renewal
-  interface, not a speculative file tree.
+- Bootstrap produces an accepted or safely reversible walking skeleton; renewal intake is
+  usable when justified, otherwise explicitly deferred with an activation signal.
 - Retrofit demonstrates a material task-path improvement or an evidence-backed no-op while
   preserving behavior and baseline failure identity.
-- Renew starts from an accepted correction, selects the earliest durable owner, passes
-  source replay plus proportionate contrast and guardrail evidence, and records a non-binary
-  disposition and reopening signal.
+- Renew evaluation ends with an evidence-backed disposition, including no environment change.
+  Promotion requires an accepted correction and passing replay, contrast, and guardrail evidence.
+  Failed or unavailable evidence prevents promotion, not an honest rejection or deferral.
 - Each sampled path reaches minimum sufficient authority and risk-matched evidence.
   Unresolved meaning, untested partitions, and unavailable independent evidence remain
   visible.

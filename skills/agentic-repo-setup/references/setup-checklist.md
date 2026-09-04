@@ -63,8 +63,9 @@ tokens, commands, or steps are diagnostic signals only. Record whether the
 scenario reached every needed authority without loading demonstrably irrelevant,
 stale, or superseded material. Retrieve and surface plausible competing
 authorities until their conflict is resolved or an accountable owner selects the
-authority. A retrofit or renewal no-op requires this trace; artifact presence is
-not enough.
+authority. A Retrofit no-op requires this trace; artifact presence is not
+enough. For Renew, link the episode and explicit disposition from
+[renewal.md](renewal.md); do not substitute a generic no-op for qualification.
 
 ## AGENTS-routed repository knowledge architecture
 
@@ -199,28 +200,16 @@ unused scripts, speculative controls, or a repository skill for a one-off task.
 
 ### Bootstrap
 
-- Confirm accountable owners accepted the product shape, delivery target,
-  language and runtime, and every foundational architecture choice required by
-  maintained scaffolding. Observable files constrain setup but do not establish
-  acceptance. Stop and route unresolved choices.
-- Start from the actual language, runtime, product shape, and delivery target.
-- Trace representative accepted developer workflows before choosing structure.
-- Establish distinct, retrievable ownership for domain meaning, architecture
-  structure, behavior and rationale, execution guidance, and history only where
-  that knowledge exists or is required for accepted work.
-- Pin only versions whose variation would make setup or evidence unreliable.
-- Establish one obvious path for setup, development, focused checks, broader
-  verification, and build or packaging when those operations exist.
-- Run required official paths to their defined completion or readiness signal in
-  the accepted runtime. If that runtime is unavailable or a required path fails,
-  record bootstrap as incomplete or blocked; do not substitute direct tool
-  invocations that bypass prerequisites.
-- Create knowledge owners only for decisions already known; do not fabricate a
-  domain model, architecture, roadmap, or ADR backlog.
-- Establish the first risk-matched feedback path for each sampled scenario. If a
-  required claim or oracle is not accepted, preserve the gap instead of creating
-  a ceremonial test.
-- Add non-deployment CI only after the local command is stable and reproducible.
+Use [bootstrap.md](bootstrap.md) for the decision frontier, logical information
+architecture, walking skeleton, and conditional renewal intake. Link the
+existing record here rather than recreating those schemas.
+
+- Resolve consequential choices through accepted authority; local reversible
+  defaults and deferred extension points do not require invented decisions.
+- Pin versions only when variation would make setup or evidence unreliable.
+- Run required official paths in the accepted runtime; bypass checks remain
+  supplemental. A failing or unavailable required path blocks completion.
+- Deferred renewal intake does not block an otherwise usable Bootstrap.
 
 ### Retrofit
 
@@ -255,28 +244,19 @@ unused scripts, speculative controls, or a repository skill for a one-off task.
 
 ### Renew
 
-- Start from a repeated failure, review comment, manual workaround, stale
-  instruction, escaped defect, or measured setup burden.
-- Reproduce the trigger when safe, or recover enough inspectable evidence to
-  distinguish an instruction, knowledge, command, harness, product, environment,
-  or oracle failure.
-- Repair the earliest responsible document, skill, command, test, hook, CI
-  control, permission, or runtime seam.
-- Correct stale documentation or routing without changing an existing supported
-  command's semantics unless `software-contract-evolution` has fixed its
-  compatibility path.
-- Compose the responsible specialist workflow when the repair needs available
-  domain, architecture, writing, or verification judgment. Do not stop at a
-  handoff when the result can be obtained within current authority.
-- Rerun the scenario that exposed the gap and any accepted **present** affected
-  broader verification. Preserve **absent**, **not applicable**, or **disputed** state.
-- Convert repeated learning into the smallest durable retrieval, freshness,
-  regression, diagnostic, or enforcement mechanism that prevents recurrence.
-- Redirect or deprecate the superseded path by default. Remove an exact tracked
-  or untracked path only with explicit exact-target authority; tracked or
-  supported paths also require satisfied consumer obligations. State what
-  observation should trigger another renewal. Do not infer deletion authority
-  from the renew request.
+Use [renewal.md](renewal.md) as the canonical episode, trial, and disposition
+record. Link its evidence in this checklist only when several surfaces need a
+shared handoff; do not maintain a second candidate lifecycle here.
+
+- Recover enough evidence to classify the trigger without inventing acceptance.
+- Distinguish completion of evaluation from promotion. Record a specific
+  disposition and its reason even when no environment change is justified.
+- Before promotion, obtain accepted meaning and passing source, contrast, and
+  guardrail evidence. A failed contrast can close evaluation as rejected.
+- Rerun accepted affected checks for implemented changes and preserve baseline
+  failures, missing evidence, and compatibility limits.
+- Apply the shared execution authorization and retirement rules; a promotion
+  level does not authorize commits, pushes, or publication.
 
 ## Cold-start and failure rehearsal
 
@@ -320,7 +300,8 @@ Check that:
   was preserved, and keeps required negative-control or independent evidence
   inspectable or **not run**;
 - local and CI paths do not drift into separate implementations;
-- unattended automation exposes a pause or operator-control path and stays
+- unattended automation begins only after its artifact, command, and evidence
+  loop are stable, exposes a pause or operator-control path, and stays
   within permissions, budget, retries, cleanup, stop conditions, and accountable
   review capacity;
 - generated output is replaceable and ignored when it is not authoritative;
@@ -348,5 +329,7 @@ Check that:
 - Remaining manual steps:
 - External settings or production actions not performed:
 - Specialist routes and unresolved gaps:
-- Material improvement or evidence-backed no-op basis:
+- Retrofit improvement or evidence-backed no-op basis:
+- Renew disposition and candidate evidence link, when applicable:
+- Bootstrap renewal intake status or deferred activation signal, when applicable:
 - Observation that should trigger the next renewal:
