@@ -37,6 +37,8 @@ Useful layers:
 - **Resource:** utilization, saturation, exhaustion, queueing, and headroom used to explain service behavior.
 - **Control:** telemetry pipeline, identity, routing, flag service, deploy system, rollback, credentials, and runbook availability.
 
+When health differs by caller or path, preserve observer, target, operation, and time rather than flattening them into one verdict. Compare actual requests with probes; neither covers unexercised operations. Group or sample observations within cost and privacy limits while retaining useful locality. Treat client-, service-, or pair-specific failure patterns as diagnostic hypotheses, not proof of cause or safe failover.
+
 ### 4. Navigation and interruption
 
 Define:

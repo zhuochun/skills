@@ -26,7 +26,7 @@ Evaluate the operating system around ownership. Responsibility fails when author
 8. **Plan transition.** Transfer knowledge, access, authority, alerts, dashboards, runbooks, backlogs, capacity, dependencies, and escalation. Shadow and graduate duty before removing old paths.
 9. **Verify sustainability.** Define evidence for delivery flow, incident outcomes, handoffs, pager burden, service health, ownership routing, and improvement work. Add retreat or support triggers.
 
-Read [references/service-ownership-readiness.md](references/service-ownership-readiness.md) only when a durable readiness assessment or transition record is needed.
+Read [references/service-ownership-readiness.md](references/service-ownership-readiness.md) when assessing pager sustainability or handoff, or when a durable readiness assessment or transition record is needed.
 
 ## Quality gates
 

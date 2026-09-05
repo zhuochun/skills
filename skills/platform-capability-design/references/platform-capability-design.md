@@ -14,6 +14,14 @@
 - Legitimate variations and exclusions:
 - Existing paths to replace or retain:
 
+For a capability that adds a technology or supported exception, compare the
+best existing-stack path and its concrete limitations with the lasting cost
+of deployment, observation, security, upgrades, recovery, training, and support.
+Name who inherits that work after the initiating team moves on. A new option
+can win; familiarity is not proof of fit. Define a bounded trial, retreat, and
+replacement or justified coexistence for overlapping paths. Do not impose a
+fixed technology budget or expand a capability review into vendor selection.
+
 ## Interface contract
 
 | User intent | Operation / interface | Inputs and policy feedback | Result | Runtime semantics kept visible |

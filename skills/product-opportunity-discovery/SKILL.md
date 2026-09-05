@@ -30,6 +30,8 @@ Reduce uncertainty about the customer, problem, behavior, value mechanism, and s
 10. **Run and update when authorized.** Preserve method, context, deviations, raw evidence location, and counterexamples. Compare results without moving thresholds after observation. Update the opportunity model as well as the solution; a failed solution can expose a badly framed opportunity.
 11. **Make a bounded disposition.** Recommend learn more, narrow, reframe, compare another solution, pivot, stop, seek prioritization, or proceed to an accountable investment decision. State what the evidence supports, what it cannot establish, and what changed from the prior view. Do not call a direction validated or proven merely because one probe was encouraging.
 
+Read [references/experiment-inference.md](references/experiment-inference.md) when designing or interpreting a quantitative product experiment. Keep interviews, small usability probes, and feasibility questions on their own evidence paths.
+
 ## Compose without losing ownership
 
 - `product-opportunity-prioritization` owns allocation; discovery supplies evidence and reopens weak bets.

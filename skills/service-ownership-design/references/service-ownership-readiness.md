@@ -31,6 +31,15 @@
 | Pager and support interruption | | | | |
 | Roadmap and simultaneous ownership | | | | |
 
+For on-call work, connect the service's response needs to realistic coverage,
+incident handling and follow-up time, and protected improvement capacity.
+Agree overload thresholds and support or retreat actions with the accountable
+owners; do not import universal staffing ratios or transfer the pager by
+recommendation alone. Quiet rotations also need evidence of current service
+knowledge and response practice: use proportionate rehearsals when real
+incidents are too rare to maintain readiness. Low page counts prove neither
+detector coverage nor responder competence.
+
 ## Enabling conditions
 
 Rate as demonstrated, partial, absent, or not applicable and cite evidence.

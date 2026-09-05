@@ -35,6 +35,8 @@ Recover the contract from the observability design, code, telemetry configuratio
 
 Ask whether each aggregate can hide a customer cohort, route, region, dependency, tail, or collapsed denominator. Preserve the concrete incident, query, page, or decision that falsified the contract, then route the required delta to `observability-design`.
 
+When callers disagree with central health, compare client-to-target observations for the same operation and time window. Failures concentrated on one target, one observer, or selected pairs suggest different service, client, or path investigations; they do not establish cause. Check whether failed requests also prevent telemetry delivery, making the missing observations systematically optimistic.
+
 ## Human-alarm gate
 
 Require a credible answer to every question:

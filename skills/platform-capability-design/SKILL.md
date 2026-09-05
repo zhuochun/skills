@@ -19,7 +19,7 @@ Design user leverage, not an infrastructure catalog or central ticket queue. Pre
 8. **Establish the operating contract.** Name capability ownership, availability and support expectations, compatibility policy, dependency responsibilities, incident path, metadata, and lifecycle obligations.
 9. **Plan adoption and evolution.** Define a thin usable slice, representative design partners, migration support, success and burden measures, feedback channels, and retirement of replaced paths.
 
-Read [references/platform-capability-design.md](references/platform-capability-design.md) only when a durable capability proposal or review record is needed.
+Read [references/platform-capability-design.md](references/platform-capability-design.md) when a capability adds a technology or supported exception, or when a durable proposal or review record is needed.
 
 ## Quality gates
 

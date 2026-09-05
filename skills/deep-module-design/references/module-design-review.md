@@ -56,6 +56,8 @@ For each dependency that could shape the seam, inspect:
 
 Keep locally owned or faithfully substitutable mechanics behind the module when callers do not need their contract. Expose the smallest honest seam for an independently controlled collaborator or external contract. A mock alone is not evidence of production variation. Treat deletion as a probe rather than a score: adaptation or orchestration may still localize real change even when little algorithmic complexity reappears in callers. Keep the public interface as the primary durable behavior surface; use internal tests for faster diagnosis without freezing private structure.
 
+When a dependency grants broader effects than a caller needs, consider a use-case-shaped operation instead of a database handle or ambient service. Trace which authority can be delegated, retained, expired, or revoked. A narrow function or advertised action does not itself enforce current authorization; stale or leaked values and ambient access still need controls. Route security-policy decisions to `software-security-design`.
+
 ## Deep versus composable growth
 
 Choose a deep capability when callers repeatedly coordinate steps or need one owner for invariants and lifecycle. Choose composition when bounded components can share an honest exchange contract and unknown future workflows should remain outside them.
@@ -72,12 +74,16 @@ For delete, send, charge, overwrite, migrate, revoke, or other risky effects:
 - recheck versions, authorization, and other safety-critical preconditions at apply time;
 - keep idempotency, compensation, and failure handling visible in the effect runner.
 
+When a runtime may speculatively rerun a transaction, separate reversible state changes from irrevocable I/O. Preserve composable actions until the caller can select the required atomic boundary; do not assume separately atomic operations compose atomically. Check the actual runtime's replay, blocking, conflict, and progress guarantees. Moving an effect after commit still requires an explicit delivery and recovery contract.
+
 ## Lifecycle contract
 
 - Request-shaped work: direct result, error, cancellation, and resource ownership.
 - Stream-shaped work: activation, completion, consumer cancellation, teardown, sharing, buffering, and overload.
 - Process-shaped work: durable status, accumulated facts, allowed transitions, next-transition authority, pause/resume, retry, timeout, hold, cancellation, compensation, expiration, reconciliation, and inspection.
 - Remote modifier: latency, timeout, ambiguous completion, retry, ordering, idempotency, partial failure, and observability.
+
+For scarce resources, trace the first acquisition, including lazy access, to the scope that releases it on success, failure, and cancellation. Check detached workers and callbacks that bypass framework cleanup. Prefer scoped acquisition or an explicit stable owner where that gap exists; finalizers and stale-owner recovery do not prove timely release. Verify lifecycle behavior against the deployed runtime version.
 
 ## Design record
 
