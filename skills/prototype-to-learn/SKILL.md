@@ -32,7 +32,7 @@ it available for hands-on learning without treating its code as maintained.
 
 - For business rules, state transitions, data shape, action legality, or sequences, read
   [references/behavior-state-prototype.md](references/behavior-state-prototype.md).
-- For page structure, information hierarchy, workflow presentation, or interaction alternatives, read
+- For testing one UI direction or comparing page structure, information hierarchy, workflow presentation, or interaction alternatives, read
   [references/ui-interaction-prototype.md](references/ui-interaction-prototype.md).
 - If both branches appear relevant, prototype the uncertainty most likely to
   change the decision first. Keep a second artifact separate unless the user

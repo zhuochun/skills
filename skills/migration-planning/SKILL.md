@@ -98,9 +98,8 @@ authority moves, then end the old state deliberately.
     telemetry in dependency order with risk-matched evidence. Fence stale
     executors; bound, own, and review anything retained.
 
-Use [references/migration-plan.md](references/migration-plan.md) when testing
-migration eligibility, selecting state patterns, or writing the state and
-retirement gates.
+Use [references/migration-plan.md](references/migration-plan.md) when selecting
+state patterns or writing the state and retirement gates.
 
 ## Compose specialized controls
 

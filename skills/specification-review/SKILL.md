@@ -78,7 +78,7 @@ next use. Find disagreements before they propagate; do not become the author.
    `software-security-design`; and accountable choice closure with
    `decision-facilitation`.
 9. **Prioritize findings.** Rank by consequence, propagation, reversibility, and
-   confidence. Give each the tightest locator, conflicting interpretations or
+   confidence. Give each explicit confidence, the tightest locator, conflicting interpretations or
    counterexample, impact, and smallest credible repair direction or receiving owner.
 10. **Report the outcome.** Lead with findings, then questions, assumptions,
     evidence inspected, routed judgments, and residual limits. Return `ready for
@@ -139,10 +139,3 @@ next use. Find disagreements before they propagate; do not become the author.
   or widen a bounded review into product discovery or architecture assessment.
 - Repetition is not independence. A clean second pass with the same framing and
   evidence does not certify the artifact.
-
-## Completion
-
-Return findings first, ordered by severity. Include tight locators, confidence,
-competing interpretations or counterexamples, impact, and repair direction or
-receiving owner. Then state decision-changing questions, assumptions, evidence
-inspected, review limitations, specialist routes, and the readiness outcome.

@@ -2,27 +2,6 @@
 
 Use these prompts proportionately. They support a design decision; they are not required as a separate handoff artifact.
 
-## Knowledge-derived reasoning model
-
-| Mechanism | Consequence for module design |
-| --- | --- |
-| **Software Engineering Is Programming Over Time** | Calibrate interface stability, compatibility, migration support, and design investment to expected lifetime, contributors, consumers, and reversal cost. |
-| **Information Hiding Localizes Change** | Decompose around volatile knowledge and design decisions, not processing order or folders. |
-| **Abstraction Partitions Bound Reasoning Cases** | Give state, resources, representations, and assumptions explicit ownership so internal cases do not multiply across the system. |
-| **Near-Decomposable Boundaries Simplify System Behavior** | Seek strong internal interaction and weaker, reduced cross-boundary relationships; do not mistake hidden coupling for independence. |
-| **Duplication Reveals Stable Abstraction Boundaries** | Preserve variation evidence until callers demonstrably share knowledge and change pressure; centralize invariants whose divergence is unsafe. |
-| **Deep Interfaces Concentrate Complexity** | Make the caller's learning burden smaller than the useful behavior and complexity hidden. |
-| **Composable Interfaces Externalize Feature Growth** | Let behavior grow through safe combinations when a shared exchange contract preserves the needed semantics. |
-| **Code Should Minimize Meaning Search** | Judge names, modules, tests, and interfaces by total intent-recovery cost, not local tidiness. |
-| **Explicit Dependencies Reduce Hidden Coupling** | Make required collaborators, configuration, context, and external structures visible where change decisions are made; expose a seam only when ownership, production variation, or failure semantics justify it. |
-| **Correctness Should Come From Structure, Not Vigilance** | Put repeated consequential obligations into types, contracts, defaults, tests, or owned state rather than caller memory. |
-| **Purity Boundaries Make Architecture Self-Reinforcing** | Use deterministic value transformations when they make the decision/effect boundary cheaper to preserve; do not treat purity as the goal. |
-| **Vertical Slices Localize Business Change** | Group artifacts that change for one activity while keeping truly shared invariants authoritative. |
-| **Synchronous Interfaces Preserve Concurrency Choice / Stream Lifecycles Must Own Producers** | Keep request-shaped work direct; when work is genuinely stream-shaped, expose activation, cancellation, teardown, and sharing honestly. |
-| **Process Models Preserve Intermediate State** | When work can pause, resume, retry, wait, compensate, or change hands, give durable status, accumulated facts, transitions, and next-step authority one owner. |
-| **Adoption Friction Shapes Reuse** | Judge shared interfaces by the cost to try, understand, trust, adapt, and carry them forward—not technical merit alone. |
-| **Transparent Abstractions Expose Replaceable Policies** | Keep safe defaults for ordinary callers and expose only recurring orthogonal choices through a contract-bearing advanced layer. |
-
 ## Evidence and intent
 
 - Change or behavior motivating the design:

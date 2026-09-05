@@ -45,6 +45,13 @@ research diary in `SKILL.md`. If the maps provide only adjacent context, run a
 focused extraction and overlap check before authoring. Keep concept extraction
 and map editing as separate scopes.
 
+Package required reasoning, definitions, and operational limits in `SKILL.md`
+or its conditionally loaded references. A consumer must be able to interpret
+the skill without the author's private knowledge base or research history.
+Keep author-only map status and source-family commentary in review or commit
+context. Preserve source-reading and provenance requirements for the user's
+task, within its authorized source boundary.
+
 ## Define one clear owner
 
 Choose a concise action or artifact name only after its proposition, output,

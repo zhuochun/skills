@@ -2,19 +2,6 @@
 
 Adapt these forms in the current task or repository artifact. Do not create a handoff document merely to use the skill.
 
-## Knowledge-derived reasoning model
-
-| Mechanism | Execution consequence |
-| --- | --- |
-| **Vertical Slices Localize Business Change** | Sequence work by one user-visible activity rather than completing technical layers in isolation. |
-| **Concrete Examples Expose Requirement Ambiguity** | Require requested outcome differences to be distinguishable from available inputs and state; surface a missing rule or signal instead of inventing behavior. |
-| **Fearless Competence Through Fast Trusted Tests** | Keep feedback fast and credible enough to guide each small step; revert or repair the latest move when it fails. |
-| **Correctness Should Come From Structure, Not Vigilance** | Encode repeated important obligations in types, schemas, tests, boundaries, defaults, or guardrails instead of reviewer memory; make failure checks discriminate system behavior from harness behavior. |
-| **Reversibility Preserves Adaptive Capacity** | Keep uncertain steps narrow, observable, and retreatable; remove temporary coexistence once learning stabilizes. |
-| **Plan-Effect Split Makes Dangerous Actions Testable** | Make target selection and policy inspectable before destructive or external effects, then recheck stale assumptions at apply time. |
-| **Duplication Reveals Stable Abstraction Boundaries** | Share proven knowledge, not merely matching text; preserve local variation evidence unless divergence would be unsafe. |
-| **Code Should Minimize Meaning Search** | Optimize the finished change for the next maintainer's ability to recover intent, behavior, ownership, and constraints. |
-
 ## Compact fallback change contract
 
 Use this when no richer `software-change-specification` result is needed. When

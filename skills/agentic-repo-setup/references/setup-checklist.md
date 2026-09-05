@@ -15,7 +15,6 @@ or change surface when one already owns the work.
   knowledge reorganization and fixed verification artifacts:
 - Unresolved decisions that setup must stop and route:
 - Material partitions and grounded representative scenario for each:
-- Authorized repository writes:
 - Exact pre-existing tracked paths explicitly authorized for deletion, if any:
 - Exact pre-existing untracked or ignored paths explicitly authorized for deletion, if any:
 - External or production actions excluded:
@@ -204,13 +203,6 @@ Use [bootstrap.md](bootstrap.md) for the decision frontier, logical information
 architecture, walking skeleton, and conditional renewal intake. Link the
 existing record here rather than recreating those schemas.
 
-- Resolve consequential choices through accepted authority; local reversible
-  defaults and deferred extension points do not require invented decisions.
-- Pin versions only when variation would make setup or evidence unreliable.
-- Run required official paths in the accepted runtime; bypass checks remain
-  supplemental. A failing or unavailable required path blocks completion.
-- Deferred renewal intake does not block an otherwise usable Bootstrap.
-
 ### Retrofit
 
 - Follow the target agent's effective instruction chain and preserve dirty,
@@ -248,16 +240,6 @@ Use [renewal.md](renewal.md) as the canonical episode, trial, and disposition
 record. Link its evidence in this checklist only when several surfaces need a
 shared handoff; do not maintain a second candidate lifecycle here.
 
-- Recover enough evidence to classify the trigger without inventing acceptance.
-- Distinguish completion of evaluation from promotion. Record a specific
-  disposition and its reason even when no environment change is justified.
-- Before promotion, obtain accepted meaning and passing source, contrast, and
-  guardrail evidence. A failed contrast can close evaluation as rejected.
-- Rerun accepted affected checks for implemented changes and preserve baseline
-  failures, missing evidence, and compatibility limits.
-- Apply the shared execution authorization and retirement rules; a promotion
-  level does not authorize commits, pushes, or publication.
-
 ## Cold-start and failure rehearsal
 
 | Exercise | Initial state | Expected minimum sufficient sources and command | Injected ambiguity or failure | Expected diagnostic or stop | Observed task result and retrieval delta | Gap owner |
@@ -279,57 +261,26 @@ pass. Include an override-shadowing case when supported.
 | Claim | Exact invocation or inspection | Environment | Result and raw evidence location | Validity limit | Independent perspective if needed |
 | --- | --- | --- | --- | --- | --- |
 
-Check that:
+Use the scenario traces, feedback topology, and gate scope-delta above as
+the verification checklist; reference their evidence rather than repeating
+each contract in a second checklist. Also check that:
 
-- documented commands exist and resolve from the stated working directory;
-- claims and oracles are accepted and unambiguous before setup derives a direct
-  inner-loop check; disputed coverage, consequential method choices, undefined
-  evidence limits or broader-gate scope, and independent verdicts come from
-  `software-verification`;
+- documented commands resolve from the stated working directory;
 - clean setup does not depend on unrecorded global state or credentials;
-- every selected partition routes each material claim from effective `AGENTS.md`
-  instructions to its accountable authority; untested partitions remain visible;
-- domain meaning, architecture structure, behavior specifications, execution
-  guidance, and history are distinguishable without requiring a universal file tree;
-- focused and broader evidence states are explicit, and present checks exercise
-  different justified scopes;
-- required runtimes fail clearly instead of silently skipping the intended path;
-- evidence-adequacy probes are bounded, reproducible, and wired only after their
-  method and oracle are accepted;
-- a changed gate has a pre/post scope delta, is not the sole proof that its scope
-  was preserved, and keeps required negative-control or independent evidence
-  inspectable or **not run**;
-- local and CI paths do not drift into separate implementations;
-- unattended automation begins only after its artifact, command, and evidence
-  loop are stable, exposes a pause or operator-control path, and stays
-  within permissions, budget, retries, cleanup, stop conditions, and accountable
-  review capacity;
-- generated output is replaceable and ignored when it is not authoritative;
-- secrets, remote providers, destructive fixtures, and production effects are
-  excluded or separately authorized; and
-- plausible competing authorities are surfaced until resolved or explicitly
-  blocked; stale instructions and obsolete commands are clearly redirected or
-  deprecated, or removed with exact authority and satisfied consumer obligations.
+- local and CI paths share one implementation;
+- generated output is replaceable and ignored when non-authoritative; and
+- secrets, remote providers, destructive fixtures, and production effects
+  remain excluded or separately authorized.
 
 ## Completion record
 
-- Grounded scenarios and task outcomes:
-- Minimum sufficient context and before-and-after retrieval limits:
-- Changed files and canonical owners:
-- New or changed commands:
-- Pre-change and post-change evidence:
-- Material partitions not exercised:
-- Verification states and gate scope deltas:
-- Negative-control or independent evidence and not-run limits:
-- Behavior and compatibility preserved:
-- Historical or obsolete path disposition:
-- Redirected or deprecated paths and compatibility shims:
-- Exact deleted paths and deletion authority:
-- Pre-existing failures preserved as distinguishable:
-- Remaining manual steps:
-- External settings or production actions not performed:
-- Specialist routes and unresolved gaps:
-- Retrofit improvement or evidence-backed no-op basis:
-- Renew disposition and candidate evidence link, when applicable:
-- Bootstrap renewal intake status or deferred activation signal, when applicable:
-- Observation that should trigger the next renewal:
+Use the entrypoint's Completion contract. Link the mode-specific record and
+the scenario, owner, change, verification, and gate-delta rows above instead
+of copying them into another report. Include only material remaining gaps:
+
+- untested partitions, retrieval limits, and unavailable independent evidence;
+- pre-existing failures distinguished from regressions;
+- historical or obsolete path disposition, redirects, and compatibility shims;
+- exact deleted paths, deletion authority, and replacement-use evidence;
+- remaining manual steps and unperformed external or production actions; and
+- unresolved specialist decisions and the renewal or reopening signal.

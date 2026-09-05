@@ -87,10 +87,8 @@ policy.
     scope and limits, material threats and claims, safe evidence channel,
     required findings disposition, and confirmation gate. If the reviewer or
     channel is unavailable, leave that assurance gate unresolved.
-11. **Report the design disposition.** Return the security frame, included and
-    excluded surfaces, prioritized threat paths, `SEC-*` requirements, control
-    ownership and defaults, verification and independent-challenge obligations,
-    unresolved owner decisions, residual risks, and one defined disposition.
+11. **Report the design disposition.** Use the Completion contract below and
+    select one defined disposition.
 
 Use dispositions precisely:
 
@@ -104,10 +102,17 @@ Use dispositions precisely:
   enforcement boundary, owner, safe handling route, or required reviewer is
   unresolved enough that the next proposed action could choose unsafe behavior.
 
-Read [references/security-design-and-assurance.md](references/security-design-and-assurance.md)
-when selecting risk prompts, AI or agent trust boundaries, secure-coding
-obligations, sensitive-finding handling, independent challenge, standards, or
-verification methods for a material security surface.
+For a material security surface, read only the applicable references:
+
+- General risk prompts or secure-coding handoff:
+  [references/security-design-and-assurance.md](references/security-design-and-assurance.md).
+- Models, retrieval, memory, plugins, or agent tools affecting the threat path:
+  [references/ai-agent-security.md](references/ai-agent-security.md).
+- Sensitive findings, verification obligations, independent challenge, or standards:
+  [references/security-assurance.md](references/security-assurance.md).
+
+Combine branches when the subject needs them; an AI path can also need general
+controls and assurance. Read only the relevant assurance sections.
 
 ## Compose without taking over
 
@@ -164,7 +169,7 @@ verification methods for a material security surface.
 
 ## Completion
 
-Return a compact security design with prioritized threat paths, evidence-backed
-exclusions, `SEC-*` requirements, secure defaults, control and exception
+Return a compact security design with the security frame, included surfaces,
+prioritized threat paths, evidence-backed exclusions, `SEC-*` requirements, secure defaults, control and exception
 ownership, safely handled findings, verification and independent-challenge
 obligations, unresolved routes, residual risks, and a defined disposition.

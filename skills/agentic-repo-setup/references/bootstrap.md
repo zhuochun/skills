@@ -92,6 +92,7 @@ clean setup
   -> hand off or close
 ```
 
+Pin versions only when variation would make setup or evidence unreliable.
 Use the accepted runtime and official command paths. A direct invocation that
 bypasses a failed prerequisite is supplemental evidence, not proof of a usable
 Bootstrap.

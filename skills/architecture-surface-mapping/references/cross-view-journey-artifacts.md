@@ -3,7 +3,9 @@
 Use the smallest artifact combination that makes the user's question
 inspectable. Use numbered steps for a compact trace. Use stable `JNY-*` keys
 across every selected form when comparison, reuse, durability, or consequence
-requires a stable trace.
+requires a stable trace. Add a narrative, matrix, or diagram only when it
+exposes a different decision-bearing relationship; one sufficient form may
+carry the trace.
 
 ## Journey frame
 

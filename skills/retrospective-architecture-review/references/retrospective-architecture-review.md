@@ -2,27 +2,11 @@
 
 Use this reference to reconsider one selected completed design after a material knowledge delta, without turning the reasoning into a user-maintained handoff artifact. For a broad search and ranking of architecture opportunities, use `$architecture-assessment` instead.
 
-## Knowledge-derived reasoning model
-
-This workflow is grounded in the following mechanisms from the knowledge base:
-
-| Mechanism | Consequence for this skill |
-| --- | --- |
-| **Architectural Learning Requires Consolidation** | Trigger on demonstrated learning from exploration, repeated change, and operation; convert it into boundaries, tests, rationale, defaults, merging, splitting, retirement, or quarantine rather than generic cleanup. |
-| **Zero Reported Failures May Reflect Detection Gaps** | Do not infer that optional complexity is valuable or useless from silence; compare exposure and observation coverage before retaining or removing it. |
-| **Essential Work Sets Improvement Ceilings** | Diagnose whether redesign addresses conceptual problem work, accidental friction, or both before predicting leverage. |
-| **Model Friction Signals Domain Misalignment** | Treat repeated exceptions, awkward business language, and non-local changes as evidence for model investigation, not automatically as module-cleanliness problems. |
-| **Triple Debt Model for Software Health** | Recover evidence across code and structure, shared understanding, and preserved intent so a cleaner target does not deepen cognitive or intent debt. |
-| **Regenerable Code Requires Externalized Commitments** | Require behavior, invariants, rationale, failure cases, and validation methods outside the old code before treating a rebuild as safely judgeable. |
-| **Reversibility Preserves Adaptive Capacity** | Compare routes by retreat, compatibility, temporary dual paths, irreversible effects, and cleanup—not target elegance alone. |
-| **Architecture Tradeoffs Require Contextual Weighting** | Weight changeability, safety, operability, cost, and migration against current business drivers and hard constraints. |
-| **Correctness Should Come From Structure, Not Vigilance** | Prefer encoding repeated lessons in durable structure, tests, defaults, and boundaries instead of relying on future memory. |
-| **Adversarial Evaluators Separate Generation From Judgment** | Use a fresh evaluator only when it owns distinct evidence, criteria, or decision rights; a second context alone does not create independence. |
-| **Blameless Incident Learning and Drift Into Failure** | Treat incidents, ordinary workarounds, and weak signals as model-revision evidence without turning local adaptations into blame or deleting them as mere mess. |
-
-These mechanisms are practice-grounded heuristics, not universal thresholds. Apply them proportionately to system lifetime, consequence, and available evidence.
+Use these prompts proportionately to system lifetime, consequence, and available evidence; they are not universal thresholds.
 
 ## Pressure diagnosis
+
+Treat incidents and ordinary workarounds as model-revision evidence; do not blame local adaptations or delete them as mere mess.
 
 | Observed pressure | Essential, accidental, or mixed | Evidence | What would improve if removed? | What would remain? |
 | --- | --- | --- | --- | --- |

@@ -68,7 +68,10 @@ when the user explicitly requests AI-slop analysis or humanizing review, or
 when an initial editorial pass finds a repeated cluster of formulaic patterns
 that materially harms the reader.
 
-When loaded, use the catalogue as diagnostic prompts. Revise only patterns with
+Read [references/slop-language-watchlists.md](references/slop-language-watchlists.md)
+only for an explicit word/phrase audit or unresolved lexical diagnosis.
+
+When loaded, use either reference as diagnostic prompts. Revise only patterns with
 an observable reader effect; watchlist matches prove neither failure nor authorship.
 
 - For an edit, make the minimum effective change. Preserve strong passages and

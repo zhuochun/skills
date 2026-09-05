@@ -43,6 +43,7 @@ Read [references/diagnosis-record.md](references/diagnosis-record.md) only when 
 ## Reject weak diagnosis
 
 - Correlation, recent change, frames, logs, or hot functions are not root cause.
+- Explain local actions and adaptations in their context; do not assign hindsight blame.
 - Preserve temporal, distributed, data, or production mechanisms even when reproduction stays rich; local failure to reproduce is not disproof.
 - Ask what the next observation answers before collecting broad telemetry.
 - Change one discriminating variable at a time.

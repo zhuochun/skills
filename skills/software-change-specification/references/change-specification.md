@@ -2,19 +2,9 @@
 
 Adapt these forms inside the user's existing work surface. Do not create a separate document merely to use the skill.
 
-## Knowledge-derived reasoning model
-
-| Mechanism | Specification consequence |
-| --- | --- |
-| **Solution-Shaped Requirements Hide Business Intent** | Recover outcome, constraints, examples, and success before treating a requested implementation as mandatory. |
-| **Concrete Examples Expose Requirement Ambiguity** | Use ordinary and boundary cases to provoke disagreement; promote the resolved rule rather than mistaking the initial scenario for the requirement. |
-| **Task Expertise Amplifies Agent Leverage** | Externalize intent, constraints, edge cases, acceptance claims, and recovery expectations so delegated execution does not invent them. |
-| **Vertical Slices Localize Business Change** | Bound the specification around one coherent user or caller outcome instead of technical-layer tasks. |
-| **Executable Test Propositions Preserve Behavior Meaning** | Phrase durable acceptance claims as readable behavior statements that later evidence can falsify. |
-| **Testable Specifications Expose Design State Spaces** | Escalate from examples to precise prose, properties, or a model when concurrency, non-determinism, partial failure, safety, or liveness creates a wider state space. |
-| **Regenerable Code Requires Externalized Commitments** | Preserve durable behavior, invariants, rationale, and validation obligations without making a task plan a permanent second source of truth. |
-
 ## Select proportional depth
+
+Escalate from examples to precise prose, properties, or a model when concurrency, non-determinism, partial failure, safety, or liveness creates a wider state space.
 
 | Mode | Use when | Minimum useful result |
 | --- | --- | --- |

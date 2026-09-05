@@ -2,17 +2,6 @@
 
 Use these forms selectively. The main skill owns authority, posture, composition, evidence validity, and closure semantics. This reference supplies placement examples, a compact record form, and the complete routing table.
 
-## Knowledge-derived reasoning model
-
-| Mechanism | Orchestration consequence |
-| --- | --- |
-| **Context and intent before execution** | Recover outcome, constraints, rationale, and current state before selecting or implementing a solution. |
-| **Repository memory steers agent work** | Persist decisions and contracts that must survive the conversation in versioned, searchable work surfaces. |
-| **Process models preserve intermediate state** | Preserve the frontier and re-entry conditions when work pauses or crosses sessions and owners; keep uninterrupted work inline. |
-| **Workflow-native delegation converts activity into impact** | Route work through the repositories, issues, reviews, and evidence surfaces people already use. |
-| **Executable knowledge keeps documentation current** | Prefer keyed contracts, checks, revisions, and canonical links over copied status narrative. |
-| **Agentic throughput shifts work toward verification** | Preserve independent challenge and falsifying evidence rather than treating cheap implementation as completion. |
-
 ## Select the effort boundary
 
 A change effort has one outcome and one closure condition. Group slices only when they share the behavior or risk contract that determines completion.
@@ -27,16 +16,9 @@ A change effort has one outcome and one closure condition. Group slices only whe
 | Make unrelated shell-polish fixes | Separate inline changes or separately prioritized efforts. |
 | Migrate a shared contract across repositories and teams | One control-repository effort with linked local artifacts; use `technical-program-orchestration` for delivery coordination. |
 
-## Place durable state
+## Placement examples
 
-| Mode | Evidence for selection | Canonical placement |
-| --- | --- | --- |
-| **Inline** | Clear, reversible, short-lived discussion or implementation contract | Active task or existing issue; no new directory |
-| **Owning repository** | One repository owns the behavior and future maintainers need the contract or rationale | Existing specification, design, ADR, issue, or repository-native equivalent |
-| **Control repository** | No code repository owns the outcome or an established product/system repository coordinates it | Existing control repository using native change and decision conventions |
-| **Hybrid** | Distributed outcome with important locally owned contracts or evidence | One control record linking canonical artifacts kept with each owner |
-
-When no convention exists and a file is justified, prefer one flat record:
+Apply the persistence modes in `SKILL.md`. When no convention exists and a file is justified, prefer one flat record:
 
 ```text
 docs/changes/YYYYMMDD-<effort-key>.md       # owning repository
@@ -124,11 +106,3 @@ Keep the immediate frontier in the active session during uninterrupted work. A c
 | Fixed consequential claims are ready to execute | `software-verification` execution mode |
 
 Routing can loop backward. Code can reopen specification or design; review can reopen implementation or a decision; inconclusive evidence can require a better method without changing implementation.
-
-## Readiness and closure checks
-
-Use these as routing questions, not universal stages.
-
-Implementation is ready when desired and preserved behavior are understood, material decisions are owned, non-goals are explicit, one coherent slice is known, implementation is authorized, and its feedback loop is credible.
-
-Closure requires delivered behavior in the owning repositories, resolved or owned applicable findings, focused independent confirmation after material review remediation, executed evidence on the final candidate or still-valid matching evidence, and owned operations and cleanup. When durable state was justified, the canonical record must explain completion or re-entry without copied status prose.

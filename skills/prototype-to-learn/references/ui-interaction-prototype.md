@@ -1,22 +1,23 @@
 # UI and Interaction Prototype
 
-Use this branch when the user needs to compare page structure, information
-hierarchy, workflow presentation, or interaction alternatives by trying them.
+Use this branch when hands-on use can test one UI direction or compare page
+structure, information hierarchy, workflow presentation, or interaction alternatives.
 
 ## Shape the artifact
 
 1. Prefer an existing route, shell, navigation frame, and data-loading seam.
    Mount a prototype inside the real context when that context affects density,
    hierarchy, or comprehension.
-2. Create three variants by default. Use two when the choice is genuinely
-   binary, and stop at four unless another variant represents a materially
-   different interaction model.
-3. Make variants structurally different. Change layout, information hierarchy,
+2. For one candidate's mechanism or interaction test, build one representative
+   candidate. For a comparison, build the smallest set that distinguishes the
+   alternatives; honor an explicit requested count. Add a candidate only when
+   it tests another material structural or interaction hypothesis.
+3. For comparisons, make variants structurally different. Change layout, information hierarchy,
    navigation, workflow sequence, or primary affordance rather than only color,
    spacing, component skin, or copy.
 4. Hold the question, data, constraints, viewport, and available actions
    constant across variants so the comparison remains interpretable.
-5. Provide one obvious selection mechanism. Prefer a shareable URL parameter
+5. When several candidates exist, provide one obvious selection mechanism. Prefer a shareable URL parameter
    when the existing router supports it; otherwise use a clearly labeled local
    switcher that cannot be mistaken for product UI.
 6. Preserve normal route behavior when no explicit prototype selector is
@@ -35,7 +36,7 @@ Keep variant components independent enough to explore different structures.
 Share stable application chrome, data acquisition, and domain values when
 doing so keeps the comparison honest.
 
-## Hand over the comparison
+## Hand over the learning artifact
 
 Give the user:
 
@@ -47,7 +48,8 @@ Give the user:
 - the observations that would support, disconfirm, or leave the direction
   inconclusive.
 
-Capture which structure, affordance, or transition the user chooses and why.
+Capture what the user observes and why it supports or challenges the question.
+For comparisons, also record the chosen structure, affordance, or transition.
 The useful result may combine elements from several variants. Preserve that
 decision, not a claim that the winning prototype is production-ready.
 
