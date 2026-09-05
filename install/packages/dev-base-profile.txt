@@ -7,8 +7,10 @@ code-review
 decision-facilitation
 deep-module-design
 domain-modeling
+experience-design-specification
 goal-pursuit
 prototype-to-learn
+research-synthesis
 retrospective-architecture-review
 scoped-change-implementation
 software-change-orchestration

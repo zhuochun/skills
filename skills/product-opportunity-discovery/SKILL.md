@@ -37,6 +37,10 @@ Read [references/experiment-inference.md](references/experiment-inference.md) wh
 - `product-opportunity-prioritization` owns allocation; discovery supplies evidence and reopens weak bets.
 - `architecture-surface-mapping` aligns an accepted or proposed experience path with operational, domain, system, and interface views; discovery retains customer need, value, adoption, and opportunity hypotheses.
 - `prototype-to-learn` builds an authorized disposable software artifact; discovery owns the customer, value, adoption, and solution hypothesis that the artifact informs.
+- `experience-design-specification` owns the reviewable experience proposal,
+  including flows, hierarchy, interaction states, and feedback. Discovery keeps
+  the usability hypothesis and research evidence; proposal completeness is not
+  validation of that hypothesis.
 - `domain-modeling` owns business meaning and invariants; desirability does not determine the software model.
 - `technical-program-orchestration` owns accepted multi-workstream delivery; discovery creates no delivery commitment.
 - `controlled-release-design` owns exposure and cleanup; `observability-design` owns deployed signals.

@@ -7,6 +7,16 @@ see the [scope vocabulary](skill-boundaries.md#scope-vocabulary).
 
 
 ```text
+Use $experience-design-specification to design the saved-items library for our
+reading app. Keep saving separate from downloading. Specify the task flow,
+information hierarchy, offline and failure states for native Android and
+responsive web. Preserve shared concepts while explaining platform navigation,
+input, and continuity differences. Use existing patterns, label assumptions,
+and return a proposal inline.
+Do not implement or claim that the experience has been user-tested.
+```
+
+```text
 Use $goal-pursuit to deliver a working refund-approval capability from the
 current repository state through verified end-to-end behavior. Start with a
 compact system-level plan, preserve the requested outcome and authority, select

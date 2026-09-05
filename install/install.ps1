@@ -171,6 +171,7 @@ function Get-ManifestSkills {
 
 $availableSkills = @(Get-SkillNames)
 $availablePackages = @(Get-PackageNames)
+$packagedSkills = [System.Collections.Generic.HashSet[string]]::new([StringComparer]::Ordinal)
 
 foreach ($packageName in $availablePackages) {
   if ($packageName -notmatch '^[a-z0-9-]+$') {
@@ -200,7 +201,13 @@ foreach ($packageName in $availablePackages) {
   }
   foreach ($manifestSkill in $manifestSkills) {
     Assert-CurrentSkill $manifestSkill
+    [void]$packagedSkills.Add($manifestSkill)
   }
+}
+
+$unpackagedSkills = @($availableSkills | Where-Object { -not $packagedSkills.Contains($_) })
+if ($unpackagedSkills.Count -ne 0) {
+  throw "Skills missing from package manifests: $($unpackagedSkills -join ', ')"
 }
 
 if ($List) {

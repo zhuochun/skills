@@ -31,6 +31,10 @@ Turn an intended change into a reviewable behavioral contract an implementer can
 2. **Recover current behavior.** Trace the relevant user or caller path through inputs, decisions, state, effects, outputs, contracts, and operating controls. Distinguish documented intent, observed behavior, supported behavior, accidental behavior, and unknown behavior. Do not let the requested solution become the only description of the problem.
 3. **Separate requirement from solution.** Classify each material statement as desired outcome or behavior, hard constraint, accepted design decision, proposed implementation, or open question. Preserve mandated implementation constraints with their source and rationale; reopen unverified prescriptions as options. Do not promote a proposed baseline, familiar pattern, or agent recommendation into the change contract unless the accountable owner has accepted it. Do not demote behavior that the accountable owner explicitly accepted because repository evidence exposes an implementation consequence. Keep the accepted behavior confirmed and route only a genuinely uncovered decision.
 4. **Map affected surfaces.** Name relevant journey, entry points, domain decisions, state authority, data lifecycle, consumers, contracts, permissions, dependencies, trust or tenant boundaries, attacker-controlled inputs, protected effects, failure/recovery, telemetry, release controls, and owners. Record confidence; omit irrelevant fields.
+   When the change involves UX, apply the experience-design composition below
+   before finalizing dependent behavior or readiness. UX includes changes to
+   user-facing concepts, flows, information hierarchy, interaction states,
+   feedback, access, or platform continuity, even without a new screen.
 5. **Probe with examples.** Start with positive and negative cases, then vary boundaries, order, identity, timing, retries, failures, permissions, direct entry points, and unsafe defaults. Collect disagreeing roles independently. Treat scenarios as probes until an owner resolves the rule; retain only representative acceptance cases. When credible abuse paths or security controls remain undecided, route them to `software-security-design` instead of inventing threat or control policy.
 6. **Define the change contract.** State confirmed desired behavior, preserved behavior, invariants, validation and authorization rules, state transitions and authority, effects, error and failure semantics, compatibility expectations, quality constraints, recovery expectations, and explicit non-goals. Preserve accepted `SEC-*` requirements, enforcement boundaries, secure defaults, and exception behavior from `software-security-design`. Where an owning decision is unresolved, state the obligation and conditional alternatives without selecting one; keep dependent claims conditional. Describe what must be true without prescribing file edits, service ownership, protocol shape, migration policy, or implementation choreography.
 7. **Bound delivery.** Identify the smallest useful end-to-end slice and independent follow-ons. Name prerequisites and cross-slice invariants; route workstream steering to `technical-program-orchestration` and replacement-state movement to `migration-planning`.
@@ -51,6 +55,19 @@ Read [references/change-specification.md](references/change-specification.md) wh
 - Leave investment to product discovery; meaning to `domain-modeling`;
   structure to `service-boundary-design` or `deep-module-design`; and unexplained failure to
   `software-failure-diagnosis`.
+- For UX changes, resolve and read
+  [experience-design-specification](../experience-design-specification/SKILL.md)
+  and apply its workflow to the affected experience. Supply the outcome,
+  current-behavior evidence, target environments, constraints, accepted decisions,
+  and open UX questions. Reuse an applicable accepted design and address only
+  gaps or contradictions; a settled small edit needs no full design artifact.
+  Resume this specification with the experience result. Reference accepted
+  decisions in the behavior delta and `CHG-*` claims without copying their
+  authoritative record or promoting proposals to accepted behavior. Keep
+  unresolved consequential UX choices conditional and dependent work `not ready`.
+  If the skill or required decision is unavailable, name the blocked slice and
+  continue independent specification work; do not reconstruct its workflow from
+  its name. Backend-only changes with no UX effect skip this composition.
 - Leave security threat and control decisions to `software-security-design`;
   compatibility and deprecation to `software-contract-evolution`;
   transition states to `migration-planning`; release controls to

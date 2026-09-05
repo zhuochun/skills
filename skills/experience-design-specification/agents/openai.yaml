@@ -1,0 +1,7 @@
+interface:
+  display_name: "Experience Design Specification"
+  short_description: "Specify coherent user flows and interaction behavior"
+  default_prompt: "Use $experience-design-specification to turn this intended user outcome into a reviewable experience proposal with reasoned interactions, shared concepts, platform adaptations, and explicit unresolved decisions."
+
+policy:
+  allow_implicit_invocation: true

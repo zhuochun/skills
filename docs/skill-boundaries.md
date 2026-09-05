@@ -288,6 +288,25 @@ Technical writing can follow research, design, implementation, or operational wo
 
 ### Product discovery, prioritization, and delivery
 
+- `experience-design-specification` owns the proposed user experience: concepts,
+  task flows, information hierarchy, interaction states, feedback, and recovery.
+  It preserves shared task semantics while specifying consequential platform,
+  input, navigation, window, and continuity differences; it does not select
+  implementation architecture or invent persistence and conflict policy.
+  Discovery retains opportunity, value, adoption, and usability hypotheses and
+  their research evidence. `domain-modeling` retains disputed business meaning.
+  `software-change-specification` reads and applies this owner when UX is affected,
+  then consumes accepted experience decisions in its broader behavior delta
+  without duplicating the design record. It reuses applicable accepted designs
+  and keeps unresolved UX dependencies conditional. A fixed design
+  may receive integrity review from `specification-review`; that review does not
+  certify usability or accessibility. Design is not implementation authority.
+
+Experience specification is an implicit front door because requests to design
+a user flow or interaction have a distinct common artifact that neither
+opportunity discovery nor a general change contract owns. Small clear edits
+still bypass a full design workflow.
+
 - `product-opportunity-discovery` reduces uncertainty about a desired outcome, customer opportunity, assumptions, and alternative solution directions. It may recommend learning, narrowing, pivoting, stopping, prioritization, or investment readiness; it does not allocate the roadmap or promise delivery.
 - `prototype-to-learn` constructs a local disposable software artifact for one named behavior, state, UI, or interaction design question. It consumes a discovery or design question when supplied and returns an observation surface and captured learning; it does not decide customer value, architecture acceptance, or production readiness.
 - `domain-modeling` retains disputed business meaning, rules, and invariant

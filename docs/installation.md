@@ -86,8 +86,13 @@ the final skills directory; the installer does not append another segment.
 ## Packages
 
 A topic bundle ends in `-bundles` and groups skills around a user-facing theme.
-Bundles may overlap and need not cover every downstream specialist. A workflow
-profile ends in `-profile` and is composition-closed for its declared normal
+Bundles may overlap and need not individually cover every downstream specialist.
+Every current skill must appear in at least one manifest across all bundles and
+profiles. Both installers enforce
+this union coverage before listing or acting, and name uncovered skills. The
+computed `all` selection does not count as a manifest.
+
+A workflow profile ends in `-profile` and is composition-closed for its declared normal
 paths; exceptional routes may leave the profile. See the
 [catalog](catalog.md) for individual skill ownership and relationships.
 

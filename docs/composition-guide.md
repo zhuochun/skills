@@ -42,6 +42,24 @@ sequence.
 
 ## Common compositions
 
+### Intended outcome to experience design
+
+Use `experience-design-specification` directly when the missing decision is how
+users understand and complete a task. It can start from available evidence and
+return a labeled proposal without requiring a prior discovery invocation.
+Frame relevant target environments before selecting flows, preserve shared
+concepts, and explain consequential platform differences in the same design.
+Route unresolved value or usability hypotheses to `product-opportunity-discovery`,
+and authorized runnable probes to `prototype-to-learn`. Feed observations back
+into the proposal. When a change involves UX, `software-change-specification`
+reads and applies `experience-design-specification`, reuses applicable accepted
+designs, and resumes with accepted decisions and unresolved UX dependencies.
+Keep one canonical record instead of copying the design. Backend-only changes
+skip this composition; settled small edits need no full design artifact.
+A fixed consequential proposal may receive
+`specification-review`, which does not establish user success or accessibility.
+Compose on the relevant trigger rather than imposing a universal sequence.
+
 ### Intentional end-to-end goal pursuit
 
 ```text

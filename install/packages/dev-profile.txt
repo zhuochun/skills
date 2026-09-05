@@ -9,11 +9,13 @@ controlled-release-design
 decision-facilitation
 deep-module-design
 domain-modeling
+experience-design-specification
 goal-pursuit
 migration-planning
 observability-design
 platform-capability-design
 prototype-to-learn
+research-synthesis
 retrospective-architecture-review
 scoped-change-implementation
 service-boundary-design

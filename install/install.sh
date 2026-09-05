@@ -167,6 +167,7 @@ validate_current_skill() {
 
 validate_packages() {
   package_count=0
+  package_covered=
   package_carriage_return=$(printf '\r')
 
   for package_manifest in "$packages_root"/*.txt; do
@@ -186,6 +187,7 @@ validate_packages() {
         ''|'#'*) continue ;;
       esac
       validate_current_skill "$package_line"
+      package_covered="$package_covered $package_line"
       package_manifest_count=$((package_manifest_count + 1))
       if [ -z "$package_manifest_entries" ]; then
         package_manifest_entries=$package_line
@@ -205,6 +207,14 @@ $package_line"
   done
 
   [ "$package_count" -gt 0 ] || die 'No package manifests were found.'
+  package_missing=
+  for package_skill in $(list_skills); do
+    case "$package_covered " in
+      *" $package_skill "*) ;;
+      *) package_missing="${package_missing:+$package_missing, }$package_skill" ;;
+    esac
+  done
+  [ -z "$package_missing" ] || die "Skills missing from package manifests: $package_missing"
 }
 
 validate_packages

@@ -30,8 +30,8 @@ out of `SKILL.md`.
 
 When adding or changing an owner, update only the affected catalog,
 relationship, composition, example-prompt, package-manifest, and neighboring
-route surfaces. When changing published content or metadata, include the
-distribution surfaces described below.
+route surfaces. Apply the distribution validation and skill-only versioning
+rule below to the affected surfaces.
 
 ## Test boundaries and verify
 
@@ -51,7 +51,11 @@ Before completion:
 - validate the catalog after naming, trigger, contract, or composition changes;
 - check metadata, links, and scaffold residue;
 - run both installers in list mode to validate sorted, unique, current package
-  manifests and composition-closed workflow profiles;
+  manifests and coverage of every skill by their union; keep workflow profiles
+  composition-closed for their declared normal paths;
+- after installer validation changes, run
+  `python -X utf8 install/tests/test_package_coverage.py` with `pwsh` and a POSIX
+  shell available (`bash` on Windows);
 - use the local evaluation assets for comparative evaluations when available;
   and
 - run `git diff --check`.
@@ -63,9 +67,16 @@ by the existing prose. A decoding failure is not a skill-contract failure.
 
 The repository root is the `bicrement` Codex plugin, and [`skills/`](skills/)
 is the only source of skill content. Do not copy skills into Marketplace
-directories. When published content or plugin metadata changes, update the
-strict-semver `version` in [`plugin.json`](.codex-plugin/plugin.json), validate
-the root plugin, and run `npx skills add . --list --agent codex`.
+directories. Update the strict-semver `version` in
+[`plugin.json`](.codex-plugin/plugin.json) only when files under `skills/` change,
+including skill additions, removals, renames, instructions, references, scripts,
+assets, or agent metadata. Changes limited to repository documentation,
+installers, package manifests, tests, evaluation assets, or plugin metadata do
+not require a version bump.
+
+When skill content or distribution configuration changes, validate the root
+plugin and run `npx skills add . --list --agent codex`, whether or not a version
+bump is required.
 
 Preserve unrelated work. Preview and commit scoped paths unless the user asks
 for every change, inspect `git status` around writes and commits, and verify the

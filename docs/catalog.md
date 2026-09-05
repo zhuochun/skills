@@ -20,6 +20,7 @@ Keep implicit invocation for a small set of front doors that represent distinct 
 - `deep-module-design`
 - `decision-facilitation`
 - `software-change-specification`
+- `experience-design-specification`
 - `scoped-change-implementation`
 - `behavior-preserving-refactoring`
 - `software-failure-diagnosis`
@@ -44,6 +45,7 @@ Do not start from a fashionable method or invoke every skill as a stage gate. As
 | --- | --- | --- |
 | [`research-synthesis`](../skills/research-synthesis/) | Bounded synthesis of what papers, standards, official guidance, reports, datasets, and other high-trust sources collectively support | Bounded answer, claim-level provenance, contradictions, applicability, confidence, unresolved gaps, and stop rationale |
 | [`product-opportunity-discovery`](../skills/product-opportunity-discovery/) | Customer opportunity and solution-direction learning before heavy implementation | Decision frame, opportunity model, hypotheses, alternatives, learning evidence, and bounded disposition |
+| [`experience-design-specification`](../skills/experience-design-specification/) | How users understand and accomplish a bounded task in its target environments before consequential UX choices reach implementation | Reviewable concepts, task flows, reasoned interactions, platform adaptations, access and recovery behavior, and unresolved decisions |
 | [`prototype-to-learn`](../skills/prototype-to-learn/) | Construction of one disposable runnable software artifact for a behavior, state, UI, or interaction design question | Local prototype, observation surface, fidelity limits, captured learning, and lifecycle route |
 | [`architecture-surface-mapping`](../skills/architecture-surface-mapping/) | Evidence-ranked orientation to unfamiliar software and bounded cross-view journeys across experience, operations, domain state, systems, data, interfaces, and owners | Architecture-surface map or stable journey spine, path traces, branches, contradictions, confidence, and next probes |
 | [`domain-modeling`](../skills/domain-modeling/) | Problem-specific behavior, invariants, vocabulary, consequential classifications, and semantic contexts | Operational principles, compared models, classification choices, semantic boundaries, translations, and unresolved owner decisions |
