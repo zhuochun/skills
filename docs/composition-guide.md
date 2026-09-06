@@ -68,8 +68,10 @@ concepts, and explain consequential platform differences in the same design.
 Route unresolved value or usability hypotheses to `product-opportunity-discovery`,
 and authorized runnable probes to `prototype-to-learn`. Feed observations back
 into the proposal. When a change involves UX, `software-change-specification`
-reads and applies `experience-design-specification`, reuses applicable accepted
-designs, and resumes with accepted decisions and unresolved UX dependencies.
+first checks whether accepted experience decisions cover the affected behavior.
+It reuses sufficient decisions directly and reads and applies
+`experience-design-specification` for consequential gaps or contradictions.
+It resumes with accepted decisions and unresolved UX dependencies.
 Keep one canonical record instead of copying the design. Backend-only changes
 skip this composition; settled small edits need no full design artifact.
 A fixed consequential proposal may receive

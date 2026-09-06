@@ -10,7 +10,7 @@ Produce an evidence-backed boundary decision, not a service-count opinion. Keep 
 ## Preserve authority
 
 - Analyze by default; do not split services, move data, or change ownership without authorized implementation.
-- Identify the decision, service, data, operations, security, and consumer owners before material recommendation.
+- Identify the decision owner and the service, data, operations, security, or consumer owners whose commitments the candidate affects. Keep unknown authority explicit.
 - Mark missing production or organizational evidence as uncertainty. Do not invent traffic, ownership, or failure behavior from code structure alone.
 
 ## Compose boundary scopes
@@ -21,31 +21,44 @@ Produce an evidence-backed boundary decision, not a service-count opinion. Keep 
 
 ## Gather evidence
 
-Inspect only what can decide the boundary: workflows, invariants, change history, interfaces, stores, projections, topology, traces, failures, security, compliance, scale, consistency, recovery, teams, platform maturity, and migration constraints.
+Start with required repository guidance, the affected workflow, its state owner, and
+the proposed enforcement change. Name the unresolved assumption before expanding
+investigation; read evidence that could change the boundary decision. Use targeted
+sections and reuse inspected facts unless incomplete, contradictory, or stale.
 
-Prefer measured runtime behavior and change history over declared diagrams; expose source disagreements.
+Inspect history for disputed intent or change coupling, runtime evidence for load or
+failure claims, and organizational evidence for operating ownership. Prefer observed
+evidence over declared diagrams where they disagree. Missing consequential evidence
+requires a conditional result, not a broader search without a decision question.
 
 ## Review workflow
 
 1. **Frame the decision.** Name boundary, pressure, horizon, and whether the choice concerns logical modularity, deployment, data authority, failure isolation, or ownership. Route purely in-process detail to `deep-module-design`.
 2. **Recover domain intent.** Rewrite solution-shaped proposals as outcomes, constraints, scenarios, and invariants. Identify the language and model that must remain coherent locally.
-3. **Map the real boundary.** Inventory every interface: requests, events, schemas, shared tables, files, streams, analytics exports, support paths, and operational controls. Name the authoritative owner of each fact.
+3. **Map the real boundary.** Trace interfaces and shared state that cross or constrain
+   the candidate boundary, including non-API data and control paths. Name each fact's
+   authoritative owner. Expand the inventory when a dependency could change the decision.
 4. **Balance forces.** Compare forces apart—volatility, scale, security, ownership, reliability, isolation—with transactions, invariants, chatty workflows, data dependence, latency, and coordinated releases.
 5. **Test change and failure independence.** Trace representative business changes and failure scenarios through the proposed shape. Check whether the boundary localizes them or merely moves coupling behind the network.
-6. **Price the operating model.** Check deployability, observability, incident routing, capacity, compatibility, local development, testing, and on-call readiness. A structurally plausible service can still be operationally premature.
+6. **Price the operating change.** For a changed deployment or operating boundary,
+   check affected deployment, observability, incident, capacity, compatibility, testing,
+   and on-call commitments. For an in-process choice, explain why chosen enforcement
+   fits and what pressure would invalidate it. A plausible service may be operationally premature.
 7. **Compare enforcement.** Consider current service, stronger module, split, or merge across localized knowledge and change, caller burden, data authority, runtime cost, migration, and reversibility. Do not design the module interface.
 8. **Recommend and route conditionally.** Give the decision, confidence, decisive evidence, rejected alternatives, risks, prerequisites, and revisit signals. For logical modularity, hand pressure, commitments, constraints, and rejection gates to `deep-module-design`. For physical separation, keep internal module work as a distinct follow-up.
 
-Read [references/boundary-review.md](references/boundary-review.md) only when a formal interface inventory, force matrix, scenario trace, or boundary decision record is needed.
+Read the relevant section of [references/boundary-review.md](references/boundary-review.md)
+when unresolved coupling, competing forces, or a requested formal record needs it.
+Do not load the worksheet merely because a boundary decision is being made.
 
 ## Quality gates
 
-Do not complete the review until:
+Complete the owned decision when:
 
-- workflow, invariants, data authority, and non-API interfaces are visible;
+- the affected workflow, invariants, data authority, and decision-bearing non-API interfaces are visible;
 - integration and disintegration forces include a traced change and failure scenario;
 - materially different options include the smallest self-contained text comparison of service or module shape, data authority, runtime/failure boundaries, and operating ownership; rendering is optional;
-- runtime and organizational readiness are considered;
+- affected runtime and organizational commitments are supported or explicitly unresolved;
 - semantic, code, deployment, data, and team boundaries remain distinct;
 - in-process recommendations state locality and service constraints, then route design to `deep-module-design`;
 - unknowns and next evidence are explicit.

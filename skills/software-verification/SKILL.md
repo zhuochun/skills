@@ -80,10 +80,15 @@ unavailable, report the narrower tested result and unverified runtime claim.
    reserve expensive, risky, or production-like evidence for claims that need
    it. Name execution point, evidence owner, location, and remaining gaps.
 
-Read [references/evidence-portfolio.md](references/evidence-portfolio.md) for
-agent or tool-system evaluation, semantic judges, non-obvious method selection,
-cross-boundary, security, or failure-recovery coverage, or a durable strategy
-matrix.
+Read the relevant section of [references/evidence-portfolio.md](references/evidence-portfolio.md)
+when method, oracle, coverage, fidelity, or independence is missing or suspect,
+or a durable strategy matrix is needed. A fixed sufficient contract proceeds to
+execution without a new method survey merely because it crosses a boundary.
+Preserve required calibration, negative controls, and fresh evidence obligations.
+For agent or tool-system evaluation, use the reference's **Agent and tool-using
+systems** section to frame or check the contract. In particular, retention decisions
+require trigger negatives and a with-or-without ablation. A fixed contract is not
+sufficient merely because its positive output cases pass.
 
 ## Execute fixed claims
 

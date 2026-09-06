@@ -125,6 +125,13 @@ Keep one common execution spine in `SKILL.md`. Move branch-specific detail,
 large schemas, extended examples, and specialist procedures into references.
 Load those references only when their branch applies.
 
+After required orientation, expand context to resolve consequential uncertainty,
+challenge a candidate, or establish required coverage. Reuse sufficient current
+evidence. Stop expanding when further investigation cannot change the owned
+decision, its confidence or limits, or a required evidence obligation. Discovery
+still needs bounded reconnaissance; reviews still need counterevidence. Do not
+turn an early plausible answer into permission to skip either.
+
 - Keep a description near 45–55 words. Include the owned action or artifact,
   strongest triggers, and nearest exclusion or route. Exceed this range only
   when shortening would make activation or ownership materially ambiguous.

@@ -286,8 +286,9 @@ Technical writing can follow research, design, implementation, or operational wo
   implementation architecture or invent persistence and conflict policy.
   Discovery retains opportunity, value, adoption, and usability hypotheses and
   their research evidence. `domain-modeling` retains disputed business meaning.
-  `software-change-specification` reads and applies this owner when UX is affected,
-  then consumes accepted experience decisions in its broader behavior delta
+  `software-change-specification` checks accepted experience coverage when UX is
+  affected and reads and applies this owner for consequential gaps or contradictions.
+  It consumes sufficient accepted decisions directly in its broader behavior delta
   without duplicating the design record. It reuses applicable accepted designs
   and keeps unresolved UX dependencies conditional. A fixed design
   may receive integrity review from `specification-review`; that review does not

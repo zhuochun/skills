@@ -38,7 +38,10 @@ Route disputed meaning to `domain-modeling`; deployment, data authority, failure
 9. **Place correctness, decisions, and effects deliberately.** Move repeated high-cost correctness obligations into types, contracts, tests, defaults, or owned state instead of caller vigilance. Keep dependencies visible. Separate deterministic decisions from I/O where this makes dangerous or complex behavior reviewable, while retaining the module—not extracted helper fragments—as the meaningful behavior surface.
 10. **Adopt by change.** Use vertical slices across technical layers. Make the common shared-module path easy while preserving justified advanced access. Migrate incrementally, verify through the production interface, and retire the old owner.
 
-Read [references/module-design-review.md](references/module-design-review.md) only when comparing consequential alternatives, auditing lifecycle or adoption contracts, or producing a durable design record.
+Read the relevant section of [references/module-design-review.md](references/module-design-review.md)
+when an unresolved interface, lifecycle, or adoption question needs its probes, or
+a durable design record is needed. Consequence alone does not require the whole
+reference; preserve the entrypoint's comparison and evidence obligations.
 
 ## Quality gates
 

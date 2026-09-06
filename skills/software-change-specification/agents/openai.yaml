@@ -1,7 +1,7 @@
 interface:
   display_name: "Software Change Specification"
   short_description: "Turn software changes into implementable contracts"
-  default_prompt: "Use $software-change-specification to specify this accepted but ambiguous change, compose experience-design-specification when UX is affected, and preserve unresolved owner decisions in the readiness result."
+  default_prompt: "Use $software-change-specification to specify this accepted but ambiguous change, reuse sufficient accepted experience decisions, compose experience-design-specification only for consequential UX gaps or contradictions, and preserve unresolved owner decisions in the readiness result."
 
 policy:
   allow_implicit_invocation: true

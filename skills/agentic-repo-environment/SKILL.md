@@ -141,11 +141,11 @@ Resolve missing specialist decisions, then resume the active mode; a route is no
 
 ## Execute the common spine
 
-1. **Establish the baseline.** Start from the repository and existing systems of record.
-   Inspect Git state, effective instructions, accepted constraints, information
-   architecture, runtime, commands, evidence, controls, failures, and task paths.
-2. **Bind representative evidence.** Select accepted Bootstrap workflows, grounded Retrofit
-   scenarios, or the Renew episode. Preserve unrelated work and baseline failures.
+1. **Establish scope and authority.** Inspect Git state, effective instructions, accepted constraints, and existing systems of record. Preserve unrelated work.
+2. **Bind representative evidence.** Select accepted Bootstrap workflows, grounded Retrofit scenarios, or the Renew episode.
+   Trace its information, runtime, command, evidence, and control owners; preserve baseline failures and reuse sufficient current evidence.
+   Expand inspection when an unresolved mechanism, dependency, or guardrail can change the repair or its verification.
+   Bootstrap still needs the complete representative setup-to-verification path; narrow Renew episodes need no fresh repo-wide inventory.
 3. **Diagnose the earliest gap.** Separate an environment defect from missing product,
    domain, architecture, compatibility, or release authority.
 4. **Obtain owned decisions.** Resolve mechanical routing and behavior-preserving changes

@@ -43,7 +43,11 @@ Turn an intended change into a reviewable behavioral contract an implementer can
 9. **Route uncertainty.** For each material unknown outside behavioral-specification authority, state why it matters, owner, smallest probe/skill, and whether work can proceed. Do not gate every unknown, hide decisions as assumptions, or invent closure.
 10. **Make readiness explicit.** Return `ready`, `ready with owned follow-through`, or `not ready`, with the evidence basis and accountable confirmation still required. A ready specification means an implementer should not need to invent consequential behavior; it does not prove the design, authorize implementation, or certify release.
 
-Read [references/change-specification.md](references/change-specification.md) when selecting specification depth, structuring the compact output, or distinguishing probes from durable claims.
+Keep a local reversible contract compact. Increase precision when ambiguity,
+concurrency, partial failure, safety, or difficult reversal widens the state space.
+Read the relevant section of [references/change-specification.md](references/change-specification.md)
+when an unresolved form, state-space, or probe-versus-claim question needs it;
+choosing a compact result alone does not require the reference.
 
 ## Compose without taking over
 
@@ -57,12 +61,15 @@ Read [references/change-specification.md](references/change-specification.md) wh
   end-to-end technical synthesis to `software-system-design`; focused boundaries to
   `service-boundary-design` or `deep-module-design`; and unexplained failure to
   `software-failure-diagnosis`.
-- For UX changes, resolve and read
+- For UX changes, first check whether accepted experience decisions cover the
+  affected concepts, flows, states, feedback, access, and target environments.
+  Reuse sufficient decisions without loading another design workflow. When a
+  consequential UX choice is missing or contradicted, resolve and read
   [experience-design-specification](../experience-design-specification/SKILL.md)
   and apply its workflow to the affected experience. Supply the outcome,
   current-behavior evidence, target environments, constraints, accepted decisions,
-  and open UX questions. Reuse an applicable accepted design and address only
-  gaps or contradictions; a settled small edit needs no full design artifact.
+  and open UX questions. Address only those gaps or contradictions;
+  a settled small edit needs no full design artifact.
   Resume this specification with the experience result. Reference accepted
   decisions in the behavior delta and `CHG-*` claims without copying their
   authoritative record or promoting proposals to accepted behavior. Keep

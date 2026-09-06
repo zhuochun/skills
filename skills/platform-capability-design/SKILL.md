@@ -19,7 +19,18 @@ Design user leverage, not an infrastructure catalog or central ticket queue. Pre
 8. **Establish the operating contract.** Name capability ownership, availability and support expectations, compatibility policy, dependency responsibilities, incident path, metadata, and lifecycle obligations.
 9. **Plan adoption and evolution.** Define a thin usable slice, representative design partners, migration support, success and burden measures, feedback channels, and retirement of replaced paths.
 
-Read [references/platform-capability-design.md](references/platform-capability-design.md) when a capability adds a technology or supported exception, or when a durable proposal or review record is needed.
+For a capability that adds a technology or supported exception, compare the
+best existing-stack path and its concrete limitations with the lasting cost
+of deployment, observation, security, upgrades, recovery, training, and support.
+Name who inherits that work after the initiating team moves on. A new option
+can win; familiarity is not proof of fit. Define a bounded trial, retreat, and
+replacement or justified coexistence for overlapping paths. Do not impose a
+fixed technology budget or expand a capability review into vendor selection.
+
+Read the relevant section of [references/platform-capability-design.md](references/platform-capability-design.md)
+when an unresolved exception, operating, or adoption commitment needs its probes,
+or a durable proposal or review record is needed. Reuse sufficient accepted contracts;
+adding a technology alone does not require the full worksheet.
 
 ## Quality gates
 

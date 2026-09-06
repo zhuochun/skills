@@ -9,7 +9,7 @@ Build a problem-specific model that clarifies important decisions, rules, and be
 
 ## Preserve context and authority
 
-- Discover existing language, schemas, decisions, context maps, APIs, tests, events, reports, and ownership first.
+- Start with required repository guidance, the disputed example or workflow, its language, and relevant existing owners. Recover their accepted decisions before proposing another model.
 - Locate the changed-surface owner and the owner of coherent behavior, state, or meaning before proposing another model. Reconcile implementation with work, language, and outcomes.
 - Default to analysis and proposal. Update documentation or code only when the user requests it, and preserve established artifact names and locations.
 - Treat stakeholder prescriptions, code, schemas, and services as evidence, not sole authority. Preserve mandated constraints and rationale.
@@ -22,7 +22,7 @@ Build a problem-specific model that clarifies important decisions, rules, and be
 
 1. **Recover the problem.** Translate requested screens, fields, services, schemas, rules, or technologies into outcomes, decisions, constraints, examples, invariants, and success or failure. Keep implementation as one candidate unless constrained.
 2. **Bound the investment.** Name the workflow or decision, owners, and horizon. Model intensively only where meaning, rules, lifecycle, or translation is disputed or repeatedly costly. If semantics and ownership are settled, return the smallest owner finding, rule, or implementation route. A no-modeling result cites changed-surface and preserved-state owners, sufficiency evidence, and important non-changes. Never create a second semantic owner; state exclusions.
-3. **Gather language and evidence.** Compare experts, work, users, support, code, data, tests, interfaces, incidents, and operations. Mark synonyms, homonyms, missing or overloaded concepts, hidden state, and declared-executable contradictions.
+3. **Gather discriminating evidence.** Compare the competing meanings against real work and relevant code, data, interfaces, tests, or stakeholder accounts. Expand sources when disagreement, missing perspectives, or hidden state could change the model. Reuse current evidence; stop expanding when it cannot change meaning, boundaries, confidence, or an unresolved obligation. Preserve counterexamples and affected perspectives for consequential classification.
 4. **Write operational principles.** Trace each important concept from purpose through actors, state, actions, transitions, and observable outcome. Add edge scenarios for reversal, authorization, time, partial progress, failure, repair, and reporting when consequential.
 5. **Generate and compare candidates.** For consequential choices, create materially different lightweight models. Judge them by difficult decisions, workflows, operations, invariants simplified, omissions, new complexity, and awkward adjacent scenarios—not realism or completeness alone.
    - When a candidate depends on identity, distinguish occurrence, content, semantic subject, version, and mutable locator. Challenge multiplicity, reorder, split or merge, edits, regeneration, deletion, and reappearance before claiming stability. Preserve provenance and unresolved identity policy rather than treating a hash or current key as universal identity.

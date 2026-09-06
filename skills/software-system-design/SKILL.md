@@ -32,6 +32,14 @@ This applies within one application as well as across services.
 
 ## Design the complete operation
 
+Use required repository guidance and the relevant behavior and implementation owners
+as the starting evidence. Before expanding the search, identify the unresolved
+assumption and how its answer could change the candidate. Search targeted sections;
+reuse inspected evidence unless it is incomplete, contradictory, or stale. Keep the
+current candidate, decisive facts, and open questions salient instead of repeatedly
+loading whole documents. This does not permit skipping required evidence or treating
+an unexamined dependency as irrelevant.
+
 1. **Recover the outcome and constraints.** Identify the actor or caller, operation,
    intended result, preserved invariants, current design, lifetime, and reversal cost.
    Separate hard constraints from preferences and unknowns. Inspect available evidence
@@ -41,14 +49,19 @@ This applies within one application as well as across services.
    and result through the current or candidate path. Locate the component with enough
    knowledge to establish application success. Distinguish acceptance, transport delivery,
    durable handoff, applied effects, and completed work whenever those differ.
-3. **Form a coherent candidate.** Assign each invariant, mutable fact, resource, and
-   lifecycle a responsible component. Define the decision-bearing interface assumptions:
+3. **Form the smallest viable candidate.** Start from the existing extension point or
+   simplest arrangement that satisfies the requested outcome. Establish why additional
+   capability is needed before exploring its implementation. Assign each invariant,
+   mutable fact, resource, and lifecycle a responsible component. Define the decision-bearing interface assumptions:
    who provides what, under which conditions, and what callers observe on failure.
    Connect state/data flow, control flow, and runtime placement; expose dependencies
    instead of leaving orchestration or recovery between boxes. Reuse accepted specialist
    decisions and resolve their interactions here rather than merely listing routes.
 4. **Challenge composition.** Trace representative success, change, and failure cases
-   through the complete candidate. Check whether local guarantees survive handoffs,
+   through the complete candidate. For stateful interactions, carry the resulting state
+   from one action into the next: check identities, versions, preconditions, and who
+   supplies them. A valid isolated action does not establish a valid sequence.
+   Check whether local guarantees survive handoffs,
    retries, concurrency, partial effects, restart, and repair where relevant. Lower-level
    reliability may improve performance without establishing application correctness.
    Include resource exhaustion and recovery progress when the operating envelope matters.
@@ -64,9 +77,9 @@ This applies within one application as well as across services.
    assumption. Reopen affected decisions when later evidence contradicts them. Proposed
    design, accepted decision, implemented behavior, and verified outcome remain distinct.
 
-Read [references/composition-probes.md](references/composition-probes.md) when multiple
-state/effect boundaries, material failure/recovery obligations, or resource budgets
-require a deeper trace. Select the relevant probes; do not fill an exhaustive checklist.
+Read the relevant section of [references/composition-probes.md](references/composition-probes.md)
+when an unresolved completion, interface/lifecycle, or recovery-capacity assumption
+needs a deeper trace. Crossing several components alone does not require the reference.
 
 ## Compose by missing judgment
 
