@@ -1,9 +1,9 @@
 ---
-name: agentic-repo-setup
+name: agentic-repo-environment
 description: Bootstrap, retrofit, or renew the repository-local environment for reliable coding-agent work. Use Bootstrap to recommend and materialize minimum information, execution, evidence, and control paths with renewal when justified; Retrofit to improve grounded task journeys; Renew to turn accepted execution corrections into validated reusable changes. Route product meaning, architecture decisions, command compatibility, and release authority.
 ---
 
-# Agentic Repo Setup
+# Agentic Repo Environment
 
 Improve the repository environment for coding-agent discovery, execution, verification, and
 learning. Treat effective `AGENTS.md` instructions as routing, not proof of agent readiness.
@@ -91,9 +91,6 @@ an evidence-backed no-op; an `AGENTS.md` edit alone is not completion.
 
 ## Renew from accepted corrections
 
-Renew is the repository-level learning entry. It may consume evidence from any execution
-workflow; it does not own that workflow or require `goal-pursuit`.
-
 Bind the smallest sufficient episode evidence: task and revision, effective context, material
 actions, diff, checks, external evaluation, correction, and relevant intervention cost. Bound
 missing evidence. A raw failure, model reflection, or unaccepted preference is not a learning
@@ -131,7 +128,8 @@ Use specialist judgment only when its decision is missing, then resume the activ
 route is not completion.
 
 - Use `technical-writing` for document function, `domain-modeling` for semantic conflict,
-  and `architecture-surface-mapping` for an unfamiliar path.
+  `architecture-surface-mapping` for an unfamiliar path, and `software-system-design`
+  for unresolved application structure.
 - Use `software-failure-diagnosis` for an unexplained mechanism and `software-verification`
   for an unfixed claim, method, oracle, scope, or independent verdict.
 - Route behavior changes to `scoped-change-implementation`; production-code structure to

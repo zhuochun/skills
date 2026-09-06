@@ -1,10 +1,17 @@
 # Example prompts
 
+```text
+Use $software-system-design to design resumable document imports in our existing
+application. Inspect the current path and preserve accepted behavior. Propose how
+request handling, durable progress, background execution, and applied effects work
+together; trace interruption and retry, compare the simplest viable alternative,
+and state unresolved decisions and the next useful evidence. Do not implement it.
+```
+
 These examples show how to name the decision, subject of interest, work unit,
 constraints, evidence, desired artifact, and mutation authority when invoking a
 skill explicitly. Keep subject, decision lens, and coordination unit separate;
 see the [scope vocabulary](skill-boundaries.md#scope-vocabulary).
-
 
 ```text
 Use $experience-design-specification to design the saved-items library for our
@@ -15,6 +22,7 @@ input, and continuity differences. Use existing patterns, label assumptions,
 and return a proposal inline.
 Do not implement or claim that the experience has been user-tested.
 ```
+
 
 ```text
 Use $goal-pursuit to deliver a working refund-approval capability from the
@@ -44,7 +52,7 @@ delivery, and mark every inferred or disputed step.
 ```
 
 ```text
-Use $agentic-repo-setup to retrofit this existing repository for reliable
+Use $agentic-repo-environment to retrofit this existing repository for reliable
 coding-agent work. Trace grounded recent or repeated task scenarios from the
 effective `AGENTS.md` route through minimum sufficient authoritative context,
 commands, focused feedback, and broader evidence. Improve document function,
@@ -56,7 +64,7 @@ evidence-backed no-op. An `AGENTS.md` edit alone is not completion.
 ```
 
 ```text
-Use $agentic-repo-setup to bootstrap this young repository. Inspect available
+Use $agentic-repo-environment to bootstrap this young repository. Inspect available
 product evidence and existing constraints before asking questions. Interview me
 only about choices that change maintained scaffolding, recommend one minimum
 profile, and classify each choice as accepted, a recommended reversible default,
@@ -69,7 +77,7 @@ application architecture.
 ```
 
 ```text
-Use $agentic-repo-setup to renew this repository from the accepted correction
+Use $agentic-repo-environment to renew this repository from the accepted correction
 to the attached failed agent run. Bind the task, revision, effective context,
 trajectory, diff, checks, review finding, correction, and intervention cost.
 Establish the supported failure mechanism and whether the lesson generalizes,
@@ -101,7 +109,7 @@ unresolved gaps. Do not make the architecture decision.
 ```
 
 ```text
-Use $teach-concepts to help me understand why event-time watermarks exist. I
+Use $technical-growth-coaching to help me understand why event-time watermarks exist. I
 understand batch processing but not how a streaming system reasons about
 out-of-order events. Start from that model, trace one concrete example, expose
 where a useful analogy breaks, and then give me a changed case that tests
@@ -210,7 +218,7 @@ examples to expose policy ambiguity, name preserved invariants and affected
 consumers, separate accepted constraints from proposed implementation, produce
 keyed acceptance claims, and state whether the change is ready. If orchestration
 supplies a canonical specification, update only the owned specification delta.
-Do not edit code.
+  Do not edit code.
 ```
 
 ```text

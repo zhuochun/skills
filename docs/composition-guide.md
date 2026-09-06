@@ -42,6 +42,22 @@ sequence.
 
 ## Common compositions
 
+### Accepted behavior to coherent technical design
+
+Use `software-system-design` when a capability's responsibility, state, interface,
+or execution decisions must be resolved together. It can inspect available evidence
+and propose a design directly; a prior specification is not mandatory. When behavior
+is ambiguous, `software-change-specification` resolves that contract and keeps
+unaccepted technical choices conditional.
+
+System design traces the complete operation, compares a consequential alternative,
+and identifies missing evidence. Compose focused domain, module, service, security,
+or compatibility judgment only where needed, then integrate the result into the
+same design. Use `architecture-risk-evaluation` for independent consequential
+quality challenge and `software-verification` for evidence methods and verdicts.
+Keep ready changes with their executor; neither several files nor an end-to-end
+feature request alone requires a new architecture artifact.
+
 ### Intended outcome to experience design
 
 Use `experience-design-specification` directly when the missing decision is how
@@ -95,12 +111,11 @@ A bounded cross-source request for papers, reports, standards, official guidance
 
 ```text
 supplied, inspected, or research-synthesized subject evidence
-  -> teach-concepts for one learner-specific mental model, explanation, reconstruction, and transfer check
-  -> technical-growth-coaching when capability needs repeated representative work, feedback, delegation, and independence
+  -> technical-growth-coaching for engineering understanding, judgment, practice, and transfer
   -> technical-writing when the requested durable reader artifact is technical
 ```
 
-`teach-concepts` can stop after a compact explanation or one bounded interactive learning loop. It preserves learner reasoning and tests use of the concept without claiming expertise from one exchange. Source truth remains with supplied evidence, `research-synthesis`, or the accountable subject owner; a factual dispute is not repaired by clearer teaching.
+`technical-growth-coaching` adapts explanation, inquiry, practice, and support to the observed learning gap within one loop. A compact explanation can complete the request; detailed exercises or delegation guidance load only when needed. It preserves learner reasoning without claiming expertise from one exchange. Source truth remains with supplied evidence, `research-synthesis`, or the accountable subject owner; a factual dispute is not repaired by clearer teaching.
 
 ### Technical evidence into a reader artifact
 
@@ -329,7 +344,7 @@ Use this route when the decision is which structural opportunity deserves attent
 ### New or existing repository setup
 
 ```text
-agentic-repo-setup
+agentic-repo-environment
   -> choose evidence-first Bootstrap, task-centered Retrofit, or correction-driven Renew
   -> trace grounded representative scenarios from effective AGENTS instructions through minimum sufficient authority, including plausible competing authorities until resolved, commands, focused feedback, and broader evidence
   -> improve document function and retrieval through technical-writing when accepted meaning is fixed

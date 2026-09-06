@@ -20,6 +20,7 @@ Keep implicit invocation for a small set of front doors that represent distinct 
 - `deep-module-design`
 - `decision-facilitation`
 - `software-change-specification`
+- `software-system-design`
 - `experience-design-specification`
 - `scoped-change-implementation`
 - `behavior-preserving-refactoring`
@@ -49,6 +50,7 @@ Do not start from a fashionable method or invoke every skill as a stage gate. As
 | [`prototype-to-learn`](../skills/prototype-to-learn/) | Construction of one disposable runnable software artifact for a behavior, state, UI, or interaction design question | Local prototype, observation surface, fidelity limits, captured learning, and lifecycle route |
 | [`architecture-surface-mapping`](../skills/architecture-surface-mapping/) | Evidence-ranked orientation to unfamiliar software and bounded cross-view journeys across experience, operations, domain state, systems, data, interfaces, and owners | Architecture-surface map or stable journey spine, path traces, branches, contradictions, confidence, and next probes |
 | [`domain-modeling`](../skills/domain-modeling/) | Problem-specific behavior, invariants, vocabulary, consequential classifications, and semantic contexts | Operational principles, compared models, classification choices, semantic boundaries, translations, and unresolved owner decisions |
+| [`software-system-design`](../skills/software-system-design/) | Technical synthesis of a bounded capability across responsibilities, state, interfaces, and execution | Coherent end-to-end candidate, composition traces, alternatives, preserved commitments, and unresolved decisions or evidence |
 | [`service-boundary-design`](../skills/service-boundary-design/) | Choosing whether service-level enforcement belongs in an existing deployment, an in-process module, a split or merged service, or stronger data and failure isolation | Boundary force matrix, scenario traces, enforcement choice, prerequisites, and focused module-design handoff when needed |
 | [`deep-module-design`](../skills/deep-module-design/) | Read-only retain-or-redesign decisions for in-process knowledge, interfaces, seams, state, resources, and lifecycle semantics | Current baseline and alternatives, deep or composable growth strategy, honest contract, tests, and adoption or retirement direction |
 | [`software-security-design`](../skills/software-security-design/) | Change-level secure-by-design and threat-modeling decisions before or during delivery, including AI or agent trust boundaries when applicable | Prioritized threat paths and explicit exclusions, `SEC-*` requirements, secure defaults, control and exception ownership, safe finding handling, executable assurance gates, residual risks, and defined disposition |
@@ -82,7 +84,7 @@ Do not start from a fashionable method or invoke every skill as a stage gate. As
 
 | Skill | It owns | Primary output |
 | --- | --- | --- |
-| [`agentic-repo-setup`](../skills/agentic-repo-setup/) | Bootstrap with bounded recommendations, task-centered retrofit, and correction-driven renewal of the repository-local coding-agent environment | Decision frontier, minimum logical information architecture, usable walking skeleton with renewal intake enabled when justified or deferred, stable commands, risk-matched evidence, Retrofit improvement or evidence-backed no-op, and explicit Renew dispositions with separate promotion evidence |
+| [`agentic-repo-environment`](../skills/agentic-repo-environment/) | Bootstrap with bounded recommendations, task-centered retrofit, and correction-driven renewal of the repository-local coding-agent environment | Decision frontier, minimum logical information architecture, usable walking skeleton with renewal intake enabled when justified or deferred, stable commands, risk-matched evidence, Retrofit improvement or evidence-backed no-op, and explicit Renew dispositions with separate promotion evidence |
 | [`scoped-change-implementation`](../skills/scoped-change-implementation/) | Authorized bounded behavior change through coherent vertical slices | Maintained code, behavior evidence, completed ownership, deviations, and remaining gaps |
 | [`behavior-preserving-refactoring`](../skills/behavior-preserving-refactoring/) | Structural improvement without intentional supported-behavior change | Consolidated ownership, refactoring-safe evidence, retired old paths, and equivalence limits |
 | [`software-failure-diagnosis`](../skills/software-failure-diagnosis/) | Causal investigation of bugs, regressions, intermittent failures, and performance degradation | Symptom contract, evidence loop, competing hypotheses, supported cause, and repair boundary |
@@ -108,5 +110,4 @@ Do not start from a fashionable method or invoke every skill as a stage gate. As
 
 | Skill | It owns | Primary output |
 | --- | --- | --- |
-| [`teach-concepts`](../skills/teach-concepts/) | Learner-specific understanding and transfer of one bounded concept | Current mental model, first-principles explanation, misconception repair, retrieval or transfer evidence, and next learning move |
-| [`technical-growth-coaching`](../skills/technical-growth-coaching/) | Deliberate practice, calibrated delegation, feedback, and transfer | Capability baseline, practice assignment, delegation contract, and transfer test |
+| [`technical-growth-coaching`](../skills/technical-growth-coaching/) | Adaptive engineering learning through explanation, inquiry, practice, feedback, and transfer | Diagnosed learning gap, useful explanation or next practice action, observed progress and limits, and necessary support |

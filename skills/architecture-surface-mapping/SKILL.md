@@ -32,7 +32,8 @@ orientation, use the same evidence model with a stable journey spine:
   intervention, cancellation, compensation, and recovery when they change
   what participants can observe or do.
 - Route customer need or value to `product-opportunity-discovery`, disputed
-  meaning to `domain-modeling`, boundary or contract decisions to their design
+  meaning to `domain-modeling`, end-to-end technical design to `software-system-design`,
+  boundary or contract decisions to their design
   owner, architecture fitness to `architecture-risk-evaluation`, and runnable
   experiments to `prototype-to-learn`.
 - Route migration states, authority transfer, and cutover behavior to

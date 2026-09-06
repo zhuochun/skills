@@ -87,8 +87,7 @@ flowchart LR
     RS["Research synthesis"] -.-> PD
     RS -.-> DM
     RS -.-> AR
-    RS -.-> TC["Teach concepts"]
-    TC -.-> TGC["Technical growth coaching"]
+    RS -.-> TGC["Technical growth coaching"]
 
     PD["Product opportunity discovery"] <--> PP["Product opportunity prioritization"]
     PD -.-> JNY["End-to-end journey trace"]
@@ -236,10 +235,10 @@ When skills compose in one task, keep the decision context in flow instead of cr
 
 ### Concept teaching, writing, research, and growth coaching
 
-- `teach-concepts` owns one learner-specific explanation, misconception repair, reconstruction, and transfer loop for a bounded concept. It may compress to a direct explanation when the user does not want an interactive exchange.
+- `technical-growth-coaching` owns the engineering learning loop: diagnose the gap, adapt explanation, inquiry, practice, or support, and test transfer. Mental-model correction can happen within work practice; no mode transition or full growth program is required for a direct explanation.
 - `technical-writing` owns a durable technical tutorial, explanation, reference, or other reader artifact. A static explanation does not become concept teaching merely because readers may learn from it.
-- `research-synthesis` owns what cross-source evidence supports. `teach-concepts` consumes supplied or verified subject evidence and does not make a disputed claim true by explaining it clearly.
-- `technical-growth-coaching` owns repeated performance practice, feedback, delegation, and transfer into independent work. One successful concept check does not certify professional capability.
+- `research-synthesis` owns what cross-source evidence supports. `technical-growth-coaching` consumes supplied or verified subject evidence and does not make a disputed claim true by explaining it clearly.
+- Repeated work may need practice design, feedback, and calibrated delegation from `technical-growth-coaching`. Those details load conditionally; source, learner-agency, execution, and evidence boundaries remain in its entry point. One successful concept check does not certify professional capability.
 
 ### Specification production, review, and specialist judgment
 
@@ -352,25 +351,40 @@ Use `architecture-surface-mapping` to become safely useful in unfamiliar softwar
 
 Use `architecture-assessment` to diagnose and rank structural improvement opportunities across a declared module, service, subsystem, platform, codebase, capability, or estate scope. Use `architecture-risk-evaluation` to challenge a consequential proposal against stakeholder and quality scenarios.
 
-### Domain, service, and module boundaries
+### System synthesis and focused boundaries
+
+`software-system-design` owns how a bounded capability's parts work together to
+deliver the complete application outcome. It proposes a coherent arrangement,
+checks cross-component assumptions, and compares alternatives under local constraints.
+It applies within one application as well as across services. It is an implicit
+entry point for unsettled end-to-end technical design, not a mandatory stage for
+every feature or a replacement for the specialist judgments below.
+
+`software-change-specification` owns the behavioral contract; system design consumes
+it without redefining accepted behavior. `architecture-surface-mapping` recovers the
+observed path; system design proposes a path. `architecture-risk-evaluation` independently
+challenges consequential quality claims; a producer's self-check does not replace it.
 
 - `domain-modeling` owns disputed or materially complex meaning, behavior, invariants, vocabulary, consequential classifications, and bounded contexts. It exposes category exclusions, affected perspectives, and contest or revision authority while leaving legal, privacy, fairness, and safety judgments with accountable owners. It first locates both the requested-surface owner and the preserved semantic or state owner; settled local presentation or technical policy stays with those owners or a compact implementation rather than creating another model.
 - `service-boundary-design` owns deployment, data authority, failure, change cadence, and operating ownership. A bounded context is not automatically a service.
 - `deep-module-design` owns the read-only decision to retain or redesign interfaces, seams, state, resources, hidden complexity, and request, stream, or process lifecycle semantics inside a codebase or service. A module is not automatically a deployable unit.
 
-For a new capability, the common direction is:
+For a new capability with interacting structural decisions, compose only the
+missing judgments:
 
 ```text
-domain-modeling
-  -> service-boundary-design
-  -> deep-module-design
+software-system-design
+  -> domain-modeling for unresolved meaning
+  -> service-boundary-design for a separate enforcement-boundary decision
+  -> deep-module-design for a separate module/interface decision
+  -> integrate owned results into the complete operation
 ```
 
 For existing service sprawl, boundary evidence may expose semantic confusion and route back through domain modeling before the boundary is reconsidered.
 
 ### Architecture assessment versus focused design
 
-Use `architecture-assessment` to discover and rank structural problems across a declared existing architecture scope. Use `deep-module-design` after one module, interface, seam, or vertical slice has been selected for design.
+Use `architecture-assessment` to discover and rank structural problems across a declared existing architecture scope. Use `deep-module-design` for one selected module or interface, and `software-system-design` when the selected capability needs interacting responsibilities, state, and execution designed together. A ready implementation bypasses both.
 
 ### Portfolio assessment versus retrospective review
 
@@ -508,7 +522,7 @@ Observability can supply evidence to verification, but telemetry is not a substi
 
 ### Agentic repo setup, change orchestration, and platform capability
 
-- `agentic-repo-setup` directly bootstraps, retrofits, or renews the reusable
+- `agentic-repo-environment` directly bootstraps, retrofits, or renews the reusable
   repository foundation when repo writes are authorized and the product,
   delivery, runtime, and foundational architecture constraints needed by
   scaffolding are accepted; observed files do not establish bootstrap acceptance.

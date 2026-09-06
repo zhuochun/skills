@@ -1,0 +1,7 @@
+interface:
+  display_name: "Software System Design"
+  short_description: "Design coherent end-to-end software capabilities"
+  default_prompt: "Use $software-system-design to design this capability end to end, resolve responsibility and state ownership, compare alternatives, and expose failure paths and evidence gaps."
+
+policy:
+  allow_implicit_invocation: true

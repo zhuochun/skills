@@ -53,7 +53,8 @@ Read [references/change-specification.md](references/change-specification.md) wh
   ambiguity, contradiction, loophole, and readiness judgment. Apply accepted
   repairs here; the reviewer does not rewrite or settle routed decisions.
 - Leave investment to product discovery; meaning to `domain-modeling`;
-  structure to `service-boundary-design` or `deep-module-design`; and unexplained failure to
+  end-to-end technical synthesis to `software-system-design`; focused boundaries to
+  `service-boundary-design` or `deep-module-design`; and unexplained failure to
   `software-failure-diagnosis`.
 - For UX changes, resolve and read
   [experience-design-specification](../experience-design-specification/SKILL.md)

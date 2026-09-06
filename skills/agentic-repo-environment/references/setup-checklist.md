@@ -1,4 +1,4 @@
-# Agentic Repo Setup Checklist
+# Agentic Repo Environment Checklist
 
 Use this record only when several setup surfaces must remain coherent across
 implementation, review, or handoff. Fit it into an existing repository design

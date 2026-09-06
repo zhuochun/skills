@@ -1,47 +1,78 @@
 ---
 name: technical-growth-coaching
-description: Design and run an evidence-based growth loop for an engineer, technical lead, or team by turning real work into deliberate practice, calibrated delegation, fast feedback, reflection, and autonomy. Use for mentorship, stretch assignments, lead development, stalled expertise, onboarding, or capability coaching. Exclude performance ratings, promotion, compensation, diagnosis, and formal employee-support processes.
+description: Help an engineer, technical lead, or team improve judgment by diagnosing the learning gap, adapting explanation or practice, and using feedback to test transfer. Use for technical misconceptions, mentorship, onboarding, stretch assignments, or stalled expertise. Keep bounded explanations compact; exclude general tutoring, document production, performance ratings, promotion, compensation, and formal employee-support processes.
 ---
 
 # Technical Growth Coaching
 
-Convert experience into observable improvement. Work creates expertise only when it exposes a target skill, produces usable feedback, and changes later performance.
+Build the learner's ability to explain, decide, act, and self-correct. Adapt support
+to the observed gap; a conceptual correction and work practice can belong to the
+same learning loop.
 
-## Coaching boundaries
+## Preserve learning and authority
 
-- Separate development from evaluation. Follow local policy and state when information may enter formal performance processes.
-- Let the learner help choose goals and own reflection; do not infer motives, personality, health, or private circumstances.
-- Use work evidence relevant to the capability, not reputation, visibility, hours, or similarity to the coach.
-- Keep production risk, customer safety, access control, and separation of duties intact while creating stretch.
+- Let the learner help choose the goal and own reasoning and reflection. Inspect
+  supplied context before asking; distinguish facts, interpretations, and unknowns.
+- Separate development from evaluation. Follow local policy and state when coaching
+  information may enter formal performance processes. Never use coaching as covert
+  discipline or promotion denial.
+- Use relevant reasoning and work evidence, not reputation, hours, visibility, or
+  similarity to the coach. Do not infer motives, personality, health, or private circumstances.
+- Keep production safety, access control, and separation of duties intact. Task
+  execution, file creation, installation, and configuration need explicit authority
+  and an owning executor; a learning request does not grant that authority.
+- Inspect supplied or authoritative sources for disputed, current, version-specific,
+  consequential, or attribution-sensitive claims. Use calibrated background knowledge
+  for stable, low-consequence explanations. Route cross-source questions to
+  `research-synthesis`; explaining a claim does not establish its truth.
+- Route durable technical reader artifacts to `technical-writing`, other artifacts
+  to their writing owner, and task execution or procedural instruction to its specialist.
+  Do not turn coaching into regulated advice, curriculum design, or procedural certification.
 
-## Growth workflow
+## Run one adaptive learning loop
 
-1. **Name behavior.** Translate vague growth goals into observable contextual decisions, artifacts, interactions, and outcomes.
-2. **Establish a baseline.** Use work, reasoning, incidents, reviews, outcomes, and self-assessment. Separate knowledge gaps, limited exposure, weak feedback, and environmental constraints.
-3. **Choose one learning edge.** Select a consequential behavior just beyond reliable independent performance. Explain why improving it matters to the learner, team, and current work.
-4. **Design representative practice.** Prefer bounded real work or a simulation, exercise, replay, review, pairing session, or decision rehearsal that produces repeated attempts and visible results.
-5. **Calibrate delegation.** Match scope, decision consequence, prior task experience, and coach confidence. Define outcome, constraints, authority, checkpoints, help signals, and decisions retained by the coach.
-6. **Create feedback channels.** Combine artifact and outcome evidence with timely coach, peer, operator, or customer feedback. Publish criteria first and discuss behavior.
-7. **Review the attempt.** Ask the learner to reconstruct intent, options, signals, surprises, and next change before supplying the coach's answer. Separate outcome luck from decision quality.
-8. **Change difficulty.** Narrow support, widen scope, vary context, or isolate the next weakness. Do not reward repetition that no longer stretches capability.
-9. **Transfer ownership.** Have the learner set future practice, request feedback, teach the mechanism, and apply it in a different context. The goal is self-correction, not permanent coach dependence.
+1. **Establish the learning target.** Name what the learner wants to understand or
+   do and the context in which it matters. Use a reasonable stated assumption when
+   an immediate answer is more useful than more questions.
+2. **Diagnose the limiting gap.** Use a prediction, explanation, artifact, or work
+   outcome when it can change the help. Distinguish missing knowledge, a mistaken
+   model, limited exposure, weak feedback, and environmental constraints. Remove
+   incidental obstacles rather than treating every difficulty as a learner deficit.
+3. **Choose the smallest useful intervention.** Explain missing mechanisms, use
+   inquiry when the learner can reason, supply needed context or boundaries, and
+   design practice when application is the gap. Adjust support as evidence changes;
+   avoid both leading questions that sell an answer and withdrawal disguised as autonomy.
+4. **Observe and adapt.** Preserve the learner's prediction, choice, explanation,
+   and revision instead of doing their reasoning for them. Give timely feedback
+   against visible criteria. Change the example, support, or difficulty in response
+   to the shown gap; distinguish outcome luck from decision quality.
+5. **Check transfer and close proportionately.** When interaction permits, vary the
+   context or boundary condition and let the learner apply the model. State observed
+   progress, remaining uncertainty, and the next useful action. Increase independent
+   responsibility only with relevant work evidence and authorized delegation.
 
-Read [references/technical-growth-loop.md](references/technical-growth-loop.md) only when a durable coaching, delegation, or review-cadence record is needed.
+For a direct explanation, provide the mechanism, concrete example, and important
+limit immediately; an optional check is enough. Do not force a quiz, test unexplained
+material, withhold the answer, or invent a practice program. Ask one adaptive question
+at a time when the learner requests interactive help.
 
-## Quality gates
+Read [references/mental-model-practice.md](references/mental-model-practice.md) when
+diagnosing a persistent misconception or designing reconstruction and transfer exercises.
+Read [references/technical-growth-loop.md](references/technical-growth-loop.md) when
+planning representative work, delegation, repeated feedback, or a durable coaching record.
+Load only the detail needed by the current gap; neither reference is required for a
+compact explanation.
 
-- Target behavior and success are observable from actual or representative work; the assignment stretches one capability without reckless failure cost.
-- Authority, retained decisions, checkpoints, and help signals are explicit.
-- Timely feedback changes the next learner-led attempt.
-- Progress appears in changed behavior or transfer, not course or task volume.
+## Evidence and completion
 
-## Reject weak coaching
-
-- Reject experience without practice design, unwanted work labeled development, rescue that removes judgment, and abandonment labeled autonomy.
-- Understand the learner before advising; keep feedback timely and behavioral.
-- Stretch requires clear authority, visible criteria, and controlled risk.
-- Never use growth plans as covert promotion denial or discipline.
-
-## Completion
-
-Return the target capability, evidence baseline, bounded practice assignment, delegation contract, feedback sources, review cadence, success and safety signals, transfer test, and uncertainties. For a one-time coaching request, provide the next practice cycle rather than inventing a long career plan.
+- Explanations connect mechanisms, conditions, and limits. Analogies expose their
+  mapping and break; they do not establish evidence.
+- Practice targets one observable capability at a useful difficulty. Make criteria,
+  feedback, retained decisions, checkpoints, and help signals explicit when assigning work.
+  Respect concentration and recovery; repetition without useful feedback is not progress.
+- Ground learning claims in observed reconstruction, transfer, or changed performance.
+  Fluency, agreement, output quality, or one correct answer cannot establish mastery,
+  professional competence, safety, or readiness. Keep missing learner evidence explicit.
+- Return the useful explanation or next practice action, its evidence and limits,
+  and any necessary support or follow-up. Preserve the learner's model and observed
+  correction when relevant; do not require a report or long-term plan for a short exchange.

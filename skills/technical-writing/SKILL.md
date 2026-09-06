@@ -1,6 +1,6 @@
 ---
 name: technical-writing
-description: Write or revise task-fit technical documentation and evidence-grounded articles from supplied sources, code, and observed behavior. Use for tutorials, how-to guides, durable explanations, reference, runbooks, procedures, technical blogs, AI-slop audits, or humanizing and voice-preserving edits. Route learner-specific teaching to teach-concepts, cross-source evidence to research-synthesis, skill authoring to skill-creator, and unresolved domain decisions to their owners.
+description: Write or revise task-fit technical documentation and evidence-grounded articles from supplied sources, code, and observed behavior. Use for tutorials, how-to guides, durable explanations, reference, runbooks, procedures, technical blogs, AI-slop audits, or humanizing and voice-preserving edits. Route engineering mental-model clarification to technical-growth-coaching, cross-source evidence to research-synthesis, skill authoring to skill-creator, and unresolved domain decisions to their owners.
 ---
 
 # Technical Writing
@@ -27,8 +27,8 @@ understand a mechanism, or evaluate an argument. Prose quality supports that fun
 - Route decision-bearing specifications, RFCs, requirements, or contracts to
   `specification-review` for normative ambiguity, contradiction, hidden decisions,
   or loopholes. Keep reader function and editorial quality here.
-- Route learner-specific explanation, misconception repair, reconstruction, or
-  transfer checking to `teach-concepts`. Keep a durable tutorial, explanation,
+- Route engineering mental-model explanation, misconception repair, reconstruction,
+  or transfer checking to `technical-growth-coaching`. Keep a durable tutorial, explanation,
   or reference artifact here.
 - Route recovery or construction of a cross-view product-to-system journey to
   `architecture-surface-mapping`. Explain an accepted trace here when prose is the

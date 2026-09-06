@@ -1,5 +1,29 @@
 # Technical Growth Loop
 
+Use this reference when improvement requires representative attempts, delegated
+work, or sustained feedback. Use only the fields needed for the current assignment;
+create a durable record only when requested or authorized and useful for follow-up.
+
+## Design the next practice cycle
+
+1. **Choose one learning edge.** Select a consequential behavior just beyond reliable
+   independent performance. Tie the difficulty to the learner's goal and actual work.
+2. **Create representative attempts.** Use bounded real work, a simulation, historical
+   case, review, pairing session, or decision rehearsal. Make the outcome or judgment
+   observable and provide a credible example, criterion, or feedback source.
+3. **Calibrate delegation.** Match scope to prior task evidence, consequence, and
+   reversal cost. Name retained decisions, checkpoints, help signals, and safe limits.
+   Do not disguise unwanted work as development or remove safeguards to create stretch.
+4. **Close the feedback loop.** Let the learner reconstruct intent, alternatives,
+   signals, and surprises before the coach supplies an answer. Combine artifact and
+   outcome evidence with timely peer, operator, customer, or coach feedback as relevant.
+5. **Adjust the next attempt.** Isolate the remaining weakness, vary context, or
+   reduce support when evidence warrants it. Avoid repetition that no longer stretches
+   capability and difficulty that overwhelms concentration or recovery.
+6. **Transfer ownership.** Have the learner plan practice, request feedback, explain
+   the mechanism, and apply it elsewhere. End or change coaching when self-correction
+   becomes reliable; additional responsibility still requires its accountable owner.
+
 ## Development contract
 
 - Learner and coach:
