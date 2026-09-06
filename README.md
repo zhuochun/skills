@@ -1,22 +1,15 @@
-# Evidence-Based Product and Software Engineering Skills
+# Evidence-based product and software engineering skills
 
-Make consequential product and engineering work inspectable, not merely
-plausible. This collection provides agent skills for decisions, artifacts, and
-actions that need stronger reasoning than a generic checklist.
-
-Its workflows are designed to:
+Agent skills for product decisions, software design, implementation, review,
+and operations. The workflows help you:
 
 - ground claims in repository, runtime, customer, and organizational evidence;
 - distinguish observations, inferences, assumptions, and unresolved questions;
-- give each decision or artifact one clear owner without imposing a universal
-  lifecycle;
-- scale ceremony and independent challenge with consequence and
+- give each decision or artifact one clear owner;
+- scale process and independent review with consequence and
   irreversibility; and
 - preserve accountable human authority for risk, investment, release, and
   operational decisions.
-
-The result is work that can be challenged, resumed, verified, and acted on—not
-just polished output that sounds confident.
 
 ## Get started
 
@@ -64,8 +57,8 @@ probes. Do not modify the repository.
 
 ## Choose a starting point
 
-These skills are the collection's implicit front doors for common top-level
-intents. You can also invoke any specialist explicitly.
+Start with one of these skills for common requests. You can also invoke any
+specialist explicitly.
 
 | When you need to... | Start with |
 | --- | --- |
@@ -91,14 +84,13 @@ If none of these describes the missing decision or artifact, use the
 - [Skill boundaries and relationships](docs/skill-boundaries.md) — compare
   neighboring skills and understand the directed relationship graph.
 - [Composition guide](docs/composition-guide.md) — combine skills when a request
-  genuinely spans several decisions or artifacts.
+  spans several decisions or artifacts.
 - [Example prompts](docs/example-prompts.md) — adapt complete invocations for
   common product, engineering, architecture, delivery, and operational work.
 
-The catalog is a directed graph, not a required stage-gate process. A local
-reversible feature may need only implementation and repository checks. A risky
-multi-workstream transition may warrant independent design, planning, review, and
-verification. Use only the nodes justified by the decision and its consequence.
+Choose only the workflows the task needs. A local reversible feature may need
+only implementation and repository checks. A risky transition across several
+workstreams may warrant independent design, planning, review, and verification.
 
 ## Repository development
 

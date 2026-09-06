@@ -1,5 +1,10 @@
 # Example prompts
 
+Adapt these prompts by naming the decision, subject, work unit, constraints,
+available evidence, and result you need. State whether changes are authorized.
+For the distinction between subject, decision lens, and coordination unit, see
+the [scope vocabulary](skill-boundaries.md#scope-vocabulary).
+
 ```text
 Use $software-system-design to design resumable document imports in our existing
 application. Inspect the current path and preserve accepted behavior. Propose how
@@ -7,11 +12,6 @@ request handling, durable progress, background execution, and applied effects wo
 together; trace interruption and retry, compare the simplest viable alternative,
 and state unresolved decisions and the next useful evidence. Do not implement it.
 ```
-
-These examples show how to name the decision, subject of interest, work unit,
-constraints, evidence, desired artifact, and mutation authority when invoking a
-skill explicitly. Keep subject, decision lens, and coordination unit separate;
-see the [scope vocabulary](skill-boundaries.md#scope-vocabulary).
 
 ```text
 Use $experience-design-specification to design the saved-items library for our
@@ -22,8 +22,6 @@ input, and continuity differences. Use existing patterns, label assumptions,
 and return a proposal inline.
 Do not implement or claim that the experience has been user-tested.
 ```
-
-
 
 ```text
 Use $product-opportunity-discovery to investigate this request for an AI reply
@@ -313,4 +311,4 @@ failure trace, verify code and command examples, and keep my existing voice.
 Do not invent production results or make a new delivery-semantics decision.
 ```
 
-Good prompts name the decision, scope, constraints, evidence, desired artifact, and whether implementation is authorized. The skills should identify missing evidence rather than filling gaps with invented facts.
+The skills should identify missing evidence rather than fill gaps with invented facts.

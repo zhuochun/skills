@@ -6,11 +6,16 @@ Research snapshot: 2026-07-24
 
 Use the [Google developer documentation style guide](https://developers.google.com/style) as the default prose and editorial standard for technical documentation in this repository.
 
-This is a best-fit decision, not a claim that one guide is objectively best. Google’s guide is public, maintained, written for developers and technical practitioners, and specific enough to resolve recurring questions about voice, grammar, procedures, code, links, accessibility, and formatting. Its own hierarchy also leaves room for project-specific rules and reader needs to take precedence.
+Google’s guide fits this repository's developer audience. It is public,
+maintained, and specific enough to resolve recurring questions about voice,
+grammar, procedures, code, links, accessibility, and formatting. Its hierarchy
+allows project-specific rules and reader needs to take precedence. This choice
+does not establish that it is the best guide for every audience.
 
 Use [Diátaxis](https://diataxis.fr/) only to choose and separate the document’s function—tutorial, how-to, reference, or explanation. Diátaxis is an information architecture and authoring framework, not a complete prose style.
 
-The anti-slop rules below are an editing standard. They aim for accurate, useful, recognizably authored writing. They must not be used to conceal required AI disclosure or to game AI-text detectors.
+Use the editing rules below to improve accuracy, usefulness, and author voice.
+They must not be used to conceal required AI disclosure or to game AI-text detectors.
 
 ## What “AI slop” means
 
@@ -18,12 +23,10 @@ The [Wikipedia article on AI slop](https://en.wikipedia.org/wiki/AI_slop) descri
 
 Wikipedia’s [Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing) page is also useful as a catalogue of recurring textual symptoms. It covers inflated significance, promotional language, vague attribution, superficial analysis, formulaic contrasts and triads, synonym cycling, mechanical headings and lists, chatbot residue, and unreliable citations.
 
-Two cautions matter:
-
-- The signs page is advice from WikiProject AI Cleanup, not Wikipedia policy or a universal style guide.
-- The page says that isolated signs do not prove AI authorship and warns against relying on detector output alone.
-
-Therefore, treat the page as a set of editing smells. Diagnose clusters and reader harm; do not turn its examples into a banned-word list.
+The signs page is advice from WikiProject AI Cleanup, not Wikipedia policy or a
+universal style guide. It warns that isolated signs do not prove AI authorship
+and that detector output alone is unreliable. Use its examples to find repeated
+patterns that harm the reader; do not turn them into a banned-word list.
 
 ## What popular humanizer skills contribute
 
@@ -39,7 +42,7 @@ Popularity is a rough adoption signal, not evidence of writing quality. GitHub s
 | [Aboudjem/humanizer-skill](https://github.com/Aboudjem/humanizer-skill/blob/main/skills/humanizer/SKILL.md) | about 130 stars | Flag clusters rather than isolated tells; preserve code, quotations, jargon, and purposeful repetition; support different voice profiles | Fixed thresholds, forced “burstiness,” and zero-tolerance punctuation rules |
 | [jpeggdev/humanize-writing](https://github.com/jpeggdev/humanize-writing/blob/main/SKILL.md) | about 20 stars | Staged editing passes and counting a suspected pattern before calling it overused | Injecting “soul,” anecdotes, or personal texture that the author did not provide |
 
-Across these skills, the most defensible common core is:
+The surveyed skills support these editing practices:
 
 1. Preserve meaning before changing style.
 2. Remove formulaic structures by function, not by keyword.
@@ -51,7 +54,9 @@ Across these skills, the most defensible common core is:
 
 Their most common failure is replacing one formula with another: no em dashes, mandatory sentence-length variation, added opinions, or a target “human” score. Those rules can damage precise technical prose and may fabricate an authorial persona.
 
-## Ultimate anti-slop writing rules
+<a id="ultimate-anti-slop-writing-rules"></a>
+
+## Anti-slop writing rules
 
 These rules are ordered by importance. A later stylistic rule never overrides an earlier truth, safety, or reader rule.
 
@@ -168,7 +173,8 @@ These are defaults, not mechanical bans. Clarity, correctness, established proje
 | [Red Hat supplementary style guide](https://redhat-documentation.github.io/supplementary-style-guide/) | Controlled enterprise product documentation layered over IBM Style | Use for Red Hat work or as a specialized terminology/format reference |
 | [Diátaxis](https://diataxis.fr/) | Separating tutorials, how-to guides, reference, and explanation | Structural companion, not the prose standard |
 
-No credible source establishes an industry-wide “best” documentation guide. The selection is instead based on audience fit, public availability, maintenance, breadth, and operational usefulness. For this developer-skill repository, Google is the strongest general default.
+The selection reflects audience fit, public availability, maintenance, breadth,
+and practical use. It is a repository choice, not an industry-wide ranking.
 
 ## Editing workflow
 

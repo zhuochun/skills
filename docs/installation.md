@@ -1,14 +1,14 @@
 # Installation
 
-Install individual skills, a topic bundle, a composition-closed workflow
-profile, or the complete collection. The repository installers create live
-links from an agent's skills directory to this checkout, so a later `git pull`
+Install individual skills, a topic bundle, a workflow profile, or the complete
+collection. The repository installers create live links from an agent's skills
+directory to this checkout, so a later `git pull`
 updates installed skills in place. Keep the checkout at a stable absolute path;
 moving it breaks existing links.
 
 Use [`install.sh`](../install/install.sh) on macOS and Unix, or
 [`install.ps1`](../install/install.ps1) on Windows. They provide the same
-packages, targets, dry runs, diagnostics, and ownership-safe removal.
+packages, targets, dry runs, diagnostics, and removal of links owned by this checkout.
 
 ## Quick installation
 
@@ -88,13 +88,13 @@ the final skills directory; the installer does not append another segment.
 A topic bundle ends in `-bundles` and groups skills around a user-facing theme.
 Bundles may overlap and need not individually cover every downstream specialist.
 Every current skill must appear in at least one manifest across all bundles and
-profiles. Both installers enforce
-this union coverage before listing or acting, and name uncovered skills. The
-computed `all` selection does not count as a manifest.
+profiles. Both installers check this coverage before listing or acting and name
+uncovered skills. The computed `all` selection does not count as a manifest.
 
-A workflow profile ends in `-profile` and is composition-closed for its declared normal
-paths; exceptional routes may leave the profile. See the
-[catalog](catalog.md) for individual skill ownership and relationships.
+A workflow profile ends in `-profile` and includes the skills needed for its
+declared normal paths (it is composition-closed). Exceptional routes may need
+skills outside the profile. See the [catalog](catalog.md) for individual skill
+ownership and relationships.
 
 | Package | Kind | Contents |
 | --- | --- | --- |
@@ -171,10 +171,10 @@ Doctor never scans unrelated targets or repairs links automatically.
 
 ## Uninstall
 
-Uninstall preflights the complete selection and removes only links whose target
-exactly matches the selected source in this checkout. Missing links are already
-absent; a regular file, directory, or foreign link stops the operation before
-anything is removed.
+Uninstall checks the complete selection before removing links. It removes only
+links whose target exactly matches the selected source in this checkout.
+Missing links need no action; a regular file, directory, or foreign link stops
+the operation before anything is removed.
 
 ```sh
 sh install/install.sh uninstall \

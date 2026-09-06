@@ -1,13 +1,11 @@
 # Skill boundaries and relationships
 
-Use this guide to understand how skills relate, where neighboring ownership
-boundaries differ, and why producing and evaluating an artifact remain
-separate jobs. For common multi-skill routes, see the
+Use this guide to choose between neighboring skills and separate artifact
+production from evaluation. For common multi-skill routes, see the
 [composition guide](composition-guide.md).
 
-These boundaries keep evidence-based work honest: a broad request does not
-silently become permission to decide everything, and a producer's confidence
-does not substitute for independent evaluation.
+Each skill has a defined scope and authority; a broad request does not expand
+them. Independent evaluation requires more than the producer's confidence.
 
 ## Scope vocabulary
 
@@ -184,7 +182,21 @@ flowchart LR
     RAR --> BPR
 ```
 
-This is not a mandatory lifecycle. For example, an uncertain product request may loop only between opportunity discovery and prioritization until evidence supports stopping or investment. A local reversible feature may need only `scoped-change-implementation` and repository checks. A structure-only cleanup may use `behavior-preserving-refactoring` without architecture review. A multi-workstream feature may use `technical-program-orchestration` to coordinate owned frontiers and integration while composing observability, controlled release, change review, and verification without a heavyweight architecture evaluation. A multi-region ledger migration may require architecture evaluation, a decision record, technical program orchestration, migration planning, controlled exposure, layered verification, and an operational feedback audit. An active outage may need incident-response coordination and diagnosis before it can move into recovery and incident learning.
+Follow only the paths the request needs:
+
+- An uncertain product request may loop between discovery and prioritization
+  until evidence supports stopping or investment.
+- A local reversible feature may need only `scoped-change-implementation` and
+  repository checks. A structure-only cleanup may use
+  `behavior-preserving-refactoring` without architecture review.
+- A feature with several workstreams may use `technical-program-orchestration`
+  to coordinate progress and integration, alongside observability, controlled
+  release, change review, and verification, without a full architecture evaluation.
+- A multi-region ledger migration may require architecture evaluation, a
+  decision record, technical program orchestration, migration planning,
+  controlled exposure, layered verification, and an operational feedback audit.
+- An active outage may need incident-response coordination and diagnosis before
+  recovery and incident learning.
 
 ## Design and evaluation are different jobs
 
@@ -219,11 +231,19 @@ A skill that creates an artifact should not silently certify that artifact. For 
 | Live incident response and recovery claim | Accountable incident commander, observed customer and system stability, and a deliberate recovery handoff; use `incident-learning` only after restoration |
 | Completed implementation | Executed repository evidence, `code-review`, and independent `software-verification` when warranted; `retrospective-architecture-review` only when accumulated learning creates a material reason to reconsider the design |
 
-Separation does not require bureaucracy or different people for every local change. It requires a distinct contract: the evaluator receives the artifact and evidence, can identify missing claims, and is not required to defend the producer's original choices. Increase independence with consequence, irreversibility, and uncertainty.
+The evaluator receives the artifact and evidence, can identify missing claims,
+and is free to reject the producer's choices. A local change does not always
+require different people, but evaluation must have its own criteria. Increase
+independence with consequence, irreversibility, and uncertainty.
 
 ### Keep cross-skill references readable
 
-When skills compose in one task, keep the decision context in flow instead of creating a handoff file. Use a stable namespaced key together with its plain-language label, for example `OBS-settlement-age — Settlement completion age`. Repeat both whenever the contract is cited. The prefix identifies the contract family; the label preserves human meaning.
+When skills work together in one task, keep the decision context in the current
+conversation or artifact instead of creating a handoff file. Use a stable
+namespaced key with its plain-language label, for example
+`OBS-settlement-age — Settlement completion age`. Repeat both whenever the
+contract is cited. The prefix identifies the contract family; the label tells
+the reader what it means.
 
 ## Important distinctions
 
@@ -262,7 +282,12 @@ When skills compose in one task, keep the decision context in flow instead of cr
   does not replace canonical decisions, transfer authority, or justify routine paperwork.
 - `skill-creator` and the repository authoring contract own new or materially revised skills. `technical-writing` may improve reader transfer in supporting documentation, but it must not become a second skill-authoring authority.
 
-Technical writing can follow research, design, implementation, or operational work when a reader artifact is requested. The source owner retains interpretation and decision authority, while the writing skill owns document function, reading path, provenance visibility, functional checks, and voice. A continuation record is not a default output of that composition; update canonical state only for a real continuation boundary.
+Technical writing can follow research, design, implementation, or operations
+when someone needs a document. The source owner retains interpretation and
+decision authority. The writing skill chooses the document's function and
+structure, preserves source attribution and voice, and checks that readers can
+use it. Update canonical state only when work needs to pause or continue
+elsewhere; writing a document does not itself require a continuation record.
 
 ### End-to-end journey tracing, customer journeys, and scenario planning
 
@@ -344,7 +369,12 @@ Route direct customer learning to `product-opportunity-discovery`, a concrete un
 
 ### Orientation versus assessment
 
-Use `architecture-surface-mapping` to become safely useful in unfamiliar software at a declared module, service, subsystem, platform, codebase, or capability scope: trace critical workflows, reconcile declared, executable, and observed structure, locate controls and owners, and rank the next probes. It does not evaluate architecture fitness, score readiness, prescribe a portfolio, or design the target architecture.
+Use `architecture-surface-mapping` to understand unfamiliar software within a
+declared module, service, subsystem, platform, codebase, or capability. It traces
+critical workflows, reconciles declared, executable, and observed structure,
+locates controls and owners, and ranks the next probes. It does not evaluate
+architecture fitness, score readiness, prescribe a portfolio, or design the
+target architecture.
 
 Use `architecture-assessment` to diagnose and rank structural improvement opportunities across a declared module, service, subsystem, platform, codebase, capability, or estate scope. Use `architecture-risk-evaluation` to challenge a consequential proposal against stakeholder and quality scenarios.
 
@@ -412,7 +442,11 @@ Route by the decision, not by shared evidence. “Where should we invest in arch
 - `scoped-change-implementation` consumes that contract when one exists, or resolves a compact inline contract for a local reversible change, then changes supported behavior through coherent vertical slices. It proceeds independently on routine code choices, but stops when required behavioral outcomes cannot be distinguished from the inputs or state available at the decision seam. TDD is one optional inner feedback loop, not the skill's whole contract.
 - `behavior-preserving-refactoring` changes structure while keeping supported behavior stable. Classify by semantic effect rather than request wording: changed accepted inputs, results, errors, precedence, state, data meaning, support, or operational semantics become a separate scoped implementation decision, or specification when unresolved.
 
-A specification is an optional escalation, not a universal gate. A short diff is not automatically surgical, but a cheap reversible change should not wait for document completion when its intent and contract are already clear. Surgical implementation minimizes unnecessary coupling, dual authority, and unrelated change while completing the ownership and cleanup required by the requested behavior.
+A cheap reversible change can proceed without a separate specification when
+its intent and contract are clear. Keep implementation focused by avoiding
+unnecessary coupling, competing owners, and unrelated changes, while completing
+the ownership and cleanup the behavior requires. Diff size alone does not
+measure that focus.
 
 ### Failure diagnosis versus repair
 
@@ -460,7 +494,11 @@ an assessment is not a prerequisite for implementing already-accepted checks.
 
 ### Contract evolution versus transition and program orchestration
 
-Use `software-contract-evolution` to recover what producers and consumers actually rely on and decide how shared semantics, compatibility, translation, deprecation, adoption, and retirement should work. It owns the producer-consumer-state-executor compatibility matrix and the support-policy obligations, not merely an API version number.
+Use `software-contract-evolution` to recover what producers and consumers rely
+on and decide how shared semantics, compatibility, translation, deprecation,
+adoption, and retirement should work. Its scope includes the
+producer-consumer-state-executor compatibility matrix and support-policy
+obligations as well as API versioning.
 
 Use `migration-planning` after those contract decisions are accepted when consumers, state, an authoritative traffic path, execution, infrastructure, or authority must move to a target and the old state becomes retireable. Cohort assignment or version exposure alone is controlled release, not traffic migration. Migration planning owns permitted online or offline transition states, authority transfer, cutover, retreat or compensation, and retirement order. Use `technical-program-orchestration` when adoption forms several concurrent or interdependent workstreams and needs owned frontiers, dependency-aware slices, integration, decision flow, and replanning. Contract evolution defines what must remain true; the migration plan defines how technical state and authority move; program orchestration keeps the participating workstreams delivering the end-to-end outcome.
 
@@ -617,4 +655,5 @@ is reusable, while uncovered commits, pushes, or publication remain blocked.
 - `service-capacity-engineering` tests whether useful work completes within an explicit demand and overload envelope.
 - `service-ownership-design` tests whether responsibility moves with authority, capability, feedback, staffing, and specialist support.
 
-These are complementary lenses, not one universal platform workflow.
+Choose among these skills according to the capability, capacity, or ownership
+question you need to answer.

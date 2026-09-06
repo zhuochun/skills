@@ -1,19 +1,18 @@
 # Skill catalog
 
-Use this catalog to choose the skill that owns the decision, artifact, or
-action currently missing. For neighboring skills whose boundaries are easy to
-confuse, continue to the [skill boundaries and relationships](skill-boundaries.md).
-Each workflow produces an inspectable result: evidence and uncertainty remain
-visible, authority stays explicit, and weak inputs can lead to a conditional or
-`not ready` outcome instead of invented completeness.
+Choose the skill that owns the decision, artifact, or action you need. To compare
+similar skills, see [skill boundaries and relationships](skill-boundaries.md).
+Workflows identify evidence, uncertainty, and decision authority. Insufficient
+inputs can lead to a conditional or `not ready` result.
 
 Name the subject of interest, decision lens, and work or coordination unit
-separately; they are cross-cutting axes, not one size hierarchy. See the
+separately; each describes a different aspect of the request. See the
 [scope vocabulary](skill-boundaries.md#scope-vocabulary).
 
 ## Invocation policy
 
-Keep implicit invocation for a small set of front doors that represent distinct top-level user intents:
+Allow implicit invocation for these entry points, each of which handles a
+distinct common request:
 
 - `research-synthesis`
 - `architecture-surface-mapping`
@@ -31,14 +30,18 @@ Keep implicit invocation for a small set of front doors that represent distinct 
 Set `policy.allow_implicit_invocation: false` in `agents/openai.yaml` for every
 other catalog skill. These specialist, evaluator, planning, and control
 workflows remain available through explicit `$skill-name` invocation and an
-active front-door workflow's routing guidance, without competing in the
+active entry-point workflow's routing guidance, without competing in the
 default agent context.
 
-Treat this as an invocation policy, not an importance ranking or a mandatory lifecycle. Add another implicit front door only when it owns a common top-level intent that the existing front doors cannot route reliably without already knowing the specialist name.
+This policy controls automatic selection; it does not rank skills or require a
+sequence. Add another implicit entry point only when it owns a common request
+that existing entry points cannot route reliably without knowing the
+specialist's name.
 
 ## Choose by the artifact you need
 
-Do not start from a fashionable method or invoke every skill as a stage gate. Ask what decision or artifact is currently missing.
+Use the ownership column to narrow the choice and the output column to check
+whether the skill produces what you need.
 
 ### Understand and design
 

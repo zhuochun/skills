@@ -1,19 +1,14 @@
 # Skill composition guide
 
-Use these examples when a request spans several decisions or artifacts. They
-are optional routes through the catalog, not a mandatory lifecycle or
-universal stage-gate process.
-
-Compose only when the evidence or consequence demands another owner. Reuse
-accepted results, keep uncertainty visible, and stop when the smallest credible
-workflow has answered the decision.
+Combine skills when a request needs decisions or artifacts from several
+owners. These examples are optional routes through the catalog. Reuse accepted
+results, keep uncertainty visible, and stop when the request is answered.
 
 Before composing, name the subject of interest, the missing decision lens, and
 the work or coordination unit separately. Terms such as service, platform,
 product, architecture, change, and program can cross those axes; see the
-[scope vocabulary](skill-boundaries.md#scope-vocabulary). Compose because the
-request needs several owned decisions, not because one term sounds larger than
-another.
+[scope vocabulary](skill-boundaries.md#scope-vocabulary). Choose skills by the
+decisions needed, regardless of how large the subject sounds.
 
 ## Choose an interaction mode
 
@@ -21,13 +16,13 @@ Start with the lightest mode that can answer the request:
 
 - **Direct specialist:** Use one skill as an independent starting point when it
   owns the decision, artifact, or action. It inspects available evidence and
-  returns its own useful result without requiring a prior skill invocation.
+  returns a result without requiring a prior skill invocation.
 - **Peer lenses:** Apply two or more skills as distinct judgments on the same
   subject when their findings should coexist or disagree. Compare the findings
   without making one skill the producer or authority for another. A shared
   context does not create independent certification.
 - **Dependent handoff:** Let a downstream skill consume another owner's result
-  only when its work genuinely depends on that decision, evidence, or artifact.
+  only when its work depends on that decision, evidence, or artifact.
   Preserve whether the result is proposed, accepted, or unresolved, who has
   authority, and the remaining uncertainty.
 - **Reflective application:** Apply a skill's lens to the current session, the
@@ -35,8 +30,8 @@ Start with the lightest mode that can answer the request:
   proceeds. Treat the result as self-challenge, not independent review or
   certification.
 
-A skill can route work or return a useful partial or not-ready result when a
-genuine evidence, authority, or subject-state prerequisite is missing. Mix
+A skill can route work or return a partial or not-ready result when required
+evidence, authority, or subject state is missing. Mix
 modes as needed, but do not turn optional peer or reflective use into a required
 sequence.
 
@@ -53,10 +48,11 @@ unaccepted technical choices conditional.
 System design traces the complete operation, compares a consequential alternative,
 and identifies missing evidence. Compose focused domain, module, service, security,
 or compatibility judgment only where needed, then integrate the result into the
-same design. Use `architecture-risk-evaluation` for independent consequential
-quality challenge and `software-verification` for evidence methods and verdicts.
-Keep ready changes with their executor; neither several files nor an end-to-end
-feature request alone requires a new architecture artifact.
+same design. Use `architecture-risk-evaluation` to independently challenge
+consequential quality claims and `software-verification` to define evidence
+methods and evaluate results. Keep ready changes with their executor; a feature
+does not require a new architecture artifact just because it spans several files
+or a complete operation.
 
 ### Intended outcome to experience design
 
@@ -76,7 +72,6 @@ Keep one canonical record instead of copying the design. Backend-only changes
 skip this composition; settled small edits need no full design artifact.
 A fixed consequential proposal may receive
 `specification-review`, which does not establish user success or accessibility.
-Compose on the relevant trigger rather than imposing a universal sequence.
 
 ### Research evidence into specialist judgment
 
@@ -88,7 +83,12 @@ research-synthesis for the bounded cross-source question
   -> decision-facilitation when accountable weighting and closure are still needed
 ```
 
-A bounded cross-source request for papers, reports, standards, official guidance, or competing evidence can stop after `research-synthesis`. Do not require a downstream decision workflow merely because the brief may inform one later. Conversely, do not let external literature substitute for current-system traces, direct customer evidence, local domain authority, regulated applicability judgment, causal diagnosis, or designed and executed verification when those evidence surfaces control the decision.
+A request to compare papers, reports, standards, official guidance, or competing
+evidence can stop after `research-synthesis`, even if the brief may inform a later
+decision. When that decision depends on current-system traces, direct customer
+evidence, local domain authority, regulated applicability, causal diagnosis, or
+verification design and execution, obtain those inputs from their owners.
+External literature cannot substitute for them.
 
 ### Evidence into learner understanding
 
@@ -98,7 +98,12 @@ supplied, inspected, or research-synthesized subject evidence
   -> technical-writing when the requested durable reader artifact is technical
 ```
 
-`technical-growth-coaching` adapts explanation, inquiry, practice, and support to the observed learning gap within one loop. A compact explanation can complete the request; detailed exercises or delegation guidance load only when needed. It preserves learner reasoning without claiming expertise from one exchange. Source truth remains with supplied evidence, `research-synthesis`, or the accountable subject owner; a factual dispute is not repaired by clearer teaching.
+`technical-growth-coaching` adapts explanation, inquiry, practice, and support to
+the observed learning gap. A compact explanation can complete the request;
+detailed exercises or delegation guidance load only when needed. It preserves
+learner reasoning without claiming expertise from one exchange. Resolve factual
+disputes through supplied evidence, `research-synthesis`, or the accountable
+subject owner before teaching the disputed claim as fact.
 
 ### Technical evidence into a reader artifact
 
@@ -458,7 +463,9 @@ incident-response-coordination, during an active incident
   -> retrospective-architecture-review only when accumulated learning creates a material foundational design question
 ```
 
-One incident may produce several independent branches. Do not force every finding through retrospective architecture review or through one serial workflow.
+One incident may produce several independent follow-ups. Route each finding to
+the skill it needs; retrospective architecture review applies only when its
+design question arises.
 
 ### Retrospective architecture review by dominant design question
 
@@ -479,23 +486,20 @@ cross-boundary quality scenario, multi-service system, or wider estate question
      and independent verification execution before consequential cutover
 ```
 
-A capability is an outcome-centered subject that may fit any of these routes;
-follow its actual module, service, data, runtime, and ownership topology rather
-than assigning it a scale. The retrospective architecture reviewer works
-read-only on one selected completed design and activates only when
-implementation, repeated change, operation, support, or ownership has produced
-a material knowledge delta. It does not discover or rank a general architecture
-improvement portfolio and does not provide a generic second attempt for a weak
-first design pass. It compares the current or minimally consolidated design as
-a competent baseline, may recommend retain or quarantine when change would
-outrun evidence, and names the focused follow-up skills needed for deeper
-design, scoped implementation, behavior-preserving refactoring, controlled
-release, or verification. The accountable human confirms support-policy
-changes, route selection, cutover, and residual-risk acceptance. Builder-run
-checks may support the decision but do not become an independent equivalence
-verdict merely because the same agent reports them.
+A capability may fit any of these routes. Follow its modules, services, data,
+runtime, and owners to choose one. The retrospective architecture reviewer works
+read-only on one selected completed design, and only when implementation,
+repeated change, operation, support, or ownership has materially changed what is
+known about that design. General portfolio ranking and a second attempt at a
+weak initial design remain outside its scope.
 
-These are routing examples, not mandatory stage gates.
+The reviewer compares alternatives against the current or minimally consolidated
+design as a credible baseline. It may recommend retain or quarantine when
+evidence does not justify change, and names the skills needed for deeper design,
+scoped implementation, behavior-preserving refactoring, controlled release, or
+verification. The accountable human confirms support-policy changes, route
+selection, cutover, and residual-risk acceptance. Checks run by the builder may
+support the decision; they do not establish an independent equivalence verdict.
 
 ## Applying the collection in a large organization
 
