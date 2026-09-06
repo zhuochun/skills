@@ -319,6 +319,12 @@ architecture-assessment
 
 Use this route when the decision is which structural opportunity deserves attention first. If one completed design is already selected and material implementation or operational learning has changed its premises, start with `retrospective-architecture-review` instead of running a second broad assessment.
 
+For accepted architecture commitments, start directly with `software-verification`
+to define or run architecture tests, including check-effectiveness controls and
+enforcement evidence. Use `architecture-assessment` when the question is which
+structural costs or drift deserve investment; consume test results without treating
+them as proof of untested qualities.
+
 ### New or existing repository setup
 
 ```text
@@ -333,6 +339,9 @@ agentic-repo-environment
   -> verify usable Bootstrap with renewal intake enabled only when justified or explicitly deferred; Retrofit improvement or evidence-backed no-op; or an explicit Renew disposition
   -> require accepted correction and passing replay, contrast, and guardrail evidence for Renew promotion; keep rejection, insufficient evidence, and task-local outcomes valid without an environment change
 ```
+
+Readiness assessments stop after scoped read-only diagnosis and actionable
+findings. Reuse sufficient evidence when moving into authorized lifecycle work.
 
 Start with the repository and its existing systems of record. Setup owns its
 authorized harness edits instead of delegating them to a generic implementation

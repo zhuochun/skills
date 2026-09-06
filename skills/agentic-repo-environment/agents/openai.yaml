@@ -1,7 +1,7 @@
 interface:
   display_name: "Agentic Repo Environment"
-  short_description: "Build and renew agent repository environments"
-  default_prompt: "Use $agentic-repo-environment to bootstrap, retrofit, or renew this repository-local agent environment. In Bootstrap, inspect first, interview only for scaffold-changing choices, recommend one minimum profile, and establish logical information architecture and executable feedback; enable renewal intake only when justified, otherwise defer it. In Renew, learn only from accepted corrections, trial the smallest reusable change with replay, contrast, and guardrails, then record its disposition; evaluation may complete without promotion or an environment change. Preserve neighboring and execution authority."
+  short_description: "Diagnose, build, and renew agent repo environments"
+  default_prompt: "Use $agentic-repo-environment to diagnose, bootstrap, retrofit, or renew this repository-local agent environment within the requested authority. For diagnosis, report task-path evidence, gaps, repair owners, next actions, and verification criteria without changes. Bootstrap establishes minimum working paths; Retrofit improves observed friction; Renew qualifies accepted corrections through replay, contrast, and guardrails before promotion."
 
 policy:
   allow_implicit_invocation: false

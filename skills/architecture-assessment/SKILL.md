@@ -1,6 +1,6 @@
 ---
 name: architecture-assessment
-description: Discover and rank architecture improvement opportunities across an existing software scope before one redesign target is selected. Use for portfolio health checks, counterview or fresh-eye reassessment, modernization priorities, cross-cutting change, fragile hotspots, testing difficulty, or ownership friction. Route one proposal to architecture-risk-evaluation and completed-design learning to retrospective-architecture-review.
+description: Discover and rank architecture improvement opportunities across an existing software scope before one redesign target is selected. Use for portfolio health checks, accumulated architecture drift, fresh-eye reassessment, modernization priorities, fragile hotspots, testing difficulty, or ownership friction. Route one proposal to architecture-risk-evaluation, completed-design learning to retrospective-architecture-review, and architecture testing to software-verification.
 ---
 
 # Architecture Assessment
@@ -28,12 +28,17 @@ Choose a posture only while the decision remains which opportunity deserves inve
 
 1. **Frame the portfolio.** State subject, goal, scope, horizon, exclusions, constraints, desired change locality, posture, and reassessment delta. Exclude selected completed designs.
 2. **Build a bounded baseline.** Survey current structure and available change, defect, runtime, data, test, and ownership signals across the declared scope. Separate proven constraints and supported behavior from prior solution choices. Deepen history or other evidence where it can change candidate rank, constraints, or coverage confidence. Sample outside favored candidates and keep uninspected regions explicit; a promising hotspot does not establish portfolio coverage.
+   For deterioration claims, identify comparable earlier and current states and
+   the changes connecting them; without that evidence, report current risk.
 3. **Trace representative pressure.** Follow real features, fixes, and operational events across modules, services, delivery, and owners. Note coordinated edits, meaning search, interface leakage, and ownership transfers.
 4. **Find mechanisms.** Look for missing domain concepts, shallow modules, duplicated knowledge, scattered change, hidden state, dependencies or effects, unstable boundaries, framework leakage, and remote failure that cannot be tested credibly.
 5. **Challenge and reconcile.** For counterview work, compare the current shape with the simplest credible counterfactual and one materially different branch when supported. Recover relevant decisions, binding constraints, changed assumptions, and any accountable reopening.
+   Distinguish departure from valid constraints, accumulated cost, and justified
+   evolution. Challenge growth or co-change signals against mechanical changes
+   and changed requirements; passing checks cover only their tested properties.
 6. **Shape and test candidates.** Apply deletion, change-locality, interface-depth, scenario, and migration tests. Describe only enough responsibility, seam, interface, ownership, data authority, behavior, and tracer change to judge merit.
 7. **Rank one portfolio.** Classify candidates as strong, worth exploring, or speculative using consequence, reach, frequency, evidence, migration risk, reversibility, coordination, option value, and posture sensitivity. Prefer an enabling move over a broad rewrite; trace posture disagreements to evidence, assumptions, constraints, or migration economics.
-8. **Report and stop.** Lead with the ranking and decisive evidence. State posture, delta, prior-decision reconciliation, benefits, risks, migration outline, and uncertainty. When structure affects rank, include the smallest self-contained text comparison of current and candidate responsibility, state, control, data, or ownership; keep candidates unselected. Ask which candidate to select or explore.
+8. **Report and stop.** Lead with the supported ranking or no-investment conclusion and decisive evidence. State posture, delta, prior-decision reconciliation, benefits, risks, migration outline, and uncertainty as applicable. When structure affects rank, include the smallest self-contained text comparison of current and candidate responsibility, state, control, data, or ownership; keep candidates unselected. Ask which candidate to select or explore only when candidates are supported.
 
 Read [references/architecture-assessment.md](references/architecture-assessment.md) only when a formal candidate card, ranking rubric, or durable assessment report is needed.
 
@@ -43,6 +48,8 @@ Read [references/architecture-assessment.md](references/architecture-assessment.
 - Counterview preserves supported behavior and proven constraints; comparative work reconciles disagreement into one evidence-explained ranking.
 - Candidates remain unselected and stop short of several redesigns; migration, compatibility, reversibility, decisions, and uncertainty stay explicit.
 - No implementation begins before selection and authorization.
+- Report no supported investment when evidence warrants it; route check design
+  or execution to `software-verification` and a bounded diff to `code-review`.
 
 ## Reject common failure modes
 

@@ -56,11 +56,11 @@ Use qualitative judgments with evidence. Do not sum weak guesses into a precise 
 
 ## Report structure
 
-1. Executive outcome and top recommendation
+1. Executive outcome and top recommendation, or evidence-backed no-investment conclusion
 2. Scope, constraints, posture, reassessment delta, and evidence used
 3. Current architecture views at the declared scope
-4. Three to seven ranked candidate cards
-5. Posture convergence or disagreement, portfolio dependencies, and sequencing
+4. Ranked candidate cards for supported opportunities; none when no investment is justified
+5. Posture convergence or disagreement, with dependencies and sequencing when applicable
 6. Areas intentionally left unchanged
 7. Unknowns and proposed validation
-8. Selection question before implementation
+8. Selection question when supported candidates remain unselected

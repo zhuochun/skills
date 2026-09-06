@@ -61,7 +61,7 @@ Do not start from a fashionable method or invoke every skill as a stage gate. As
 | Skill | It owns | Primary output |
 | --- | --- | --- |
 | [`product-opportunity-prioritization`](../skills/product-opportunity-prioritization/) | Product-level allocation among opportunities and bets across evidence, constraints, capacity, and learning horizons | Normalized candidate set, feasible portfolio options, priority rationale, dispositions, and review triggers |
-| [`architecture-assessment`](../skills/architecture-assessment/) | Discovering and ranking which structural opportunities deserve investment across a declared software architecture scope before a redesign target is selected | Ranked evidence-backed architecture improvement portfolio |
+| [`architecture-assessment`](../skills/architecture-assessment/) | Discovering and ranking structural opportunities, including evidence-backed drift and accumulated change cost, before a redesign target is selected | Ranked architecture improvement portfolio with justified evolution and evidence gaps distinguished |
 | [`architecture-risk-evaluation`](../skills/architecture-risk-evaluation/) | Scenario-based evaluation of architecture assumptions and quality tradeoffs | Risks, non-risks, sensitivities, tradeoffs, unknowns, and evidence needs |
 | [`service-capacity-engineering`](../skills/service-capacity-engineering/) | End-to-end demand, capacity, headroom, overload, and recovery behavior | Capacity model, operating envelope, falsification evidence, and overload controls |
 | [`service-ownership-design`](../skills/service-ownership-design/) | Sustainable lifecycle ownership and its enabling conditions | Ownership trace, cognitive-load assessment, model options, prerequisites, and transition |
@@ -82,12 +82,12 @@ Do not start from a fashionable method or invoke every skill as a stage gate. As
 
 | Skill | It owns | Primary output |
 | --- | --- | --- |
-| [`agentic-repo-environment`](../skills/agentic-repo-environment/) | Bootstrap with bounded recommendations, task-centered retrofit, and correction-driven renewal of the repository-local coding-agent environment | Decision frontier, minimum logical information architecture, usable walking skeleton with renewal intake enabled when justified or deferred, stable commands, risk-matched evidence, Retrofit improvement or evidence-backed no-op, and explicit Renew dispositions with separate promotion evidence |
+| [`agentic-repo-environment`](../skills/agentic-repo-environment/) | Read-only task-path diagnosis, Bootstrap with bounded recommendations, task-centered Retrofit, and correction-driven Renew of the repository-local coding-agent environment | Diagnostic gaps, repair owners and verification criteria; or minimum working paths, demonstrated Retrofit improvement/no-op, and explicit Renew dispositions with separate promotion evidence |
 | [`scoped-change-implementation`](../skills/scoped-change-implementation/) | Authorized bounded behavior change through coherent vertical slices | Maintained code, behavior evidence, completed ownership, deviations, and remaining gaps |
 | [`behavior-preserving-refactoring`](../skills/behavior-preserving-refactoring/) | Structural improvement without intentional supported-behavior change | Consolidated ownership, refactoring-safe evidence, retired old paths, and equivalence limits |
 | [`software-failure-diagnosis`](../skills/software-failure-diagnosis/) | Causal investigation of bugs, regressions, intermittent failures, and performance degradation | Symptom contract, evidence loop, competing hypotheses, supported cause, and repair boundary |
 | [`code-review`](../skills/code-review/) | Independent read-only review of a bounded software change | Prioritized evidence-backed findings, questions, scope limits, and residual risks |
-| [`software-verification`](../skills/software-verification/) | The claim-to-evidence lifecycle: designing falsifiable methods and fixed oracles, then reusing or executing evidence without moving the criteria after observation | Risk-to-evidence portfolio plus per-claim pass, fail, inconclusive, or not-run results, raw evidence, counterexamples, validity limits, and gaps |
+| [`software-verification`](../skills/software-verification/) | The claim-to-evidence lifecycle, including architecture testing: designing falsifiable methods and fixed oracles, then reusing or executing evidence without moving criteria after observation | Risk-to-evidence portfolio plus per-claim results, check-effectiveness evidence, counterexamples, enforcement and coverage limits, and gaps |
 
 ### Communicate knowledge
 

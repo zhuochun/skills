@@ -1,6 +1,6 @@
 ---
 name: agentic-repo-environment
-description: Bootstrap, retrofit, or renew the repository-local environment for reliable coding-agent work. Use Bootstrap to recommend and materialize minimum information, execution, evidence, and control paths with renewal when justified; Retrofit to improve grounded task journeys; Renew to turn accepted execution corrections into validated reusable changes. Route product meaning, architecture decisions, command compatibility, and release authority.
+description: Diagnose, bootstrap, retrofit, or renew the repository-local environment for reliable coding-agent work. Use read-only diagnosis for task-path gaps, Bootstrap for minimum working paths, Retrofit for observed friction, and Renew for accepted corrections that may generalize. Route product meaning, architecture decisions, command compatibility, and release authority to their owners.
 ---
 
 # Agentic Repo Environment
@@ -19,7 +19,8 @@ learning. Treat effective `AGENTS.md` instructions as routing, not proof of agen
 - **Renew** after an accepted execution correction, escaped defect, repeated intervention,
   stale route, or measured burden. Qualify the learning, trial the smallest reusable change,
   and record its disposition.
-- Treat an assessment or recommendation request as read-only.
+- Treat assessment or recommendation requests as read-only diagnosis,
+  even when they ask whether the repository is agent-ready.
 
 An explicit Bootstrap, Retrofit, Renew, or agent-ready request authorizes
 behavior-preserving repository knowledge changes and fixed verification wiring. It does not
@@ -28,6 +29,12 @@ production-code redesign, supported-command semantics, external settings, secret
 production actions, deletion of a pre-existing path, commits, pushes, deployment, or release
 acceptance. Promotion criteria do not grant execution permission; use existing explicit task
 authorization or adopted policy without asking again for authority already granted.
+
+For read-only assessment, use the common spine through diagnosis, then report
+task-path evidence, material gaps, repair owners, next actions, and verification
+criteria without changes. Distinguish demonstrated defects from missing evidence;
+no change or an unresolved result can be justified. Reuse sufficient diagnosis
+within lifecycle work rather than requiring a separate assessment.
 
 ## Own the repository environment
 
@@ -127,7 +134,8 @@ without requiring an environment change or a passing promotion trial.
 
 ## Compose without losing lifecycle ownership
 
-Resolve missing specialist decisions, then resume the active mode; a route is not completion.
+For authorized lifecycle work, resolve missing specialist decisions, then resume the
+active mode; a route is not completion. Read-only diagnosis ends with its owned result.
 
 - Use `technical-writing` for document function, `domain-modeling` for semantic conflict,
   `architecture-surface-mapping` for an unfamiliar path, and `software-system-design`
@@ -142,7 +150,7 @@ Resolve missing specialist decisions, then resume the active mode; a route is no
 ## Execute the common spine
 
 1. **Establish scope and authority.** Inspect Git state, effective instructions, accepted constraints, and existing systems of record. Preserve unrelated work.
-2. **Bind representative evidence.** Select accepted Bootstrap workflows, grounded Retrofit scenarios, or the Renew episode.
+2. **Bind representative evidence.** Select diagnostic task paths, accepted Bootstrap workflows, grounded Retrofit scenarios, or the Renew episode.
    Trace its information, runtime, command, evidence, and control owners; preserve baseline failures and reuse sufficient current evidence.
    Expand inspection when an unresolved mechanism, dependency, or guardrail can change the repair or its verification.
    Bootstrap still needs the complete representative setup-to-verification path; narrow Renew episodes need no fresh repo-wide inventory.

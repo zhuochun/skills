@@ -449,6 +449,15 @@ explicitly independent, or required as a fresh set. Freeze criteria before
 observation. Preserve raw evidence, environment context, counterexamples,
 inconclusive results, and cleanup; neither mode silently approves release.
 
+For architecture testing, design owners supply accepted boundaries and quality
+commitments; `software-verification` owns methods, check-effectiveness controls,
+coverage limits, and evidence verdicts. `agentic-repo-environment` can implement
+fixed repository checks and their local/CI wiring within authorized scope.
+`architecture-assessment` uses those results alongside history and real change
+cost to distinguish harmful drift, justified evolution, and unknowns when
+ranking investment. Passing architecture tests do not replace that judgment;
+an assessment is not a prerequisite for implementing already-accepted checks.
+
 ### Contract evolution versus transition and program orchestration
 
 Use `software-contract-evolution` to recover what producers and consumers actually rely on and decide how shared semantics, compatibility, translation, deprecation, adoption, and retirement should work. It owns the producer-consumer-state-executor compatibility matrix and the support-policy obligations, not merely an API version number.
@@ -518,6 +527,11 @@ The designer and auditor may be the same person for low-risk work, but the audit
 Observability can supply evidence to verification, but telemetry is not a substitute for earlier checks. An operational audit can reject both a weak observability design and the assumption that a green signal proved the system healthy.
 
 ### Repository environment, program coordination, and platform capability
+
+`agentic-repo-environment` assesses readiness read-only through representative
+task paths. Its findings identify evidence, gaps, repair owners, next actions,
+and verification criteria; no change or unresolved evidence can be a valid result.
+Authorized lifecycle work reuses sufficient diagnosis without a separate assessment.
 
 - `agentic-repo-environment` directly bootstraps, retrofits, or renews the reusable
   repository foundation when repo writes are authorized and the product,

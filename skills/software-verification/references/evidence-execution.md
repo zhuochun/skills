@@ -45,6 +45,20 @@ Never use “pass with caveats” when the caveat invalidates the oracle or requ
 
 ## Method boundary prompts
 
+- **Check effectiveness:** Do planned controls reject a violating case for the
+  intended reason and accept a legitimate case? Scale controls to distinct
+  uncertainty; reuse valid evidence rather than requiring a new mutation for
+  every run. Missing controls leave effectiveness unverified.
+- **Discovery and enforcement:** Did the method examine the intended inputs,
+  or pass through empty discovery, unresolved inputs, or excluded scope? When
+  enforcement is claimed, does the actual required path run the check and fail
+  when it rejects a case? Distinguish advisory output from enforced controls.
+- **Exceptions and baselines:** Are exclusions scoped, justified, owned, and
+  subject to a revisit condition? Preserve existing violations and accepted
+  no-new-violations policies visibly. Do not refresh a baseline or weaken an
+  oracle to fit results; revise the contract with its owner and rerun affected
+  evidence when the accepted requirement changes.
+
 - **Static/model evidence:** Which implementation and environment assumptions remain unconnected?
 - **Example or contract tests:** Which consumer, adapter, ordering, failure, or version states remain outside the seam?
 - **Property/fuzz evidence:** Is the oracle meaningful, and what input regions did generation actually reach?

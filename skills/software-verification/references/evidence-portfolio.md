@@ -4,7 +4,7 @@
 
 | Evidence method | Strongest use | Common boundary |
 | --- | --- | --- |
-| Static analysis and types | Local structural and interface properties | Runtime environment and semantic intent |
+| Static analysis and types | Structural and interface properties, including resolved dependency direction, cycles, and access boundaries | Resolution and discovery scope; runtime behavior and semantic intent |
 | Unit tests | Fast deterministic behavior of one module | Real integration, deployment, and partial failure |
 | Integration/component tests | Adapter and dependency behavior | Full consumer estate and production topology |
 | Contract/compatibility tests | Producer-consumer semantics and version combinations | Emergent multi-service behavior |
@@ -40,6 +40,23 @@ Use keys such as `VER-ledger-conservation — Ledger value is conserved`. Every 
 ## Cross-boundary contract prompts
 
 Check payload meaning, identifiers, optional or missing fields, ordering, duplication, headers, content types, authorization, timeouts, retry safety, deletion, side effects, and old/new version combinations.
+
+## Architecture claim prompts
+
+- Recover accepted boundaries, quality commitments, rationale, and exceptions;
+  current topology alone does not justify freezing implementation structure.
+  Route unresolved architecture choices to their design owner while continuing
+  verification of independently settled claims.
+- Select static checks for dependency or access rules, behavioral methods for
+  effects and runtime qualities, and representative scenarios for semantic
+  boundaries or change locality. An architecture fitness function checks a named
+  property; it is not a separate method or an overall architecture verdict.
+- For dependency claims, examine the relevant resolution paths, such as aliases,
+  re-exports, generated code, and dynamic loading. Import conformance alone does
+  not prove state ownership, recovery, or other runtime properties.
+- Show only relationships needed to interpret the claim, reusing existing views.
+  Keep untested qualities explicit; broader judgments about structural change
+  and investment remain with `architecture-assessment`.
 
 ## Security claim prompts
 

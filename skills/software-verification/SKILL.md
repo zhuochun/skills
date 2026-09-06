@@ -1,6 +1,6 @@
 ---
 name: software-verification
-description: Design or execute risk-proportionate software verification by binding engineering claims to fixed methods, oracles, environments, and inspectable evidence. Use when verification coverage is undefined, evidence is stale or missing, named claims must run, or an independent final check is needed. Keep inner-loop feedback, fresh-context verification, and release authority distinct.
+description: Design or execute risk-proportionate software verification by binding engineering claims to fixed methods, oracles, environments, and inspectable evidence. Use for architecture testing, undefined coverage, stale or missing evidence, named claims that must run, or an independent final check. Keep inner-loop feedback, fresh-context verification, design decisions, and release authority distinct.
 ---
 
 # Software Verification
@@ -74,7 +74,9 @@ unavailable, report the narrower tested result and unverified runtime claim.
    routing semantics.
 5. **Fix method boundaries and oracles.** State exercised and omitted regions,
    representativeness, pass or fail properties, tolerances, comparison rules,
-   invalidation, and renewal. Calibrate consequential semantic judges against
+   invalidation, and renewal. For new or changed checks, select proportionate
+   controls that expose false acceptance and false rejection.
+   Calibrate consequential semantic judges against
    coherent human labels and held-out cases while preserving genuine unknowns.
 6. **Sequence and own the portfolio.** Put fast deterministic feedback early;
    reserve expensive, risky, or production-like evidence for claims that need
@@ -99,7 +101,9 @@ sufficient merely because its positive output cases pass.
 2. **Establish comparison state.** Capture relevant baseline, candidate,
    configuration, workload, dependency state, time window, and prior evidence.
 3. **Execute in feedback order.** Preserve invocation, inputs, environment,
-   material times, exit status, and raw results.
+   material times, exit status, and raw results. Check discovery, exclusions,
+   and planned controls; when enforcement is claimed, verify the required path
+   executes the check and propagates its failure.
 4. **Apply the fixed oracle.** Classify each attempt **pass**, **fail**,
    **inconclusive**, or **not run**. A flaky pass, partial environment, invalid
    oracle, missing assertion, clean dynamic run, or absent signal is not

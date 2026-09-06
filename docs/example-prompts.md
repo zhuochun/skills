@@ -43,6 +43,13 @@ delivery, and mark every inferred or disputed step.
 ```
 
 ```text
+Use $agentic-repo-environment for a read-only assessment of our recurring
+bug-fix workflow. Trace discovery, execution, and verification; report supported
+gaps, affected tasks, repair owners, smallest next actions, and verification
+criteria. Keep missing evidence and an evidence-backed no-change result explicit.
+```
+
+```text
 Use $agentic-repo-environment to retrofit this existing repository for reliable
 coding-agent work. Trace grounded recent or repeated task scenarios from the
 effective `AGENTS.md` route through minimum sufficient authoritative context,
@@ -279,6 +286,14 @@ Use $code-review to review this branch against the feature intent,
 repository constraints, consumer contracts, failure semantics, maintainability,
 and claimed evidence. Work read-only and report only prioritized actionable
 findings with tight locations and residual risks.
+```
+
+```text
+Use $software-verification to design architecture tests for our accepted package
+boundaries and state-ownership rules. Determine which claims need static,
+behavioral, or semantic evidence, how to prove the checks reject violations
+while allowing legitimate changes, and how local and CI paths enforce them.
+Keep unresolved architecture decisions and untested properties explicit.
 ```
 
 ```text
