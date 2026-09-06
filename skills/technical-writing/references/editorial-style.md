@@ -21,6 +21,8 @@ override generic preferences.
 ## Protect the draft before editing
 
 - Read the complete draft before changing local sentences.
+- Inventory the requested documents and read them in bounded batches. Retrieve
+  truncated text before claiming a complete review.
 - Identify the reader, the artifact's job, its core point, and three to five
   observable voice signals.
 - Protect code, commands, identifiers, links, anchors, quotations, product
@@ -45,6 +47,34 @@ override generic preferences.
   reader's path. Explain consequential reorganization.
 - Prefer concrete facts, named actors, direct verbs, mechanisms, dates, and
   measurements that the evidence supports.
+
+## Edit framing without changing the claim
+
+- State the mechanism directly when phrases such as "the central claim is"
+  delay it. Keep framing that distinguishes an inference, proposal, or source
+  position from an established fact.
+- Replace abstract actions with the supported actor and action. Do not invent
+  an owner merely to make a sentence active.
+- Remove a repeated contrast only when its negative side adds no boundary.
+  Preserve distinctions such as necessary versus sufficient conditions,
+  observation versus proof, and recommendation versus obligation.
+- Preserve logical and normative force: "only when" differs from "when", and
+  a diagnostic question is not a requirement.
+- In durable reference prose, replace editing history and repeated coverage
+  inventories with current scope, evidence limits, and unresolved gaps. Keep
+  chronology when the document's job is to preserve a decision or change record.
+
+## Preserve collection structure
+
+Preserve headings, definitions, link-role explanations, and metadata needed for
+navigation or checks. Repeated structure can support retrieval; uniformity alone
+does not justify flattening it.
+
+For prose-only repository edits, compare protected structure against the
+worktree baseline and run the relevant repository checks. Review changed claims
+separately: unchanged links and passing validators do not prove semantic
+equivalence. Leave substantive review dates unchanged unless that review was
+actually performed, and report documents read separately from documents edited.
 
 ## Diagnose formulaic prose by reader effect
 
