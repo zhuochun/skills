@@ -102,8 +102,8 @@ paths; exceptional routes may leave the profile. See the
 | [`operational-bundles`](../install/packages/operational-bundles.txt) | Topic bundle | Service operation, ownership, feedback, and incident work |
 | [`leadership-bundles`](../install/packages/leadership-bundles.txt) | Topic bundle | Technical leadership, coordination, ownership, decisions, and growth |
 | [`security-bundles`](../install/packages/security-bundles.txt) | Topic bundle | Threat-grounded security design, secure implementation, review, and verification |
-| [`dev-base-profile`](../install/packages/dev-base-profile.txt) | Workflow profile | Repository setup, goal pursuit, bounded local change, contract evolution, diagnosis, refactoring, review, and verification |
-| [`dev-profile`](../install/packages/dev-profile.txt) | Workflow profile | Goal pursuit across broader design, delivery, release, operational feedback, and verification |
+| [`dev-base-profile`](../install/packages/dev-base-profile.txt) | Workflow profile | Repository setup, bounded local change, contract evolution, diagnosis, refactoring, review, and verification |
+| [`dev-profile`](../install/packages/dev-profile.txt) | Workflow profile | Broader design, delivery, release, operational feedback, and verification |
 | `all` | Computed | Every current skill under `skills/` |
 
 `all` is computed so new skills are not silently omitted. Other manifests are
@@ -194,6 +194,10 @@ sh install/install.sh uninstall \
 The installers do not keep receipts. Package uninstall therefore uses the
 current manifest rather than reconstructing an older installation. An explicit
 dangling link can still be removed when its stored target matches this checkout.
+
+After an update renames or retires skills, run Doctor for each installed target.
+Package reinstall does not prune old names; follow the reported explicit-skill
+uninstall corrections.
 
 ## Safety
 

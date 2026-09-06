@@ -12,7 +12,7 @@ Judge the change, not its narrative or activity volume. Recover enough intent an
 - Work read-only. Do not edit files, resolve findings, stage changes, publish comments, approve, merge, or release unless the user separately authorizes that action.
 - Establish the review range: working tree, staged changes, commit, branch against merge base, pull request, or named artifact. Preserve the exact base and head identities when available.
 - Recover intent, acceptance, non-goals, repository instructions, decisions, and evidence. Flag silent narrowing from canonical scope to an easier proxy; missing intent limits review rather than licensing invention.
-- When orchestration supplies an accepted contract, assurance posture, exact candidate snapshot, and evidence index, consume them without repeating the producer's framing. Challenge them when the diff or surrounding repository evidence contradicts the claim.
+- Consume a supplied accepted contract, assurance posture, exact candidate snapshot, and evidence index without repeating the producer's framing. Challenge them when the diff or surrounding repository evidence contradicts the claim.
 - Inspect the artifact and enough surrounding code, tests, schemas, configuration, consumers, runtime, and history for context. Do not widen into codebase assessment.
 - Keep generation and judgment distinct. Independence requires fresh judgment, complete diff inspection, risk-path tracing, distinct evidence or criteria, and authority to reject—not a different label or automatic repetition of producer commands.
 - Judge **contract fit**—accepted intent and non-goals—and **engineering integrity**—correctness, repository constraints, evidence, and future change cost—separately before ranking all findings by consequence.

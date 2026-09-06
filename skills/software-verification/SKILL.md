@@ -40,6 +40,22 @@ candidate; it does not approve release, cutover, risk, or support policy.
 - Preserve raw output and diagnostic artifacts proportionately. The agent's
   summary supplements evidence; it does not replace it.
 
+## Reuse evidence and identify the target
+
+Invalidate evidence only for changed claims or their exercised code, configuration,
+data, method, oracle, or material environment. Prose-only edits normally need document checks;
+executable examples, changed requirements, suspect evidence, required repository
+gates, and explicitly fresh verification can require runtime checks. Preserve
+known failures and omissions when reusing evidence; a skill transition is not
+itself a reason to rerun an unaffected suite.
+
+When completion includes a running or installed system, identify the actual
+serving process or deployment, revision, configuration, and relevant contract
+versions. Exercise the requested consumer path on that target. A clean checkout,
+test server, or healthy stale process does not establish the running outcome.
+Use the owned restart or deployment path only within existing authority; if
+unavailable, report the narrower tested result and unverified runtime claim.
+
 ## Design the verification contract
 
 1. **Inventory claims.** Preserve accepted behavior and invariants. Rewrite
@@ -121,5 +137,3 @@ method-boundary prompts, or independence calibration.
 - Do not infer dynamic behavior that the workload, population, schedule,
   failure, or instrumentation did not exercise.
 - Do not let the same agent's narrative certify that required work occurred.
-- Invalidate evidence after material claim, candidate, architecture, traffic,
-  dependency, environment, or operating change.

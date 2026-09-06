@@ -13,7 +13,8 @@ Turn an intended change into a reviewable behavioral contract an implementer can
 - Identify the change owner and needed domain, product, consumer, security, privacy, data, and operational owners. Humans confirm disputed meaning and residual risk.
 - Recover evidence from the request, current behavior, code, tests, contracts, decisions, telemetry, incidents, and named stakeholders. Mark material statements as confirmed, inferred, assumed, proposed, or unresolved instead of manufacturing certainty.
 - Match depth to uncertainty, consequence, reversibility, and coordination. Keep local reversible changes in `scoped-change-implementation`; use this skill when clarification has decision value.
-- Use the existing issue, plan, conversation, or artifact. Update an orchestration-supplied canonical surface only with record-write authority; otherwise return inline. Never create a second handoff record.
+- Use the existing issue, plan, conversation, or artifact. Update its canonical surface within existing record-write authority; otherwise return inline. Never create a second handoff record.
+- Keep local transcripts, session IDs, and raw review logs in an existing private or ignored evidence surface. Specifications carry accepted meaning, unresolved decisions, self-contained rationale, and evidence accessible to their intended readers.
 - Keep opportunity selection, domain meaning, architecture design, contract evolution, rollout, verification methods, and implementation with their canonical owners. Reference their decisions by stable key and plain-language label when present rather than copying entire artifacts.
 - “Implementation-ready” does not authorize missing domain, architecture, compatibility, security, data, or recovery decisions. Return a conditional partial specification and `not ready` when owners have not decided.
 - Inspect discoverable behavior before asking the owner. Expose relevant ambiguity, assumptions, unknowns, and missing authority even without interaction.
@@ -46,9 +47,9 @@ Read [references/change-specification.md](references/change-specification.md) wh
 
 ## Compose without taking over
 
-- Consume orchestration-supplied scope, claims, evidence, and question. Preserve
+- Consume accepted scope, claims, evidence, and the current question. Preserve
   meaning, reopen only contradictions or blockers, and return the contract and
-  readiness delta. Orchestration owns continuity and frontier selection.
+  readiness delta to the active task.
 - Send a fixed consequential candidate to `specification-review` for independent
   ambiguity, contradiction, loophole, and readiness judgment. Apply accepted
   repairs here; the reviewer does not rewrite or settle routed decisions.
@@ -77,7 +78,16 @@ Read [references/change-specification.md](references/change-specification.md) wh
   `technical-program-orchestration`.
 - Send intentional behavior changes to `scoped-change-implementation` and
   structure-only work to `behavior-preserving-refactoring`. Do not create a
-  second orchestration record or invent behavior to make either route ready.
+  second change record or invent behavior to make either route ready.
+
+## Validate the specification delta
+
+Check meaning, links, examples, and affected consumers. Reuse valid runtime evidence
+after prose-only edits. Reassess evidence for changed current-behavior claims or
+executable inputs, suspect results, and required fresh checks; run only the
+runtime checks those obligations need. Keep new desired-behavior claims unverified
+and route their methods to `software-verification`. Preserve known failures and
+evidence limits; document checks do not verify behavior.
 
 ## Quality gates
 

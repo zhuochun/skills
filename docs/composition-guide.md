@@ -76,25 +76,6 @@ A fixed consequential proposal may receive
 `specification-review`, which does not establish user success or accessibility.
 Compose on the relevant trigger rather than imposing a universal sequence.
 
-### Intentional end-to-end goal pursuit
-
-```text
-goal-pursuit
-  -> compact parent goal contract and proportional system-level pursuit model
-  -> one meaningful checkpoint owned by the smallest sufficient available specialist, tool, or bounded subgoal
-  -> compare checkpoint evidence with the parent outcome and revise the route
-  -> transfer detailed continuity to software-change-orchestration or multi-workstream steering to technical-program-orchestration only when their topology appears
-  -> close only from outcome-level evidence, verified terminal failure, justified abandonment, infeasibility, or an authority boundary
-```
-
-Use `goal-pursuit` only as an explicit entry point when the user wants the agent
-to keep selecting and adapting moves toward one non-trivial outcome. It does not
-become the canonical owner of specialist artifacts, a bounded change record, or
-a technical program surface. A host `/goal` runtime may preserve continuation;
-the skill supplies the pursuit model and evidence loop inside that lifetime.
-Clear reversible work can still move directly to one executor after a compact
-micro-plan.
-
 ### Research evidence into specialist judgment
 
 ```text
@@ -178,35 +159,31 @@ security rules and residual risks plus named verification and challenge gates.
 Stable recurring findings should move into safe defaults, shared APIs,
 repository checks, or platform controls instead of remaining reviewer memory.
 
-### Resumable bounded software change
+### Bounded software change
 
-```text
-software-change-orchestration
-  -> keep clear uninterrupted work inline, or obtain document-write authority and seed one living canonical specification when ownership or re-entry requires durable state
-  -> derive compact, standard, or high-assurance posture and bound full skill workflows, artifacts, review, and verification
-  -> keep the immediate frontier in session and route it to software-change-specification, software-security-design for material security decisions, or the smallest owning specialist
-  -> integrate each accepted result into the specification before dependent implementation
-  -> use specification-review on a fixed candidate when misunderstanding could propagate materially
-  -> loop through clarification, design, evaluation, or decision only as evidence requires
-  -> choose one primary executor: behavior-preserving-refactoring for pure structure, scoped-change-implementation for intended behavior
-  -> use independent code-review when consequence, uncertainty, novelty, an explicit request, or the workflow budget requires it
-  -> software-verification freezes claims, methods, and oracles before execution fills missing or invalidated evidence
-  -> remediate applicable findings in scope, confirm material review repairs, then run one successful closure set on the final candidate snapshot
-  -> loop back on counterexamples, or close with reusable evidence and residual ownership
-```
+Let the active agent continue within the accepted outcome and authority. Use
+the existing issue, specification, design, or task as the canonical context;
+add durable state only when ownership or re-entry needs it. A host goal runtime
+owns continuation, pause, resume, and status when one is active.
 
-Use the owning repository when one repository owns the behavior, even if it consumes another repository's data. Use an established control repository only for genuinely distributed ownership. Compact uninterrupted execution stays inline even when authorized. Standard or resumable work normally reuses or creates one living specification when ownership or re-entry needs durable state. High-assurance work uses several artifacts only when they need independent lifecycles. Persist a resume point only for a pause, block, handoff, session change, or non-obvious re-entry.
+Choose one primary executor by the requested effect: `scoped-change-implementation`
+for intended behavior and `behavior-preserving-refactoring` for pure structure.
+Route unresolved behavior to specification, interacting structural decisions
+to system design, and other missing judgments to their specialists. Integrate
+accepted decisions before dependent work without rerunning their whole workflows.
 
-Choose the executor by the requested semantic effect, not by labels such as cleanup or compatibility. An accepted change to observable behavior belongs to `scoped-change-implementation`; pure structure belongs to `behavior-preserving-refactoring`; unresolved behavior belongs to specification or its accountable owner. Implementation remains autonomous over routine code shape, but missing information that makes required outcomes indistinguishable is a contract boundary, not permission to guess or weaken the behavior.
-
-In authorized or auto mode, keep the authorized modes, accepted scope and non-goals, and four escalation conditions in the active task. When durable state is justified, write them into the smallest canonical record before implementation. Proceed without workflow approval, but preserve the originating behavior meaning and escalate material scope, external or production action, destructive action, or a decision changing supported behavior.
+Required independent review and verification keep their own criteria. Resolve
+applicable findings, independently confirm material review fixes, and reuse
+unaffected evidence. Close against the requested outcome, including the running
+consumer path when required; component completion or local checks alone do not
+establish that outcome. Existing authorization carries forward; new scope or
+consequential actions still require their own authority.
 
 ### Session boundary or non-obvious re-entry
 
 ```text
 active work remains in the current session while continuation is obvious
   -> update the existing canonical resume surface only for a pause, session change, context reset, delegation, or non-obvious re-entry
-  -> use software-change-orchestration when one bounded software change needs continuity across sessions, artifacts, or specialist owners
   -> next agent rechecks linked canonical state and resumes from the named frontier
 ```
 
@@ -278,8 +255,7 @@ domain-modeling
   -> technical-program-orchestration for the canonical program surface,
      workstream drivers and frontiers, delivery topology, integration contracts,
      evidence-labeled dominant or coupled constraints, and decision cadence
-  -> software-change-orchestration for each bounded software-change workstream
-     that needs an independently resumable decision-to-evidence loop
+  -> keep each workstream's accepted decisions and evidence in its existing local surface
   -> deep-module-design in each affected codebase
   -> co-design:
        observability-design for end-to-end and component evidence

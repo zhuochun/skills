@@ -24,15 +24,6 @@ Do not implement or claim that the experience has been user-tested.
 ```
 
 
-```text
-Use $goal-pursuit to deliver a working refund-approval capability from the
-current repository state through verified end-to-end behavior. Start with a
-compact system-level plan, preserve the requested outcome and authority, select
-only the smallest sufficient available skills and tools for each checkpoint,
-and revise the route when evidence contradicts the plan. Do not treat component
-completion as success; close against the observable user and system outcome.
-```
-
 
 ```text
 Use $product-opportunity-discovery to investigate this request for an AI reply
@@ -216,8 +207,8 @@ Use $software-change-specification to define the refund-approval change before
 we delegate implementation. Recover current and desired behavior, use boundary
 examples to expose policy ambiguity, name preserved invariants and affected
 consumers, separate accepted constraints from proposed implementation, produce
-keyed acceptance claims, and state whether the change is ready. If orchestration
-supplies a canonical specification, update only the owned specification delta.
+keyed acceptance claims, and state whether the change is ready. If a canonical
+specification already exists, update only the owned specification delta.
   Do not edit code.
 ```
 
@@ -252,16 +243,6 @@ and failure behavior, and ways a faithful implementation could satisfy the
 wording while violating the intended outcome. Lead with prioritized findings,
 route substantive product, domain, architecture, or contract judgments to their
 owners, and state the artifact's readiness limits without rewriting or approving it.
-```
-
-```text
-Use $software-change-orchestration to guide this atlas feature from the rough
-idea through the smallest necessary specification, design, implementation,
-review, and verification work in authorized mode. You may maintain the canonical
-specification, implement the accepted scope, delegate fresh read-only review,
-and run verification through closure without pausing for workflow approval.
-Escalate only for a material scope change, new external or production action,
-destructive action, or a decision that changes supported behavior.
 ```
 
 ```text

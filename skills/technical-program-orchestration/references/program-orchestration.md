@@ -7,7 +7,7 @@ Adapt these forms to the organization's existing tracker, roadmap, repositories,
 - Keep one canonical program surface for the outcome, topology, integration state, limiting constraints, evidence trend, and closure.
 - Keep a workstream inline in that surface when one driver, a compact frontier, and linked execution evidence are enough.
 - Split or link a workstream artifact only when it has an independently maintained owner, repository, authorization boundary, audience, review or evidence lifecycle, or non-obvious re-entry need.
-- When a workstream is a bounded software change, let `software-change-orchestration` choose its owning-repository, control-repository, hybrid, or inline persistence. Reference that canonical surface here.
+- Reference the workstream's existing issue, specification, or other owning surface. Persist a local resume point only when a pause or handoff needs it; cross-environment continuation requires a location the next owner can access.
 - Never copy a local specification, design, plan, task list, or evidence table merely to make the program record look complete.
 
 ## Canonical program surface

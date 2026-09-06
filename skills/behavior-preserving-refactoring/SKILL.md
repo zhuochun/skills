@@ -27,7 +27,7 @@ Change structure without hiding support-policy decisions. Preserve valuable beha
 4. **Choose the next seam.** Consume `$deep-module-design` when available; otherwise bound one hidden decision, coherent behavior, state owner, resource, or effect. Do not extract interfaces merely around classes, phases, or mocks. Inline a wrong abstraction and observe variation before re-extracting genuinely shared knowledge.
 5. **Refactor green to green.** Make one structural move, run the narrow trusted signal, and keep green or undo. Prefer reviewable, reversible rename, move, inline, extract, value, redirection, or interface narrowing.
 6. **Transfer ownership.** Move behavior, state, representation, and lifecycle together when they form one decision boundary. For coexistence, name the authority, synchronization/comparison rule, and exit. Never leave two decision owners.
-7. **Evolve evidence.** Keep durable tests on behavior and public contracts. As seams appear, move confidence from broad characterization to faster unit, component, contract, or integration evidence. Remove implementation-coupled tests that protect only a superseded seam after interface-level evidence covers the same behavior. Retain broad cases that protect independent integration or end-to-end risk. Do not layer duplicate suites around old and new ownership.
+7. **Evolve evidence.** Reuse evidence for unaffected claims after prose-only edits; changed claims or executable inputs, suspect evidence, required repository gates, or explicitly fresh verification can require runtime checks. Preserve known failures and evidence limits. Keep durable tests on behavior and public contracts. As seams appear, move confidence from broad characterization to faster unit, component, contract, or integration evidence. Remove implementation-coupled tests that protect only a superseded seam after interface-level evidence covers the same behavior. Retain broad cases that protect independent integration or end-to-end risk. Do not layer duplicate suites around old and new ownership.
 8. **Check nonfunctional equivalence proportionately.** Inspect performance, concurrency, ordering, resource lifecycle, failure handling, observability, data shape, and operational procedures when callers or operators rely on them. Use `$software-verification` for consequential equivalence claims or separately authored evidence.
 9. **Remove superseded structure.** After callers move and exit evidence passes, remove old implementations, pass-throughs, adapters, obsolete mocks, duplicate state, flags, and scaffolding. Wrapping old authority is incomplete.
 10. **Report preserved and changed structure.** Lead with the new ownership and interface shape. State behavior evidence, intentional differences, unresolved commitments, removed paths, remaining temporary machinery, and the limits of equivalence demonstrated.
@@ -45,6 +45,15 @@ Read [references/refactoring-control.md](references/refactoring-control.md) only
 - Tests on superseded seams are removed or retained for a named independent risk.
 - Old authority and coexistence are removed or have exits.
 - Equivalence claims name exercised functional and operational dimensions.
+- If completion includes a running system, verify its actual revision, configuration,
+  and relevant contract versions through the requested consumer path. Use only
+  authorized operational actions; otherwise report the unverified runtime outcome.
+- Assess consequence, irreversibility, uncertainty, and novelty before closure.
+  Use independent `code-review` when these leave material risk beyond builder
+  checks, or the user or repository requires it. Small reversible work with
+  adequate evidence can close directly when no review requirement applies.
+- When independent review is required, resolve applicable actionable findings and
+  obtain focused independent confirmation after material fixes before closure.
 
 ## Reject unsafe refactoring
 

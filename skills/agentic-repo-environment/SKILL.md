@@ -45,9 +45,8 @@ authorization or adopted policy without asking again for authority already grant
 - **Learning environment:** repository-level intake, trial, promotion, supersession,
   rollback, and reopening paths for accepted corrections.
 
-Repository information architecture is not product, domain, application, service,
-deployment, or data architecture. Setup may recommend logical repository placement; it does
-not choose missing semantic or structural decisions.
+Recommend repository placement without choosing product, domain, application, service,
+deployment, or data architecture. Route missing semantic or structural decisions to their owners.
 
 ## Bootstrap through evidence and recommendations
 
@@ -96,6 +95,10 @@ actions, diff, checks, external evaluation, correction, and relevant interventio
 missing evidence. A raw failure, model reflection, or unaccepted preference is not a learning
 label; recover diagnosis or acceptance before treating it as a reusable correction.
 
+Keep local transcripts, session IDs, and raw review logs in an existing private or ignored
+evidence surface. Maintained owners carry accepted decisions and reusable guidance with
+self-contained rationale and accessible evidence; do not archive episodes in specifications.
+
 For each candidate:
 
 1. **Confirm the correction.** Establish what changed the result and who accepted that
@@ -124,8 +127,7 @@ without requiring an environment change or a passing promotion trial.
 
 ## Compose without losing lifecycle ownership
 
-Use specialist judgment only when its decision is missing, then resume the active mode. A
-route is not completion.
+Resolve missing specialist decisions, then resume the active mode; a route is not completion.
 
 - Use `technical-writing` for document function, `domain-modeling` for semantic conflict,
   `architecture-surface-mapping` for an unfamiliar path, and `software-system-design`
@@ -135,8 +137,7 @@ route is not completion.
 - Route behavior changes to `scoped-change-implementation`; production-code structure to
   `behavior-preserving-refactoring` or its design owner; supported command semantics to
   `software-contract-evolution`; and repo skill authoring to `skill-creator`.
-- Use `software-change-orchestration` only for continuity of one bounded change, and
-  `platform-capability-design` only for a supported shared product.
+- Use `platform-capability-design` only for a supported shared product.
 
 ## Execute the common spine
 
@@ -152,9 +153,12 @@ route is not completion.
 5. **Implement the smallest coherent change.** Keep local and CI paths on one
    implementation. Do not add empty templates, duplicate truth, a generic control plane or
    memory service, speculative controls, or one-off repo skills.
-6. **Verify the delta.** Repeat affected consumer paths. Use a fresh context when
-   instruction or retrieval behavior changed and the platform permits it; otherwise record
-   **not run**.
+6. **Verify the delta.** Repeat affected consumer paths and reuse unaffected evidence;
+   prose-only edits need runtime checks only for changed claims or executable inputs,
+   suspect evidence, required gates, or explicitly fresh verification. Preserve known
+   failures. For a running-system outcome, identify the actual target and exercise its
+   consumer path within existing authority. Use a fresh context for changed instruction
+   or retrieval behavior when available; otherwise record **not run**.
 7. **Consolidate and report.** Redirect or deprecate superseded paths. Delete a pre-existing
    path only with explicit exact-target authority and applicable compatibility evidence.
    When replacing a tracked or supported path, also prove replacement use and consumer coverage.
@@ -189,8 +193,7 @@ control cannot certify itself.
 
 ## Completion
 
-Return the mode, authority, decision frontier or triggering episode, representative paths,
-changed environment owners, stable commands, exact evidence, before-and-after limits,
-preserved behavior, candidate dispositions, path consolidation, blocked slices, and the next
-renewal or reopening signal. Never claim Bootstrap complete while its accepted runtime or a
-required official path is unavailable or failing.
+Report the mode, authority, decision frontier or episode, representative paths, changed owners,
+stable commands, exact evidence and before-and-after limits, preserved behavior, and dispositions.
+Name path consolidation, blocked slices, and the next renewal or reopening signal. Bootstrap
+remains incomplete while its accepted runtime or a required official path is unavailable or failing.

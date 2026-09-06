@@ -86,8 +86,7 @@ require a deeper trace. Select the relevant probes; do not fill an exhaustive ch
   is not independent approval. `software-verification` owns evidence methods and verdicts;
   `prototype-to-learn` owns authorized disposable runnable probes.
 - After design acceptance, keep implementation with `scoped-change-implementation` or
-  `behavior-preserving-refactoring`. `software-change-orchestration` owns continuity only
-  when the change needs it. Route portfolio ranking to `architecture-assessment` and
+  `behavior-preserving-refactoring`. Route portfolio ranking to `architecture-assessment` and
   reconsideration of a completed design from later learning to `retrospective-architecture-review`.
 
 ## Quality and completion

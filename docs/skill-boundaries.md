@@ -78,10 +78,6 @@ repository count, or team count.
 
 The skills form a directed graph. A downstream skill consumes an upstream artifact only when the decision warrants it.
 
-`goal-pursuit` is an explicit navigation layer over this graph, not another
-artifact-owning node. It selects the smallest current owner, preserves the
-parent outcome and system hypothesis, and updates the route from evidence.
-
 ```mermaid
 flowchart LR
     RS["Research synthesis"] -.-> PD
@@ -188,8 +184,6 @@ flowchart LR
     RAR --> BPR
 ```
 
-`software-change-orchestration` can maintain a bounded change's evolving canonical specification across this graph and preserve a resume point when work spans sessions, artifacts, or specialist owners. Clear uninterrupted work remains inline with its primary owner. Orchestration does not add a required path through the graph or take ownership from any node.
-
 This is not a mandatory lifecycle. For example, an uncertain product request may loop only between opportunity discovery and prioritization until evidence supports stopping or investment. A local reversible feature may need only `scoped-change-implementation` and repository checks. A structure-only cleanup may use `behavior-preserving-refactoring` without architecture review. A multi-workstream feature may use `technical-program-orchestration` to coordinate owned frontiers and integration while composing observability, controlled release, change review, and verification without a heavyweight architecture evaluation. A multi-region ledger migration may require architecture evaluation, a decision record, technical program orchestration, migration planning, controlled exposure, layered verification, and an operational feedback audit. An active outage may need incident-response coordination and diagnosis before it can move into recovery and incident learning.
 
 ## Design and evaluation are different jobs
@@ -263,11 +257,9 @@ When skills compose in one task, keep the decision context in flow instead of cr
 ### Technical writing, source ownership, and session continuity
 
 - `technical-writing` owns transfer to a declared reader through a tutorial, how-to guide, explanation, reference, procedure, runbook, or technical article. It consumes accepted decisions and inspected evidence; it does not decide product value, domain meaning, architecture, support policy, operational risk, or factual truth merely because those claims appear in prose.
-- `software-change-orchestration` is the sole continuity owner when one bounded
-  software change must preserve accepted meaning, evidence validity, canonical
-  artifacts, or resume state across sessions or specialist owners. Other work
-  updates its existing canonical surface directly. Session transport does not
-  replace canonical state, transfer authority, or justify routine paperwork.
+- The active owner updates the existing canonical surface when accepted meaning,
+  evidence, or a real pause or handoff needs durable state. Session transport
+  does not replace canonical decisions, transfer authority, or justify routine paperwork.
 - `skill-creator` and the repository authoring contract own new or materially revised skills. `technical-writing` may improve reader transfer in supporting documentation, but it must not become a second skill-authoring authority.
 
 Technical writing can follow research, design, implementation, or operational work when a reader artifact is requested. The source owner retains interpretation and decision authority, while the writing skill owns document function, reading path, provenance visibility, functional checks, and voice. A continuation record is not a default output of that composition; update canonical state only for a real continuation boundary.
@@ -316,26 +308,30 @@ still bypass a full design workflow.
 
 Discovery, prototyping, and prioritization can form a feedback loop. Prioritization may fund another discovery slice rather than a full solution; discovery evidence may split, merge, weaken, strengthen, or remove an opportunity and reopen priority. Discovery owns the hypothesis and evidence contract while `prototype-to-learn` owns authorized local software construction. `domain-modeling` owns complex software meaning, behavior, and invariants once those become the problem, while `controlled-release-design` and `observability-design` own governed production exposure and deployed measurement contracts.
 
-### Goal pursuit, change orchestration, specification, and program orchestration
+### Bounded changes, specification, and program orchestration
 
-- `goal-pursuit` owns proportional upfront system planning and adaptive
-  next-capability selection for one explicit parent goal. It retains goal-level
-  evidence and termination while specialists retain their decisions and
-  artifacts. A host goal runtime owns continuation, pause, resume, and status.
-- `software-change-orchestration` owns continuity and composition economy for one bounded change effort when accepted decisions, evidence, or resume state must remain coherent across sessions, artifacts, or specialist owners. It keeps clear uninterrupted work inline, uses one primary owner per move, and creates or reuses durable state only when ownership or re-entry requires it.
-- `software-change-specification` owns the implementation-ready behavior contract for one accepted but ambiguous change. Within orchestration it consumes the originating request and accepted frame, updates the supplied canonical surface with only its specification delta when authorized, and can classify the change as not ready.
-- `technical-program-orchestration` owns the canonical program surface, multi-workstream delivery topology, workstream contracts and drivers, local and program frontiers, integration, evidence-labeled dominant or coupled constraints, and replanning. It links canonical local artifacts rather than becoming their executor or a duplicate program office.
-- `behavior-preserving-refactoring` is the primary executor for a pure structural slice whose supported behavior must remain unchanged. `scoped-change-implementation` is the primary executor for an intended observable behavior change. Do not stack both complete workflows around one pure refactor; split a mixed change or nominate one primary executor and borrow only the needed checks. Review, verification, promotion, and residual-risk acceptance remain separate judgments.
+- The active agent preserves the accepted outcome and selects the next useful
+  action. A host goal runtime owns continuation, pause, resume, and status.
+- `software-change-specification` owns the behavior contract for an accepted
+  but ambiguous change. It updates the existing canonical surface when authorized
+  and may return a conditional or not-ready result.
+- `behavior-preserving-refactoring` is the primary executor for pure structure;
+  `scoped-change-implementation` owns intended behavior changes. Split mixed work
+  or nominate one executor and borrow only necessary checks. Review, verification,
+  promotion, and residual-risk acceptance remain separate judgments.
+- `technical-program-orchestration` owns shared delivery topology, dependencies,
+  integration, evidence, and replanning across concurrent or interdependent
+  workstreams. Local drivers retain their decisions, execution, and artifacts.
 
-The orchestration unit is a **change effort**, not necessarily a whole product or repository. Related slices may share one effort when they serve one outcome and depend on the same behavior or risk decisions. Small reversible and other clear uninterrupted changes stay inline even when implementation is authorized. When durable state is justified, use the owning repository if one repo owns the behavior; use an established control repository when no code repository owns the cross-repository outcome. Touching or reading several repositories is not by itself a reason to create control-repository state.
+A bounded change may cross repositories without needing a program. Keep clear
+work inline and reuse existing issues, specifications, or designs when durable
+state is needed. Preserve accepted scope, authority, decisions, current state,
+evidence limits, and the next action at a real continuation boundary.
 
-A program is not merely a larger change effort. Program orchestration steers a graph of workstream contributions, dependencies, integration contracts, simultaneous frontiers, and an evidence-labeled dominant or coupled constraint model. A program may link several bounded change efforts, while one change effort may also require program orchestration when its delivery contains several concurrent or interdependent workstreams. One team can own such a topology, and several teams can still be executing only one bounded change loop; team count is neither necessary nor sufficient. Generic goal pursuit and serial specialist routing do not create a program. Use `software-change-orchestration` only for workstreams that need their own resumable software-change loop; keep non-code or already well-governed workstreams in their existing canonical surfaces.
-
-Goal pursuit does not prove success by completing every child task. It closes
-against a parent outcome-level oracle and links canonical specialist results
-instead of copying their plans. Several services in one coherent sequential
-slice do not require a program surface; several concurrent or interdependent
-workstreams with shared integration or constraint steering do.
+Use program orchestration for interdependent workstreams requiring shared
+integration or constraint steering. Repository and team counts alone do not
+establish that need. Neither completed child tasks nor green local checks prove
+the requested end-to-end outcome.
 
 ### Research synthesis versus surface mapping and specialist inquiry
 
@@ -520,7 +516,7 @@ The designer and auditor may be the same person for low-risk work, but the audit
 
 Observability can supply evidence to verification, but telemetry is not a substitute for earlier checks. An operational audit can reject both a weak observability design and the assumption that a green signal proved the system healthy.
 
-### Agentic repo setup, change orchestration, and platform capability
+### Repository environment, program coordination, and platform capability
 
 - `agentic-repo-environment` directly bootstraps, retrofits, or renews the reusable
   repository foundation when repo writes are authorized and the product,
@@ -541,9 +537,6 @@ Observability can supply evidence to verification, but telemetry is not a substi
   A bootstrap remains incomplete when
   the accepted runtime or a required official command path is unavailable or
   failing; evidence obtained by bypassing that path is supplemental only.
-- `software-change-orchestration` owns continuity for one bounded software
-  change using that setup. It does not rebuild the harness around every
-  change.
 - `technical-program-orchestration` owns coherence among several concurrent or
   interdependent workstreams. It does not become the runtime or source of truth
   for their local work.

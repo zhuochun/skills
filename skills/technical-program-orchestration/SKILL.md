@@ -21,7 +21,7 @@ Steer one multi-workstream outcome while each workstream drives its frontier. Op
 - A **frontier** is the smallest decision, action, integration, or evidence gap limiting progress. Keep one per active workstream and one program frontier on the limiting coordination gap.
 - Name one dominant constraint only when evidence supports it. Otherwise preserve an explicitly coupled constraint set or state that the constraint is not yet known.
 - An **integration contract** states what a provider workstream must make usable to which consumer, under what compatibility, timing, evidence, and failure conditions.
-- Route by local truth and coordination need, not reporting lines. Use `software-change-orchestration` only for bounded software-change workstreams needing a resumable decision-to-evidence loop; never absorb local design, execution, judgment, or evidence ownership.
+- Route by local truth and coordination need, not reporting lines. Each workstream driver maintains its existing local decision and execution surface; never absorb local design, execution, judgment, or evidence ownership.
 
 ## Keep state recoverable without artifact sprawl
 

@@ -1,7 +1,0 @@
-interface:
-  display_name: "Software Change Orchestration"
-  short_description: "Preserve a resumable change through evidence"
-  default_prompt: "Use $software-change-orchestration when this bounded software change needs continuity across sessions, artifacts, or specialist owners; keep clear uninterrupted work inline, and do not modify code, external systems, or production without authorization."
-
-policy:
-  allow_implicit_invocation: false

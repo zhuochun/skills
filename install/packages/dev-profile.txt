@@ -10,7 +10,6 @@ decision-facilitation
 deep-module-design
 domain-modeling
 experience-design-specification
-goal-pursuit
 migration-planning
 observability-design
 platform-capability-design
@@ -21,7 +20,6 @@ scoped-change-implementation
 service-boundary-design
 service-capacity-engineering
 service-ownership-design
-software-change-orchestration
 software-change-specification
 software-contract-evolution
 software-failure-diagnosis

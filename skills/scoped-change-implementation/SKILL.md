@@ -35,7 +35,7 @@ Turn an understood change into maintained software through small steps that exer
    - Keep secrets and protected data out of source, prompts, logs, errors, fixtures, and client-visible configuration. Use approved maintained cryptography; treat changed dependencies, build scripts, privileged configuration, and security-control bypasses as reviewed surfaces.
    - Apply only relevant secure-coding checks. A checklist does not replace an accepted threat model or authorize a new control policy.
 6. **Keep dangerous decisions inspectable.** Separate target selection and policy from irreversible effects when this enables dry-run, review, testing, idempotency, or stale-plan protection. Recheck stale target, policy, and safety assumptions at apply time. Preserve authorization, rollback, compensation, and stop controls required by the change contract.
-7. **Verify each slice.** Reuse snapshot-matched evidence and run the narrowest meaningful new check first. Continue only from green evidence; otherwise repair or revert before expanding. Add affected integration, contract, static, build, security, and repository checks. Trace material `SEC-*` requirements to executed negative or abuse-path evidence; route broader method and oracle design to `software-verification`. Record execution; planned or skipped checks are not evidence.
+7. **Verify each slice.** Reuse evidence for unaffected claims and run the narrowest meaningful new check first. Prose-only edits normally need document checks; rerun runtime checks for changed claims or executable inputs, suspect evidence, required repository gates, or explicitly fresh verification. Preserve known failures and evidence limits. Continue only from green evidence; otherwise repair or revert before expanding. Add affected integration, contract, static, build, security, and repository checks. Trace material `SEC-*` requirements to executed negative or abuse-path evidence; route broader method and oracle design to `software-verification`. Record execution; planned or skipped checks are not evidence.
 8. **Respond to design mismatch.** For a wrong domain assumption, boundary, public contract, transition state, or safety model, stop expanding. Preserve the counterexample, decision to revisit, safe state, and smallest appropriate route.
 9. **Complete ownership and cleanup.** Remove superseded paths, temporary instrumentation, obsolete tests, dead configuration, and migration scaffolding when their exit condition is satisfied and removal is authorized. Do not leave old and new implementations simultaneously authoritative by accident.
 10. **Report the implemented change.** Lead with the delivered behavior. List material files or surfaces changed, evidence executed and its limits, deviations from the original design, remaining uncertainty, and any release, operational, or human decision still required.
@@ -48,6 +48,15 @@ Read [references/change-execution.md](references/change-execution.md) only when 
 - The diff follows ownership and conventions or explains deviation.
 - A reviewer can recover the behavioral reason for each material edit without unrelated archaeology.
 - Checks observe supported behavior or contracts and trace to an executed environment.
+- If completion includes a running system, verify its actual revision, configuration,
+  and relevant contract versions through the requested consumer path. Use only
+  authorized operational actions; otherwise report the unverified runtime outcome.
+- Assess consequence, irreversibility, uncertainty, and novelty before closure.
+  Use independent `code-review` when these leave material risk beyond builder
+  checks, or the user or repository requires it. Small reversible work with
+  adequate evidence can close directly when no review requirement applies.
+- When independent review is required, resolve applicable actionable findings and
+  obtain focused independent confirmation after material fixes before closure.
 - Failure-path checks reject unexpected success and distinguish the promised system failure from test-generated failure.
 - Every required behavior branch has an available discriminating signal, or the change stops with the missing information or decision named.
 - Changed trust boundaries preserve accepted `SEC-*` requirements, secure defaults, authorization, sensitive-data handling, dependency controls, and explicit exceptions where applicable.

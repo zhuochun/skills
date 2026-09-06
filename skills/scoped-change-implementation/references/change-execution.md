@@ -46,6 +46,14 @@ Prefer a slice that proves one meaningful behavior over a smaller collection of 
 - Recommended owner or skill:
 - Safe state in which implementation stopped:
 
+## Pause or handoff
+
+Use an existing accessible task, issue, specification, or other owning surface
+only when re-entry needs durable context. Keep accepted scope and authority,
+current state, linked evidence and limits, unresolved decisions, and the next
+action. Omit private raw session material from shared records. Before consequential
+resumption, recheck the worktree, canonical decisions, and evidence validity.
+
 ## Completion evidence
 
 | Claim key and label | Method executed | Environment and inputs | Result | Evidence location | Limitation or remaining gap |
