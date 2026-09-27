@@ -14,7 +14,7 @@ or change surface when one already owns the work.
 - Repository-foundation writes authorized, including behavior-preserving
   knowledge reorganization and fixed verification artifacts:
 - Unresolved decisions that setup must stop and route:
-- Material partitions and grounded representative scenario for each:
+- Target work classes and material partitions, with grounded scenarios:
 - Exact pre-existing tracked paths explicitly authorized for deletion, if any:
 - Exact pre-existing untracked or ignored paths explicitly authorized for deletion, if any:
 - External or production actions excluded:
@@ -29,6 +29,9 @@ or change surface when one already owns the work.
 | Task-to-authority retrieval from effective `AGENTS.md` | | | | |
 | Domain vocabulary, concepts, invariants, and semantic contexts | | | | |
 | Architecture responsibilities, interfaces, dependencies, and boundaries | | | | |
+| Work intake, accepted intent, and links to design and architecture | | | | |
+| Work state, reviewer findings, next action, and re-entry route | | | | |
+| Relevant entry points or affected surfaces and links to their owners | | | | |
 | Behavior specifications, accepted decisions, and rationale | | | | |
 | Executable contracts and hard controls | | | | |
 | Observed implementation and runtime behavior | | | | |
@@ -36,8 +39,11 @@ or change surface when one already owns the work.
 | Derived or generated knowledge and its freshness mechanism | | | | |
 | Runtime, dependencies, and clean setup | | | | |
 | Dev, test, build, diagnosis, and maintenance commands | | | | |
+| Product operation when needed, safe test state, and diagnostic artifacts | | | | |
 | Focused and broader verification | | | | |
+| Architecture checks and representative behavioral journeys where relevant | | | | |
 | Hooks, CI, permissions, and protected gates | | | | |
+| Review evidence, release handoff, operational diagnosis, and rollback routes | | | | |
 | Installed specialist and repo-specific skill routing | | | | |
 | Pause, re-entry, retry, and handoff state | | | | |
 
@@ -47,15 +53,22 @@ must remain distinguishable from setup regressions.
 
 ## Task-centered scenario traces
 
-| Partition and grounded scenario | Reader or agent job | Starting route | Authoritative sources selected | Discarded material and surfaced authority conflicts | Command and evidence path | Functional gap or no-op basis |
+| Work class, partition, and grounded path | Agent job and trigger | Starting route and current work state | Selected sources and competing authority | Operation, command, or diagnosis path | Evidence, owning verdict, and handoff | Human intervention, gap, or no-op basis |
 | --- | --- | --- | --- | --- | --- | --- |
 
 Ground bootstrap scenarios in accepted product and developer workflows. Ground
 retrofit scenarios in recent changes, repeated work, or maintained repository
-responsibilities. Ground renew scenarios in the failure, friction, review
-comment, or operational learning that triggered renewal. Default to discovery,
-context retrieval, command selection, and evidence rehearsal; do not implement
-an unrelated product change merely to make a scenario concrete.
+responsibilities. Ground renew scenarios in the triggering episode. For Bootstrap
+and Retrofit, sample the relevant paths through intake, diagnosis or design,
+execution, verification, review, handoff, and maintenance. Follow each chosen
+path to a reviewable result or explicit stop; do not require every stage in one
+scenario or implement an unrelated product change to make it concrete.
+
+Classify each target work class as demonstrated, untested, or unsupported.
+Name the sampled partition behind each demonstration. A reviewable artifact
+proves the environment path only; use the owning specification or
+review verdict for its substantive quality. Record an unavailable verdict as
+not evaluated rather than inferring acceptance from artifact production.
 
 Judge the path by minimum sufficient context and task success. Fewer files,
 tokens, commands, or steps are diagnostic signals only. Record whether the
@@ -117,6 +130,13 @@ with a canonical link is not duplicate truth. Keep plausible competitors
 retrievable and surface their disagreement until the authority conflict is
 resolved; do not optimize one away merely to reduce context.
 
+For sampled change or diagnosis work, make the route from request or signal to
+affected entry points and accepted architectural responsibilities inspectable.
+Explain what may depend on what, where state and effects belong, why material
+boundaries exist, and how an exception is reviewed. Link to accepted owners
+instead of copying their claims into an unmaintained overview. A feature map
+helps when the agent cannot connect a report or screen to those owners.
+
 Check for contradictory claims, history or observed code presented as accepted
 intent, unreachable owners, circular routing, duplicated commands, and generated
 views that cannot be rebuilt. Setup may repair a mechanically proven stale route.
@@ -141,6 +161,14 @@ only the blocked slice. Do not invent a claim, oracle, or broader gate.
 For a present command, confirm that it exercises the intended path, fails
 observably when its required runtime is absent, and narrows the likely cause.
 Keep unsupported behavior and broader integration risk visible.
+
+For a material architecture boundary, identify the accepted dependency or
+ownership rule, a realistic violation, and the check that rejects it. Prefer
+existing type, dependency, lint, or script infrastructure. A description alone
+is advisory; do not label it enforced. For material cross-boundary product
+behavior, select a small representative feature-level journey with an observable
+outcome and diagnostic failure artifacts. Keep focused feedback practical during
+editing. Neither a check nor an end-to-end journey certifies unexercised paths.
 
 Treat silent skips, zero-test runs, swallowed failures, stale fixtures, hidden
 credentials, and checks that inspect only unstaged or only generated state as

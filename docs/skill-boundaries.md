@@ -579,6 +579,11 @@ Authorized lifecycle work reuses sufficient diagnosis without a separate assessm
   knowledge architecture, agent-facing commands, runtime setup within accepted
   constraints, implementation and wiring of fixed verification contracts,
   hooks, setup and verification CI, and repo-specific skill placement and routing.
+  It tests representative work paths from intake or operational signal through
+  context, execution or diagnosis, evidence, and reviewable handoff. Readiness
+  is bounded by the tested work class and partition. It does not decide product
+  behavior, application architecture, or specialist design and review verdicts
+  from that rehearsal.
   Bootstrap recommends local reversible defaults and defers unneeded choices;
   it enables renewal intake only for demonstrated repetition, recurring
   intervention, or an accepted automation goal. Completion requires a usable

@@ -85,7 +85,7 @@ whether the skill produces what you need.
 
 | Skill | It owns | Primary output |
 | --- | --- | --- |
-| [`agentic-repo-environment`](../skills/agentic-repo-environment/) | Read-only task-path diagnosis, Bootstrap with bounded recommendations, task-centered Retrofit, and correction-driven Renew of the repository-local coding-agent environment | Diagnostic gaps, repair owners and verification criteria; or minimum working paths, demonstrated Retrofit improvement/no-op, and explicit Renew dispositions with separate promotion evidence |
+| [`agentic-repo-environment`](../skills/agentic-repo-environment/) | Read-only diagnosis, Bootstrap, Retrofit, and Renew of repository paths for coding-agent work across the software lifecycle | Task-path gaps and repair owners; or paths bounded by demonstrated work classes, Retrofit improvement/no-op, and Renew dispositions with separate promotion evidence |
 | [`scoped-change-implementation`](../skills/scoped-change-implementation/) | Authorized bounded behavior change through coherent vertical slices | Maintained code, behavior evidence, completed ownership, deviations, and remaining gaps |
 | [`behavior-preserving-refactoring`](../skills/behavior-preserving-refactoring/) | Structural improvement without intentional supported-behavior change | Consolidated ownership, refactoring-safe evidence, retired old paths, and equivalence limits |
 | [`software-failure-diagnosis`](../skills/software-failure-diagnosis/) | Causal investigation of bugs, regressions, intermittent failures, and performance degradation | Symptom contract, evidence loop, competing hypotheses, supported cause, and repair boundary |

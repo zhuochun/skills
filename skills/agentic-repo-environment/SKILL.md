@@ -1,12 +1,13 @@
 ---
 name: agentic-repo-environment
-description: Diagnose, bootstrap, retrofit, or renew the repository-local environment for reliable coding-agent work. Use read-only diagnosis for task-path gaps, Bootstrap for minimum working paths, Retrofit for observed friction, and Renew for accepted corrections that may generalize. Route product meaning, architecture decisions, command compatibility, and release authority to their owners.
+description: Diagnose, bootstrap, retrofit, or renew the repository-local environment for coding-agent work across the software lifecycle. Use read-only diagnosis for task-path gaps, Bootstrap for minimum working paths, Retrofit for observed friction, and Renew for accepted corrections. Improve discovery, execution, verification, handoff, and learning while routing product meaning, architecture decisions, command compatibility, and release authority to their owners.
 ---
 
 # Agentic Repo Environment
 
-Improve the repository environment for coding-agent discovery, execution, verification, and
-learning. Treat effective `AGENTS.md` instructions as routing, not proof of agent readiness.
+Make representative software work discoverable, executable, verifiable, and resumable by a
+coding agent. Cover relevant repository paths from intake and design through review,
+maintenance, and learning. Treat `AGENTS.md` as routing, not proof of readiness.
 
 ## Select mode and authority
 
@@ -40,15 +41,19 @@ within lifecycle work rather than requiring a separate assessment.
 
 - **Information architecture:** effective instruction precedence, task-to-authority
   placement, consumption rules, and freshness across current intent, domain and architecture
-  knowledge, executable contracts, observed implementation, derived views, and history. Keep
-  plausible competing authorities visible until resolved.
+  knowledge, executable contracts, observed implementation, derived views, and history. Make
+  accepted responsibilities, interfaces, dependencies, boundaries, and rationale findable
+  from the work. Keep plausible competing authorities visible until resolved.
 - **Execution environment:** accepted runtime setup and one stable agent-facing path per
   recurring setup, development, focused-check, broader-verification, build, diagnosis, or
-  maintenance intent.
+  maintenance intent. For running products, include repeatable operation and useful failure
+  artifacts for the relevant workflow.
 - **Evidence and control environment:** fixed verification wiring, hooks, non-deployment CI,
   permissions, and automation bounded by resource budgets, pause paths, retries, cleanup,
-  stop conditions, and accountable review capacity. Enable unattended operation only after
-  its artifact, command, and evidence loop are stable. Enforce hard rules or label them advisory.
+  stop conditions, and accountable review capacity. Connect accepted architecture boundaries
+  to proportionate executable checks and material behavior to focused and broader tests.
+  Enable unattended operation only after its artifact, command, and evidence loop are stable.
+  Enforce hard rules or label them advisory.
 - **Learning environment:** repository-level intake, trial, promotion, supersession,
   rollback, and reopening paths for accepted corrections.
 
@@ -74,11 +79,11 @@ return a conditional recommendation and do not materialize a consequential unres
 choice.
 
 Design logical information architecture before a file tree. Materialize only owners with
-real content or an accepted need. Establish one walking skeleton from clean setup through
-representative work, focused feedback, broader evidence, and useful failure output. Establish
-renewal intake when repeated agent work, recurring intervention, or an accepted automation
-goal justifies it. Otherwise defer the interface with an activation signal; do not block
-Bootstrap or create governance artifacts merely to prepare for hypothetical learning.
+real content or an accepted need. Establish one walking skeleton for a selected work class,
+from real intake through context, execution or rehearsal, feedback, and a reviewable handoff.
+Include clean setup and useful failure output. Establish renewal intake when repeated agent work,
+recurring intervention, or an accepted automation goal justifies it. Otherwise defer the
+interface with an activation signal; do not create hypothetical governance artifacts.
 
 Read [references/bootstrap.md](references/bootstrap.md) only for Bootstrap decisions and
 its walking skeleton; use existing owners and systems when renewal intake is justified.
@@ -87,8 +92,8 @@ its walking skeleton; use existing owners and systems when renewal intake is jus
 
 Start from recent changes, repeated work, maintained responsibilities, or measured friction.
 Trace each scenario from the effective instruction route through minimum sufficient
-authority, command selection, focused feedback, broader evidence, and handoff. Existing
-artifacts and green commands prove presence, not task fitness.
+authority, relevant work state, command selection, execution or diagnosis, evidence, and
+handoff. Existing artifacts and green commands prove presence, not task fitness.
 
 Change only surfaces that displace observed friction. Preserve accepted meaning while
 improving document function, concern separation, retrieval, freshness, commands,
@@ -97,40 +102,14 @@ an evidence-backed no-op; an `AGENTS.md` edit alone is not completion.
 
 ## Renew from accepted corrections
 
-Bind the smallest sufficient episode evidence: task and revision, effective context, material
-actions, diff, checks, external evaluation, correction, and relevant intervention cost. Bound
-missing evidence. A raw failure, model reflection, or unaccepted preference is not a learning
-label; recover diagnosis or acceptance before treating it as a reusable correction.
+Bind the accepted correction to the smallest sufficient episode evidence. A raw failure,
+model reflection, or unaccepted preference is not a learning label. Classify its mechanism,
+choose the lowest durable owner, and trial a reusable candidate against source, contrast, and
+guardrail cases. A changed control cannot be its own sole proof. Keep raw logs in a private or
+ignored evidence surface; maintained owners carry accepted guidance and rationale.
 
-Keep local transcripts, session IDs, and raw review logs in an existing private or ignored
-evidence surface. Maintained owners carry accepted decisions and reusable guidance with
-self-contained rationale and accessible evidence; do not archive episodes in specifications.
-
-For each candidate:
-
-1. **Confirm the correction.** Establish what changed the result and who accepted that
-   meaning.
-2. **Assign the mechanism.** Distinguish context, authority, procedure, runtime, feedback,
-   permission, architecture, task-local implementation, model variance, and product
-   ambiguity.
-3. **Test learnability.** Retain only a supported, reusable, stable enough, encodable, and
-   verifiable correction.
-4. **Select the lowest durable owner.** Prefer removing the cause or adding an executable
-   control over a tool affordance, route, repo skill, prose rule, or historical note.
-5. **Trial a qualified candidate.** Replay the source episode, exercise an appropriate
-   held-out or contrast case, and protect an existing guardrail before promotion.
-6. **Dispose and consolidate.** Promote, retain as a trial, keep task-local, route,
-   quarantine, reject, supersede, or roll back. Replace obsolete paths instead of growing
-   instructions and controls monotonically.
-7. **Observe.** Record the validity limit and reopening or reversal signal.
-
-Scale evidence to the mechanism and consequence; a local route repair may use direct checks.
-Automate collection and trials only when repetition justifies them. A changed instruction,
-selector, check, judge, or gate must not be its own sole proof. Increase independence with risk.
-
-Read [references/renewal.md](references/renewal.md) only for Renew qualification, trials,
-promotion, and dispositions. An evidence-backed non-promotion outcome completes evaluation
-without requiring an environment change or a passing promotion trial.
+Read [references/renewal.md](references/renewal.md) for qualification, trials, promotion,
+dispositions, and reopening. An evidence-backed non-promotion outcome completes evaluation.
 
 ## Compose without losing lifecycle ownership
 
@@ -142,6 +121,10 @@ active mode; a route is not completion. Read-only diagnosis ends with its owned 
   for unresolved application structure.
 - Use `software-failure-diagnosis` for an unexplained mechanism and `software-verification`
   for an unfixed claim, method, oracle, scope, or independent verdict.
+- Use `software-change-specification` for ambiguous accepted behavior,
+  `specification-review` for decision-bearing document integrity, and `code-review` for an
+  independent diff review. The environment owns their discovery, execution, and handoff paths,
+  not their substantive verdicts.
 - Route behavior changes to `scoped-change-implementation`; production-code structure to
   `behavior-preserving-refactoring` or its design owner; supported command semantics to
   `software-contract-evolution`; and repo skill authoring to `skill-creator`.
@@ -151,7 +134,7 @@ active mode; a route is not completion. Read-only diagnosis ends with its owned 
 
 1. **Establish scope and authority.** Inspect Git state, effective instructions, accepted constraints, and existing systems of record. Preserve unrelated work.
 2. **Bind representative evidence.** Select diagnostic task paths, accepted Bootstrap workflows, grounded Retrofit scenarios, or the Renew episode.
-   Trace its information, runtime, command, evidence, and control owners; preserve baseline failures and reuse sufficient current evidence.
+   Trace its work-state, information, runtime, command, evidence, and control owners; preserve baseline failures and reuse sufficient current evidence.
    Expand inspection when an unresolved mechanism, dependency, or guardrail can change the repair or its verification.
    Bootstrap still needs the complete representative setup-to-verification path; narrow Renew episodes need no fresh repo-wide inventory.
 3. **Diagnose the earliest gap.** Separate an environment defect from missing product,
@@ -171,8 +154,32 @@ active mode; a route is not completion. Read-only diagnosis ends with its owned 
    path only with explicit exact-target authority and applicable compatibility evidence.
    When replacing a tracked or supported path, also prove replacement use and consumer coverage.
 
-Read [references/setup-checklist.md](references/setup-checklist.md) when several surfaces
-need one durable implementation, review, or handoff record.
+## Probe representative work paths
+
+Select real paths across intake, diagnosis, design, change, verification, review, release
+handoff, and maintenance. Sample material differences in authority, runtime, permissions,
+and evidence. Trace each path from its trigger to a reviewable result or explicit stop;
+do not require every stage or a new artifact at each stage.
+
+Classify each target work class as **demonstrated**, **untested**, or **unsupported**. A path
+proves only its sampled class and partition. Bound readiness claims to those demonstrations;
+name untested and unsupported target classes even when one path succeeds.
+
+For change work, test whether an agent can find intent and architecture, locate affected
+entry points, rehearse a bounded change, and detect a realistic mistake. For diagnosis or
+maintenance, test reproduction, evidence capture, and re-entry. Record human navigation,
+hidden setup, and unsupported inference. Product behavior needs separate change authority.
+
+For a running product, test start, navigation, safe test state, results, and diagnostics.
+Use a feature map when reports, screens, and code are hard to connect. Select feature-level
+end-to-end journeys for material cross-boundary behavior; keep focused checks usable during
+editing. Bind checks to accepted claims and observable failures; route an unfixed claim or
+oracle to `software-verification`. A green journey does not prove complete coverage.
+
+Test source, command, and evidence selection in a fresh agent context when available.
+Otherwise report that limit; an author's walkthrough does not prove readiness.
+
+Read [references/setup-checklist.md](references/setup-checklist.md) when several surfaces need one durable record.
 
 ## Strengthen verification proportionately
 
@@ -194,14 +201,17 @@ control cannot certify itself.
   Promotion requires an accepted correction and passing replay, contrast, and guardrail evidence.
   Failed or unavailable evidence prevents promotion, not an honest rejection or deferral.
 - Each sampled path reaches minimum sufficient authority and risk-matched evidence.
-  Unresolved meaning, untested partitions, and unavailable independent evidence remain
-  visible.
+  For Bootstrap and Retrofit, sampled work paths reach reviewable results or name the exact
+  unresolved gaps and owners. Claims about design or review quality need their owning verdict;
+  an environment rehearsal alone does not certify them. Untested work classes, partitions, and
+  unavailable independent evidence remain visible.
 - Added files, checks, dependencies, and automation displace demonstrated burden. Superseded
   instructions and controls do not accumulate silently.
 
 ## Completion
 
-Report the mode, authority, decision frontier or episode, representative paths, changed owners,
-stable commands, exact evidence and before-and-after limits, preserved behavior, and dispositions.
+Report the mode, authority, decision frontier or episode, work-class coverage, representative
+paths, changed owners, stable commands, exact evidence and before-and-after limits, preserved
+behavior, and dispositions.
 Name path consolidation, blocked slices, and the next renewal or reopening signal. Bootstrap
 remains incomplete while its accepted runtime or a required official path is unavailable or failing.

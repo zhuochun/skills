@@ -19,8 +19,8 @@ Ask only questions whose answers change maintained scaffolding:
 
 | Decision surface | Bootstrap question |
 | --- | --- |
-| Target work classes | Which work should agents handle first: bounded bug fixes, existing-pattern features, refactors, data changes, or another named class? |
-| Representative slice | Which real workflow can prove the first environment end to end? |
+| Target work classes | Which intake, diagnosis, design, change, review, or maintenance work should agents handle first? |
+| Representative slice | Which real work item can prove the first path from trigger to reviewable result? |
 | Fixed constraints | Which language, runtime, framework, deployment target, and organizational platform choices are already accepted? |
 | Evidence contract | What evidence is required before review, merge, delivery, or another protected effect? |
 | Autonomy boundary | Which writes, dependencies, CI actions, external calls, and destructive actions may run without intervention? |
@@ -58,6 +58,7 @@ directory tree.
 | Logical role | Minimum responsibility | Materialize when |
 | --- | --- | --- |
 | Entry router | Route tasks and changed surfaces to owners, commands, and evidence | An agent needs a repository entry point |
+| Work state | Link the current request, accepted decisions, artifacts, evidence, reviewer findings, and next action | Work crosses sessions or owners |
 | Current intent | Own accepted outcomes, behavior, constraints, and non-goals | Current product or change intent exists |
 | Domain knowledge | Own accepted vocabulary, classifications, states, and invariants | Semantic decisions affect work |
 | Architecture knowledge | Own accepted responsibilities, interfaces, dependencies, boundaries, and rationale | Structural decisions exist |
@@ -80,16 +81,16 @@ becoming current intent. Code may show observed behavior without accepting it.
 
 ### Establish the walking skeleton
 
-Exercise one representative path:
+Exercise one representative path for the first target work class:
 
 ```text
 clean setup
-  -> discover current authority
-  -> perform representative work
-  -> run focused feedback
-  -> run broader evidence
+  -> receive a real request or operational signal
+  -> discover current intent, architecture, and work state
+  -> rehearse the relevant diagnosis, design, change, or review work
+  -> run focused and broader evidence, including the product when applicable
   -> inspect useful failure output
-  -> hand off or close
+  -> hand off a reviewable result or stop reason
 ```
 
 Pin versions only when variation would make setup or evidence unreliable.
@@ -101,11 +102,12 @@ Record:
 
 - the initial task and expected outcome;
 - sources actually selected and discarded;
+- work-state and architecture routes, plus any human navigation needed;
 - command and working-directory path;
-- focused and broader evidence;
+- execution or diagnosis, focused checks, and broader evidence;
 - expected failure diagnostic;
 - manual intervention and unresolved decisions; and
-- untested material partitions.
+- untested work classes and material partitions.
 
 ### Enable renewal intake when justified
 
@@ -133,11 +135,12 @@ Supersession and rollback path:
 Reopening or expiry signal:
 ```
 
-Bootstrap is complete when the accepted walking skeleton works and renewal
-intake is either usable within existing authority or explicitly deferred. A
-documented but failing official path remains incomplete. Read
+Bootstrap is complete for the selected work class and partition when its accepted walking
+skeleton works and renewal intake is usable or explicitly deferred. Classify other target
+work classes as demonstrated, untested, or unsupported. A documented but failing official
+path remains incomplete. Read
 [renewal.md](renewal.md) when an actual episode enters Renew; Bootstrap need not
 load or instantiate its candidate lifecycle.
 
 Reject speculative scaffolding, unanswered consequential choices treated as
-accepted, and repository-wide readiness claims from one sampled partition.
+accepted, and repository-wide readiness claims from one sampled work class or partition.
